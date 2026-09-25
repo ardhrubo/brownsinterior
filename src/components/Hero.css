@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  background-color: #050505; /* Prevents white flash during crossfade */
 }
 
 .hero-bg {

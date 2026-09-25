@@ -10,8 +10,9 @@ import Team from './components/Team';
 import Clients from './components/Clients';
 import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
-
 import Contact from './components/Contact';
+import ProjectDetail from './components/ProjectDetail';
+import ProjectsPage from './components/ProjectsPage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -60,6 +61,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
       <Footer />
       <FloatingContact />

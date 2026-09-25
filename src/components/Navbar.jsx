@@ -25,10 +25,12 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="logo"
-          style={{ letterSpacing: '8px', fontSize: '1.4rem', fontWeight: '900', fontFamily: 'var(--font-serif)' }}
+          className="logo-container"
         >
-          <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>BROWNS</Link>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <img src="/logo.svg" alt="Brown's Interior Logo" className="navbar-logo-img" />
+            <span className="navbar-logo-text">BROWNS</span>
+          </Link>
         </motion.div>
 
         <nav className="desktop-nav">

@@ -91,3 +91,9 @@ ul {
   background: var(--accent-color);
   color: var(--bg-color);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+}
