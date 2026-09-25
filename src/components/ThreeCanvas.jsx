@@ -1,57 +1,63 @@
-import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Environment, Float, MeshDistortMaterial, MeshTransmissionMaterial } from '@react-three/drei';
+import React, { useRef, useState } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { useTexture } from '@react-three/drei';
+import * as THREE from 'three';
 
-function AbstractShape() {
-  const meshRef = useRef();
+function ImagePlane() {
+  const mesh = useRef();
+  const { viewport, mouse } = useThree();
+  
+  // High-quality real home interior from Unsplash
+  const texture = useTexture('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2000');
+  
+  const [hovered, setHover] = useState(false);
+  const target = new THREE.Vector2();
 
   useFrame((state, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.2;
-      meshRef.current.rotation.y += delta * 0.3;
+    // Smooth mouse follow for parallax
+    target.set((mouse.x * viewport.width) / 20, (mouse.y * viewport.height) / 20);
+    if (mesh.current) {
+      mesh.current.position.x += (target.x - mesh.current.position.x) * 0.05;
+      mesh.current.position.y += (target.y - mesh.current.position.y) * 0.05;
+      
+      // Subtle 3D tilt
+      mesh.current.rotation.y = (mouse.x * Math.PI) / 20;
+      mesh.current.rotation.x = -(mouse.y * Math.PI) / 20;
     }
   });
 
   return (
-    <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-      <mesh ref={meshRef} castShadow receiveShadow>
-        <octahedronGeometry args={[1.5, 2]} />
-        <MeshDistortMaterial
-          color="#9c6c42"
-          roughness={0.2}
-          metalness={0.8}
-          distort={0.4}
-          speed={2}
-          clearcoat={1}
-          clearcoatRoughness={0.1}
-        />
-      </mesh>
-      
-      {/* Outer ring */}
-      <mesh castShadow receiveShadow rotation={[Math.PI / 3, 0, 0]}>
-        <torusGeometry args={[2.5, 0.05, 16, 100]} />
-        <meshStandardMaterial color="#c29b62" metalness={1} roughness={0.2} />
-      </mesh>
-      
-      {/* Secondary ring */}
-      <mesh castShadow receiveShadow rotation={[-Math.PI / 4, Math.PI / 4, 0]}>
-        <torusGeometry args={[3, 0.02, 16, 100]} />
-        <meshStandardMaterial color="#9c6c42" metalness={0.8} roughness={0.1} transparent opacity={0.3} />
-      </mesh>
-    </Float>
+    <mesh 
+      ref={mesh} 
+      onPointerOver={() => setHover(true)} 
+      onPointerOut={() => setHover(false)}
+      scale={[viewport.width * 1.1, viewport.height * 1.1, 1]}
+    >
+      <planeGeometry args={[1, 1, 32, 32]} />
+      <meshBasicMaterial map={texture} />
+    </mesh>
   );
 }
 
 export default function ThreeCanvas() {
   return (
-    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, opacity: 0.5, pointerEvents: 'none' }}>
-      <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[10, 10, 5]} intensity={2} castShadow />
-        <directionalLight position={[-10, -10, -5]} intensity={1} color="#c29b62" />
-        <AbstractShape />
-        <Environment preset="city" />
+    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden' }}>
+      <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+        <React.Suspense fallback={null}>
+          <ImagePlane />
+        </React.Suspense>
       </Canvas>
+      {/* Overlay gradient to ensure text readability */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: 'linear-gradient(to right, rgba(248, 246, 240, 0.95) 0%, rgba(248, 246, 240, 0.7) 40%, transparent 100%)',
+        pointerEvents: 'none',
+        zIndex: 1
+      }}></div>
     </div>
   );
 }

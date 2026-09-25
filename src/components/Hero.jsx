@@ -55,16 +55,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <motion.div 
-          className="hero-image-wrapper"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.8 }}
-        >
-          <div className="image-overlay"></div>
-          <img src={heroImg} alt="Luxury Interior" className="hero-img" />
-          <div className="accent-box"></div>
-        </motion.div>
       </div>
     </section>
   );

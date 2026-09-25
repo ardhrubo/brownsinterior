@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Mail } from 'lucide-react';
+import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './Team.css';
 
 const team = [
@@ -50,8 +50,8 @@ export default function Team() {
               <div className="team-image">
                 <img src={member.image} alt={member.name} />
                 <div className="team-socials">
-                  <a href="#"><Linkedin size={20} /></a>
-                  <a href="#"><Mail size={20} /></a>
+                  <a href="#"><FaLinkedin size={20} /></a>
+                  <a href="#"><FaEnvelope size={20} /></a>
                 </div>
               </div>
               <div className="team-info">
