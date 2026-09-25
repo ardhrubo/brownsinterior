@@ -10,30 +10,41 @@ const backgrounds = [
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % backgrounds.length);
+      setCurrentIndex((prev) => {
+        setPrevIndex(prev);
+        return (prev + 1) % backgrounds.length;
+      });
     }, 5000); // Change image every 5 seconds
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section id="home" className="hero-section">
-      <AnimatePresence>
-        <motion.div 
-          key={currentIndex}
-          className="hero-bg" 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          style={{ 
-            backgroundImage: `url("${backgrounds[currentIndex]}")`,
-            position: 'absolute'
-          }}
-        />
-      </AnimatePresence>
+      {backgrounds.map((bg, index) => {
+        const isActive = index === currentIndex;
+        const isPrev = index === prevIndex;
+        return (
+          <div
+            key={bg}
+            className="hero-bg"
+            style={{
+              backgroundImage: `url("${bg}")`,
+              opacity: isActive || isPrev ? 1 : 0,
+              zIndex: isActive ? 2 : (isPrev ? 1 : 0),
+              transition: 'opacity 1.5s ease-in-out',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%'
+            }}
+          />
+        );
+      })}
       <div className="hero-overlay"></div>
 
       <div className="container hero-container">

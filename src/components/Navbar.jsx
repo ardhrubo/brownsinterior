@@ -27,9 +27,8 @@ export default function Navbar() {
           transition={{ duration: 0.8 }}
           className="logo-container"
         >
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <img src="/logo.svg" alt="Brown's Interior Logo" className="navbar-logo-img" />
-            <span className="navbar-logo-text">BROWNS</span>
           </Link>
         </motion.div>
 
