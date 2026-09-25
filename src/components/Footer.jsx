@@ -10,10 +10,10 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <div style={{ marginBottom: '1.5rem' }}>
-              <img src="/browns-logo.svg" alt="Brown's Interior Logo" style={{ height: '40px', filter: 'brightness(0) invert(1)' }} />
+              <img src="/browns-logo.svg" alt="Brown's Architecture Logo" style={{ height: '120px' }} />
             </div>
             <p className="footer-desc">
-              A good interior or building project does not rely on beautiful design alone—proper planning, engineering, material selection, and quality execution are equally important. We provide an integrated and professional solution from design to execution.
+              A breathtaking interior space does not rely on beautiful design alone—meticulous space planning, premium material selection, and flawless execution are equally important. We provide an integrated, high-end turnkey solution from conceptualization to final styling.
             </p>
             <div className="social-links">
               <a href="https://www.facebook.com/brownsengineeringbd" target="_blank" rel="noreferrer" className="social-icon">
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Browns Interior & Engineering. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Brown's Interior Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>

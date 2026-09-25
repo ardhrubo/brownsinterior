@@ -54,7 +54,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="hero-greeting">Welcome to Brown's Engineering & Architecture</p>
+            <p className="hero-greeting">Welcome to Brown's Interior Studio</p>
           </motion.div>
           
           <motion.h1 
@@ -63,8 +63,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            INTERIOR &<br />
-            ARCHITECTURE
+            LUXURY INTERIOR <br />
+            &amp; ARCHITECTURE
           </motion.h1>
           
           <motion.p 
@@ -73,8 +73,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Elevating spaces through premium interior styling, <br />
-            visionary architecture, and structural excellence.
+            We craft immersive, highly curated spaces that blend timeless elegance <br />
+            with modern functionality. Transform your residential and commercial environments.
           </motion.p>
           
           <motion.div 

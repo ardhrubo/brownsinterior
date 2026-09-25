@@ -35,10 +35,10 @@ export default function About() {
               Redefining <span className="italic-serif">Luxury</span> Spaces
             </h2>
             <p className="about-description">
-              Browns Interior & Engineering is a premier design and construction firm based in Dhaka. We specialize in transforming ordinary spaces into extraordinary experiences. With a meticulous eye for detail and a passion for innovative architecture, we bridge the gap between aesthetic brilliance and structural integrity.
+              Brown's Interior Studio is a premier luxury design firm based in Dhaka. We specialize in transforming ordinary spaces into extraordinary spatial experiences. With a meticulous eye for detail and a passion for bespoke aesthetics, we bridge the gap between brilliant design and flawless execution.
             </p>
             <p className="about-description">
-              Our philosophy is rooted in understanding our clients' deepest aspirations and bringing them to life through bespoke turnkey solutions. Whether it's a high-end residence, a state-of-the-art corporate office, or a luxury boutique, we deliver unparalleled quality on time, every time.
+              Our philosophy is rooted in understanding our clients' deepest lifestyle aspirations and bringing them to life through comprehensive turnkey interior solutions. Whether it's a high-end residence, a boutique commercial space, or a corporate headquarters, we deliver unparalleled luxury and quality on time, every time.
             </p>
             
             <div className="stats-grid">
@@ -47,8 +47,8 @@ export default function About() {
                 <p className="stat-label">Projects Completed</p>
               </div>
               <div className="stat-item">
-                <h3 className="stat-number">50+</h3>
-                <p className="stat-label">Expert Engineers</p>
+                <h3 className="stat-number">30+</h3>
+                <p className="stat-label">Design Professionals</p>
               </div>
               <div className="stat-item">
                 <h3 className="stat-number">100%</h3>

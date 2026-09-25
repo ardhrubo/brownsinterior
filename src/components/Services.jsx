@@ -5,23 +5,23 @@ import './Services.css';
 
 const services = [
   {
-    title: 'Interior Design',
-    description: 'Premium interior styling, space planning, and bespoke furniture selection for luxury living.',
+    title: 'Luxury Residential',
+    description: 'Bespoke interior styling and space planning tailored to create your dream home environment.',
     icon: <Home size={32} />
   },
   {
-    title: 'Architectural Design',
-    description: 'Bespoke architectural solutions that merge aesthetic elegance with functional brilliance.',
+    title: 'Commercial & Corporate',
+    description: 'Transformative workplace designs that enhance brand identity, productivity, and aesthetic appeal.',
     icon: <Compass size={32} />
   },
   {
-    title: 'Structural Engineering',
-    description: 'Rigorous structural planning and engineering to ensure safety, durability, and compliance.',
+    title: 'Custom Furniture',
+    description: 'Exclusive, handcrafted furniture and fixture selections designed specifically for your space.',
     icon: <PenTool size={32} />
   },
   {
     title: 'Turnkey Execution',
-    description: 'End-to-end project management from conceptual 3D visualization to final construction.',
+    description: 'Seamless, end-to-end project management from conceptual 3D visualization to final interior execution.',
     icon: <Maximize size={32} />
   }
 ];
