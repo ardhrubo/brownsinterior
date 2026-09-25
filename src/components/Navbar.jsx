@@ -20,13 +20,13 @@ export default function Navbar() {
 
   return (
     <header className={`navbar ${scrolled || !isHome ? 'scrolled' : ''}`}>
-      <div className="container nav-container" style={{ justifyContent: 'flex-start', padding: '1rem 0' }}>
+      <div className="container nav-container" style={{ padding: '1rem 0' }}>
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="logo"
-          style={{ letterSpacing: '8px', fontSize: '1.4rem', fontWeight: '900', marginRight: '6rem', fontFamily: 'var(--font-serif)' }}
+          style={{ letterSpacing: '8px', fontSize: '1.4rem', fontWeight: '900', fontFamily: 'var(--font-serif)' }}
         >
           <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>BROWNS</Link>
         </motion.div>

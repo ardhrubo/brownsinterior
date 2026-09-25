@@ -9,7 +9,7 @@ export default function Hero() {
       <div 
         className="hero-bg" 
         style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2500")' 
+          backgroundImage: 'url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2500")' 
         }}
       ></div>
       <div className="hero-overlay"></div>
@@ -30,8 +30,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            ARCHITECTURE<br />
-            STUDIO
+            INTERIOR &<br />
+            ARCHITECTURE
           </motion.h1>
           
           <motion.p 
@@ -40,8 +40,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Design to attract, convert and<br />
-            delight your customers
+            Elevating spaces through premium interior styling, <br />
+            visionary architecture, and structural excellence.
           </motion.p>
           
           <motion.div 
