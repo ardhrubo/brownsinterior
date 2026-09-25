@@ -5,24 +5,24 @@ import './Services.css';
 
 const services = [
   {
-    title: 'Architectural Design',
-    description: 'Bespoke architectural solutions that merge aesthetic elegance with structural integrity.',
-    icon: <Compass size={32} />
-  },
-  {
-    title: 'Interior Styling',
-    description: 'Curated spaces with premium materials, lighting, and bespoke furniture selection.',
+    title: 'Interior Design',
+    description: 'Premium interior styling, space planning, and bespoke furniture selection for luxury living.',
     icon: <Home size={32} />
   },
   {
-    title: '3D Visualization',
-    description: 'Hyper-realistic renders and immersive 3D walkthroughs of your future space.',
-    icon: <Maximize size={32} />
+    title: 'Architectural Design',
+    description: 'Bespoke architectural solutions that merge aesthetic elegance with functional brilliance.',
+    icon: <Compass size={32} />
   },
   {
-    title: 'Engineering Planning',
-    description: 'Comprehensive mechanical, electrical, and plumbing blueprints for modern buildings.',
+    title: 'Structural Engineering',
+    description: 'Rigorous structural planning and engineering to ensure safety, durability, and compliance.',
     icon: <PenTool size={32} />
+  },
+  {
+    title: 'Turnkey Execution',
+    description: 'End-to-end project management from conceptual 3D visualization to final construction.',
+    icon: <Maximize size={32} />
   }
 ];
 

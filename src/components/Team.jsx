@@ -5,18 +5,18 @@ import './Team.css';
 
 const team = [
   {
+    name: 'Engr. Aslam Sheikh',
+    role: 'CEO & Founder',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400'
+  },
+  {
     name: 'Md. Kaisar Hamid',
     role: 'Director / Head of Operation',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400'
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400'
   },
   {
     name: 'Ahmed Jamil Rahul',
     role: 'Director / Head of Design',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400'
-  },
-  {
-    name: 'Md. Moniruzzaman',
-    role: 'Advisor / CMO',
     image: 'https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&q=80&w=400'
   }
 ];

@@ -26,8 +26,13 @@
   font-family: var(--font-serif);
   font-size: 1.5rem;
   letter-spacing: 2px;
-  color: var(--text-color);
+  color: #ffffff;
   font-weight: 600;
+  transition: color 0.4s ease;
+}
+
+.navbar.scrolled .logo {
+  color: #1a1a1a;
 }
 
 .logo span {
@@ -46,6 +51,11 @@
   letter-spacing: 1.5px;
   position: relative;
   transition: color 0.3s;
+  color: #ffffff;
+}
+
+.navbar.scrolled .desktop-nav a {
+  color: #1a1a1a;
 }
 
 .desktop-nav a:hover {
@@ -72,6 +82,15 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.menu-icon {
+  color: #ffffff;
+  transition: color 0.4s ease;
+}
+
+.navbar.scrolled .menu-icon {
+  color: #1a1a1a;
 }
 
 .mobile-menu {
