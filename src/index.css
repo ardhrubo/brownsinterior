@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-  --bg-color: #fbf9f6;
-  --text-color: #2c2420;
-  --text-muted: #6b5c53;
-  --accent-color: #9c6c42;
-  --accent-dark: #7a5433;
-  --surface-color: #ffffff;
-  --surface-light: #f0ebe1;
-  --border-color: rgba(156, 108, 66, 0.2);
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --text-muted: #555555;
+  --accent-color: #d15024;
+  --accent-dark: #b8431c;
+  --surface-color: #fafafa;
+  --surface-light: #f5f5f5;
+  --border-color: #e5e5e5;
   
-  --font-sans: 'Outfit', sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Montserrat', sans-serif;
+  --font-massive: 'Oswald', sans-serif;
 }
 
 * {

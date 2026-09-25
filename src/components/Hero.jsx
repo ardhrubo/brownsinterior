@@ -1,60 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import ThreeCanvas from './ThreeCanvas';
 import './Hero.css';
-import heroImg from '../assets/hero.png';
 
 export default function Hero() {
   return (
     <section id="home" className="hero-section">
-      {/* 3D Canvas Background */}
-      <ThreeCanvas />
+      {/* Real Photorealistic Background */}
+      <div 
+        className="hero-bg" 
+        style={{ 
+          backgroundImage: 'url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2500")' 
+        }}
+      ></div>
+      <div className="hero-overlay"></div>
 
       <div className="container hero-container">
         <div className="hero-content">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="subtitle text-accent">Elevating Spaces</h2>
+            <p className="hero-greeting">Welcome to Brown's Engineering & Architecture</p>
           </motion.div>
           
           <motion.h1 
-            className="title"
+            className="title-massive"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Design That Speaks<br />
-            <span className="italic-serif">Elegance.</span>
+            ARCHITECTURE<br />
+            STUDIO
           </motion.h1>
           
           <motion.p 
-            className="description"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.9 }}
+            className="hero-description"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Browns Interior & Engineering brings unparalleled luxury and functional excellence to every architectural endeavor. Experience the premium standard of modern living.
+            Design to attract, convert and<br />
+            delight your customers
           </motion.p>
           
           <motion.div 
-            className="cta-group"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
+            className="hero-accent-dots"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
           >
-            <a href="#portfolio" className="btn">
-              Explore Portfolio <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-            </a>
-            <a href="#contact" className="btn btn-outline">
-              Consultation
-            </a>
+            <div className="dots-grid">
+              {[...Array(9)].map((_, i) => (
+                <div key={i} className="dot"></div>
+              ))}
+            </div>
           </motion.div>
         </div>
-
       </div>
     </section>
   );

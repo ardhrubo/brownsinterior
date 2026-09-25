@@ -9,15 +9,15 @@ export default function FloatingContact() {
   return (
     <div className="floating-contact">
       <div className={`floating-menu ${isOpen ? 'open' : ''}`}>
-        <a href="https://wa.me/8801842002265" target="_blank" rel="noreferrer" className="floating-item whatsapp">
+        <a href="https://wa.me/8801768436319" target="_blank" rel="noreferrer" className="floating-item whatsapp">
           <FaWhatsapp size={20} />
           <span className="tooltip">WhatsApp</span>
         </a>
-        <a href="tel:+8801839275599" className="floating-item phone">
+        <a href="tel:+8801768436319" className="floating-item phone">
           <Phone size={20} />
           <span className="tooltip">Call Us</span>
         </a>
-        <a href="mailto:info@brownsengineeringbd.com" className="floating-item mail">
+        <a href="mailto:brownsinteriorstudio@gmail.com" className="floating-item mail">
           <Mail size={20} />
           <span className="tooltip">Email</span>
         </a>

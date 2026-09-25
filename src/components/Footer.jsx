@@ -9,9 +9,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <h2 className="footer-logo">BROWNS <span>INTERIOR</span></h2>
+            <h2 className="footer-logo">BROWN'S <span>ENGINEERING & ARCHITECTURE</span></h2>
             <p className="footer-desc">
-              Transforming spaces with elegance and engineering precision. We create environments that inspire.
+              A good interior or building project does not rely on beautiful design alone—proper planning, engineering, material selection, and quality execution are equally important. We provide an integrated and professional solution from design to execution.
             </p>
             <div className="social-links">
               <a href="https://www.facebook.com/brownsengineeringbd" target="_blank" rel="noreferrer" className="social-icon">
@@ -44,11 +44,11 @@ export default function Footer() {
             </div>
             <div className="contact-item">
               <Phone size={18} className="text-accent" />
-              <span>+880 1234 567890</span>
+              <span>+880 1768-436319</span>
             </div>
             <div className="contact-item">
               <Mail size={18} className="text-accent" />
-              <span>info@brownsengineeringbd.com</span>
+              <span>brownsinteriorstudio@gmail.com</span>
             </div>
           </div>
         </div>
