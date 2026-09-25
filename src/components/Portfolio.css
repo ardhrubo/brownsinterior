@@ -1,0 +1,114 @@
+.portfolio-section {
+  padding: 8rem 0;
+  background-color: var(--surface-color);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.portfolio-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.portfolio-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-info {
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-info {
+  transform: translateY(0);
+}
+
+.portfolio-category {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.portfolio-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.portfolio-link {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-color);
+  transform: scale(0) rotate(-45deg);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.portfolio-item:hover .portfolio-link {
+  transform: scale(1) rotate(0);
+}
+
+.portfolio-link:hover {
+  background: #fff;
+  color: var(--bg-color);
+}
+
+.portfolio-cta {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
