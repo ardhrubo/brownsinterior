@@ -1,6 +1,6 @@
 .about-section {
   padding: 8rem 0;
-  background-color: var(--surface-color);
+  background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
 }

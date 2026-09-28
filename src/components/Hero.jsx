@@ -49,14 +49,6 @@ export default function Hero() {
 
       <div className="container hero-container">
         <div className="hero-content">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <p className="hero-greeting">Welcome to Brown's Interior Studio</p>
-          </motion.div>
-          
           <motion.h1 
             className="title-massive"
             initial={{ opacity: 0, y: 30 }}
@@ -73,8 +65,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            We craft immersive, highly curated spaces that blend timeless elegance <br />
-            with modern functionality. Transform your residential and commercial environments.
+            We craft immersive, highly curated spaces that blend timeless elegance with modern functionality. Transform your residential and commercial environments.
           </motion.p>
           
           <motion.div 

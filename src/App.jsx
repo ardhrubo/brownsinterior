@@ -13,7 +13,7 @@ import FloatingContact from './components/FloatingContact';
 import Contact from './components/Contact';
 import ProjectDetail from './components/ProjectDetail';
 import ProjectsPage from './components/ProjectsPage';
-
+import Maintenance from './components/Maintenance';
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -24,16 +24,7 @@ const ScrollToTop = () => {
 
 // Pages
 const Home = () => (
-  <main>
-    <Hero />
-    <About />
-    <Services />
-    <Process />
-    <Portfolio />
-    <Team />
-    <Clients />
-    <Contact />
-  </main>
+  <Maintenance />
 );
 
 const AboutPage = () => (

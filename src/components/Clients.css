@@ -20,7 +20,7 @@
 .client-logo-card {
   width: calc(16.666% - 2rem);
   min-width: 150px;
-  background: var(--surface-light);
+  background-color: var(--surface-color);
   border-radius: 4px;
   padding: 2rem 1rem;
   display: flex;

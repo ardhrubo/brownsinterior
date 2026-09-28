@@ -1,6 +1,6 @@
 .contact-page-section {
   padding: 120px 0 80px;
-  background-color: var(--surface-color);
+  background-color: var(--bg-color);
   min-height: 80vh;
 }
 
@@ -119,7 +119,7 @@
   border-radius: 4px;
   font-family: var(--font-sans);
   font-size: 1rem;
-  background: var(--surface-light);
+  background-color: var(--bg-color);
   transition: all 0.3s ease;
 }
 

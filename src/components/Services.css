@@ -1,6 +1,6 @@
 .services-section {
   padding: 8rem 0;
-  background-color: var(--bg-color);
+  background-color: var(--surface-color);
   position: relative;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .service-card {
-  background: var(--surface-color);
+  background-color: var(--surface-color);
   padding: 3rem 2rem;
   border-radius: 4px;
   position: relative;

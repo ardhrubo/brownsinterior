@@ -65,7 +65,7 @@
 }
 
 .team-socials a:hover {
-  background: var(--surface-color);
+  background-color: var(--bg-color);
   color: var(--accent-color);
 }
 
