@@ -33,11 +33,10 @@ const Home = () => (
     <About />
     <ServicesGrid />
     <FeaturedProjects />
-    <ProcessTimeline />
     <TestimonialSlider />
     <Clients />
-    <CostCTA />
     <BlogPreview />
+    <Contact showHero={false} />
   </main>
 );
 

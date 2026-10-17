@@ -19,9 +19,9 @@
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 0;
-  border-radius: 8px;
+  border-radius: var(--radius, 18px);
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+  box-shadow: var(--clay-shadow, 0 20px 50px rgba(0,0,0,0.08));
   background: #ffffff;
 }
 
@@ -133,23 +133,25 @@
 }
 
 .submit-btn {
-  background: var(--accent-color);
+  background: linear-gradient(135deg, var(--gold, #c9b59c), var(--gold-dark, #a88a66));
   color: #ffffff;
   border: none;
-  padding: 1.2rem 2rem;
+  padding: 1.1rem 2rem;
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background 0.3s ease;
+  box-shadow: 0 8px 20px rgba(168,138,102,0.35);
+  transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(168,138,102,0.45);
 }
 
 @media (max-width: 992px) {

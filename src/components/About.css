@@ -149,18 +149,40 @@
 @media (max-width: 768px) { .about-values { grid-template-columns: 1fr; margin-top: 3rem; } }
 
 /* ===== Redesign overrides ===== */
-.about-section { padding: 7rem 0 6rem; }
+.about-section { padding: 6rem 0 5rem; }
+.about-section.about-compact { padding: 5.5rem 0 4.5rem; }
 .about-title { text-align: left; }
-.about-image-wrapper, .about-image-wrapper img { border-radius: 18px; }
+.about-image-wrapper, .about-image-wrapper img { border-radius: 20px; }
+.about-compact .about-image-wrapper img { height: 460px; }
 .experience-badge { border-radius: 18px; background: linear-gradient(135deg, #c9b59c, #a88a66); }
-.about-description { font-size: 1.02rem; }
-.about-content .pill-btn { margin-top: 1rem; }
+.about-description { font-size: 1.02rem; line-height: 1.7; margin-bottom: 1.25rem; }
+.about-quick-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.about-quick-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.about-quick-list li svg {
+  color: var(--gold-dark, #a88a66);
+  flex-shrink: 0;
+}
+.about-cta-row { margin-top: 0.5rem; }
 .value-card { border-radius: 18px; }
 @media (max-width: 900px) {
-  .about-section { padding: 4.5rem 0; }
-  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-section, .about-section.about-compact { padding: 4rem 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-image-container { padding-right: 0; }
-  .about-image-wrapper img { height: 360px; }
+  .about-image-wrapper img, .about-compact .about-image-wrapper img { height: 340px; }
   .experience-badge { right: 12px; bottom: 12px; padding: 1.1rem 1.4rem; }
   .experience-badge .years { font-size: 2.4rem; }
   .value-card { padding: 2rem; }

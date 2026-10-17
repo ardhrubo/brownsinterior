@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Check, ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Calculator, Phone } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
-import Process from './Process';
 import './ServicesPage.css';
 
 export default function ServicesPage() {
@@ -22,23 +21,26 @@ export default function ServicesPage() {
     <main className="sp-page">
       <section className="sp-hero">
         <div className="container">
-          <motion.p className="sp-eyebrow" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.p className="sp-eyebrow" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
             What We Do
           </motion.p>
-          <motion.h1 className="sp-title" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            Our <span className="italic-serif">Services</span>
+          <motion.h1 className="sp-title" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}>
+            Curated <span className="italic-serif">Services</span>
           </motion.h1>
-          <div className="title-divider"></div>
-          <motion.p className="sp-lead" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-            Interior design, architecture, engineering and project delivery — complete solutions under one roof.
+          <motion.p className="sp-lead" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+            Architecture, interior design, engineering &amp; turnkey execution — under one studio.
           </motion.p>
 
-          <motion.div className="sp-chips" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}>
-            {servicesData.map((s) => (
-              <Link key={s.slug} to={`/services#${s.slug}`} className="sp-chip">
-                {s.shortTitle || s.title}
-              </Link>
-            ))}
+          <motion.div className="sp-chips" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
+            {servicesData.map((s) => {
+              const Icon = s.icon;
+              return (
+                <Link key={s.slug} to={`/services#${s.slug}`} className="sp-chip">
+                  <Icon size={14} />
+                  <span>{s.shortTitle || s.title}</span>
+                </Link>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -51,61 +53,81 @@ export default function ServicesPage() {
               <motion.article
                 key={s.slug}
                 id={s.slug}
-                className={`sp-block ${i % 2 ? 'reverse' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
+                className={`sp-showcase-block ${i % 2 ? 'reverse' : ''}`}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="sp-intro">
-                  <span className="sp-number">{s.number}</span>
-                  <div className="sp-icon"><Icon size={30} strokeWidth={1.5} /></div>
-                  <h2 className="sp-block-title">{s.title}</h2>
-                  <p className="sp-desc">{s.description}</p>
-                  <div className="sp-actions-row">
-                    <Link to={`/services/${s.slug}`} className="sp-cta primary" id={`explore-${s.slug}`}>
-                      Explore {s.shortTitle || s.title} <ArrowRight size={15} />
+                {/* Left: Visual Category Cover Card */}
+                <div className="sp-cover-card">
+                  <Link to={`/services/${s.slug}`} className="sp-cover-media">
+                    <img src={s.image} alt={s.title} loading="lazy" />
+                    <div className="sp-cover-overlay" />
+                    <span className="sp-cover-num">{s.number}</span>
+                    <div className="sp-cover-Bottom">
+                      <div className="sp-cover-icon"><Icon size={22} /></div>
+                      <div>
+                        <h2>{s.title}</h2>
+                        <p>{s.tagline || s.description}</p>
+                      </div>
+                    </div>
+                  </Link>
+                  <div className="sp-cover-actions">
+                    <Link to={`/services/${s.slug}`} className="sp-cta primary" id={`view-${s.slug}`}>
+                      Explore {s.shortTitle || s.title} <ArrowRight size={14} />
                     </Link>
                     <Link to="/contact" className="sp-cta secondary" id={`cta-${s.slug}`}>
-                      Get a Quote
+                      Request Quote
                     </Link>
                   </div>
                 </div>
-                <ul className="sp-items">
-                  {s.items.map((item, j) => (
-                    <motion.li
-                      key={item}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+
+                {/* Right: Visual Sub-Option Mini Cards */}
+                <div className="sp-options-grid">
+                  {s.options.map((opt, j) => (
+                    <motion.div
+                      key={opt.slug}
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: j * 0.07 }}
+                      transition={{ delay: j * 0.06 }}
                     >
-                      <Link
-                        to={`/services/${s.slug}#${item.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
-                        style={{ display: 'flex', alignItems: 'center', gap: '1rem', width: '100%', color: 'inherit' }}
-                      >
-                        <span className="sp-check"><Check size={14} /></span>
-                        <span>{item}</span>
-                        <ArrowRight size={14} style={{ marginLeft: 'auto', opacity: 0.5 }} />
+                      <Link to={`/services/${opt.slug}`} className="sp-opt-card clay">
+                        <div className="sp-opt-thumb">
+                          <img src={opt.image} alt={opt.title} loading="lazy" />
+                        </div>
+                        <div className="sp-opt-info">
+                          <div className="sp-opt-title-row">
+                            <h3>{opt.title}</h3>
+                            <ArrowUpRight size={16} className="sp-opt-arrow" />
+                          </div>
+                          <p>{opt.tagline || opt.desc}</p>
+                        </div>
                       </Link>
-                    </motion.li>
+                    </motion.div>
                   ))}
-                </ul>
+                </div>
               </motion.article>
             );
           })}
         </div>
       </section>
 
-      <Process />
-
       <section className="sp-banner">
-        <div className="container">
-          <h2>Have a project in mind?</h2>
-          <p>Local or international — let's design something remarkable together.</p>
-          <Link to="/contact" className="sp-cta light" id="services-contact-cta">
-            Start Your Project <ArrowRight size={16} />
-          </Link>
+        <div className="container sp-banner-inner">
+          <div>
+            <h2>Ready to transform your space?</h2>
+            <p>Get an instant budget estimate or book a free consultation with our studio.</p>
+          </div>
+          <div className="sp-banner-btns">
+            <Link to="/cost-estimator" className="pill-btn glass" id="services-calc-cta">
+              <Calculator size={16} /> Cost Calculator
+            </Link>
+            <Link to="/contact" className="pill-btn" id="services-contact-cta">
+              <Phone size={16} /> Start Your Project
+            </Link>
+          </div>
         </div>
       </section>
     </main>

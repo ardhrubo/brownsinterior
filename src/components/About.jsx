@@ -1,76 +1,112 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Target, ShieldCheck } from 'lucide-react';
+import { Target, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 import './About.css';
+
+const quickHighlights = [
+  'Led by Engr. Aslam Sheikh',
+  'Architecture + Interior + Structural',
+  'Transparent BOQ & On-Time Delivery',
+];
 
 export default function About({ full = false }) {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className={`about-section ${full ? 'about-full' : 'about-compact'}`}>
       <div className="container">
         <div className="about-grid">
-          <motion.div 
+          <motion.div
             className="about-image-container"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.7 }}
           >
             <div className="about-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800" alt="About Browns Interior" />
+              <img
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1000"
+                alt="About Brown's Interior"
+              />
               <div className="experience-badge">
                 <span className="years">10+</span>
-                <span className="text">Years of<br/>Excellence</span>
+                <span className="text">Years of<br />Excellence</span>
               </div>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="about-content"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <span className="sec-eyebrow">About Us — Brown's Interior</span>
+            <span className="sec-eyebrow">The Studio</span>
             <h2 className="sec-title about-title">
-              Designing <em>Beautiful Spaces</em> with Quality and Purpose
+              Where <em>Creative Vision</em> Meets Engineering Precision.
             </h2>
             <p className="about-description">
-              Brown's Interior is a Dhaka-based interior design and execution firm providing professional design solutions for residential, commercial and exhibition spaces.
+              Based in Dhaka and led by <strong>Engr. Aslam Sheikh</strong>, Brown's Interior blends architectural aesthetics with structural reliability across homes, offices, and exhibition spaces.
             </p>
-            <p className="about-description">
-              Led by <strong>Engr. Aslam Sheikh</strong>, we combine creative thinking, engineering knowledge and practical expertise to create spaces that are functional, elegant and tailored to our clients' needs.
-            </p>
+
+            {!full && (
+              <ul className="about-quick-list">
+                {quickHighlights.map((item) => (
+                  <li key={item}>
+                    <CheckCircle2 size={16} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
             {full && (
               <>
                 <p className="about-description">
-                  Our services include interior design, architectural design, structural consultancy, renovation and remodeling, exhibition and trade show booth design, and project management.
+                  Our multidisciplinary team handles interior design, architectural planning, structural consultancy, renovation, trade show booth fabrication, and end-to-end project management under one roof.
                 </p>
                 <p className="about-description">
-                  We believe great design goes beyond appearance. It requires thoughtful planning, quality materials, attention to detail and a clear understanding of each client's vision and budget.
-                </p>
-                <p className="about-description">
-                  From the initial concept to the final outcome, we focus on delivering practical solutions, professional service and lasting value.
+                  Every project begins with how you live and work — pairing honest materials, realistic 3D visualization, and itemized budgets so there are zero surprises during execution.
                 </p>
               </>
             )}
-            {!full && <Link to="/about" className="pill-btn" id="about-discover-more">Discover More</Link>}
+
+            {!full && (
+              <div className="about-cta-row">
+                <Link to="/about" className="pill-btn outline" id="about-discover-more">
+                  More About Us <ArrowRight size={15} />
+                </Link>
+              </div>
+            )}
           </motion.div>
         </div>
 
-        <div className="about-values">
-          <motion.div className="value-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
-            <h3>Our Mission</h3>
-            <p>To create beautiful, functional and purposeful spaces through thoughtful design and quality-focused service.</p>
-          </motion.div>
-          <motion.div className="value-card dark" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
-            <div className="value-icon"><ShieldCheck size={26} strokeWidth={1.5} /></div>
-            <h3>Our Commitment</h3>
-            <p className="commitment">Creative Design. <span>Professional Service.</span> Quality You Can Trust.</p>
-          </motion.div>
-        </div>
+        {full && (
+          <div className="about-values">
+            <motion.div
+              className="value-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
+              <h3>Our Mission</h3>
+              <p>To craft purposeful, enduring spaces through intelligent planning, honest materials, and engineering precision.</p>
+            </motion.div>
+            <motion.div
+              className="value-card dark"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.12 }}
+            >
+              <div className="value-icon"><ShieldCheck size={26} strokeWidth={1.5} /></div>
+              <h3>Our Commitment</h3>
+              <p className="commitment">Creative Design. <span>Professional Service.</span> Quality You Can Trust.</p>
+            </motion.div>
+          </div>
+        )}
       </div>
     </section>
   );

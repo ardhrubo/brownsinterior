@@ -1,17 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { PageHero } from './HomeSections';
+import { PageHero, SectionHead } from './HomeSections';
 import './Contact.css';
 
-export default function Contact() {
+export default function Contact({ showHero = true }) {
   return (
     <>
-    <PageHero title="Contact Us" sub="Tell us about your space — we'll help you plan, design and build it with quality and purpose." image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000" />
-    <section className="contact-page-section">
-      <div className="container">
+      {showHero && (
+        <PageHero
+          title="Contact Us"
+          sub="Tell us about your space — we'll help you plan, design and build it with quality and purpose."
+          image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000"
+        />
+      )}
+      <section className="contact-page-section" id="contact">
+        <div className="container">
+          {!showHero && (
+            <SectionHead
+              eyebrow="Get In Touch"
+              title="Let's Build Something"
+              script="Remarkable"
+              sub="Reach out to us directly or fill out the form below to request a consultation and quote."
+            />
+          )}
 
-        <div className="contact-wrapper">
+          <div className="contact-wrapper">
           <motion.div 
             className="contact-info-panel"
             initial={{ opacity: 0, x: -30 }}
@@ -89,12 +103,15 @@ export default function Contact() {
                 </div>
                 <div className="form-group">
                   <label>Project Type</label>
-                  <select name="project_type" required>
-                    <option value="" disabled selected>Select a service...</option>
+                  <select name="project_type" required defaultValue="">
+                    <option value="" disabled>Select a service...</option>
                     <option value="Interior Design">Interior Design</option>
                     <option value="Architecture">Architecture</option>
-                    <option value="Renovation">Renovation</option>
-                    <option value="Consultancy">Consultancy</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Renovation & Remodeling">Renovation &amp; Remodeling</option>
+                    <option value="Exhibition & Booth Design">Exhibition &amp; Booth Design</option>
+                    <option value="Project Management">Project Management</option>
+                    <option value="Additional Services">Additional Services</option>
                   </select>
                 </div>
               </div>

@@ -29,7 +29,9 @@ export default function Footer() {
 
         <div className="footer-grid">
           <div className="footer-brand">
-            <img src="/logo.svg" alt="Brown's Interior Logo" className="footer-logo-img" />
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Go to top">
+              <img src="/logo.svg" alt="Brown's Interior Logo" className="footer-logo-img" />
+            </Link>
             <p className="footer-desc">
               Brown's Interior is a Dhaka-based interior design and execution firm providing professional design solutions for residential, commercial and exhibition spaces. Led by Engr. Aslam Sheikh.
             </p>
@@ -45,7 +47,7 @@ export default function Footer() {
             <h4 className="footer-title">Our Services</h4>
             <ul>
               {servicesData.map((s) => (
-                <li key={s.slug}><Link to={`/services#${s.slug}`}>{s.shortTitle || s.title}</Link></li>
+                <li key={s.slug}><Link to={`/services/${s.slug}`}>{s.shortTitle || s.title}</Link></li>
               ))}
             </ul>
           </div>

@@ -127,11 +127,11 @@ export function ServicesGrid() {
             const Icon = s.icon;
             return (
               <motion.div key={s.slug} {...fadeUp} transition={{ duration: 0.6, delay: (idx % 4) * 0.08 }}>
-                <Link to={`/services#${s.slug}`} className="svc-card clay">
+                <Link to={`/services/${s.slug}`} className="svc-card clay">
                   <div className="svc-icon"><Icon size={26} strokeWidth={1.6} /></div>
                   <h3>{s.shortTitle || s.title}</h3>
-                  <p>{s.items.slice(0, 3).join(' · ')}</p>
-                  <span className="svc-more">Explore <ArrowRight size={14} /></span>
+                  <p>{s.options.slice(0, 3).map((o) => o.title).join(' · ')}</p>
+                  <span className="svc-more">Learn More <ArrowRight size={14} /></span>
                 </Link>
               </motion.div>
             );
