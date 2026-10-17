@@ -1,18 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useInView, animate } from 'framer-motion';
-import { FolderOpen, Phone, ArrowRight, Star, Quote, ChevronLeft, ChevronRight, Calculator, MapPin } from 'lucide-react';
+import {
+  FolderOpen, Phone, ArrowRight, ArrowUpRight, Star, Quote,
+  ChevronLeft, ChevronRight, Calculator, MapPin, UserRound
+} from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
-import { testimonials, processSteps, blogPosts, stats } from '../data/siteData';
+import { testimonials, blogPosts, stats, processSteps } from '../data/siteData';
 import '../styles/site.css';
 import './HomeSections.css';
 
 const fadeUp = {
-  initial: { opacity: 0, y: 40 },
+  initial: { opacity: 0, y: 32 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-60px' },
-  transition: { duration: 0.7 },
+  transition: { duration: 0.6 },
 };
 
 export function SectionHead({ eyebrow, title, script, sub }) {
@@ -28,8 +31,8 @@ export function SectionHead({ eyebrow, title, script, sub }) {
 export function PageHero({ title, sub, image, crumb }) {
   return (
     <section className="page-hero" style={{ backgroundImage: `url("${image}")` }}>
-      <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>{title}</motion.h1>
-      {sub && <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>{sub}</motion.p>}
+      <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>{title}</motion.h1>
+      {sub && <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }}>{sub}</motion.p>}
       <div className="crumbs"><Link to="/">Home</Link> &nbsp;/&nbsp; {crumb || title}</div>
     </section>
   );
@@ -37,10 +40,22 @@ export function PageHero({ title, sub, image, crumb }) {
 
 /* ---------------- HERO ---------------- */
 const slides = [
-  'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2400',
-  'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2400',
-  'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=2400',
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400',
+  {
+    img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2400',
+    label: 'Residential Luxury',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2400',
+    label: 'Bespoke Living Spaces',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400',
+    label: 'Modern Workplaces',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2400',
+    label: 'Architecture & Turnkey',
+  },
 ];
 
 export function HomeHero() {
@@ -56,32 +71,32 @@ export function HomeHero() {
         <motion.div
           key={i}
           className="h-hero-bg"
-          style={{ backgroundImage: `url("${slides[i]}")` }}
-          initial={{ opacity: 0, scale: 1.08 }}
+          style={{ backgroundImage: `url("${slides[i].img}")` }}
+          initial={{ opacity: 0, scale: 1.06 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ opacity: { duration: 1.2 }, scale: { duration: 6, ease: 'linear' } }}
+          transition={{ opacity: { duration: 1.1 }, scale: { duration: 6, ease: 'linear' } }}
         />
       </AnimatePresence>
       <div className="h-hero-overlay" />
       <div className="h-hero-content">
-        <motion.span className="h-hero-tag" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-          Brown's Interior
+        <motion.span className="h-hero-tag" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+          Architecture · Interior · Turnkey
         </motion.span>
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.9 }}>
-          Designing <em>Beautiful Spaces</em> with Quality and Purpose.
+        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}>
+          Designing <em>Timeless Spaces</em> with Purpose.
         </motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
-          A Dhaka-based interior design and execution firm providing professional design solutions for residential, commercial and exhibition spaces.
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}>
+          Residential, commercial &amp; exhibition design-build studio in Dhaka.
         </motion.p>
+        <motion.div className="h-hero-ctas" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}>
+          <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Work</Link>
+          <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> Free Consultation</Link>
+        </motion.div>
       </div>
-      <motion.div className="h-hero-ctas" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}>
-        <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> View Projects</Link>
-        <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> Free Consultation</Link>
-      </motion.div>
       <div className="h-hero-dots">
-        {slides.map((_, k) => (
-          <button key={k} aria-label={`Slide ${k + 1}`} className={k === i ? 'active' : ''} onClick={() => setI(k)} />
+        {slides.map((s, k) => (
+          <button key={s.label} aria-label={`Slide ${k + 1}`} className={k === i ? 'active' : ''} onClick={() => setI(k)} />
         ))}
       </div>
     </section>
@@ -95,7 +110,7 @@ function Counter({ value, suffix }) {
   const [n, setN] = useState(0);
   useEffect(() => {
     if (!inView) return;
-    const c = animate(0, value, { duration: 2, onUpdate: (v) => setN(Math.round(v)) });
+    const c = animate(0, value, { duration: 1.8, onUpdate: (v) => setN(Math.round(v)) });
     return () => c.stop();
   }, [inView, value]);
   return <span ref={ref}>{n}{suffix}</span>;
@@ -116,34 +131,68 @@ export function StatsBar() {
   );
 }
 
-/* ---------------- SERVICES ---------------- */
+/* ---------------- VISUAL SERVICES SHOWCASE ---------------- */
 export function ServicesGrid() {
   return (
     <section className="section cream">
       <div className="container">
-        <SectionHead eyebrow="What We Offer" title="Our" script="Services" sub="Interior design, architectural design, structural consultancy, renovation and remodeling, exhibition and trade show booth design, and project management." />
-        <div className="grid-4 svc-grid">
+        <SectionHead
+          eyebrow="What We Do"
+          title="Our"
+          script="Expertise"
+          sub="Select a discipline or jump straight to a specialized service."
+        />
+        <div className="svc-visual-grid">
           {servicesData.map((s, idx) => {
             const Icon = s.icon;
             return (
-              <motion.div key={s.slug} {...fadeUp} transition={{ duration: 0.6, delay: (idx % 4) * 0.08 }}>
-                <Link to={`/services/${s.slug}`} className="svc-card clay">
-                  <div className="svc-icon"><Icon size={26} strokeWidth={1.6} /></div>
-                  <h3>{s.shortTitle || s.title}</h3>
-                  <p>{s.options.slice(0, 3).map((o) => o.title).join(' · ')}</p>
-                  <span className="svc-more">Learn More <ArrowRight size={14} /></span>
+              <motion.article
+                key={s.slug}
+                className="svc-vcard clay"
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: (idx % 4) * 0.06 }}
+              >
+                <Link to={`/services/${s.slug}`} className="svc-vcard-media">
+                  <img src={s.image} alt={s.title} loading="lazy" />
+                  <div className="svc-vcard-shade" />
+                  <span className="svc-vcard-num">{s.number}</span>
+                  <div className="svc-vcard-badge"><Icon size={18} /></div>
                 </Link>
-              </motion.div>
+
+                <div className="svc-vcard-body">
+                  <h3>
+                    <Link to={`/services/${s.slug}`}>{s.shortTitle || s.title}</Link>
+                  </h3>
+                  <p>{s.tagline || s.description}</p>
+
+                  <div className="svc-vcard-pills">
+                    {s.options.map((opt) => (
+                      <Link key={opt.slug} to={`/services/${opt.slug}`} className="svc-sub-pill">
+                        {opt.title}
+                      </Link>
+                    ))}
+                  </div>
+
+                  <Link to={`/services/${s.slug}`} className="svc-more">
+                    View All {s.options.length} Services <ArrowUpRight size={14} />
+                  </Link>
+                </div>
+              </motion.article>
             );
           })}
-          <motion.div {...fadeUp}>
-            <Link to="/cost-estimator" className="svc-card clay svc-card-cta">
+
+          {/* Cost Estimator Card */}
+          <motion.article className="svc-vcard svc-vcard-cta clay" {...fadeUp}>
+            <div className="svc-vcard-cta-inner">
               <div className="svc-icon"><Calculator size={26} strokeWidth={1.6} /></div>
-              <h3>Estimate Your Cost</h3>
-              <p>Get an instant budget idea for your interior project.</p>
-              <span className="svc-more">Try Calculator <ArrowRight size={14} /></span>
-            </Link>
-          </motion.div>
+              <span className="svc-cta-tag">Instant Budget Tool</span>
+              <h3>Estimate Your Project Cost</h3>
+              <p>Calculate a tailored ballpark budget for your apartment, office, or renovation in seconds.</p>
+              <Link to="/cost-estimator" className="pill-btn" style={{ marginTop: 'auto', justifyContent: 'center' }}>
+                Try Cost Calculator <ArrowRight size={15} />
+              </Link>
+            </div>
+          </motion.article>
         </div>
       </div>
     </section>
@@ -158,7 +207,7 @@ export function FeaturedProjects({ limit = 6 }) {
   return (
     <section className="section">
       <div className="container">
-        <SectionHead eyebrow="Portfolio" title="Featured" script="Projects" sub="A selection of spaces we've designed and delivered." />
+        <SectionHead eyebrow="Selected Works" title="Featured" script="Projects" />
         <div className="proj-tabs">
           {cats.map((c) => (
             <button key={c} className={c === cat ? 'active' : ''} onClick={() => setCat(c)}>{c}</button>
@@ -167,7 +216,7 @@ export function FeaturedProjects({ limit = 6 }) {
         <motion.div layout className="grid-3">
           <AnimatePresence mode="popLayout">
             {list.map((p) => (
-              <motion.div key={p.id} layout initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.92 }} transition={{ duration: 0.4 }}>
+              <motion.div key={p.id} layout initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.94 }} transition={{ duration: 0.35 }}>
                 <Link to={`/project/${p.id}`} className="proj-card">
                   <img src={p.image} alt={p.title} loading="lazy" />
                   <div className="proj-info">
@@ -188,21 +237,38 @@ export function FeaturedProjects({ limit = 6 }) {
   );
 }
 
-/* ---------------- PROCESS ---------------- */
-export function ProcessTimeline() {
+/* ---------------- UNIFIED 6-STEP DESIGN PROCESS ---------------- */
+export function ProcessTimeline({ showCta = false }) {
   return (
     <section className="section dark">
       <div className="container">
-        <SectionHead eyebrow="How We Work" title="Our Design" script="Process" sub="A clear, transparent journey from first idea to final handover." />
+        <SectionHead
+          eyebrow="How We Work"
+          title="Our Design"
+          script="Process"
+          sub="A clear, step-by-step journey from your first idea to the final handover."
+        />
         <div className="grid-3 proc-grid">
           {processSteps.map((s, k) => (
-            <motion.div key={s.title} className="proc-card" {...fadeUp} transition={{ duration: 0.6, delay: (k % 3) * 0.12 }}>
+            <motion.div
+              key={s.title}
+              className="proc-card"
+              {...fadeUp}
+              transition={{ duration: 0.5, delay: (k % 3) * 0.08 }}
+            >
               <span className="proc-num">{String(k + 1).padStart(2, '0')}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
             </motion.div>
           ))}
         </div>
+        {showCta && (
+          <div className="center mt-3">
+            <Link to="/process" className="pill-btn glass" id="home-process-cta">
+              Explore Full Process <ArrowRight size={15} />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -220,16 +286,16 @@ export function TestimonialSlider() {
   return (
     <section className="section cream">
       <div className="container">
-        <SectionHead eyebrow="Testimonials" title="What Our" script="Clients Say" />
+        <SectionHead eyebrow="Client Stories" title="Trusted by" script="Homeowners & Brands" />
         <div className="testi-row">
           <AnimatePresence mode="popLayout">
             {visible.map((t, k) => (
-              <motion.div key={t.name} className={`testi-card clay ${k === 0 ? 'lead' : ''}`} layout initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -60 }} transition={{ duration: 0.5 }}>
-                <Quote className="testi-quote" size={34} />
-                <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={15} fill="currentColor" />)}</div>
+              <motion.div key={t.name} className={`testi-card clay ${k === 0 ? 'lead' : ''}`} layout initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.45 }}>
+                <Quote className="testi-quote" size={30} />
+                <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={14} fill="currentColor" />)}</div>
                 <p>"{t.text}"</p>
                 <div className="testi-person">
-                  <div className="testi-avatar">{t.name.split(' ').map((w) => w[0]).join('')}</div>
+                  <div className="testi-avatar" aria-hidden="true"><UserRound size={20} strokeWidth={1.8} /></div>
                   <div><strong>{t.name}</strong><span>{t.role}</span></div>
                 </div>
               </motion.div>
@@ -251,8 +317,8 @@ export function CostCTA() {
     <section className="cta-band">
       <div className="container cta-inner">
         <motion.div {...fadeUp}>
-          <h2>Creative Design. Professional Service. <em>Quality You Can Trust.</em></h2>
-          <p>From the initial concept to the final outcome — get a free consultation or estimate your project cost.</p>
+          <h2>Ready to Build Your <em>Dream Space?</em></h2>
+          <p>Book a free consultation or get an instant project cost estimate.</p>
         </motion.div>
         <motion.div className="cta-btns" {...fadeUp}>
           <Link to="/cost-estimator" className="pill-btn glass" id="cta-calculator"><Calculator size={16} /> Cost Calculator</Link>
@@ -285,7 +351,7 @@ export function BlogPreview() {
         <SectionHead eyebrow="Insights" title="Latest From Our" script="Blog" />
         <div className="grid-3">
           {blogPosts.map((p, k) => (
-            <motion.div key={p.slug} {...fadeUp} transition={{ duration: 0.6, delay: k * 0.1 }}><BlogCard post={p} /></motion.div>
+            <motion.div key={p.slug} {...fadeUp} transition={{ duration: 0.5, delay: k * 0.08 }}><BlogCard post={p} /></motion.div>
           ))}
         </div>
       </div>

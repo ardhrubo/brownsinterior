@@ -29,40 +29,40 @@ export default function ProjectDetail() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div style={{ marginBottom: '1rem' }}>
-            <span style={{ color: 'var(--accent-color)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem', fontWeight: '600' }}>{project.category}</span>
+          <div style={{ marginBottom: '0.75rem' }}>
+            <span style={{ color: 'var(--accent-color)', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.85rem', fontWeight: '600' }}>{project.category}</span>
           </div>
-          <h1 style={{ fontFamily: 'var(--font-massive)', fontSize: '4rem', color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '-1px', marginBottom: '2rem', lineHeight: '1' }}>{project.title}</h1>
+          <h1 style={{ fontFamily: 'var(--font-massive)', fontSize: 'clamp(1.85rem, 4.8vw, 3.6rem)', color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '-0.5px', marginBottom: '1.75rem', lineHeight: '1.15' }}>{project.title}</h1>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', marginBottom: '3rem', padding: '2rem', background: '#ffffff', borderRadius: '4px', border: '1px solid #e5e5e5' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem', padding: '1.5rem', background: '#ffffff', borderRadius: '14px', border: '1px solid #e5e5e5' }}>
             <div>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Client</p>
-              <p style={{ fontWeight: '600', fontSize: '1.1rem' }}>{project.client}</p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Client</p>
+              <p style={{ fontWeight: '600', fontSize: '1rem' }}>{project.client}</p>
             </div>
             <div>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Location</p>
-              <p style={{ fontWeight: '600', fontSize: '1.1rem' }}>{project.location}</p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Location</p>
+              <p style={{ fontWeight: '600', fontSize: '1rem' }}>{project.location}</p>
             </div>
             <div>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Year</p>
-              <p style={{ fontWeight: '600', fontSize: '1.1rem' }}>{project.year}</p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginBottom: '0.35rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Year</p>
+              <p style={{ fontWeight: '600', fontSize: '1rem' }}>{project.year}</p>
             </div>
           </div>
 
-          <div style={{ marginBottom: '4rem' }}>
-            <img src={project.image} alt={project.title} style={{ width: '100%', height: 'auto', maxHeight: '70vh', objectFit: 'cover', borderRadius: '4px' }} />
+          <div style={{ marginBottom: '3rem' }}>
+            <img src={project.image} alt={project.title} style={{ width: '100%', height: 'auto', maxHeight: '68vh', objectFit: 'cover', borderRadius: '16px' }} />
           </div>
 
-          <div style={{ maxWidth: '800px', margin: '0 auto 4rem auto' }}>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', marginBottom: '1.5rem' }}>Project Overview</h2>
-            <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: '1.8' }}>{project.description}</p>
+          <div style={{ maxWidth: '800px', margin: '0 auto 3.5rem auto' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.4rem, 3vw, 2rem)', marginBottom: '1rem' }}>Project Overview</h2>
+            <p style={{ fontSize: '1.02rem', color: '#444', lineHeight: '1.8' }}>{project.description}</p>
           </div>
 
           <div>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>Gallery</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.4rem, 3vw, 2rem)', marginBottom: '1.5rem', textAlign: 'center' }}>Gallery</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
               {project.gallery.map((img, idx) => (
-                <img key={idx} src={img} alt={`${project.title} gallery ${idx+1}`} style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '4px', cursor: 'pointer', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.02)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
+                <img key={idx} src={img} alt={`${project.title} gallery ${idx+1}`} style={{ width: '100%', height: '260px', objectFit: 'cover', borderRadius: '14px', cursor: 'pointer', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.02)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
               ))}
             </div>
           </div>

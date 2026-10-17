@@ -110,12 +110,36 @@
 @media (max-width: 1024px) {
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-overlay {
+    opacity: 1;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.84) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
+  }
+  .portfolio-info {
+    transform: translateY(0);
+  }
+  .portfolio-title {
+    font-size: 1.35rem;
+  }
+  .portfolio-link {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    transform: scale(1) rotate(0);
   }
 }
 
 @media (max-width: 640px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
   }
 }
 

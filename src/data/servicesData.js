@@ -13,6 +13,18 @@ export const servicesData = [
     image: img('photo-1618221195710-dd6b41faaea6'),
     description: 'Thoughtfully crafted interiors balancing comfort, material warmth, and function.',
     intro: 'We plan every room around how you live and work — combining spatial flow, custom woodwork, and layered lighting.',
+    specs: [
+      { label: 'Scope', value: 'Residential, Office & Retail' },
+      { label: 'Timeline', value: '20 – 90 Days' },
+      { label: 'Delivery', value: '3D Design + Full Turnkey' }
+    ],
+    highlights: ['Residential Homes', 'Corporate Offices', 'Cafés & Retail', 'Modular Kitchens'],
+    features: [
+      'End-to-end 2D furniture zoning & photorealistic 3D views',
+      'Factory-finished custom cabinetry, wardrobes & kitchens',
+      'Layered architectural lighting, false ceilings & wall paneling',
+      'Dedicated engineer supervision with itemized BOQ costing'
+    ],
     options: [
       {
         slug: 'residential-interior',
@@ -123,6 +135,18 @@ export const servicesData = [
     image: img('photo-1600596542815-ffad4c1539a9'),
     description: 'From concept masterplans to construction documents with bold character.',
     intro: 'We design buildings that maximize natural light, ventilation, and plot value — ready for approval and site execution.',
+    specs: [
+      { label: 'Scope', value: 'Residential & Commercial Plots' },
+      { label: 'Compliance', value: 'RAJUK & BNBC Standards' },
+      { label: 'Deliverable', value: '3D Facade + CAD Blueprints' }
+    ],
+    highlights: ['Master Planning', 'Floor Layouts', '3D Facades', 'Working Drawings'],
+    features: [
+      'Site zoning, sun-path & natural cross-ventilation planning',
+      'Zero-wastage floor plans & proportional 4-side elevations',
+      'Contemporary day/night 3D exterior & facade styling',
+      'RAJUK approval & millimeter-accurate working drawing sets'
+    ],
     options: [
       {
         slug: 'building-design-planning',
@@ -233,6 +257,18 @@ export const servicesData = [
     image: img('photo-1541888946425-d81bb19240f5'),
     description: 'Buildable, cost-efficient structural engineering led by Engr. Aslam Sheikh.',
     intro: 'Every structure we engineer is analyzed for seismic safety, material economy, and long-term durability.',
+    specs: [
+      { label: 'Led By', value: 'Engr. Aslam Sheikh' },
+      { label: 'Standards', value: 'BNBC, ACI & Seismic Codes' },
+      { label: 'Deliverable', value: 'ETABS Analysis + Full BBS' }
+    ],
+    highlights: ['RCC & Steel Design', 'ETABS Load Modeling', 'Rebar Detailing', 'Site Audits'],
+    features: [
+      'Deep pile & mat foundation engineering based on soil reports',
+      'Dynamic earthquake & wind load simulations in ETABS/STAAD.Pro',
+      'Ductile reinforcement detailing & Bar Bending Schedules (BBS)',
+      'On-site structural inspection, health audits & retrofitting'
+    ],
     options: [
       {
         slug: 'structural-design-consultancy',
@@ -255,14 +291,14 @@ export const servicesData = [
         gallery: [
           img('photo-1504307651254-35680f356dfd', 1200),
           img('photo-1541888946425-d81bb19240f5', 1000),
-          img('photo-1581094794329-c8112a89af12', 1000)
+          img('photo-1503387762-592deb58ef4e', 1000)
         ]
       },
       {
         slug: 'structural-analysis',
         title: 'Structural Analysis',
         tagline: 'Seismic & wind load modeling with ETABS and STAAD.Pro.',
-        image: img('photo-1581094794329-c8112a89af12', 1400),
+        image: img('photo-1503387762-592deb58ef4e', 1400),
         desc: 'Computer-simulated load testing for earthquake resistance and structural health.',
         specs: [
           { label: 'Software', value: 'ETABS, SAFE & STAAD.Pro' },
@@ -277,7 +313,7 @@ export const servicesData = [
           'Deflection, drift & stress safety verification'
         ],
         gallery: [
-          img('photo-1581094794329-c8112a89af12', 1200),
+          img('photo-1503387762-592deb58ef4e', 1200),
           img('photo-1503387762-592deb58ef4e', 1000),
           img('photo-1504307651254-35680f356dfd', 1000)
         ]
@@ -303,11 +339,11 @@ export const servicesData = [
         gallery: [
           img('photo-1503387762-592deb58ef4e', 1200),
           img('photo-1541888946425-d81bb19240f5', 1000),
-          img('photo-1581094794329-c8112a89af12', 1000)
+          img('photo-1503387762-592deb58ef4e', 1000)
         ]
       }
     ],
-    gallery: [img('photo-1503387762-592deb58ef4e', 900), img('photo-1581094794329-c8112a89af12', 900), img('photo-1504307651254-35680f356dfd', 900)],
+    gallery: [img('photo-1503387762-592deb58ef4e', 900), img('photo-1503387762-592deb58ef4e', 900), img('photo-1504307651254-35680f356dfd', 900)],
   },
   {
     slug: 'renovation-remodeling',
@@ -319,6 +355,18 @@ export const servicesData = [
     image: img('photo-1581858726788-75bc0f6a952d'),
     description: 'Breathe new life into existing homes and offices with clean, fast execution.',
     intro: 'We reimagine older apartments and commercial floors with structural care, modern finishes, and minimal disruption.',
+    specs: [
+      { label: 'Scope', value: 'Civil + MEP + Interior Remodeling' },
+      { label: 'Timeline', value: '15 – 60 Days Execution' },
+      { label: 'Guarantee', value: 'Dust-Controlled & On-Schedule' }
+    ],
+    highlights: ['Open-Plan Makeovers', 'Waterproof Remodeling', 'Phased Office Refits', 'Smart Storage'],
+    features: [
+      'Safe structural wall modifications & open-plan layout upgrades',
+      'Complete electrical rewiring, concealed plumbing & waterproofing',
+      'New marble, large-format tile & engineered wooden flooring',
+      'Custom built-in storage, modular kitchens & luxury washrooms'
+    ],
     options: [
       {
         slug: 'residential-renovation',
@@ -429,6 +477,18 @@ export const servicesData = [
     image: img('photo-1540575467063-178a50c2df87'),
     description: 'High-impact exhibition stalls engineered for rapid setup and unforgettable branding.',
     intro: 'Your booth has seconds to capture attention. We design, render, and fabricate stands that invite visitors in.',
+    specs: [
+      { label: 'Venues', value: 'ICCB, BICC & International Expos' },
+      { label: 'Setup', value: '12 – 24 Hours On-Site Build' },
+      { label: 'Deliverables', value: '3D Renders + Turnkey Fabrication' }
+    ],
+    highlights: ['Custom Pavilions', 'Modular Stands', '4K 3D Booth Renders', 'Overnight Setup'],
+    features: [
+      'High-visibility island, peninsula & corner booth architecture',
+      '4K photorealistic 3D booth visualization & lighting simulation',
+      'Backlit fabric walls, LED video walls & illuminated product podiums',
+      'Complete carpentry fabrication, electrical rigging & overnight setup'
+    ],
     options: [
       {
         slug: 'exhibition-booth-design-service',
@@ -563,6 +623,18 @@ export const servicesData = [
     image: img('photo-1504307651254-35680f356dfd'),
     description: 'Transparent costing, strict quality control, and hands-on site management.',
     intro: 'We coordinate every contractor, material delivery, and quality check so you can relax while we build.',
+    specs: [
+      { label: 'Supervision', value: 'Daily On-Site Civil & Interior Engineers' },
+      { label: 'Budgeting', value: 'Itemized BOQ with Zero Hidden Costs' },
+      { label: 'Reporting', value: 'Weekly WhatsApp & Cloud Video Logs' }
+    ],
+    highlights: ['Daily Site Engineers', 'Itemized BOQ', 'Milestone Gantt', 'Verified Materials'],
+    features: [
+      'Room-by-room itemized Bills of Quantities (BOQ) before work starts',
+      'Milestone-driven Gantt schedules coordinating civil, MEP & woodwork',
+      'Direct manufacturer material sourcing & physical sample board approvals',
+      'Daily engineer quality audits & weekly video walkthrough updates'
+    ],
     options: [
       {
         slug: 'site-supervision',
@@ -585,7 +657,7 @@ export const servicesData = [
         gallery: [
           img('photo-1541888946425-d81bb19240f5', 1200),
           img('photo-1504307651254-35680f356dfd', 1000),
-          img('photo-1581094794329-c8112a89af12', 1000)
+          img('photo-1503387762-592deb58ef4e', 1000)
         ]
       },
       {
@@ -673,6 +745,18 @@ export const servicesData = [
     image: img('photo-1616486338812-3dadae4b4ace'),
     description: 'Specialized design and execution services that complete your space.',
     intro: 'From handcrafted furniture pieces to full remote project delivery for NRB clients abroad.',
+    specs: [
+      { label: 'Specialties', value: 'Bespoke Furniture, 3D & Turnkey' },
+      { label: 'Global Reach', value: 'Dedicated NRB Remote Execution' },
+      { label: 'Warranty', value: '1-Year Service & Craftsmanship Support' }
+    ],
+    highlights: ['Bespoke Teak Furniture', '4K 3D Walkthroughs', 'Lighting & Ceiling', 'NRB Remote Turnkey'],
+    features: [
+      'Handcrafted solid wood, PU lacquer & upholstered custom furniture',
+      'Photorealistic 4K interior rendering & 360° virtual walkthroughs',
+      'Architectural gypsum ceilings, magnetic tracks & smart dimmer scenes',
+      'Complete remote turnkey delivery in Dhaka for NRB clients worldwide'
+    ],
     options: [
       {
         slug: 'custom-furniture-design',

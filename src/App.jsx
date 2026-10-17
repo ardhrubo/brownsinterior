@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Team from './components/Team';
-import Clients from './components/Clients';
 import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
 import Contact from './components/Contact';
@@ -13,7 +12,7 @@ import ServicesPage from './components/ServicesPage';
 import ServiceDetail from './components/ServiceDetail';
 import {
   HomeHero, StatsBar, ServicesGrid, FeaturedProjects, ProcessTimeline,
-  TestimonialSlider, CostCTA, BlogPreview, PageHero,
+  TestimonialSlider, CostCTA, PageHero,
 } from './components/HomeSections';
 import { ProcessPage, TestimonialsPage, BlogPage, BlogPost, CostCalculatorPage } from './components/ExtraPages';
 
@@ -25,7 +24,8 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Pages
+// Streamlined, natural storytelling Home Page sequence:
+// 1. Hero -> 2. Stats -> 3. The Studio -> 4. Services -> 5. Projects -> 6. Process -> 7. Leadership -> 8. Testimonials -> 9. Contact
 const Home = () => (
   <main>
     <HomeHero />
@@ -33,9 +33,9 @@ const Home = () => (
     <About />
     <ServicesGrid />
     <FeaturedProjects />
+    <ProcessTimeline showCta />
+    <Team />
     <TestimonialSlider />
-    <Clients />
-    <BlogPreview />
     <Contact showHero={false} />
   </main>
 );
@@ -43,9 +43,10 @@ const Home = () => (
 const AboutPage = () => (
   <main>
     <PageHero title="About Us" sub="Designing beautiful spaces with quality and purpose." image="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2000" />
+    <StatsBar />
     <About full />
+    <Team cream />
     <ProcessTimeline />
-    <Team />
     <CostCTA />
   </main>
 );
@@ -60,6 +61,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
+        <Route path="/services/:categorySlug/:slug" element={<ServiceDetail />} />
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/blog" element={<BlogPage />} />

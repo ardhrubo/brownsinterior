@@ -3,49 +3,49 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
+import { PageHero, CostCTA } from './HomeSections';
 import './Portfolio.css';
 
 export default function ProjectsPage() {
   return (
-    <main style={{ paddingTop: '120px', backgroundColor: '#fafafa', minHeight: '100vh', paddingBottom: '80px' }}>
-      <div className="container">
-        <motion.div 
-          className="section-header"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="title-massive" style={{ color: '#1a1a1a', fontSize: '5rem', marginBottom: '1rem', textAlign: 'center' }}>ALL PROJECTS</h1>
-          <p className="contact-subtitle" style={{ textAlign: 'center' }}>Explore our complete portfolio of interior and architectural excellence.</p>
-        </motion.div>
-
-        <div className="portfolio-grid" style={{ marginTop: '4rem' }}>
-          {projectsData.map((project, index) => (
-            <motion.div 
-              key={project.id}
-              className="portfolio-item"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Link to={`/project/${project.id}`} style={{ display: 'block', width: '100%', height: '100%' }}>
-                <div className="portfolio-image-wrapper">
-                  <img src={project.image} alt={project.title} />
-                  <div className="portfolio-overlay">
-                    <div className="portfolio-info">
-                      <span className="portfolio-category">{project.category}</span>
-                      <h3 className="portfolio-title">{project.title}</h3>
-                    </div>
-                    <div className="portfolio-link">
-                      <ArrowUpRight size={24} />
+    <main style={{ backgroundColor: '#fafafa', minHeight: '100vh' }}>
+      <PageHero
+        title="Our Projects"
+        sub="Explore our portfolio of residential, commercial, architectural, and exhibition excellence."
+        image="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2000"
+        crumb="Projects"
+      />
+      <section className="section">
+        <div className="container">
+          <div className="portfolio-grid">
+            {projectsData.map((project, index) => (
+              <motion.div
+                key={project.id}
+                className="portfolio-item"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+              >
+                <Link to={`/project/${project.id}`} style={{ display: 'block', width: '100%', height: '100%' }}>
+                  <div className="portfolio-image-wrapper">
+                    <img src={project.image} alt={project.title} loading="lazy" />
+                    <div className="portfolio-overlay">
+                      <div className="portfolio-info">
+                        <span className="portfolio-category">{project.category}</span>
+                        <h3 className="portfolio-title">{project.title}</h3>
+                      </div>
+                      <div className="portfolio-link">
+                        <ArrowUpRight size={22} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+      <CostCTA />
     </main>
   );
 }

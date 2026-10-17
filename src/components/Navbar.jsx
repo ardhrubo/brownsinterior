@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Calculator, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, Calculator, ArrowRight } from 'lucide-react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 import './Navbar.css';
@@ -8,7 +8,7 @@ import './Navbar.css';
 const links = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About Us' },
-  { to: '/services', label: 'Services', mega: true },
+  { to: '/services', label: 'Services', multimenu: true },
   { to: '/projects', label: 'Projects' },
   { to: '/process', label: 'Process' },
   { to: '/testimonials', label: 'Testimonials' },
@@ -16,13 +16,15 @@ const links = [
   { to: '/contact', label: 'Contact' },
 ];
 
-const transparentPaths = ['/', '/about', '/process', '/testimonials', '/blog', '/cost-estimator', '/contact'];
+const transparentPaths = ['/', '/about', '/services', '/process', '/testimonials', '/blog', '/cost-estimator', '/contact'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [megaOpen, setMegaOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(servicesData[0].slug);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(true);
+  const [expandedMobileCategory, setExpandedMobileCategory] = useState('interior-design');
   const { pathname } = useLocation();
 
   const canBeTransparent =
@@ -40,24 +42,13 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
-    setMegaOpen(false);
+    setMenuOpen(false);
   }, [pathname]);
-
-  const handleLogoClick = () => {
-    setMobileMenuOpen(false);
-    setMegaOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <header className={`navbar ${solid ? 'solid' : 'clear'}`}>
       <div className="nav-container">
-        <Link
-          to="/"
-          className="logo-container"
-          aria-label="Brown's Interior home"
-          onClick={handleLogoClick}
-        >
+        <Link to="/" className="logo-container" aria-label="Brown's Interior home">
           <img src="/logo.svg" alt="Brown's Interior Logo" className="navbar-logo-img" />
         </Link>
 
@@ -65,58 +56,87 @@ export default function Navbar() {
         <nav className="desktop-nav">
           <ul>
             {links.map((l) =>
-              l.mega ? (
+              l.multimenu ? (
                 <li
                   key={l.to}
-                  className="has-mega"
-                  onMouseEnter={() => setMegaOpen(true)}
-                  onMouseLeave={() => setMegaOpen(false)}
+                  className="has-multimenu"
+                  onMouseEnter={() => setMenuOpen(true)}
+                  onMouseLeave={() => setMenuOpen(false)}
                 >
-                  <NavLink to={l.to} id="nav-services" className="nav-link">
-                    {l.label} <ChevronDown size={14} className={`chev ${megaOpen ? 'open' : ''}`} />
+                  <NavLink
+                    to={l.to}
+                    id="nav-services"
+                    className={({ isActive }) =>
+                      `nav-link ${isActive || pathname.startsWith('/services/') ? 'active' : ''}`
+                    }
+                  >
+                    {l.label} <ChevronDown size={14} className={`chev ${menuOpen ? 'open' : ''}`} />
                   </NavLink>
-                  <div className={`mega-menu ${megaOpen ? 'open' : ''}`}>
-                    <div className="mega-grid">
+
+                  {/* Cascading Multi-Menu Dropdown */}
+                  <div className={`services-multimenu ${menuOpen ? 'open' : ''}`}>
+                    <ul className="multimenu-primary">
                       {servicesData.map((s) => {
                         const Icon = s.icon;
+                        const isCatActive = activeCategory === s.slug;
                         return (
-                          <div key={s.slug} className="mega-col">
+                          <li
+                            key={s.slug}
+                            className={`multimenu-item ${isCatActive ? 'active' : ''}`}
+                            onMouseEnter={() => setActiveCategory(s.slug)}
+                          >
                             <Link
                               to={`/services/${s.slug}`}
-                              className="mega-heading"
-                              onClick={() => setMegaOpen(false)}
+                              className={`multimenu-cat-link ${pathname === `/services/${s.slug}` ? 'current' : ''}`}
+                              onClick={() => setMenuOpen(false)}
                             >
-                              <Icon size={16} /> {s.shortTitle || s.title}
+                              <span className="multimenu-cat-icon">
+                                <Icon size={16} />
+                              </span>
+                              <span className="multimenu-cat-text">{s.title}</span>
+                              <ChevronRight size={15} className="multimenu-arrow" />
                             </Link>
-                            <ul>
-                              {s.options.map((opt) => (
-                                <li key={opt.slug}>
-                                  <Link
-                                    to={`/services/${opt.slug}`}
-                                    className="mega-item"
-                                    onClick={() => setMegaOpen(false)}
-                                  >
-                                    {opt.title}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
+
+                            {/* Submenu flying out right beside this service category */}
+                            <div className={`multimenu-flyout ${isCatActive ? 'visible' : ''}`}>
+                              <div className="multimenu-flyout-head">
+                                <Link
+                                  to={`/services/${s.slug}`}
+                                  className="multimenu-flyout-title"
+                                  onClick={() => setMenuOpen(false)}
+                                >
+                                  <span>{s.title}</span>
+                                  <ArrowRight size={13} />
+                                </Link>
+                                <p>{s.tagline}</p>
+                              </div>
+
+                              <ul className="multimenu-sub-list">
+                                {s.options.map((opt) => (
+                                  <li key={opt.slug}>
+                                    <Link
+                                      to={`/services/${opt.slug}`}
+                                      className={`multimenu-sub-link ${pathname === `/services/${opt.slug}` ? 'active' : ''}`}
+                                      onClick={() => setMenuOpen(false)}
+                                    >
+                                      <span className="multimenu-sub-dot" />
+                                      <span className="multimenu-sub-label">{opt.title}</span>
+                                      <ArrowRight size={13} className="multimenu-sub-go" />
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </li>
                         );
                       })}
-                    </div>
-                    <div className="mega-footer-bar">
-                      <div className="mega-footer-note">
-                        Complete architecture, engineering &amp; turnkey interior solutions in Dhaka.
-                      </div>
-                      <div className="mega-footer-actions">
-                        <Link to="/services" className="mega-foot-btn" onClick={() => setMegaOpen(false)}>
-                          All Services Overview <ArrowRight size={14} />
-                        </Link>
-                        <Link to="/cost-estimator" className="mega-foot-btn highlight" onClick={() => setMegaOpen(false)}>
-                          <Calculator size={14} /> Cost Calculator
-                        </Link>
-                      </div>
+                    </ul>
+
+                    <div className="multimenu-footer">
+                      <Link to="/services" className="multimenu-all-link" onClick={() => setMenuOpen(false)}>
+                        <span>All Services Overview</span>
+                        <ArrowRight size={14} />
+                      </Link>
                     </div>
                   </div>
                 </li>
@@ -140,12 +160,16 @@ export default function Navbar() {
           <Calculator size={15} /> Cost Calculator
         </Link>
 
-        <button className="mobile-toggle" aria-label="Toggle menu" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button
+          className="mobile-toggle"
+          aria-label="Toggle menu"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
           {mobileMenuOpen ? <X className="menu-icon" /> : <Menu className="menu-icon" />}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer with Nested Services Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -156,8 +180,8 @@ export default function Navbar() {
           >
             <ul>
               {links.map((l) =>
-                l.mega ? (
-                  <li key={l.to} className="mobile-services-section">
+                l.multimenu ? (
+                  <li key={l.to} className="mobile-mega-parent">
                     <div className="mobile-services-header">
                       <Link
                         to="/services"
@@ -168,50 +192,76 @@ export default function Navbar() {
                       </Link>
                       <button
                         type="button"
-                        className="mobile-services-toggle-btn"
+                        className="mobile-services-toggle"
+                        aria-label="Toggle Services List"
                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                        aria-label="Toggle Services list"
                       >
                         <ChevronDown size={18} className={`chev ${mobileServicesOpen ? 'open' : ''}`} />
                       </button>
                     </div>
 
                     {mobileServicesOpen && (
-                      <div className="mobile-clean-services-container">
+                      <div className="mobile-multimenu">
                         <Link
                           to="/services"
-                          className="mobile-all-services-pill"
+                          className="mobile-all-services-cta"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          All Services Overview <ArrowRight size={13} />
+                          <span>All Services Overview</span>
+                          <ArrowRight size={14} />
                         </Link>
 
-                        <div className="mobile-clean-grid">
+                        <div className="mobile-category-list">
                           {servicesData.map((s) => {
                             const Icon = s.icon;
+                            const isExpanded = expandedMobileCategory === s.slug;
                             return (
-                              <div key={s.slug} className="mobile-clean-category">
-                                <Link
-                                  to={`/services/${s.slug}`}
-                                  className="mobile-clean-cat-title"
-                                  onClick={() => setMobileMenuOpen(false)}
+                              <div key={s.slug} className={`mobile-cat-card ${isExpanded ? 'active' : ''}`}>
+                                <div
+                                  className="mobile-cat-header"
+                                  onClick={() =>
+                                    setExpandedMobileCategory(isExpanded ? null : s.slug)
+                                  }
                                 >
-                                  <Icon size={16} className="text-accent" />
-                                  <span>{s.title}</span>
-                                </Link>
-                                <ul className="mobile-clean-options">
-                                  {s.options.map((opt) => (
-                                    <li key={opt.slug}>
+                                  <div className="mobile-cat-title-wrap">
+                                    <Icon size={18} className="mobile-cat-icon" />
+                                    <span className="mobile-cat-name">{s.title}</span>
+                                  </div>
+                                  <ChevronDown size={16} className={`chev ${isExpanded ? 'open' : ''}`} />
+                                </div>
+
+                                <AnimatePresence>
+                                  {isExpanded && (
+                                    <motion.div
+                                      initial={{ opacity: 0, height: 0 }}
+                                      animate={{ opacity: 1, height: 'auto' }}
+                                      exit={{ opacity: 0, height: 0 }}
+                                      className="mobile-sub-options-box"
+                                    >
+                                      <ul className="mobile-options-list">
+                                        {s.options.map((opt) => (
+                                          <li key={opt.slug}>
+                                            <Link
+                                              to={`/services/${opt.slug}`}
+                                              onClick={() => setMobileMenuOpen(false)}
+                                              className="mobile-option-link"
+                                            >
+                                              <span className="dot">•</span>
+                                              <span>{opt.title}</span>
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
                                       <Link
-                                        to={`/services/${opt.slug}`}
-                                        className="mobile-clean-opt-link"
+                                        to={`/services/${s.slug}`}
+                                        className="mobile-view-service-btn"
                                         onClick={() => setMobileMenuOpen(false)}
                                       >
-                                        {opt.title}
+                                        View All {s.shortTitle || s.title} <ArrowRight size={13} />
                                       </Link>
-                                    </li>
-                                  ))}
-                                </ul>
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
                               </div>
                             );
                           })}
@@ -221,9 +271,14 @@ export default function Navbar() {
                   </li>
                 ) : (
                   <li key={l.to}>
-                    <Link to={l.to} className="mobile-main-link" onClick={() => setMobileMenuOpen(false)}>
+                    <NavLink
+                      to={l.to}
+                      end={l.to === '/'}
+                      className="mobile-main-link"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       {l.label}
-                    </Link>
+                    </NavLink>
                   </li>
                 )
               )}

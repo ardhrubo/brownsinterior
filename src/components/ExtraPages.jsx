@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Star, Quote, ArrowLeft, Calculator, Phone } from 'lucide-react';
+import { Star, Quote, ArrowLeft, Calculator, Phone, UserRound } from 'lucide-react';
 import { PageHero, SectionHead, ProcessTimeline, CostCTA, TestimonialSlider, BlogCard } from './HomeSections';
 import { testimonials, processSteps, blogPosts } from '../data/siteData';
 import '../styles/site.css';
@@ -11,15 +11,35 @@ import './ExtraPages.css';
 export function ProcessPage() {
   return (
     <main>
-      <PageHero title="Our Process" sub="A clear, step-by-step journey from your first idea to the final handover." image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000" />
-      <section className="section">
+      <PageHero
+        title="Our Process"
+        sub="A clear, step-by-step journey from your first idea to the final handover."
+        image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000"
+      />
+      <ProcessTimeline />
+      <section className="section cream">
         <div className="container">
-          <SectionHead eyebrow="Step by Step" title="How We" script="Work" />
+          <SectionHead
+            eyebrow="Step-by-Step Journey"
+            title="What to"
+            script="Expect"
+            sub="Every phase of your project is documented, scheduled, and supervised by our engineering and design team."
+          />
           <div className="timeline">
             {processSteps.map((s, k) => (
-              <motion.div key={s.title} className={`tl-item ${k % 2 ? 'right' : 'left'}`} initial={{ opacity: 0, x: k % 2 ? 60 : -60 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-                <span className="tl-dot">{k + 1}</span>
-                <div className="tl-card clay"><h3>{s.title}</h3><p>{s.text}</p></div>
+              <motion.div
+                key={s.title}
+                className={`tl-item ${k % 2 ? 'right' : 'left'}`}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: k * 0.06 }}
+              >
+                <span className="tl-dot">{String(k + 1).padStart(2, '0')}</span>
+                <div className="tl-card clay">
+                  <h3>{s.title}</h3>
+                  <p>{s.text}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -44,7 +64,7 @@ export function TestimonialsPage() {
                 <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={15} fill="currentColor" />)}</div>
                 <p>"{t.text}"</p>
                 <div className="testi-person">
-                  <div className="testi-avatar">{t.name.split(' ').map((w) => w[0]).join('')}</div>
+                  <div className="testi-avatar" aria-hidden="true"><UserRound size={20} strokeWidth={1.8} /></div>
                   <div><strong>{t.name}</strong><span>{t.role}</span></div>
                 </div>
               </motion.div>

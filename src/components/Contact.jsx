@@ -19,9 +19,9 @@ export default function Contact({ showHero = true }) {
           {!showHero && (
             <SectionHead
               eyebrow="Get In Touch"
-              title="Let's Build Something"
-              script="Remarkable"
-              sub="Reach out to us directly or fill out the form below to request a consultation and quote."
+              title="Contact"
+              script="Us"
+              sub="Have a project in mind? Reach out to us directly or fill out the form below to request a consultation and quote."
             />
           )}
 

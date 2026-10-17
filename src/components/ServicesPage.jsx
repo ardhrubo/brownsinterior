@@ -1,131 +1,88 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Calculator, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Calculator, Phone } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
+import { PageHero } from './HomeSections';
 import './ServicesPage.css';
 
 export default function ServicesPage() {
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (!hash) return;
-    const t = setTimeout(() => {
-      const el = document.getElementById(hash.slice(1));
-      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
-    }, 100);
-    return () => clearTimeout(t);
-  }, [hash]);
-
   return (
     <main className="sp-page">
-      <section className="sp-hero">
-        <div className="container">
-          <motion.p className="sp-eyebrow" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-            What We Do
-          </motion.p>
-          <motion.h1 className="sp-title" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}>
-            Curated <span className="italic-serif">Services</span>
-          </motion.h1>
-          <motion.p className="sp-lead" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-            Architecture, interior design, engineering &amp; turnkey execution — under one studio.
-          </motion.p>
+      <PageHero
+        title="Our Services"
+        sub="Select a service category to explore our specialized solutions."
+        image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000"
+      />
 
-          <motion.div className="sp-chips" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-            {servicesData.map((s) => {
+      <section className="section cream">
+        <div className="container">
+          <div className="sp-options-grid">
+            {servicesData.map((s, i) => {
               const Icon = s.icon;
               return (
-                <Link key={s.slug} to={`/services#${s.slug}`} className="sp-chip">
-                  <Icon size={14} />
-                  <span>{s.shortTitle || s.title}</span>
-                </Link>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="sp-list">
-        <div className="container">
-          {servicesData.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <motion.article
-                key={s.slug}
-                id={s.slug}
-                className={`sp-showcase-block ${i % 2 ? 'reverse' : ''}`}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.6 }}
-              >
-                {/* Left: Visual Category Cover Card */}
-                <div className="sp-cover-card">
-                  <Link to={`/services/${s.slug}`} className="sp-cover-media">
+                <motion.article
+                  key={s.slug}
+                  className="sp-option-card clay"
+                  id={`service-opt-${s.slug}`}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
+                >
+                  <Link to={`/services/${s.slug}`} className="sp-option-media" aria-label={s.title}>
                     <img src={s.image} alt={s.title} loading="lazy" />
-                    <div className="sp-cover-overlay" />
-                    <span className="sp-cover-num">{s.number}</span>
-                    <div className="sp-cover-Bottom">
-                      <div className="sp-cover-icon"><Icon size={22} /></div>
-                      <div>
-                        <h2>{s.title}</h2>
-                        <p>{s.tagline || s.description}</p>
-                      </div>
+                    <div className="sp-option-shade" />
+                    <span className="sp-option-num">{s.number}</span>
+                    <div className="sp-option-icon">
+                      <Icon size={20} strokeWidth={1.7} />
                     </div>
                   </Link>
-                  <div className="sp-cover-actions">
-                    <Link to={`/services/${s.slug}`} className="sp-cta primary" id={`view-${s.slug}`}>
-                      Explore {s.shortTitle || s.title} <ArrowRight size={14} />
-                    </Link>
-                    <Link to="/contact" className="sp-cta secondary" id={`cta-${s.slug}`}>
-                      Request Quote
-                    </Link>
-                  </div>
-                </div>
 
-                {/* Right: Visual Sub-Option Mini Cards */}
-                <div className="sp-options-grid">
-                  {s.options.map((opt, j) => (
-                    <motion.div
-                      key={opt.slug}
-                      initial={{ opacity: 0, y: 18 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: j * 0.06 }}
-                    >
-                      <Link to={`/services/${opt.slug}`} className="sp-opt-card clay">
-                        <div className="sp-opt-thumb">
-                          <img src={opt.image} alt={opt.title} loading="lazy" />
-                        </div>
-                        <div className="sp-opt-info">
-                          <div className="sp-opt-title-row">
-                            <h3>{opt.title}</h3>
-                            <ArrowUpRight size={16} className="sp-opt-arrow" />
-                          </div>
-                          <p>{opt.tagline || opt.desc}</p>
-                        </div>
+                  <div className="sp-option-body">
+                    <h2>
+                      <Link to={`/services/${s.slug}`}>{s.title}</Link>
+                    </h2>
+                    <p>{s.tagline || s.description}</p>
+
+                    <ul className="sp-sub-list">
+                      {s.options.map((opt) => (
+                        <li key={opt.slug}>
+                          <Link to={`/services/${opt.slug}`} className="sp-sub-link">
+                            <span className="sp-sub-dot" />
+                            <span>{opt.title}</span>
+                            <ArrowRight size={13} className="sp-sub-arrow" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="sp-option-footer">
+                      <span className="sp-option-count">{s.options.length} Services</span>
+                      <Link to={`/services/${s.slug}`} className="sp-option-Action">
+                        Explore Category <ArrowRight size={15} />
                       </Link>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.article>
-            );
-          })}
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       <section className="sp-banner">
         <div className="container sp-banner-inner">
           <div>
-            <h2>Ready to transform your space?</h2>
-            <p>Get an instant budget estimate or book a free consultation with our studio.</p>
+            <h2>Need help choosing the right service?</h2>
+            <p>Book a free consultation or estimate your project budget online.</p>
           </div>
           <div className="sp-banner-btns">
             <Link to="/cost-estimator" className="pill-btn glass" id="services-calc-cta">
               <Calculator size={16} /> Cost Calculator
             </Link>
             <Link to="/contact" className="pill-btn" id="services-contact-cta">
-              <Phone size={16} /> Start Your Project
+              <Phone size={16} /> Free Consultation
             </Link>
           </div>
         </div>
