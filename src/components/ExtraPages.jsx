@@ -30,15 +30,26 @@ export function ProcessPage() {
               <motion.div
                 key={s.title}
                 className={`tl-item ${k % 2 ? 'right' : 'left'}`}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: k * 0.06 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: k * 0.08 }}
               >
                 <span className="tl-dot">{String(k + 1).padStart(2, '0')}</span>
                 <div className="tl-card clay">
+                  <div className="tl-meta-row">
+                    {s.phase && <span className="tl-phase">{s.phase}</span>}
+                    {s.duration && <span className="tl-duration">{s.duration}</span>}
+                  </div>
                   <h3>{s.title}</h3>
                   <p>{s.text}</p>
+                  {s.deliverables && (
+                    <div className="tl-tags">
+                      {s.deliverables.map((d) => (
+                        <span key={d} className="tl-tag">{d}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -196,7 +207,15 @@ export function CostCalculatorPage() {
             <span>Estimated Budget</span>
             <motion.strong key={Math.round(total)} initial={{ scale: 0.9, opacity: 0.5 }} animate={{ scale: 1, opacity: 1 }}>{fmt(total * 0.9)} – {fmt(total * 1.1)}</motion.strong>
             <p>This is an approximate range. Final cost depends on site conditions, design and material choices.</p>
-            <Link to="/contact" className="pill-btn" id="calc-get-quote"><Phone size={16} /> Get Exact Quote</Link>
+            <Link
+              to={`/contact?category=${encodeURIComponent(
+                type === 'booth' ? 'Exhibition & Trade Show Booth Design' : 'Interior Design'
+              )}&area=${area}&budget=${encodeURIComponent(`${fmt(total * 0.9)} – ${fmt(total * 1.1)}`)}`}
+              className="pill-btn"
+              id="calc-get-quote"
+            >
+              <Phone size={16} /> Get Exact Quote
+            </Link>
           </aside>
         </div>
       </section>

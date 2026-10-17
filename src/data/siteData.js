@@ -8,12 +8,48 @@ export const testimonials = [
 ];
 
 export const processSteps = [
-  { title: 'Consultation', text: 'We meet to understand your needs, lifestyle, vision and budget, and visit the site to take measurements.' },
-  { title: 'Concept & Space Planning', text: 'We develop layouts and mood boards that define the look, feel and functionality of your space.' },
-  { title: '2D Drawings & 3D Visualization', text: 'Detailed drawings and realistic 3D renders help you see the final result before any work begins.' },
-  { title: 'Material Selection & Costing', text: 'We help you choose quality materials and provide a clear, itemised cost estimate.' },
-  { title: 'Execution & Supervision', text: 'Our skilled team executes the work with regular site supervision and quality control.' },
-  { title: 'Handover & Support', text: 'A final quality check and walkthrough, followed by after-service support when you need it.' },
+  {
+    step: '01',
+    phase: 'Discovery',
+    duration: 'Days 1 – 3',
+    title: 'Consultation & Site Visit',
+    text: 'We discuss your vision, budget, and take laser site measurements.',
+  },
+  {
+    step: '02',
+    phase: 'Planning',
+    duration: 'Week 1 – 2',
+    title: 'Concept & Space Planning',
+    text: 'Smart 2D layouts and mood boards tailored to your space.',
+  },
+  {
+    step: '03',
+    phase: '3D Preview',
+    duration: 'Week 2 – 3',
+    title: '2D & 3D Visualization',
+    text: 'Photorealistic 3D renders and working drawings before we build.',
+  },
+  {
+    step: '04',
+    phase: 'Budgeting',
+    duration: 'Week 3 – 4',
+    title: 'Materials & Costing',
+    text: 'Curated material samples with a transparent, itemized BOQ.',
+  },
+  {
+    step: '05',
+    phase: 'Execution',
+    duration: 'Week 4 – 10',
+    title: 'Build & Supervision',
+    text: 'Turnkey execution under daily on-site engineer supervision.',
+  },
+  {
+    step: '06',
+    phase: 'Delivery',
+    duration: 'Final Week',
+    title: 'Handover & Support',
+    text: 'Final quality inspection, deep cleaning, and 1-year warranty.',
+  },
 ];
 
 export const blogPosts = [

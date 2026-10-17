@@ -17,10 +17,10 @@ import {
 import { ProcessPage, TestimonialsPage, BlogPage, BlogPost, CostCalculatorPage } from './components/ExtraPages';
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, key } = useLocation();
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname, key]);
   return null;
 };
 

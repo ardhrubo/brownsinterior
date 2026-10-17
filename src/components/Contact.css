@@ -133,25 +133,288 @@
 }
 
 .submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
   background: linear-gradient(135deg, var(--gold, #c9b59c), var(--gold-dark, #a88a66));
-  color: #ffffff;
+  color: #1c1815;
   border: none;
   padding: 1.1rem 2rem;
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  margin-top: 1rem;
-  box-shadow: 0 8px 20px rgba(168,138,102,0.35);
+  margin-top: 0.5rem;
+  box-shadow: 0 8px 20px rgba(168, 138, 102, 0.3);
   transition: all 0.3s ease;
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(168,138,102,0.45);
+  box-shadow: 0 12px 28px rgba(168, 138, 102, 0.45);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spin-icon {
+  animation: contactSpin 0.9s linear infinite;
+}
+
+@keyframes contactSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-panel-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.info-item p a {
+  color: #d8d0c8;
+  transition: color 0.25s;
+}
+
+.info-item p a:hover {
+  color: var(--gold);
+}
+
+.contact-prefill-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  background: #f4efea;
+  border: 1px solid rgba(168, 138, 102, 0.35);
+  color: #3d332c;
+  font-size: 0.88rem;
+}
+
+.contact-prefill-banner svg {
+  color: var(--gold-dark);
+  flex-shrink: 0;
+}
+
+.contact-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-size: 0.88rem;
+}
+
+.contact-floating-toast {
+  position: fixed;
+  top: 5.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.25rem;
+  border-radius: 14px;
+  background: #1c1815;
+  color: #ffffff;
+  border: 1px solid rgba(201, 181, 156, 0.45);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.32);
+  max-width: 380px;
+}
+
+.contact-floating-toast svg {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.contact-floating-toast strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--gold);
+  margin-bottom: 0.15rem;
+}
+
+.contact-floating-toast span {
+  display: block;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.contact-success-box {
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-success-top {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-success-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(168, 138, 102, 0.2));
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  border: 2px solid rgba(5, 150, 105, 0.25);
+}
+
+.contact-ref-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: #f4efea;
+  color: var(--gold-dark);
+  border: 1px solid rgba(168, 138, 102, 0.35);
+  margin-bottom: 0.65rem;
+}
+
+.contact-success-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.contact-success-box p {
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.6;
+  font-size: 0.94rem;
+}
+
+.contact-receipt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  background: #faf7f4;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.1rem;
+}
+
+.receipt-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.receipt-item span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+}
+
+.receipt-item strong {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.contact-next-steps h4 {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.next-steps-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.next-step-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  background: #fdfbf9;
+  border: 1px solid var(--border-color);
+}
+
+.next-step-chip.done {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.next-step-chip.active {
+  background: #f4efea;
+  border-color: var(--gold);
+}
+
+.step-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e5ded6;
+  color: #2c2623;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.next-step-chip.done .step-badge {
+  background: #059669;
+  color: #fff;
+}
+
+.next-step-chip.active .step-badge {
+  background: #221e1b;
+  color: var(--gold);
+}
+
+.next-step-chip strong {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+.next-step-chip small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.contact-success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  padding-top: 0.25rem;
 }
 
 @media (max-width: 992px) {
@@ -161,14 +424,18 @@
 }
 
 @media (max-width: 768px) {
-  .form-row {
+  .form-row,
+  .contact-receipt-grid,
+  .next-steps-row {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-info-panel,
   .contact-form-panel {
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
   }
 }
 .contact-page-section { padding: 5rem 0; min-height: auto; }
 @media (max-width: 768px) { .contact-page-section { padding: 3rem 0; } }
+
+

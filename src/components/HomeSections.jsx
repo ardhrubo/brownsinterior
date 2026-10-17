@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useInView, animate } from 'framer-motion';
 import {
   FolderOpen, Phone, ArrowRight, ArrowUpRight, Star, Quote,
-  ChevronLeft, ChevronRight, Calculator, MapPin, UserRound
+  ChevronLeft, ChevronRight, Calculator, MapPin, UserRound,
+  Compass, LayoutGrid, Layers, ClipboardList, Hammer, Sparkles, CheckCircle2, Clock
 } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
@@ -238,30 +239,67 @@ export function FeaturedProjects({ limit = 6 }) {
 }
 
 /* ---------------- UNIFIED 6-STEP DESIGN PROCESS ---------------- */
+const processIcons = [Compass, LayoutGrid, Layers, ClipboardList, Hammer, Sparkles];
+
 export function ProcessTimeline({ showCta = false }) {
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % processSteps.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="section dark">
+    <section className="section dark proc-motion-section">
       <div className="container">
         <SectionHead
           eyebrow="How We Work"
           title="Our Design"
           script="Process"
-          sub="A clear, step-by-step journey from your first idea to the final handover."
+          sub="Six clear steps from your first consultation to move-in ready handover."
         />
-        <div className="grid-3 proc-grid">
-          {processSteps.map((s, k) => (
-            <motion.div
-              key={s.title}
-              className="proc-card"
-              {...fadeUp}
-              transition={{ duration: 0.5, delay: (k % 3) * 0.08 }}
-            >
-              <span className="proc-num">{String(k + 1).padStart(2, '0')}</span>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-            </motion.div>
-          ))}
+
+        <div className="proc-seq-grid">
+          {processSteps.map((s, k) => {
+            const StepIcon = processIcons[k] || Compass;
+            const isActive = k === activeStep;
+            return (
+              <motion.div
+                key={s.title}
+                className={`proc-step-item ${isActive ? 'is-active' : ''}`}
+                onMouseEnter={() => setActiveStep(k)}
+                onClick={() => setActiveStep(k)}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: k * 0.07 }}
+              >
+                {/* Step node badge (sits on top on desktop, on the left timeline rail on mobile) */}
+                <div className="proc-step-node">
+                  <span className="proc-step-num">{String(k + 1).padStart(2, '0')}</span>
+                  {k < processSteps.length - 1 && (
+                    <span className="proc-step-line" aria-hidden="true" />
+                  )}
+                </div>
+
+                {/* Card body */}
+                <div className="proc-card">
+                  <div className="proc-card-top">
+                    <div className="proc-card-icon-box">
+                      <StepIcon size={18} strokeWidth={1.7} />
+                    </div>
+                    <span className="proc-phase-tag">{s.phase}</span>
+                  </div>
+                  <h3>{s.title}</h3>
+                  <p>{s.text}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+
         {showCta && (
           <div className="center mt-3">
             <Link to="/process" className="pill-btn glass" id="home-process-cta">

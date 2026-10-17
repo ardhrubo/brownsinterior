@@ -179,8 +179,8 @@
 .about-cta-row { margin-top: 0.5rem; }
 .value-card { border-radius: 18px; }
 @media (max-width: 900px) {
-  .about-section, .about-section.about-compact { padding: 4rem 0; }
-  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-section, .about-section.about-compact { padding: 2.5rem 0 3.5rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.25rem; }
   .about-image-container { padding-right: 0; }
   .about-image-wrapper img, .about-compact .about-image-wrapper img { height: 340px; }
   .experience-badge { right: 12px; bottom: 12px; padding: 1.1rem 1.4rem; }

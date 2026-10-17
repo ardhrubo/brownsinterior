@@ -48,7 +48,16 @@ export default function Navbar() {
   return (
     <header className={`navbar ${solid ? 'solid' : 'clear'}`}>
       <div className="nav-container">
-        <Link to="/" className="logo-container" aria-label="Brown's Interior home">
+        <Link
+          to="/"
+          className="logo-container"
+          aria-label="Brown's Interior home"
+          onClick={() => {
+            setMobileMenuOpen(false);
+            setMenuOpen(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
           <img src="/logo.svg" alt="Brown's Interior Logo" className="navbar-logo-img" />
         </Link>
 
@@ -98,7 +107,7 @@ export default function Navbar() {
                             </Link>
 
                             {/* Submenu flying out right beside this service category */}
-                            <div className={`multimenu-flyout ${isCatActive ? 'visible' : ''}`}>
+                            <div className={`multimenu-flyout ${menuOpen && isCatActive ? 'visible' : ''}`}>
                               <div className="multimenu-flyout-head">
                                 <Link
                                   to={`/services/${s.slug}`}

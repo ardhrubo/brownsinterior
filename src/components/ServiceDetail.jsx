@@ -104,7 +104,13 @@ export default function ServiceDetail() {
             )}
 
             <div className="sd-hero-actions">
-              <Link to="/contact" className="pill-btn" id="option-quote-btn">
+              <Link
+                to={`/contact?category=${encodeURIComponent(category.title)}${
+                  !isCategory ? `&service=${encodeURIComponent(data.title)}` : ''
+                }`}
+                className="pill-btn"
+                id="option-quote-btn"
+              >
                 <Phone size={15} /> Book Free Consultation
               </Link>
               <Link to="/cost-estimator" className="pill-btn glass" id="option-calc-btn">
