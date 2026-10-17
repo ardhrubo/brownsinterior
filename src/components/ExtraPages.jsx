@@ -168,7 +168,7 @@ export function CostCalculatorPage() {
 
   return (
     <main>
-      <PageHero title="Cost Calculator" sub="Get an instant, approximate budget for your project." image="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=2000" />
+      <PageHero title="Estimate Cost" sub="Get an instant, approximate budget for your project." image="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=2000" />
       <section className="section cream">
         <div className="container calc">
           <div className="calc-form clay">

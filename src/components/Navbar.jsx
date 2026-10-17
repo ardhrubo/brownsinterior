@@ -12,7 +12,6 @@ const links = [
   { to: '/projects', label: 'Projects' },
   { to: '/process', label: 'Process' },
   { to: '/testimonials', label: 'Testimonials' },
-  { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -166,7 +165,7 @@ export default function Navbar() {
         </nav>
 
         <Link to="/cost-estimator" className="nav-cta" id="nav-cost-calculator">
-          <Calculator size={15} /> Cost Calculator
+          <Calculator size={15} /> Estimate Cost
         </Link>
 
         <button
@@ -297,7 +296,7 @@ export default function Navbar() {
                   className="nav-cta mobile"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <Calculator size={15} /> Cost Calculator
+                  <Calculator size={15} /> Estimate Cost
                 </Link>
               </li>
             </ul>

@@ -190,7 +190,7 @@ export function ServicesGrid() {
               <h3>Estimate Your Project Cost</h3>
               <p>Calculate a tailored ballpark budget for your apartment, office, or renovation in seconds.</p>
               <Link to="/cost-estimator" className="pill-btn" style={{ marginTop: 'auto', justifyContent: 'center' }}>
-                Try Cost Calculator <ArrowRight size={15} />
+                Estimate Cost <ArrowRight size={15} />
               </Link>
             </div>
           </motion.article>
@@ -359,7 +359,7 @@ export function CostCTA() {
           <p>Book a free consultation or get an instant project cost estimate.</p>
         </motion.div>
         <motion.div className="cta-btns" {...fadeUp}>
-          <Link to="/cost-estimator" className="pill-btn glass" id="cta-calculator"><Calculator size={16} /> Cost Calculator</Link>
+          <Link to="/cost-estimator" className="pill-btn glass" id="cta-calculator"><Calculator size={16} /> Estimate Cost</Link>
           <Link to="/contact" className="pill-btn" id="cta-contact"><Phone size={16} /> Book Consultation</Link>
         </motion.div>
       </div>
@@ -384,13 +384,16 @@ export function BlogCard({ post }) {
 
 export function BlogPreview() {
   return (
-    <section className="section">
+    <section className="section cream">
       <div className="container">
-        <SectionHead eyebrow="Insights" title="Latest From Our" script="Blog" />
+        <SectionHead eyebrow="Insights & Ideas" title="Latest From Our" script="Blog" />
         <div className="grid-3">
           {blogPosts.map((p, k) => (
             <motion.div key={p.slug} {...fadeUp} transition={{ duration: 0.5, delay: k * 0.08 }}><BlogCard post={p} /></motion.div>
           ))}
+        </div>
+        <div className="center mt-3">
+          <Link to="/blog" className="pill-btn dark" id="home-all-blog">View All Articles <ArrowRight size={15} /></Link>
         </div>
       </div>
     </section>

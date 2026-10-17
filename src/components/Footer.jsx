@@ -10,9 +10,9 @@ const quickLinks = [
   { to: '/projects', label: 'Projects' },
   { to: '/process', label: 'Our Process' },
   { to: '/testimonials', label: 'Testimonials' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/cost-estimator', label: 'Cost Calculator' },
+  { to: '/cost-estimator', label: 'Estimate Cost' },
   { to: '/contact', label: 'Contact' },
+  { to: '/blog', label: 'Blog' },
 ];
 
 export default function Footer() {

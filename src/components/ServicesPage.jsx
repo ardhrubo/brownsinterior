@@ -79,7 +79,7 @@ export default function ServicesPage() {
           </div>
           <div className="sp-banner-btns">
             <Link to="/cost-estimator" className="pill-btn glass" id="services-calc-cta">
-              <Calculator size={16} /> Cost Calculator
+              <Calculator size={16} /> Estimate Cost
             </Link>
             <Link to="/contact" className="pill-btn" id="services-contact-cta">
               <Phone size={16} /> Free Consultation

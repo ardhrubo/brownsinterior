@@ -12,7 +12,7 @@ import ServicesPage from './components/ServicesPage';
 import ServiceDetail from './components/ServiceDetail';
 import {
   HomeHero, StatsBar, ServicesGrid, FeaturedProjects, ProcessTimeline,
-  TestimonialSlider, CostCTA, PageHero,
+  TestimonialSlider, CostCTA, BlogPreview, PageHero,
 } from './components/HomeSections';
 import { ProcessPage, TestimonialsPage, BlogPage, BlogPost, CostCalculatorPage } from './components/ExtraPages';
 
@@ -25,7 +25,7 @@ const ScrollToTop = () => {
 };
 
 // Streamlined, natural storytelling Home Page sequence:
-// 1. Hero -> 2. Stats -> 3. The Studio -> 4. Services -> 5. Projects -> 6. Process -> 7. Leadership -> 8. Testimonials -> 9. Contact
+// 1. Hero -> 2. Stats -> 3. The Studio -> 4. Services -> 5. Projects -> 6. Process -> 7. Leadership -> 8. Testimonials -> 9. Contact -> 10. Blog (at the bottom)
 const Home = () => (
   <main>
     <HomeHero />
@@ -37,6 +37,7 @@ const Home = () => (
     <Team />
     <TestimonialSlider />
     <Contact showHero={false} />
+    <BlogPreview />
   </main>
 );
 

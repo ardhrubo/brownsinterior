@@ -297,7 +297,7 @@ export default function Contact({ showHero = true }) {
                     <div className="contact-prefill-banner">
                       <Sparkles size={16} />
                       <span>
-                        Pre-filled from Cost Calculator — Estimated Budget:{' '}
+                        Pre-filled from Estimate Cost — Estimated Budget:{' '}
                         <strong>{form.estimated_budget}</strong>
                         {form.area_sqft ? ` (${form.area_sqft} sq ft)` : ''}
                       </span>
