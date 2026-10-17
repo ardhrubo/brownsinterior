@@ -200,38 +200,270 @@ export function ServicesGrid() {
   );
 }
 
-/* ---------------- PROJECTS ---------------- */
-export function FeaturedProjects({ limit = 6 }) {
+/* ---------------- EDITORIAL ASYMMETRIC PROJECTS ---------------- */
+export function FeaturedProjects({ limit = 5 }) {
   const cats = ['All', ...new Set(projectsData.map((p) => p.category))];
   const [cat, setCat] = useState('All');
   const list = projectsData.filter((p) => cat === 'All' || p.category === cat).slice(0, limit);
+
   return (
     <section className="section">
       <div className="container">
-        <SectionHead eyebrow="Selected Works" title="Featured" script="Projects" />
+        <SectionHead
+          eyebrow="Selected Portfolio"
+          title="Curated"
+          script="Spaces"
+          sub="Explore bespoke residential, executive office, and turnkey hospitality interiors across Bangladesh."
+        />
         <div className="proj-tabs">
           {cats.map((c) => (
             <button key={c} className={c === cat ? 'active' : ''} onClick={() => setCat(c)}>{c}</button>
           ))}
         </div>
-        <motion.div layout className="grid-3">
+
+        <motion.div layout className="proj-editorial-grid">
           <AnimatePresence mode="popLayout">
-            {list.map((p) => (
-              <motion.div key={p.id} layout initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.94 }} transition={{ duration: 0.35 }}>
-                <Link to={`/project/${p.id}`} className="proj-card">
-                  <img src={p.image} alt={p.title} loading="lazy" />
-                  <div className="proj-info">
-                    <span className="proj-cat">{p.category}</span>
-                    <h3>{p.title}</h3>
-                    {p.location && <span className="proj-loc"><MapPin size={13} /> {p.location}</span>}
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+            {list.map((p, idx) => {
+              const isFlagship = idx === 0 && cat === 'All';
+              return (
+                <motion.div
+                  key={p.id}
+                  layout
+                  className={`proj-editorial-item ${isFlagship ? 'is-flagship' : ''}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                >
+                  <Link to={`/project/${p.id}`} className="proj-card">
+                    <img src={p.image} alt={p.title} loading="lazy" />
+                    <div className="proj-index-badge">{String(idx + 1).padStart(2, '0')}</div>
+                    <div className="proj-info">
+                      <div className="proj-meta-row">
+                        <span className="proj-cat">{p.category}</span>
+                        {p.area && <span className="proj-area-pill">{p.area}</span>}
+                      </div>
+                      <h3>{p.title}</h3>
+                      {isFlagship && p.description && (
+                        <p className="proj-flagship-desc">{p.description}</p>
+                      )}
+                      <div className="proj-bottom-bar">
+                        {p.location && (
+                          <span className="proj-loc">
+                            <MapPin size={13} /> {p.location} {p.year ? `· ${p.year}` : ''}
+                          </span>
+                        )}
+                        <span className="proj-explore-link">
+                          Case Study <ArrowUpRight size={14} />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
         </motion.div>
+
         <div className="center mt-3">
-          <Link to="/projects" className="pill-btn outline" id="home-all-projects">View All Projects <ArrowRight size={16} /></Link>
+          <Link to="/projects" className="pill-btn outline" id="home-all-projects">
+            Explore Full Portfolio <ArrowRight size={16} />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- BEFORE / AFTER & MATERIAL HOTSPOT SHOWCASE ---------------- */
+const roomHotspots = [
+  {
+    id: 'millwork',
+    num: '01',
+    x: '24%',
+    y: '44%',
+    title: 'CNC Fluted Walnut Joinery',
+    finish: 'Matte American Walnut Veneer · Concealed Acoustic Backing',
+    desc: 'Custom-milled vertical timber slats fabricated in our Dhaka workshop for warmth and sound absorption.',
+  },
+  {
+    id: 'lighting',
+    num: '02',
+    x: '58%',
+    y: '22%',
+    title: '2700K Architectural Cove Lighting',
+    finish: 'Dimmable Warm LED · Recessed Gypsum Drop Ceiling',
+    desc: 'Glare-free indirect illumination engineered to highlight natural textures and evening ambiance.',
+  },
+  {
+    id: 'stone',
+    num: '03',
+    x: '64%',
+    y: '72%',
+    title: 'Imported Travertine & Brass Detailing',
+    finish: 'Honed Beige Stone · Brushed Champagne Brass Inlay',
+    desc: 'Hand-selected stone slabs paired with bespoke upholstered seating and durable stain-sealed finishes.',
+  },
+];
+
+export function TransformationShowcase() {
+  const [sliderPos, setSliderPos] = useState(62);
+  const [activeSpot, setActiveSpot] = useState(0);
+  const stageRef = useRef(null);
+
+  const handlePointerMove = (e) => {
+    if (!stageRef.current) return;
+    const rect = stageRef.current.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const pct = Math.min(94, Math.max(6, ((clientX - rect.left) / rect.width) * 100));
+    setSliderPos(Math.round(pct));
+  };
+
+  return (
+    <section className="section cream trans-section">
+      <div className="container">
+        <SectionHead
+          eyebrow="Craftsmanship & Execution"
+          title="From Raw Space to"
+          script="Living Art"
+          sub="Drag the slider to compare bare-shell structure vs. turnkey handover, or tap the gold pins to inspect our signature materials."
+        />
+
+        <div className="trans-grid">
+          {/* Interactive Before/After + Hotspot Stage */}
+          <div className="trans-stage-wrap">
+            <div
+              ref={stageRef}
+              className="trans-stage"
+              onMouseMove={(e) => e.buttons === 1 && handlePointerMove(e)}
+              onTouchMove={handlePointerMove}
+            >
+              {/* AFTER (Finished Turnkey Space - Full Layer) */}
+              <img
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1600"
+                alt="Completed Brown's Interior Living Room"
+                className="trans-img trans-after-img"
+                draggable={false}
+              />
+
+              {/* BEFORE (Raw Shell / Wireframe Stage - Clipped Layer) */}
+              <div
+                className="trans-before-clip"
+                style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1600"
+                  alt="Raw architectural shell stage"
+                  className="trans-img trans-before-img"
+                  draggable={false}
+                />
+                <span className="trans-corner-tag before-tag">Before · Raw Shell &amp; 2D Layout</span>
+              </div>
+
+              <span className="trans-corner-tag after-tag">After · Turnkey Handover</span>
+
+              {/* Interactive Material Hotspots on the Finished Side */}
+              {roomHotspots.map((spot, idx) => (
+                <button
+                  key={spot.id}
+                  type="button"
+                  className={`trans-hotspot ${activeSpot === idx ? 'active' : ''}`}
+                  style={{ left: spot.x, top: spot.y }}
+                  onClick={() => setActiveSpot(idx)}
+                  onMouseEnter={() => setActiveSpot(idx)}
+                  aria-label={`Inspect ${spot.title}`}
+                >
+                  <span className="trans-hotspot-pulse" />
+                  <span className="trans-hotspot-num">{spot.num}</span>
+                </button>
+              ))}
+
+              {/* Vertical Divider Handle */}
+              <div className="trans-divider" style={{ left: `${sliderPos}%` }}>
+                <div className="trans-handle" aria-hidden="true">
+                  <ChevronLeft size={14} />
+                  <ChevronRight size={14} />
+                </div>
+              </div>
+
+              {/* Accessible Range Input Overlay for effortless dragging */}
+              <input
+                type="range"
+                min="6"
+                max="94"
+                value={sliderPos}
+                onChange={(e) => setSliderPos(Number(e.target.value))}
+                className="trans-range-overlay"
+                aria-label="Compare raw space before and finished interior after"
+              />
+            </div>
+
+            {/* Quick Comparison Presets Bar */}
+            <div className="trans-controls-bar">
+              <span>Compare View:</span>
+              <div className="trans-preset-btns">
+                <button
+                  type="button"
+                  className={sliderPos > 75 ? 'active' : ''}
+                  onClick={() => setSliderPos(88)}
+                >
+                  Raw Shell
+                </button>
+                <button
+                  type="button"
+                  className={sliderPos >= 35 && sliderPos <= 75 ? 'active' : ''}
+                  onClick={() => setSliderPos(50)}
+                >
+                  50 / 50 Split
+                </button>
+                <button
+                  type="button"
+                  className={sliderPos < 35 ? 'active' : ''}
+                  onClick={() => setSliderPos(14)}
+                >
+                  Finished Space
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Architectural Material & Spec Inspector */}
+          <div className="trans-specs-panel">
+            <div className="trans-specs-head">
+              <span className="trans-specs-eyebrow">Material Specification</span>
+              <h3>Tap a Pin to Inspect Details</h3>
+            </div>
+
+            <div className="trans-specs-list">
+              {roomHotspots.map((spot, idx) => {
+                const isSelected = activeSpot === idx;
+                return (
+                  <div
+                    key={spot.id}
+                    className={`trans-spec-card ${isSelected ? 'active' : ''}`}
+                    onClick={() => {
+                      setActiveSpot(idx);
+                      if (sliderPos > 55) setSliderPos(22);
+                    }}
+                    onMouseEnter={() => setActiveSpot(idx)}
+                  >
+                    <div className="trans-spec-top">
+                      <span className="trans-spec-num">{spot.num}</span>
+                      <div>
+                        <h4>{spot.title}</h4>
+                        <small>{spot.finish}</small>
+                      </div>
+                    </div>
+                    <p>{spot.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+            <Link to="/cost-estimator" className="pill-btn" style={{ width: '100%', justifyContent: 'center' }}>
+              <Calculator size={16} /> Estimate Similar Space <ArrowRight size={15} />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

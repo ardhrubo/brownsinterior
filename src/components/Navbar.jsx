@@ -15,7 +15,7 @@ const links = [
   { to: '/contact', label: 'Contact' },
 ];
 
-const transparentPaths = ['/', '/about', '/services', '/process', '/testimonials', '/blog', '/cost-estimator', '/contact'];
+const transparentPaths = ['/', '/about', '/services', '/projects', '/process', '/testimonials', '/blog', '/cost-estimator', '/contact'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
