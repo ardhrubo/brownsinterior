@@ -64,8 +64,8 @@
 }
 .page-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,16,13,0.65), rgba(20,16,13,0.45)); }
 .page-hero > * { position: relative; }
-.page-hero h1 { font-family: var(--font-script); font-weight: 400; font-size: clamp(3.5rem, 8vw, 6rem); line-height: 1; margin-bottom: 0.75rem; }
-.page-hero p { max-width: 640px; margin: 0 auto; opacity: 0.85; line-height: 1.7; }
+.page-hero h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(2.4rem, 5.5vw, 4.2rem); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
+.page-hero p { font-family: 'Outfit', var(--font-sans); font-weight: 300; max-width: 640px; margin: 0 auto; opacity: 0.88; line-height: 1.7; }
 .crumbs { margin-top: 1.25rem; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
 .crumbs a { color: var(--gold); }
 

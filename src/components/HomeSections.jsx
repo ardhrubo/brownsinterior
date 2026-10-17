@@ -69,7 +69,7 @@ export function HomeHero() {
           Brown's Interior
         </motion.span>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.9 }}>
-          Designing Beautiful Spaces with Quality and Purpose.
+          Designing <em>Beautiful Spaces</em> with Quality and Purpose.
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
           A Dhaka-based interior design and execution firm providing professional design solutions for residential, commercial and exhibition spaces.

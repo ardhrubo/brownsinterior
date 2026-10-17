@@ -62,9 +62,14 @@ export default function ServicesPage() {
                   <div className="sp-icon"><Icon size={30} strokeWidth={1.5} /></div>
                   <h2 className="sp-block-title">{s.title}</h2>
                   <p className="sp-desc">{s.description}</p>
-                  <Link to="/contact" className="sp-cta" id={`cta-${s.slug}`}>
-                    Get a Quote <ArrowRight size={16} />
-                  </Link>
+                  <div className="sp-actions-row">
+                    <Link to={`/services/${s.slug}`} className="sp-cta primary" id={`explore-${s.slug}`}>
+                      Explore {s.shortTitle || s.title} <ArrowRight size={15} />
+                    </Link>
+                    <Link to="/contact" className="sp-cta secondary" id={`cta-${s.slug}`}>
+                      Get a Quote
+                    </Link>
+                  </div>
                 </div>
                 <ul className="sp-items">
                   {s.items.map((item, j) => (
@@ -75,8 +80,14 @@ export default function ServicesPage() {
                       viewport={{ once: true }}
                       transition={{ delay: j * 0.07 }}
                     >
-                      <span className="sp-check"><Check size={14} /></span>
-                      {item}
+                      <Link
+                        to={`/services/${s.slug}#${item.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                        style={{ display: 'flex', alignItems: 'center', gap: '1rem', width: '100%', color: 'inherit' }}
+                      >
+                        <span className="sp-check"><Check size={14} /></span>
+                        <span>{item}</span>
+                        <ArrowRight size={14} style={{ marginLeft: 'auto', opacity: 0.5 }} />
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>
