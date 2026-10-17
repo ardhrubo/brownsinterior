@@ -187,346 +187,126 @@
 .proj-info h3 { font-size: 1.25rem; margin: 0.25rem 0; }
 .proj-loc { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.8rem; opacity: 0.82; }
 
-/* MOTION PROCESS SEQUENCE */
+/* UNIFIED 6-STEP DESIGN PROCESS */
 .proc-motion-section {
   position: relative;
   overflow: hidden;
 }
-.proc-ambient-glow {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 680px;
-  height: 360px;
-  background: radial-gradient(circle, rgba(201, 181, 156, 0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
 
-/* 1. Horizontal Sequence Stepper Rail */
-.proc-rail-wrapper {
-  position: relative;
-  max-width: 1040px;
-  margin: 0 auto 2.5rem;
-  padding: 0 1rem;
-}
-.proc-rail-track {
-  position: absolute;
-  top: 28px;
-  left: 7%;
-  right: 7%;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.14);
-  z-index: 1;
-  border-radius: 999px;
-}
-.proc-rail-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--gold-dark), var(--gold), #fff3df);
-  box-shadow: 0 0 14px rgba(201, 181, 156, 0.65);
-  border-radius: 999px;
-}
-.proc-rail-nodes {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0.5rem;
-}
-.proc-node-btn {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.55);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.65rem;
-  cursor: pointer;
-  font-family: inherit;
-  transition: color 0.3s;
-}
-.proc-node-circle {
-  position: relative;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #231e1b;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.35s ease;
-}
-.proc-node-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #332c27;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--gold);
-  display: grid;
-  place-items: center;
-}
-.proc-node-halo {
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  box-shadow: 0 0 22px rgba(201, 181, 156, 0.55);
-  animation: procPulseHalo 2.2s ease-in-out infinite;
-}
-@keyframes procPulseHalo {
-  0%, 100% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.09); opacity: 0.45; }
-}
-.proc-node-btn.completed .proc-node-circle {
-  background: #2e2620;
-  border-color: var(--gold);
-  color: var(--gold);
-}
-.proc-node-btn.current .proc-node-circle {
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  border-color: var(--gold);
-  color: #1c1815;
-  transform: translateY(-3px);
-}
-.proc-node-btn.current .proc-node-badge {
-  background: #1c1815;
-  color: var(--gold);
-  border-color: var(--gold);
-}
-.proc-node-label {
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-align: center;
-  max-width: 120px;
-  line-height: 1.3;
-}
-.proc-node-btn.current .proc-node-label {
-  color: var(--gold);
-}
-
-/* 2. Live Animated Phase Spotlight Stage */
-.proc-spotlight-wrap {
-  margin-bottom: 2.5rem;
-}
-.proc-spotlight-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  padding: 2.2rem 2.5rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-  border: 1px solid rgba(201, 181, 156, 0.32);
-  backdrop-filter: blur(12px);
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 2.5rem;
-  align-items: center;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
-}
-.proc-spotlight-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.85rem;
-}
-.proc-phase-pill {
-  padding: 0.32rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(201, 181, 156, 0.18);
-  border: 1px solid rgba(201, 181, 156, 0.4);
-  color: var(--gold);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-.proc-duration-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.32rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.07);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.75rem;
-}
-.proc-spotlight-left h3 {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.5vw, 2.15rem);
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.65rem;
-}
-.proc-spot-icon {
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.proc-spotlight-left p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-.proc-spotlight-right {
-  background: rgba(18, 15, 13, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 1.35rem 1.5rem;
-}
-.proc-deliv-heading {
-  display: block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--gold);
-  margin-bottom: 0.85rem;
-}
-.proc-deliv-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-.proc-deliv-chip {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 0.88rem;
-  color: #fff;
-}
-.proc-deliv-chip svg {
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.proc-auto-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold-dark), var(--gold));
-  transform-origin: left center;
-}
-
-/* 3. Connected 6-Step Sequence Cards Grid */
 .proc-seq-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2rem 1.75rem;
 }
+
+.proc-step-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  cursor: pointer;
+}
+
+.proc-step-node {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.proc-step-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(201, 181, 156, 0.4);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: all 0.35s ease;
+}
+
+.proc-step-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 181, 156, 0.55), rgba(201, 181, 156, 0.08));
+}
+
 .proc-card {
   position: relative;
-  padding: 1.75rem 1.5rem;
+  padding: 1.5rem;
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.35s ease;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
-.proc-card:hover,
-.proc-card.active-step {
-  background: rgba(255, 255, 255, 0.09);
-  transform: translateY(-5px);
+
+.proc-step-item:hover .proc-step-num,
+.proc-step-item.is-active .proc-step-num {
+  background: var(--gold);
+  color: #1c1815;
   border-color: var(--gold);
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 16px rgba(201, 181, 156, 0.45);
 }
-.proc-card-head {
+
+.proc-step-item:hover .proc-card,
+.proc-step-item.is-active .proc-card {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+  border-color: rgba(201, 181, 156, 0.65);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+}
+
+.proc-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.85rem;
 }
+
 .proc-card-icon-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   background: rgba(201, 181, 156, 0.14);
-  border: 1px solid rgba(201, 181, 156, 0.3);
+  border: 1px solid rgba(201, 181, 156, 0.28);
   color: var(--gold);
   display: grid;
   place-items: center;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
-.proc-card.active-step .proc-card-icon-box {
+
+.proc-step-item:hover .proc-card-icon-box,
+.proc-step-item.is-active .proc-card-icon-box {
   background: var(--gold);
   color: #1c1815;
 }
-.proc-num {
-  font-family: var(--font-display);
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--gold);
-  line-height: 1;
-}
-.proc-card.active-step .proc-num {
-  color: var(--gold);
-}
-.proc-card-time {
-  font-size: 0.7rem;
+
+.proc-phase-tag {
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--gold);
-  margin-bottom: 0.3rem;
   font-weight: 600;
+  opacity: 0.9;
 }
+
 .proc-card h3 {
-  font-size: 1.12rem;
-  margin-bottom: 0.45rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
   color: #fff;
 }
+
 .proc-card p {
   color: rgba(255, 255, 255, 0.72);
-  line-height: 1.6;
+  line-height: 1.55;
   font-size: 0.86rem;
-  margin-bottom: 1rem;
-  flex: 1;
-}
-.proc-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-.proc-card-tags span {
-  font-size: 0.68rem;
-  padding: 0.22rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.82);
-}
-.proc-seq-connector {
-  position: absolute;
-  top: 2.4rem;
-  right: -1.15rem;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  color: var(--gold);
-  opacity: 0.65;
-  pointer-events: none;
-}
-.proc-card:nth-child(3) .proc-seq-connector {
-  display: none;
-}
-.proc-seq-line {
-  width: 10px;
-  height: 1.5px;
-  background: var(--gold);
+  margin: 0;
 }
 
 /* TESTIMONIALS */
@@ -567,15 +347,11 @@
 @media (max-width: 1100px) {
   .svc-visual-grid { grid-template-columns: repeat(2, 1fr); }
   .proc-seq-grid { grid-template-columns: repeat(2, 1fr); }
-  .proc-seq-connector { display: none; }
 }
 
 @media (max-width: 900px) {
   .stats-inner { grid-template-columns: repeat(2, 1fr); row-gap: 1.5rem; }
   .stat:nth-child(2) { border-right: none; }
-  .proc-spotlight-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem 1.5rem; }
-  .proc-rail-track { display: none; }
-  .proc-rail-nodes { grid-template-columns: repeat(3, 1fr); row-gap: 1.25rem; }
   .testi-row { grid-template-columns: 1fr; }
   .testi-row .testi-card:not(.lead) { display: none; }
   .cta-band { background-attachment: scroll; }
@@ -609,12 +385,24 @@
   .proj-tabs button { flex-shrink: 0; }
   .proj-card { aspect-ratio: 4/3; }
   .proj-info { transform: none; }
-  .proc-rail-nodes { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
-  .proc-node-circle { width: 48px; height: 48px; }
-  .proc-node-label { font-size: 0.68rem; }
-  .proc-seq-grid { grid-template-columns: 1fr; gap: 1.15rem; }
-  .proc-card { padding: 1.45rem; }
-  .proc-num { font-size: 2rem; }
+
+  /* Connected Vertical Timeline on Mobile */
+  .proc-seq-grid { grid-template-columns: 1fr; gap: 0; }
+  .proc-step-item { flex-direction: row; align-items: stretch; gap: 0.9rem; }
+  .proc-step-node { flex-direction: column; align-items: center; gap: 0; }
+  .proc-step-num { width: 34px; height: 34px; font-size: 0.85rem; }
+  .proc-step-line {
+    width: 1.5px;
+    height: auto;
+    flex: 1;
+    min-height: 1.25rem;
+    background: linear-gradient(180deg, rgba(201, 181, 156, 0.6), rgba(201, 181, 156, 0.15));
+  }
+  .proc-card { padding: 1.2rem; margin-bottom: 1rem; }
+  .proc-step-item:last-child .proc-card { margin-bottom: 0; }
+  .proc-step-item:hover .proc-card,
+  .proc-step-item.is-active .proc-card { transform: none; }
+
   .testi-card { padding: 1.5rem; }
   .cta-band { padding: 3.25rem 0; text-align: center; }
   .cta-inner { flex-direction: column; }
