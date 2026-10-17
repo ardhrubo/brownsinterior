@@ -1,21 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { PageHero } from './HomeSections';
 import './Contact.css';
 
 export default function Contact() {
   return (
+    <>
+    <PageHero title="Contact Us" sub="Tell us about your space — we'll help you plan, design and build it with quality and purpose." image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000" />
     <section className="contact-page-section">
       <div className="container">
-        <motion.div 
-          className="contact-header"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="title-massive" style={{ color: '#1a1a1a', fontSize: '5rem', marginBottom: '1rem' }}>GET A QUOTE</h1>
-          <p className="contact-subtitle">Let's discuss your next architectural or interior masterpiece.</p>
-        </motion.div>
 
         <div className="contact-wrapper">
           <motion.div 
@@ -116,5 +110,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }

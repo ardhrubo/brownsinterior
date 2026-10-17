@@ -1,11 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
 import About from './components/About';
-import Process from './components/Process';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
 import Team from './components/Team';
 import Clients from './components/Clients';
 import Footer from './components/Footer';
@@ -13,7 +9,14 @@ import FloatingContact from './components/FloatingContact';
 import Contact from './components/Contact';
 import ProjectDetail from './components/ProjectDetail';
 import ProjectsPage from './components/ProjectsPage';
-import Maintenance from './components/Maintenance';
+import ServicesPage from './components/ServicesPage';
+import ServiceDetail from './components/ServiceDetail';
+import {
+  HomeHero, StatsBar, ServicesGrid, FeaturedProjects, ProcessTimeline,
+  TestimonialSlider, CostCTA, BlogPreview, PageHero,
+} from './components/HomeSections';
+import { ProcessPage, TestimonialsPage, BlogPage, BlogPost, CostCalculatorPage } from './components/ExtraPages';
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -24,21 +27,27 @@ const ScrollToTop = () => {
 
 // Pages
 const Home = () => (
-  <Maintenance />
-);
-
-const AboutPage = () => (
-  <main style={{ paddingTop: '80px' }}>
+  <main>
+    <HomeHero />
+    <StatsBar />
     <About />
-    <Process />
-    <Team />
+    <ServicesGrid />
+    <FeaturedProjects />
+    <ProcessTimeline />
+    <TestimonialSlider />
+    <Clients />
+    <CostCTA />
+    <BlogPreview />
   </main>
 );
 
-const ServicesPage = () => (
-  <main style={{ paddingTop: '80px' }}>
-    <Services />
-    <Process />
+const AboutPage = () => (
+  <main>
+    <PageHero title="About Us" sub="Designing beautiful spaces with quality and purpose." image="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2000" />
+    <About full />
+    <ProcessTimeline />
+    <Team />
+    <CostCTA />
   </main>
 );
 
@@ -51,6 +60,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:slug" element={<ServiceDetail />} />
+        <Route path="/process" element={<ProcessPage />} />
+        <Route path="/testimonials" element={<TestimonialsPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/cost-estimator" element={<CostCalculatorPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/project/:id" element={<ProjectDetail />} />

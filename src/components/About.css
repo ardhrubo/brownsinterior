@@ -118,3 +118,50 @@
     gap: 1.5rem;
   }
 }
+
+/* ===== Mission & Commitment ===== */
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+.value-card {
+  position: relative;
+  padding: 2.75rem;
+  background: var(--surface-color);
+  border-top: 3px solid var(--accent-color);
+  transition: transform 0.4s, box-shadow 0.4s;
+  overflow: hidden;
+}
+.value-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+.value-card.dark { background: linear-gradient(135deg, #2c2825, #4a403a); color: #fff; }
+.value-icon {
+  width: 56px; height: 56px; display: grid; place-items: center;
+  border-radius: 50%; background: #fff; color: var(--accent-dark); margin-bottom: 1.25rem;
+}
+.value-card.dark .value-icon { background: rgba(255,255,255,0.1); color: var(--accent-color); }
+.value-card h3 { font-size: 1.5rem; margin-bottom: 0.9rem; }
+.value-card p { line-height: 1.8; color: var(--text-muted); font-size: 1.05rem; }
+.value-card.dark p { color: rgba(255,255,255,0.85); }
+.value-card .commitment { font-size: 1.2rem; font-weight: 500; }
+.value-card .commitment span { color: var(--accent-color); }
+@media (max-width: 768px) { .about-values { grid-template-columns: 1fr; margin-top: 3rem; } }
+
+/* ===== Redesign overrides ===== */
+.about-section { padding: 7rem 0 6rem; }
+.about-title { text-align: left; }
+.about-image-wrapper, .about-image-wrapper img { border-radius: 18px; }
+.experience-badge { border-radius: 18px; background: linear-gradient(135deg, #c9b59c, #a88a66); }
+.about-description { font-size: 1.02rem; }
+.about-content .pill-btn { margin-top: 1rem; }
+.value-card { border-radius: 18px; }
+@media (max-width: 900px) {
+  .about-section { padding: 4.5rem 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-image-container { padding-right: 0; }
+  .about-image-wrapper img { height: 360px; }
+  .experience-badge { right: 12px; bottom: 12px; padding: 1.1rem 1.4rem; }
+  .experience-badge .years { font-size: 2.4rem; }
+  .value-card { padding: 2rem; }
+}

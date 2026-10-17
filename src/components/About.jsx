@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Target, ShieldCheck } from 'lucide-react';
 import './About.css';
 
-export default function About() {
+export default function About({ full = false }) {
   return (
     <section id="about" className="about-section">
       <div className="container">
@@ -30,33 +32,43 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h4 className="subtitle text-accent">About Us</h4>
-            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '1.5rem' }}>
-              Redefining <span className="italic-serif">Luxury</span> Spaces
+            <span className="sec-eyebrow">About Us — Brown's Interior</span>
+            <h2 className="sec-title about-title">
+              Designing <em>Beautiful Spaces</em> with Quality and Purpose
             </h2>
             <p className="about-description">
-              Brown's Interior Studio is a premier luxury design firm based in Dhaka. We specialize in transforming ordinary spaces into extraordinary spatial experiences. With a meticulous eye for detail and a passion for bespoke aesthetics, we bridge the gap between brilliant design and flawless execution.
+              Brown's Interior is a Dhaka-based interior design and execution firm providing professional design solutions for residential, commercial and exhibition spaces.
             </p>
             <p className="about-description">
-              Our philosophy is rooted in understanding our clients' deepest lifestyle aspirations and bringing them to life through comprehensive turnkey interior solutions. Whether it's a high-end residence, a boutique commercial space, or a corporate headquarters, we deliver unparalleled luxury and quality on time, every time.
+              Led by <strong>Engr. Aslam Sheikh</strong>, we combine creative thinking, engineering knowledge and practical expertise to create spaces that are functional, elegant and tailored to our clients' needs.
             </p>
-            
-            <div className="stats-grid">
-              <div className="stat-item">
-                <h3 className="stat-number">250+</h3>
-                <p className="stat-label">Projects Completed</p>
-              </div>
-              <div className="stat-item">
-                <h3 className="stat-number">30+</h3>
-                <p className="stat-label">Design Professionals</p>
-              </div>
-              <div className="stat-item">
-                <h3 className="stat-number">100%</h3>
-                <p className="stat-label">Client Satisfaction</p>
-              </div>
-            </div>
-            
-            <a href="#contact" className="btn mt-4">Discover More</a>
+            {full && (
+              <>
+                <p className="about-description">
+                  Our services include interior design, architectural design, structural consultancy, renovation and remodeling, exhibition and trade show booth design, and project management.
+                </p>
+                <p className="about-description">
+                  We believe great design goes beyond appearance. It requires thoughtful planning, quality materials, attention to detail and a clear understanding of each client's vision and budget.
+                </p>
+                <p className="about-description">
+                  From the initial concept to the final outcome, we focus on delivering practical solutions, professional service and lasting value.
+                </p>
+              </>
+            )}
+            {!full && <Link to="/about" className="pill-btn" id="about-discover-more">Discover More</Link>}
+          </motion.div>
+        </div>
+
+        <div className="about-values">
+          <motion.div className="value-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
+            <h3>Our Mission</h3>
+            <p>To create beautiful, functional and purposeful spaces through thoughtful design and quality-focused service.</p>
+          </motion.div>
+          <motion.div className="value-card dark" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
+            <div className="value-icon"><ShieldCheck size={26} strokeWidth={1.5} /></div>
+            <h3>Our Commitment</h3>
+            <p className="commitment">Creative Design. <span>Professional Service.</span> Quality You Can Trust.</p>
           </motion.div>
         </div>
       </div>
