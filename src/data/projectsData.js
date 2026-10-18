@@ -3,51 +3,53 @@ export const projectsData = [
     id: 1,
     title: 'Gulshan Duplex Penthouse',
     category: 'Residential Interior',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200',
-    coverImage: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200',
+    image: '/portfolio/interior/living-room.jpg',
+    coverImage: '/portfolio/interior/living-room.jpg',
     description: 'A luxurious penthouse design focusing on panoramic views, warm walnut millwork, imported travertine, and open-plan living with custom furniture curation and smart-home lighting.',
     client: 'Private Residence',
     location: 'Gulshan-2, Dhaka',
     area: '4,400 sq ft',
     year: '2025',
     gallery: [
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200'
+      '/portfolio/interior/living-room.jpg',
+      '/portfolio/interior/living-room-v1.jpg',
+      '/portfolio/interior/kitchen-main.jpg',
+      '/portfolio/interior/render-view-2.jpg'
     ]
   },
   {
     id: 2,
     title: 'Banani Executive HQ',
     category: 'Commercial Interior',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
-    coverImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
+    image: '/portfolio/office/office-conference.jpg',
+    coverImage: '/portfolio/office/office-conference.jpg',
     description: 'A modern corporate headquarters engineered for acoustic comfort and executive presence, featuring custom boardroom tables, architectural glass partitions, and biophilic lounge zones.',
     client: 'Apex Holdings BD',
     location: 'Banani, Dhaka',
     area: '7,800 sq ft',
     year: '2025',
     gallery: [
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1200'
+      '/portfolio/office/office-conference.jpg',
+      '/portfolio/office/office-conference-2.jpg',
+      '/portfolio/office/office-main.jpg',
+      '/portfolio/office/office-room.jpg'
     ]
   },
   {
     id: 3,
     title: 'Bashundhara Signature Villa',
     category: 'Turnkey Interior',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200',
-    coverImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200',
+    image: '/portfolio/cover/cover-2.jpeg',
+    coverImage: '/portfolio/cover/cover-2.jpeg',
     description: 'Complete turnkey architectural and interior execution of a triplex family villa. We handled spatial planning, bespoke lighting design, and custom CNC woodwork from the double-height foyer to the master suite.',
     client: 'Mr. Rahman',
     location: 'Bashundhara R/A, Dhaka',
     area: '6,200 sq ft',
     year: '2024',
     gallery: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=1200'
+      '/portfolio/cover/cover-2.jpeg',
+      '/portfolio/cover/cover-4.jpeg',
+      '/portfolio/interior/living-room-v2.jpg'
     ]
   },
   {

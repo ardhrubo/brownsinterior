@@ -65,7 +65,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;q=80&amp;w=1600</image:loc>
+      <image:loc>/portfolio/interior/living-room.jpg</image:loc>
       <image:title>Interior Design</image:title>
     </image:image>
   </url>
@@ -75,7 +75,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
+      <image:loc>/portfolio/interior/living-room.jpg</image:loc>
       <image:title>Residential Interior</image:title>
     </image:image>
   </url>
@@ -85,7 +85,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
+      <image:loc>/portfolio/office/office-conference.jpg</image:loc>
       <image:title>Commercial Interior</image:title>
     </image:image>
   </url>
@@ -95,7 +95,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
+      <image:loc>/portfolio/office/office-main.jpg</image:loc>
       <image:title>Office &amp; Retail Interior</image:title>
     </image:image>
   </url>
@@ -425,15 +425,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/interior/living-room.jpg</image:loc>
       <image:title>Gulshan Duplex Penthouse</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/interior/living-room.jpg</image:loc>
       <image:title>Gulshan Duplex Penthouse</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/interior/living-room-v1.jpg</image:loc>
       <image:title>Gulshan Duplex Penthouse</image:title>
     </image:image>
   </url>
@@ -443,15 +443,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/office/office-conference.jpg</image:loc>
       <image:title>Banani Executive HQ</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/office/office-conference.jpg</image:loc>
       <image:title>Banani Executive HQ</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/office/office-conference-2.jpg</image:loc>
       <image:title>Banani Executive HQ</image:title>
     </image:image>
   </url>
@@ -461,15 +461,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/cover/cover-2.jpeg</image:loc>
       <image:title>Bashundhara Signature Villa</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/cover/cover-2.jpeg</image:loc>
       <image:title>Bashundhara Signature Villa</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:loc>/portfolio/cover/cover-4.jpeg</image:loc>
       <image:title>Bashundhara Signature Villa</image:title>
     </image:image>
   </url>
