@@ -17,54 +17,41 @@ export const supabase = isSupabaseConfigured
   ? createClient(supabaseUrl, supabaseAnonKey)
   : null;
 
+export const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_KEY || 'ac75ae12-4ca2-40a8-a0ff-3b5aee4b6a60';
+
 const LOCAL_STORAGE_KEY = 'browns_interior_inquiries_v1';
 
 /**
- * Send an instant email notification to the configured studio email address
- * whenever a client submits the inquiry/quote form.
+ * Send an instant email notification to the studio inbox via Web3Forms API
+ * whenever a client submits an inquiry or consultation request.
  */
 export async function sendEmailNotification(inquiry) {
-  const targetEmail = NOTIFICATION_EMAIL;
-  const web3FormsKey = import.meta.env.VITE_WEB3FORMS_KEY || '';
+  const accessKey = WEB3FORMS_ACCESS_KEY;
 
   const subject = `New Project Inquiry: ${inquiry.service_category}${
     inquiry.sub_service ? ` (${inquiry.sub_service})` : ''
   } — ${inquiry.name}`;
 
   const payload = {
-    _subject: subject,
-    _template: 'table',
-    _captcha: 'false',
+    access_key: accessKey,
+    subject,
+    from_name: "Brown's Interior Website",
+    ...(inquiry.email ? { replyto: inquiry.email } : {}),
     Client_Name: inquiry.name,
-    Email: inquiry.email,
     Phone_WhatsApp: inquiry.phone,
+    Email: inquiry.email || 'Not provided',
     Service_Category: inquiry.service_category,
     Specialized_Service: inquiry.sub_service || 'General Category Inquiry',
     Project_Location: inquiry.location || 'Not specified',
     Approx_Area_SqFt: inquiry.area_sqft ? `${inquiry.area_sqft} sq ft` : 'Not specified',
     Estimated_Budget: inquiry.estimated_budget || 'Requested Custom Quote',
-    Project_Details: inquiry.message,
+    Project_Details: inquiry.message || 'Requested callback / consultation',
     Submitted_At: new Date().toLocaleString('en-BD', { timeZone: 'Asia/Dhaka' }),
   };
 
   try {
-    if (web3FormsKey) {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: web3FormsKey,
-          subject,
-          from_name: "Brown's Interior Website",
-          replyto: inquiry.email,
-          ...payload,
-        }),
-      });
-      return res.ok;
-    }
-
-    // Default: FormSubmit.co AJAX endpoint sends directly to NOTIFICATION_EMAIL
-    const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`, {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -73,9 +60,10 @@ export async function sendEmailNotification(inquiry) {
       body: JSON.stringify(payload),
     });
 
-    return res.ok;
+    const data = await res.json();
+    return res.ok && (data.success === true || data.status === 'success');
   } catch (err) {
-    console.warn('Email notification warning:', err);
+    console.warn('Web3Forms notification error:', err);
     return false;
   }
 }
@@ -88,15 +76,15 @@ export async function sendEmailNotification(inquiry) {
  */
 export async function submitInquiry(formData) {
   const record = {
-    name: formData.name.trim(),
-    email: formData.email.trim(),
-    phone: formData.phone.trim(),
-    service_category: formData.service_category,
+    name: (formData.name || '').trim(),
+    email: (formData.email || '').trim(),
+    phone: (formData.phone || '').trim(),
+    service_category: formData.service_category || 'Interior Design',
     sub_service: formData.sub_service || '',
-    location: formData.location?.trim() || '',
+    location: (formData.location || '').trim(),
     area_sqft: formData.area_sqft ? Number(formData.area_sqft) : null,
     estimated_budget: formData.estimated_budget || '',
-    message: formData.message.trim(),
+    message: (formData.message || '').trim(),
     status: 'new',
     source: formData.source || 'website_contact_form',
   };

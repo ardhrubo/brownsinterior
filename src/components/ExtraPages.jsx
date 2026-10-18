@@ -2,7 +2,8 @@ import React, { useMemo, useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Star, Quote, ArrowLeft, Calculator, Phone, UserRound } from 'lucide-react';
-import { PageHero, SectionHead, ProcessTimeline, CostCTA, TestimonialSlider, BlogCard } from './HomeSections';
+import { PageHero, SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
+import SEO from './SEO';
 import { testimonials, processSteps, blogPosts } from '../data/siteData';
 import '../styles/site.css';
 import './HomeSections.css';
@@ -11,6 +12,11 @@ import './ExtraPages.css';
 export function ProcessPage() {
   return (
     <main>
+      <SEO
+        title="Our Process - 6-Step Interior Design & Execution Journey"
+        description="Explore our proven 6-step interior and architecture process from consultation and 3D visualization to turnkey handover in Dhaka."
+        canonicalPath="/process"
+      />
       <PageHero
         title="Our Process"
         sub="A clear, step-by-step journey from your first idea to the final handover."
@@ -64,6 +70,11 @@ export function ProcessPage() {
 export function TestimonialsPage() {
   return (
     <main>
+      <SEO
+        title="Client Reviews & Testimonials - Brown's Interior"
+        description="Read genuine testimonials from apartment owners, corporate directors, and commercial clients across Dhaka who transformed their spaces with Brown's Interior."
+        canonicalPath="/testimonials"
+      />
       <PageHero title="Testimonials" sub="Hear from the clients who trusted us with their spaces." image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" />
       <section className="section cream">
         <div className="container">
@@ -91,6 +102,11 @@ export function TestimonialsPage() {
 export function BlogPage() {
   return (
     <main>
+      <SEO
+        title="Interior Design & Renovation Blog"
+        description="Practical guides, styling tips, budget planning advice, and exhibition stall design ideas from the Brown's Interior design studio."
+        canonicalPath="/blog"
+      />
       <PageHero title="Our Blog" sub="Design ideas, tips and insights from the Brown's Interior team." image="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&q=80&w=2000" crumb="Blog" />
       <section className="section">
         <div className="container grid-3">
@@ -108,6 +124,13 @@ export function BlogPost() {
   const others = blogPosts.filter((p) => p.slug !== slug);
   return (
     <main>
+      <SEO
+        title={`${post.title} - Blog`}
+        description={post.excerpt}
+        canonicalPath={`/blog/${post.slug}`}
+        image={post.image}
+        type="article"
+      />
       <PageHero title={post.category} sub={post.title} image={post.image} crumb="Blog" />
       <section className="section">
         <div className="container post-wrap">
@@ -168,6 +191,11 @@ export function CostCalculatorPage() {
 
   return (
     <main>
+      <SEO
+        title="Interior Design Cost Calculator - Dhaka, Bangladesh"
+        description="Estimate residential, commercial, and exhibition booth interior design costs instantly with our transparent budget calculator."
+        canonicalPath="/cost-estimator"
+      />
       <PageHero title="Estimate Cost" sub="Get an instant, approximate budget for your project." image="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=2000" />
       <section className="section cream">
         <div className="container calc">

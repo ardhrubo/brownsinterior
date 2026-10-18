@@ -6,8 +6,8 @@ import './About.css';
 
 const quickHighlights = [
   'Led by Engr. Aslam Sheikh',
-  'Architecture + Interior + Structural',
-  'Transparent BOQ & On-Time Delivery',
+  'Architecture · Interior · Structural',
+  'Transparent BOQ & Turnkey Build',
 ];
 
 export default function About({ full = false }) {
@@ -43,10 +43,10 @@ export default function About({ full = false }) {
           >
             <span className="sec-eyebrow">The Studio</span>
             <h2 className="sec-title about-title">
-              Where <em>Creative Vision</em> Meets Engineering Precision.
+              Where <em>Design</em> Meets Engineering.
             </h2>
             <p className="about-description">
-              Based in Dhaka and led by <strong>Engr. Aslam Sheikh</strong>, Brown's Interior blends architectural aesthetics with structural reliability across homes, offices, and exhibition spaces.
+              Led by <strong>Engr. Aslam Sheikh</strong>, we design and build bespoke homes, offices, and exhibition spaces across Dhaka.
             </p>
 
             {!full && (
@@ -61,20 +61,15 @@ export default function About({ full = false }) {
             )}
 
             {full && (
-              <>
-                <p className="about-description">
-                  Our multidisciplinary team handles interior design, architectural planning, structural consultancy, renovation, trade show booth fabrication, and end-to-end project management under one roof.
-                </p>
-                <p className="about-description">
-                  Every project begins with how you live and work — pairing honest materials, realistic 3D visualization, and itemized budgets so there are zero surprises during execution.
-                </p>
-              </>
+              <p className="about-description">
+                Our in-house team unites interior architecture, structural consultancy, custom millwork, and turnkey execution—backed by 3D visualization and itemized budgets.
+              </p>
             )}
 
             {!full && (
               <div className="about-cta-row">
                 <Link to="/about" className="pill-btn outline" id="about-discover-more">
-                  More About Us <ArrowRight size={15} />
+                  About Us <ArrowRight size={15} />
                 </Link>
               </div>
             )}
@@ -92,7 +87,7 @@ export default function About({ full = false }) {
             >
               <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
               <h3>Our Mission</h3>
-              <p>To craft purposeful, enduring spaces through intelligent planning, honest materials, and engineering precision.</p>
+              <p>Crafting enduring spaces through smart planning, honest materials, and engineering precision.</p>
             </motion.div>
             <motion.div
               className="value-card dark"

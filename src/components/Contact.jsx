@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   MapPin, Phone, Mail, Clock, CheckCircle2, Send, Loader2, Sparkles, AlertCircle
 } from 'lucide-react';
 import { PageHero, SectionHead } from './HomeSections';
+import SEO from './SEO';
 import { servicesData } from '../data/servicesData';
 import { submitInquiry, NOTIFICATION_EMAIL } from '../lib/supabase';
 import './Contact.css';
@@ -46,27 +47,9 @@ export default function Contact({ showHero = true }) {
     }
   }, [searchParams]);
 
-  const currentCategoryObj = useMemo(
-    () =>
-      servicesData.find(
-        (s) => s.title === form.service_category || s.slug === form.service_category
-      ) || servicesData[0],
-    [form.service_category]
-  );
-
-  const subServiceOptions = currentCategoryObj ? currentCategoryObj.options : [];
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'service_category') {
-      setForm((prev) => ({
-        ...prev,
-        service_category: value,
-        sub_service: '',
-      }));
-    } else {
-      setForm((prev) => ({ ...prev, [name]: value }));
-    }
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -79,12 +62,11 @@ export default function Contact({ showHero = true }) {
         ...form,
         source: searchParams.get('budget') ? 'cost_calculator_quote' : 'website_contact_form',
       });
-      const refCode = `BI-${String(Date.now()).slice(-4)}`;
-      setSubmittedResult({ ...res, refCode });
+      setSubmittedResult(res);
       setForm(initialForm);
     } catch (err) {
       setErrorMsg(
-        err.message || 'Something went wrong while submitting your request. Please try again.'
+        err.message || 'Unable to send your request right now. Please try again.'
       );
     } finally {
       setSubmitting(false);
@@ -93,201 +75,124 @@ export default function Contact({ showHero = true }) {
 
   return (
     <>
-      {submittedResult && (
-        <motion.div
-          className="contact-floating-toast"
-          initial={{ opacity: 0, y: -24, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-        >
-          <CheckCircle2 size={18} />
-          <div>
-            <strong>Request Sent Successfully! ({submittedResult.refCode})</strong>
-            <span>Saved to studio database &amp; emailed to {submittedResult.recipientEmail}</span>
-          </div>
-        </motion.div>
+      {showHero && (
+        <>
+          <SEO
+            title="Contact Us & Book Free Design Consultation"
+            description="Contact Brown's Interior in Dhaka. Book a free consultation, site visit, or request an itemized BOQ estimate for your residential or commercial project."
+            canonicalPath="/contact"
+          />
+          <PageHero
+            title="Contact Us"
+            sub="Let's plan, design, and build your space."
+            image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000"
+          />
+        </>
       )}
 
-      {showHero && (
-        <PageHero
-          title="Contact Us"
-          sub="Tell us about your space — we'll help you plan, design and build it with quality and purpose."
-          image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000"
-        />
-      )}
       <section className="contact-page-section" id="contact">
         <div className="container">
           {!showHero && (
             <SectionHead
               eyebrow="Get In Touch"
-              title="Request a"
+              title="Book a"
               script="Consultation"
-              sub="Share your project requirements below. Your inquiry is saved directly to our studio system and emailed immediately to our team."
             />
           )}
 
           <div className="contact-wrapper">
+            {/* Left / Top: Compact Studio Info */}
             <motion.div
               className="contact-info-panel"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
             >
-              <span className="contact-panel-tag">Brown's Interior</span>
-              <h3>Contact Information</h3>
-              <p className="info-desc">
-                Reach out to Engr. Aslam Sheikh &amp; team directly, or submit the form for a tailored consultation and itemized BOQ.
-              </p>
+              <div className="contact-info-head">
+                <span className="contact-panel-tag">Brown's Interior</span>
+                <h3>Let's Talk About Your Space</h3>
+                <p className="info-desc">
+                  Call, WhatsApp, or send a quick note for a free consultation.
+                </p>
+              </div>
 
               <div className="info-items">
-                <div className="info-item">
-                  <div className="info-icon"><Phone size={22} /></div>
+                <a href="tel:+8801715064415" className="info-item">
+                  <div className="info-icon"><Phone size={18} /></div>
                   <div>
-                    <h4>Call or WhatsApp</h4>
-                    <p><a href="tel:+8801715064415">+880 1715-064415</a></p>
+                    <h4>Call / WhatsApp</h4>
+                    <p>+880 1715-064415</p>
+                  </div>
+                </a>
+
+                <a href={`mailto:${NOTIFICATION_EMAIL}`} className="info-item">
+                  <div className="info-icon"><Mail size={18} /></div>
+                  <div>
+                    <h4>Email</h4>
+                    <p>{NOTIFICATION_EMAIL}</p>
+                  </div>
+                </a>
+
+                <div className="info-item">
+                  <div className="info-icon"><MapPin size={18} /></div>
+                  <div>
+                    <h4>Studio</h4>
+                    <p>House #354, Flat #5/A, Block-B, Khilgaon Taltola, Dhaka</p>
                   </div>
                 </div>
 
                 <div className="info-item">
-                  <div className="info-icon"><Mail size={22} /></div>
+                  <div className="info-icon"><Clock size={18} /></div>
                   <div>
-                    <h4>Email Us</h4>
-                    <p><a href={`mailto:${NOTIFICATION_EMAIL}`}>{NOTIFICATION_EMAIL}</a></p>
-                  </div>
-                </div>
-
-                <div className="info-item">
-                  <div className="info-icon"><MapPin size={22} /></div>
-                  <div>
-                    <h4>Studio Address</h4>
-                    <p>
-                      House # 354, Flat # 5/A, Block-B, Khilgaon Taltola (Opposite side of PalliBidyut), Dhaka, Bangladesh
-                    </p>
-                  </div>
-                </div>
-
-                <div className="info-item">
-                  <div className="info-icon"><Clock size={22} /></div>
-                  <div>
-                    <h4>Studio Hours</h4>
-                    <p>Sat – Thu: 9:00 AM – 7:00 PM</p>
+                    <h4>Hours</h4>
+                    <p>Sat – Thu · 9 AM – 7 PM</p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
+            {/* Right / Bottom: Minimal Form or Clean Feedback */}
             <motion.div
               className="contact-form-panel"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
               {submittedResult ? (
                 <motion.div
-                  className="contact-success-box"
+                  className="contact-success-minimal"
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: 0.35 }}
                 >
-                  <div className="contact-success-top">
-                    <div className="contact-success-icon">
-                      <CheckCircle2 size={36} />
-                    </div>
-                    <span className="contact-ref-badge">
-                      Reference #{submittedResult.refCode}
-                    </span>
-                    <h3>Consultation Request Confirmed!</h3>
-                    <p>
-                      Thank you, <strong>{submittedResult.record.name}</strong>. Your inquiry has been logged in our studio database and an instant email notification was sent to{' '}
-                      <strong>{submittedResult.recipientEmail}</strong>.
-                    </p>
+                  <div className="contact-success-badge">
+                    <CheckCircle2 size={32} strokeWidth={1.8} />
                   </div>
-
-                  {/* Submitted Details Receipt */}
-                  <div className="contact-receipt-grid">
-                    <div className="receipt-item">
-                      <span>Selected Service</span>
-                      <strong>
-                        {submittedResult.record.service_category}
-                        {submittedResult.record.sub_service
-                          ? ` — ${submittedResult.record.sub_service}`
-                          : ''}
-                      </strong>
-                    </div>
-                    <div className="receipt-item">
-                      <span>Contact Number</span>
-                      <strong>{submittedResult.record.phone}</strong>
-                    </div>
-                    {submittedResult.record.location && (
-                      <div className="receipt-item">
-                        <span>Location</span>
-                        <strong>{submittedResult.record.location}</strong>
-                      </div>
-                    )}
-                    {(submittedResult.record.area_sqft ||
-                      submittedResult.record.estimated_budget) && (
-                      <div className="receipt-item">
-                        <span>Space / Target Budget</span>
-                        <strong>
-                          {submittedResult.record.area_sqft
-                            ? `${submittedResult.record.area_sqft} sq ft`
-                            : ''}
-                          {submittedResult.record.area_sqft &&
-                          submittedResult.record.estimated_budget
-                            ? ' · '
-                            : ''}
-                          {submittedResult.record.estimated_budget || ''}
-                        </strong>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* 3-Step What Happens Next */}
-                  <div className="contact-next-steps">
-                    <h4>What Happens Next</h4>
-                    <div className="next-steps-row">
-                      <div className="next-step-chip done">
-                        <span className="step-badge">✓</span>
-                        <div>
-                          <strong>1. Request Logged</strong>
-                          <small>Saved &amp; emailed to studio</small>
-                        </div>
-                      </div>
-                      <div className="next-step-chip active">
-                        <span className="step-badge">02</span>
-                        <div>
-                          <strong>2. Team Review</strong>
-                          <small>Reviewed within 24 hours</small>
-                        </div>
-                      </div>
-                      <div className="next-step-chip">
-                        <span className="step-badge">03</span>
-                        <div>
-                          <strong>3. Direct Call / Visit</strong>
-                          <small>Schedule consultation &amp; BOQ</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <h3>Thank You, {submittedResult.record.name}!</h3>
+                  <p>
+                    We've received your consultation request for{' '}
+                    <strong>{submittedResult.record.service_category}</strong>. Our design team will reach out to you shortly via phone or WhatsApp.
+                  </p>
 
                   <div className="contact-success-actions">
                     <a
                       href={`https://wa.me/8801715064415?text=${encodeURIComponent(
-                        `Hello Brown's Interior! I just submitted a consultation request (Ref #${submittedResult.refCode}) for ${submittedResult.record.service_category}.`
+                        `Hello Brown's Interior! I just requested a consultation for ${submittedResult.record.service_category}.`
                       )}`}
                       target="_blank"
                       rel="noreferrer"
                       className="pill-btn"
                     >
-                      <Phone size={15} /> Fast-Track on WhatsApp
+                      <Phone size={15} /> Chat on WhatsApp
                     </a>
                     <button
                       type="button"
                       className="pill-btn outline"
                       onClick={() => setSubmittedResult(null)}
                     >
-                      Submit Another Inquiry
+                      Send Another Request
                     </button>
                   </div>
                 </motion.div>
@@ -295,11 +200,10 @@ export default function Contact({ showHero = true }) {
                 <form onSubmit={handleSubmit} className="quote-form">
                   {form.estimated_budget && (
                     <div className="contact-prefill-banner">
-                      <Sparkles size={16} />
+                      <Sparkles size={15} />
                       <span>
-                        Pre-filled from Estimate Cost — Estimated Budget:{' '}
-                        <strong>{form.estimated_budget}</strong>
-                        {form.area_sqft ? ` (${form.area_sqft} sq ft)` : ''}
+                        Estimated Budget: <strong>{form.estimated_budget}</strong>
+                        {form.area_sqft ? ` · ${form.area_sqft} sq ft` : ''}
                       </span>
                     </div>
                   )}
@@ -321,7 +225,7 @@ export default function Contact({ showHero = true }) {
                         value={form.name}
                         onChange={handleChange}
                         required
-                        placeholder="e.g. Rafiq Ahmed"
+                        placeholder="Your name"
                       />
                     </div>
                     <div className="form-group">
@@ -340,33 +244,7 @@ export default function Contact({ showHero = true }) {
 
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="inq-email">Email Address *</label>
-                      <input
-                        id="inq-email"
-                        type="email"
-                        name="email"
-                        value={form.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="you@example.com"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="inq-location">Project Location</label>
-                      <input
-                        id="inq-location"
-                        type="text"
-                        name="location"
-                        value={form.location}
-                        onChange={handleChange}
-                        placeholder="e.g. Gulshan, Banani, Dhanmondi..."
-                      />
-                    </div>
-                  </div>
-
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="inq-category">Service Category *</label>
+                      <label htmlFor="inq-category">Service Type *</label>
                       <select
                         id="inq-category"
                         name="service_category"
@@ -376,77 +254,44 @@ export default function Contact({ showHero = true }) {
                       >
                         {servicesData.map((s) => (
                           <option key={s.slug} value={s.title}>
-                            {s.title}
+                            {s.shortTitle || s.title}
                           </option>
                         ))}
                       </select>
                     </div>
-
                     <div className="form-group">
-                      <label htmlFor="inq-subservice">Specialized Service</label>
-                      <select
-                        id="inq-subservice"
-                        name="sub_service"
-                        value={form.sub_service}
-                        onChange={handleChange}
-                      >
-                        <option value="">All / General {currentCategoryObj?.shortTitle}</option>
-                        {subServiceOptions.map((opt) => (
-                          <option key={opt.slug} value={opt.title}>
-                            {opt.title}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="inq-area">Approx. Space Size (sq ft)</label>
+                      <label htmlFor="inq-location">Location</label>
                       <input
-                        id="inq-area"
-                        type="number"
-                        min="50"
-                        name="area_sqft"
-                        value={form.area_sqft}
-                        onChange={handleChange}
-                        placeholder="e.g. 1650"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="inq-budget">Target Budget Range</label>
-                      <input
-                        id="inq-budget"
+                        id="inq-location"
                         type="text"
-                        name="estimated_budget"
-                        value={form.estimated_budget}
+                        name="location"
+                        value={form.location}
                         onChange={handleChange}
-                        placeholder="e.g. ৳ 15L – 25L / Custom Quote"
+                        placeholder="e.g. Gulshan, Banani, Dhanmondi"
                       />
                     </div>
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="inq-message">Project Details &amp; Vision *</label>
+                    <label htmlFor="inq-message">Project Note</label>
                     <textarea
                       id="inq-message"
                       name="message"
-                      rows="4"
+                      rows="3"
                       value={form.message}
                       onChange={handleChange}
-                      required
-                      placeholder="Tell us about your rooms, timeline, preferred style, or site visit availability..."
+                      placeholder="Tell us briefly about your space or preferred time for a call..."
                     />
                   </div>
 
                   <button type="submit" className="submit-btn" disabled={submitting}>
                     {submitting ? (
                       <>
-                        <Loader2 size={18} className="spin-icon" /> SENDING REQUEST...
+                        <Loader2 size={17} className="spin-icon" /> Sending...
                       </>
                     ) : (
                       <>
-                        <Send size={16} /> SEND CONSULTATION REQUEST
+                        <Send size={15} /> Book Free Consultation
                       </>
                     )}
                   </button>
@@ -459,4 +304,3 @@ export default function Contact({ showHero = true }) {
     </>
   );
 }
-

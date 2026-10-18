@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { servicesData, findServiceOrOption } from '../data/servicesData';
 import { SectionHead, ProcessTimeline, CostCTA } from './HomeSections';
+import SEO from './SEO';
 import '../styles/site.css';
 import './ServiceDetail.css';
 
@@ -56,6 +57,12 @@ export default function ServiceDetail() {
 
   return (
     <main className="sd-page">
+      <SEO
+        title={`${data.title} - Interior & Architectural Service`}
+        description={data.intro || data.tagline || data.desc || data.description}
+        canonicalPath={`/services/${targetSlug}`}
+        image={data.image || (data.gallery && data.gallery[0])}
+      />
       {/* Bespoke Dark Split Showcase Hero (for every service & sub-service page) */}
       <section className="sd-opt-hero">
         <div
@@ -185,7 +192,6 @@ export default function ServiceDetail() {
               eyebrow={`Service ${category.number}`}
               title={category.shortTitle || category.title}
               script="Services"
-              sub={category.intro}
             />
 
             <div className="category-options-grid">
@@ -211,17 +217,9 @@ export default function ServiceDetail() {
                     </h3>
                     <p>{opt.tagline || opt.desc}</p>
 
-                    {opt.highlights && (
-                      <div className="opt-tag-row">
-                        {opt.highlights.map((tag) => (
-                          <span key={tag} className="opt-mini-tag">{tag}</span>
-                        ))}
-                      </div>
-                    )}
-
                     <div className="opt-card-footer">
                       <Link to={`/services/${opt.slug}`} className="read-more">
-                        View Service Page <ArrowRight size={14} />
+                        Explore <ArrowRight size={14} />
                       </Link>
                       <Link to="/contact" className="opt-quick-quote">
                         Get Quote
@@ -242,7 +240,6 @@ export default function ServiceDetail() {
             eyebrow="Scope of Work"
             title="What's"
             script="Included"
-            sub={data.desc || data.intro || data.description}
           />
 
           <div className="sd-bento-features">

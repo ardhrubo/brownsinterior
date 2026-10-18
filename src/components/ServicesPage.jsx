@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Calculator, Phone } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { PageHero } from './HomeSections';
+import SEO from './SEO';
 import './ServicesPage.css';
 
 export default function ServicesPage() {
   return (
     <main className="sp-page">
+      <SEO
+        title="Our Services - Interior Design, Architecture & Turnkey Execution"
+        description="Explore interior design, architectural planning, structural engineering, renovation, and trade show booth solutions by Brown's Interior in Dhaka."
+        canonicalPath="/services"
+      />
       <PageHero
         title="Our Services"
         sub="Select a service category to explore our specialized solutions."
@@ -43,7 +49,6 @@ export default function ServicesPage() {
                     <h2>
                       <Link to={`/services/${s.slug}`}>{s.title}</Link>
                     </h2>
-                    <p>{s.tagline || s.description}</p>
 
                     <ul className="sp-sub-list">
                       {s.options.map((opt) => (
@@ -60,7 +65,7 @@ export default function ServicesPage() {
                     <div className="sp-option-footer">
                       <span className="sp-option-count">{s.options.length} Services</span>
                       <Link to={`/services/${s.slug}`} className="sp-option-Action">
-                        Explore Category <ArrowRight size={15} />
+                        Explore <ArrowRight size={15} />
                       </Link>
                     </div>
                   </div>
