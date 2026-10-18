@@ -4,7 +4,7 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
 export const NOTIFICATION_EMAIL =
-  import.meta.env.VITE_NOTIFICATION_EMAIL || 'brownsinteriorstudio@gmail.com';
+  import.meta.env.VITE_NOTIFICATION_EMAIL || 'info@brownsinterior.com';
 
 export const isSupabaseConfigured = Boolean(
   supabaseUrl &&

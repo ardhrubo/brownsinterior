@@ -6,6 +6,7 @@ import './About.css';
 
 const quickHighlights = [
   'Led by Engr. Aslam Sheikh',
+  'All Over Bangladesh & Worldwide Design Service',
   'Architecture · Interior · Structural',
   'Transparent BOQ & Turnkey Build',
 ];
@@ -46,7 +47,7 @@ export default function About({ full = false }) {
               Where <em>Design</em> Meets Engineering.
             </h2>
             <p className="about-description">
-              Led by <strong>Engr. Aslam Sheikh</strong>, we design and build bespoke homes, offices, and exhibition spaces across Dhaka.
+              Led by <strong>Engr. Aslam Sheikh</strong>, we design and build bespoke homes, offices, and exhibition spaces all over Bangladesh, alongside worldwide architectural and interior design services.
             </p>
 
             {!full && (

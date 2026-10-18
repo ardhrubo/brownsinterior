@@ -75,6 +75,22 @@ a.info-item:hover {
   transform: translateX(3px);
 }
 
+.info-item.highlight-wa {
+  background: rgba(37, 211, 102, 0.08);
+  border-color: rgba(37, 211, 102, 0.3);
+}
+
+.info-item.highlight-wa:hover {
+  background: rgba(37, 211, 102, 0.16);
+  border-color: #25d366;
+}
+
+.info-icon.wa-icon {
+  background: rgba(37, 211, 102, 0.18);
+  border-color: rgba(37, 211, 102, 0.4);
+  color: #25d366;
+}
+
 .info-icon {
   width: 40px;
   height: 40px;

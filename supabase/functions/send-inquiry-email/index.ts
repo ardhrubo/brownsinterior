@@ -4,7 +4,7 @@
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY") || "";
-const NOTIFICATION_EMAIL = Deno.env.get("NOTIFICATION_EMAIL") || "brownsinterior.bd@gmail.com";
+const NOTIFICATION_EMAIL = Deno.env.get("NOTIFICATION_EMAIL") || "info@brownsinterior.com";
 
 serve(async (req) => {
   try {

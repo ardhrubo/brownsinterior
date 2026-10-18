@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const DEFAULT_TITLE = "Brown's Interior | Premium Interior Design & Architecture in Dhaka";
+const DEFAULT_TITLE = "Brown's Interior | Premium Interior Design & Architecture in Bangladesh & Worldwide";
 const DEFAULT_DESC =
-  "Transforming spaces into breathtaking realities. Brown's Interior offers luxury interior design, visionary architecture, and complete turnkey structural solutions in Dhaka, Bangladesh.";
+  "Transforming spaces into breathtaking realities. Brown's Interior offers luxury interior design, visionary architecture, and complete turnkey structural solutions all over Bangladesh and worldwide.";
 const SITE_URL = 'https://brownsinterior.com';
 
 export default function SEO({

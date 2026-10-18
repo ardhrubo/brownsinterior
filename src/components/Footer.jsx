@@ -33,7 +33,7 @@ export default function Footer() {
               <img src="/logo.svg" alt="Brown's Interior Logo" className="footer-logo-img" />
             </Link>
             <p className="footer-desc">
-              Brown's Interior is a Dhaka-based interior design and execution firm providing professional design solutions for residential, commercial and exhibition spaces. Led by Engr. Aslam Sheikh.
+              Brown's Interior is a premier interior design and turnkey execution firm providing professional design solutions for residential, commercial and exhibition spaces all over Bangladesh and worldwide. Led by Engr. Aslam Sheikh.
             </p>
             <div className="social-links">
               <a href="https://www.facebook.com/brownsengineeringbd" target="_blank" rel="noreferrer" className="social-icon" aria-label="Facebook"><FaFacebook size={18} /></a>
@@ -61,9 +61,9 @@ export default function Footer() {
 
           <div className="footer-contact">
             <h4 className="footer-title">Contact Us</h4>
-            <a href="https://maps.google.com/?q=Dhaka,Bangladesh" target="_blank" rel="noreferrer" className="contact-item"><MapPin size={18} /><span>Dhaka, Bangladesh</span></a>
+            <a href="https://maps.google.com/?q=Uttara,Dhaka,Bangladesh" target="_blank" rel="noreferrer" className="contact-item"><MapPin size={18} /><span>Uttara, Dhaka, Bangladesh</span></a>
             <a href="tel:+8801768436319" className="contact-item"><Phone size={18} /><span>+880 1768-436319</span></a>
-            <a href="mailto:brownsinteriorstudio@gmail.com" className="contact-item"><Mail size={18} /><span>brownsinteriorstudio@gmail.com</span></a>
+            <a href="mailto:info@brownsinterior.com" className="contact-item"><Mail size={18} /><span>info@brownsinterior.com</span></a>
           </div>
         </div>
 

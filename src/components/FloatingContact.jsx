@@ -17,7 +17,7 @@ export default function FloatingContact() {
           <Phone size={20} />
           <span className="tooltip">Call Us</span>
         </a>
-        <a href="mailto:brownsinteriorstudio@gmail.com" className="floating-item mail">
+        <a href="mailto:info@brownsinterior.com" className="floating-item mail">
           <Mail size={20} />
           <span className="tooltip">Email</span>
         </a>

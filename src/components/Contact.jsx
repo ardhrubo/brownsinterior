@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import {
   MapPin, Phone, Mail, Clock, CheckCircle2, Send, Loader2, Sparkles, AlertCircle
 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { PageHero, SectionHead } from './HomeSections';
 import SEO from './SEO';
 import { servicesData } from '../data/servicesData';
@@ -118,11 +119,26 @@ export default function Contact({ showHero = true }) {
               </div>
 
               <div className="info-items">
-                <a href="tel:+8801768436319" className="info-item">
+                <a href="tel:+8801768436319" className="info-item highlight-call">
                   <div className="info-icon"><Phone size={18} /></div>
                   <div>
-                    <h4>Call / WhatsApp</h4>
+                    <h4>Direct Call</h4>
                     <p>+88 01768-436319</p>
+                  </div>
+                </a>
+
+                <a
+                  href={`https://wa.me/8801768436319?text=${encodeURIComponent(
+                    "Hello Brown's Interior, I would like to consult with Engr. Aslam and discuss an interior project in Dhaka."
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="info-item highlight-wa"
+                >
+                  <div className="info-icon wa-icon"><FaWhatsapp size={19} /></div>
+                  <div>
+                    <h4>Instant WhatsApp</h4>
+                    <p>Chat with Engr. Aslam</p>
                   </div>
                 </a>
 
@@ -138,7 +154,7 @@ export default function Contact({ showHero = true }) {
                   <div className="info-icon"><MapPin size={18} /></div>
                   <div>
                     <h4>Studio</h4>
-                    <p>House #354, Flat #5/A, Block-B, Khilgaon Taltola, Dhaka</p>
+                    <p>Uttara, Dhaka, Bangladesh</p>
                   </div>
                 </div>
 

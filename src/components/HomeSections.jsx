@@ -88,7 +88,7 @@ export function HomeHero() {
           Designing <em>Timeless Spaces</em> with Purpose.
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}>
-          Residential, commercial &amp; exhibition design-build studio in Dhaka.
+          Residential, commercial &amp; exhibition design-build studio serving all over Bangladesh &amp; worldwide.
         </motion.p>
         <motion.div className="h-hero-ctas" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}>
           <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Work</Link>
