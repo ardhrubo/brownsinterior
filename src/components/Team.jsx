@@ -30,35 +30,30 @@ const iconMap = {
   Paintbrush,
 };
 
-function MemberCard({ member, index, isFeatured = false }) {
+function MemberCard({ member, index }) {
   const RoleIcon = iconMap[member.badgeIcon] || Award;
 
   return (
     <motion.article
-      className={`team-pro-card ${isFeatured ? 'is-founder' : ''}`}
-      initial={{ opacity: 0, y: 24 }}
+      className="team-pro-card clay"
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.45, delay: (index % 3) * 0.08 }}
+      transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
     >
-      <div className="team-pro-top">
-        <div className="team-pro-avatar-wrap">
-          <div className="team-pro-avatar" aria-hidden="true">
-            <UserRound size={28} strokeWidth={1.6} />
-          </div>
-          <span className="team-pro-role-badge" title={member.role}>
-            <RoleIcon size={13} strokeWidth={2} />
-          </span>
+      <div className="team-pro-avatar-wrap">
+        <div className="team-pro-avatar" aria-hidden="true">
+          <UserRound size={42} strokeWidth={1.4} />
         </div>
-
-        <span className="team-pro-dept">{member.categoryLabel}</span>
+        <span className="team-pro-role-badge" title={member.role}>
+          <RoleIcon size={15} strokeWidth={2} />
+        </span>
       </div>
 
-      <div className="team-pro-body">
-        <span className="team-pro-role">{member.role}</span>
-        <h3 className="team-pro-name">{member.name}</h3>
-        <p className="team-pro-resp">{member.responsibilities}</p>
-      </div>
+      <span className="team-pro-role">{member.role}</span>
+      <h3 className="team-pro-name">{member.name}</h3>
+      <div className="team-pro-divider" aria-hidden="true" />
+      <p className="team-pro-resp">{member.responsibilities}</p>
     </motion.article>
   );
 }
@@ -77,24 +72,18 @@ export default function Team({ cream = false, full = false }) {
           sub="Interior Design & Execution"
         />
 
-        {/* Top 3 Core Members (Always shown on Home & About) */}
         <div className="team-pro-grid">
           {homeMembers.map((member, index) => (
             <MemberCard
               key={member.id || member.name}
               member={member}
               index={index}
-              isFeatured={index === 0}
             />
           ))}
         </div>
 
-        {/* Rest of the Team (Shown on About page) */}
         {full && restMembers.length > 0 && (
           <div className="team-rest-block">
-            <div className="team-rest-divider">
-              <span>Design, Visualization &amp; Execution Specialists</span>
-            </div>
             <div className="team-pro-grid">
               {restMembers.map((member, index) => (
                 <MemberCard

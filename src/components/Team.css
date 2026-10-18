@@ -2,80 +2,48 @@
   position: relative;
 }
 
+.team-section .container {
+  max-width: 1240px;
+}
+
 .team-pro-grid,
 .team-grid,
 .team-lead-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.65rem;
+  gap: 2.25rem;
   align-items: stretch;
 }
 
-/* Eye-Catching Luxury Studio Team Card */
+/* Clean, Symmetrical, Spacious Profile Card */
 .team-pro-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1.75rem 1.65rem;
-  border-radius: 20px;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2.25rem 2.75rem;
+  border-radius: 24px;
   background: #ffffff;
-  border: 1px solid rgba(44, 40, 37, 0.1);
-  box-shadow: 0 12px 30px rgba(34, 28, 24, 0.06);
+  border: 1px solid rgba(44, 40, 37, 0.08);
+  box-shadow: 0 14px 38px rgba(44, 40, 37, 0.06);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.35s ease,
     border-color 0.35s ease;
-  overflow: hidden;
-}
-
-.team-pro-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--gold, #c9b59c), var(--gold-dark, #a88a66));
-  opacity: 0.75;
-  transition: opacity 0.3s ease, height 0.3s ease;
 }
 
 .team-pro-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--gold, #c9b59c);
-  box-shadow: 0 22px 44px rgba(34, 28, 24, 0.12);
+  box-shadow: 0 24px 50px rgba(44, 40, 37, 0.12);
 }
 
-.team-pro-card:hover::before {
-  opacity: 1;
-}
-
-/* Highlighted Founder Card */
-.team-pro-card.is-founder {
-  background: linear-gradient(155deg, #221d19 0%, #171311 100%);
-  color: #ffffff;
-  border-color: rgba(201, 181, 156, 0.4);
-  box-shadow: 0 18px 40px rgba(24, 19, 15, 0.18);
-}
-
-.team-pro-card.is-founder::before {
-  height: 4px;
-  opacity: 1;
-}
-
-/* Top Row: Profile Icon Avatar + Department Pill */
-.team-pro-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 1.35rem;
-}
-
+/* Centered Large Profile Icon Avatar */
 .team-pro-avatar-wrap {
   position: relative;
-  width: 62px;
-  height: 62px;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1.65rem;
   flex-shrink: 0;
 }
 
@@ -83,154 +51,90 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(145deg, #2b241f 0%, #181412 100%);
-  border: 2px solid rgba(201, 181, 156, 0.55);
+  background: linear-gradient(145deg, #2c2520 0%, #191512 100%);
+  border: 2px solid var(--gold, #c9b59c);
   color: var(--gold, #c9b59c);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(28, 22, 18, 0.16);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.team-pro-card.is-founder .team-pro-avatar {
-  background: linear-gradient(135deg, var(--gold, #c9b59c), var(--gold-dark, #a88a66));
-  color: #1a1613;
-  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 7px rgba(201, 181, 156, 0.15),
+    0 12px 26px rgba(28, 22, 18, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .team-pro-card:hover .team-pro-avatar {
-  transform: scale(1.06);
-  border-color: var(--gold, #c9b59c);
+  transform: scale(1.05);
+  box-shadow: 0 0 0 9px rgba(201, 181, 156, 0.24),
+    0 14px 30px rgba(28, 22, 18, 0.2);
 }
 
 .team-pro-role-badge {
   position: absolute;
-  bottom: -2px;
-  right: -2px;
-  width: 24px;
-  height: 24px;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: var(--gold, #c9b59c);
+  background: linear-gradient(135deg, var(--gold, #c9b59c), var(--gold-dark, #a88a66));
   color: #1a1613;
-  border: 2px solid #ffffff;
+  border: 3px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.team-pro-card.is-founder .team-pro-role-badge {
-  background: #1a1613;
-  color: var(--gold, #c9b59c);
-  border-color: var(--gold, #c9b59c);
-}
-
-.team-pro-dept {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  padding: 0.32rem 0.75rem;
-  border-radius: 999px;
-  background: var(--cream, #f7f4f0);
-  color: var(--brown-700, #4a403a);
-  border: 1px solid rgba(201, 181, 156, 0.35);
-}
-
-.team-pro-card.is-founder .team-pro-dept {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--gold, #c9b59c);
-  border-color: rgba(201, 181, 156, 0.3);
-}
-
-/* Card Body */
-.team-pro-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
+/* Typography */
 .team-pro-role {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--gold-dark, #a88a66);
-  margin-bottom: 0.3rem;
-}
-
-.team-pro-card.is-founder .team-pro-role {
-  color: var(--gold, #c9b59c);
-}
-
-.team-pro-name {
-  font-family: var(--font-display, var(--font-serif));
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--text-color);
-  margin: 0 0 0.85rem;
-  line-height: 1.25;
-}
-
-.team-pro-card.is-founder .team-pro-name {
-  color: #ffffff;
-}
-
-.team-pro-resp {
-  margin-top: auto;
-  padding: 0.75rem 0.95rem;
-  border-radius: 12px;
-  background: #faf7f3;
-  border-left: 3px solid var(--gold, #c9b59c);
-  color: var(--text-muted);
-  font-size: 0.84rem;
-  line-height: 1.5;
-}
-
-.team-pro-card.is-founder .team-pro-resp {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.84);
-  border-left-color: var(--gold, #c9b59c);
-}
-
-/* Rest of Team Divider on About Page */
-.team-rest-block {
-  margin-top: 2.75rem;
-}
-
-.team-rest-divider {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
-}
-
-.team-rest-divider::before,
-.team-rest-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: rgba(44, 40, 37, 0.12);
-}
-
-.team-rest-divider span {
-  font-size: 0.74rem;
+  display: inline-block;
+  font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--gold-dark, #a88a66);
-  padding: 0.35rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-pro-name {
+  font-family: var(--font-display, var(--font-serif));
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.team-pro-divider {
+  width: 42px;
+  height: 2px;
   border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid rgba(201, 181, 156, 0.4);
+  background: var(--gold, #c9b59c);
+  margin: 1.15rem auto;
+  opacity: 0.75;
+  transition: width 0.35s ease, opacity 0.35s ease;
+}
+
+.team-pro-card:hover .team-pro-divider {
+  width: 64px;
+  opacity: 1;
+}
+
+.team-pro-resp {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.team-rest-block {
+  margin-top: 2.25rem;
 }
 
 .team-more-wrap {
   display: flex;
   justify-content: center;
-  margin-top: 2.25rem;
+  margin-top: 2.75rem;
 }
 
 /* Responsive */
@@ -239,36 +143,30 @@
   .team-grid,
   .team-lead-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    gap: 1.75rem;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
   .team-pro-grid,
   .team-grid,
   .team-lead-grid {
     grid-template-columns: 1fr;
-    gap: 1.1rem;
+    gap: 1.35rem;
   }
 
   .team-pro-card {
-    padding: 1.4rem 1.25rem;
+    padding: 2.35rem 1.75rem 2.15rem;
   }
 
-  .team-pro-avatar {
-    width: 50px;
-    height: 50px;
-    font-size: 1.1rem;
+  .team-pro-avatar-wrap {
+    width: 84px;
+    height: 84px;
+    margin-bottom: 1.35rem;
   }
 
   .team-pro-name {
-    font-size: 1.22rem;
-  }
-
-  .team-rest-divider span {
-    font-size: 0.66rem;
-    letter-spacing: 1.2px;
-    text-align: center;
+    font-size: 1.4rem;
   }
 
   .team-more-wrap .pill-btn {
