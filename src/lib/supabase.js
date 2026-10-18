@@ -18,7 +18,7 @@ export const supabase = isSupabaseConfigured
   : null;
 
 export const WEB3FORMS_ACCESS_KEY =
-  import.meta.env.VITE_WEB3FORMS_KEY || 'ac75ae12-4ca2-40a8-a0ff-3b5aee4b6a60';
+  import.meta.env.VITE_WEB3FORMS_KEY || '0547aaaf-e1a6-4aa6-8f44-f281bf63776c';
 
 const LOCAL_STORAGE_KEY = 'browns_interior_inquiries_v1';
 
@@ -37,7 +37,19 @@ export async function sendEmailNotification(inquiry) {
     access_key: accessKey,
     subject,
     from_name: "Brown's Interior Website",
-    ...(inquiry.email ? { replyto: inquiry.email } : {}),
+    name: inquiry.name,
+    ...(inquiry.email ? { email: inquiry.email, replyto: inquiry.email } : {}),
+    phone: inquiry.phone,
+    message: [
+      `Client Name: ${inquiry.name}`,
+      `Phone/WhatsApp: ${inquiry.phone}`,
+      `Email: ${inquiry.email || 'Not provided'}`,
+      `Service: ${inquiry.service_category}${inquiry.sub_service ? ` (${inquiry.sub_service})` : ''}`,
+      `Location: ${inquiry.location || 'Not specified'}`,
+      `Area: ${inquiry.area_sqft ? `${inquiry.area_sqft} sq ft` : 'Not specified'}`,
+      `Estimated Budget: ${inquiry.estimated_budget || 'Requested Custom Quote'}`,
+      `Project Details: ${inquiry.message || 'Requested consultation / callback'}`,
+    ].join('\n'),
     Client_Name: inquiry.name,
     Phone_WhatsApp: inquiry.phone,
     Email: inquiry.email || 'Not provided',
