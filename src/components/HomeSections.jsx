@@ -42,20 +42,20 @@ export function PageHero({ title, sub, image, crumb }) {
 /* ---------------- HERO ---------------- */
 const slides = [
   {
-    img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2400',
+    img: '/portfolio/cover/cover-1.jpeg',
     label: 'Residential Luxury',
   },
   {
-    img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2400',
+    img: '/portfolio/cover/cover-2.jpeg',
+    label: 'Visionary Architecture',
+  },
+  {
+    img: '/portfolio/cover/cover-3.jpeg',
     label: 'Bespoke Living Spaces',
   },
   {
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2400',
-    label: 'Modern Workplaces',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2400',
-    label: 'Architecture & Turnkey',
+    img: '/portfolio/cover/cover-4.jpeg',
+    label: 'Modern Turnkey Living',
   },
 ];
 
