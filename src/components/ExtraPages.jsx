@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Star, Quote, ArrowLeft, Calculator, Phone, UserRound } from 'lucide-react';
 import { PageHero, SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
 import SEO from './SEO';
+import NotFound from './NotFound';
 import { testimonials, processSteps, blogPosts } from '../data/siteData';
 import '../styles/site.css';
 import './HomeSections.css';
@@ -120,7 +121,7 @@ export function BlogPage() {
 export function BlogPost() {
   const { slug } = useParams();
   const post = blogPosts.find((p) => p.slug === slug);
-  if (!post) return <Navigate to="/blog" replace />;
+  if (!post) return <NotFound message="The requested blog article could not be found." />;
   const others = blogPosts.filter((p) => p.slug !== slug);
   return (
     <main>

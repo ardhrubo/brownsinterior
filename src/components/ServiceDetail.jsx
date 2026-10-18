@@ -7,6 +7,7 @@ import {
 import { servicesData, findServiceOrOption } from '../data/servicesData';
 import { SectionHead, ProcessTimeline, CostCTA } from './HomeSections';
 import SEO from './SEO';
+import NotFound from './NotFound';
 import '../styles/site.css';
 import './ServiceDetail.css';
 
@@ -23,7 +24,7 @@ export default function ServiceDetail() {
   }, [targetSlug]);
 
   if (!result) {
-    return <Navigate to="/services" replace />;
+    return <NotFound message="The requested interior design or architecture service could not be found." />;
   }
 
   const { type, data, category } = result;

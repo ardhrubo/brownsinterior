@@ -5,19 +5,14 @@ import { ArrowLeft, Calculator, Phone } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 import SEO from './SEO';
 
+import NotFound from './NotFound';
+
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projectsData.find((p) => p.id === parseInt(id, 10));
 
   if (!project) {
-    return (
-      <main style={{ paddingTop: '120px', minHeight: '60vh', textAlign: 'center' }}>
-        <h2>Project not found</h2>
-        <Link to="/projects" className="pill-btn dark" style={{ marginTop: '1rem' }}>
-          Back to All Projects
-        </Link>
-      </main>
-    );
+    return <NotFound message="We could not find the interior project you requested." />;
   }
 
   return (

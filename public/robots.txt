@@ -1,15 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
-# Robots configuration for Brown's Interior (https://brownsinterior.com)
-
 User-agent: *
 Allow: /
-Allow: /assets/
-Allow: /favicon.svg
-Allow: /logo.svg
-Allow: /og-image.jpg
 Disallow: /admin/
-Disallow: /admin
 
-# Google Search Console XML Sitemap
 Sitemap: https://brownsinterior.com/sitemap.xml
-Host: https://brownsinterior.com

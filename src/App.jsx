@@ -15,6 +15,7 @@ import {
   ProcessTimeline, TestimonialSlider, CostCTA, BlogPreview, PageHero,
 } from './components/HomeSections';
 import SEO from './components/SEO';
+import NotFound from './components/NotFound';
 import { ProcessPage, TestimonialsPage, BlogPage, BlogPost, CostCalculatorPage } from './components/ExtraPages';
 
 const ScrollToTop = () => {
@@ -79,6 +80,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <FloatingContact />
