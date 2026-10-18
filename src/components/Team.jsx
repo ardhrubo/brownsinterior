@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
+  UserRound,
   Award,
   ClipboardCheck,
   Laptop,
@@ -29,16 +30,8 @@ const iconMap = {
   Paintbrush,
 };
 
-function getInitials(name = '') {
-  const cleaned = name.replace(/^Engr\.\s*/i, '').trim();
-  const parts = cleaned.split(/\s+/);
-  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-}
-
 function MemberCard({ member, index, isFeatured = false }) {
   const RoleIcon = iconMap[member.badgeIcon] || Award;
-  const initials = getInitials(member.name);
 
   return (
     <motion.article
@@ -49,15 +42,16 @@ function MemberCard({ member, index, isFeatured = false }) {
       transition={{ duration: 0.45, delay: (index % 3) * 0.08 }}
     >
       <div className="team-pro-top">
-        <div className="team-pro-avatar">
-          <span>{initials}</span>
-        </div>
-        <div className="team-pro-badges">
-          <span className="team-pro-dept">{member.categoryLabel}</span>
-          <div className="team-pro-icon" aria-hidden="true">
-            <RoleIcon size={16} strokeWidth={1.8} />
+        <div className="team-pro-avatar-wrap">
+          <div className="team-pro-avatar" aria-hidden="true">
+            <UserRound size={28} strokeWidth={1.6} />
           </div>
+          <span className="team-pro-role-badge" title={member.role}>
+            <RoleIcon size={13} strokeWidth={2} />
+          </span>
         </div>
+
+        <span className="team-pro-dept">{member.categoryLabel}</span>
       </div>
 
       <div className="team-pro-body">
