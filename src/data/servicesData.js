@@ -10,7 +10,7 @@ export const servicesData = [
     shortTitle: 'Interior Design',
     tagline: 'Bespoke living & commercial spaces crafted for everyday luxury.',
     icon: Sofa,
-    image: img('photo-1618221195710-dd6b41faaea6'),
+    image: '/portfolio/interior/living-room.jpg',
     description: 'Thoughtfully crafted interiors balancing comfort, material warmth, and function.',
     intro: 'We plan every room around how you live and work — combining spatial flow, custom woodwork, and layered lighting.',
     specs: [
@@ -30,7 +30,7 @@ export const servicesData = [
         slug: 'residential-interior',
         title: 'Residential Interior',
         tagline: 'Warm, functional homes tailored to your family lifestyle.',
-        image: img('photo-1600210492486-724fe5c67fb0', 1400),
+        image: '/portfolio/interior/living-room.jpg',
         desc: 'Turnkey design and execution for apartments, duplexes, and villas in Dhaka.',
         specs: [
           { label: 'Best For', value: 'Apartments, Duplexes & Villas' },
@@ -45,16 +45,22 @@ export const servicesData = [
           'Curated lighting, fabrics & finishes'
         ],
         gallery: [
-          img('photo-1600210492486-724fe5c67fb0', 1200),
-          img('photo-1618221195710-dd6b41faaea6', 1000),
-          img('photo-1600566753190-17f0baa2a6c3', 1000)
+          '/portfolio/interior/living-room.jpg',
+          '/portfolio/interior/living-room-v1.jpg',
+          '/portfolio/interior/living-room-v2.jpg',
+          '/portfolio/interior/kitchen-main.jpg',
+          '/portfolio/interior/kitchen-semi-open.jpg',
+          '/portfolio/interior/modern-kitchen.png',
+          '/portfolio/interior/render-view-2.jpg',
+          '/portfolio/interior/render-view-4.jpg',
+          '/portfolio/interior/dining-clean.jpg'
         ]
       },
       {
         slug: 'commercial-interior',
         title: 'Commercial Interior',
         tagline: 'Inspiring commercial spaces designed for brand impact and performance.',
-        image: img('photo-1497366216548-37526070297c', 1400),
+        image: '/portfolio/office/office-conference.jpg',
         desc: 'Strategic commercial design engineered for acoustic comfort, brand prestige, and workflow efficiency.',
         specs: [
           { label: 'Best For', value: 'Corporate HQ, Studios & Hubs' },
@@ -69,16 +75,18 @@ export const servicesData = [
           'IT, server room & MEP coordination'
         ],
         gallery: [
-          img('photo-1497366216548-37526070297c', 1200),
-          img('photo-1524758631624-e2822e304c36', 1000),
-          img('photo-1486406146926-c627a92ad1ab', 1000)
+          '/portfolio/office/office-conference.jpg',
+          '/portfolio/office/office-conference-2.jpg',
+          '/portfolio/office/office-main.jpg',
+          '/portfolio/office/office-room.jpg',
+          '/portfolio/office/office-2.jpg'
         ]
       },
       {
         slug: 'office-retail-interior',
         title: 'Office & Retail Interior',
         tagline: 'High-performance offices and customer-centric retail spaces.',
-        image: img('photo-1555396273-367ea4eb4db5', 1400),
+        image: '/portfolio/office/office-main.jpg',
         desc: 'Modern workplace setups, retail showrooms, boutiques, and cafés crafted to captivate footfall.',
         specs: [
           { label: 'Best For', value: 'Offices, Showrooms & Retail' },
@@ -93,13 +101,20 @@ export const servicesData = [
           'High-traffic commercial-grade finishes'
         ],
         gallery: [
-          img('photo-1555396273-367ea4eb4db5', 1200),
-          img('photo-1554118811-1e0d58224f24', 1000),
-          img('photo-1559925393-8be0ec4767c8', 1000)
+          '/portfolio/office/office-main.jpg',
+          '/portfolio/office/office-room.jpg',
+          '/portfolio/office/office-2.jpg',
+          '/portfolio/office/office-conference.jpg',
+          '/portfolio/office/office-conference-2.jpg'
         ]
       }
     ],
-    gallery: [img('photo-1600210492486-724fe5c67fb0', 900), img('photo-1497366216548-37526070297c', 900), img('photo-1555396273-367ea4eb4db5', 900)],
+    gallery: [
+      '/portfolio/interior/living-room.jpg',
+      '/portfolio/office/office-conference.jpg',
+      '/portfolio/interior/kitchen-main.jpg',
+      '/portfolio/office/office-main.jpg'
+    ],
   },
   {
     slug: 'architecture',
