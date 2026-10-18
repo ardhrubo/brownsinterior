@@ -80,33 +80,23 @@
     </image:image>
   </url>
   <url>
-    <loc>https://brownsinterior.com/services/commercial-office-interior</loc>
+    <loc>https://brownsinterior.com/services/commercial-interior</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
-      <image:title>Commercial &amp; Office Interior</image:title>
+      <image:title>Commercial Interior</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://brownsinterior.com/services/restaurant-salon-retail-interior</loc>
+    <loc>https://brownsinterior.com/services/office-retail-interior</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
-      <image:title>Restaurant, Salon &amp; Retail Interior</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://brownsinterior.com/services/kitchen-bedroom-design</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
-      <image:title>Kitchen &amp; Bedroom Design</image:title>
+      <image:title>Office &amp; Retail Interior</image:title>
     </image:image>
   </url>
   <url>

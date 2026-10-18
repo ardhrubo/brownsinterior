@@ -18,10 +18,10 @@ export const servicesData = [
       { label: 'Timeline', value: '20 – 90 Days' },
       { label: 'Delivery', value: '3D Design + Full Turnkey' }
     ],
-    highlights: ['Residential Homes', 'Corporate Offices', 'Cafés & Retail', 'Modular Kitchens'],
+    highlights: ['Residential Homes', 'Commercial Projects', 'Office & Retail Spaces'],
     features: [
       'End-to-end 2D furniture zoning & photorealistic 3D views',
-      'Factory-finished custom cabinetry, wardrobes & kitchens',
+      'Factory-finished custom cabinetry, wardrobes & fit-outs',
       'Layered architectural lighting, false ceilings & wall paneling',
       'Dedicated engineer supervision with itemized BOQ costing'
     ],
@@ -51,22 +51,22 @@ export const servicesData = [
         ]
       },
       {
-        slug: 'commercial-office-interior',
-        title: 'Commercial & Office Interior',
-        tagline: 'High-performance workplaces built around your brand.',
+        slug: 'commercial-interior',
+        title: 'Commercial Interior',
+        tagline: 'Inspiring commercial spaces designed for brand impact and performance.',
         image: img('photo-1497366216548-37526070297c', 1400),
-        desc: 'Modern offices designed for productivity, acoustics, and executive presence.',
+        desc: 'Strategic commercial design engineered for acoustic comfort, brand prestige, and workflow efficiency.',
         specs: [
-          { label: 'Best For', value: 'Corporate HQ & Tech Studios' },
+          { label: 'Best For', value: 'Corporate HQ, Studios & Hubs' },
           { label: 'Timeline', value: '30 – 75 Days' },
           { label: 'Delivery', value: 'MEP + Turnkey Fit-out' }
         ],
-        highlights: ['Executive Suites', 'Open Workstations', 'Acoustic Pods', 'Reception Lounge'],
+        highlights: ['Executive Suites', 'Boardrooms', 'Acoustic Partitions', 'Reception Lounge'],
         features: [
           'Executive suites & boardroom acoustics',
           'Ergonomic workstation & agile layouts',
           'Brand-led reception & waiting lounges',
-          'IT, server room & MEP integration'
+          'IT, server room & MEP coordination'
         ],
         gallery: [
           img('photo-1497366216548-37526070297c', 1200),
@@ -75,21 +75,21 @@ export const servicesData = [
         ]
       },
       {
-        slug: 'restaurant-salon-retail-interior',
-        title: 'Restaurant, Salon & Retail Interior',
-        tagline: 'Instagram-worthy commercial spaces that attract footfall.',
+        slug: 'office-retail-interior',
+        title: 'Office & Retail Interior',
+        tagline: 'High-performance offices and customer-centric retail spaces.',
         image: img('photo-1555396273-367ea4eb4db5', 1400),
-        desc: 'Customer-centric hospitality and retail interiors designed for memorable experiences.',
+        desc: 'Modern workplace setups, retail showrooms, boutiques, and cafés crafted to captivate footfall.',
         specs: [
-          { label: 'Best For', value: 'Cafés, Boutiques & Salons' },
+          { label: 'Best For', value: 'Offices, Showrooms & Retail' },
           { label: 'Timeline', value: '30 – 60 Days' },
           { label: 'Delivery', value: 'Concept to Launch' }
         ],
-        highlights: ['Dining Ambiance', 'Display Fixtures', 'Salon Stations', 'Statement Lighting'],
+        highlights: ['Showroom Displays', 'Product Fixtures', 'Office Cabins', 'Statement Lighting'],
         features: [
-          'Atmospheric lighting & acoustic comfort',
-          'Custom retail displays & POS counters',
-          'Ergonomic salon stations & wash zones',
+          'Atmospheric lighting & acoustic balance',
+          'Custom retail displays & POS service counters',
+          'Functional office cabins & breakout meeting spaces',
           'High-traffic commercial-grade finishes'
         ],
         gallery: [
@@ -97,33 +97,9 @@ export const servicesData = [
           img('photo-1554118811-1e0d58224f24', 1000),
           img('photo-1559925393-8be0ec4767c8', 1000)
         ]
-      },
-      {
-        slug: 'kitchen-bedroom-design',
-        title: 'Kitchen & Bedroom Design',
-        tagline: 'Sleek modular kitchens and serene bedroom sanctuaries.',
-        image: img('photo-1556909114-f6e7ad7d3136', 1400),
-        desc: 'Precision-engineered modular kitchens and custom walk-in wardrobe suites.',
-        specs: [
-          { label: 'Best For', value: 'Kitchens & Master Suites' },
-          { label: 'Timeline', value: '20 – 40 Days' },
-          { label: 'Delivery', value: 'Factory Modular Build' }
-        ],
-        highlights: ['Modular Kitchens', 'Walk-in Closets', 'Blum Hardware', 'Headboard Walls'],
-        features: [
-          'Waterproof HPL kitchens with soft-close fittings',
-          'Floor-to-ceiling wardrobes & walk-in closets',
-          'Upholstered headboards & warm cove lighting',
-          'Floating vanities & compact study corners'
-        ],
-        gallery: [
-          img('photo-1556909114-f6e7ad7d3136', 1200),
-          img('photo-1540518614846-7eded433c457', 1000),
-          img('photo-1505691938895-1758d7feb511', 1000)
-        ]
       }
     ],
-    gallery: [img('photo-1600210492486-724fe5c67fb0', 900), img('photo-1497366216548-37526070297c', 900), img('photo-1556909114-f6e7ad7d3136', 900)],
+    gallery: [img('photo-1600210492486-724fe5c67fb0', 900), img('photo-1497366216548-37526070297c', 900), img('photo-1555396273-367ea4eb4db5', 900)],
   },
   {
     slug: 'architecture',
@@ -909,13 +885,19 @@ export const servicesData = [
 
 // Helper to find by category slug OR by sub-option slug
 export function findServiceOrOption(slug) {
-  const category = servicesData.find((s) => s.slug === slug);
+  const aliasMap = {
+    'commercial-office-interior': 'commercial-interior',
+    'restaurant-salon-retail-interior': 'office-retail-interior',
+  };
+  const target = aliasMap[slug] || slug;
+
+  const category = servicesData.find((s) => s.slug === target);
   if (category) {
     return { type: 'category', data: category, category };
   }
 
   for (const cat of servicesData) {
-    const opt = cat.options.find((o) => o.slug === slug);
+    const opt = cat.options.find((o) => o.slug === target);
     if (opt) {
       return { type: 'option', data: opt, category: cat };
     }

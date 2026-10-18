@@ -118,11 +118,11 @@ export default function Contact({ showHero = true }) {
               </div>
 
               <div className="info-items">
-                <a href="tel:+8801715064415" className="info-item">
+                <a href="tel:+8801768436319" className="info-item">
                   <div className="info-icon"><Phone size={18} /></div>
                   <div>
                     <h4>Call / WhatsApp</h4>
-                    <p>+880 1715-064415</p>
+                    <p>+88 01768-436319</p>
                   </div>
                 </a>
 
@@ -178,7 +178,7 @@ export default function Contact({ showHero = true }) {
 
                   <div className="contact-success-actions">
                     <a
-                      href={`https://wa.me/8801715064415?text=${encodeURIComponent(
+                      href={`https://wa.me/8801768436319?text=${encodeURIComponent(
                         `Hello Brown's Interior! I just requested a consultation for ${submittedResult.record.service_category}.`
                       )}`}
                       target="_blank"
