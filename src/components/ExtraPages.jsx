@@ -181,42 +181,35 @@ export function BlogPost() {
 // - Luxury:   ৳ 20 Lac to 45 Lac (~৳ 1,666.67 – ৳ 3,750 / sft)
 
 const spaceTypes = [
-  { id: 'residential', label: 'Residential Interior', mult: 1.0, icon: Home, hint: 'Apartments & Duplexes' },
-  { id: 'commercial', label: 'Commercial Interior', mult: 1.2, icon: Building2, hint: 'Corporate HQ & Offices' },
-  { id: 'office', label: 'Office & Retail Interior', mult: 1.15, icon: Store, hint: 'Showrooms, Cafes & Retail' },
-  { id: 'booth', label: 'Exhibition Stall & Booth', mult: 1.45, icon: Layers, hint: 'Trade Fair & Expos' },
+  { id: 'residential', label: 'Residential', mult: 1.0, icon: Home, hint: 'Apartments & Duplexes' },
+  { id: 'commercial', label: 'Commercial & Office', mult: 1.2, icon: Building2, hint: 'Offices, Retail & Showrooms' },
+  { id: 'booth', label: 'Exhibition Booth', mult: 1.45, icon: Layers, hint: 'Trade Fair Stalls & Expos' },
 ];
 
 const packages = [
   {
     id: 'basic',
     label: 'Standard',
-    rateLabel: '৳ 750 – ৳ 1,080 / sft',
+    rateLabel: '৳ 750 – 1,080 / sft',
     minRate: 750,
     maxRate: 1083.333,
-    benchmark: '৳ 9 – 13 Lac (1200 sft)',
-    desc: 'Functional essentials, HPL board & quality turnkey hardware',
-    features: ['Standard HPL & Melamine Board', 'Quality Commercial Hardware', 'Clean Electrical Fit-out'],
+    desc: 'Quality HPL board, clean electrical fit-out & commercial hardware',
   },
   {
     id: 'premium',
     label: 'Premium',
-    rateLabel: '৳ 1,080 – ৳ 2,080 / sft',
+    rateLabel: '৳ 1,080 – 2,080 / sft',
     minRate: 1083.333,
     maxRate: 2083.333,
-    benchmark: '৳ 13 – 25 Lac (1200 sft)',
-    desc: 'Designer woodwork, bespoke acrylic/veneer & ambient lighting',
-    features: ['High-Gloss Acrylic & Natural Veneer', 'Custom Ambient Cove Lighting', 'Branded Hardware & Soft-Close'],
+    desc: 'High-gloss acrylic, natural teak/oak veneer & warm cove lighting',
   },
   {
     id: 'luxury',
     label: 'Luxury',
-    rateLabel: '৳ 1,670 – ৳ 3,750 / sft',
+    rateLabel: '৳ 1,670 – 3,750 / sft',
     minRate: 1666.667,
     maxRate: 3750,
-    benchmark: '৳ 20 – 45 Lac (1200 sft)',
-    desc: 'Signature bespoke interiors, imported marble, acoustic panels & smart automation',
-    features: ['Imported Italian Marble & Fluted Panels', 'Acoustic Ceilings & Hidden Partitions', 'Complete Smart Home & Luxury Millwork'],
+    desc: 'Italian marble, acoustic paneling, smart dimming & bespoke millwork',
   },
 ];
 
@@ -369,134 +362,74 @@ export function CostCalculatorPage() {
                     className={`pkg-card ${isSelected ? 'on' : ''}`}
                     onClick={() => setPkg(p.id)}
                   >
-                    <div className="pkg-top">
-                      <div className="pkg-title-row">
-                        <strong>{p.label}</strong>
-                        <span className="pkg-rate-badge">{p.rateLabel}</span>
-                      </div>
-                      <span className="pkg-benchmark">{p.benchmark}</span>
+                    <div className="pkg-title-row">
+                      <strong>{p.label}</strong>
+                      <span className="pkg-rate-badge">{p.rateLabel}</span>
                     </div>
                     <p className="pkg-desc">{p.desc}</p>
-                    <div className="pkg-features">
-                      {p.features.map((feat) => (
-                        <div key={feat} className="pkg-feat-item">
-                          <Check size={13} />
-                          <span>{feat}</span>
-                        </div>
-                      ))}
-                    </div>
                   </button>
                 );
               })}
             </div>
           </div>
 
-          {/* Sticky Calculation Result Sidebar */}
+          {/* Clean, Decongested Calculation Result Sidebar */}
           <aside className="calc-result" id="calc-result-box">
             <div className="calc-res-header">
-              <Calculator size={22} />
-              <span>ESTIMATED BUDGET RANGE</span>
-            </div>
-
-            {/* Transparent Tier Breakdown */}
-            <div className="calc-breakdown-card">
-              <div className="calc-breakdown-header">
-                <span>Estimate Summary</span>
-              </div>
-
-              <div className="cbr-item">
-                <div className="cbr-info">
-                  <span className="cbr-title">Space Category</span>
-                  <span className="cbr-sub">{selectedSpace.label}</span>
-                </div>
-                <div className="cbr-amount">
-                  {area.toLocaleString()} sq ft
-                </div>
-              </div>
-
-              <div className="cbr-item">
-                <div className="cbr-info">
-                  <span className="cbr-title">Execution Tier</span>
-                  <span className="cbr-sub">{selectedPkg.label} Finish</span>
-                </div>
-                <div className="cbr-amount">
-                  {selectedPkg.rateLabel}
-                </div>
-              </div>
-
-              <div className="cbr-divider" />
-
-              <div className="cbr-summary-row">
-                <span className="cbr-total-label">ESTIMATED BUDGET RANGE</span>
-                <span className="cbr-total-bdt">{summaryBDT}</span>
-              </div>
+              <Sparkles size={16} />
+              <span>ESTIMATED BUDGET</span>
             </div>
 
             <motion.div
               key={`${minBudget}-${maxBudget}`}
-              initial={{ scale: 0.96, opacity: 0.8 }}
+              initial={{ scale: 0.97, opacity: 0.85 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.2 }}
               className="calc-res-pricing"
             >
               <div className="calc-lakh-chip">{summaryLakh}</div>
+              <div className="calc-exact-bdt">{summaryBDT}</div>
               <div className="calc-rate-sub">
                 Effective ৳ {Math.round(minBudget / area).toLocaleString()} – ৳ {Math.round(maxBudget / area).toLocaleString()} / sq ft
               </div>
             </motion.div>
 
-            <p className="calc-res-note">
-              Calibrated for Dhaka turnkey standards. Final cost depends on customized 3D layout, material grade, and site conditions.
-            </p>
-
-            <Link
-              to={`/contact?category=${encodeURIComponent(selectedSpace.label)}&area=${area}&budget=${encodeURIComponent(
-                `${summaryBDT} (${summaryLakh})`
-              )}`}
-              className="cch-primary-btn"
-              id="calc-get-quote"
-            >
-              <span>Get Exact Quotation & BOQ</span>
-              <ArrowRight size={16} />
-            </Link>
-
-            {/* Direct Studio Connect */}
-            <div className="calc-contact-highlight">
-              <div className="cch-head">
-                <span className="cch-badge">Direct Studio Connect</span>
-                <h4>Speak with Engr. Aslam</h4>
-                <p>Discuss your floor plan, get instant advice, or book an on-site visit.</p>
-              </div>
-
-              <div className="cch-actions">
-                <a href="tel:+8801768436319" className="cch-btn cch-call" id="calc-call-btn">
-                  <Phone size={16} />
-                  <span>Call: +880 1768-436319</span>
-                </a>
-
-                <a
-                  href={`https://wa.me/8801768436319?text=${encodeURIComponent(
-                    `Hello Brown's Interior! I estimated a budget of ${summaryBDT} (${summaryLakh}) for my ${area} sq ft ${selectedSpace.label} (${selectedPkg.label} finish) on your website. I'd like to consult with Engr. Aslam.`
-                  )}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="cch-btn cch-whatsapp"
-                  id="calc-whatsapp-btn"
-                >
-                  <FaWhatsapp size={17} />
-                  <span>WhatsApp Engr. Aslam</span>
-                </a>
-              </div>
-
-              <div className="cch-meta">
-                <div className="cch-meta-item">
-                  <MapPin size={14} /> <span>Uttara, Dhaka, Bangladesh</span>
-                </div>
-                <div className="cch-meta-item">
-                  <Mail size={14} /> <span>{NOTIFICATION_EMAIL}</span>
-                </div>
-              </div>
+            {/* Clean Spec Summary */}
+            <div className="calc-selected-summary">
+              <span className="calc-summary-pill">{selectedSpace.label}</span>
+              <span className="calc-summary-pill">{area.toLocaleString()} sq ft</span>
+              <span className="calc-summary-pill">{selectedPkg.label} Tier</span>
             </div>
+
+            <div className="calc-action-group">
+              <a
+                href={`https://wa.me/8801768436319?text=${encodeURIComponent(
+                  `Hello Brown's Interior! I estimated a budget of ${summaryBDT} (${summaryLakh}) for my ${area} sq ft ${selectedSpace.label} (${selectedPkg.label} tier) on your website. I'd like to consult with Engr. Aslam.`
+                )}`}
+                target="_blank"
+                rel="noreferrer"
+                className="calc-btn-whatsapp"
+                id="calc-whatsapp-btn"
+              >
+                <FaWhatsapp size={18} />
+                <span>Chat on WhatsApp</span>
+              </a>
+
+              <Link
+                to={`/contact?category=${encodeURIComponent(selectedSpace.label)}&area=${area}&budget=${encodeURIComponent(
+                  `${summaryBDT} (${summaryLakh})`
+                )}`}
+                className="calc-btn-quote"
+                id="calc-get-quote"
+              >
+                <span>Book Site Visit & BOQ</span>
+                <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            <p className="calc-res-note">
+              Turnkey estimate based on Dhaka market standards. Includes layout design, custom woodwork fabrication & complete handover.
+            </p>
           </aside>
         </div>
 
@@ -517,63 +450,29 @@ export function CostCalculatorPage() {
               }
             }}
           >
-            <span>View Breakdown</span>
+            <span>View Estimate</span>
             <ArrowRight size={14} />
           </button>
         </div>
 
-        {/* Highlighted Consultation Banner below */}
-        <div className="container calc-bottom-banner">
-          <div className="cbb-card">
-            <div className="cbb-content">
-              <span className="sec-eyebrow">Personalized Architecture & Interior Service</span>
-              <h2>Planning an interior project in Dhaka?</h2>
-              <p>
-                From 1,200 sq ft apartments in Uttara and Mirpur to luxury residences in Gulshan, Banani, and corporate headquarters — our team led by <strong>Engr. Aslam Sheikh</strong> delivers turnkey design-build excellence tailored to your exact budget.
-              </p>
+        {/* Clean Reassuring Trust Strip */}
+        <div className="container" style={{ marginTop: '3.5rem' }}>
+          <div className="calc-trust-strip">
+            <div className="calc-trust-item">
+              <CheckCircle2 size={18} />
+              <span>Turnkey Execution in Dhaka</span>
             </div>
-
-            <div className="cbb-grid">
-              <a href="tel:+8801768436319" className="cbb-item cbb-item-phone">
-                <div className="cbb-icon"><Phone size={20} /></div>
-                <div>
-                  <small>Direct Phone Call</small>
-                  <strong>+880 1768-436319</strong>
-                  <span>Instant consultation with Aslam & team</span>
-                </div>
-              </a>
-
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noreferrer"
-                className="cbb-item cbb-item-wa"
-              >
-                <div className="cbb-icon"><FaWhatsapp size={22} /></div>
-                <div>
-                  <small>Instant WhatsApp</small>
-                  <strong>+880 1768-436319</strong>
-                  <span>Share floor plans, photos & requirements</span>
-                </div>
-              </a>
-
-              <div className="cbb-item cbb-item-studio">
-                <div className="cbb-icon"><MapPin size={20} /></div>
-                <div>
-                  <small>Design Studio</small>
-                  <strong>Uttara, Dhaka</strong>
-                  <span>Open Sat – Thu · 9:00 AM – 7:00 PM</span>
-                </div>
-              </div>
-
-              <a href={`mailto:${NOTIFICATION_EMAIL}`} className="cbb-item cbb-item-mail">
-                <div className="cbb-icon"><Mail size={20} /></div>
-                <div>
-                  <small>Official Studio Email</small>
-                  <strong>{NOTIFICATION_EMAIL}</strong>
-                  <span>Send detailed tender / RFQ files</span>
-                </div>
-              </a>
+            <div className="calc-trust-item">
+              <CheckCircle2 size={18} />
+              <span>Transparent Itemized BOQ</span>
+            </div>
+            <div className="calc-trust-item">
+              <CheckCircle2 size={18} />
+              <span>In-House Carpentry Workshop</span>
+            </div>
+            <div className="calc-trust-item">
+              <CheckCircle2 size={18} />
+              <span>1-Year Craftsmanship Support</span>
             </div>
           </div>
         </div>

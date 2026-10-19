@@ -105,11 +105,11 @@
   color: var(--gold-dark);
 }
 
-/* Step 1: Space Grid (Spacious 4-col on PC) */
+/* Step 1: Space Grid (Spacious 3-col on PC) */
 .space-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
 }
 .space-card {
   padding: 1.35rem 1rem;
