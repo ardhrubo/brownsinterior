@@ -20,18 +20,13 @@ export default function ProjectsPage() {
         description="Browse our portfolio of completed luxury duplexes, corporate offices, restaurants, and villas in Gulshan, Banani, and Dhaka by Brown's Interior."
         canonicalPath="/projects"
       />
-      <PageHero
-        title="Our Projects"
-        sub="Explore our portfolio of residential, commercial, architectural, and exhibition excellence."
-        image="/portfolio/residential/living-marble-luxury-hall.jpg"
-        crumb="Projects"
-      />
-      <section className="section">
+      <section className="section page-start-section">
         <div className="container">
           <SectionHead
             eyebrow="Complete Portfolio"
             title="Selected"
             script="Works"
+            sub="Explore our portfolio of residential, commercial, architectural, and exhibition excellence across Dhaka."
           />
 
           <div className="proj-tabs">

@@ -54,6 +54,7 @@
 .pill-btn.outline:hover { background: var(--brown-900); color: #fff; }
 .center { text-align: center; }
 .mt-3 { margin-top: 3rem; }
+.page-start-section { padding-top: 7.5rem !important; }
 
 /* Inner page hero banner */
 .page-hero {

@@ -77,29 +77,21 @@ export default function Contact({ showHero = true }) {
   return (
     <>
       {showHero && (
-        <>
-          <SEO
-            title="Contact Us & Book Free Design Consultation"
-            description="Contact Brown's Interior in Dhaka. Book a free consultation, site visit, or request an itemized BOQ estimate for your residential or commercial project."
-            canonicalPath="/contact"
-          />
-          <PageHero
-            title="Contact Us"
-            sub="Let's plan, design, and build your space."
-            image="/portfolio/office/office-floor-reception-hub.jpeg"
-          />
-        </>
+        <SEO
+          title="Contact Us & Book Free Design Consultation"
+          description="Contact Brown's Interior in Dhaka. Book a free consultation, site visit, or request an itemized BOQ estimate for your residential or commercial project."
+          canonicalPath="/contact"
+        />
       )}
 
-      <section className="contact-page-section" id="contact">
+      <section className={`contact-page-section ${!standalone ? 'page-start' : ''}`} id="contact">
         <div className="container">
-          {!showHero && (
-            <SectionHead
-              eyebrow="Get In Touch"
-              title="Book a"
-              script="Consultation"
-            />
-          )}
+          <SectionHead
+            eyebrow="Get In Touch"
+            title="Book a"
+            script="Consultation"
+            sub="Let's plan, design, and build your space with transparent costing and turnkey execution."
+          />
 
           <div className="contact-wrapper">
             {/* Left / Top: Compact Studio Info */}
