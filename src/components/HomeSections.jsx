@@ -43,11 +43,7 @@ export function PageHero({ title, sub, image, crumb }) {
 const slides = [
   {
     img: '/portfolio/cover/cover-1.jpeg',
-    label: 'Residential Luxury',
-  },
-  {
-    img: '/portfolio/cover/cover-2.jpeg',
-    label: 'Visionary Architecture',
+    label: 'Luxury Residential Interior',
   },
   {
     img: '/portfolio/residential/living-marble-luxury-hall.jpg',
@@ -58,12 +54,16 @@ const slides = [
     label: 'Bespoke Living Spaces',
   },
   {
-    img: '/portfolio/cover/cover-4.jpeg',
-    label: 'Modern Turnkey Living',
-  },
-  {
     img: '/portfolio/residential/living-dining-wine-chandelier.jpg',
     label: 'Contemporary Dining & Living',
+  },
+  {
+    img: '/portfolio/cover/cover-2.jpeg',
+    label: 'Visionary Architecture',
+  },
+  {
+    img: '/portfolio/cover/cover-4.jpeg',
+    label: 'Modern Turnkey Residence',
   },
 ];
 
@@ -90,17 +90,17 @@ export function HomeHero() {
       <div className="h-hero-overlay" />
       <div className="h-hero-content">
         <motion.span className="h-hero-tag" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
-          Architecture · Interior · Turnkey
+          Interior Design · Turnkey Execution · Architecture
         </motion.span>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}>
-          Designing <em>Timeless Spaces</em> with Purpose.
+          Designing <em>Timeless Interiors</em> with Purpose.
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}>
-          Residential, commercial &amp; exhibition design-build studio serving all over Bangladesh &amp; worldwide.
+          Dhaka's premier residential, commercial &amp; corporate interior design studio delivering tailored spaces and turnkey execution across Bangladesh.
         </motion.p>
         <motion.div className="h-hero-ctas" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}>
-          <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Work</Link>
-          <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> Free Consultation</Link>
+          <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Interiors</Link>
+          <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> Book Free Consultation</Link>
         </motion.div>
       </div>
       <div className="h-hero-dots">
