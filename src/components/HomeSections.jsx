@@ -42,20 +42,28 @@ export function PageHero({ title, sub, image, crumb }) {
 /* ---------------- HERO ---------------- */
 const slides = [
   {
-    img: '/portfolio/residential/living-marble-luxury-hall.jpg',
+    img: '/portfolio/cover/cover-1.jpeg',
     label: 'Residential Luxury',
   },
   {
-    img: '/portfolio/residential/living-dining-wine-chandelier.jpg',
+    img: '/portfolio/cover/cover-2.jpeg',
+    label: 'Visionary Architecture',
+  },
+  {
+    img: '/portfolio/residential/living-marble-luxury-hall.jpg',
+    label: 'Modern Interior Design',
+  },
+  {
+    img: '/portfolio/cover/cover-3.jpeg',
     label: 'Bespoke Living Spaces',
   },
   {
-    img: '/portfolio/interior/master-bedroom-client-fav.jpg',
-    label: 'Master Bedroom Suite',
+    img: '/portfolio/cover/cover-4.jpeg',
+    label: 'Modern Turnkey Living',
   },
   {
-    img: '/portfolio/office/office-conference-smartboard.jpeg',
-    label: 'Commercial & Workplace',
+    img: '/portfolio/residential/living-dining-wine-chandelier.jpg',
+    label: 'Contemporary Dining & Living',
   },
 ];
 
