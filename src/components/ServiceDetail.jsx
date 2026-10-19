@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowRight, Phone, Calculator, Sparkles, ArrowUpRight, X, ChevronLeft, ChevronRight, Maximize2
@@ -37,24 +37,20 @@ export default function ServiceDetail() {
     setGalleryFilter('ALL');
   }, [targetSlug]);
 
-  if (!result) {
-    return <NotFound message="The requested interior design or architecture service could not be found." />;
-  }
-
-  const { type, data, category } = result;
+  const { type, data, category } = result || {};
   const isCategory = type === 'category';
-  const CategoryIcon = category.icon;
+  const CategoryIcon = category?.icon;
   const photos =
-    data.gallery && data.gallery.length > 0
+    data?.gallery && data.gallery.length > 0
       ? data.gallery
-      : [data.image, ...(category.gallery || []).slice(0, 2)];
+      : [data?.image, ...(category?.gallery || []).slice(0, 2)].filter(Boolean);
 
-  const currentLabels = data.galleryLabels || (isCategory ? category.galleryLabels : null) || defaultGalleryLabels;
+  const currentLabels = data?.galleryLabels || (isCategory ? category?.galleryLabels : null) || defaultGalleryLabels;
   const getGalleryLabel = (index) =>
     (currentLabels && currentLabels[index]) || defaultGalleryLabels[index] || `Perspective 0${index + 1}`;
 
   useEffect(() => {
-    if (lightboxIndex === null) return;
+    if (lightboxIndex === null || !photos.length) return;
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setLightboxIndex(null);
       if (e.key === 'ArrowRight') setLightboxIndex((prev) => (prev + 1) % photos.length);
@@ -63,6 +59,10 @@ export default function ServiceDetail() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxIndex, photos.length]);
+
+  if (!result) {
+    return <NotFound message="The requested interior design or architecture service could not be found." />;
+  }
 
   const defaultSpecs = isCategory
     ? [
