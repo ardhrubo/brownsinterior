@@ -15,8 +15,9 @@ export default function SEO({
 }) {
   const location = useLocation();
   const fullTitle = title ? `${title} | Brown's Interior` : DEFAULT_TITLE;
-  const fullDesc = description || DEFAULT_DESC;
-  const canonicalUrl = `${SITE_URL}${canonicalPath || location.pathname}`;
+  const rawPath = canonicalPath || location.pathname;
+  const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+  const canonicalUrl = `${SITE_URL}${normalizedPath}`;
   const ogImage = image || `${SITE_URL}/og-image.jpg`;
 
   useEffect(() => {
