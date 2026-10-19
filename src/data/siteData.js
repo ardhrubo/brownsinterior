@@ -205,3 +205,14 @@ export const teamMembers = [
   },
 ];
 
+export const WHATSAPP_NUMBER = '8801768436319';
+export const DEFAULT_WHATSAPP_MESSAGE = `Hello Brown’s Interiors,
+
+I would like to schedule a consultation with Engr. Aslam Sheikh to discuss my interior design project. Kindly let me know a convenient time to discuss the project details and explore how your team can assist me.
+
+Thank you. I look forward to hearing from you.`;
+
+export const getWhatsAppUrl = (customMessage) => {
+  const msg = customMessage || DEFAULT_WHATSAPP_MESSAGE;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+};

@@ -9,7 +9,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
 import SEO from './SEO';
 import NotFound from './NotFound';
-import { testimonials, processSteps, blogPosts } from '../data/siteData';
+import { testimonials, processSteps, blogPosts, getWhatsAppUrl } from '../data/siteData';
 import { NOTIFICATION_EMAIL } from '../lib/supabase';
 import '../styles/site.css';
 import './HomeSections.css';
@@ -544,9 +544,7 @@ export function CostCalculatorPage() {
               </a>
 
               <a
-                href={`https://wa.me/8801768436319?text=${encodeURIComponent(
-                  `Hello Brown's Interior, I would like to schedule a site consultation and discuss interior design for my space in Dhaka.`
-                )}`}
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noreferrer"
                 className="cbb-item cbb-item-wa"

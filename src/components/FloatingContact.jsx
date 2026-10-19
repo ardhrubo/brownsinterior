@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, Phone, X, Mail } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { getWhatsAppUrl } from '../data/siteData';
 import './FloatingContact.css';
 
 export default function FloatingContact() {
@@ -9,7 +10,7 @@ export default function FloatingContact() {
   return (
     <div className="floating-contact">
       <div className={`floating-menu ${isOpen ? 'open' : ''}`}>
-        <a href="https://wa.me/8801768436319" target="_blank" rel="noreferrer" className="floating-item whatsapp">
+        <a href={getWhatsAppUrl()} target="_blank" rel="noreferrer" className="floating-item whatsapp">
           <FaWhatsapp size={20} />
           <span className="tooltip">WhatsApp</span>
         </a>

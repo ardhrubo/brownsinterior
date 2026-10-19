@@ -8,6 +8,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { SectionHead } from './HomeSections';
 import SEO from './SEO';
 import { servicesData } from '../data/servicesData';
+import { getWhatsAppUrl } from '../data/siteData';
 import { submitInquiry, NOTIFICATION_EMAIL } from '../lib/supabase';
 import './Contact.css';
 
@@ -120,9 +121,7 @@ export default function Contact({ showHero = true }) {
                 </a>
 
                 <a
-                  href={`https://wa.me/8801768436319?text=${encodeURIComponent(
-                    "Hello Brown's Interior, I would like to consult with Engr. Aslam and discuss an interior project in Dhaka."
-                  )}`}
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noreferrer"
                   className="info-item highlight-wa"
