@@ -41,6 +41,11 @@
   margin: 0 auto;
   padding: 0 2.5rem;
 }
+/* Desktop default: Hide mobile sticky bar */
+.calc-mobile-sticky-bar {
+  display: none;
+}
+
 .calc {
   display: grid;
   grid-template-columns: 1.85fr 1.15fr;
@@ -173,7 +178,14 @@
   border-radius: 6px;
   cursor: pointer;
 }
-.calc-area-quick {
+.calc-area-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.calc-area-pills {
   display: flex;
   align-items: center;
   gap: 0.65rem;
@@ -207,8 +219,14 @@
   background: #fff;
   border: 1.5px solid var(--border-color);
   border-radius: 10px;
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.85rem;
   margin-left: auto;
+}
+.calc-num-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 .calc-num {
   width: 95px;
@@ -225,6 +243,7 @@
   color: var(--text-muted);
   font-weight: 600;
 }
+
 
 /* Step 3: Finish Level Packages */
 .pkg-grid {
@@ -313,6 +332,9 @@
 }
 
 /* Sticky Result Aside */
+#calc-result-box {
+  scroll-margin-top: 95px;
+}
 .calc-result {
   position: sticky;
   top: 110px;
@@ -711,7 +733,12 @@
     border-radius: 14px;
     gap: 1rem;
   }
-  .calc-area-quick {
+  .calc-area-action-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .calc-area-pills {
     display: flex;
     gap: 0.45rem;
     flex-wrap: nowrap;
@@ -719,20 +746,28 @@
     padding-bottom: 4px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    width: 100%;
   }
-  .calc-area-quick::-webkit-scrollbar {
+  .calc-area-pills::-webkit-scrollbar {
     display: none;
   }
   .area-pill {
     flex-shrink: 0;
-    padding: 0.45rem 0.85rem;
+    padding: 0.5rem 0.85rem;
     font-size: 0.8rem;
   }
   .calc-num-wrap {
     width: 100%;
     margin-left: 0;
     justify-content: space-between;
-    padding: 0.45rem 0.85rem;
+    padding: 0.55rem 0.85rem;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+  .calc-num {
+    flex: 1;
+    text-align: center;
+    font-size: 1.05rem;
   }
   .pkg-grid {
     grid-template-columns: 1fr;
@@ -758,47 +793,64 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.75rem;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 999;
-    background: rgba(18, 14, 12, 0.95);
+    z-index: 998;
+    background: rgba(18, 14, 12, 0.96);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(201, 181, 156, 0.35);
-    padding: 0.8rem 1.25rem calc(0.8rem + env(safe-area-inset-bottom, 0px));
-    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
+    border-top: 1.5px solid rgba(201, 181, 156, 0.35);
+    padding: 0.75rem 1.1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.45);
   }
   .cmsb-content {
     display: flex;
     flex-direction: column;
     gap: 0.1rem;
+    min-width: 0;
   }
   .cmsb-label {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.65);
     letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .cmsb-price {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--gold);
     font-weight: 800;
+    white-space: nowrap;
   }
   .cmsb-action-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.4rem;
     background: linear-gradient(135deg, #c9b59c, #a88a66);
     color: #ffffff !important;
     text-decoration: none;
-    font-size: 0.82rem;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8rem;
     font-weight: 700;
-    padding: 0.6rem 1.15rem;
+    padding: 0.65rem 1.15rem;
     border-radius: 999px;
     box-shadow: 0 4px 14px rgba(168, 138, 102, 0.4);
     flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .cmsb-action-btn:active {
+    transform: scale(0.96);
+  }
+
+  /* Lift floating contact button so it never overlaps the sticky bar */
+  body.has-cost-calc .floating-contact {
+    bottom: 5.5rem !important;
   }
 }
 
@@ -807,17 +859,63 @@
     padding: 0 0.85rem;
   }
   .calc-form {
-    padding: 1.4rem 1rem;
+    padding: 1.35rem 0.95rem;
+    border-radius: 18px;
+  }
+  .space-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem;
+  }
+  .space-card {
+    padding: 0.85rem 0.65rem;
+    border-radius: 12px;
+    gap: 0.25rem;
+  }
+  .space-card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  .space-card-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+  .space-card strong {
+    font-size: 0.82rem;
+    line-height: 1.25;
+  }
+  .space-card small {
+    font-size: 0.68rem;
+    line-height: 1.2;
   }
   .calc-result {
-    padding: 1.6rem 1.15rem;
+    padding: 1.5rem 1rem;
+    border-radius: 18px;
+  }
+  .cbr-total-bdt {
+    font-size: 1.2rem;
+  }
+  .calc-lakh-chip {
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  .cbb-card {
+    padding: 1.6rem 1rem;
+    border-radius: 18px;
+    gap: 1.5rem;
   }
   .cbb-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
-  .cbb-card {
-    padding: 1.75rem 1.15rem;
-    border-radius: 18px;
+  .cbb-item {
+    padding: 1rem 0.9rem;
+    border-radius: 12px;
+  }
+  .calc-bottom-banner {
+    margin-top: 2.5rem;
   }
   .post h2 {
     font-size: 1.65rem;

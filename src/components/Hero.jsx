@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Hero.css';
 
 const backgrounds = [
-  '/portfolio/cover/cover-1.jpeg', // Modern Dhaka Luxury Penthouse & Skyline Veranda
-  '/portfolio/cover/cover-4.jpeg', // Contemporary Dhaka Architecture & Exterior Facade
   '/portfolio/residential/living-marble-luxury-hall.jpg', // Grand Marble Living Suite
-  '/portfolio/cover/cover-2.jpeg', // Tropical Modern Dhaka Villa Exterior
+  '/portfolio/residential/living-dining-wine-chandelier.jpg', // Luxury Dining & Wine Cellar
+  '/portfolio/interior/master-bedroom-client-fav.jpg', // Master Bedroom Suite
+  '/portfolio/office/office-conference-smartboard.jpeg', // Executive Commercial Boardroom
 ];
 
 export default function Hero() {

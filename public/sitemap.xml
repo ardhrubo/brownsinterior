@@ -105,7 +105,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-4.jpeg</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;q=80&amp;w=1600</image:loc>
       <image:title>Architecture</image:title>
     </image:image>
   </url>
@@ -115,7 +115,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-2.jpeg</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
       <image:title>Building Design &amp; Planning</image:title>
     </image:image>
   </url>
@@ -125,7 +125,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-4.jpeg</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1541888086225-ee5315ffabfc?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
       <image:title>Floor Plans &amp; Elevations</image:title>
     </image:image>
   </url>
@@ -135,7 +135,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-4.jpeg</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
       <image:title>Exterior &amp; Facade Design</image:title>
     </image:image>
   </url>
@@ -145,7 +145,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-2.jpeg</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;q=80&amp;w=1400</image:loc>
       <image:title>Architectural Drawings</image:title>
     </image:image>
   </url>
@@ -355,7 +355,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-3.jpeg</image:loc>
+      <image:loc>/portfolio/interior/master-bedroom-client-fav.jpg</image:loc>
       <image:title>Additional Services</image:title>
     </image:image>
   </url>
@@ -385,7 +385,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-1.jpeg</image:loc>
+      <image:loc>/portfolio/residential/living-dining-wine-chandelier.jpg</image:loc>
       <image:title>Lighting &amp; Ceiling Design</image:title>
     </image:image>
   </url>
@@ -405,7 +405,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-1.jpeg</image:loc>
+      <image:loc>/portfolio/residential/living-marble-luxury-hall.jpg</image:loc>
       <image:title>Turnkey Interior Solutions</image:title>
     </image:image>
   </url>
@@ -415,7 +415,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-1.jpeg</image:loc>
+      <image:loc>/portfolio/office/office-floor-reception-hub.jpeg</image:loc>
       <image:title>Remote &amp; International Design Services</image:title>
     </image:image>
   </url>
@@ -461,15 +461,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-2.jpeg</image:loc>
+      <image:loc>/portfolio/residential/living-dining-neoclassical.jpg</image:loc>
       <image:title>Bashundhara Signature Villa</image:title>
     </image:image>
     <image:image>
-      <image:loc>/portfolio/cover/cover-2.jpeg</image:loc>
+      <image:loc>/portfolio/residential/living-dining-neoclassical.jpg</image:loc>
       <image:title>Bashundhara Signature Villa</image:title>
     </image:image>
     <image:image>
-      <image:loc>/portfolio/cover/cover-4.jpeg</image:loc>
+      <image:loc>/portfolio/residential/living-panoramic-library.jpg</image:loc>
       <image:title>Bashundhara Signature Villa</image:title>
     </image:image>
   </url>
@@ -479,15 +479,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
-      <image:loc>/portfolio/cover/cover-3.jpeg</image:loc>
-      <image:title>Heritage Rattan &amp; Lounge Suite</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>/portfolio/cover/cover-3.jpeg</image:loc>
+      <image:loc>/portfolio/residential/living-dining-wine-chandelier.jpg</image:loc>
       <image:title>Heritage Rattan &amp; Lounge Suite</image:title>
     </image:image>
     <image:image>
       <image:loc>/portfolio/residential/living-dining-wine-chandelier.jpg</image:loc>
+      <image:title>Heritage Rattan &amp; Lounge Suite</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>/portfolio/residential/bedroom-bay-window-suite.jpg</image:loc>
       <image:title>Heritage Rattan &amp; Lounge Suite</image:title>
     </image:image>
   </url>

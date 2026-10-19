@@ -15,7 +15,7 @@ const links = [
   { to: '/contact', label: 'Contact' },
 ];
 
-const transparentPaths = ['/', '/about', '/process', '/testimonials', '/blog', '/cost-estimator'];
+const transparentPaths = ['/'];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,7 +28,6 @@ export default function Navbar() {
 
   const canBeTransparent =
     transparentPaths.includes(pathname) ||
-    pathname.startsWith('/blog/') ||
     pathname.startsWith('/services/');
   const solid = scrolled || !canBeTransparent || mobileMenuOpen;
 

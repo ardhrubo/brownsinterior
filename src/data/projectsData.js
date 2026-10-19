@@ -42,16 +42,16 @@ export const projectsData = [
     id: 3,
     title: 'Bashundhara Signature Villa',
     category: 'Turnkey Interior',
-    image: '/portfolio/cover/cover-2.jpeg',
-    coverImage: '/portfolio/cover/cover-2.jpeg',
+    image: '/portfolio/residential/living-dining-neoclassical.jpg',
+    coverImage: '/portfolio/residential/living-dining-neoclassical.jpg',
     description: 'Complete turnkey architectural and interior execution of a triplex family villa. We handled spatial planning, bespoke lighting design, and custom CNC woodwork from the double-height foyer to the master suite.',
     client: 'Mr. Rahman',
     location: 'Bashundhara R/A, Dhaka',
     area: '6,200 sq ft',
     year: '2024',
     gallery: [
-      '/portfolio/cover/cover-2.jpeg',
-      '/portfolio/cover/cover-4.jpeg',
+      '/portfolio/residential/living-dining-neoclassical.jpg',
+      '/portfolio/residential/living-panoramic-library.jpg',
       '/portfolio/interior/living-room-v2.jpg'
     ]
   },
@@ -59,17 +59,17 @@ export const projectsData = [
     id: 4,
     title: 'Heritage Rattan & Lounge Suite',
     category: 'Turnkey Interior',
-    image: '/portfolio/cover/cover-3.jpeg',
-    coverImage: '/portfolio/cover/cover-3.jpeg',
+    image: '/portfolio/residential/living-dining-wine-chandelier.jpg',
+    coverImage: '/portfolio/residential/living-dining-wine-chandelier.jpg',
     description: 'An artisanal modern Bangladeshi interior blending terracotta textures, bespoke cane and rattan partitions, polished terrazzo flooring, and custom brass bell-metal lighting.',
     client: 'Private Residence',
     location: 'Bashundhara R/A, Dhaka',
     area: '3,800 sq ft',
     year: '2024',
     gallery: [
-      '/portfolio/cover/cover-3.jpeg',
       '/portfolio/residential/living-dining-wine-chandelier.jpg',
-      '/portfolio/cover/cover-1.jpeg'
+      '/portfolio/residential/bedroom-bay-window-suite.jpg',
+      '/portfolio/residential/bedroom-dark-luxury-suite.jpg'
     ]
   },
   {

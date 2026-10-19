@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -107,16 +107,23 @@ export function TestimonialsPage() {
 
 export function BlogPage() {
   return (
-    <main>
+    <main className="page-start-section">
       <SEO
         title="Interior Design & Renovation Blog"
         description="Practical guides, styling tips, budget planning advice, and exhibition stall design ideas from the Brown's Interior design studio."
         canonicalPath="/blog"
       />
-      <PageHero title="Our Blog" sub="Design ideas, tips and insights from the Brown's Interior team." image="/portfolio/residential/living-marble-luxury-hall.jpg" crumb="Blog" />
-      <section className="section">
-        <div className="container grid-3">
-          {blogPosts.map((p) => <BlogCard key={p.slug} post={p} />)}
+      <section className="section" style={{ paddingTop: '1rem' }}>
+        <div className="container">
+          <SectionHead
+            eyebrow="Insights & Guides"
+            title="Design"
+            script="Journal"
+            sub="Design ideas, renovation guides, budget planning tips, and trends from the Brown's Interior team."
+          />
+          <div className="grid-3" style={{ marginTop: '2.5rem' }}>
+            {blogPosts.map((p) => <BlogCard key={p.slug} post={p} />)}
+          </div>
         </div>
       </section>
     </main>
@@ -129,7 +136,7 @@ export function BlogPost() {
   if (!post) return <NotFound message="The requested blog article could not be found." />;
   const others = blogPosts.filter((p) => p.slug !== slug);
   return (
-    <main>
+    <main className="page-start-section">
       <SEO
         title={`${post.title} - Blog`}
         description={post.excerpt}
@@ -137,13 +144,16 @@ export function BlogPost() {
         image={post.image}
         type="article"
       />
-      <PageHero title={post.category} sub={post.title} image={post.image} crumb="Blog" />
-      <section className="section">
+      <section className="section" style={{ paddingTop: '1rem' }}>
         <div className="container post-wrap">
           <article className="post">
             <Link to="/blog" className="post-back"><ArrowLeft size={16} /> Back to Blog</Link>
-            <small>{post.date} · {post.category}</small>
-            <h2>{post.title}</h2>
+            <span className="sec-eyebrow" style={{ display: 'block', marginTop: '1rem' }}>{post.category}</span>
+            <h1 className="post-title" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', margin: '0.5rem 0 1rem', lineHeight: 1.2 }}>{post.title}</h1>
+            <small style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '1.5rem' }}>{post.date} · By Brown's Interior Studio</small>
+            <div className="post-featured-image" style={{ borderRadius: '16px', overflow: 'hidden', marginBottom: '2rem', maxHeight: '480px' }}>
+              <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
             {post.body.map((para, k) => <p key={k}>{para}</p>)}
           </article>
           <aside className="post-side">
@@ -215,6 +225,11 @@ export function CostCalculatorPage() {
   const [pkg, setPkg] = useState('basic');
   const [area, setArea] = useState(1200);
 
+  useEffect(() => {
+    document.body.classList.add('has-cost-calc');
+    return () => document.body.classList.remove('has-cost-calc');
+  }, []);
+
   const selectedSpace = spaceTypes.find((s) => s.id === type) || spaceTypes[0];
   const selectedPkg = packages.find((p) => p.id === pkg) || packages[0];
 
@@ -232,17 +247,20 @@ export function CostCalculatorPage() {
   const summaryBDT = `${fmtBDT(minBudget)} – ${fmtBDT(maxBudget)}`;
 
   return (
-    <main>
+    <main className="page-start-section">
       <SEO
         title="Interior Design Cost Calculator - Dhaka, Bangladesh"
         description="Estimate residential, commercial, and exhibition booth interior design costs instantly with our transparent budget calculator."
         canonicalPath="/cost-estimator"
       />
-      <PageHero
-        title="Estimate Cost"
-        sub="Instant, transparent budget calculation calibrated for Dhaka's interior market."
-        image="/portfolio/cover/cover-1.jpeg"
-      />
+      <div className="container" style={{ marginBottom: '1.5rem' }}>
+        <SectionHead
+          eyebrow="Instant Budget Calculator"
+          title="Estimate"
+          script="Your Space"
+          sub="Instant, transparent budget calculation calibrated for Dhaka's residential and commercial interior market."
+        />
+      </div>
       <section className="section cream calc-section">
         <div className="calc-container calc">
           <div className="calc-form clay">
@@ -294,19 +312,23 @@ export function CostCalculatorPage() {
                 value={area}
                 onChange={(e) => setArea(+e.target.value)}
                 className="calc-range"
+                aria-label="Area range slider"
               />
-              <div className="calc-area-quick">
-                {[800, 1200, 1500, 2000, 2500].map((preset) => (
-                  <button
-                    key={preset}
-                    type="button"
-                    className={`area-pill ${area === preset ? 'active' : ''}`}
-                    onClick={() => setArea(preset)}
-                  >
-                    {preset} sft
-                  </button>
-                ))}
+              <div className="calc-area-action-row">
+                <div className="calc-area-pills" role="group" aria-label="Quick area presets">
+                  {[800, 1200, 1500, 2000, 2500].map((preset) => (
+                    <button
+                      key={preset}
+                      type="button"
+                      className={`area-pill ${area === preset ? 'active' : ''}`}
+                      onClick={() => setArea(preset)}
+                    >
+                      {preset} sft
+                    </button>
+                  ))}
+                </div>
                 <div className="calc-num-wrap">
+                  <span className="calc-num-label">Exact:</span>
                   <input
                     type="number"
                     min="50"
@@ -314,6 +336,7 @@ export function CostCalculatorPage() {
                     onChange={(e) => setArea(Math.max(0, +e.target.value))}
                     className="calc-num"
                     aria-label="Area in square feet"
+                    inputMode="numeric"
                   />
                   <span>sq ft</span>
                 </div>
@@ -473,20 +496,23 @@ export function CostCalculatorPage() {
         {/* Mobile Floating Sticky Live Budget Bar */}
         <div className="calc-mobile-sticky-bar">
           <div className="cmsb-content">
-            <span className="cmsb-label">{selectedPkg.label} • {area.toLocaleString()} sft</span>
+            <span className="cmsb-label">{selectedSpace.label.split(' ')[0]} • {selectedPkg.label} • {area.toLocaleString()} sft</span>
             <strong className="cmsb-price">{summaryLakh}</strong>
           </div>
-          <a
-            href="#calc-result-box"
+          <button
+            type="button"
             className="cmsb-action-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('calc-result-box')?.scrollIntoView({ behavior: 'smooth' });
+            aria-label="Scroll to cost breakdown"
+            onClick={() => {
+              const el = document.getElementById('calc-result-box');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
             }}
           >
-            <span>View Details</span>
+            <span>View Breakdown</span>
             <ArrowRight size={14} />
-          </a>
+          </button>
         </div>
 
         {/* Highlighted Consultation Banner below */}

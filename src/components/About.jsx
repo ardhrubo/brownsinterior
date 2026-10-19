@@ -25,7 +25,7 @@ export default function About({ full = false }) {
           >
             <div className="about-image-wrapper">
               <img
-                src="/portfolio/cover/cover-1.jpeg"
+                src="/portfolio/residential/living-marble-luxury-hall.jpg"
                 alt="About Brown's Interior Studio"
               />
               <div className="experience-badge">

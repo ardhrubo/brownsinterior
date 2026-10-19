@@ -42,20 +42,20 @@ export function PageHero({ title, sub, image, crumb }) {
 /* ---------------- HERO ---------------- */
 const slides = [
   {
-    img: '/portfolio/cover/cover-1.jpeg',
+    img: '/portfolio/residential/living-marble-luxury-hall.jpg',
     label: 'Residential Luxury',
   },
   {
-    img: '/portfolio/cover/cover-2.jpeg',
-    label: 'Visionary Architecture',
-  },
-  {
-    img: '/portfolio/cover/cover-3.jpeg',
+    img: '/portfolio/residential/living-dining-wine-chandelier.jpg',
     label: 'Bespoke Living Spaces',
   },
   {
-    img: '/portfolio/cover/cover-4.jpeg',
-    label: 'Modern Turnkey Living',
+    img: '/portfolio/interior/master-bedroom-client-fav.jpg',
+    label: 'Master Bedroom Suite',
+  },
+  {
+    img: '/portfolio/office/office-conference-smartboard.jpeg',
+    label: 'Commercial & Workplace',
   },
 ];
 
@@ -358,7 +358,7 @@ export function TransformationShowcase() {
             >
               {/* AFTER (Finished Turnkey Space - Base Layer) */}
               <img
-                src="/portfolio/cover/cover-1.jpeg"
+                src="/portfolio/residential/living-marble-luxury-hall.jpg"
                 alt="Completed Brown's Interior Modern Dhaka Living Room"
                 className="trans-img trans-after-img"
                 draggable={false}
