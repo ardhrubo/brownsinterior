@@ -12,7 +12,7 @@ import ServicesPage from './components/ServicesPage';
 import ServiceDetail from './components/ServiceDetail';
 import {
   HomeHero, StatsBar, ServicesGrid, FeaturedProjects, TransformationShowcase,
-  ProcessTimeline, TestimonialSlider, CostCTA, BlogPreview, PageHero,
+  ProcessTimeline, TestimonialSlider, CostCTA, BlogPreview, SectionHead,
 } from './components/HomeSections';
 import SEO from './components/SEO';
 import NotFound from './components/NotFound';
@@ -46,13 +46,20 @@ const Home = () => (
 );
 
 const AboutPage = () => (
-  <main>
+  <main className="page-start-section">
     <SEO
       title="About Us - Luxury Interior Designers in Dhaka"
       description="Learn about Brown's Interior, led by Engr. Aslam Sheikh. Over 10 years of experience delivering premium interior design, architecture, and turnkey construction across Bangladesh."
       canonicalPath="/about"
     />
-    <PageHero title="About Us" sub="Designing beautiful spaces with quality and purpose." image="/portfolio/cover/cover-1.jpeg" />
+    <div className="container" style={{ marginBottom: '2rem' }}>
+      <SectionHead
+        eyebrow="Our Story & Leadership"
+        title="About"
+        script="Brown's Interior"
+        sub="Designing and executing beautiful spaces with engineering precision, quality materials, and transparent accountability across Bangladesh."
+      />
+    </div>
     <StatsBar />
     <About full />
     <Team cream full />

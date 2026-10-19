@@ -6,7 +6,7 @@ import {
   CheckCircle2, Sparkles, Home, Building2, Store, Layers, Check, ShieldCheck
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { PageHero, SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
+import { SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
 import SEO from './SEO';
 import NotFound from './NotFound';
 import { testimonials, processSteps, blogPosts } from '../data/siteData';
@@ -17,17 +17,20 @@ import './ExtraPages.css';
 
 export function ProcessPage() {
   return (
-    <main>
+    <main className="page-start-section">
       <SEO
         title="Our Process - 6-Step Interior Design & Execution Journey"
         description="Explore our proven 6-step interior and architecture process from consultation and 3D visualization to turnkey handover in Dhaka."
         canonicalPath="/process"
       />
-      <PageHero
-        title="Our Process"
-        sub="A clear, step-by-step journey from your first idea to the final handover."
-        image="/portfolio/cover/cover-2.jpeg"
-      />
+      <div className="container" style={{ marginBottom: '1.5rem' }}>
+        <SectionHead
+          eyebrow="Proven Methodology"
+          title="Our Execution"
+          script="Process"
+          sub="A clear, systematic 6-step journey from your first concept to final turnkey handover."
+        />
+      </div>
       <ProcessTimeline />
       <section className="section cream">
         <div className="container">
