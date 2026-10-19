@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowRight, Phone, Calculator, Sparkles, ArrowUpRight
+  ArrowRight, Phone, Calculator, Sparkles, ArrowUpRight, X, ChevronLeft, ChevronRight, Maximize2
 } from 'lucide-react';
 import { servicesData, findServiceOrOption } from '../data/servicesData';
 import { SectionHead, ProcessTimeline, CostCTA } from './HomeSections';
@@ -11,16 +11,28 @@ import NotFound from './NotFound';
 import '../styles/site.css';
 import './ServiceDetail.css';
 
-const galleryLabels = ['Spatial Concept', 'Material & Detail', 'Finished Execution'];
+const defaultGalleryLabels = [
+  'Spatial Concept & Planning',
+  'Material & Detailing',
+  'Zoning & Workstation Layout',
+  'Conference & Meeting Hub',
+  'Acoustic Glass Architecture',
+  'Lighting & Texture Harmony',
+  'Executive Millwork',
+  'Surface Craftsmanship',
+  'Finished Turnkey Execution'
+];
 
 export default function ServiceDetail() {
   const { slug, categorySlug } = useParams();
   const targetSlug = slug || categorySlug;
   const result = findServiceOrOption(targetSlug);
   const [activeImg, setActiveImg] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   useEffect(() => {
     setActiveImg(0);
+    setLightboxIndex(null);
   }, [targetSlug]);
 
   if (!result) {
@@ -34,6 +46,21 @@ export default function ServiceDetail() {
     data.gallery && data.gallery.length > 0
       ? data.gallery
       : [data.image, ...(category.gallery || []).slice(0, 2)];
+
+  const currentLabels = data.galleryLabels || (isCategory ? category.galleryLabels : null) || defaultGalleryLabels;
+  const getGalleryLabel = (index) =>
+    (currentLabels && currentLabels[index]) || defaultGalleryLabels[index] || `Perspective 0${index + 1}`;
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'ArrowRight') setLightboxIndex((prev) => (prev + 1) % photos.length);
+      if (e.key === 'ArrowLeft') setLightboxIndex((prev) => (prev - 1 + photos.length) % photos.length);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex, photos.length]);
 
   const defaultSpecs = isCategory
     ? [
@@ -134,7 +161,12 @@ export default function ServiceDetail() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <div className="sd-showcase-main">
+            <div
+              className="sd-showcase-main"
+              onClick={() => setLightboxIndex(activeImg)}
+              style={{ cursor: 'pointer' }}
+              title="Click to expand"
+            >
               <AnimatePresence mode="wait">
                 <motion.img
                   key={photos[activeImg]}
@@ -147,7 +179,7 @@ export default function ServiceDetail() {
                 />
               </AnimatePresence>
               <span className="sd-showcase-caption">
-                {galleryLabels[activeImg] || 'Studio Showcase'}
+                {getGalleryLabel(activeImg)}
               </span>
             </div>
 
@@ -264,28 +296,32 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* Visual Lookbook Triptych */}
-      <section className="section cream">
+      {/* Visual Lookbook Section */}
+      <section className="section cream" id="design-lookbook">
         <div className="container">
           <SectionHead
             eyebrow="Visual Inspiration"
             title="Design"
             script="Lookbook"
           />
-          <div className="sd-lookbook-grid">
+          <div className={`sd-lookbook-grid count-${photos.length}`}>
             {photos.map((imgUrl, idx) => (
               <motion.figure
                 key={imgUrl + idx}
-                className={`sd-lookbook-item ${idx === 0 ? 'wide' : ''}`}
+                className="sd-lookbook-item"
+                onClick={() => setLightboxIndex(idx)}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
               >
-                <img src={imgUrl} alt={`${data.title} ${galleryLabels[idx] || ''}`} loading="lazy" />
+                <img src={imgUrl} alt={`${data.title} - ${getGalleryLabel(idx)}`} loading="lazy" />
+                <div className="sd-lookbook-zoom-hint" aria-hidden="true">
+                  <Maximize2 size={16} />
+                </div>
                 <figcaption>
                   <span>0{idx + 1}</span>
-                  <strong>{galleryLabels[idx] || data.title}</strong>
+                  <strong>{getGalleryLabel(idx)}</strong>
                 </figcaption>
               </motion.figure>
             ))}
@@ -354,6 +390,70 @@ export default function ServiceDetail() {
       </section>
 
       <CostCTA />
+
+      {/* Elegant Fullscreen Lookbook Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            className="sd-lightbox-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setLightboxIndex(null)}
+          >
+            <div className="sd-lightbox-container" onClick={(e) => e.stopPropagation()}>
+              <button
+                type="button"
+                className="sd-lightbox-close"
+                onClick={() => setLightboxIndex(null)}
+                aria-label="Close Lightbox"
+              >
+                <X size={20} />
+              </button>
+
+              <button
+                type="button"
+                className="sd-lightbox-nav prev"
+                onClick={() => setLightboxIndex((prev) => (prev - 1 + photos.length) % photos.length)}
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={24} />
+              </button>
+
+              <div className="sd-lightbox-stage">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={photos[lightboxIndex]}
+                    src={photos[lightboxIndex]}
+                    alt={`${data.title} - ${getGalleryLabel(lightboxIndex)}`}
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.02 }}
+                    transition={{ duration: 0.28 }}
+                  />
+                </AnimatePresence>
+                <div className="sd-lightbox-info">
+                  <span className="sd-lightbox-counter">
+                    0{lightboxIndex + 1} / 0{photos.length}
+                  </span>
+                  <h3>{getGalleryLabel(lightboxIndex)}</h3>
+                  <p>{data.title}</p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                className="sd-lightbox-nav next"
+                onClick={() => setLightboxIndex((prev) => (prev + 1) % photos.length)}
+                aria-label="Next image"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

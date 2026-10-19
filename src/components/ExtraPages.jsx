@@ -1,7 +1,10 @@
 import React, { useMemo, useState } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Star, Quote, ArrowLeft, Calculator, Phone, UserRound, Mail, MapPin, Clock, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import {
+  Star, Quote, ArrowLeft, Calculator, Phone, UserRound, Mail, MapPin, Clock, ArrowRight,
+  CheckCircle2, Sparkles, Home, Building2, Store, Layers, Check, ShieldCheck
+} from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { PageHero, SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
 import SEO from './SEO';
@@ -161,44 +164,43 @@ export function BlogPost() {
 // - Luxury:   ৳ 20 Lac to 45 Lac (~৳ 1,666.67 – ৳ 3,750 / sft)
 
 const spaceTypes = [
-  { id: 'residential', label: 'Residential Interior', mult: 1.0 },
-  { id: 'commercial', label: 'Commercial Interior', mult: 1.2 },
-  { id: 'office', label: 'Office & Retail Interior', mult: 1.15 },
-  { id: 'booth', label: 'Exhibition Stall & Booth', mult: 1.45 },
+  { id: 'residential', label: 'Residential Interior', mult: 1.0, icon: Home, hint: 'Apartments & Duplexes' },
+  { id: 'commercial', label: 'Commercial Interior', mult: 1.2, icon: Building2, hint: 'Corporate HQ & Offices' },
+  { id: 'office', label: 'Office & Retail Interior', mult: 1.15, icon: Store, hint: 'Showrooms, Cafes & Retail' },
+  { id: 'booth', label: 'Exhibition Stall & Booth', mult: 1.45, icon: Layers, hint: 'Trade Fair & Expos' },
 ];
 
 const packages = [
   {
     id: 'basic',
     label: 'Standard',
+    rateLabel: '৳ 750 – ৳ 1,080 / sft',
     minRate: 750,
     maxRate: 1083.333,
     benchmark: '৳ 9 – 13 Lac (1200 sft)',
     desc: 'Functional essentials, HPL board & quality turnkey hardware',
+    features: ['Standard HPL & Melamine Board', 'Quality Commercial Hardware', 'Clean Electrical Fit-out'],
   },
   {
     id: 'premium',
     label: 'Premium',
+    rateLabel: '৳ 1,080 – ৳ 2,080 / sft',
     minRate: 1083.333,
     maxRate: 2083.333,
     benchmark: '৳ 13 – 25 Lac (1200 sft)',
     desc: 'Designer woodwork, bespoke acrylic/veneer & ambient lighting',
+    features: ['High-Gloss Acrylic & Natural Veneer', 'Custom Ambient Cove Lighting', 'Branded Hardware & Soft-Close'],
   },
   {
     id: 'luxury',
     label: 'Luxury',
+    rateLabel: '৳ 1,670 – ৳ 3,750 / sft',
     minRate: 1666.667,
     maxRate: 3750,
     benchmark: '৳ 20 – 45 Lac (1200 sft)',
     desc: 'Signature bespoke interiors, imported marble, acoustic panels & smart automation',
+    features: ['Imported Italian Marble & Fluted Panels', 'Acoustic Ceilings & Hidden Partitions', 'Complete Smart Home & Luxury Millwork'],
   },
-];
-
-const extras = [
-  { id: 'lighting', label: 'Custom Architectural Lighting & False Ceiling', rate: 60 },
-  { id: 'furniture', label: 'Bespoke Loose & Built-in Furniture Set', rate: 200 },
-  { id: 'mep', label: 'Complete MEP (Sanitary, HVAC & Electrical overhaul)', rate: 90 },
-  { id: 'smartHome', label: 'Smart Home Automation & Digital Access', rate: 120 },
 ];
 
 const fmtBDT = (n) => '৳ ' + Math.round(n).toLocaleString('en-IN');
@@ -212,30 +214,19 @@ export function CostCalculatorPage() {
   const [type, setType] = useState('residential');
   const [pkg, setPkg] = useState('basic');
   const [area, setArea] = useState(1200);
-  const [sel, setSel] = useState([]);
 
   const selectedSpace = spaceTypes.find((s) => s.id === type) || spaceTypes[0];
   const selectedPkg = packages.find((p) => p.id === pkg) || packages[0];
 
   const { minBudget, maxBudget } = useMemo(() => {
     const mult = selectedSpace.mult;
-    let baseMin = selectedPkg.minRate * mult * area;
-    let baseMax = selectedPkg.maxRate * mult * area;
-
-    let addOnTotal = 0;
-    extras.forEach((e) => {
-      if (sel.includes(e.id)) {
-        addOnTotal += e.rate * area;
-      }
-    });
-
+    const bMin = Math.round(selectedPkg.minRate * mult * area);
+    const bMax = Math.round(selectedPkg.maxRate * mult * area);
     return {
-      minBudget: Math.round(baseMin + addOnTotal),
-      maxBudget: Math.round(baseMax + addOnTotal),
+      minBudget: bMin,
+      maxBudget: bMax,
     };
-  }, [selectedSpace, selectedPkg, area, sel]);
-
-  const toggle = (id) => setSel((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]));
+  }, [selectedSpace, selectedPkg, area]);
 
   const summaryLakh = `Approx. ${fmtLakh(minBudget)} – ${fmtLakh(maxBudget)} BDT`;
   const summaryBDT = `${fmtBDT(minBudget)} – ${fmtBDT(maxBudget)}`;
@@ -252,24 +243,47 @@ export function CostCalculatorPage() {
         sub="Instant, transparent budget calculation calibrated for Dhaka's interior market."
         image="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=2000"
       />
-      <section className="section cream">
-        <div className="container calc">
+      <section className="section cream calc-section">
+        <div className="calc-container calc">
           <div className="calc-form clay">
-            <h3>1. Type of Space</h3>
-            <div className="opt-grid">
-              {spaceTypes.map((s) => (
-                <button
-                  key={s.id}
-                  id={`calc-type-${s.id}`}
-                  className={`opt ${type === s.id ? 'on' : ''}`}
-                  onClick={() => setType(s.id)}
-                >
-                  <strong>{s.label}</strong>
-                </button>
-              ))}
+            {/* Step 1: Type of Space */}
+            <div className="calc-sec-head">
+              <h3>
+                <span className="calc-step-num">1</span>
+                Type of Space
+              </h3>
+              <span className="calc-sec-badge">{selectedSpace.label}</span>
+            </div>
+            <div className="space-grid">
+              {spaceTypes.map((s) => {
+                const IconComponent = s.icon;
+                const isSelected = type === s.id;
+                return (
+                  <button
+                    key={s.id}
+                    id={`calc-type-${s.id}`}
+                    type="button"
+                    className={`space-card ${isSelected ? 'on' : ''}`}
+                    onClick={() => setType(s.id)}
+                  >
+                    <div className="space-card-icon">
+                      <IconComponent size={20} />
+                    </div>
+                    <strong>{s.label}</strong>
+                    <small>{s.hint}</small>
+                  </button>
+                );
+              })}
             </div>
 
-            <h3>2. Area — <span className="calc-area">{area.toLocaleString()} sq ft</span></h3>
+            {/* Step 2: Area */}
+            <div className="calc-sec-head">
+              <h3>
+                <span className="calc-step-num">2</span>
+                Area — <span className="calc-area">{area.toLocaleString()} sq ft</span>
+              </h3>
+              <span className="calc-sec-badge">Floor Footprint</span>
+            </div>
             <div className="calc-area-controls">
               <input
                 id="calc-area"
@@ -306,55 +320,98 @@ export function CostCalculatorPage() {
               </div>
             </div>
 
-            <h3>3. Finish Level</h3>
-            <div className="opt-grid three">
-              {packages.map((p) => (
-                <button
-                  key={p.id}
-                  id={`calc-pkg-${p.id}`}
-                  className={`opt ${pkg === p.id ? 'on' : ''}`}
-                  onClick={() => setPkg(p.id)}
-                >
-                  <div className="opt-top">
-                    <strong>{p.label}</strong>
-                    <span className="opt-benchmark">{p.benchmark}</span>
-                  </div>
-                  <small>{p.desc}</small>
-                </button>
-              ))}
+            {/* Step 3: Finish Level */}
+            <div className="calc-sec-head">
+              <h3>
+                <span className="calc-step-num">3</span>
+                Finish Level
+              </h3>
+              <span className="calc-sec-badge">{selectedPkg.label} Tier</span>
             </div>
-
-            <h3>4. Optional Add-on Services</h3>
-            <div className="opt-grid">
-              {extras.map((e) => (
-                <label key={e.id} className={`opt check ${sel.includes(e.id) ? 'on' : ''}`}>
-                  <input type="checkbox" checked={sel.includes(e.id)} onChange={() => toggle(e.id)} />
-                  <div>
-                    <strong>{e.label}</strong>
-                    <small>+ ৳ {e.rate}/sq ft</small>
-                  </div>
-                </label>
-              ))}
+            <div className="pkg-grid">
+              {packages.map((p) => {
+                const isSelected = pkg === p.id;
+                return (
+                  <button
+                    key={p.id}
+                    id={`calc-pkg-${p.id}`}
+                    type="button"
+                    className={`pkg-card ${isSelected ? 'on' : ''}`}
+                    onClick={() => setPkg(p.id)}
+                  >
+                    <div className="pkg-top">
+                      <div className="pkg-title-row">
+                        <strong>{p.label}</strong>
+                        <span className="pkg-rate-badge">{p.rateLabel}</span>
+                      </div>
+                      <span className="pkg-benchmark">{p.benchmark}</span>
+                    </div>
+                    <p className="pkg-desc">{p.desc}</p>
+                    <div className="pkg-features">
+                      {p.features.map((feat) => (
+                        <div key={feat} className="pkg-feat-item">
+                          <Check size={13} />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          <aside className="calc-result">
+          {/* Sticky Calculation Result Sidebar */}
+          <aside className="calc-result" id="calc-result-box">
             <div className="calc-res-header">
-              <Calculator size={28} />
+              <Calculator size={22} />
               <span>ESTIMATED BUDGET RANGE</span>
+            </div>
+
+            {/* Transparent Tier Breakdown */}
+            <div className="calc-breakdown-card">
+              <div className="calc-breakdown-header">
+                <span>Estimate Summary</span>
+              </div>
+
+              <div className="cbr-item">
+                <div className="cbr-info">
+                  <span className="cbr-title">Space Category</span>
+                  <span className="cbr-sub">{selectedSpace.label}</span>
+                </div>
+                <div className="cbr-amount">
+                  {area.toLocaleString()} sq ft
+                </div>
+              </div>
+
+              <div className="cbr-item">
+                <div className="cbr-info">
+                  <span className="cbr-title">Execution Tier</span>
+                  <span className="cbr-sub">{selectedPkg.label} Finish</span>
+                </div>
+                <div className="cbr-amount">
+                  {selectedPkg.rateLabel}
+                </div>
+              </div>
+
+              <div className="cbr-divider" />
+
+              <div className="cbr-summary-row">
+                <span className="cbr-total-label">ESTIMATED BUDGET RANGE</span>
+                <span className="cbr-total-bdt">{summaryBDT}</span>
+              </div>
             </div>
 
             <motion.div
               key={`${minBudget}-${maxBudget}`}
-              initial={{ scale: 0.95, opacity: 0.6 }}
+              initial={{ scale: 0.96, opacity: 0.8 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.25 }}
               className="calc-res-pricing"
             >
               <div className="calc-lakh-chip">{summaryLakh}</div>
-              <strong className="calc-bdt-range">{summaryBDT}</strong>
               <div className="calc-rate-sub">
-                Approx. ৳ {Math.round(minBudget / area).toLocaleString()} – ৳ {Math.round(maxBudget / area).toLocaleString()} / sq ft
+                Effective ৳ {Math.round(minBudget / area).toLocaleString()} – ৳ {Math.round(maxBudget / area).toLocaleString()} / sq ft
               </div>
             </motion.div>
 
@@ -373,7 +430,7 @@ export function CostCalculatorPage() {
               <ArrowRight size={16} />
             </Link>
 
-            {/* Highlighted Direct Contact Block */}
+            {/* Direct Studio Connect */}
             <div className="calc-contact-highlight">
               <div className="cch-head">
                 <span className="cch-badge">Direct Studio Connect</span>
@@ -411,6 +468,25 @@ export function CostCalculatorPage() {
               </div>
             </div>
           </aside>
+        </div>
+
+        {/* Mobile Floating Sticky Live Budget Bar */}
+        <div className="calc-mobile-sticky-bar">
+          <div className="cmsb-content">
+            <span className="cmsb-label">{selectedPkg.label} • {area.toLocaleString()} sft</span>
+            <strong className="cmsb-price">{summaryLakh}</strong>
+          </div>
+          <a
+            href="#calc-result-box"
+            className="cmsb-action-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('calc-result-box')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            <span>View Details</span>
+            <ArrowRight size={14} />
+          </a>
         </div>
 
         {/* Highlighted Consultation Banner below */}

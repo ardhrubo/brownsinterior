@@ -54,6 +54,17 @@ export const servicesData = [
           '/portfolio/interior/render-view-2.jpg',
           '/portfolio/interior/render-view-4.jpg',
           '/portfolio/interior/dining-clean.jpg'
+        ],
+        galleryLabels: [
+          'Formal Living Area',
+          'Living Room Panorama',
+          'Lounge & Accent Lighting',
+          'Modern Chef Kitchen',
+          'Semi-Open Kitchen Layout',
+          'Modular Cabinetry & Island',
+          'Master Bedroom Concept',
+          'Bespoke Wardrobe & Lighting',
+          'Contemporary Dining Suite'
         ]
       },
       {
@@ -80,6 +91,13 @@ export const servicesData = [
           '/portfolio/office/office-main.jpg',
           '/portfolio/office/office-room.jpg',
           '/portfolio/office/office-2.jpg'
+        ],
+        galleryLabels: [
+          'Conference & Boardroom Hub',
+          'Executive Meeting Suite',
+          'Open Workspace Planning',
+          'Director Cabin & Detailing',
+          'Agile Collaboration Zone'
         ]
       },
       {
@@ -106,6 +124,13 @@ export const servicesData = [
           '/portfolio/office/office-2.jpg',
           '/portfolio/office/office-conference.jpg',
           '/portfolio/office/office-conference-2.jpg'
+        ],
+        galleryLabels: [
+          'Spatial Planning & Open Floor',
+          'Executive Director Cabin',
+          'Collaborative Workspaces',
+          'Conference & Boardroom Facility',
+          'Acoustic Glass Partitions'
         ]
       }
     ],
@@ -114,6 +139,12 @@ export const servicesData = [
       '/portfolio/office/office-conference.jpg',
       '/portfolio/interior/kitchen-main.jpg',
       '/portfolio/office/office-main.jpg'
+    ],
+    galleryLabels: [
+      'Living Lounge Spatial Concept',
+      'Corporate Boardroom Detailing',
+      'Contemporary Kitchen Layout',
+      'Modern Office Workstations'
     ],
   },
   {
