@@ -58,7 +58,7 @@ export const blogPosts = [
     title: '7 Smart Design Tips for Compact Dhaka Apartments',
     category: 'Residential',
     date: 'Oct 2, 2026',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1200',
+    image: '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
     excerpt: 'Smart storage, light palettes, and multi-functional furniture.',
     body: [
       'Space is precious in Dhaka apartments. With the right planning, even a compact flat can feel open, bright and highly functional.',
@@ -72,7 +72,7 @@ export const blogPosts = [
     title: 'How to Design an Exhibition Booth That Stands Out',
     category: 'Exhibition',
     date: 'Sep 18, 2026',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200',
+    image: '/portfolio/booth/booth-1.jpeg',
     excerpt: 'Bold branding, open visitor flow, and focal lighting.',
     body: [
       'A trade show booth has only a few seconds to grab attention. Strong visual identity and a clear message are essential.',
@@ -85,7 +85,7 @@ export const blogPosts = [
     title: 'Renovation Budget Planning: A Practical Guide',
     category: 'Renovation',
     date: 'Aug 30, 2026',
-    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=1200',
+    image: '/portfolio/residential/living-marble-luxury-hall.jpg',
     excerpt: 'Itemised BOQs, clear priorities, and smart contingencies.',
     body: [
       'Renovations can quickly exceed budget without proper planning. Begin by listing must-haves versus nice-to-haves.',

@@ -61,7 +61,7 @@ export default function ServicesPage() {
       <PageHero
         title="Our Services"
         sub="Holistic architecture, interior design, and turnkey engineering solutions crafted for residential, commercial, and exhibition spaces."
-        image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000"
+        image="/portfolio/cover/cover-1.jpeg"
       />
 
       {/* Disciplines Filter Bar */}
@@ -239,7 +239,7 @@ export default function ServicesPage() {
             <div className="sp-spotlight-visual">
               <div className="sp-visual-card clay">
                 <img
-                  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200"
+                  src="/portfolio/residential/living-marble-luxury-hall.jpg"
                   alt="Turnkey Interior Execution by Brown's Interior"
                   loading="lazy"
                 />

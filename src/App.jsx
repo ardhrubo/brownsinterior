@@ -52,7 +52,7 @@ const AboutPage = () => (
       description="Learn about Brown's Interior, led by Engr. Aslam Sheikh. Over 10 years of experience delivering premium interior design, architecture, and turnkey construction across Bangladesh."
       canonicalPath="/about"
     />
-    <PageHero title="About Us" sub="Designing beautiful spaces with quality and purpose." image="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=2000" />
+    <PageHero title="About Us" sub="Designing beautiful spaces with quality and purpose." image="/portfolio/cover/cover-1.jpeg" />
     <StatsBar />
     <About full />
     <Team cream full />

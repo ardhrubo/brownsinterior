@@ -183,7 +183,7 @@ export const servicesData = [
     shortTitle: 'Architecture',
     tagline: 'Timeless building forms with smart climate-responsive planning.',
     icon: Building2,
-    image: img('photo-1600596542815-ffad4c1539a9'),
+    image: '/portfolio/cover/cover-4.jpeg',
     description: 'From concept masterplans to construction documents with bold character.',
     intro: 'We design buildings that maximize natural light, ventilation, and plot value — ready for approval and site execution.',
     specs: [
@@ -203,8 +203,8 @@ export const servicesData = [
         slug: 'building-design-planning',
         title: 'Building Design & Planning',
         tagline: 'Code-compliant master planning for residential & commercial plots.',
-        image: img('photo-1600585154340-be6161a56a0c', 1400),
-        desc: 'Complete architectural concepts, site zoning, and FAR-optimized planning.',
+        image: '/portfolio/cover/cover-2.jpeg',
+        desc: 'Complete architectural concepts, site zoning, and FAR-optimized planning for modern Bangladeshi urban living.',
         specs: [
           { label: 'Best For', value: 'New Plots & Developments' },
           { label: 'Compliance', value: 'RAJUK & BNBC Standards' },
@@ -218,16 +218,21 @@ export const servicesData = [
           'Passive cooling & green terrace integration'
         ],
         gallery: [
-          img('photo-1600585154340-be6161a56a0c', 1200),
-          img('photo-1600596542815-ffad4c1539a9', 1000),
-          img('photo-1512917774080-9991f1c4c750', 1000)
+          '/portfolio/cover/cover-2.jpeg',
+          '/portfolio/cover/cover-4.jpeg',
+          '/portfolio/cover/cover-1.jpeg'
+        ],
+        galleryLabels: [
+          'Contemporary Tropical Villa with Red Brick Jali',
+          'Modern Dhaka Multi-Storey Residence & Green Balconies',
+          'Urban Dhaka Sky Penthouse Veranda'
         ]
       },
       {
         slug: 'floor-plans-elevations',
         title: 'Floor Plans & Elevations',
         tagline: 'Zero-wastage layouts paired with balanced 4-side elevations.',
-        image: img('photo-1487958449943-2429e8be8625', 1400),
+        image: '/portfolio/cover/cover-4.jpeg',
         desc: 'Precision floor plans and multi-angle elevations maximizing every square foot.',
         specs: [
           { label: 'Best For', value: 'Multi-Storied & Duplexes' },
@@ -242,40 +247,50 @@ export const servicesData = [
           'Window schedules for natural cross-ventilation'
         ],
         gallery: [
-          img('photo-1487958449943-2429e8be8625', 1200),
-          img('photo-1503387762-592deb58ef4e', 1000),
-          img('photo-1600585154340-be6161a56a0c', 1000)
+          '/portfolio/cover/cover-4.jpeg',
+          '/portfolio/cover/cover-2.jpeg',
+          '/portfolio/cover/cover-1.jpeg'
+        ],
+        galleryLabels: [
+          'Dhaka Residential Multi-Storey Elevation',
+          'Modern Villa 4-Side Architectural Elevation',
+          'Penthouse Veranda & Balcony Integration'
         ]
       },
       {
         slug: 'exterior-facade-design',
         title: 'Exterior & Facade Design',
         tagline: 'Iconic street presence with modern cladding, glass & lighting.',
-        image: img('photo-1512917774080-9991f1c4c750', 1400),
-        desc: 'Striking building exteriors blending louvers, architectural concrete, and warm night lighting.',
+        image: '/portfolio/cover/cover-4.jpeg',
+        desc: 'Striking building exteriors blending fair-face concrete, brick jali screens, green balconies, and warm architectural lighting.',
         specs: [
           { label: 'Best For', value: 'New & Existing Buildings' },
-          { label: 'Materials', value: 'HPL, Louvers, Glass & Stone' },
+          { label: 'Materials', value: 'Fair-Face Concrete, Brick Jali & Glass' },
           { label: 'Deliverable', value: 'Day/Night 3D + Cladding Details' }
         ],
-        highlights: ['3D Day/Night Renders', 'Louver & Glass', 'Facade Lighting', 'Thermal Shading'],
+        highlights: ['3D Day/Night Renders', 'Brick Jali & Louvers', 'Facade Lighting', 'Thermal Shading'],
         features: [
-          'Contemporary architectural facade styling',
-          'Weatherproof HPL, terracotta & stone cladding',
+          'Contemporary Dhaka architectural facade styling',
+          'Weatherproof fair-face concrete, terracotta & brick jali cladding',
           'Warm architectural facade night-lighting',
-          'Sun-shading louvers for thermal comfort'
+          'Sun-shading wooden louvers & planter boxes for thermal comfort'
         ],
         gallery: [
-          img('photo-1512917774080-9991f1c4c750', 1200),
-          img('photo-1600596542815-ffad4c1539a9', 1000),
-          img('photo-1486406146926-c627a92ad1ab', 1000)
+          '/portfolio/cover/cover-4.jpeg',
+          '/portfolio/cover/cover-2.jpeg',
+          '/portfolio/cover/cover-1.jpeg'
+        ],
+        galleryLabels: [
+          'Dhaka Residential Facade & Hanging Planter Balconies',
+          'Tropical Modern Villa with Red Brick Jali Screen',
+          'Penthouse Skyline Terrace & Louver Design'
         ]
       },
       {
         slug: 'architectural-drawings',
         title: 'Architectural Drawings',
         tagline: 'Construction-ready blueprints for smooth site execution.',
-        image: img('photo-1503387762-592deb58ef4e', 1400),
+        image: '/portfolio/cover/cover-2.jpeg',
         desc: 'Complete working drawing packages with joinery, staircase, and finishing schedules.',
         specs: [
           { label: 'Best For', value: 'Contractors & Site Engineers' },
@@ -290,13 +305,27 @@ export const servicesData = [
           'Authority approval & site coordination sheets'
         ],
         gallery: [
-          img('photo-1503387762-592deb58ef4e', 1200),
-          img('photo-1487958449943-2429e8be8625', 1000),
-          img('photo-1541888946425-d81bb19240f5', 1000)
+          '/portfolio/cover/cover-2.jpeg',
+          '/portfolio/cover/cover-4.jpeg',
+          '/portfolio/cover/cover-1.jpeg'
+        ],
+        galleryLabels: [
+          'Architectural Working Drawings & Site Coordination',
+          'Facade Elevation Detailing & Material Specifications',
+          'Interior Joinery & Slab Level Layouts'
         ]
       }
     ],
-    gallery: [img('photo-1487958449943-2429e8be8625', 900), img('photo-1503387762-592deb58ef4e', 900), img('photo-1512917774080-9991f1c4c750', 900)],
+    gallery: [
+      '/portfolio/cover/cover-4.jpeg',
+      '/portfolio/cover/cover-2.jpeg',
+      '/portfolio/cover/cover-1.jpeg'
+    ],
+    galleryLabels: [
+      'Modern Multi-Storey Dhaka Residence',
+      'Contemporary Villa with Brick Jali & Concrete',
+      'Dhaka Sky Penthouse Living & Terrace'
+    ],
   },
   {
     slug: 'engineering',
@@ -829,7 +858,7 @@ export const servicesData = [
     shortTitle: 'Specialized Services',
     tagline: 'Bespoke furniture, 3D visualization, turnkey & remote NRB design.',
     icon: Sparkles,
-    image: img('photo-1616486338812-3dadae4b4ace'),
+    image: '/portfolio/cover/cover-3.jpeg',
     description: 'Specialized design and execution services that complete your space.',
     intro: 'From handcrafted furniture pieces to full remote project delivery for NRB clients abroad.',
     specs: [
@@ -849,7 +878,7 @@ export const servicesData = [
         slug: 'custom-furniture-design',
         title: 'Custom Furniture Design',
         tagline: 'Handcrafted teak, oak & upholstered furniture made to measure.',
-        image: img('photo-1555041469-a586c61ea9bc', 1400),
+        image: '/portfolio/interior/master-bedroom-client-fav.jpg',
         desc: 'Bespoke sofas, dining tables, beds, and consoles built in our workshop to fit your exact space.',
         specs: [
           { label: 'Materials', value: 'Seasoned Teak, Oak & Velvet' },
@@ -864,16 +893,21 @@ export const servicesData = [
           'Stain-resistant fabrics & high-density cushioning'
         ],
         gallery: [
-          img('photo-1555041469-a586c61ea9bc', 1200),
-          img('photo-1616486338812-3dadae4b4ace', 1000),
-          img('photo-1600210492486-724fe5c67fb0', 1000)
+          '/portfolio/interior/master-bedroom-client-fav.jpg',
+          '/portfolio/cover/cover-3.jpeg',
+          '/portfolio/residential/living-dining-wine-chandelier.jpg'
+        ],
+        galleryLabels: [
+          'Client-Favorite Custom Bed & Upholstery',
+          'Artisanal Teak & Rattan Lounge Suite',
+          'Custom Dining Set & Wine Console'
         ]
       },
       {
         slug: '2d-drawings-3d-visualization',
         title: '2D Drawings & 3D Visualization',
         tagline: 'Experience your space in photorealistic 4K before building.',
-        image: img('photo-1513694203232-719a280e022f', 1400),
+        image: '/portfolio/residential/living-marble-luxury-hall.jpg',
         desc: 'Studio-grade 3D rendering, virtual walkthroughs, and complete CAD drafting packages.',
         specs: [
           { label: 'Output', value: '4K Renders + AutoCAD DWG' },
@@ -888,16 +922,21 @@ export const servicesData = [
           'Interactive 360° panorama links for mobile viewing'
         ],
         gallery: [
-          img('photo-1513694203232-719a280e022f', 1200),
-          img('photo-1618221195710-dd6b41faaea6', 1000),
-          img('photo-1600566753190-17f0baa2a6c3', 1000)
+          '/portfolio/residential/living-marble-luxury-hall.jpg',
+          '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
+          '/portfolio/office/office-conference-smartboard.jpeg'
+        ],
+        galleryLabels: [
+          'Photorealistic 4K Living Hall 3D Visualization',
+          'Luxury Dark Master Bedroom 3D Modeling',
+          'Commercial Smart Boardroom Virtual Render'
         ]
       },
       {
         slug: 'lighting-ceiling-design',
         title: 'Lighting & Ceiling Design',
         tagline: 'Architectural false ceilings and warm layered illumination.',
-        image: img('photo-1600566753190-17f0baa2a6c3', 1400),
+        image: '/portfolio/cover/cover-1.jpeg',
         desc: 'Minimalist gypsum ceilings, magnetic track lights, and indirect cove lighting schemes.',
         specs: [
           { label: 'Systems', value: 'Gypsum, Baffle & Track LED' },
@@ -912,9 +951,14 @@ export const servicesData = [
           'Smart scene dimmers & chandelier reinforcement'
         ],
         gallery: [
-          img('photo-1600566753190-17f0baa2a6c3', 1200),
-          img('photo-1600210492486-724fe5c67fb0', 1000),
-          img('photo-1618221195710-dd6b41faaea6', 1000)
+          '/portfolio/cover/cover-1.jpeg',
+          '/portfolio/residential/living-dining-wine-chandelier.jpg',
+          '/portfolio/residential/bedroom-bay-window-suite.jpg'
+        ],
+        galleryLabels: [
+          'Architectural Gypsum Tray Ceiling & Chandelier',
+          'Modern False Ceiling with Crystal Chandelier',
+          'Linear Magnetic Track Lighting & Bedside Pendants'
         ]
       },
       {
@@ -945,7 +989,7 @@ export const servicesData = [
         slug: 'turnkey-interior-solutions',
         title: 'Turnkey Interior Solutions',
         tagline: 'From bare concrete shell to move-in ready handover.',
-        image: img('photo-1600596542815-ffad4c1539a9', 1400),
+        image: '/portfolio/cover/cover-1.jpeg',
         desc: 'One team, one contract, zero stress — we handle design, materials, build, curtains, and deep cleaning.',
         specs: [
           { label: 'Model', value: 'Single-Window Turnkey' },
@@ -960,16 +1004,21 @@ export const servicesData = [
           'Final styling, soft furnishings & deep cleaning'
         ],
         gallery: [
-          img('photo-1600596542815-ffad4c1539a9', 1200),
-          img('photo-1600210492486-724fe5c67fb0', 1000),
-          img('photo-1618221195710-dd6b41faaea6', 1000)
+          '/portfolio/cover/cover-1.jpeg',
+          '/portfolio/cover/cover-3.jpeg',
+          '/portfolio/residential/living-marble-luxury-hall.jpg'
+        ],
+        galleryLabels: [
+          'Turnkey Luxury Dhaka Penthouse Delivery',
+          'Move-in Ready Artisanal Woodwork & Living Room',
+          'Handover-Ready Italian Marble Residence'
         ]
       },
       {
         slug: 'remote-international-design-services',
         title: 'Remote & International Design Services',
         tagline: 'Design & build your Dhaka property from anywhere in the world.',
-        image: img('photo-1486406146926-c627a92ad1ab', 1400),
+        image: '/portfolio/cover/cover-1.jpeg',
         desc: 'Dedicated turnkey & online design service for NRBs in the UK, USA, Canada, Australia & Middle East.',
         specs: [
           { label: 'For', value: 'NRBs & Global Clients' },
@@ -984,13 +1033,27 @@ export const servicesData = [
           'Weekly drone/video walkthroughs & milestone billing'
         ],
         gallery: [
-          img('photo-1486406146926-c627a92ad1ab', 1200),
-          img('photo-1600210492486-724fe5c67fb0', 1000),
-          img('photo-1600585154340-be6161a56a0c', 1000)
+          '/portfolio/cover/cover-1.jpeg',
+          '/portfolio/residential/living-marble-luxury-hall.jpg',
+          '/portfolio/cover/cover-4.jpeg'
+        ],
+        galleryLabels: [
+          'Turnkey Dhaka Flat Delivery for NRB Client',
+          'Executive Interior Executed via Remote Supervision',
+          'Multi-Storey Architectural Building in Dhaka'
         ]
       }
     ],
-    gallery: [img('photo-1555041469-a586c61ea9bc', 900), img('photo-1513694203232-719a280e022f', 900), img('photo-1600566753190-17f0baa2a6c3', 900)],
+    gallery: [
+      '/portfolio/cover/cover-1.jpeg',
+      '/portfolio/cover/cover-3.jpeg',
+      '/portfolio/residential/living-marble-luxury-hall.jpg'
+    ],
+    galleryLabels: [
+      'Modern Dhaka Penthouse Interior',
+      'Artisanal Woodwork & Living Suite',
+      'Signature Marble Residence'
+    ],
   },
 ];
 

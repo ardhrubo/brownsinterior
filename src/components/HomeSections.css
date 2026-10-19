@@ -790,7 +790,7 @@
 .testi-nav button:hover { background: var(--brown-900); color: #fff; }
 
 /* CTA */
-.cta-band { padding: 4.5rem 0; color: #fff; background: linear-gradient(rgba(30,24,20,0.82), rgba(30,24,20,0.82)), url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=2000') center/cover fixed; }
+.cta-band { padding: 4.5rem 0; color: #fff; background: linear-gradient(rgba(30,24,20,0.82), rgba(30,24,20,0.82)), url('/portfolio/cover/cover-1.jpeg') center/cover fixed; }
 .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
 .cta-band h2 { font-size: clamp(1.8rem, 3.3vw, 2.5rem); font-weight: 600; }
 .cta-band h2 em { font-family: var(--font-script); font-style: normal; font-weight: 400; color: var(--gold); font-size: 1.4em; }

@@ -25,8 +25,8 @@ export default function About({ full = false }) {
           >
             <div className="about-image-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1000"
-                alt="About Brown's Interior"
+                src="/portfolio/cover/cover-1.jpeg"
+                alt="About Brown's Interior Studio"
               />
               <div className="experience-badge">
                 <span className="years">10+</span>

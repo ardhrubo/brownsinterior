@@ -23,7 +23,7 @@ export default function ProjectsPage() {
       <PageHero
         title="Our Projects"
         sub="Explore our portfolio of residential, commercial, architectural, and exhibition excellence."
-        image="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2000"
+        image="/portfolio/residential/living-marble-luxury-hall.jpg"
         crumb="Projects"
       />
       <section className="section">

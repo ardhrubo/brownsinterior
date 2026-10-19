@@ -358,8 +358,8 @@ export function TransformationShowcase() {
             >
               {/* AFTER (Finished Turnkey Space - Base Layer) */}
               <img
-                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1600"
-                alt="Completed Brown's Interior Living Room"
+                src="/portfolio/cover/cover-1.jpeg"
+                alt="Completed Brown's Interior Modern Dhaka Living Room"
                 className="trans-img trans-after-img"
                 draggable={false}
               />

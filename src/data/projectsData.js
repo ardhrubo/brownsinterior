@@ -57,19 +57,19 @@ export const projectsData = [
   },
   {
     id: 4,
-    title: 'Oasis Coastal Suite & Lounge',
-    category: 'Hospitality Design',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200',
-    coverImage: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200',
-    description: 'Interior styling and thematic spatial design for a 50-room boutique hotel. Focused on creating a memorable guest experience through warm indirect lighting, custom rattan & teak furniture, and coastal textures.',
-    client: 'Oasis Hospitality',
-    location: "Cox's Bazar",
-    area: '14,000 sq ft',
+    title: 'Heritage Rattan & Lounge Suite',
+    category: 'Turnkey Interior',
+    image: '/portfolio/cover/cover-3.jpeg',
+    coverImage: '/portfolio/cover/cover-3.jpeg',
+    description: 'An artisanal modern Bangladeshi interior blending terracotta textures, bespoke cane and rattan partitions, polished terrazzo flooring, and custom brass bell-metal lighting.',
+    client: 'Private Residence',
+    location: 'Bashundhara R/A, Dhaka',
+    area: '3,800 sq ft',
     year: '2024',
     gallery: [
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=1200'
+      '/portfolio/cover/cover-3.jpeg',
+      '/portfolio/residential/living-dining-wine-chandelier.jpg',
+      '/portfolio/cover/cover-1.jpeg'
     ]
   },
   {
@@ -85,26 +85,27 @@ export const projectsData = [
     year: '2025',
     gallery: [
       '/portfolio/interior/master-bedroom-client-fav.jpg',
-      '/portfolio/interior/bedroom-chandelier-master.jpg',
-      '/portfolio/interior/bedroom-study-suite.jpg',
-      '/portfolio/interior/bedroom-luxury-suite.jpg'
+      '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
+      '/portfolio/residential/bedroom-bay-window-suite.jpg',
+      '/portfolio/interior/bedroom-chandelier-master.jpg'
     ]
   },
   {
     id: 6,
-    title: 'The Artisan Roastery & Cafe',
+    title: 'Apex Showroom & Corporate Hub',
     category: 'Commercial Interior',
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200',
-    coverImage: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200',
-    description: 'An architectural cafe interior combining micro-cement textures with warm walnut joinery, custom acoustic ceiling baffles, and bespoke espresso bar lighting.',
-    client: 'The Daily Brew',
+    image: '/portfolio/office/office-floor-reception-hub.jpeg',
+    coverImage: '/portfolio/office/office-floor-reception-hub.jpeg',
+    description: 'An architectural corporate interior featuring an open workfloor, reception welcome desk, biophilic room dividers with planter boxes, and integrated retail display showroom.',
+    client: 'Apex Group',
     location: 'Uttara, Dhaka',
-    area: '3,100 sq ft',
+    area: '4,200 sq ft',
     year: '2024',
     gallery: [
-      'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=1200'
+      '/portfolio/office/office-floor-reception-hub.jpeg',
+      '/portfolio/office/office-conference-showroom.jpeg',
+      '/portfolio/office/office-workstations-pod.jpeg',
+      '/portfolio/office/office-meeting-suite.jpeg'
     ]
   },
   {

@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Hero.css';
 
 const backgrounds = [
-  'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2500', // Luxury Interior
-  'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2500', // Architecture Exterior
-  'https://images.unsplash.com/photo-1541888086225-ee5315ffabfc?auto=format&fit=crop&q=80&w=2500'  // Structure / Construction
+  '/portfolio/cover/cover-1.jpeg', // Modern Dhaka Luxury Penthouse & Skyline Veranda
+  '/portfolio/cover/cover-4.jpeg', // Contemporary Dhaka Architecture & Exterior Facade
+  '/portfolio/residential/living-marble-luxury-hall.jpg', // Grand Marble Living Suite
+  '/portfolio/cover/cover-2.jpeg', // Tropical Modern Dhaka Villa Exterior
 ];
 
 export default function Hero() {

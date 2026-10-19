@@ -86,7 +86,7 @@ export default function Contact({ showHero = true }) {
           <PageHero
             title="Contact Us"
             sub="Let's plan, design, and build your space."
-            image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000"
+            image="/portfolio/office/office-floor-reception-hub.jpeg"
           />
         </>
       )}

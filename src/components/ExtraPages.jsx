@@ -26,7 +26,7 @@ export function ProcessPage() {
       <PageHero
         title="Our Process"
         sub="A clear, step-by-step journey from your first idea to the final handover."
-        image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000"
+        image="/portfolio/cover/cover-2.jpeg"
       />
       <ProcessTimeline />
       <section className="section cream">
@@ -81,7 +81,7 @@ export function TestimonialsPage() {
         description="Read genuine testimonials from apartment owners, corporate directors, and commercial clients across Dhaka who transformed their spaces with Brown's Interior."
         canonicalPath="/testimonials"
       />
-      <PageHero title="Testimonials" sub="Hear from the clients who trusted us with their spaces." image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" />
+      <PageHero title="Testimonials" sub="Hear from the clients who trusted us with their spaces." image="/portfolio/cover/cover-1.jpeg" />
       <section className="section cream">
         <div className="container">
           <SectionHead eyebrow="Client Stories" title="Words From Our" script="Clients" />
@@ -113,7 +113,7 @@ export function BlogPage() {
         description="Practical guides, styling tips, budget planning advice, and exhibition stall design ideas from the Brown's Interior design studio."
         canonicalPath="/blog"
       />
-      <PageHero title="Our Blog" sub="Design ideas, tips and insights from the Brown's Interior team." image="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&q=80&w=2000" crumb="Blog" />
+      <PageHero title="Our Blog" sub="Design ideas, tips and insights from the Brown's Interior team." image="/portfolio/residential/living-marble-luxury-hall.jpg" crumb="Blog" />
       <section className="section">
         <div className="container grid-3">
           {blogPosts.map((p) => <BlogCard key={p.slug} post={p} />)}
@@ -241,7 +241,7 @@ export function CostCalculatorPage() {
       <PageHero
         title="Estimate Cost"
         sub="Instant, transparent budget calculation calibrated for Dhaka's interior market."
-        image="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=2000"
+        image="/portfolio/cover/cover-1.jpeg"
       />
       <section className="section cream calc-section">
         <div className="calc-container calc">
