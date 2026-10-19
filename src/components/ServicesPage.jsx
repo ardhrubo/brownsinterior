@@ -14,7 +14,7 @@ import {
   Compass,
 } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
-import { PageHero } from './HomeSections';
+import { SectionHead } from './HomeSections';
 import SEO from './SEO';
 import './ServicesPage.css';
 
