@@ -6,7 +6,8 @@
 .h-hero-tag { display: inline-block; font-family: 'Outfit', var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 4.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.15rem; padding: 0.4rem 1.1rem; border-radius: 999px; background: rgba(255,255,255,0.08); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.14); }
 .h-hero h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(2.3rem, 5.2vw, 4.3rem); line-height: 1.12; letter-spacing: -0.01em; text-shadow: 0 4px 30px rgba(0,0,0,0.35); }
 .h-hero h1 em { font-family: var(--font-display); font-style: italic; font-weight: 400; color: var(--gold); }
-.h-hero p { font-family: 'Outfit', var(--font-sans); font-weight: 300; max-width: 540px; margin: 1.15rem auto 0; font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.65; color: rgba(255,255,255,0.86); }
+.h-hero p { font-family: 'Outfit', var(--font-sans); font-weight: 300; max-width: 720px; margin: 1.15rem auto 0; font-size: clamp(0.98rem, 1.25vw, 1.12rem); line-height: 1.65; color: rgba(255,255,255,0.88); }
+.h-hero-sub-location { display: block; margin-top: 0.45rem; font-weight: 400; color: var(--gold); font-size: 0.95em; letter-spacing: 0.3px; }
 .h-hero-ctas { margin-top: 2.25rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 .h-hero-dots { position: absolute; bottom: 4.5rem; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 0.6rem; }
 .h-hero-dots button { width: 10px; height: 10px; border-radius: 999px; border: none; background: rgba(255,255,255,0.45); cursor: pointer; transition: all 0.4s; }

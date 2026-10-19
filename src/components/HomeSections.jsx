@@ -96,7 +96,8 @@ export function HomeHero() {
           Designing <em>Timeless Interiors</em> with Purpose.
         </motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}>
-          Dhaka's premier residential, commercial &amp; corporate interior design studio delivering tailored spaces and turnkey execution across Bangladesh.
+          Residential &amp; Commercial Interior Design &amp; Execution, Architectural Design, Structural Consultancy &amp; Exhibition Booth Design.
+          <span className="h-hero-sub-location">Serving Clients Across Bangladesh &amp; Worldwide.</span>
         </motion.p>
         <motion.div className="h-hero-ctas" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}>
           <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Interiors</Link>
@@ -324,7 +325,7 @@ export function TransformationShowcase() {
     if (e.currentTarget.setPointerCapture) {
       try {
         e.currentTarget.setPointerCapture(e.pointerId);
-      } catch (_) {}
+      } catch (_) { }
     }
     updateFromClientX(e.clientX);
   };
@@ -340,7 +341,7 @@ export function TransformationShowcase() {
     if (e.currentTarget.releasePointerCapture) {
       try {
         e.currentTarget.releasePointerCapture(e.pointerId);
-      } catch (_) {}
+      } catch (_) { }
     }
   };
 
