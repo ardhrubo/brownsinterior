@@ -78,17 +78,21 @@ export function ProcessPage() {
 
 export function TestimonialsPage() {
   return (
-    <main>
+    <main className="page-start-section">
       <SEO
         title="Client Reviews & Testimonials - Brown's Interior"
         description="Read genuine testimonials from apartment owners, corporate directors, and commercial clients across Dhaka who transformed their spaces with Brown's Interior."
         canonicalPath="/testimonials"
       />
-      <PageHero title="Testimonials" sub="Hear from the clients who trusted us with their spaces." image="/portfolio/cover/cover-1.jpeg" />
-      <section className="section cream">
+      <section className="section cream" style={{ paddingTop: '1.5rem' }}>
         <div className="container">
-          <SectionHead eyebrow="Client Stories" title="Words From Our" script="Clients" />
-          <div className="grid-3">
+          <SectionHead
+            eyebrow="Client Stories"
+            title="Words From Our"
+            script="Clients"
+            sub="Hear from homeowners, developers, and corporate executives who trusted Brown's Interior with their spaces."
+          />
+          <div className="grid-3" style={{ marginTop: '2.5rem' }}>
             {testimonials.map((t, k) => (
               <motion.div key={t.name} className="testi-card clay" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (k % 3) * 0.1 }}>
                 <Quote className="testi-quote" size={34} />

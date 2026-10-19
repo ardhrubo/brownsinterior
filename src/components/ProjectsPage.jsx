@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
-import { PageHero, SectionHead, CostCTA } from './HomeSections';
+import { SectionHead, CostCTA } from './HomeSections';
 import SEO from './SEO';
 import './HomeSections.css';
 import './Portfolio.css';
