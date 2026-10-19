@@ -125,7 +125,7 @@ export const servicesData = [
           'Interactive Smart Board Conference Facility',
           'Ergonomic Workstation Pods & Privacy Dividers',
           'Open Work Floor, Coffee Hub & Executive Entrance',
-          'Showroom Conference Suite & Apparel Display',
+          'Garments Corporate Conference & Sample Room',
           'Architectural Linear Lighting Meeting Room'
         ]
       },
@@ -156,7 +156,7 @@ export const servicesData = [
         ],
         galleryLabels: [
           'Open Office Floor & Reception Welcome Lounge',
-          'Retail Showroom & Executive Discussion Area',
+          'Corporate Buyer Meeting Room & Sample Rack',
           'Ergonomic Workstation Pod with Privacy Screens',
           'Smart Presentation & Digital Boardroom',
           'Collaboration Suite with Acoustic Finishes'
