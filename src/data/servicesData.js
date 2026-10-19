@@ -33,38 +33,58 @@ export const servicesData = [
         image: '/portfolio/interior/living-room.jpg',
         desc: 'Turnkey design and execution for apartments, duplexes, and villas in Dhaka.',
         specs: [
-          { label: 'Best For', value: 'Apartments, Duplexes & Villas' },
+          { label: 'Key Spaces', value: 'BED ROOM • KITCHEN • LIVING • DINING' },
           { label: 'Timeline', value: '45 – 90 Days' },
           { label: 'Delivery', value: '3D + Full Turnkey' }
         ],
-        highlights: ['Living & Dining', 'Master Suites', 'Custom Woodwork', 'Mood Lighting'],
+        highlights: ['BED ROOM', 'KITCHEN', 'LIVING', 'DINING'],
         features: [
-          'Full space planning & furniture zoning',
-          'Bespoke wall paneling & false ceilings',
-          'Living, dining & family lounge styling',
-          'Curated lighting, fabrics & finishes'
+          'BED ROOM: Luxury master suites with bespoke wardrobes, cove lighting & dressing nooks',
+          'KITCHEN: Modern modular cabinetry, quartz/granite counters & built-in appliances',
+          'LIVING: Statement marble feature walls, travertine textures, custom sofas & false ceilings',
+          'DINING: Elegant family dining zones, crystal chandeliers & custom crockery consoles'
         ],
         gallery: [
-          '/portfolio/interior/living-room.jpg',
-          '/portfolio/interior/living-room-v1.jpg',
-          '/portfolio/interior/living-room-v2.jpg',
+          '/portfolio/interior/master-bedroom-client-fav.jpg',
+          '/portfolio/interior/bedroom-chandelier-master.jpg',
+          '/portfolio/interior/bedroom-luxury-suite.jpg',
+          '/portfolio/interior/bedroom-study-suite.jpg',
           '/portfolio/interior/kitchen-main.jpg',
           '/portfolio/interior/kitchen-semi-open.jpg',
           '/portfolio/interior/modern-kitchen.png',
-          '/portfolio/interior/render-view-2.jpg',
-          '/portfolio/interior/render-view-4.jpg',
+          '/portfolio/interior/living-room.jpg',
+          '/portfolio/interior/living-marble-luxury.jpg',
+          '/portfolio/interior/living-room-v1.jpg',
+          '/portfolio/interior/dining-marble-chandelier.jpg',
           '/portfolio/interior/dining-clean.jpg'
         ],
+        galleryCategories: [
+          'BED ROOM',
+          'BED ROOM',
+          'BED ROOM',
+          'BED ROOM',
+          'KITCHEN',
+          'KITCHEN',
+          'KITCHEN',
+          'LIVING',
+          'LIVING',
+          'LIVING',
+          'DINING',
+          'DINING'
+        ],
         galleryLabels: [
-          'Formal Living Area',
-          'Living Room Panorama',
-          'Lounge & Accent Lighting',
-          'Modern Chef Kitchen',
-          'Semi-Open Kitchen Layout',
-          'Modular Cabinetry & Island',
-          'Master Bedroom Concept',
-          'Bespoke Wardrobe & Lighting',
-          'Contemporary Dining Suite'
+          'BED ROOM — Master Bedroom Signature Suite',
+          'BED ROOM — Grand Suite & Chandelier',
+          'BED ROOM — Contemporary Suite & Woodwork',
+          'BED ROOM — Executive Study & Custom Wardrobes',
+          'KITCHEN — Modern Chef Island & Cabinetry',
+          'KITCHEN — Semi-Open Modular Layout',
+          'KITCHEN — High-Gloss Acrylic Cabinetry',
+          'LIVING — Formal Living & Travertine Wall',
+          'LIVING — Contemporary Lounge & Mood Lighting',
+          'LIVING — Living Room Panorama & Seating',
+          'DINING — Grand Marble Dining & Crystal Chandelier',
+          'DINING — Contemporary Family Dining Suite'
         ]
       },
       {
@@ -496,7 +516,7 @@ export const servicesData = [
     shortTitle: 'Exhibition & Booths',
     tagline: 'Show-stopping expo pavilions that draw crowds in seconds.',
     icon: Presentation,
-    image: img('photo-1540575467063-178a50c2df87'),
+    image: '/portfolio/booth/booth-1.jpeg',
     description: 'High-impact exhibition stalls engineered for rapid setup and unforgettable branding.',
     intro: 'Your booth has seconds to capture attention. We design, render, and fabricate stands that invite visitors in.',
     specs: [
@@ -516,7 +536,7 @@ export const servicesData = [
         slug: 'exhibition-booth-design-service',
         title: 'Exhibition Booth Design',
         tagline: 'Crowd-pulling stall concepts with seamless visitor flow.',
-        image: img('photo-1540575467063-178a50c2df87', 1400),
+        image: '/portfolio/booth/booth-1.jpeg',
         desc: 'Strategic expo booth concepts balancing bold brand fascias, product displays, and lounge seating.',
         specs: [
           { label: 'Best For', value: 'ICCB, BICC & Trade Expos' },
@@ -531,16 +551,25 @@ export const servicesData = [
           'Private discussion lounge & reception desk'
         ],
         gallery: [
-          img('photo-1540575467063-178a50c2df87', 1200),
-          img('photo-1505373877841-8d25f7d46678', 1000),
-          img('photo-1511578314322-379afb476865', 1000)
+          '/portfolio/booth/booth-1.jpeg',
+          '/portfolio/booth/booth-2.jpeg',
+          '/portfolio/booth/booth-3.jpeg',
+          '/portfolio/booth/booth-4.jpeg',
+          '/portfolio/booth/booth-5.jpeg'
+        ],
+        galleryLabels: [
+          'Brand Pavilion Island Architecture',
+          'Illuminated Product Display & Podium',
+          'Multi-Angle Expo Stand Perspective',
+          'Executive VIP Discussion Zone',
+          'Overhead Brand Fascia & Lighting Truss'
         ]
       },
       {
         slug: 'trade-show-stand-design',
         title: 'Trade Show Stand Design',
         tagline: 'Modular, reusable stands built for fast overnight installation.',
-        image: img('photo-1505373877841-8d25f7d46678', 1400),
+        image: '/portfolio/booth/booth-3.jpeg',
         desc: 'Lightweight aluminum and wooden modular stands with backlit graphics and LED screens.',
         specs: [
           { label: 'Setup Time', value: '12 – 24 Hours On-Site' },
@@ -555,16 +584,23 @@ export const servicesData = [
           'Complete expo spotlighting & power distribution'
         ],
         gallery: [
-          img('photo-1505373877841-8d25f7d46678', 1200),
-          img('photo-1540575467063-178a50c2df87', 1000),
-          img('photo-1475721027785-f74eccf877e2', 1000)
+          '/portfolio/booth/booth-3.jpeg',
+          '/portfolio/booth/booth-2.jpeg',
+          '/portfolio/booth/booth-4.jpeg',
+          '/portfolio/booth/booth-5.jpeg'
+        ],
+        galleryLabels: [
+          'Modular Trade Show Booth Layout',
+          'Integrated Product Display Units',
+          'Visitor Flow & Demo Counter',
+          'Overhead LED Display Truss'
         ]
       },
       {
         slug: 'custom-booth-design',
         title: 'Custom Booth Design',
         tagline: '100% bespoke flagship pavilions for market leaders.',
-        image: img('photo-1511578314322-379afb476865', 1400),
+        image: '/portfolio/booth/booth-5.jpeg',
         desc: 'Sculptural, multi-zone custom pavilions crafted with Duco paint, acrylic, and raised LED floors.',
         specs: [
           { label: 'Best For', value: 'Flagship Brand Pavilions' },
@@ -579,9 +615,16 @@ export const servicesData = [
           'Automotive-grade Duco & metallic finishes'
         ],
         gallery: [
-          img('photo-1511578314322-379afb476865', 1200),
-          img('photo-1540575467063-178a50c2df87', 1000),
-          img('photo-1505373877841-8d25f7d46678', 1000)
+          '/portfolio/booth/booth-5.jpeg',
+          '/portfolio/booth/booth-1.jpeg',
+          '/portfolio/booth/booth-3.jpeg',
+          '/portfolio/booth/booth-4.jpeg'
+        ],
+        galleryLabels: [
+          'Custom Flagship Pavilion Architecture',
+          'Sculptural Curves & Backlit Displays',
+          'Front Perspective & Reception',
+          'Exhibition Presentation Zone'
         ]
       },
       {
@@ -633,7 +676,20 @@ export const servicesData = [
         ]
       }
     ],
-    gallery: [img('photo-1505373877841-8d25f7d46678', 900), img('photo-1511578314322-379afb476865', 900), img('photo-1475721027785-f74eccf877e2', 900)],
+    gallery: [
+      '/portfolio/booth/booth-1.jpeg',
+      '/portfolio/booth/booth-2.jpeg',
+      '/portfolio/booth/booth-3.jpeg',
+      '/portfolio/booth/booth-4.jpeg',
+      '/portfolio/booth/booth-5.jpeg'
+    ],
+    galleryLabels: [
+      'Brand Pavilion Island Architecture',
+      'Illuminated Product Display & Podium',
+      'Multi-Angle Expo Stand Perspective',
+      'Executive VIP Discussion Zone',
+      'Overhead Brand Fascia & Lighting Truss'
+    ]
   },
   {
     slug: 'project-management',

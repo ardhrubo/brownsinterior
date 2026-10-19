@@ -155,6 +155,16 @@ export const teamMembers = [
   },
   {
     id: 6,
+    name: 'Ashraful Islam',
+    role: 'Architect & Site Supervisor',
+    category: 'management',
+    categoryLabel: 'Architecture & Supervision',
+    specialty: 'Architectural Coordination & Site Supervision',
+    responsibilities: 'Responsible for architectural coordination, site supervision, and ensuring work follows the approved design and project requirements.',
+    badgeIcon: 'Compass',
+  },
+  {
+    id: 7,
     name: 'Md Shahidul Islam',
     role: 'Head of Carpentry & Furniture',
     category: 'execution',
@@ -164,7 +174,7 @@ export const teamMembers = [
     badgeIcon: 'Hammer',
   },
   {
-    id: 7,
+    id: 8,
     name: 'Md Mukter Hossain',
     role: 'Electrical Technician',
     category: 'execution',
@@ -174,7 +184,7 @@ export const teamMembers = [
     badgeIcon: 'Zap',
   },
   {
-    id: 8,
+    id: 9,
     name: 'Md Shabuj',
     role: 'Glass Work Specialist',
     category: 'execution',
@@ -184,7 +194,7 @@ export const teamMembers = [
     badgeIcon: 'Layers3',
   },
   {
-    id: 9,
+    id: 10,
     name: 'Johirul Islam',
     role: 'Painting & Finishing Specialist',
     category: 'execution',

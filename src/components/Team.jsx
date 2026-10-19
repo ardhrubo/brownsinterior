@@ -12,6 +12,7 @@ import {
   Zap,
   Layers3,
   Paintbrush,
+  Compass,
   ArrowRight,
 } from 'lucide-react';
 import { teamMembers } from '../data/siteData';
@@ -28,6 +29,7 @@ const iconMap = {
   Zap,
   Layers3,
   Paintbrush,
+  Compass,
 };
 
 function MemberCard({ member, index }) {
@@ -59,8 +61,10 @@ function MemberCard({ member, index }) {
 }
 
 export default function Team({ cream = false, full = false }) {
-  const homeMembers = teamMembers.slice(0, 3);
-  const restMembers = teamMembers.slice(3);
+  const [expanded, setExpanded] = React.useState(full);
+  const homeMembers = teamMembers.slice(0, 6);
+  const restMembers = teamMembers.slice(6);
+  const isAllShown = full || expanded;
 
   return (
     <section id="team" className={`section ${cream ? 'cream' : ''} team-section`}>
@@ -82,14 +86,14 @@ export default function Team({ cream = false, full = false }) {
           ))}
         </div>
 
-        {full && restMembers.length > 0 && (
+        {isAllShown && restMembers.length > 0 && (
           <div className="team-rest-block">
             <div className="team-pro-grid">
               {restMembers.map((member, index) => (
                 <MemberCard
                   key={member.id || member.name}
                   member={member}
-                  index={index}
+                  index={index + 6}
                 />
               ))}
             </div>
@@ -97,9 +101,17 @@ export default function Team({ cream = false, full = false }) {
         )}
 
         {!full && (
-          <div className="team-more-wrap">
-            <Link to="/about" className="pill-btn dark">
-              View All Team Members <ArrowRight size={15} />
+          <div className="team-more-wrap" style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              className="pill-btn dark"
+              id="team-toggle-all-btn"
+              onClick={() => setExpanded((prev) => !prev)}
+            >
+              {expanded ? 'Show Core Team' : 'View All Team Members'} <ArrowRight size={15} />
+            </button>
+            <Link to="/about" className="pill-btn outline">
+              About Studio <ArrowRight size={15} />
             </Link>
           </div>
         )}

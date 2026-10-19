@@ -12,9 +12,9 @@ export const projectsData = [
     year: '2025',
     gallery: [
       '/portfolio/interior/living-room.jpg',
-      '/portfolio/interior/living-room-v1.jpg',
+      '/portfolio/interior/master-bedroom-client-fav.jpg',
       '/portfolio/interior/kitchen-main.jpg',
-      '/portfolio/interior/render-view-2.jpg'
+      '/portfolio/interior/dining-marble-chandelier.jpg'
     ]
   },
   {
@@ -73,17 +73,18 @@ export const projectsData = [
     id: 5,
     title: 'Dhanmondi Minimalist Residence',
     category: 'Residential Interior',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200',
-    coverImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200',
-    description: 'A warm minimalist residence designed to maximize natural cross-ventilation and daylight, featuring floor-to-ceiling concealed storage, fluted oak wall panels, and subtle brass accents.',
+    image: '/portfolio/interior/master-bedroom-client-fav.jpg',
+    coverImage: '/portfolio/interior/master-bedroom-client-fav.jpg',
+    description: 'A warm luxury master residence featuring client-favorite signature bed styling, fluted marble accent wall, dual ring chandeliers, and custom dressing cabinetry.',
     client: 'Private Residence',
     location: 'Dhanmondi, Dhaka',
     area: '2,650 sq ft',
     year: '2025',
     gallery: [
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1502672260266-1c1de2d9d000?auto=format&fit=crop&q=80&w=1200',
-      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=1200'
+      '/portfolio/interior/master-bedroom-client-fav.jpg',
+      '/portfolio/interior/bedroom-chandelier-master.jpg',
+      '/portfolio/interior/bedroom-study-suite.jpg',
+      '/portfolio/interior/bedroom-luxury-suite.jpg'
     ]
   },
   {
@@ -101,6 +102,25 @@ export const projectsData = [
       'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1200',
       'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=1200'
+    ]
+  },
+  {
+    id: 7,
+    title: 'XPLOR Trade Expo Pavilion',
+    category: 'Exhibition Design',
+    image: '/portfolio/booth/booth-1.jpeg',
+    coverImage: '/portfolio/booth/booth-1.jpeg',
+    description: 'Turnkey fabrication and 24-hour setup of an international expo pavilion with overhead illuminated fascia towers, marine display podiums, and an executive VIP discussion suite.',
+    client: 'XPLOR Boatworks',
+    location: 'ICCB, Dhaka',
+    area: '1,200 sq ft',
+    year: '2025',
+    gallery: [
+      '/portfolio/booth/booth-1.jpeg',
+      '/portfolio/booth/booth-2.jpeg',
+      '/portfolio/booth/booth-3.jpeg',
+      '/portfolio/booth/booth-4.jpeg',
+      '/portfolio/booth/booth-5.jpeg'
     ]
   }
 ];

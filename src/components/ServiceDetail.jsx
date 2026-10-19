@@ -29,10 +29,12 @@ export default function ServiceDetail() {
   const result = findServiceOrOption(targetSlug);
   const [activeImg, setActiveImg] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [galleryFilter, setGalleryFilter] = useState('ALL');
 
   useEffect(() => {
     setActiveImg(0);
     setLightboxIndex(null);
+    setGalleryFilter('ALL');
   }, [targetSlug]);
 
   if (!result) {
@@ -304,28 +306,67 @@ export default function ServiceDetail() {
             title="Design"
             script="Lookbook"
           />
-          <div className={`sd-lookbook-grid count-${photos.length}`}>
-            {photos.map((imgUrl, idx) => (
-              <motion.figure
-                key={imgUrl + idx}
-                className="sd-lookbook-item"
-                onClick={() => setLightboxIndex(idx)}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-              >
-                <img src={imgUrl} alt={`${data.title} - ${getGalleryLabel(idx)}`} loading="lazy" />
-                <div className="sd-lookbook-zoom-hint" aria-hidden="true">
-                  <Maximize2 size={16} />
+
+          {(() => {
+            const galleryCats = data.galleryCategories || null;
+            const uniqueCats = galleryCats ? ['ALL', ...new Set(galleryCats)] : null;
+            const filteredIndices = photos
+              .map((_, i) => i)
+              .filter((i) => {
+                if (!galleryCats || galleryFilter === 'ALL') return true;
+                return galleryCats[i] === galleryFilter;
+              });
+
+            return (
+              <>
+                {uniqueCats && uniqueCats.length > 1 && (
+                  <div className="sd-lookbook-tabs" role="tablist" aria-label="Space Categories">
+                    {uniqueCats.map((catName) => (
+                      <button
+                        key={catName}
+                        type="button"
+                        role="tab"
+                        aria-selected={catName === galleryFilter}
+                        className={`sd-lookbook-tab ${catName === galleryFilter ? 'active' : ''}`}
+                        onClick={() => setGalleryFilter(catName)}
+                      >
+                        {catName}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                <div className={`sd-lookbook-grid count-${filteredIndices.length}`}>
+                  {filteredIndices.map((origIdx, displayIdx) => {
+                    const imgUrl = photos[origIdx];
+                    const catTag = galleryCats ? galleryCats[origIdx] : null;
+                    return (
+                      <motion.figure
+                        key={imgUrl + origIdx}
+                        className="sd-lookbook-item"
+                        onClick={() => setLightboxIndex(origIdx)}
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.35, delay: (displayIdx % 6) * 0.05 }}
+                      >
+                        <img src={imgUrl} alt={`${data.title} - ${getGalleryLabel(origIdx)}`} loading="lazy" />
+                        {catTag && (
+                          <span className="sd-lookbook-cat-badge">{catTag}</span>
+                        )}
+                        <div className="sd-lookbook-zoom-hint" aria-hidden="true">
+                          <Maximize2 size={16} />
+                        </div>
+                        <figcaption>
+                          <span>0{displayIdx + 1}</span>
+                          <strong>{getGalleryLabel(origIdx)}</strong>
+                        </figcaption>
+                      </motion.figure>
+                    );
+                  })}
                 </div>
-                <figcaption>
-                  <span>0{idx + 1}</span>
-                  <strong>{getGalleryLabel(idx)}</strong>
-                </figcaption>
-              </motion.figure>
-            ))}
-          </div>
+              </>
+            );
+          })()}
         </div>
       </section>
 

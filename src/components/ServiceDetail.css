@@ -269,6 +269,66 @@
   color: var(--text-color);
 }
 
+/* --- Lookbook Space Category Tabs --- */
+.sd-lookbook-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0 auto 2.5rem;
+  max-width: 760px;
+}
+
+.sd-lookbook-tab {
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.sd-lookbook-tab:hover {
+  border-color: var(--gold);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(201, 181, 156, 0.22);
+}
+
+.sd-lookbook-tab.active {
+  background: #1f1b18;
+  color: #ffffff;
+  border-color: #1f1b18;
+  box-shadow: 0 6px 20px rgba(31, 27, 24, 0.25);
+}
+
+.sd-lookbook-cat-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(22, 18, 15, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 181, 156, 0.45);
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* --- Lookbook Visual Grid --- */
 .sd-lookbook-grid {
   display: grid;
