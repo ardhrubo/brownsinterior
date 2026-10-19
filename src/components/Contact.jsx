@@ -5,7 +5,7 @@ import {
   MapPin, Phone, Mail, Clock, CheckCircle2, Send, Loader2, Sparkles, AlertCircle
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { PageHero, SectionHead } from './HomeSections';
+import { SectionHead } from './HomeSections';
 import SEO from './SEO';
 import { servicesData } from '../data/servicesData';
 import { submitInquiry, NOTIFICATION_EMAIL } from '../lib/supabase';
@@ -84,7 +84,7 @@ export default function Contact({ showHero = true }) {
         />
       )}
 
-      <section className={`contact-page-section ${!standalone ? 'page-start' : ''}`} id="contact">
+      <section className={`contact-page-section ${showHero ? 'page-start' : ''}`} id="contact">
         <div className="container">
           <SectionHead
             eyebrow="Get In Touch"
