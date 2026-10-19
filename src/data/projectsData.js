@@ -3,36 +3,39 @@ export const projectsData = [
     id: 1,
     title: 'Gulshan Duplex Penthouse',
     category: 'Residential Interior',
-    image: '/portfolio/interior/living-room.jpg',
-    coverImage: '/portfolio/interior/living-room.jpg',
-    description: 'A luxurious penthouse design focusing on panoramic views, warm walnut millwork, imported travertine, and open-plan living with custom furniture curation and smart-home lighting.',
+    image: '/portfolio/residential/living-marble-luxury-hall.jpg',
+    coverImage: '/portfolio/residential/living-marble-luxury-hall.jpg',
+    description: 'A luxurious penthouse design focusing on Italian marble flooring, panoramic views, warm walnut millwork, open-plan living with custom furniture curation and smart-home lighting.',
     client: 'Private Residence',
     location: 'Gulshan-2, Dhaka',
     area: '4,400 sq ft',
     year: '2025',
     gallery: [
-      '/portfolio/interior/living-room.jpg',
-      '/portfolio/interior/master-bedroom-client-fav.jpg',
-      '/portfolio/interior/kitchen-main.jpg',
-      '/portfolio/interior/dining-marble-chandelier.jpg'
+      '/portfolio/residential/living-marble-luxury-hall.jpg',
+      '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
+      '/portfolio/residential/living-dining-wine-chandelier.jpg',
+      '/portfolio/residential/bedroom-bay-window-suite.jpg',
+      '/portfolio/residential/living-panoramic-library.jpg',
+      '/portfolio/residential/living-dining-neoclassical.jpg'
     ]
   },
   {
     id: 2,
     title: 'Banani Executive HQ',
     category: 'Commercial Interior',
-    image: '/portfolio/office/office-conference.jpg',
-    coverImage: '/portfolio/office/office-conference.jpg',
-    description: 'A modern corporate headquarters engineered for acoustic comfort and executive presence, featuring custom boardroom tables, architectural glass partitions, and biophilic lounge zones.',
+    image: '/portfolio/office/office-conference-smartboard.jpeg',
+    coverImage: '/portfolio/office/office-conference-smartboard.jpeg',
+    description: 'A modern corporate headquarters engineered for acoustic comfort and executive presence, featuring interactive smart boardrooms, ergonomic workstation pods, and open collaborative workfloors.',
     client: 'Apex Holdings BD',
     location: 'Banani, Dhaka',
     area: '7,800 sq ft',
     year: '2025',
     gallery: [
-      '/portfolio/office/office-conference.jpg',
-      '/portfolio/office/office-conference-2.jpg',
-      '/portfolio/office/office-main.jpg',
-      '/portfolio/office/office-room.jpg'
+      '/portfolio/office/office-conference-smartboard.jpeg',
+      '/portfolio/office/office-workstations-pod.jpeg',
+      '/portfolio/office/office-floor-reception-hub.jpeg',
+      '/portfolio/office/office-conference-showroom.jpeg',
+      '/portfolio/office/office-meeting-suite.jpeg'
     ]
   },
   {

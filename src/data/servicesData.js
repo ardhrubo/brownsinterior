@@ -46,15 +46,18 @@ export const servicesData = [
         ],
         gallery: [
           '/portfolio/interior/master-bedroom-client-fav.jpg',
+          '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
+          '/portfolio/residential/bedroom-bay-window-suite.jpg',
           '/portfolio/interior/bedroom-chandelier-master.jpg',
-          '/portfolio/interior/bedroom-luxury-suite.jpg',
-          '/portfolio/interior/bedroom-study-suite.jpg',
           '/portfolio/interior/kitchen-main.jpg',
           '/portfolio/interior/kitchen-semi-open.jpg',
           '/portfolio/interior/modern-kitchen.png',
+          '/portfolio/residential/living-marble-luxury-hall.jpg',
+          '/portfolio/residential/living-panoramic-library.jpg',
           '/portfolio/interior/living-room.jpg',
           '/portfolio/interior/living-marble-luxury.jpg',
-          '/portfolio/interior/living-room-v1.jpg',
+          '/portfolio/residential/living-dining-wine-chandelier.jpg',
+          '/portfolio/residential/living-dining-neoclassical.jpg',
           '/portfolio/interior/dining-marble-chandelier.jpg',
           '/portfolio/interior/dining-clean.jpg'
         ],
@@ -69,20 +72,26 @@ export const servicesData = [
           'LIVING',
           'LIVING',
           'LIVING',
+          'LIVING',
+          'DINING',
+          'DINING',
           'DINING',
           'DINING'
         ],
         galleryLabels: [
           'BED ROOM — Master Bedroom Signature Suite',
+          'BED ROOM — Dark Modern Luxury Suite & Walk-in Wardrobe',
+          'BED ROOM — Contemporary Suite & Bay Window Lounge',
           'BED ROOM — Grand Suite & Chandelier',
-          'BED ROOM — Contemporary Suite & Woodwork',
-          'BED ROOM — Executive Study & Custom Wardrobes',
           'KITCHEN — Modern Chef Island & Cabinetry',
           'KITCHEN — Semi-Open Modular Layout',
           'KITCHEN — High-Gloss Acrylic Cabinetry',
+          'LIVING — Grand Hall & Italian Marble Flooring',
+          'LIVING — Panoramic Lounge & Back-Lit Marble Library',
           'LIVING — Formal Living & Travertine Wall',
           'LIVING — Contemporary Lounge & Mood Lighting',
-          'LIVING — Living Room Panorama & Seating',
+          'DINING — Modern Dining & Chandelier with Wine Display',
+          'DINING — Neo-Classical Grand Hall & Wainscoting',
           'DINING — Grand Marble Dining & Crystal Chandelier',
           'DINING — Contemporary Family Dining Suite'
         ]
@@ -91,80 +100,80 @@ export const servicesData = [
         slug: 'commercial-interior',
         title: 'Commercial Interior',
         tagline: 'Inspiring commercial spaces designed for brand impact and performance.',
-        image: '/portfolio/office/office-conference.jpg',
+        image: '/portfolio/office/office-conference-smartboard.jpeg',
         desc: 'Strategic commercial design engineered for acoustic comfort, brand prestige, and workflow efficiency.',
         specs: [
           { label: 'Best For', value: 'Corporate HQ, Studios & Hubs' },
           { label: 'Timeline', value: '30 – 75 Days' },
           { label: 'Delivery', value: 'MEP + Turnkey Fit-out' }
         ],
-        highlights: ['Executive Suites', 'Boardrooms', 'Acoustic Partitions', 'Reception Lounge'],
+        highlights: ['Smart Boardrooms', 'Ergonomic Pods', 'Executive Lounge', 'Reception Hub'],
         features: [
-          'Executive suites & boardroom acoustics',
-          'Ergonomic workstation & agile layouts',
-          'Brand-led reception & waiting lounges',
-          'IT, server room & MEP coordination'
+          'Smart conference suites & interactive digital display walls',
+          'Ergonomic workstation pods with acoustic privacy screens',
+          'Open-plan work floors with integrated coffee bars & storage',
+          'IT network, electrical trunking & MEP coordination'
         ],
         gallery: [
-          '/portfolio/office/office-conference.jpg',
-          '/portfolio/office/office-conference-2.jpg',
-          '/portfolio/office/office-main.jpg',
-          '/portfolio/office/office-room.jpg',
-          '/portfolio/office/office-2.jpg'
+          '/portfolio/office/office-conference-smartboard.jpeg',
+          '/portfolio/office/office-workstations-pod.jpeg',
+          '/portfolio/office/office-floor-reception-hub.jpeg',
+          '/portfolio/office/office-conference-showroom.jpeg',
+          '/portfolio/office/office-meeting-suite.jpeg'
         ],
         galleryLabels: [
-          'Conference & Boardroom Hub',
-          'Executive Meeting Suite',
-          'Open Workspace Planning',
-          'Director Cabin & Detailing',
-          'Agile Collaboration Zone'
+          'Interactive Smart Board Conference Facility',
+          'Ergonomic Workstation Pods & Privacy Dividers',
+          'Open Work Floor, Coffee Hub & Executive Entrance',
+          'Showroom Conference Suite & Apparel Display',
+          'Architectural Linear Lighting Meeting Room'
         ]
       },
       {
         slug: 'office-retail-interior',
         title: 'Office & Retail Interior',
         tagline: 'High-performance offices and customer-centric retail spaces.',
-        image: '/portfolio/office/office-main.jpg',
-        desc: 'Modern workplace setups, retail showrooms, boutiques, and cafés crafted to captivate footfall.',
+        image: '/portfolio/office/office-floor-reception-hub.jpeg',
+        desc: 'Modern workplace setups, retail showrooms, boutiques, and corporate environments crafted to captivate footfall and boost productivity.',
         specs: [
           { label: 'Best For', value: 'Offices, Showrooms & Retail' },
           { label: 'Timeline', value: '30 – 60 Days' },
           { label: 'Delivery', value: 'Concept to Launch' }
         ],
-        highlights: ['Showroom Displays', 'Product Fixtures', 'Office Cabins', 'Statement Lighting'],
+        highlights: ['Showroom Displays', 'Workstation Pods', 'Client Meeting Hubs', 'Statement Lighting'],
         features: [
-          'Atmospheric lighting & acoustic balance',
-          'Custom retail displays & POS service counters',
-          'Functional office cabins & breakout meeting spaces',
-          'High-traffic commercial-grade finishes'
+          'Open office layouts with planter room dividers & coffee lounge',
+          'Retail showroom product display racks & integrated shelving',
+          'Dedicated 4-seater ergonomic computer workstation clusters',
+          'Architectural track & linear profile suspended lighting'
         ],
         gallery: [
-          '/portfolio/office/office-main.jpg',
-          '/portfolio/office/office-room.jpg',
-          '/portfolio/office/office-2.jpg',
-          '/portfolio/office/office-conference.jpg',
-          '/portfolio/office/office-conference-2.jpg'
+          '/portfolio/office/office-floor-reception-hub.jpeg',
+          '/portfolio/office/office-conference-showroom.jpeg',
+          '/portfolio/office/office-workstations-pod.jpeg',
+          '/portfolio/office/office-conference-smartboard.jpeg',
+          '/portfolio/office/office-meeting-suite.jpeg'
         ],
         galleryLabels: [
-          'Spatial Planning & Open Floor',
-          'Executive Director Cabin',
-          'Collaborative Workspaces',
-          'Conference & Boardroom Facility',
-          'Acoustic Glass Partitions'
+          'Open Office Floor & Reception Welcome Lounge',
+          'Retail Showroom & Executive Discussion Area',
+          'Ergonomic Workstation Pod with Privacy Screens',
+          'Smart Presentation & Digital Boardroom',
+          'Collaboration Suite with Acoustic Finishes'
         ]
       }
     ],
     gallery: [
-      '/portfolio/interior/living-room.jpg',
-      '/portfolio/office/office-conference.jpg',
-      '/portfolio/interior/kitchen-main.jpg',
-      '/portfolio/office/office-main.jpg'
+      '/portfolio/residential/living-marble-luxury-hall.jpg',
+      '/portfolio/office/office-conference-smartboard.jpeg',
+      '/portfolio/interior/master-bedroom-client-fav.jpg',
+      '/portfolio/office/office-floor-reception-hub.jpeg'
     ],
     galleryLabels: [
-      'Living Lounge Spatial Concept',
-      'Corporate Boardroom Detailing',
-      'Contemporary Kitchen Layout',
-      'Modern Office Workstations'
+      'Italian Marble Grand Living Suite',
+      'Smart Digital Conference Hub',
+      'Master Bedroom Signature Suite',
+      'Corporate Work Floor & Reception Lounge'
     ],
   },
   {

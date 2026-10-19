@@ -85,7 +85,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/office/office-conference.jpg</image:loc>
+      <image:loc>/portfolio/office/office-conference-smartboard.jpeg</image:loc>
       <image:title>Commercial Interior</image:title>
     </image:image>
   </url>
@@ -95,7 +95,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>/portfolio/office/office-main.jpg</image:loc>
+      <image:loc>/portfolio/office/office-floor-reception-hub.jpeg</image:loc>
       <image:title>Office &amp; Retail Interior</image:title>
     </image:image>
   </url>
@@ -425,15 +425,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
-      <image:loc>/portfolio/interior/living-room.jpg</image:loc>
+      <image:loc>/portfolio/residential/living-marble-luxury-hall.jpg</image:loc>
       <image:title>Gulshan Duplex Penthouse</image:title>
     </image:image>
     <image:image>
-      <image:loc>/portfolio/interior/living-room.jpg</image:loc>
+      <image:loc>/portfolio/residential/living-marble-luxury-hall.jpg</image:loc>
       <image:title>Gulshan Duplex Penthouse</image:title>
     </image:image>
     <image:image>
-      <image:loc>/portfolio/interior/master-bedroom-client-fav.jpg</image:loc>
+      <image:loc>/portfolio/residential/bedroom-dark-luxury-suite.jpg</image:loc>
       <image:title>Gulshan Duplex Penthouse</image:title>
     </image:image>
   </url>
@@ -443,15 +443,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
-      <image:loc>/portfolio/office/office-conference.jpg</image:loc>
+      <image:loc>/portfolio/office/office-conference-smartboard.jpeg</image:loc>
       <image:title>Banani Executive HQ</image:title>
     </image:image>
     <image:image>
-      <image:loc>/portfolio/office/office-conference.jpg</image:loc>
+      <image:loc>/portfolio/office/office-conference-smartboard.jpeg</image:loc>
       <image:title>Banani Executive HQ</image:title>
     </image:image>
     <image:image>
-      <image:loc>/portfolio/office/office-conference-2.jpg</image:loc>
+      <image:loc>/portfolio/office/office-workstations-pod.jpeg</image:loc>
       <image:title>Banani Executive HQ</image:title>
     </image:image>
   </url>
