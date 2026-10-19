@@ -57,16 +57,16 @@ export default function ServicesPage() {
         canonicalPath="/services"
       />
 
-      {/* Hero */}
-      <PageHero
-        title="Our Services"
-        sub="Holistic architecture, interior design, and turnkey engineering solutions crafted for residential, commercial, and exhibition spaces."
-        image="/portfolio/cover/cover-1.jpeg"
-      />
-
       {/* Disciplines Filter Bar */}
-      <section className="sp-filter-section">
+      <section className="sp-filter-section page-start-section">
         <div className="container">
+          <SectionHead
+            eyebrow="Disciplines & Solutions"
+            title="Our Comprehensive"
+            script="Services"
+            sub="Holistic architecture, interior design, and turnkey engineering solutions crafted for residential, commercial, and exhibition spaces in Dhaka."
+          />
+
           <div className="sp-metrics-row">
             <span className="sp-metric-pill">
               <Sparkles size={14} className="sp-gold-icon" /> 7 Core Disciplines
