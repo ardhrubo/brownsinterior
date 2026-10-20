@@ -51,49 +51,7 @@ export const processSteps = [
     text: 'Quality check & 1-year warranty.',
   },
 ];
-
-export const blogPosts = [
-  {
-    slug: 'small-apartment-design-tips',
-    title: '7 Smart Design Tips for Compact Dhaka Apartments',
-    category: 'Residential',
-    date: 'Oct 2, 2026',
-    image: '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
-    excerpt: 'Smart storage, light palettes, and multi-functional furniture.',
-    body: [
-      'Space is precious in Dhaka apartments. With the right planning, even a compact flat can feel open, bright and highly functional.',
-      'Start with a light colour palette — warm whites, beige and soft greys reflect light and make rooms feel larger. Use mirrors strategically opposite windows.',
-      'Choose multi-functional furniture such as storage beds, extendable dining tables and wall-mounted desks. Built-in wardrobes that reach the ceiling use vertical space efficiently.',
-      'Finally, layer your lighting: combine ceiling lights with wall sconces and LED strips to add depth and warmth.',
-    ],
-  },
-  {
-    slug: 'exhibition-booth-that-stands-out',
-    title: 'How to Design an Exhibition Booth That Stands Out',
-    category: 'Exhibition',
-    date: 'Sep 18, 2026',
-    image: '/portfolio/booth/booth-1.jpeg',
-    excerpt: 'Bold branding, open visitor flow, and focal lighting.',
-    body: [
-      'A trade show booth has only a few seconds to grab attention. Strong visual identity and a clear message are essential.',
-      'Keep the layout open and inviting. Avoid placing tables at the front edge that create a barrier between your team and visitors.',
-      'Use lighting to highlight products and brand graphics, and plan 3D visualizations early so every detail is approved before fabrication.',
-    ],
-  },
-  {
-    slug: 'renovation-budget-planning',
-    title: 'Renovation Budget Planning: A Practical Guide',
-    category: 'Renovation',
-    date: 'Aug 30, 2026',
-    image: '/portfolio/residential/living-marble-luxury-hall.jpg',
-    excerpt: 'Itemised BOQs, clear priorities, and smart contingencies.',
-    body: [
-      'Renovations can quickly exceed budget without proper planning. Begin by listing must-haves versus nice-to-haves.',
-      'Ask for an itemised estimate covering materials, labour, electrical and plumbing work. This makes comparison and decision-making easier.',
-      'Always keep a 10–15% contingency for unforeseen issues, especially in older buildings.',
-    ],
-  },
-];
+export { blogPosts, getBlogPostBySlug } from './blogData.js';
 
 export const stats = [
   { value: 250, suffix: '+', label: 'Projects Completed' },

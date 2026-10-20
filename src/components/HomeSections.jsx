@@ -626,12 +626,32 @@ export function CostCTA() {
 
 /* ---------------- BLOG ---------------- */
 export function BlogCard({ post }) {
+  if (!post) return null;
   return (
     <Link to={`/blog/${post.slug}`} className="blog-card clay">
-      <div className="blog-img"><img src={post.image} alt={post.title} loading="lazy" /><span>{post.category}</span></div>
+      <div className="blog-img">
+        <img src={post.image} alt={post.title} loading="lazy" />
+        <span>{post.category}</span>
+      </div>
       <div className="blog-body">
-        <small>{post.date}</small>
+        <small>{post.date} {post.readTime ? `· ${post.readTime}` : ''}</small>
         <h3>{post.title}</h3>
+        {post.excerpt && (
+          <p
+            style={{
+              fontSize: '0.88rem',
+              color: 'var(--text-muted)',
+              margin: '0.4rem 0 0.8rem',
+              lineHeight: 1.5,
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
+            {post.excerpt}
+          </p>
+        )}
         <span className="svc-more">Read Article <ArrowRight size={14} /></span>
       </div>
     </Link>

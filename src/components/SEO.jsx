@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 const DEFAULT_TITLE = "Brown's Interior | Premium Interior Design & Architecture in Bangladesh & Worldwide";
 const DEFAULT_DESC =
   "Transforming spaces into breathtaking realities. Brown's Interior offers luxury interior design, visionary architecture, and complete turnkey structural solutions all over Bangladesh and worldwide.";
-const SITE_URL = 'https://brownsinterior.com';
+const SITE_URL = 'https://www.brownsinterior.com';
 
 export default function SEO({
   title,
@@ -12,6 +12,7 @@ export default function SEO({
   canonicalPath,
   image,
   type = 'website',
+  schema,
 }) {
   const location = useLocation();
   const fullTitle = title ? `${title} | Brown's Interior` : DEFAULT_TITLE;
@@ -19,7 +20,7 @@ export default function SEO({
   const rawPath = canonicalPath || location.pathname;
   const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
   const canonicalUrl = `${SITE_URL}${normalizedPath}`;
-  const ogImage = image || `${SITE_URL}/og-image.jpg`;
+  const ogImage = image ? (image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? '' : '/'}${image}`) : `${SITE_URL}/og-image.jpg`;
 
   useEffect(() => {
     // 1. Update Title
@@ -54,7 +55,26 @@ export default function SEO({
       document.head.appendChild(canonical);
     }
     canonical.setAttribute('href', canonicalUrl);
-  }, [fullTitle, fullDesc, canonicalUrl, ogImage, type]);
+
+    // 4. Inject Dynamic Schema (JSON-LD) if provided
+    let schemaScript = document.getElementById('seo-dynamic-schema');
+    if (schema) {
+      if (!schemaScript) {
+        schemaScript = document.createElement('script');
+        schemaScript.id = 'seo-dynamic-schema';
+        schemaScript.type = 'application/ld+json';
+        document.head.appendChild(schemaScript);
+      }
+      schemaScript.textContent = JSON.stringify(schema);
+    } else if (schemaScript) {
+      schemaScript.remove();
+    }
+
+    return () => {
+      const s = document.getElementById('seo-dynamic-schema');
+      if (s) s.remove();
+    };
+  }, [fullTitle, fullDesc, canonicalUrl, ogImage, type, schema]);
 
   return null;
 }

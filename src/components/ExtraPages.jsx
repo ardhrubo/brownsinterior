@@ -1,16 +1,13 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Star, Quote, ArrowLeft, Calculator, Phone, UserRound, Mail, MapPin, Clock, ArrowRight,
-  CheckCircle2, Sparkles, Home, Building2, Store, Layers, Check, ShieldCheck
+  Star, Quote, UserRound, ArrowRight, CheckCircle2, Sparkles, Home, Building2, Layers
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
 import SEO from './SEO';
-import NotFound from './NotFound';
-import { testimonials, processSteps, blogPosts, getWhatsAppUrl } from '../data/siteData';
-import { NOTIFICATION_EMAIL } from '../lib/supabase';
+import { testimonials, processSteps, blogPosts } from '../data/siteData';
 import '../styles/site.css';
 import './HomeSections.css';
 import './ExtraPages.css';
@@ -137,41 +134,7 @@ export function BlogPage() {
   );
 }
 
-export function BlogPost() {
-  const { slug } = useParams();
-  const post = blogPosts.find((p) => p.slug === slug);
-  if (!post) return <NotFound message="The requested blog article could not be found." />;
-  const others = blogPosts.filter((p) => p.slug !== slug);
-  return (
-    <main className="page-start-section">
-      <SEO
-        title={`${post.title} - Blog`}
-        description={post.excerpt}
-        canonicalPath={`/blog/${post.slug}`}
-        image={post.image}
-        type="article"
-      />
-      <section className="section" style={{ paddingTop: '1rem' }}>
-        <div className="container post-wrap">
-          <article className="post">
-            <Link to="/blog" className="post-back"><ArrowLeft size={16} /> Back to Blog</Link>
-            <span className="sec-eyebrow" style={{ display: 'block', marginTop: '1rem' }}>{post.category}</span>
-            <h1 className="post-title" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', margin: '0.5rem 0 1rem', lineHeight: 1.2 }}>{post.title}</h1>
-            <small style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '1.5rem' }}>{post.date} · By Brown's Interior Studio</small>
-            <div className="post-featured-image" style={{ borderRadius: '16px', overflow: 'hidden', marginBottom: '2rem', maxHeight: '480px' }}>
-              <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            </div>
-            {post.body.map((para, k) => <p key={k}>{para}</p>)}
-          </article>
-          <aside className="post-side">
-            <h4>More Articles</h4>
-            {others.map((p) => <BlogCard key={p.slug} post={p} />)}
-          </aside>
-        </div>
-      </section>
-    </main>
-  );
-}
+export { default as BlogPost } from './BlogPost';
 
 /* ---------- Cost Calculator ---------- */
 // Studio benchmark calibrated for Dhaka Interior market (Engr. Aslam Sheikh):

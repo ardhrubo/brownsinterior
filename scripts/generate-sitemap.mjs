@@ -97,10 +97,18 @@ async function generateSitemap() {
 
   // 4. Blog Posts
   blogPosts.forEach((b) => {
-    const bImages = b.image ? [{ loc: b.image, title: b.title }] : [];
+    const bImages = [];
+    if (b.image) bImages.push({ loc: b.image, title: b.title });
+    if (Array.isArray(b.sections)) {
+      b.sections.forEach((sec) => {
+        if (sec.inlineImage?.src) {
+          bImages.push({ loc: sec.inlineImage.src, title: sec.inlineImage.alt || sec.title });
+        }
+      });
+    }
     addUrl({
       loc: `/blog/${b.slug}`,
-      priority: '0.7',
+      priority: '0.8',
       changefreq: 'monthly',
       images: bImages,
     });
