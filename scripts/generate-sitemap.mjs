@@ -11,10 +11,17 @@ async function generateSitemap() {
   const { projectsData } = await import('../src/data/projectsData.js');
   const { blogPosts } = await import('../src/data/siteData.js');
 
-  const domain = 'https://brownsinterior.com';
+  const domain = 'https://www.brownsinterior.com';
   const today = new Date().toISOString().split('T')[0];
 
   const urls = [];
+
+  // Helper to ensure all image URLs are strictly absolute (Google Image Sitemap requirement)
+  function toAbsoluteUrl(url) {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    return `${domain}${url.startsWith('/') ? '' : '/'}${url}`;
+  }
 
   // Helper to add URL
   function addUrl({ loc, lastmod = today, changefreq = 'monthly', priority = '0.8', images = [] }) {
@@ -23,7 +30,12 @@ async function generateSitemap() {
       lastmod,
       changefreq,
       priority,
-      images,
+      images: images
+        .filter((img) => img && img.loc)
+        .map((img) => ({
+          loc: toAbsoluteUrl(img.loc),
+          title: img.title || '',
+        })),
     });
   }
 
