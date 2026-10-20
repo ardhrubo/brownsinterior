@@ -1,0 +1,27 @@
+{
+  "name": "Brown's Interior",
+  "short_name": "Brown's",
+  "description": "Premium Interior Design & Architecture in Bangladesh & Worldwide",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1816",
+  "theme_color": "#1a1816",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
