@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import {
   Clock, Calendar, ShieldCheck, Copy, Check,
   ChevronDown, ArrowUpRight, Sparkles, CheckCircle2, Play, Calculator,
-  Phone, MessageSquare, ExternalLink, Bookmark, Layers
+  MessageSquare, ExternalLink, Bookmark, Layers
 } from 'lucide-react';
 import { FaWhatsapp, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import SEO from './SEO';

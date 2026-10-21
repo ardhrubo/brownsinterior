@@ -364,6 +364,20 @@ export function CostCalculatorPage() {
               <span className="calc-summary-pill">{selectedPkg.label} Tier</span>
             </div>
 
+            {/* Consultant Preview */}
+            <div className="calc-consultant-preview">
+              <img
+                src="/team/engr-aslam-sheikh.jpg"
+                alt="Engr. Aslam Sheikh"
+                className="calc-consultant-avatar"
+              />
+              <div className="calc-consultant-meta">
+                <span className="calc-consultant-lead">Direct Consultation</span>
+                <strong>Engr. Aslam Sheikh</strong>
+                <small>B.Sc. Civil Engg. · IEB A29734</small>
+              </div>
+            </div>
+
             <div className="calc-action-group">
               <a
                 href={`https://wa.me/8801768436319?text=${encodeURIComponent(
