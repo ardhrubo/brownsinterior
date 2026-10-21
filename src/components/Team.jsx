@@ -104,23 +104,24 @@ function MemberCard({ member, index }) {
 }
 
 export default function Team({ cream = false, full = false }) {
-  const [expanded, setExpanded] = React.useState(full);
-  const homeMembers = teamMembers.slice(0, 6);
-  const restMembers = teamMembers.slice(6);
-  const isAllShown = full || expanded;
+  const displayedMembers = full ? teamMembers : teamMembers.slice(0, 3);
 
   return (
     <section id="team" className={`section ${cream ? 'cream' : ''} team-section`}>
       <div className="container">
         <SectionHead
           eyebrow="Brown's Interiors"
-          title="Our Professional"
+          title={full ? 'All Professional' : 'Our Professional'}
           script="Team"
-          sub="Interior Design & Execution"
+          sub={
+            full
+              ? 'Complete Directory of Interior Designers, Civil Engineers & Specialists'
+              : 'Interior Design, Civil Structural Engineering & Systems Leadership'
+          }
         />
 
         <div className="team-pro-grid">
-          {homeMembers.map((member, index) => (
+          {displayedMembers.map((member, index) => (
             <MemberCard
               key={member.id || member.name}
               member={member}
@@ -129,32 +130,15 @@ export default function Team({ cream = false, full = false }) {
           ))}
         </div>
 
-        {isAllShown && restMembers.length > 0 && (
-          <div className="team-rest-block">
-            <div className="team-pro-grid">
-              {restMembers.map((member, index) => (
-                <MemberCard
-                  key={member.id || member.name}
-                  member={member}
-                  index={index + 6}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
         {!full && (
-          <div className="team-more-wrap" style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button
-              type="button"
+          <div className="team-more-wrap">
+            <Link
+              to="/about#team"
               className="pill-btn dark"
-              id="team-toggle-all-btn"
-              onClick={() => setExpanded((prev) => !prev)}
+              id="team-view-all-about-btn"
             >
-              {expanded ? 'Show Core Team' : 'View All Team Members'} <ArrowRight size={15} />
-            </button>
-            <Link to="/about" className="pill-btn outline">
-              About Studio <ArrowRight size={15} />
+              <span>View All Team Members on About Page</span>
+              <ArrowRight size={15} />
             </Link>
           </div>
         )}

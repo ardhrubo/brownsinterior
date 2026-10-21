@@ -69,7 +69,7 @@ export const teamMembers = [
     categoryLabel: 'Leadership',
     image: '/team/engr-aslam-sheikh.jpg',
     qualifications: [
-      'Dip. Architecture & Interior Design, School of Architecture (NPI)',
+      'Dip. Architecture & Interior Design (NPI)',
       'B.Sc. in Civil Engg., IUBAT',
       'IEB Membership No: A29734',
     ],
@@ -81,17 +81,18 @@ export const teamMembers = [
   {
     id: 2,
     name: 'Engr. Tanjimul Islam Fuad',
-    role: 'Project Manager',
+    role: 'Project Manager & Civil Engineer',
     category: 'management',
     categoryLabel: 'Project Management',
     image: '/team/engr-tanjimul-fuad.jpg',
     qualifications: [
+      'Project Coordination & Quality Control',
       'B.Sc. Engr. (Civil), IUBAT',
       'IEB Membership No: 29474',
     ],
     qualificationSummary: 'B.Sc. Engr. (Civil), IUBAT · IEB Membership No: 29474',
     specialty: 'Project Coordination & Quality Control',
-    responsibilities: 'Project Coordination, Site Supervision & Quality Control.',
+    responsibilities: 'Project Coordination, Site Supervision & Engineering Quality Control.',
     badgeIcon: 'ClipboardCheck',
   },
   {
