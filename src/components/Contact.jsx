@@ -126,7 +126,14 @@ export default function Contact({ showHero = true }) {
                   rel="noreferrer"
                   className="info-item highlight-wa"
                 >
-                  <div className="info-icon wa-icon"><FaWhatsapp size={19} /></div>
+                  <div className="contact-lead-avatar-wrap">
+                    <img
+                      src="/team/engr-aslam-sheikh.jpg"
+                      alt="Engr. Aslam Sheikh"
+                      className="contact-lead-avatar-img"
+                    />
+                    <div className="contact-lead-wa-badge"><FaWhatsapp size={10} /></div>
+                  </div>
                   <div>
                     <h4>Instant WhatsApp</h4>
                     <p>Chat with Engr. Aslam</p>

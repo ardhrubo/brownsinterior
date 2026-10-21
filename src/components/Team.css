@@ -68,6 +68,25 @@
     0 14px 30px rgba(28, 22, 18, 0.2);
 }
 
+.team-pro-avatar.has-image {
+  padding: 0;
+  overflow: hidden;
+  background: #141210;
+}
+
+.team-pro-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-pro-card:hover .team-pro-photo {
+  transform: scale(1.08);
+}
+
 .team-pro-role-badge {
   position: absolute;
   bottom: 0;
@@ -102,6 +121,28 @@
   color: var(--text-color);
   margin: 0;
   line-height: 1.25;
+}
+
+/* Credentials List / Badges */
+.team-pro-creds {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.85rem 0 0.25rem;
+  width: 100%;
+}
+
+.team-pro-cred-badge {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #3d3731;
+  background: rgba(201, 181, 156, 0.16);
+  border: 1px solid rgba(201, 181, 156, 0.38);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  letter-spacing: 0.1px;
 }
 
 .team-pro-divider {

@@ -78,30 +78,83 @@ export default function About({ full = false }) {
         </div>
 
         {full && (
-          <div className="about-values">
+          <>
+            {/* Leadership Spotlight: Engr. Aslam Sheikh */}
             <motion.div
-              className="value-card"
-              initial={{ opacity: 0, y: 30 }}
+              className="about-founder-spotlight clay"
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
-              <h3>Our Mission</h3>
-              <p>Crafting enduring spaces through smart planning, honest materials, and engineering precision.</p>
+              <div className="founder-spotlight-photo-wrap">
+                <div className="founder-spotlight-frame">
+                  <img
+                    src="/team/engr-aslam-sheikh.jpg"
+                    alt="Engr. Aslam Sheikh - Founder & Principal Designer"
+                    className="founder-spotlight-img"
+                    loading="lazy"
+                  />
+                  <div className="founder-spotlight-seal">
+                    <ShieldCheck size={16} strokeWidth={2.4} />
+                    <span>IEB Registered</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="founder-spotlight-content">
+                <span className="sec-eyebrow">Studio Leadership</span>
+                <h3 className="founder-spotlight-title">Engr. Aslam Sheikh</h3>
+                <p className="founder-spotlight-subtitle">Founder & Principal Designer · Structural Consultant</p>
+
+                <div className="founder-credentials-bar" aria-label="Credentials">
+                  <span className="founder-cred-pill">Dip. Architecture & Interior Design (School of Architecture, NPI)</span>
+                  <span className="founder-cred-pill">B.Sc. in Civil Engg. (IUBAT)</span>
+                  <span className="founder-cred-pill">IEB Membership No: A29734</span>
+                </div>
+
+                <blockquote className="founder-quote">
+                  “In a fast-growing city like Dhaka, luxury interior design cannot simply be decorative cosmetics. It must be rooted in civil engineering discipline—load calculations, climate durability, and ergonomic precision. That is why at Brown’s Interior, every layout is engineered to endure for generations.”
+                </blockquote>
+
+                <div className="founder-spotlight-actions">
+                  <a
+                    href="https://wa.me/8801768436319?text=Hello%20Engr.%20Aslam%2C%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20discuss%20an%20interior%20design%20project."
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pill-btn dark"
+                  >
+                    Consult Directly on WhatsApp <ArrowRight size={15} />
+                  </a>
+                </div>
+              </div>
             </motion.div>
-            <motion.div
-              className="value-card dark"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.12 }}
-            >
-              <div className="value-icon"><ShieldCheck size={26} strokeWidth={1.5} /></div>
-              <h3>Our Commitment</h3>
-              <p className="commitment">Creative Design. <span>Professional Service.</span> Quality You Can Trust.</p>
-            </motion.div>
-          </div>
+
+            <div className="about-values">
+              <motion.div
+                className="value-card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
+                <h3>Our Mission</h3>
+                <p>Crafting enduring spaces through smart planning, honest materials, and engineering precision.</p>
+              </motion.div>
+              <motion.div
+                className="value-card dark"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.12 }}
+              >
+                <div className="value-icon"><ShieldCheck size={26} strokeWidth={1.5} /></div>
+                <h3>Our Commitment</h3>
+                <p className="commitment">Creative Design. <span>Professional Service.</span> Quality You Can Trust.</p>
+              </motion.div>
+            </div>
+          </>
         )}
       </div>
     </section>

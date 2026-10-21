@@ -937,6 +937,74 @@
   transform: scale(1.15);
 }
 
+/* Sidebar Lead Consultation Profile */
+.blog-sidebar-consult-card {
+  border: 1px solid rgba(201, 181, 156, 0.4);
+  background: #ffffff;
+}
+.blog-sidebar-lead-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 0.35rem;
+}
+.blog-sidebar-lead-avatar {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0.75rem;
+}
+.blog-sidebar-lead-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--gold, #c9b59c);
+  box-shadow: 0 4px 14px rgba(44, 40, 37, 0.15);
+}
+.blog-sidebar-lead-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c9b59c, #a88a66);
+  color: #1a1613;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.blog-sidebar-lead-name {
+  font-family: var(--font-display, serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1816;
+  margin: 0 0 0.15rem;
+}
+.blog-sidebar-lead-role {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a88a66;
+  margin-bottom: 0.2rem;
+}
+.blog-sidebar-lead-qual {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #635b53;
+  background: rgba(201, 181, 156, 0.15);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
 /* Sidebar Quick Consultation WhatsApp Button */
 .blog-sidebar-wa-btn {
   display: flex;

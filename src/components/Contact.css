@@ -88,6 +88,39 @@ a.info-item:hover {
   border-color: #25d366;
 }
 
+.contact-lead-avatar-wrap {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.contact-lead-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--gold, #c9b59c);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.contact-lead-wa-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #1a1613;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 .info-icon.wa-icon {
   background: rgba(37, 211, 102, 0.18);
   border-color: rgba(37, 211, 102, 0.4);

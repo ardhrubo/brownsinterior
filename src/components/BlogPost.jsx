@@ -215,6 +215,7 @@ export default function BlogPost() {
       '@type': 'Person',
       name: post.author?.name || 'Engr. Aslam Sheikh',
       jobTitle: post.author?.role || 'Founder & Principal Designer',
+      image: post.author?.avatar ? toAbsoluteUrl(post.author.avatar) : `${SITE_URL}/team/engr-aslam-sheikh.jpg`,
       url: `${SITE_URL}/about`,
     },
     publisher: {
@@ -710,12 +711,24 @@ export default function BlogPost() {
               </Link>
             </div>
 
-            {/* Direct WhatsApp Assistance */}
-            <div className="blog-sidebar-widget" style={{ textAlign: 'center' }}>
-              <div className="blog-sidebar-title" style={{ justifyContent: 'center' }}>
-                <Phone size={14} /> Quick Consultation
+            {/* Direct WhatsApp Consultation with Engr. Aslam Sheikh */}
+            <div className="blog-sidebar-widget blog-sidebar-consult-card" style={{ textAlign: 'center' }}>
+              <div className="blog-sidebar-lead-profile">
+                <div className="blog-sidebar-lead-avatar">
+                  <img
+                    src="/team/engr-aslam-sheikh.jpg"
+                    alt="Engr. Aslam Sheikh - Founder & Principal Designer"
+                    className="blog-sidebar-lead-img"
+                  />
+                  <span className="blog-sidebar-lead-badge" title="Certified IEB Engineer">
+                    <ShieldCheck size={12} strokeWidth={2.4} />
+                  </span>
+                </div>
+                <h5 className="blog-sidebar-lead-name">Engr. Aslam Sheikh</h5>
+                <span className="blog-sidebar-lead-role">Founder & Principal Designer</span>
+                <span className="blog-sidebar-lead-qual">B.Sc. Civil Engg. · IEB A29734</span>
               </div>
-              <p style={{ fontSize: '0.88rem', color: '#5a544e', marginBottom: '1rem', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '0.86rem', color: '#5a544e', margin: '0.85rem 0 1rem', lineHeight: 1.5 }}>
                 Have questions regarding floor layouts, BOQ rates, or structural renovation?
               </p>
               <a

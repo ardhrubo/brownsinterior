@@ -45,8 +45,17 @@ function MemberCard({ member, index }) {
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
     >
       <div className="team-pro-avatar-wrap">
-        <div className="team-pro-avatar" aria-hidden="true">
-          <UserRound size={42} strokeWidth={1.4} />
+        <div className={`team-pro-avatar ${member.image ? 'has-image' : ''}`} aria-hidden={!member.image}>
+          {member.image ? (
+            <img
+              src={member.image}
+              alt={member.name}
+              className="team-pro-photo"
+              loading="lazy"
+            />
+          ) : (
+            <UserRound size={42} strokeWidth={1.4} />
+          )}
         </div>
         <span className="team-pro-role-badge" title={member.role}>
           <RoleIcon size={15} strokeWidth={2} />
@@ -55,6 +64,17 @@ function MemberCard({ member, index }) {
 
       <span className="team-pro-role">{member.role}</span>
       <h3 className="team-pro-name">{member.name}</h3>
+
+      {member.qualifications && member.qualifications.length > 0 && (
+        <div className="team-pro-creds" aria-label="Professional Credentials">
+          {member.qualifications.map((q, idx) => (
+            <span key={idx} className="team-pro-cred-badge">
+              {q}
+            </span>
+          ))}
+        </div>
+      )}
+
       <div className="team-pro-divider" aria-hidden="true" />
       <p className="team-pro-resp">{member.responsibilities}</p>
     </motion.article>
