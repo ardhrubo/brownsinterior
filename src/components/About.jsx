@@ -15,6 +15,7 @@ export default function About({ full = false }) {
   return (
     <section id="about" className={`about-section ${full ? 'about-full' : 'about-compact'}`}>
       <div className="container">
+        {/* Main Studio Section */}
         <div className="about-grid">
           <motion.div
             className="about-image-container"
@@ -79,7 +80,7 @@ export default function About({ full = false }) {
 
         {full && (
           <>
-            {/* Leadership Spotlight: Engr. Aslam Sheikh */}
+            {/* Founder Section on About Page: Clean portrait (NO IEB card on image, NO text on image) with credentials beside */}
             <motion.div
               className="about-founder-spotlight clay"
               initial={{ opacity: 0, y: 32 }}
@@ -95,17 +96,18 @@ export default function About({ full = false }) {
                     className="founder-spotlight-img"
                     loading="lazy"
                   />
-                  <div className="founder-spotlight-seal">
-                    <ShieldCheck size={16} strokeWidth={2.4} />
-                    <span>IEB Registered</span>
-                  </div>
+                  {/* Clean photo: No card, badge, or text overlay on top of the image */}
                 </div>
               </div>
 
               <div className="founder-spotlight-content">
-                <span className="sec-eyebrow">Studio Leadership</span>
+                <span className="sec-eyebrow">The Founder</span>
                 <h3 className="founder-spotlight-title">Engr. Aslam Sheikh</h3>
                 <p className="founder-spotlight-subtitle">Founder & Principal Designer · Structural Consultant</p>
+
+                <p className="about-description" style={{ marginBottom: '1.25rem' }}>
+                  Engr. Aslam Sheikh founded Brown’s Interior with a clear mission: bringing formal architectural design and civil engineering precision together. Over the past decade, he has directed 250+ turnkey residential, commercial, and trade fair projects across Bangladesh.
+                </p>
 
                 <div className="founder-credentials-bar" aria-label="Credentials">
                   <span className="founder-cred-pill">Dip. Architecture & Interior Design (School of Architecture, NPI)</span>
@@ -114,7 +116,7 @@ export default function About({ full = false }) {
                 </div>
 
                 <blockquote className="founder-quote">
-                  “In a fast-growing city like Dhaka, luxury interior design cannot simply be decorative cosmetics. It must be rooted in civil engineering discipline—load calculations, climate durability, and ergonomic precision. That is why at Brown’s Interior, every layout is engineered to endure for generations.”
+                  “In high-density urban flats and commercial centers, interior design without engineering discipline is high-risk. We combine spatial luxury with load calculations, certified MEP routing, and honest BOQs to build spaces that endure for generations.”
                 </blockquote>
 
                 <div className="founder-spotlight-actions">
@@ -140,7 +142,7 @@ export default function About({ full = false }) {
               >
                 <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
                 <h3>Our Mission</h3>
-                <p>Crafting enduring spaces through smart planning, honest materials, and engineering precision.</p>
+                <p>Crafting enduring spaces through smart spatial planning, honest materials, and civil structural engineering precision.</p>
               </motion.div>
               <motion.div
                 className="value-card dark"
@@ -151,7 +153,7 @@ export default function About({ full = false }) {
               >
                 <div className="value-icon"><ShieldCheck size={26} strokeWidth={1.5} /></div>
                 <h3>Our Commitment</h3>
-                <p className="commitment">Creative Design. <span>Professional Service.</span> Quality You Can Trust.</p>
+                <p className="commitment">Creative Design. <span>Professional Engineering.</span> Quality You Can Trust.</p>
               </motion.div>
             </div>
           </>
