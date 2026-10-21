@@ -1,7 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Target, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
+import {
+  Target,
+  ShieldCheck,
+  ArrowRight,
+  CheckCircle2,
+  Quote,
+  Award,
+  GraduationCap,
+  Building2,
+  BadgeCheck,
+  MessageCircle,
+} from 'lucide-react';
 import './About.css';
 
 const quickHighlights = [
@@ -80,7 +91,7 @@ export default function About({ full = false }) {
 
         {full && (
           <>
-            {/* Founder Section on About Page: Clean portrait (NO IEB card on image, NO text on image) with credentials beside */}
+            {/* Executive Founder Spotlight & Personal Message */}
             <motion.div
               className="about-founder-spotlight clay"
               initial={{ opacity: 0, y: 32 }}
@@ -89,35 +100,86 @@ export default function About({ full = false }) {
               transition={{ duration: 0.6 }}
             >
               <div className="founder-spotlight-photo-wrap">
-                <div className="founder-spotlight-frame">
-                  <img
-                    src="/team/engr-aslam-sheikh.jpg"
-                    alt="Engr. Aslam Sheikh - Founder & Principal Designer"
-                    className="founder-spotlight-img"
-                    loading="lazy"
-                  />
-                  {/* Clean photo: No card, badge, or text overlay on top of the image */}
+                <div className="founder-spotlight-card">
+                  <div className="founder-photo-frame">
+                    <img
+                      src="/team/engr-aslam-sheikh.jpg"
+                      alt="Engr. Aslam Sheikh - Founder & Principal Designer"
+                      className="founder-portrait-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="founder-photo-caption">
+                    <div className="founder-caption-item">
+                      <span className="caption-num">10+</span>
+                      <span className="caption-lbl">Years Exp.</span>
+                    </div>
+                    <div className="founder-caption-sep" />
+                    <div className="founder-caption-item">
+                      <span className="caption-num">250+</span>
+                      <span className="caption-lbl">Projects</span>
+                    </div>
+                    <div className="founder-caption-sep" />
+                    <div className="founder-caption-item">
+                      <span className="caption-num">IEB</span>
+                      <span className="caption-lbl">Certified</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div className="founder-spotlight-content">
-                <span className="sec-eyebrow">The Founder</span>
+                <div className="founder-eyebrow-row">
+                  <span className="sec-eyebrow">Message From The Founder</span>
+                </div>
                 <h3 className="founder-spotlight-title">Engr. Aslam Sheikh</h3>
                 <p className="founder-spotlight-subtitle">Founder & Principal Designer · Structural Consultant</p>
 
-                <p className="about-description" style={{ marginBottom: '1.25rem' }}>
-                  Engr. Aslam Sheikh founded Brown’s Interior with a clear mission: bringing formal architectural design and civil engineering precision together. Over the past decade, he has directed 250+ turnkey residential, commercial, and trade fair projects across Bangladesh.
-                </p>
-
-                <div className="founder-credentials-bar" aria-label="Credentials">
-                  <span className="founder-cred-pill">Dip. Architecture & Interior Design (School of Architecture, NPI)</span>
-                  <span className="founder-cred-pill">B.Sc. in Civil Engg. (IUBAT)</span>
-                  <span className="founder-cred-pill">IEB Membership No: A29734</span>
+                <div className="founder-message-box">
+                  <Quote className="founder-message-quote-icon" size={28} />
+                  <p className="founder-message-p">
+                    “I believe a beautiful interior is not just about looks, but also about comfort, functionality, and quality. My goal is to create spaces that reflect each client’s taste and make everyday living better.”
+                  </p>
+                  <p className="founder-message-p">
+                    “Along with interior design, I also focus on building design and exterior aesthetics. With proper structural planning and engineering, I aim to create buildings that are safe, functional, and built to last.”
+                  </p>
                 </div>
 
-                <blockquote className="founder-quote">
-                  “In high-density urban flats and commercial centers, interior design without engineering discipline is high-risk. We combine spatial luxury with load calculations, certified MEP routing, and honest BOQs to build spaces that endure for generations.”
-                </blockquote>
+                <div className="founder-credentials-section">
+                  <h4 className="founder-credentials-heading">
+                    <Award size={18} />
+                    <span>Credentials & Professional Affiliations</span>
+                  </h4>
+                  <div className="founder-credentials-list">
+                    <div className="founder-credential-item">
+                      <div className="credential-icon-wrap">
+                        <GraduationCap size={18} />
+                      </div>
+                      <div className="credential-details">
+                        <strong className="credential-title">Dip. Architecture & Interior Design</strong>
+                        <span className="credential-institution">School of Architecture (NPI)</span>
+                      </div>
+                    </div>
+                    <div className="founder-credential-item">
+                      <div className="credential-icon-wrap">
+                        <Building2 size={18} />
+                      </div>
+                      <div className="credential-details">
+                        <strong className="credential-title">B.Sc. in Civil Engineering</strong>
+                        <span className="credential-institution">International University of Business Agriculture and Technology (IUBAT)</span>
+                      </div>
+                    </div>
+                    <div className="founder-credential-item">
+                      <div className="credential-icon-wrap">
+                        <BadgeCheck size={18} />
+                      </div>
+                      <div className="credential-details">
+                        <strong className="credential-title">IEB Membership No: A29734</strong>
+                        <span className="credential-institution">The Institution of Engineers, Bangladesh (IEB)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="founder-spotlight-actions">
                   <a
@@ -126,7 +188,15 @@ export default function About({ full = false }) {
                     rel="noreferrer"
                     className="pill-btn dark"
                   >
-                    Consult Directly on WhatsApp <ArrowRight size={15} />
+                    <MessageCircle size={16} />
+                    <span>Consult Directly on WhatsApp</span>
+                    <ArrowRight size={15} />
+                  </a>
+                  <a
+                    href="tel:+8801768436319"
+                    className="pill-btn outline"
+                  >
+                    <span>Direct Line: +880 1768-436319</span>
                   </a>
                 </div>
               </div>
