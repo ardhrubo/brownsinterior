@@ -91,6 +91,35 @@ function parseFormatting(text, keyPrefix) {
   });
 }
 
+function AuthorAvatar({ author, size = 52, isBio = false }) {
+  if (author?.avatar) {
+    return (
+      <img
+        src={author.avatar}
+        alt={author.name || 'Engr. Aslam Sheikh'}
+        className={isBio ? 'blog-author-bio-avatar' : 'blog-author-avatar'}
+      />
+    );
+  }
+
+  // Prestigious Executive Monogram Seal for Engr. Aslam Sheikh
+  return (
+    <div
+      className={`blog-author-crest-avatar ${isBio ? 'bio-crest' : ''}`}
+      style={{ width: size, height: size }}
+      title={author?.name || 'Engr. Aslam Sheikh · Founder & Principal Designer'}
+      aria-label={author?.name || 'Engr. Aslam Sheikh'}
+    >
+      <div className="blog-author-crest-inner">
+        <span className="blog-author-initials">AS</span>
+      </div>
+      <span className="blog-author-crest-badge" title="Certified Engineering Lead">
+        <ShieldCheck size={isBio ? 15 : 11} strokeWidth={2.4} />
+      </span>
+    </div>
+  );
+}
+
 export default function BlogPost() {
   const { slug } = useParams();
   const post = useMemo(() => getBlogPostBySlug(slug), [slug]);
@@ -273,11 +302,7 @@ export default function BlogPost() {
           {/* Author Byline Bar */}
           <div className="blog-author-byline">
             <div className="blog-author-info">
-              <img
-                src={post.author?.avatar || '/portfolio/residential/bedroom-dark-luxury-suite.jpg'}
-                alt={post.author?.name || 'Engr. Aslam Sheikh'}
-                className="blog-author-avatar"
-              />
+              <AuthorAvatar author={post.author} size={50} />
               <div className="blog-author-text">
                 <strong>
                   {post.author?.name || 'Engr. Aslam Sheikh'}
@@ -595,11 +620,7 @@ export default function BlogPost() {
 
             {/* Author Bio Box */}
             <div className="blog-author-bio-card">
-              <img
-                src={post.author?.avatar || '/portfolio/residential/bedroom-dark-luxury-suite.jpg'}
-                alt={post.author?.name || 'Engr. Aslam Sheikh'}
-                className="blog-author-bio-avatar"
-              />
+              <AuthorAvatar author={post.author} size={84} isBio />
               <div className="blog-author-bio-content">
                 <h4>{post.author?.name || 'Engr. Aslam Sheikh'}</h4>
                 <span className="blog-author-bio-role">
@@ -637,8 +658,8 @@ export default function BlogPost() {
                     rel="noopener noreferrer"
                     className="blog-btn-whatsapp"
                   >
-                    <FaWhatsapp size={18} />
-                    {post.bottomCta.secondaryBtn?.text || 'WhatsApp Engr. Aslam'}
+                    <FaWhatsapp size={19} className="wa-icon" />
+                    <span>{post.bottomCta.secondaryBtn?.text || 'WhatsApp Engr. Aslam'}</span>
                   </a>
                 </div>
                 <div className="blog-bottom-phone">
@@ -701,10 +722,10 @@ export default function BlogPost() {
                 href="https://wa.me/8801768436319?text=Hello%20Brown%E2%80%99s%20Interior%2C%20I%20am%20reading%20your%20blog%20and%20would%20like%20to%20consult%20regarding%20my%20project."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="blog-btn-whatsapp"
-                style={{ width: '100%', justifyContent: 'center', fontSize: '0.88rem', padding: '0.75rem 1rem' }}
+                className="blog-sidebar-wa-btn"
               >
-                <FaWhatsapp size={16} /> WhatsApp Engr. Aslam
+                <FaWhatsapp size={17} className="wa-icon" />
+                <span>WhatsApp Engr. Aslam</span>
               </a>
             </div>
 
