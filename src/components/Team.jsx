@@ -10,11 +10,11 @@ import {
   TrendingUp,
   Hammer,
   Zap,
-
   Layers3,
   Paintbrush,
   Compass,
   ArrowRight,
+  ExternalLink,
 } from 'lucide-react';
 import { teamMembers } from '../data/siteData';
 import { SectionHead } from './HomeSections';
@@ -67,11 +67,33 @@ function MemberCard({ member, index }) {
 
       {member.qualifications && member.qualifications.length > 0 && (
         <div className="team-pro-creds" aria-label="Professional Credentials">
-          {member.qualifications.map((q, idx) => (
-            <span key={idx} className="team-pro-cred-badge">
-              {q}
-            </span>
-          ))}
+          {member.qualifications.map((q, idx) => {
+            const isPortfolio =
+              member.website &&
+              (q.toLowerCase().includes('portfolio') || q.toLowerCase().includes('ardhrubo.dev'));
+
+            if (isPortfolio) {
+              return (
+                <a
+                  key={idx}
+                  href={member.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="team-pro-cred-badge team-pro-cred-link"
+                  title={`Visit ${member.name}'s portfolio`}
+                >
+                  <span>{q}</span>
+                  <ExternalLink size={11} strokeWidth={2.4} />
+                </a>
+              );
+            }
+
+            return (
+              <span key={idx} className="team-pro-cred-badge">
+                {q}
+              </span>
+            );
+          })}
         </div>
       )}
 

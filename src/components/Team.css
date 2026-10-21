@@ -145,6 +145,28 @@
   letter-spacing: 0.1px;
 }
 
+.team-pro-cred-badge.team-pro-cred-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  background: rgba(201, 181, 156, 0.22);
+  border-color: var(--gold, #c9b59c);
+  color: var(--gold-dark, #8c6e44);
+  font-weight: 600;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.team-pro-cred-badge.team-pro-cred-link:hover {
+  background: var(--gold, #c9b59c);
+  color: #1a1613;
+  border-color: var(--gold-dark, #a88a66);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 181, 156, 0.35);
+}
+
 .team-pro-divider {
   width: 42px;
   height: 2px;
