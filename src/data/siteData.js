@@ -98,16 +98,15 @@ export const teamMembers = [
   {
     id: 3,
     name: 'Abdur Rahman Dhrubo',
-    role: 'Lead Software Engineer & IT Specialist',
+    role: 'IT and Office Administrator',
     category: 'management',
     categoryLabel: 'IT & Software Architecture',
     image: '/team/abdur-rahman-dhrubo.jpg',
     qualifications: [
       'Full-Stack Engineer & Automation Specialist',
       'B.Sc., Jagannath University, Dhaka',
-      'Portfolio: ardhrubo.dev',
     ],
-    qualificationSummary: 'Full-Stack Engineer · Jagannath University · Portfolio: ardhrubo.dev',
+    qualificationSummary: 'Full-Stack Engineer · Jagannath University',
     website: 'https://ardhrubo.dev/',
     github: 'https://github.com/ardhrubo',
     specialty: 'Web Systems, Process Automation & Cloud Infrastructure',

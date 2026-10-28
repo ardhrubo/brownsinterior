@@ -14,11 +14,18 @@ import {
   Paintbrush,
   Compass,
   ArrowRight,
-  ExternalLink,
+  Globe,
 } from 'lucide-react';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { teamMembers } from '../data/siteData';
 import { SectionHead } from './HomeSections';
 import './Team.css';
+
+const profileLinks = [
+  { field: 'website', label: 'Website', Icon: Globe },
+  { field: 'linkedin', label: 'LinkedIn', Icon: FaLinkedinIn },
+  { field: 'github', label: 'GitHub', Icon: FaGithub },
+];
 
 const iconMap = {
   Award,
@@ -67,33 +74,29 @@ function MemberCard({ member, index }) {
 
       {member.qualifications && member.qualifications.length > 0 && (
         <div className="team-pro-creds" aria-label="Professional Credentials">
-          {member.qualifications.map((q, idx) => {
-            const isPortfolio =
-              member.website &&
-              (q.toLowerCase().includes('portfolio') || q.toLowerCase().includes('ardhrubo.dev'));
+          {member.qualifications.map((qualification) => (
+            <span key={qualification} className="team-pro-cred-badge">
+              {qualification}
+            </span>
+          ))}
+        </div>
+      )}
 
-            if (isPortfolio) {
-              return (
-                <a
-                  key={idx}
-                  href={member.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="team-pro-cred-badge team-pro-cred-link"
-                  title={`Visit ${member.name}'s portfolio`}
-                >
-                  <span>{q}</span>
-                  <ExternalLink size={11} strokeWidth={2.4} />
-                </a>
-              );
-            }
-
-            return (
-              <span key={idx} className="team-pro-cred-badge">
-                {q}
-              </span>
-            );
-          })}
+      {profileLinks.some(({ field }) => member[field]) && (
+        <div className="team-pro-socials" role="group" aria-label={`${member.name}'s profile links`}>
+          {profileLinks.filter(({ field }) => member[field]).map(({ field, label, Icon }) => (
+            <a
+              key={field}
+              href={member[field]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="team-pro-social-link"
+              aria-label={`${member.name} — ${label}`}
+              title={label}
+            >
+              <Icon size={18} aria-hidden="true" />
+            </a>
+          ))}
         </div>
       )}
 
