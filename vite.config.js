@@ -11,6 +11,7 @@ export default defineConfig({
         manualChunks(id) {
           if (id.includes('node_modules')) {
             if (id.includes('three') || id.includes('@react-three')) return 'vendor-three';
+            if (id.includes('@supabase')) return 'vendor-supabase';
             if (id.includes('framer-motion')) return 'vendor-motion';
             if (id.includes('lucide-react') || id.includes('react-icons')) return 'vendor-icons';
             if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) return 'vendor-react';

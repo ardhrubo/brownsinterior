@@ -128,9 +128,11 @@ export default function Contact({ showHero = true }) {
                 >
                   <div className="contact-lead-avatar-wrap">
                     <img
-                      src="/team/engr-aslam-sheikh.jpg"
+                      src="/team/engr-aslam-sheikh.webp"
                       alt="Engr. Aslam Sheikh"
                       className="contact-lead-avatar-img"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="contact-lead-wa-badge"><FaWhatsapp size={10} /></div>
                   </div>

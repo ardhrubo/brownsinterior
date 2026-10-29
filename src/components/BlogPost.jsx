@@ -215,7 +215,7 @@ export default function BlogPost() {
       '@type': 'Person',
       name: post.author?.name || 'Engr. Aslam Sheikh',
       jobTitle: post.author?.role || 'Founder & Principal Designer',
-      image: post.author?.avatar ? toAbsoluteUrl(post.author.avatar) : `${SITE_URL}/team/engr-aslam-sheikh.jpg`,
+      image: post.author?.avatar ? toAbsoluteUrl(post.author.avatar) : `${SITE_URL}/team/engr-aslam-sheikh.webp`,
       url: `${SITE_URL}/about`,
     },
     publisher: {
@@ -716,7 +716,7 @@ export default function BlogPost() {
               <div className="blog-sidebar-lead-profile">
                 <div className="blog-sidebar-lead-avatar">
                   <img
-                    src="/team/engr-aslam-sheikh.jpg"
+                    src="/team/engr-aslam-sheikh.webp"
                     alt="Engr. Aslam Sheikh - Founder & Principal Designer"
                     className="blog-sidebar-lead-img"
                   />

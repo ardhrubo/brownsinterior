@@ -51,7 +51,35 @@ export const processSteps = [
     text: 'Quality check & 1-year warranty.',
   },
 ];
-export { blogPosts, getBlogPostBySlug } from './blogData.js';
+export const blogPreviews = [
+  {
+    slug: 'small-apartment-design-tips',
+    title: '7 Smart Design Tips for Small Apartments in Dhaka (800–1,500 Sq Ft)',
+    category: 'Residential Interior',
+    date: 'Oct 20, 2026',
+    readTime: '9 min read',
+    image: '/portfolio/residential/bedroom-dark-luxury-suite.webp',
+    excerpt: 'Discover expert interior design strategies tailored for Dhaka’s 800 to 1,500 sq ft apartments. Learn how custom furniture, vertical storage, and strategic color balance create breathtaking, spacious sanctuaries.',
+  },
+  {
+    slug: 'exhibition-stall-design-guide-bangladesh',
+    title: 'Exhibition Stall & Pavilion Design Guide for Bangladesh Trade Fairs (ICCB & BICC)',
+    category: 'Exhibition Design',
+    date: 'Oct 14, 2026',
+    readTime: '8 min read',
+    image: '/portfolio/booth/booth-1.webp',
+    excerpt: 'Planning a trade show booth at ICCB or BICC in Dhaka? Explore our engineering guide to modular stall fabrication, 360-degree brand visibility, VIP lounge zoning, and 24-hour setup execution.',
+  },
+  {
+    slug: 'interior-design-cost-in-bangladesh-guide',
+    title: 'Interior Design Cost in Bangladesh (2026 Per Sq Ft BOQ & Material Guide)',
+    category: 'Budget & BOQ Guide',
+    date: 'Oct 05, 2026',
+    readTime: '10 min read',
+    image: '/portfolio/residential/living-marble-luxury-hall.webp',
+    excerpt: 'How much does interior design actually cost in Dhaka? Break down real per-square-foot pricing across Standard, Premium, and Luxury tiers—from HPL board and marine ply to Italian marble and smart lighting.',
+  },
+];
 
 export const stats = [
   { value: 250, suffix: '+', label: 'Projects Completed' },
@@ -67,7 +95,7 @@ export const teamMembers = [
     role: 'Founder & Principal Designer',
     category: 'management',
     categoryLabel: 'Leadership',
-    image: '/team/engr-aslam-sheikh.jpg',
+    image: '/team/engr-aslam-sheikh.webp',
     qualifications: [
       'Dip. Architecture & Interior Design (NPI)',
       'B.Sc. in Civil Engg., IUBAT',
@@ -84,7 +112,7 @@ export const teamMembers = [
     role: 'Project Manager & Civil Engineer',
     category: 'management',
     categoryLabel: 'Project Management',
-    image: '/team/engr-tanjimul-fuad.jpg',
+    image: '/team/engr-tanjimul-fuad.webp',
     qualifications: [
       'Project Coordination & Quality Control',
       'B.Sc. Engr. (Civil), IUBAT',
@@ -101,7 +129,7 @@ export const teamMembers = [
     role: 'IT and Office Administrator',
     category: 'management',
     categoryLabel: 'IT & Software Architecture',
-    image: '/team/abdur-rahman-dhrubo.jpg',
+    image: '/team/abdur-rahman-dhrubo.webp',
     qualifications: [
       'Full-Stack Engineer & Automation Specialist',
       'B.Sc., Jagannath University, Dhaka',

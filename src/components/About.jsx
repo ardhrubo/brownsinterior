@@ -37,8 +37,10 @@ export default function About({ full = false }) {
           >
             <div className="about-image-wrapper">
               <img
-                src="/portfolio/residential/living-marble-luxury-hall.jpg"
+                src="/portfolio/residential/living-marble-luxury-hall.webp"
                 alt="About Brown's Interior Studio"
+                loading="lazy"
+                decoding="async"
               />
               <div className="experience-badge">
                 <span className="years">10+</span>
@@ -103,7 +105,7 @@ export default function About({ full = false }) {
                 <div className="founder-spotlight-card">
                   <div className="founder-photo-frame">
                     <img
-                      src="/team/engr-aslam-sheikh.jpg"
+                      src="/team/engr-aslam-sheikh.webp"
                       alt="Engr. Aslam Sheikh - Founder & Principal Designer"
                       className="founder-portrait-img"
                       loading="lazy"

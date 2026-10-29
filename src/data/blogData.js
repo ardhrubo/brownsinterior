@@ -15,12 +15,12 @@ export const blogPosts = [
     date: 'Oct 20, 2026',
     publishDateISO: '2026-10-20T09:00:00+06:00',
     readTime: '9 min read',
-    image: '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
+    image: '/portfolio/residential/bedroom-dark-luxury-suite.webp',
     imageCaption: 'A luxury master suite designed by Brown’s Interior showcasing custom fluted acoustic paneling, concealed 3000K warm LED lighting, and streamlined floor-to-ceiling cabinetry.',
     author: {
       name: 'Engr. Aslam Sheikh',
       role: 'Founder & Principal Designer',
-      avatar: '/team/engr-aslam-sheikh.jpg',
+      avatar: '/team/engr-aslam-sheikh.webp',
       qualification: 'Dip. Architecture & Interior Design (NPI) · B.Sc. Civil Engg. (IUBAT) · IEB A29734',
       degrees: [
         'Dip. Architecture & Interior Design, School of Architecture (NPI)',
@@ -81,7 +81,7 @@ export const blogPosts = [
           text: 'Avoid sterile hospital-white paints (cool bluish whites). In Dhaka’s warm afternoon sunlight, cool whites appear chalky and accentuate dust. Instead, select warm whites with yellow/beige undertones (such as Berger Silk Luxury Emulsion in "Antique Lace" or Asian Paints "Off-White") combined with 3000K warm ambient lighting.'
         },
         inlineImage: {
-          src: '/portfolio/residential/bedroom-bay-window-suite.jpg',
+          src: '/portfolio/residential/bedroom-bay-window-suite.webp',
           alt: 'Bright luxury bedroom design in Dhaka flat with bay window seating and neutral tones',
           caption: 'A bright, light-reflective master bedroom featuring customized bay window seating and champagne gold trims designed by Brown’s Interior.'
         },
@@ -110,7 +110,7 @@ export const blogPosts = [
           text: 'Always specify 5mm or 6mm distortion-free Saint-Gobain or Belgian float glass mounted onto calibrated 12mm moisture-resistant marine plywood backer boards. Never stick mirrors directly onto bare plaster in Dhaka flats; dampness will degrade the silver coating within months.'
         },
         inlineImage: {
-          src: '/portfolio/residential/living-dining-wine-chandelier.jpg',
+          src: '/portfolio/residential/living-dining-wine-chandelier.webp',
           alt: 'Reflective dining room interior with chandelier and custom console in Dhaka apartment',
           caption: 'Tinted bronze mirror panelling paired with custom wine cabinetry and warm chandelier glow in a Dhaka luxury residence.'
         },
@@ -135,7 +135,7 @@ export const blogPosts = [
           text: 'Maintain a minimum clearance of 36 inches (3.0 feet) for primary walking corridors (e.g. entrance to living-dining) and at least 28 inches between beds and wardrobes. Any piece of furniture that forces you to squeeze sideways must be custom designed.'
         },
         inlineImage: {
-          src: '/portfolio/residential/living-panoramic-library.jpg',
+          src: '/portfolio/residential/living-panoramic-library.webp',
           alt: 'Custom multi-functional living and library cabinetry in Dhaka apartment',
           caption: 'Tailored floating media unit and integrated library shelving engineered to maximize vertical wall space without consuming floor area.'
         },
@@ -160,7 +160,7 @@ export const blogPosts = [
           text: 'For wardrobe internal carcasses in Bangladesh, insist on BWR (Boiling Water Resistant) Gorjan plywood or high-density Melamine board with 2mm PVC hot-melt edge banding. This prevents moisture swelling during the July–September monsoon season.'
         },
         inlineImage: {
-          src: '/portfolio/residential/a1.jpg',
+          src: '/portfolio/residential/a1.webp',
           alt: 'Floor to ceiling custom wardrobe and bedroom interior in Dhaka residence',
           caption: 'Full-height bespoke wardrobe system with upper loft storage and flush acoustic panelling executed by Brown’s carpentry team.'
         },
@@ -185,7 +185,7 @@ export const blogPosts = [
           text: 'Always install 8mm or 10mm tempered safety glass with heavy-duty acoustic ceiling-recessed track rollers (such as Dorma or Hafele hardware). Avoid bottom floor tracks that trap dust and trip children or elderly family members.'
         },
         inlineImage: {
-          src: '/portfolio/interior/modern-kitchen.png',
+          src: '/portfolio/interior/modern-kitchen.webp',
           alt: 'Modern modular kitchen with glass partition and quartz countertops in Dhaka flat',
           caption: 'Sleek modular kitchen designed with fluted glass dividers, anti-fingerprint acrylic cabinets, and stain-resistant quartz countertops.'
         },
@@ -212,7 +212,7 @@ export const blogPosts = [
           text: 'In rooms with ceiling heights under 9.5 feet, never drop the central ceiling. Keep the main ceiling exposed at full height and create a shallow 4-inch perimeter cove around the room borders. This delivers the luxury cove glow without sacrificing vertical headroom.'
         },
         inlineImage: {
-          src: '/portfolio/residential/living-marble-luxury-hall.jpg',
+          src: '/portfolio/residential/living-marble-luxury-hall.webp',
           alt: 'Luxury living hall with layered false ceiling cove lighting and marble wall in Dhaka',
           caption: 'Multi-layer architectural lighting combining concealed perimeter coves, magnetic tracks, and warm spotlights in a modern Dhaka living hall.'
         },
@@ -238,7 +238,7 @@ export const blogPosts = [
           text: 'Wall-mount everything possible! When sofas, vanities, and TV consoles float 8 to 10 inches off the floor, the human eye perceives the uninterrupted floor expanse beneath them, instantly registering the room as 20% to 30% wider.'
         },
         inlineImage: {
-          src: '/portfolio/interior/washroom-clean.jpg',
+          src: '/portfolio/interior/washroom-clean.webp',
           alt: 'Clean minimalist floating vanity and hidden plumbing in modern Dhaka apartment washroom',
           caption: 'Floating vanity and concealed cistern plumbing designed by Brown’s Interior, keeping floor space unobstructed and effortlessly clean.'
         },
@@ -253,7 +253,7 @@ export const blogPosts = [
       title: 'Walkthrough: Transforming a 1,200 Sq Ft Compact Dhaka Apartment',
       subtitle: 'Watch how Engr. Aslam Sheikh and the Brown’s Interior engineering team engineered custom vertical cabinetry, fluted glass zoning, and warm layered lighting.',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // or placeholder embed
-      previewImage: '/portfolio/residential/living-marble-luxury-hall.jpg',
+      previewImage: '/portfolio/residential/living-marble-luxury-hall.webp',
       duration: '4:30 min',
       highlights: [
         'Custom hydraulic lift-up bed storage demonstration',
@@ -317,12 +317,12 @@ export const blogPosts = [
     date: 'Sep 18, 2026',
     publishDateISO: '2026-09-18T10:00:00+06:00',
     readTime: '8 min read',
-    image: '/portfolio/booth/booth-1.jpeg',
+    image: '/portfolio/booth/booth-1.webp',
     imageCaption: 'An award-winning exhibition pavilion designed and fabricated by Brown’s Interior at BICC Dhaka featuring 360-degree elevated branding and an open visitor flow.',
     author: {
       name: 'Engr. Aslam Sheikh',
       role: 'Founder & Principal Designer',
-      avatar: '/team/engr-aslam-sheikh.jpg',
+      avatar: '/team/engr-aslam-sheikh.webp',
       qualification: 'Dip. Architecture & Interior Design (NPI) · B.Sc. Civil Engg. (IUBAT) · IEB A29734',
       degrees: [
         'Dip. Architecture & Interior Design, School of Architecture (NPI)',
@@ -379,7 +379,7 @@ export const blogPosts = [
           text: 'Always check the maximum height allowance specified by the expo organizer (BICC typically permits 12–14 ft for custom stalls, whereas ICCB hall heights accommodate up to 16 ft). Ensure all cantilevered gantry structures have internal welded mild steel (MS) truss framing for total visitor safety.'
         },
         inlineImage: {
-          src: '/portfolio/booth/booth-1.jpeg',
+          src: '/portfolio/booth/booth-1.webp',
           alt: 'Custom exhibition stall at BICC Dhaka with elevated illuminated branding',
           caption: 'Elevated cantilevered header with backlit CNC acrylic branding fabricated for an industrial expo at BICC Dhaka.'
         },
@@ -404,7 +404,7 @@ export const blogPosts = [
           text: 'Follow the 60-40 rule of exhibition floor planning: allocate at least 60% of your total booth square footage to open walking circulation and networking zones, reserving only 40% for product display plinths and cabinetry.'
         },
         inlineImage: {
-          src: '/portfolio/booth/booth-2.jpeg',
+          src: '/portfolio/booth/booth-2.webp',
           alt: 'Open concept exhibition booth layout with interactive podiums and meeting area',
           caption: 'Spacious open-concept stall design engineered by Brown’s Interior, allowing seamless visitor walkthrough and product interaction.'
         },
@@ -429,7 +429,7 @@ export const blogPosts = [
           text: 'Insist on 3D walk-through renders that showcase the booth under realistic venue lighting conditions (300 lux ambient) rather than washed-out white backgrounds. This ensures your color contrast and illuminated signage look immaculate in real life.'
         },
         inlineImage: {
-          src: '/portfolio/office/office-conference-smartboard.jpeg',
+          src: '/portfolio/office/office-conference-smartboard.webp',
           alt: '3D structural planning and corporate interior design meeting suite',
           caption: 'Engineering and 3D architectural planning ensuring every modular component is fabricated to exact millimeter tolerances.'
         },
@@ -454,7 +454,7 @@ export const blogPosts = [
           text: 'Always install a dedicated heavy-duty industrial stabilizer and secondary MCB distribution board inside your booth storage room. Dhaka convention centers experience voltage spikes when hundreds of heavy machinery exhibitors power on simultaneously.'
         },
         inlineImage: {
-          src: '/portfolio/booth/booth-1.jpeg',
+          src: '/portfolio/booth/booth-1.webp',
           alt: 'Dynamic lighting and halo branding on luxury exhibition booth in Dhaka',
           caption: 'Halo-illuminated brand identity and perimeter plinth underglow transforming a standard trade fair plot into a luxury corporate pavilion.'
         },
@@ -479,7 +479,7 @@ export const blogPosts = [
           text: 'Equip the VIP discussion lounge with a concealed mini-refrigerator and electric kettle. Offering a warm cup of gourmet tea or cold water to tired expo visitors immediately increases consultation dwell time by over 15 minutes.'
         },
         inlineImage: {
-          src: '/portfolio/office/office-floor-reception-hub.jpeg',
+          src: '/portfolio/office/office-floor-reception-hub.webp',
           alt: 'Semi private discussion lounge and meeting area in exhibition booth',
           caption: 'Semi-private executive discussion lounge designed with acoustic comfort and discrete beverage facilities.'
         },
@@ -504,7 +504,7 @@ export const blogPosts = [
           text: 'Request your fabrication contractor to conduct a "dry run" assembly at their workshop 48 hours prior to venue move-in. At Brown’s Interior, we pre-assemble all major structures in our yard to inspect fitments and lighting before loading onto trucks.'
         },
         inlineImage: {
-          src: '/portfolio/booth/booth-2.jpeg',
+          src: '/portfolio/booth/booth-2.webp',
           alt: 'Turnkey exhibition fabrication and modular assembly by Brown’s Interior',
           caption: 'Turnkey exhibition stall fabrication executed with precision joinery and prompt handover at ICCB Dhaka.'
         },
@@ -519,7 +519,7 @@ export const blogPosts = [
       title: 'Behind the Scenes: Turnkey Trade Fair Stall Fabrication at BICC',
       subtitle: 'Watch how our structural carpentry and electrical technicians fabricate, assemble, and hand over an international trade fair pavilion in 24 hours.',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      previewImage: '/portfolio/booth/booth-1.jpeg',
+      previewImage: '/portfolio/booth/booth-1.webp',
       duration: '3:45 min',
       highlights: [
         'Workshop modular pre-fabrication and spray painting',
@@ -583,12 +583,12 @@ export const blogPosts = [
     date: 'Aug 30, 2026',
     publishDateISO: '2026-08-30T11:00:00+06:00',
     readTime: '10 min read',
-    image: '/portfolio/residential/living-marble-luxury-hall.jpg',
+    image: '/portfolio/residential/living-marble-luxury-hall.webp',
     imageCaption: 'A luxury flat renovation completed in Gulshan, Dhaka, showcasing book-matched Italian marble, custom acoustic panelling, and integrated cove lighting.',
     author: {
       name: 'Engr. Aslam Sheikh',
       role: 'Founder & Principal Designer',
-      avatar: '/team/engr-aslam-sheikh.jpg',
+      avatar: '/team/engr-aslam-sheikh.webp',
       qualification: 'Dip. Architecture & Interior Design (NPI) · B.Sc. Civil Engg. (IUBAT) · IEB A29734',
       degrees: [
         'Dip. Architecture & Interior Design, School of Architecture (NPI)',
@@ -646,7 +646,7 @@ export const blogPosts = [
           text: 'Use our online [interior cost calculator](/cost-estimator) to dynamically toggle between space types (residential, commercial, or booth) and package tiers to see your exact estimated budget instantly.'
         },
         inlineImage: {
-          src: '/portfolio/residential/living-marble-luxury-hall.jpg',
+          src: '/portfolio/residential/living-marble-luxury-hall.webp',
           alt: 'Luxury apartment renovation in Gulshan Dhaka with Italian marble feature wall',
           caption: 'Premium luxury renovation in Gulshan featuring book-matched imported marble, warm cove lighting, and tailored cabinetry.'
         },
@@ -678,7 +678,7 @@ export const blogPosts = [
           text: 'Ensure the BOQ specifies the exact brand and gauge of electrical cables. At Brown’s Interior, we exclusively specify BRB or BBS Flame-Retardant (FR) grade copper wiring to eliminate short-circuit fire hazards in older Dhaka buildings.'
         },
         inlineImage: {
-          src: '/portfolio/residential/living-dining-wine-chandelier.jpg',
+          src: '/portfolio/residential/living-dining-wine-chandelier.webp',
           alt: 'Precision executed living and dining interior with custom woodwork in Dhaka',
           caption: 'Every element—from the wine cabinet to the false ceiling cove—is detailed with exact material specifications in our BOQ.'
         },
@@ -703,7 +703,7 @@ export const blogPosts = [
           text: 'In bathrooms, always apply a 2-coat chemical elastomeric waterproofing membrane (such as SikaTop Seal-107 or Fosroc Brushbond) across the entire floor slab and 3 feet up the shower walls before laying new tiles. Water leakage to the neighbor downstairs is the #1 dispute in Dhaka apartments.'
         },
         inlineImage: {
-          src: '/portfolio/interior/modern-kitchen.png',
+          src: '/portfolio/interior/modern-kitchen.webp',
           alt: 'Modern luxury kitchen remodel with quartz counters and acrylic cabinets in Dhaka',
           caption: 'A heavy-duty, luxury modular kitchen equipped with quartz counters, Blum tandem drawers, and exterior-vented chimney.'
         },
@@ -730,7 +730,7 @@ export const blogPosts = [
           text: 'Never demolish any internal column or concrete beam! Some unscrupulous local contractors knock down concrete lintels to create open kitchens, compromising the structural earthquake resilience of the building. Always consult a certified civil engineer like Engr. Aslam Sheikh before knocking down any wall.'
         },
         inlineImage: {
-          src: '/portfolio/interior/washroom-clean.jpg',
+          src: '/portfolio/interior/washroom-clean.webp',
           alt: 'Renovated luxury washroom with modern concealed sanitaryware and clean tiling',
           caption: 'Complete washroom renovation replacing old corroded plumbing with concealed CPVC fittings and wall-hung sanitaryware.'
         },
@@ -755,7 +755,7 @@ export const blogPosts = [
           text: 'Establish a strict Change Order protocol with your interior contractor. Any work not included in the original BOQ must have written price approval from you before execution begins, preventing surprise bills at handover.'
         },
         inlineImage: {
-          src: '/portfolio/residential/living-dining-neoclassical.jpg',
+          src: '/portfolio/residential/living-dining-neoclassical.webp',
           alt: 'Neoclassical living and dining interior after complete renovation in Dhaka flat',
           caption: 'A breathtaking neoclassical living transformation completed on time and strictly within the client’s approved BOQ budget.'
         },
@@ -780,7 +780,7 @@ export const blogPosts = [
           text: 'Tie your payment schedule to physical milestones: 20% mobilization advance, 30% upon completion of civil/false ceiling/electrical rough-ins, 30% upon delivery of factory woodwork, 15% upon paint & lighting, and a final 5% retention held until final handover inspection.'
         },
         inlineImage: {
-          src: '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
+          src: '/portfolio/residential/bedroom-dark-luxury-suite.webp',
           alt: 'Turnkey luxury master bedroom renovation executed by Brown’s Interior',
           caption: 'Seamless turnkey execution delivered under a single milestone-based contract with 1-year comprehensive warranty.'
         },
@@ -795,7 +795,7 @@ export const blogPosts = [
       title: 'Full Apartment Transformation: From 15-Year-Old Flat to Modern Luxury',
       subtitle: 'Watch how our civil engineering and interior team stripped down a 1,600 sq ft flat in Dhanmondi, replaced hidden plumbing, and delivered a turnkey luxury residence.',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      previewImage: '/portfolio/residential/living-marble-luxury-hall.jpg',
+      previewImage: '/portfolio/residential/living-marble-luxury-hall.webp',
       duration: '5:10 min',
       highlights: [
         'Civil hacking, non-loadbearing wall removal & debris hauling',
