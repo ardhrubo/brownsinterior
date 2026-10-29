@@ -1,6 +1,6 @@
 import { Sofa, Building2, HardHat, Hammer, Presentation, ClipboardList, Sparkles } from 'lucide-react';
 
-const img = (id, w = 1600) => `https://images.unsplash.com/${id}?auto=format&fit=crop&q=80&w=${w}`;
+const img = (id, w = 800) => `https://images.unsplash.com/${id}?auto=format&fit=crop&fm=webp&q=72&w=${w}`;
 
 export const servicesData = [
   {
@@ -10,7 +10,7 @@ export const servicesData = [
     shortTitle: 'Interior Design',
     tagline: 'Bespoke living & commercial spaces crafted for everyday luxury.',
     icon: Sofa,
-    image: '/portfolio/interior/living-room.jpg',
+    image: '/portfolio/interior/living-room.webp',
     description: 'Thoughtfully crafted interiors balancing comfort, material warmth, and function.',
     intro: 'We plan every room around how you live and work — combining spatial flow, custom woodwork, and layered lighting.',
     specs: [
@@ -30,7 +30,7 @@ export const servicesData = [
         slug: 'residential-interior',
         title: 'Residential Interior',
         tagline: 'Warm, functional homes tailored to your family lifestyle.',
-        image: '/portfolio/interior/living-room.jpg',
+        image: '/portfolio/interior/living-room.webp',
         desc: 'Turnkey design and execution for apartments, duplexes, and villas in Dhaka.',
         specs: [
           { label: 'Key Spaces', value: 'BED ROOM • KITCHEN • LIVING • DINING' },
@@ -45,21 +45,21 @@ export const servicesData = [
           'DINING: Elegant family dining zones, crystal chandeliers & custom crockery consoles'
         ],
         gallery: [
-          '/portfolio/interior/master-bedroom-client-fav.jpg',
-          '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
-          '/portfolio/residential/bedroom-bay-window-suite.jpg',
-          '/portfolio/interior/bedroom-chandelier-master.jpg',
-          '/portfolio/interior/kitchen-main.jpg',
-          '/portfolio/interior/kitchen-semi-open.jpg',
-          '/portfolio/interior/modern-kitchen.png',
-          '/portfolio/residential/living-marble-luxury-hall.jpg',
-          '/portfolio/residential/living-panoramic-library.jpg',
-          '/portfolio/interior/living-room.jpg',
-          '/portfolio/interior/living-marble-luxury.jpg',
-          '/portfolio/residential/living-dining-wine-chandelier.jpg',
-          '/portfolio/residential/living-dining-neoclassical.jpg',
-          '/portfolio/interior/dining-marble-chandelier.jpg',
-          '/portfolio/interior/dining-clean.jpg'
+          '/portfolio/interior/master-bedroom-client-fav.webp',
+          '/portfolio/residential/bedroom-dark-luxury-suite.webp',
+          '/portfolio/residential/bedroom-bay-window-suite.webp',
+          '/portfolio/interior/bedroom-chandelier-master.webp',
+          '/portfolio/interior/kitchen-main.webp',
+          '/portfolio/interior/kitchen-semi-open.webp',
+          '/portfolio/interior/modern-kitchen.webp',
+          '/portfolio/residential/living-marble-luxury-hall.webp',
+          '/portfolio/residential/living-panoramic-library.webp',
+          '/portfolio/interior/living-room.webp',
+          '/portfolio/interior/living-marble-luxury.webp',
+          '/portfolio/residential/living-dining-wine-chandelier.webp',
+          '/portfolio/residential/living-dining-neoclassical.webp',
+          '/portfolio/interior/dining-marble-chandelier.webp',
+          '/portfolio/interior/dining-clean.webp'
         ],
         galleryCategories: [
           'BED ROOM',
@@ -100,7 +100,7 @@ export const servicesData = [
         slug: 'commercial-interior',
         title: 'Commercial Interior',
         tagline: 'Inspiring commercial spaces designed for brand impact and performance.',
-        image: '/portfolio/office/office-conference-smartboard.jpeg',
+        image: '/portfolio/office/office-conference-smartboard.webp',
         desc: 'Strategic commercial design engineered for acoustic comfort, brand prestige, and workflow efficiency.',
         specs: [
           { label: 'Best For', value: 'Corporate HQ, Studios & Hubs' },
@@ -115,11 +115,11 @@ export const servicesData = [
           'IT network, electrical trunking & MEP coordination'
         ],
         gallery: [
-          '/portfolio/office/office-conference-smartboard.jpeg',
-          '/portfolio/office/office-workstations-pod.jpeg',
-          '/portfolio/office/office-floor-reception-hub.jpeg',
-          '/portfolio/office/office-conference-showroom.jpeg',
-          '/portfolio/office/office-meeting-suite.jpeg'
+          '/portfolio/office/office-conference-smartboard.webp',
+          '/portfolio/office/office-workstations-pod.webp',
+          '/portfolio/office/office-floor-reception-hub.webp',
+          '/portfolio/office/office-conference-showroom.webp',
+          '/portfolio/office/office-meeting-suite.webp'
         ],
         galleryLabels: [
           'Interactive Smart Board Conference Facility',
@@ -133,7 +133,7 @@ export const servicesData = [
         slug: 'office-retail-interior',
         title: 'Office & Retail Interior',
         tagline: 'High-performance offices and customer-centric retail spaces.',
-        image: '/portfolio/office/office-floor-reception-hub.jpeg',
+        image: '/portfolio/office/office-floor-reception-hub.webp',
         desc: 'Modern workplace setups, retail showrooms, boutiques, and corporate environments crafted to captivate footfall and boost productivity.',
         specs: [
           { label: 'Best For', value: 'Offices, Showrooms & Retail' },
@@ -148,11 +148,11 @@ export const servicesData = [
           'Architectural track & linear profile suspended lighting'
         ],
         gallery: [
-          '/portfolio/office/office-floor-reception-hub.jpeg',
-          '/portfolio/office/office-conference-showroom.jpeg',
-          '/portfolio/office/office-workstations-pod.jpeg',
-          '/portfolio/office/office-conference-smartboard.jpeg',
-          '/portfolio/office/office-meeting-suite.jpeg'
+          '/portfolio/office/office-floor-reception-hub.webp',
+          '/portfolio/office/office-conference-showroom.webp',
+          '/portfolio/office/office-workstations-pod.webp',
+          '/portfolio/office/office-conference-smartboard.webp',
+          '/portfolio/office/office-meeting-suite.webp'
         ],
         galleryLabels: [
           'Open Office Floor & Reception Welcome Lounge',
@@ -164,10 +164,10 @@ export const servicesData = [
       }
     ],
     gallery: [
-      '/portfolio/residential/living-marble-luxury-hall.jpg',
-      '/portfolio/office/office-conference-smartboard.jpeg',
-      '/portfolio/interior/master-bedroom-client-fav.jpg',
-      '/portfolio/office/office-floor-reception-hub.jpeg'
+      '/portfolio/residential/living-marble-luxury-hall.webp',
+      '/portfolio/office/office-conference-smartboard.webp',
+      '/portfolio/interior/master-bedroom-client-fav.webp',
+      '/portfolio/office/office-floor-reception-hub.webp'
     ],
     galleryLabels: [
       'Italian Marble Grand Living Suite',
@@ -554,7 +554,7 @@ export const servicesData = [
     shortTitle: 'Exhibition & Booths',
     tagline: 'Show-stopping expo pavilions that draw crowds in seconds.',
     icon: Presentation,
-    image: '/portfolio/booth/booth-1.jpeg',
+    image: '/portfolio/booth/booth-1.webp',
     description: 'High-impact exhibition stalls engineered for rapid setup and unforgettable branding.',
     intro: 'Your booth has seconds to capture attention. We design, render, and fabricate stands that invite visitors in.',
     specs: [
@@ -574,7 +574,7 @@ export const servicesData = [
         slug: 'exhibition-booth-design-service',
         title: 'Exhibition Booth Design',
         tagline: 'Crowd-pulling stall concepts with seamless visitor flow.',
-        image: '/portfolio/booth/booth-1.jpeg',
+        image: '/portfolio/booth/booth-1.webp',
         desc: 'Strategic expo booth concepts balancing bold brand fascias, product displays, and lounge seating.',
         specs: [
           { label: 'Best For', value: 'ICCB, BICC & Trade Expos' },
@@ -589,11 +589,11 @@ export const servicesData = [
           'Private discussion lounge & reception desk'
         ],
         gallery: [
-          '/portfolio/booth/booth-1.jpeg',
-          '/portfolio/booth/booth-2.jpeg',
-          '/portfolio/booth/booth-3.jpeg',
-          '/portfolio/booth/booth-4.jpeg',
-          '/portfolio/booth/booth-5.jpeg'
+          '/portfolio/booth/booth-1.webp',
+          '/portfolio/booth/booth-2.webp',
+          '/portfolio/booth/booth-3.webp',
+          '/portfolio/booth/booth-4.webp',
+          '/portfolio/booth/booth-5.webp'
         ],
         galleryLabels: [
           'Brand Pavilion Island Architecture',
@@ -607,7 +607,7 @@ export const servicesData = [
         slug: 'trade-show-stand-design',
         title: 'Trade Show Stand Design',
         tagline: 'Modular, reusable stands built for fast overnight installation.',
-        image: '/portfolio/booth/booth-3.jpeg',
+        image: '/portfolio/booth/booth-3.webp',
         desc: 'Lightweight aluminum and wooden modular stands with backlit graphics and LED screens.',
         specs: [
           { label: 'Setup Time', value: '12 – 24 Hours On-Site' },
@@ -622,10 +622,10 @@ export const servicesData = [
           'Complete expo spotlighting & power distribution'
         ],
         gallery: [
-          '/portfolio/booth/booth-3.jpeg',
-          '/portfolio/booth/booth-2.jpeg',
-          '/portfolio/booth/booth-4.jpeg',
-          '/portfolio/booth/booth-5.jpeg'
+          '/portfolio/booth/booth-3.webp',
+          '/portfolio/booth/booth-2.webp',
+          '/portfolio/booth/booth-4.webp',
+          '/portfolio/booth/booth-5.webp'
         ],
         galleryLabels: [
           'Modular Trade Show Booth Layout',
@@ -638,7 +638,7 @@ export const servicesData = [
         slug: 'custom-booth-design',
         title: 'Custom Booth Design',
         tagline: '100% bespoke flagship pavilions for market leaders.',
-        image: '/portfolio/booth/booth-5.jpeg',
+        image: '/portfolio/booth/booth-5.webp',
         desc: 'Sculptural, multi-zone custom pavilions crafted with Duco paint, acrylic, and raised LED floors.',
         specs: [
           { label: 'Best For', value: 'Flagship Brand Pavilions' },
@@ -653,10 +653,10 @@ export const servicesData = [
           'Automotive-grade Duco & metallic finishes'
         ],
         gallery: [
-          '/portfolio/booth/booth-5.jpeg',
-          '/portfolio/booth/booth-1.jpeg',
-          '/portfolio/booth/booth-3.jpeg',
-          '/portfolio/booth/booth-4.jpeg'
+          '/portfolio/booth/booth-5.webp',
+          '/portfolio/booth/booth-1.webp',
+          '/portfolio/booth/booth-3.webp',
+          '/portfolio/booth/booth-4.webp'
         ],
         galleryLabels: [
           'Custom Flagship Pavilion Architecture',
@@ -715,11 +715,11 @@ export const servicesData = [
       }
     ],
     gallery: [
-      '/portfolio/booth/booth-1.jpeg',
-      '/portfolio/booth/booth-2.jpeg',
-      '/portfolio/booth/booth-3.jpeg',
-      '/portfolio/booth/booth-4.jpeg',
-      '/portfolio/booth/booth-5.jpeg'
+      '/portfolio/booth/booth-1.webp',
+      '/portfolio/booth/booth-2.webp',
+      '/portfolio/booth/booth-3.webp',
+      '/portfolio/booth/booth-4.webp',
+      '/portfolio/booth/booth-5.webp'
     ],
     galleryLabels: [
       'Brand Pavilion Island Architecture',
@@ -858,7 +858,7 @@ export const servicesData = [
     shortTitle: 'Specialized Services',
     tagline: 'Bespoke furniture, 3D visualization, turnkey & remote NRB design.',
     icon: Sparkles,
-    image: '/portfolio/interior/master-bedroom-client-fav.jpg',
+    image: '/portfolio/interior/master-bedroom-client-fav.webp',
     description: 'Specialized design and execution services that complete your space.',
     intro: 'From handcrafted furniture pieces to full remote project delivery for NRB clients abroad.',
     specs: [
@@ -878,7 +878,7 @@ export const servicesData = [
         slug: 'custom-furniture-design',
         title: 'Custom Furniture Design',
         tagline: 'Handcrafted teak, oak & upholstered furniture made to measure.',
-        image: '/portfolio/interior/master-bedroom-client-fav.jpg',
+        image: '/portfolio/interior/master-bedroom-client-fav.webp',
         desc: 'Bespoke sofas, dining tables, beds, and consoles built in our workshop to fit your exact space.',
         specs: [
           { label: 'Materials', value: 'Seasoned Teak, Oak & Velvet' },
@@ -893,9 +893,9 @@ export const servicesData = [
           'Stain-resistant fabrics & high-density cushioning'
         ],
         gallery: [
-          '/portfolio/interior/master-bedroom-client-fav.jpg',
-          '/portfolio/residential/living-panoramic-library.jpg',
-          '/portfolio/residential/living-dining-wine-chandelier.jpg'
+          '/portfolio/interior/master-bedroom-client-fav.webp',
+          '/portfolio/residential/living-panoramic-library.webp',
+          '/portfolio/residential/living-dining-wine-chandelier.webp'
         ],
         galleryLabels: [
           'Client-Favorite Custom Bed & Upholstery',
@@ -907,7 +907,7 @@ export const servicesData = [
         slug: '2d-drawings-3d-visualization',
         title: '2D Drawings & 3D Visualization',
         tagline: 'Experience your space in photorealistic 4K before building.',
-        image: '/portfolio/residential/living-marble-luxury-hall.jpg',
+        image: '/portfolio/residential/living-marble-luxury-hall.webp',
         desc: 'Studio-grade 3D rendering, virtual walkthroughs, and complete CAD drafting packages.',
         specs: [
           { label: 'Output', value: '4K Renders + AutoCAD DWG' },
@@ -922,9 +922,9 @@ export const servicesData = [
           'Interactive 360° panorama links for mobile viewing'
         ],
         gallery: [
-          '/portfolio/residential/living-marble-luxury-hall.jpg',
-          '/portfolio/residential/bedroom-dark-luxury-suite.jpg',
-          '/portfolio/office/office-conference-smartboard.jpeg'
+          '/portfolio/residential/living-marble-luxury-hall.webp',
+          '/portfolio/residential/bedroom-dark-luxury-suite.webp',
+          '/portfolio/office/office-conference-smartboard.webp'
         ],
         galleryLabels: [
           'Photorealistic 4K Living Hall 3D Visualization',
@@ -936,7 +936,7 @@ export const servicesData = [
         slug: 'lighting-ceiling-design',
         title: 'Lighting & Ceiling Design',
         tagline: 'Architectural false ceilings and warm layered illumination.',
-        image: '/portfolio/residential/living-dining-wine-chandelier.jpg',
+        image: '/portfolio/residential/living-dining-wine-chandelier.webp',
         desc: 'Minimalist gypsum ceilings, magnetic track lights, and indirect cove lighting schemes.',
         specs: [
           { label: 'Systems', value: 'Gypsum, Baffle & Track LED' },
@@ -951,9 +951,9 @@ export const servicesData = [
           'Smart scene dimmers & chandelier reinforcement'
         ],
         gallery: [
-          '/portfolio/residential/living-dining-wine-chandelier.jpg',
-          '/portfolio/residential/bedroom-bay-window-suite.jpg',
-          '/portfolio/residential/living-marble-luxury-hall.jpg'
+          '/portfolio/residential/living-dining-wine-chandelier.webp',
+          '/portfolio/residential/bedroom-bay-window-suite.webp',
+          '/portfolio/residential/living-marble-luxury-hall.webp'
         ],
         galleryLabels: [
           'Architectural Tray Ceiling & Crystal Chandelier',
@@ -989,7 +989,7 @@ export const servicesData = [
         slug: 'turnkey-interior-solutions',
         title: 'Turnkey Interior Solutions',
         tagline: 'From bare concrete shell to move-in ready handover.',
-        image: '/portfolio/residential/living-marble-luxury-hall.jpg',
+        image: '/portfolio/residential/living-marble-luxury-hall.webp',
         desc: 'One team, one contract, zero stress — we handle design, materials, build, curtains, and deep cleaning.',
         specs: [
           { label: 'Model', value: 'Single-Window Turnkey' },
@@ -1004,9 +1004,9 @@ export const servicesData = [
           'Final styling, soft furnishings & deep cleaning'
         ],
         gallery: [
-          '/portfolio/residential/living-marble-luxury-hall.jpg',
-          '/portfolio/residential/living-dining-wine-chandelier.jpg',
-          '/portfolio/office/office-floor-reception-hub.jpeg'
+          '/portfolio/residential/living-marble-luxury-hall.webp',
+          '/portfolio/residential/living-dining-wine-chandelier.webp',
+          '/portfolio/office/office-floor-reception-hub.webp'
         ],
         galleryLabels: [
           'Turnkey Luxury Dhaka Residence Delivery',
@@ -1018,7 +1018,7 @@ export const servicesData = [
         slug: 'remote-international-design-services',
         title: 'Remote & International Design Services',
         tagline: 'Design & build your Dhaka property from anywhere in the world.',
-        image: '/portfolio/office/office-floor-reception-hub.jpeg',
+        image: '/portfolio/office/office-floor-reception-hub.webp',
         desc: 'Dedicated turnkey & online design service for NRBs in the UK, USA, Canada, Australia & Middle East.',
         specs: [
           { label: 'For', value: 'NRBs & Global Clients' },
@@ -1033,9 +1033,9 @@ export const servicesData = [
           'Weekly drone/video walkthroughs & milestone billing'
         ],
         gallery: [
-          '/portfolio/office/office-floor-reception-hub.jpeg',
-          '/portfolio/residential/living-marble-luxury-hall.jpg',
-          '/portfolio/office/office-meeting-suite.jpeg'
+          '/portfolio/office/office-floor-reception-hub.webp',
+          '/portfolio/residential/living-marble-luxury-hall.webp',
+          '/portfolio/office/office-meeting-suite.webp'
         ],
         galleryLabels: [
           'Corporate Facility Executed via Remote Supervision',
@@ -1045,9 +1045,9 @@ export const servicesData = [
       }
     ],
     gallery: [
-      '/portfolio/residential/living-marble-luxury-hall.jpg',
-      '/portfolio/residential/living-dining-wine-chandelier.jpg',
-      '/portfolio/office/office-floor-reception-hub.jpeg'
+      '/portfolio/residential/living-marble-luxury-hall.webp',
+      '/portfolio/residential/living-dining-wine-chandelier.webp',
+      '/portfolio/office/office-floor-reception-hub.webp'
     ],
     galleryLabels: [
       'Modern Dhaka Residence Interior',

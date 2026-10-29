@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
-import { testimonials, blogPosts, stats, processSteps } from '../data/siteData';
+import { testimonials, blogPreviews, stats, processSteps } from '../data/siteData';
 import '../styles/site.css';
 import './HomeSections.css';
 
@@ -42,71 +42,109 @@ export function PageHero({ title, sub, image, crumb }) {
 /* ---------------- HERO ---------------- */
 const slides = [
   {
-    img: '/portfolio/cover/cover-1.jpeg',
+    index: 1,
+    img: '/optimized/hero/slide-1-1600.webp',
+    srcSet: '/optimized/hero/slide-1-960.webp 960w, /optimized/hero/slide-1-1600.webp 1600w, /optimized/hero/slide-1-2200.webp 2200w',
     label: 'Luxury Residential Interior',
   },
   {
-    img: '/portfolio/residential/living-marble-luxury-hall.jpg',
+    index: 2,
+    img: '/optimized/hero/slide-2-1600.webp',
+    srcSet: '/optimized/hero/slide-2-960.webp 960w, /optimized/hero/slide-2-1600.webp 1600w, /optimized/hero/slide-2-2200.webp 2200w',
     label: 'Modern Interior Design',
   },
   {
-    img: '/portfolio/cover/cover-3.jpeg',
+    index: 3,
+    img: '/optimized/hero/slide-3-1600.webp',
+    srcSet: '/optimized/hero/slide-3-960.webp 960w, /optimized/hero/slide-3-1600.webp 1600w, /optimized/hero/slide-3-2200.webp 2200w',
     label: 'Bespoke Living Spaces',
   },
   {
-    img: '/portfolio/residential/living-dining-wine-chandelier.jpg',
+    index: 4,
+    img: '/optimized/hero/slide-4-1600.webp',
+    srcSet: '/optimized/hero/slide-4-960.webp 960w, /optimized/hero/slide-4-1600.webp 1600w, /optimized/hero/slide-4-2200.webp 2200w',
     label: 'Contemporary Dining & Living',
   },
   {
-    img: '/portfolio/cover/cover-2.jpeg',
+    index: 5,
+    img: '/optimized/hero/slide-5-1600.webp',
+    srcSet: '/optimized/hero/slide-5-960.webp 960w, /optimized/hero/slide-5-1600.webp 1600w, /optimized/hero/slide-5-2200.webp 2200w',
     label: 'Visionary Architecture',
   },
   {
-    img: '/portfolio/cover/cover-4.jpeg',
+    index: 6,
+    img: '/optimized/hero/slide-6-1600.webp',
+    srcSet: '/optimized/hero/slide-6-960.webp 960w, /optimized/hero/slide-6-1600.webp 1600w, /optimized/hero/slide-6-2200.webp 2200w',
     label: 'Modern Turnkey Residence',
   },
 ];
 
 export function HomeHero() {
   const [i, setI] = useState(0);
+  const [hasTransitioned, setHasTransitioned] = useState(false);
+
   useEffect(() => {
-    const t = setInterval(() => setI((p) => (p + 1) % slides.length), 5500);
+    const t = setInterval(() => {
+      setHasTransitioned(true);
+      setI((p) => (p + 1) % slides.length);
+    }, 6500);
     return () => clearInterval(t);
   }, []);
 
+  const currentSlide = slides[i];
+
   return (
     <section className="h-hero" id="home">
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         <motion.div
           key={i}
           className="h-hero-bg"
-          style={{ backgroundImage: `url("${slides[i].img}")` }}
-          initial={{ opacity: 0, scale: 1.06 }}
+          initial={hasTransitioned ? { opacity: 0, scale: 1.04 } : false}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ opacity: { duration: 1.1 }, scale: { duration: 6, ease: 'linear' } }}
-        />
+          transition={{ opacity: { duration: 0.9 }, scale: { duration: 6, ease: 'linear' } }}
+        >
+          <img
+            src={currentSlide.img}
+            srcSet={currentSlide.srcSet}
+            sizes="100vw"
+            alt={currentSlide.label}
+            className="h-hero-bg-img"
+            fetchPriority={i === 0 ? 'high' : 'auto'}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding={i === 0 ? 'sync' : 'async'}
+          />
+        </motion.div>
       </AnimatePresence>
       <div className="h-hero-overlay" />
       <div className="h-hero-content">
-        <motion.span className="h-hero-tag" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+        <span className="h-hero-tag">
           Interior Design · Turnkey Execution · Architecture
-        </motion.span>
-        <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}>
+        </span>
+        <h1>
           Designing <em>Timeless Interiors</em> with Purpose.
-        </motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}>
+        </h1>
+        <p>
           Residential &amp; Commercial Interior Design &amp; Execution, Architectural Design, Structural Consultancy &amp; Exhibition Booth Design.
           <span className="h-hero-sub-location">Serving Clients Across Bangladesh &amp; Worldwide.</span>
-        </motion.p>
-        <motion.div className="h-hero-ctas" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}>
+        </p>
+        <div className="h-hero-ctas">
           <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Interiors</Link>
           <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> Book Free Consultation</Link>
-        </motion.div>
+        </div>
       </div>
       <div className="h-hero-dots">
         {slides.map((s, k) => (
-          <button key={s.label} aria-label={`Slide ${k + 1}`} className={k === i ? 'active' : ''} onClick={() => setI(k)} />
+          <button
+            key={s.label}
+            type="button"
+            aria-label={`Slide ${k + 1}: ${s.label}`}
+            className={k === i ? 'active' : ''}
+            onClick={() => {
+              setHasTransitioned(true);
+              setI(k);
+            }}
+          />
         ))}
       </div>
     </section>
@@ -367,9 +405,11 @@ export function TransformationShowcase() {
             >
               {/* AFTER (Finished Turnkey Space - Base Layer) */}
               <img
-                src="/portfolio/residential/living-marble-luxury-hall.jpg"
+                src="/portfolio/residential/living-marble-luxury-hall.webp"
                 alt="Completed Brown's Interior Modern Dhaka Living Room"
                 className="trans-img trans-after-img"
+                loading="lazy"
+                decoding="async"
                 draggable={false}
               />
 
@@ -379,9 +419,11 @@ export function TransformationShowcase() {
                 style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1600"
+                  src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&fm=webp&q=70&w=900"
                   alt="Raw bare shell room before interior work"
                   className="trans-img trans-before-img"
+                  loading="lazy"
+                  decoding="async"
                   draggable={false}
                 />
                 <div className="trans-blueprint-grid" aria-hidden="true" />
@@ -411,7 +453,7 @@ export function TransformationShowcase() {
                     setActiveSpot(idx);
                     if (sliderPos > 55) setSliderPos(18);
                   }}
-                  aria-label={`Inspect ${spot.title}`}
+                  aria-label={`${spot.num} — Inspect ${spot.title}`}
                 >
                   <span className="trans-hotspot-pulse" />
                   <span className="trans-hotspot-num">{spot.num}</span>
@@ -664,7 +706,7 @@ export function BlogPreview() {
       <div className="container">
         <SectionHead eyebrow="Insights" title="Latest" script="Articles" />
         <div className="grid-3">
-          {blogPosts.map((p, k) => (
+          {blogPreviews.map((p, k) => (
             <motion.div key={p.slug} {...fadeUp} transition={{ duration: 0.5, delay: k * 0.08 }}><BlogCard post={p} /></motion.div>
           ))}
         </div>

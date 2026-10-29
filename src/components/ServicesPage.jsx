@@ -239,7 +239,7 @@ export default function ServicesPage() {
             <div className="sp-spotlight-visual">
               <div className="sp-visual-card clay">
                 <img
-                  src="/portfolio/residential/living-marble-luxury-hall.jpg"
+                  src="/portfolio/residential/living-marble-luxury-hall.webp"
                   alt="Turnkey Interior Execution by Brown's Interior"
                   loading="lazy"
                 />

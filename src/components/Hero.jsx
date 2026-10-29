@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Hero.css';
 
 const backgrounds = [
-  '/portfolio/residential/living-marble-luxury-hall.jpg', // Grand Marble Living Suite
-  '/portfolio/residential/living-dining-wine-chandelier.jpg', // Luxury Dining & Wine Cellar
-  '/portfolio/interior/master-bedroom-client-fav.jpg', // Master Bedroom Suite
-  '/portfolio/office/office-conference-smartboard.jpeg', // Executive Commercial Boardroom
+  '/portfolio/residential/living-marble-luxury-hall.webp', // Grand Marble Living Suite
+  '/portfolio/residential/living-dining-wine-chandelier.webp', // Luxury Dining & Wine Cellar
+  '/portfolio/interior/master-bedroom-client-fav.webp', // Master Bedroom Suite
+  '/portfolio/office/office-conference-smartboard.webp', // Executive Commercial Boardroom
 ];
 
 export default function Hero() {

@@ -24,7 +24,13 @@ export default function FloatingContact() {
         </a>
       </div>
       
-      <button className="floating-toggle" onClick={() => setIsOpen(!isOpen)}>
+      <button
+        type="button"
+        className="floating-toggle"
+        aria-label={isOpen ? 'Close contact menu' : 'Open quick contact options'}
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
       </button>
     </div>

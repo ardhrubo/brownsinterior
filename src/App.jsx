@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -6,17 +6,22 @@ import Team from './components/Team';
 import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
 import Contact from './components/Contact';
-import ProjectDetail from './components/ProjectDetail';
-import ProjectsPage from './components/ProjectsPage';
-import ServicesPage from './components/ServicesPage';
-import ServiceDetail from './components/ServiceDetail';
 import {
   HomeHero, StatsBar, ServicesGrid, FeaturedProjects, TransformationShowcase,
   ProcessTimeline, TestimonialSlider, CostCTA, BlogPreview, SectionHead,
 } from './components/HomeSections';
 import SEO from './components/SEO';
-import NotFound from './components/NotFound';
-import { ProcessPage, TestimonialsPage, BlogPage, BlogPost, CostCalculatorPage } from './components/ExtraPages';
+
+const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
+const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
+const ServicesPage = lazy(() => import('./components/ServicesPage'));
+const ServiceDetail = lazy(() => import('./components/ServiceDetail'));
+const BlogPost = lazy(() => import('./components/BlogPost'));
+const NotFound = lazy(() => import('./components/NotFound'));
+const ProcessPage = lazy(() => import('./components/ExtraPages').then((m) => ({ default: m.ProcessPage })));
+const TestimonialsPage = lazy(() => import('./components/ExtraPages').then((m) => ({ default: m.TestimonialsPage })));
+const BlogPage = lazy(() => import('./components/ExtraPages').then((m) => ({ default: m.BlogPage })));
+const CostCalculatorPage = lazy(() => import('./components/ExtraPages').then((m) => ({ default: m.CostCalculatorPage })));
 
 const ScrollToTop = () => {
   const { pathname, key } = useLocation();
@@ -73,23 +78,25 @@ function App() {
     <Router>
       <ScrollToTop />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/services/:slug" element={<ServiceDetail />} />
-        <Route path="/services/:categorySlug/:slug" element={<ServiceDetail />} />
-        <Route path="/process" element={<ProcessPage />} />
-        <Route path="/testimonials" element={<TestimonialsPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/cost-estimator" element={<CostCalculatorPage />} />
-        <Route path="/cost-calculator" element={<CostCalculatorPage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/project/:id" element={<ProjectDetail />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<div style={{ minHeight: '70vh' }} />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/services/:categorySlug/:slug" element={<ServiceDetail />} />
+          <Route path="/process" element={<ProcessPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/cost-estimator" element={<CostCalculatorPage />} />
+          <Route path="/cost-calculator" element={<CostCalculatorPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
       <Footer />
       <FloatingContact />
     </Router>

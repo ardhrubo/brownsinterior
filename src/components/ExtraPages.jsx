@@ -7,7 +7,7 @@ import {
 import { FaWhatsapp } from 'react-icons/fa';
 import { SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
 import SEO from './SEO';
-import { testimonials, processSteps, blogPosts } from '../data/siteData';
+import { testimonials, processSteps, blogPreviews } from '../data/siteData';
 import '../styles/site.css';
 import './HomeSections.css';
 import './ExtraPages.css';
@@ -126,15 +126,13 @@ export function BlogPage() {
             sub="Design ideas, renovation guides, budget planning tips, and trends from the Brown's Interior team."
           />
           <div className="grid-3" style={{ marginTop: '2.5rem' }}>
-            {blogPosts.map((p) => <BlogCard key={p.slug} post={p} />)}
+            {blogPreviews.map((p) => <BlogCard key={p.slug} post={p} />)}
           </div>
         </div>
       </section>
     </main>
   );
 }
-
-export { default as BlogPost } from './BlogPost';
 
 /* ---------- Cost Calculator ---------- */
 // Studio benchmark calibrated for Dhaka Interior market (Engr. Aslam Sheikh):
@@ -367,7 +365,7 @@ export function CostCalculatorPage() {
             {/* Consultant Preview */}
             <div className="calc-consultant-preview">
               <img
-                src="/team/engr-aslam-sheikh.jpg"
+                src="/team/engr-aslam-sheikh.webp"
                 alt="Engr. Aslam Sheikh"
                 className="calc-consultant-avatar"
               />

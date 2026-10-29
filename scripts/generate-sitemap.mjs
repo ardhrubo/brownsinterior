@@ -9,7 +9,7 @@ const rootDir = path.resolve(__dirname, '..');
 async function generateSitemap() {
   const { servicesData } = await import('../src/data/servicesData.js');
   const { projectsData } = await import('../src/data/projectsData.js');
-  const { blogPosts } = await import('../src/data/siteData.js');
+  const { blogPosts } = await import('../src/data/blogData.js');
 
   const domain = 'https://www.brownsinterior.com';
   const today = new Date().toISOString().split('T')[0];

@@ -1,5 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
-
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
@@ -13,9 +11,17 @@ export const isSupabaseConfigured = Boolean(
     !supabaseAnonKey.includes('your-supabase-anon')
 );
 
-export const supabase = isSupabaseConfigured
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : null;
+let supabasePromise = null;
+
+export async function getSupabaseClient() {
+  if (!isSupabaseConfigured) return null;
+  if (!supabasePromise) {
+    supabasePromise = import('@supabase/supabase-js').then(({ createClient }) =>
+      createClient(supabaseUrl, supabaseAnonKey)
+    );
+  }
+  return supabasePromise;
+}
 
 export const WEB3FORMS_ACCESS_KEY =
   import.meta.env.VITE_WEB3FORMS_KEY || '0547aaaf-e1a6-4aa6-8f44-f281bf63776c';
@@ -108,6 +114,7 @@ export async function submitInquiry(formData) {
   const emailPromise = sendEmailNotification(record);
 
   // 2. Insert into Supabase if credentials are configured
+  const supabase = await getSupabaseClient();
   if (supabase) {
     const { data, error } = await supabase
       .from('inquiries')
