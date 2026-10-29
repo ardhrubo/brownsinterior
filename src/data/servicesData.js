@@ -1,6 +1,6 @@
 import { Sofa, Building2, HardHat, Hammer, Presentation, ClipboardList, Sparkles } from 'lucide-react';
 
-const img = (id, w = 800) => `https://images.unsplash.com/${id}?auto=format&fit=crop&fm=webp&q=72&w=${w}`;
+const img = (id, w = 640) => `https://images.unsplash.com/${id}?auto=format&fit=crop&fm=webp&q=70&w=${w}`;
 
 export const servicesData = [
   {

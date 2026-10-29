@@ -105,7 +105,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=800</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=640</image:loc>
       <image:title>Architecture</image:title>
     </image:image>
   </url>
@@ -115,7 +115,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Building Design &amp; Planning</image:title>
     </image:image>
   </url>
@@ -125,7 +125,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1541888086225-ee5315ffabfc?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1541888086225-ee5315ffabfc?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Floor Plans &amp; Elevations</image:title>
     </image:image>
   </url>
@@ -135,7 +135,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Exterior &amp; Facade Design</image:title>
     </image:image>
   </url>
@@ -145,7 +145,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Architectural Drawings</image:title>
     </image:image>
   </url>
@@ -155,7 +155,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=800</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=640</image:loc>
       <image:title>Engineering</image:title>
     </image:image>
   </url>
@@ -165,7 +165,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Structural Design &amp; Consultancy</image:title>
     </image:image>
   </url>
@@ -175,7 +175,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Structural Analysis</image:title>
     </image:image>
   </url>
@@ -185,7 +185,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Technical Drawings</image:title>
     </image:image>
   </url>
@@ -195,7 +195,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=800</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=640</image:loc>
       <image:title>Renovation &amp; Remodeling</image:title>
     </image:image>
   </url>
@@ -205,7 +205,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Residential Renovation</image:title>
     </image:image>
   </url>
@@ -215,7 +215,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Commercial Renovation</image:title>
     </image:image>
   </url>
@@ -225,7 +225,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Kitchen &amp; Bathroom Remodeling</image:title>
     </image:image>
   </url>
@@ -235,7 +235,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Space Optimization</image:title>
     </image:image>
   </url>
@@ -285,7 +285,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>3D Booth Visualization</image:title>
     </image:image>
   </url>
@@ -295,7 +295,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Booth Layout &amp; Technical Drawings</image:title>
     </image:image>
   </url>
@@ -305,7 +305,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=800</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=640</image:loc>
       <image:title>Project Management</image:title>
     </image:image>
   </url>
@@ -315,7 +315,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Site Supervision</image:title>
     </image:image>
   </url>
@@ -325,7 +325,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Project Planning &amp; Coordination</image:title>
     </image:image>
   </url>
@@ -335,7 +335,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Material Selection</image:title>
     </image:image>
   </url>
@@ -345,7 +345,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Cost Estimation &amp; Budget Planning</image:title>
     </image:image>
   </url>
@@ -395,7 +395,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=72&amp;w=1400</image:loc>
+      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
       <image:title>Electrical &amp; Plumbing Coordination</image:title>
     </image:image>
   </url>

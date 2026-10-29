@@ -2,16 +2,16 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import Team from './components/Team';
 import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
-import Contact from './components/Contact';
 import {
   HomeHero, StatsBar, ServicesGrid, FeaturedProjects, TransformationShowcase,
   ProcessTimeline, TestimonialSlider, CostCTA, BlogPreview, SectionHead,
 } from './components/HomeSections';
 import SEO from './components/SEO';
 
+const Team = lazy(() => import('./components/Team'));
+const Contact = lazy(() => import('./components/Contact'));
 const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
 const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
 const ServicesPage = lazy(() => import('./components/ServicesPage'));
@@ -43,10 +43,12 @@ const Home = () => (
     <FeaturedProjects />
     <TransformationShowcase />
     <ProcessTimeline showCta />
-    <Team />
-    <TestimonialSlider />
-    <Contact showHero={false} />
-    <BlogPreview />
+    <Suspense fallback={null}>
+      <Team />
+      <TestimonialSlider />
+      <Contact showHero={false} />
+      <BlogPreview />
+    </Suspense>
   </main>
 );
 
