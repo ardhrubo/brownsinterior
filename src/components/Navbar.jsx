@@ -56,7 +56,7 @@ export default function Navbar() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <img src="/logo.svg" alt="Brown's Interior Logo" className="navbar-logo-img" />
+          <img src="/logo.svg" alt="Brown's Interior Logo" width="302" height="46" className="navbar-logo-img" />
         </Link>
 
         {/* Desktop Nav */}
@@ -81,71 +81,73 @@ export default function Navbar() {
                   </NavLink>
 
                   {/* Cascading Multi-Menu Dropdown */}
-                  <div className={`services-multimenu ${menuOpen ? 'open' : ''}`}>
-                    <ul className="multimenu-primary">
-                      {servicesData.map((s) => {
-                        const Icon = s.icon;
-                        const isCatActive = activeCategory === s.slug;
-                        return (
-                          <li
-                            key={s.slug}
-                            className={`multimenu-item ${isCatActive ? 'active' : ''}`}
-                            onMouseEnter={() => setActiveCategory(s.slug)}
-                          >
-                            <Link
-                              to={`/services/${s.slug}`}
-                              className={`multimenu-cat-link ${pathname === `/services/${s.slug}` ? 'current' : ''}`}
-                              onClick={() => setMenuOpen(false)}
+                  {menuOpen && (
+                    <div className="services-multimenu open">
+                      <ul className="multimenu-primary">
+                        {servicesData.map((s) => {
+                          const Icon = s.icon;
+                          const isCatActive = activeCategory === s.slug;
+                          return (
+                            <li
+                              key={s.slug}
+                              className={`multimenu-item ${isCatActive ? 'active' : ''}`}
+                              onMouseEnter={() => setActiveCategory(s.slug)}
                             >
-                              <span className="multimenu-cat-icon">
-                                <Icon size={16} />
-                              </span>
-                              <span className="multimenu-cat-text">{s.title}</span>
-                              <ChevronRight size={15} className="multimenu-arrow" />
-                            </Link>
+                              <Link
+                                to={`/services/${s.slug}`}
+                                className={`multimenu-cat-link ${pathname === `/services/${s.slug}` ? 'current' : ''}`}
+                                onClick={() => setMenuOpen(false)}
+                              >
+                                <span className="multimenu-cat-icon">
+                                  <Icon size={16} />
+                                </span>
+                                <span className="multimenu-cat-text">{s.title}</span>
+                                <ChevronRight size={15} className="multimenu-arrow" />
+                              </Link>
 
-                            {/* Submenu flying out right beside this service category */}
-                            <div className={`multimenu-flyout ${menuOpen && isCatActive ? 'visible' : ''}`}>
-                              <div className="multimenu-flyout-head">
-                                <Link
-                                  to={`/services/${s.slug}`}
-                                  className="multimenu-flyout-title"
-                                  onClick={() => setMenuOpen(false)}
-                                >
-                                  <span>{s.title}</span>
-                                  <ArrowRight size={13} />
-                                </Link>
-                                <p>{s.tagline}</p>
+                              {/* Submenu flying out right beside this service category */}
+                              <div className={`multimenu-flyout ${isCatActive ? 'visible' : ''}`}>
+                                <div className="multimenu-flyout-head">
+                                  <Link
+                                    to={`/services/${s.slug}`}
+                                    className="multimenu-flyout-title"
+                                    onClick={() => setMenuOpen(false)}
+                                  >
+                                    <span>{s.title}</span>
+                                    <ArrowRight size={13} />
+                                  </Link>
+                                  <p>{s.tagline}</p>
+                                </div>
+
+                                <ul className="multimenu-sub-list">
+                                  {s.options.map((opt) => (
+                                    <li key={opt.slug}>
+                                      <Link
+                                        to={`/services/${opt.slug}`}
+                                        className={`multimenu-sub-link ${pathname === `/services/${opt.slug}` ? 'active' : ''}`}
+                                        onClick={() => setMenuOpen(false)}
+                                      >
+                                        <span className="multimenu-sub-dot" />
+                                        <span className="multimenu-sub-label">{opt.title}</span>
+                                        <ArrowRight size={13} className="multimenu-sub-go" />
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
                               </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
 
-                              <ul className="multimenu-sub-list">
-                                {s.options.map((opt) => (
-                                  <li key={opt.slug}>
-                                    <Link
-                                      to={`/services/${opt.slug}`}
-                                      className={`multimenu-sub-link ${pathname === `/services/${opt.slug}` ? 'active' : ''}`}
-                                      onClick={() => setMenuOpen(false)}
-                                    >
-                                      <span className="multimenu-sub-dot" />
-                                      <span className="multimenu-sub-label">{opt.title}</span>
-                                      <ArrowRight size={13} className="multimenu-sub-go" />
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-
-                    <div className="multimenu-footer">
-                      <Link to="/services" className="multimenu-all-link" onClick={() => setMenuOpen(false)}>
-                        <span>All Services Overview</span>
-                        <ArrowRight size={14} />
-                      </Link>
+                      <div className="multimenu-footer">
+                        <Link to="/services" className="multimenu-all-link" onClick={() => setMenuOpen(false)}>
+                          <span>All Services Overview</span>
+                          <ArrowRight size={14} />
+                        </Link>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </li>
               ) : (
                 <li key={l.to}>
