@@ -62,15 +62,6 @@ export const blogPreviews = [
     "excerpt": "ফ্ল্যাট বা অফিস সাজাতে গিয়ে বাজেট, কাজের মান ও সময় নিয়ে মনে নানা প্রশ্ন জাগে। প্রশ্নোত্তরে জানুন কেন Brown’s Interiors সবার ভরসার জায়গা।"
   },
   {
-    "slug": "browns-interiors-trusted-interior-studio",
-    "title": "কীভাবে Brown’s Interiors বাংলাদেশের অন্যতম সেরা ইন্টেরিয়র স্টুডিও হয়ে উঠল?",
-    "category": "Studio Spotlight",
-    "date": "Nov 15, 2026",
-    "readTime": "6 min read",
-    "image": "/portfolio/residential/living-panoramic-library.webp",
-    "excerpt": "সাধারণ ডেকোরেটরের চেয়ে আমাদের কাজের মান, প্রকৌশলগত পরিকল্পনা ও ফিনিশিং কোথায় আলাদা? প্রশ্নোত্তরে জানুন বিস্তারিত।"
-  },
-  {
     "slug": "how-browns-interiors-works-process",
     "title": "কীভাবে কাজ করে Brown’s Interiors? জেনে নিন আমাদের কাজের ধরন",
     "category": "Work Process",
@@ -87,6 +78,15 @@ export const blogPreviews = [
     "readTime": "9 min read",
     "image": "/portfolio/residential/bedroom-dark-luxury-suite.webp",
     "excerpt": "Discover expert interior design strategies tailored for Dhaka’s 800 to 1,500 sq ft apartments. Learn how custom furniture, vertical storage, and strategic color balance create breathtaking, spacious sanctuaries."
+  },
+  {
+    "slug": "browns-interiors-trusted-interior-studio",
+    "title": "কীভাবে Brown’s Interiors বাংলাদেশের অন্যতম সেরা ইন্টেরিয়র স্টুডিও হয়ে উঠল?",
+    "category": "Studio Spotlight",
+    "date": "Nov 15, 2026",
+    "readTime": "6 min read",
+    "image": "/portfolio/residential/living-panoramic-library.webp",
+    "excerpt": "সাধারণ ডেকোরেটরের চেয়ে আমাদের কাজের মান, প্রকৌশলগত পরিকল্পনা ও ফিনিশিং কোথায় আলাদা? প্রশ্নোত্তরে জানুন বিস্তারিত।"
   },
   {
     "slug": "exhibition-booth-that-stands-out",
