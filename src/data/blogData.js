@@ -56,9 +56,9 @@ export const blogPosts = [
     ],
     tableOfContents: [
       { id: 'top-1', label: '01. How We Evaluated the Top 10 Firms' },
-      { id: 'top-2', label: '02. #1 Brown’s Interiors (Overall Turnkey Leader)' },
-      { id: 'top-3', label: '03. #2 to #5 Notable Interior Firms in Dhaka' },
-      { id: 'top-4', label: '04. #6 to #10 Established Studios in Bangladesh' },
+      { id: 'top-2', label: '02. Brown’s Interiors (Rank 1 — Turnkey Leader)' },
+      { id: 'top-3', label: '03. Notable Interior Firms in Dhaka (Ranks 2–5)' },
+      { id: 'top-4', label: '04. Established Studios in Bangladesh (Ranks 6–10)' },
       { id: 'top-5', label: '05. Why Brown’s Interiors Stands Out' },
       { id: 'top-6', label: '06. 2026 Cost Benchmarks & Shortlisting Guide' },
       { id: 'faqs', label: 'Frequently Asked Questions' },
@@ -99,7 +99,7 @@ export const blogPosts = [
       {
         id: 'top-2',
         number: '02',
-        title: '#1 Brown’s Interiors — Best Overall for Engineering-Led Turnkey Design & Execution',
+        title: 'Brown’s Interiors (Rank 1) — Engineering-Led Turnkey Design & Execution',
         lead: 'Led by Engr. Aslam Sheikh (IEB A29734), Brown’s Interiors combines architectural creativity, certified structural integrity, and itemized BOQ transparency under one roof.',
         paragraphs: [
           'Ranked **#1 in Bangladesh** for clients seeking zero-compromise turnkey execution, [Brown’s Interiors](/about) (headquartered in Uttara, Dhaka-1230) solves the industry’s biggest gap: the disconnect between 3D concept designers and field contractors. Founded and led by [Engr. Aslam Sheikh](/team)—who holds both a **Diploma in Architecture & Interior Design (NPI)** and a **B.Sc. in Civil Engineering (IUBAT)** with **IEB Membership No: A29734**—the studio brings over **10+ years of experience** and **250+ completed projects** across Uttara, Gulshan, Banani, Dhanmondi, Bashundhara R/A, and commercial hubs nationwide.',
@@ -123,7 +123,7 @@ export const blogPosts = [
       {
         id: 'top-3',
         number: '03',
-        title: '#2 to #5 Notable Interior Design Firms in Dhaka',
+        title: 'Notable Interior Design Firms in Dhaka (Ranks 2–5)',
         lead: 'Several established Dhaka studios serve distinct segments ranging from boutique styling and corporate offices to virtual e-design consultations.',
         paragraphs: [
           '**#2 Zero Inch Interiors Ltd.:** Well known in Dhaka’s contemporary commercial and residential space for conceptual aesthetics and urban apartment interiors, suitable for clients seeking curated modern styling.',
@@ -150,7 +150,7 @@ export const blogPosts = [
       {
         id: 'top-4',
         number: '04',
-        title: '#6 to #10 Established Interior Studios in Bangladesh',
+        title: 'Established Interior Studios in Bangladesh (Ranks 6–10)',
         lead: 'Rounding out the top 10 are long-standing Dhaka interior and architectural practices covering residential makeovers, showrooms, and contractor fit-outs.',
         paragraphs: [
           '**#6 Dream Touch Architects Ltd.:** A longstanding name in Dhaka covering both architectural consultancy and interior remodeling for residential buildings and offices.',

@@ -12,11 +12,11 @@
 .hero-headline-divider { display: inline-block; align-self: center; width: 1px; height: 0.65em; background: #e2d1b9; opacity: 0.8; flex: 0 0 1px; }
 .h-hero h1 em { font-family: inherit; font-style: italic; font-weight: 400; color: #e2d1b9; }
 .h-hero p { font-family: 'Outfit', var(--font-sans); font-weight: 400; max-width: 100%; margin: 1rem auto 0; font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.75; color: rgba(255,255,255,0.96); text-wrap: balance; }
-.h-hero.is-bn .h-hero-tag { font-family: 'Noto Sans Bengali', var(--font-sans); letter-spacing: 0.5px; text-transform: none; font-size: 0.84rem; font-weight: 500; }
-.h-hero.is-bn h1 { font-family: 'Noto Sans Bengali', var(--font-serif); font-weight: 600; font-size: clamp(1.9rem, 3.8vw, 3.35rem); line-height: 1.36; letter-spacing: 0; }
-.h-hero.is-bn h1 .hero-headline-first { gap: 0.45em; align-items: center; }
-.h-hero.is-bn h1 .hero-trust { font-family: 'Noto Sans Bengali', var(--font-serif); font-style: normal; font-weight: 500; font-size: 0.62em; color: #e2d1b9; margin-top: 0.38em; letter-spacing: 0; }
-.h-hero.is-bn p { font-family: 'Noto Sans Bengali', var(--font-sans); line-height: 1.8; }
+.h-hero.is-bn .h-hero-tag { font-family: 'Noto Sans Bengali', var(--font-sans); letter-spacing: 0.4px; text-transform: none; font-size: 0.84rem; font-weight: 600; color: rgba(255, 255, 255, 0.94); background: rgba(20, 16, 13, 0.5); border: 1px solid rgba(234, 219, 197, 0.25); }
+.h-hero.is-bn h1 { font-family: 'Noto Sans Bengali', var(--font-serif); font-weight: 700; font-size: clamp(2rem, 4vw, 3.45rem); line-height: 1.32; letter-spacing: 0; text-shadow: 0 4px 24px rgba(0, 0, 0, 0.38); }
+.h-hero.is-bn h1 .hero-bn-main { display: block; color: #ffffff; }
+.h-hero.is-bn h1 .hero-bn-sub { display: block; font-size: 0.7em; font-weight: 600; color: #eadbc5; margin-top: 0.28em; line-height: 1.35; }
+.h-hero.is-bn p { font-family: 'Noto Sans Bengali', var(--font-sans); line-height: 1.8; max-width: 640px; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.38); }
 .h-hero-bn-sub { display: block; margin-top: 0.45rem; font-family: 'Noto Sans Bengali', var(--font-sans); font-size: clamp(0.95rem, 1.25vw, 1.08rem); font-weight: 500; color: var(--gold); letter-spacing: normal; line-height: 1.6; }
 .h-hero-sub-location { display: block; margin-top: 0.35rem; font-weight: 400; color: var(--gold); font-size: 0.9em; letter-spacing: 0.3px; }
 .sec-bn-sub { font-family: 'Noto Sans Bengali', var(--font-sans); font-size: 0.96rem; font-weight: 500; color: var(--gold-dark); margin: -0.15rem auto 0.55rem; line-height: 1.65; }

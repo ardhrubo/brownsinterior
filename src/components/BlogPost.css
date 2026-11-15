@@ -21,6 +21,8 @@
   background: #fbfaf7;
   color: #2c2825;
   min-height: 100vh;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 
 /* Breadcrumbs */

@@ -121,26 +121,45 @@ export function HomeHero() {
       </AnimatePresence>
       <div className="h-hero-overlay" />
       <div className="h-hero-content">
-        <span className="h-hero-tag">
-          {isBn ? 'প্ল্যানিং  |  ডিজাইন  |  বাস্তবায়ন' : 'PLANNING | DESIGN | EXECUTION'}
-        </span>
-        <h1>
-          <span className="hero-headline-first">
-            {isBn ? 'সুন্দর ডিজাইন' : 'Beautiful Design'}{' '}
-            <span className="hero-headline-divider" aria-hidden="true" />{' '}
-            <span className="hero-quality">{isBn ? 'মানসম্মত কাজ' : 'Quality Work'}</span>
-          </span>
-          <em className="hero-trust">{isBn ? 'বিশ্বস্ত সেবা' : 'Trusted Service'}</em>
-        </h1>
-        <p>
-          {isBn
-            ? 'সারা বাংলাদেশে ফ্ল্যাট, ডুপ্লেক্স, অফিস ও এক্সিবিশন বুথের কমপ্লিট Interior ও Architectural Design সার্ভিস।'
-            : 'Complete Interior & Exterior Design and Execution Services Across Bangladesh.'}
-        </p>
-        <div className="h-hero-ctas">
-          <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> {isBn ? 'প্রজেক্ট দেখুন' : 'Explore Interiors'}</Link>
-          <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> {isBn ? 'ফ্রি পরামর্শ নিন' : 'Book Free Consultation'}</Link>
-        </div>
+        {isBn ? (
+          <>
+            <span className="h-hero-tag">
+              ইঞ্জিনিয়ারিং ও ইন্টেরিয়র স্টুডিও · ঢাকা
+            </span>
+            <h1>
+              <span className="hero-bn-main">স্বপ্নের বাসা ও অফিস</span>
+              <span className="hero-bn-sub">সঠিক ডিজাইনে, নির্ধারিত বাজেটে</span>
+            </h1>
+            <p>
+              ডিজাইন থেকে চাবি হস্তান্তর — লিখিত বাজেট ও নিজস্ব টিমের তত্ত্বাবধানে সারা বাংলাদেশে পূর্ণাঙ্গ কাজ।
+            </p>
+            <div className="h-hero-ctas">
+              <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> প্রজেক্ট দেখুন</Link>
+              <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> ফ্রি পরামর্শ নিন</Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <span className="h-hero-tag">
+              PLANNING | DESIGN | EXECUTION
+            </span>
+            <h1>
+              <span className="hero-headline-first">
+                Beautiful Design{' '}
+                <span className="hero-headline-divider" aria-hidden="true" />{' '}
+                <span className="hero-quality">Quality Work</span>
+              </span>
+              <em className="hero-trust">Trusted Service</em>
+            </h1>
+            <p>
+              Complete Interior &amp; Exterior Design and Execution Services Across Bangladesh.
+            </p>
+            <div className="h-hero-ctas">
+              <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Interiors</Link>
+              <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> Book Free Consultation</Link>
+            </div>
+          </>
+        )}
       </div>
       <div className="h-hero-dots">
         {slides.map((s, k) => (
