@@ -53,6 +53,36 @@ export const processSteps = [
 ];
 export const blogPreviews = [
   {
+    "slug": "top-10-best-interior-design-company-in-bangladesh",
+    "lang": "en",
+    "title": "Top 10 Best Interior Design Companies in Bangladesh (2026 Ranking & Guide)",
+    "category": "Industry Ranking",
+    "date": "Nov 15, 2026",
+    "readTime": "11 min read",
+    "image": "/portfolio/residential/living-marble-luxury-hall.webp",
+    "excerpt": "Compare the top 10 best interior design companies in Bangladesh for 2026—and see why Brown’s Interiors ranks #1 for engineering-led turnkey execution and transparent BOQs."
+  },
+  {
+    "slug": "best-interior-design-company-in-bangladesh-2026-2027",
+    "lang": "en",
+    "title": "Best Interior Design Company in Bangladesh (2026–2027 BD Edition): Costs, Trends & Turnkey Guide",
+    "category": "2026–2027 BD Guide",
+    "date": "Nov 15, 2026",
+    "readTime": "10 min read",
+    "image": "/portfolio/residential/living-panoramic-library.webp",
+    "excerpt": "Looking for the best interior design company in BD for 2026 & 2027? Explore Dhaka sq ft cost benchmarks, 2027 design trends, and why Brown’s Interiors (IEB A29734) ranks #1."
+  },
+  {
+    "slug": "best-interior-designer-in-bangladesh",
+    "lang": "en",
+    "title": "Best Interior Designer in Bangladesh: What Sets Engr. Aslam Sheikh & Brown’s Interiors Apart",
+    "category": "Designer Spotlight",
+    "date": "Nov 15, 2026",
+    "readTime": "9 min read",
+    "image": "/portfolio/residential/living-dining-neoclassical.webp",
+    "excerpt": "Searching for the best interior designer in Bangladesh? Discover how Engr. Aslam Sheikh (IEB A29734) combines architectural artistry, civil engineering, and 250+ turnkey projects."
+  },
+  {
     "slug": "why-browns-interiors-bangladesh",
     "lang": "bn",
     "title": "কেন Brown’s Interiors সবার ভরসার জায়গা?",

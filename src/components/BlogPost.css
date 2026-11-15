@@ -88,12 +88,19 @@
 
 .blog-main-title {
   font-family: var(--font-display, 'Playfair Display', serif, Georgia);
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-size: clamp(1.95rem, 4vw, 3.05rem);
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.24;
   color: #1a1816;
   margin: 0.5rem 0 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
+}
+
+[lang="bn"] .blog-main-title,
+[lang="bn"] .blog-section-title {
+  font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
+  letter-spacing: normal;
+  line-height: 1.38;
 }
 
 .blog-subtitle {
@@ -283,24 +290,22 @@
 }
 
 .blog-intro-lead {
-  font-size: 1.15rem;
-  line-height: 1.85;
-  color: #3b3734;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px dashed rgba(44, 40, 37, 0.15);
+  font-size: 1.1rem;
+  line-height: 1.82;
+  color: #36322f;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.65rem;
+  border-bottom: 1px solid rgba(44, 40, 37, 0.1);
 }
 .blog-intro-lead p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 }
-.blog-intro-lead p:first-of-type::first-letter {
-  font-family: var(--font-display, serif);
-  font-size: 3.5rem;
-  float: left;
-  line-height: 0.8;
-  margin-right: 0.75rem;
-  margin-top: 0.2rem;
-  color: #a88a66;
+.blog-intro-lead p:last-child {
+  margin-bottom: 0;
+}
+.blog-intro-lead p strong,
+.blog-section-body p strong {
+  color: #1a1816;
   font-weight: 700;
 }
 
@@ -385,28 +390,24 @@
 
 /* Contextual Inline Hyperlinks */
 .blog-inline-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
+  display: inline;
   font-weight: 600;
-  color: #1a1816;
-  text-decoration: none;
-  background: rgba(201, 181, 156, 0.16);
-  padding: 0.1rem 0.45rem;
-  border-radius: 5px;
-  border-bottom: 2px solid #a88a66;
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: normal;
+  color: #7d5f3c;
+  text-decoration: underline;
+  text-decoration-color: rgba(168, 138, 102, 0.55);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 .blog-inline-link:hover {
-  background: #a88a66;
-  color: #ffffff !important;
-  text-decoration: none;
-  transform: translateY(-1.5px);
-  box-shadow: 0 4px 12px rgba(168, 138, 102, 0.35);
+  color: #1a1816;
+  text-decoration-color: #1a1816;
 }
 .blog-inline-link .inline-arrow {
-  opacity: 0.6;
+  display: inline-block;
+  vertical-align: -2px;
+  margin-left: 2px;
+  opacity: 0.7;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .blog-inline-link:hover .inline-arrow {
