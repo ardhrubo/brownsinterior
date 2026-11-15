@@ -54,9 +54,9 @@ export function ProcessPage() {
       />
       <div className="container" style={{ marginBottom: '1.5rem' }}>
         <SectionHead
-          eyebrow="Proven Methodology"
-          title="Our Execution"
-          script="Process"
+          eyebrow={isBn ? 'আমাদের কাজের নিয়ম' : 'Proven Methodology'}
+          title={isBn ? 'কাজের' : 'Our Execution'}
+          script={isBn ? 'ধাপসমূহ' : 'Process'}
           as="h1"
           sub={
             isBn
@@ -69,9 +69,9 @@ export function ProcessPage() {
       <section className="section cream">
         <div className="container">
           <SectionHead
-            eyebrow="Step-by-Step Journey"
-            title="What to"
-            script="Expect"
+            eyebrow={isBn ? 'ধাপে ধাপে অগ্রগতি' : 'Step-by-Step Journey'}
+            title={isBn ? 'কীভাবে কাজ' : 'What to'}
+            script={isBn ? 'এগিয়ে যায়' : 'Expect'}
             sub={
               isBn
                 ? 'আপনার প্রজেক্টের প্রতিটি পর্যায় আমাদের আর্কিটেক্ট ও ইঞ্জিনিয়ারদের সরাসরি তত্ত্বাবধানে সম্পন্ন হয়।'
@@ -93,10 +93,10 @@ export function ProcessPage() {
                   <span className="tl-dot">{String(k + 1).padStart(2, '0')}</span>
                   <div className="tl-card clay">
                     <div className="tl-meta-row">
-                      {s.phase && <span className="tl-phase">{s.phase}</span>}
-                      {s.duration && <span className="tl-duration">{s.duration}</span>}
+                      {(localized.phase || s.phase) && <span className="tl-phase">{localized.phase || s.phase}</span>}
+                      {(localized.duration || s.duration) && <span className="tl-duration">{localized.duration || s.duration}</span>}
                     </div>
-                    <h3>{s.title}</h3>
+                    <h3>{localized.title || s.title}</h3>
                     <p>{localized.text}</p>
                     {s.deliverables && (
                       <div className="tl-tags">
@@ -129,9 +129,9 @@ export function TestimonialsPage() {
       <section className="section cream" style={{ paddingTop: '1.5rem' }}>
         <div className="container">
           <SectionHead
-            eyebrow="Client Stories"
-            title="Words From Our"
-            script="Clients"
+            eyebrow={isBn ? 'ক্লায়েন্টদের অভিজ্ঞতা' : 'Client Stories'}
+            title={isBn ? 'ক্লায়েন্টদের' : 'Words From Our'}
+            script={isBn ? 'মতামত' : 'Clients'}
             as="h1"
             sub={
               isBn
@@ -175,9 +175,9 @@ export function BlogPage() {
       <section className="section" style={{ paddingTop: '1rem' }}>
         <div className="container">
           <SectionHead
-            eyebrow="Insights & Guides"
-            title="Design"
-            script="Journal"
+            eyebrow={isBn ? 'পরামর্শ ও গাইড' : 'Insights & Guides'}
+            title={isBn ? 'ডিজাইন' : 'Design'}
+            script={isBn ? 'ব্লগ' : 'Journal'}
             as="h1"
             sub={
               isBn
@@ -301,9 +301,9 @@ export function CostCalculatorPage() {
       />
       <div className="container" style={{ marginBottom: '1.5rem' }}>
         <SectionHead
-          eyebrow="Instant Budget Calculator"
-          title="Estimate"
-          script="Your Space"
+          eyebrow={isBn ? 'বাজেট ক্যালকুলেটর' : 'Instant Budget Calculator'}
+          title={isBn ? 'সম্ভাব্য খরচ' : 'Estimate'}
+          script={isBn ? 'হিসাব করুন' : 'Your Space'}
           as="h1"
           sub={
             isBn

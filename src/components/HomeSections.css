@@ -12,6 +12,11 @@
 .hero-headline-divider { display: inline-block; align-self: center; width: 1px; height: 0.65em; background: #e2d1b9; opacity: 0.8; flex: 0 0 1px; }
 .h-hero h1 em { font-family: inherit; font-style: italic; font-weight: 400; color: #e2d1b9; }
 .h-hero p { font-family: 'Outfit', var(--font-sans); font-weight: 400; max-width: 100%; margin: 1rem auto 0; font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.75; color: rgba(255,255,255,0.96); text-wrap: balance; }
+.h-hero.is-bn .h-hero-tag { font-family: 'Noto Sans Bengali', var(--font-sans); letter-spacing: 0.5px; text-transform: none; font-size: 0.84rem; font-weight: 500; }
+.h-hero.is-bn h1 { font-family: 'Noto Sans Bengali', var(--font-serif); font-weight: 600; font-size: clamp(1.9rem, 3.8vw, 3.35rem); line-height: 1.36; letter-spacing: 0; }
+.h-hero.is-bn h1 .hero-headline-first { gap: 0.45em; align-items: center; }
+.h-hero.is-bn h1 .hero-trust { font-family: 'Noto Sans Bengali', var(--font-serif); font-style: normal; font-weight: 500; font-size: 0.62em; color: #e2d1b9; margin-top: 0.38em; letter-spacing: 0; }
+.h-hero.is-bn p { font-family: 'Noto Sans Bengali', var(--font-sans); line-height: 1.8; }
 .h-hero-bn-sub { display: block; margin-top: 0.45rem; font-family: 'Noto Sans Bengali', var(--font-sans); font-size: clamp(0.95rem, 1.25vw, 1.08rem); font-weight: 500; color: var(--gold); letter-spacing: normal; line-height: 1.6; }
 .h-hero-sub-location { display: block; margin-top: 0.35rem; font-weight: 400; color: var(--gold); font-size: 0.9em; letter-spacing: 0.3px; }
 .sec-bn-sub { font-family: 'Noto Sans Bengali', var(--font-sans); font-size: 0.96rem; font-weight: 500; color: var(--gold-dark); margin: -0.15rem auto 0.55rem; line-height: 1.65; }
@@ -804,6 +809,8 @@
 .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
 .cta-band h2 { font-size: clamp(1.8rem, 3.3vw, 2.5rem); font-weight: 600; }
 .cta-band h2 em { font-family: var(--font-script); font-style: normal; font-weight: 400; color: var(--gold); font-size: 1.4em; }
+.cta-band.is-bn h2 { font-family: 'Noto Sans Bengali', var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.4; font-weight: 700; letter-spacing: 0; }
+.cta-band.is-bn h2 em { font-family: inherit; font-style: normal; font-weight: 700; font-size: 1em; color: var(--gold); }
 .cta-band p { opacity: 0.82; margin-top: 0.4rem; }
 .cta-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; }
 
@@ -840,6 +847,7 @@
   .h-hero-content { width: 100%; max-width: 540px; padding: 0 1.5rem; }
   .h-hero-tag { font-size: 0.62rem; letter-spacing: 1.8px; padding: 0.45rem 0.8rem; margin-bottom: 1.35rem; }
   .h-hero h1 { font-size: clamp(2.15rem, 9.4vw, 3.2rem); line-height: 1.24; letter-spacing: -0.035em; }
+  .h-hero.is-bn h1 { font-size: clamp(1.85rem, 7.8vw, 2.65rem); line-height: 1.36; letter-spacing: 0; }
   .h-hero h1 .hero-headline-first { display: block; white-space: normal; }
   .h-hero h1 .hero-quality { display: block; }
   .h-hero h1 .hero-trust { margin-top: 0.5em; font-size: 0.7em; }

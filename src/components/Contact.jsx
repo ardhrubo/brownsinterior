@@ -93,9 +93,9 @@ export default function Contact({ showHero = true }) {
       <section className={`contact-page-section ${showHero ? 'page-start' : ''}`} id="contact">
         <div className="container">
           <SectionHead
-            eyebrow="Get In Touch"
-            title="Book a"
-            script="Consultation"
+            eyebrow={isBn ? 'যোগাযোগ' : 'Get In Touch'}
+            title={isBn ? 'ফ্রি পরামর্শ' : 'Book a'}
+            script={isBn ? 'বুক করুন' : 'Consultation'}
             as={showHero ? 'h1' : 'h2'}
             sub={
               isBn
@@ -115,7 +115,7 @@ export default function Contact({ showHero = true }) {
             >
               <div className="contact-info-head">
                 <span className="contact-panel-tag">Brown's Interior</span>
-                <h3>Let's Talk About Your Space</h3>
+                <h3>{isBn ? 'আপনার প্রজেক্ট নিয়ে কথা বলুন' : "Let's Talk About Your Space"}</h3>
                 <p className="info-desc">
                   {isBn
                     ? 'ফ্রি পরামর্শ বা সাইট ভিজিটের জন্য কল করুন, হোয়াটসঅ্যাপ করুন অথবা মেসেজ পাঠান।'

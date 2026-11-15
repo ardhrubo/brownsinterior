@@ -29,6 +29,38 @@
 .sec-sub { color: var(--text-muted); line-height: 1.75; }
 .section.dark .sec-sub { color: rgba(255,255,255,0.7); }
 
+.sec-head.is-bn .sec-eyebrow,
+.about-section.is-bn .sec-eyebrow {
+  font-family: 'Noto Sans Bengali', var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.sec-head.is-bn .sec-title,
+.about-section.is-bn .about-title {
+  font-family: 'Noto Sans Bengali', var(--font-serif);
+  font-size: clamp(1.75rem, 3.4vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: 0;
+}
+.sec-head.is-bn .sec-title em,
+.about-section.is-bn .about-title em {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+  color: var(--gold-dark);
+}
+.section.dark .sec-head.is-bn .sec-title em {
+  color: var(--gold);
+}
+.sec-head.is-bn .sec-sub {
+  font-family: 'Noto Sans Bengali', var(--font-sans);
+  line-height: 1.8;
+}
+
 .clay {
   background: #fff;
   border-radius: var(--radius);

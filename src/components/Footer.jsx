@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { servicesData } from '../data/servicesData';
 import { getWhatsAppUrl } from '../data/siteData';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage, serviceCategoryBn } from '../context/LanguageContext';
 import './Footer.css';
 
 const quickLinks = [
@@ -26,7 +26,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div>
-            <h3>Have a project in mind?</h3>
+            <h3>{isBn ? 'নতুন প্রজেক্টের কথা ভাবছেন?' : 'Have a project in mind?'}</h3>
             <p>
               {isBn
                 ? 'সৃজনশীল ডিজাইন। পেশাদার সেবা। নির্ভরযোগ্য মান।'
@@ -57,12 +57,12 @@ export default function Footer() {
           </div>
 
           <div className="footer-links">
-            <h4 className="footer-title">Our Services</h4>
+            <h4 className="footer-title">{isBn ? 'আমাদের সার্ভিসসমূহ' : 'Our Services'}</h4>
             <ul>
               {servicesData.map((s) => (
                 <li key={s.slug}>
                   <Link to={`/services/${s.slug}`}>
-                    {s.shortTitle || s.title}
+                    {isBn ? (serviceCategoryBn[s.slug]?.shortTitle || s.shortTitle || s.title) : (s.shortTitle || s.title)}
                   </Link>
                 </li>
               ))}
@@ -70,7 +70,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-links">
-            <h4 className="footer-title">Quick Links</h4>
+            <h4 className="footer-title">{isBn ? 'প্রয়োজনীয় লিংক' : 'Quick Links'}</h4>
             <ul>
               {quickLinks.map((l) => (
                 <li key={l.to}>
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-contact">
-            <h4 className="footer-title">Contact Us</h4>
+            <h4 className="footer-title">{isBn ? 'যোগাযোগের ঠিকানা' : 'Contact Us'}</h4>
             <a href="https://maps.google.com/?q=Uttara,Dhaka,Bangladesh" target="_blank" rel="noreferrer" className="contact-item"><MapPin size={18} /><span>Uttara, Dhaka, Bangladesh</span></a>
             <a href="tel:+8801768436319" className="contact-item"><Phone size={18} /><span>+880 1768-436319</span></a>
             <a href="mailto:info@brownsinterior.com" className="contact-item"><Mail size={18} /><span>info@brownsinterior.com</span></a>

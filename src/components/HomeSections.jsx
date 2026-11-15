@@ -9,7 +9,7 @@ import {
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
 import { testimonials, blogPreviews, stats, processSteps } from '../data/siteData';
-import { useLanguage, processStepsBn, statsBn } from '../context/LanguageContext';
+import { useLanguage, processStepsBn, statsBn, serviceCategoryBn, serviceOptionBn, projectCategoryBn } from '../context/LanguageContext';
 import '../styles/site.css';
 import './HomeSections.css';
 
@@ -21,8 +21,9 @@ const fadeUp = {
 };
 
 export function SectionHead({ eyebrow, title, script, sub, as: Heading = 'h2' }) {
+  const { isBn } = useLanguage();
   return (
-    <motion.div className="sec-head" {...fadeUp}>
+    <motion.div className={`sec-head ${isBn ? 'is-bn' : ''}`} {...fadeUp}>
       {eyebrow && <span className="sec-eyebrow">{eyebrow}</span>}
       <Heading className="sec-title">{title} {script && <em>{script}</em>}</Heading>
       {sub && <p className="sec-sub">{sub}</p>}
@@ -96,7 +97,7 @@ export function HomeHero() {
   const currentSlide = slides[i];
 
   return (
-    <section className="h-hero" id="home">
+    <section className={`h-hero ${isBn ? 'is-bn' : ''}`} id="home">
       <AnimatePresence initial={false}>
         <motion.div
           key={i}
@@ -121,11 +122,15 @@ export function HomeHero() {
       <div className="h-hero-overlay" />
       <div className="h-hero-content">
         <span className="h-hero-tag">
-          PLANNING | DESIGN | EXECUTION
+          {isBn ? 'প্ল্যানিং  |  ডিজাইন  |  বাস্তবায়ন' : 'PLANNING | DESIGN | EXECUTION'}
         </span>
         <h1>
-          <span className="hero-headline-first">Beautiful Design <span className="hero-headline-divider" aria-hidden="true" /> <span className="hero-quality">Quality Work</span></span>
-          <em className="hero-trust">Trusted Service</em>
+          <span className="hero-headline-first">
+            {isBn ? 'সুন্দর ডিজাইন' : 'Beautiful Design'}{' '}
+            <span className="hero-headline-divider" aria-hidden="true" />{' '}
+            <span className="hero-quality">{isBn ? 'মানসম্মত কাজ' : 'Quality Work'}</span>
+          </span>
+          <em className="hero-trust">{isBn ? 'বিশ্বস্ত সেবা' : 'Trusted Service'}</em>
         </h1>
         <p>
           {isBn
@@ -193,9 +198,9 @@ export function ServicesGrid() {
     <section className="section cream">
       <div className="container">
         <SectionHead
-          eyebrow="What We Do"
-          title="Our"
-          script="Expertise"
+          eyebrow={isBn ? 'আমাদের কাজ' : 'What We Do'}
+          title={isBn ? 'আমাদের' : 'Our'}
+          script={isBn ? 'সার্ভিসসমূহ' : 'Expertise'}
           sub={
             isBn
               ? 'ফ্ল্যাট, ডুপ্লেক্স, অফিস ও এক্সিবিশন বুথের কমপ্লিট ডিজাইন এবং নিখুঁত কাজ।'
@@ -205,7 +210,7 @@ export function ServicesGrid() {
         <div className="svc-visual-grid">
           {servicesData.map((s, idx) => {
             const Icon = s.icon;
-            const catTitle = s.shortTitle || s.title;
+            const catTitle = isBn ? (serviceCategoryBn[s.slug]?.shortTitle || s.shortTitle || s.title) : (s.shortTitle || s.title);
             return (
               <motion.article
                 key={s.slug}
@@ -228,13 +233,13 @@ export function ServicesGrid() {
                   <div className="svc-vcard-pills">
                     {s.options.map((opt) => (
                       <Link key={opt.slug} to={`/services/${opt.slug}`} className="svc-sub-pill">
-                        {opt.title}
+                        {isBn ? (serviceOptionBn[opt.slug] || opt.title) : opt.title}
                       </Link>
                     ))}
                   </div>
 
                   <Link to={`/services/${s.slug}`} className="svc-more">
-                    Explore ({s.options.length}) <ArrowUpRight size={14} />
+                    {isBn ? `সব দেখুন (${s.options.length})` : `Explore (${s.options.length})`} <ArrowUpRight size={14} />
                   </Link>
                 </div>
               </motion.article>
@@ -245,8 +250,8 @@ export function ServicesGrid() {
           <motion.article className="svc-vcard svc-vcard-cta clay" {...fadeUp}>
             <div className="svc-vcard-cta-inner">
               <div className="svc-icon"><Calculator size={26} strokeWidth={1.6} /></div>
-              <span className="svc-cta-tag">Budget Tool</span>
-              <h3>Cost Estimator</h3>
+              <span className="svc-cta-tag">{isBn ? 'বাজেট টুল' : 'Budget Tool'}</span>
+              <h3>{isBn ? 'খরচ হিসাব করুন' : 'Cost Estimator'}</h3>
               <p>{isBn ? 'আপনার ফ্ল্যাট বা অফিসের আনুমানিক বাজেট হিসাব করুন।' : 'Instant ballpark budget for your space.'}</p>
               <Link to="/cost-estimator" className="pill-btn" style={{ marginTop: 'auto', justifyContent: 'center' }}>
                 {isBn ? 'খরচ হিসাব করুন' : 'Estimate Cost'} <ArrowRight size={15} />
@@ -270,9 +275,9 @@ export function FeaturedProjects({ limit = 5 }) {
     <section className="section">
       <div className="container">
         <SectionHead
-          eyebrow="Selected Portfolio"
-          title="Curated"
-          script="Spaces"
+          eyebrow={isBn ? 'নির্বাচিত কাজ' : 'Selected Portfolio'}
+          title={isBn ? 'আমাদের' : 'Curated'}
+          script={isBn ? 'প্রজেক্টসমূহ' : 'Spaces'}
           sub={
             isBn
               ? 'ঢাকা ও সারা বাংলাদেশে আমাদের করা বাসা, অফিস ও কমার্শিয়াল প্রজেক্টের কিছু কাজ।'
@@ -282,7 +287,7 @@ export function FeaturedProjects({ limit = 5 }) {
         <div className="proj-tabs">
           {cats.map((c) => (
             <button key={c} type="button" className={c === cat ? 'active' : ''} onClick={() => setCat(c)}>
-              {c}
+              {isBn ? (projectCategoryBn[c] || c) : c}
             </button>
           ))}
         </div>
@@ -304,7 +309,7 @@ export function FeaturedProjects({ limit = 5 }) {
                   <div className="proj-index-badge">{String(idx + 1).padStart(2, '0')}</div>
                   <div className="proj-info">
                     <div className="proj-meta-row">
-                      <span className="proj-cat">{p.category}</span>
+                      <span className="proj-cat">{isBn ? (projectCategoryBn[p.category] || p.category) : p.category}</span>
                       {p.area && <span className="proj-area-pill">{p.area}</span>}
                     </div>
                     <h3>{p.title}</h3>
@@ -412,9 +417,9 @@ export function TransformationShowcase() {
     <section className="section cream trans-section">
       <div className="container">
         <SectionHead
-          eyebrow="Craftsmanship & Execution"
-          title="From Raw Space to"
-          script="Living Art"
+          eyebrow={isBn ? 'নিখুঁত ফিনিশিং' : 'Craftsmanship & Execution'}
+          title={isBn ? 'খালি জায়গা থেকে' : 'From Raw Space to'}
+          script={isBn ? 'স্বপ্নের ঘর' : 'Living Art'}
           sub={
             isBn
               ? '3D ডিজাইন থেকে শুরু করে আমাদের নিজস্ব ইঞ্জিনিয়ার ও দক্ষ মিস্ত্রিদের হাতে নিখুঁত ফিনিশিং।'
@@ -531,8 +536,10 @@ export function TransformationShowcase() {
           {/* Right: Minimal 3-Option Material Finishes */}
           <div className="trans-specs-panel">
             <div className="trans-specs-head">
-              <span className="trans-specs-eyebrow">Material Finishes</span>
-              <h3>Key Details</h3>
+              <span className="trans-specs-eyebrow" style={isBn ? { letterSpacing: 'normal' } : undefined}>
+                {isBn ? 'ম্যাটেরিয়াল ও ফিনিশিং' : 'Material Finishes'}
+              </span>
+              <h3>{isBn ? 'কাজের বিবরণ' : 'Key Details'}</h3>
             </div>
 
             <div className="trans-specs-list">
@@ -588,9 +595,9 @@ export function ProcessTimeline({ showCta = false }) {
     <section className="section dark proc-motion-section">
       <div className="container">
         <SectionHead
-          eyebrow="How We Work"
-          title="Our Design"
-          script="Process"
+          eyebrow={isBn ? 'কাজের পদ্ধতি' : 'How We Work'}
+          title={isBn ? 'আমাদের কাজের' : 'Our Design'}
+          script={isBn ? 'ধাপসমূহ' : 'Process'}
         />
 
         <div className="proc-seq-grid">
@@ -621,9 +628,11 @@ export function ProcessTimeline({ showCta = false }) {
                     <div className="proc-card-icon-box">
                       <StepIcon size={18} strokeWidth={1.7} />
                     </div>
-                    <span className="proc-phase-tag">{s.phase}</span>
+                    <span className="proc-phase-tag" style={isBn ? { letterSpacing: 'normal' } : undefined}>
+                      {localized.phase || s.phase}
+                    </span>
                   </div>
-                  <h3>{s.title}</h3>
+                  <h3>{localized.title || s.title}</h3>
                   <p>{localized.text}</p>
                 </div>
               </motion.div>
@@ -684,9 +693,9 @@ export function TestimonialSlider() {
     <section className="section cream">
       <div className="container">
         <SectionHead
-          eyebrow="Client Stories"
-          title="Trusted by"
-          script="Clients"
+          eyebrow={isBn ? 'ক্লায়েন্টদের কথা' : 'Client Stories'}
+          title={isBn ? 'ক্লায়েন্টদের' : 'Trusted by'}
+          script={isBn ? 'মতামত' : 'Clients'}
         />
         <div className="testi-row">
           <AnimatePresence mode="popLayout">
@@ -719,10 +728,16 @@ export function TestimonialSlider() {
 export function CostCTA() {
   const { isBn } = useLanguage();
   return (
-    <section className="cta-band">
+    <section className={`cta-band ${isBn ? 'is-bn' : ''}`}>
       <div className="container cta-inner">
         <motion.div {...fadeUp}>
-          <h2>Ready to Build Your <em>Dream Space?</em></h2>
+          <h2>
+            {isBn ? (
+              <>আপনার <em>স্বপ্নের ঘর বা অফিস</em> সাজাতে প্রস্তুত?</>
+            ) : (
+              <>Ready to Build Your <em>Dream Space?</em></>
+            )}
+          </h2>
           <p>
             {isBn
               ? 'ফ্রি পরামর্শের জন্য যোগাযোগ করুন অথবা অনলাইনে আনুমানিক খরচ হিসাব করুন।'
@@ -787,9 +802,9 @@ export function BlogPreview() {
     <section className="section cream">
       <div className="container">
         <SectionHead
-          eyebrow="Insights"
-          title="Latest"
-          script="Articles"
+          eyebrow={isBn ? 'ব্লগ ও গাইড' : 'Insights'}
+          title={isBn ? 'সাম্প্রতিক' : 'Latest'}
+          script={isBn ? 'আর্টিকেল' : 'Articles'}
         />
         <div className="grid-3">
           {filteredPosts.map((p, k) => (

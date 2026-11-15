@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { SectionHead } from './HomeSections';
-import { useLanguage, serviceCategoryBn } from '../context/LanguageContext';
+import { useLanguage, serviceCategoryBn, serviceOptionBn } from '../context/LanguageContext';
 import SEO from './SEO';
 import './ServicesPage.css';
 
@@ -23,24 +23,28 @@ const processWorkflow = [
   {
     step: '01',
     title: 'Consultation & Site Survey',
+    bnTitle: 'আলোচনা ও সাইট সার্ভে',
     desc: 'Laser measurements, structural assessment, and deep discovery of your lifestyle or business vision.',
     bnDesc: 'সরাসরি সাইট ভিজিট করে নিখুঁত মাপ নেওয়া, কাঠামোগত অবস্থা যাচাই এবং আপনার চাহিদা ও বাজেট বুঝে নেওয়া।',
   },
   {
     step: '02',
     title: '2D & Photorealistic 3D',
+    bnTitle: '2D লেআউট ও ফটোরিয়েলিস্টিক 3D',
     desc: 'Functional space zoning, CAD blueprints, and photorealistic 3D visualizations before anything is built.',
     bnDesc: 'কাজ শুরুর আগেই কার্যকর 2D AutoCAD লেআউট ও বাস্তবসম্মত 3D ভিউয়ের মাধ্যমে চূড়ান্ত ডিজাইন দেখানো।',
   },
   {
     step: '03',
     title: 'Itemized BOQ Costing',
+    bnTitle: 'বিস্তারিত লিখিত BOQ বাজেট',
     desc: 'Transparent Bill of Quantities with specified material brands, grades, and milestone timelines.',
     bnDesc: 'প্রতিটি ম্যাটেরিয়ালের ব্র্যান্ড, গ্রেড ও কাজের সময়সীমাসহ স্পষ্ট লিখিত বাজেট (BOQ) প্রদান।',
   },
   {
     step: '04',
     title: 'Turnkey Handover & Warranty',
+    bnTitle: 'টার্নকি হস্তান্তর ও ওয়ারেন্টি',
     desc: 'Daily engineer supervision, master craftsmanship, deep cleaning, and 1-year workmanship warranty.',
     bnDesc: 'প্রতিদিন ইঞ্জিনিয়ারদের তত্ত্বাবধানে কাজ শেষ করে ক্লিনিং ও ১ বছরের সার্ভিস ওয়ারেন্টিসহ প্রজেক্ট বুঝিয়ে দেওয়া।',
   },
@@ -67,9 +71,9 @@ export default function ServicesPage() {
       <section className="sp-filter-section page-start-section">
         <div className="container">
           <SectionHead
-            eyebrow="Disciplines & Solutions"
-            title="Our Comprehensive"
-            script="Services"
+            eyebrow={isBn ? 'সার্ভিস ও সমাধান' : 'Disciplines & Solutions'}
+            title={isBn ? 'আমাদের' : 'Our Comprehensive'}
+            script={isBn ? 'সার্ভিসসমূহ' : 'Services'}
             as="h1"
             sub={
               isBn
@@ -96,7 +100,7 @@ export default function ServicesPage() {
               className={`sp-filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
               onClick={() => setActiveFilter('all')}
             >
-              All Disciplines
+              {isBn ? 'সব সার্ভিস' : 'All Disciplines'}
             </button>
             {servicesData.map((s) => (
               <button
@@ -105,7 +109,7 @@ export default function ServicesPage() {
                 className={`sp-filter-btn ${activeFilter === s.slug ? 'active' : ''}`}
                 onClick={() => setActiveFilter(s.slug)}
               >
-                {s.shortTitle || s.title}
+                {isBn ? (serviceCategoryBn[s.slug]?.shortTitle || s.shortTitle || s.title) : (s.shortTitle || s.title)}
               </button>
             ))}
           </div>
@@ -122,6 +126,7 @@ export default function ServicesPage() {
                 const timelineSpec = s.specs?.find((sp) => sp.label === 'Timeline')?.value;
                 const scopeSpec = s.specs?.find((sp) => sp.label === 'Scope' || sp.label === 'Compliance')?.value;
                 const catBn = serviceCategoryBn[s.slug];
+                const catTitle = isBn ? (catBn?.title || s.title) : s.title;
                 const catDesc = isBn ? (catBn?.shortDesc || s.tagline || s.description) : (s.tagline || s.description);
 
                 return (
@@ -136,8 +141,8 @@ export default function ServicesPage() {
                     transition={{ duration: 0.4, delay: (i % 3) * 0.06 }}
                   >
                     {/* Media Header */}
-                    <Link to={`/services/${s.slug}`} className="sp-option-media" aria-label={s.title}>
-                      <img src={s.image} alt={s.title} loading="lazy" decoding="async" />
+                    <Link to={`/services/${s.slug}`} className="sp-option-media" aria-label={catTitle}>
+                      <img src={s.image} alt={catTitle} loading="lazy" decoding="async" />
                       <div className="sp-option-shade" />
                       <span className="sp-option-num">{s.number}</span>
                       <div className="sp-option-icon">
@@ -154,7 +159,7 @@ export default function ServicesPage() {
                     <div className="sp-option-body">
                       <div className="sp-title-row">
                         <h2>
-                          <Link to={`/services/${s.slug}`}>{s.title}</Link>
+                          <Link to={`/services/${s.slug}`}>{catTitle}</Link>
                         </h2>
                       </div>
 
@@ -179,7 +184,7 @@ export default function ServicesPage() {
                               className="sp-sub-chip"
                               title={`Explore ${opt.title}`}
                             >
-                              <span>{opt.title}</span>
+                              <span>{isBn ? (serviceOptionBn[opt.slug] || opt.title) : opt.title}</span>
                               <ArrowUpRight size={12} className="sp-chip-arrow" />
                             </Link>
                           ))}
@@ -192,7 +197,7 @@ export default function ServicesPage() {
                           {s.options.length} {s.options.length === 1 ? 'Specialization' : 'Specializations'}
                         </span>
                         <Link to={`/services/${s.slug}`} className="sp-option-Action">
-                          Explore Category <ArrowRight size={15} />
+                          {isBn ? 'বিস্তারিত দেখুন' : 'Explore Category'} <ArrowRight size={15} />
                         </Link>
                       </div>
                     </div>
@@ -210,7 +215,7 @@ export default function ServicesPage() {
           <div className="sp-spotlight-grid">
             <div className="sp-spotlight-content">
               <span className="sp-spotlight-eyebrow">The Brown&apos;s Interior Standard</span>
-              <h2>Why Turnkey Delivery Beats Fragmented Contractors</h2>
+              <h2>{isBn ? 'কেন আলাদা মিস্ত্রির চেয়ে কমপ্লিট Turnkey সার্ভিস সেরা?' : 'Why Turnkey Delivery Beats Fragmented Contractors'}</h2>
               <p>
                 {isBn
                   ? 'আলাদা আর্কিটেক্ট, মিস্ত্রি, ইলেকট্রিশিয়ান ও পেইন্টার দিয়ে কাজ করালে প্রায়ই খরচ বেড়ে যায় এবং কাজের সমন্বয়হীনতা দেখা দেয়। Brown’s Interior-এ ডিজাইন থেকে হ্যান্ডওভার সবকিছু হয় নিজস্ব ইঞ্জিনিয়ারিং টিমের অধীনে।'
@@ -288,7 +293,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className="sp-section-head">
             <span className="sp-eyebrow">Structured Execution</span>
-            <h3>How Your Project Unfolds</h3>
+            <h3>{isBn ? 'কীভাবে আপনার প্রজেক্ট সম্পন্ন হয়' : 'How Your Project Unfolds'}</h3>
             <p>
               {isBn
                 ? 'প্রথম দিন সাইট সার্ভে থেকে শুরু করে চূড়ান্ত চাবি হস্তান্তর পর্যন্ত প্রতিটি ধাপ।'
@@ -300,7 +305,7 @@ export default function ServicesPage() {
             {processWorkflow.map((item) => (
               <div key={item.step} className="sp-workflow-step clay">
                 <span className="sp-workflow-num">{item.step}</span>
-                <h4>{item.title}</h4>
+                <h4>{isBn ? item.bnTitle : item.title}</h4>
                 <p>{isBn ? item.bnDesc : item.desc}</p>
               </div>
             ))}
@@ -312,7 +317,7 @@ export default function ServicesPage() {
       <section className="sp-banner">
         <div className="container sp-banner-inner">
           <div>
-            <h2>Ready to transform your space?</h2>
+            <h2>{isBn ? 'আপনার ঘর বা অফিস সাজাতে প্রস্তুত?' : 'Ready to transform your space?'}</h2>
             <p>
               {isBn
                 ? 'ইঞ্জিনিয়ার আসলাম শেখ ও আমাদের আর্কিটেকচারাল টিমের সাথে পরামর্শ করুন।'

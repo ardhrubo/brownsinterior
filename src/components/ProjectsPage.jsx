@@ -4,7 +4,7 @@ import { ArrowUpRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import { SectionHead, CostCTA } from './HomeSections';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage, projectCategoryBn } from '../context/LanguageContext';
 import SEO from './SEO';
 import './HomeSections.css';
 import './Portfolio.css';
@@ -25,9 +25,9 @@ export default function ProjectsPage() {
       <section className="section page-start-section">
         <div className="container">
           <SectionHead
-            eyebrow="Complete Portfolio"
-            title="Selected"
-            script="Works"
+            eyebrow={isBn ? 'পোর্টফোলিও' : 'Complete Portfolio'}
+            title={isBn ? 'আমাদের' : 'Selected'}
+            script={isBn ? 'প্রজেক্টসমূহ' : 'Works'}
             as="h1"
             sub={
               isBn
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
                 className={c === cat ? 'active' : ''}
                 onClick={() => setCat(c)}
               >
-                {c}
+                {isBn ? (projectCategoryBn[c] || c) : c}
               </button>
             ))}
           </div>
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
                     <div className="proj-index-badge">{String(idx + 1).padStart(2, '0')}</div>
                     <div className="proj-info">
                       <div className="proj-meta-row">
-                        <span className="proj-cat">{p.category}</span>
+                        <span className="proj-cat">{isBn ? (projectCategoryBn[p.category] || p.category) : p.category}</span>
                         {p.area && <span className="proj-area-pill">{p.area}</span>}
                       </div>
                       <h3>{p.title}</h3>

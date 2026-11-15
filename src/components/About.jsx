@@ -27,7 +27,7 @@ export default function About({ full = false }) {
   const { isBn } = useLanguage();
 
   return (
-    <section id="about" className={`about-section ${full ? 'about-full' : 'about-compact'}`}>
+    <section id="about" className={`about-section ${full ? 'about-full' : 'about-compact'} ${isBn ? 'is-bn' : ''}`}>
       <div className="container">
         {/* Main Studio Section */}
         <div className="about-grid">
@@ -61,9 +61,13 @@ export default function About({ full = false }) {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <span className="sec-eyebrow">The Studio</span>
+            <span className="sec-eyebrow">{isBn ? 'আমাদের স্টুডিও' : 'The Studio'}</span>
             <h2 className="sec-title about-title">
-              Where <em>Design</em> Meets Engineering.
+              {isBn ? (
+                <>যেখানে <em>ডিজাইন</em> ও ইঞ্জিনিয়ারিং একসাথে মেলে।</>
+              ) : (
+                <>Where <em>Design</em> Meets Engineering.</>
+              )}
             </h2>
             <p className="about-description">
               {isBn ? (
@@ -147,7 +151,7 @@ export default function About({ full = false }) {
 
               <div className="founder-spotlight-content">
                 <div className="founder-eyebrow-row">
-                  <span className="sec-eyebrow">Message From The Founder</span>
+                  <span className="sec-eyebrow">{isBn ? 'প্রতিষ্ঠাতার বার্তা' : 'Message From The Founder'}</span>
                 </div>
                 <h3 className="founder-spotlight-title">Engr. Aslam Sheikh</h3>
                 <p className="founder-spotlight-subtitle">
@@ -234,7 +238,7 @@ export default function About({ full = false }) {
                 transition={{ duration: 0.5 }}
               >
                 <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
-                <h3>Our Mission</h3>
+                <h3>{isBn ? 'আমাদের লক্ষ্য' : 'Our Mission'}</h3>
                 <p>
                   {isBn
                     ? 'স্মার্ট স্পেস প্ল্যানিং, আসল ম্যাটেরিয়াল এবং Civil Engineering নিখুঁততায় টেকসই ও নান্দনিক স্পেস তৈরি করা।'
@@ -249,7 +253,7 @@ export default function About({ full = false }) {
                 transition={{ duration: 0.5, delay: 0.12 }}
               >
                 <div className="value-icon"><ShieldCheck size={26} strokeWidth={1.5} /></div>
-                <h3>Our Commitment</h3>
+                <h3>{isBn ? 'আমাদের অঙ্গীকার' : 'Our Commitment'}</h3>
                 <p className="commitment">
                   {isBn ? (
                     <>সৃজনশীল ডিজাইন। <span>পেশাদার প্রকৌশল।</span> নির্ভরযোগ্য মান।</>

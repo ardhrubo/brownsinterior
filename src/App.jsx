@@ -65,8 +65,8 @@ const AboutPage = () => {
       />
       <div className="container" style={{ marginBottom: '2rem' }}>
         <SectionHead
-          eyebrow="Our Story & Leadership"
-          title="About"
+          eyebrow={isBn ? 'আমাদের পরিচয় ও নেতৃত্ব' : 'Our Story & Leadership'}
+          title={isBn ? 'পরিচিতি —' : 'About'}
           script="Brown's Interiors"
           as="h1"
           sub={
