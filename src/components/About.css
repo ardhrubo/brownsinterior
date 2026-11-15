@@ -78,7 +78,23 @@
   color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.75;
+  margin-bottom: 1.15rem;
+}
+
+.about-bn-callout {
+  font-family: 'Noto Sans Bengali', var(--font-sans);
+  font-size: 0.94rem;
+  line-height: 1.85;
+  color: var(--brown-700, #4a403a);
+  background: #faf7f3;
+  border-left: 3px solid var(--gold-dark, #a88a66);
+  padding: 0.85rem 1.15rem;
+  border-radius: 0 12px 12px 0;
   margin-bottom: 1.35rem;
+}
+.about-bn-callout strong {
+  color: var(--brown-900, #2c2825);
+  font-weight: 600;
 }
 
 .about-quick-list {

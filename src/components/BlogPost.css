@@ -125,6 +125,7 @@
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
   border: 2px solid #a88a66;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
@@ -798,14 +799,15 @@
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%;
   border: 3px solid #a88a66;
   flex-shrink: 0;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 .blog-author-bio-content h4 {
   font-family: var(--font-display, serif);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: #1a1816;
   margin-bottom: 0.25rem;
 }
@@ -835,6 +837,41 @@
 }
 .blog-author-bio-link:hover {
   color: #a88a66;
+}
+
+/* Bengali Article Summary Box */
+.blog-bn-summary-box {
+  background: #faf7f3;
+  border-left: 3.5px solid #a88a66;
+  border-radius: 0 14px 14px 0;
+  padding: 1.4rem 1.65rem;
+  margin-bottom: 2rem;
+}
+.blog-bn-summary-badge {
+  display: inline-block;
+  font-family: 'Noto Sans Bengali', var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a88a66;
+  background: rgba(201, 181, 156, 0.18);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.55rem;
+}
+.blog-bn-summary-box h2 {
+  font-family: 'Noto Sans Bengali', var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #1a1816;
+  line-height: 1.55;
+  margin: 0 0 0.45rem;
+}
+.blog-bn-summary-box p {
+  font-family: 'Noto Sans Bengali', var(--font-sans);
+  font-size: 0.95rem;
+  color: #5a544e;
+  line-height: 1.85;
+  margin: 0;
 }
 
 /* Bottom Conversion Card */

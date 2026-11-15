@@ -12,7 +12,7 @@ import { blogPosts, getBlogPostBySlug } from '../data/blogData';
 import { BlogCard } from './HomeSections';
 import './BlogPost.css';
 
-const SITE_URL = 'https://www.brownsinterior.com';
+import { SITE_URL } from '../lib/site-url';
 
 /**
  * Rich Text Parser:
@@ -309,7 +309,7 @@ export default function BlogPost() {
                   {post.author?.name || 'Engr. Aslam Sheikh'}
                   <ShieldCheck size={16} className="blog-author-badge-icon" title="Verified Engineering Lead" />
                 </strong>
-                <span>{post.author?.role || 'Founder & Principal Designer'} · Brown’s Interior Studio</span>
+                <span>{post.author?.role || 'Founder & Principal Designer'} · Brown’s Interiors</span>
               </div>
             </div>
 

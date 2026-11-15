@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useInView, animate } from 'framer-motion';
 import {
   FolderOpen, Phone, ArrowRight, ArrowUpRight, Star, Quote,
   ChevronLeft, ChevronRight, Calculator, MapPin, UserRound,
-  Compass, LayoutGrid, Layers, ClipboardList, Hammer, Sparkles, CheckCircle2, Clock
+  Compass, LayoutGrid, Layers, ClipboardList, Hammer, Sparkles
 } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
@@ -19,11 +19,11 @@ const fadeUp = {
   transition: { duration: 0.6 },
 };
 
-export function SectionHead({ eyebrow, title, script, sub }) {
+export function SectionHead({ eyebrow, title, script, sub, as: Heading = 'h2' }) {
   return (
     <motion.div className="sec-head" {...fadeUp}>
       {eyebrow && <span className="sec-eyebrow">{eyebrow}</span>}
-      <h2 className="sec-title">{title} {script && <em>{script}</em>}</h2>
+      <Heading className="sec-title">{title} {script && <em>{script}</em>}</Heading>
       {sub && <p className="sec-sub">{sub}</p>}
     </motion.div>
   );
@@ -119,14 +119,14 @@ export function HomeHero() {
       <div className="h-hero-overlay" />
       <div className="h-hero-content">
         <span className="h-hero-tag">
-          Interior Design · Turnkey Execution · Architecture
+          PLANNING | DESIGN | EXECUTION
         </span>
         <h1>
-          Designing <em>Timeless Interiors</em> with Purpose.
+          <span className="hero-headline-first">Beautiful Design <span className="hero-headline-divider" aria-hidden="true" /> <span className="hero-quality">Quality Work</span></span>
+          <em className="hero-trust">Trusted Service</em>
         </h1>
         <p>
-          Residential &amp; Commercial Interior Design &amp; Execution, Architectural Design, Structural Consultancy &amp; Exhibition Booth Design.
-          <span className="h-hero-sub-location">Serving Clients Across Bangladesh &amp; Worldwide.</span>
+          Complete Interior &amp; Exterior Design and Execution Services Across Bangladesh.
         </p>
         <div className="h-hero-ctas">
           <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Interiors</Link>
@@ -200,7 +200,7 @@ export function ServicesGrid() {
                 transition={{ duration: 0.5, delay: (idx % 4) * 0.06 }}
               >
                 <Link to={`/services/${s.slug}`} className="svc-vcard-media">
-                  <img src={s.image} alt={s.title} loading="lazy" />
+                  <img src={s.image} alt={s.title} loading="lazy" decoding="async" />
                   <div className="svc-vcard-shade" />
                   <span className="svc-vcard-num">{s.number}</span>
                   <div className="svc-vcard-badge"><Icon size={18} /></div>
@@ -363,7 +363,9 @@ export function TransformationShowcase() {
     if (e.currentTarget.setPointerCapture) {
       try {
         e.currentTarget.setPointerCapture(e.pointerId);
-      } catch (_) { }
+      } catch {
+        // Ignore pointer capture errors on non-active pointers
+      }
     }
     updateFromClientX(e.clientX);
   };
@@ -379,7 +381,9 @@ export function TransformationShowcase() {
     if (e.currentTarget.releasePointerCapture) {
       try {
         e.currentTarget.releasePointerCapture(e.pointerId);
-      } catch (_) { }
+      } catch {
+        // Ignore pointer release errors
+      }
     }
   };
 
@@ -672,7 +676,7 @@ export function BlogCard({ post }) {
   return (
     <Link to={`/blog/${post.slug}`} className="blog-card clay">
       <div className="blog-img">
-        <img src={post.image} alt={post.title} loading="lazy" />
+        <img src={post.image} alt={post.title} loading="lazy" decoding="async" />
         <span>{post.category}</span>
       </div>
       <div className="blog-body">
@@ -684,7 +688,8 @@ export function BlogCard({ post }) {
               fontSize: '0.88rem',
               color: 'var(--text-muted)',
               margin: '0.4rem 0 0.8rem',
-              lineHeight: 1.5,
+              lineHeight: 1.55,
+              maxHeight: '3.1em',
               display: '-webkit-box',
               WebkitLineClamp: 2,
               WebkitBoxOrient: 'vertical',
@@ -706,7 +711,7 @@ export function BlogPreview() {
       <div className="container">
         <SectionHead eyebrow="Insights" title="Latest" script="Articles" />
         <div className="grid-3">
-          {blogPreviews.map((p, k) => (
+          {blogPreviews.slice(0, 3).map((p, k) => (
             <motion.div key={p.slug} {...fadeUp} transition={{ duration: 0.5, delay: k * 0.08 }}><BlogCard post={p} /></motion.div>
           ))}
         </div>

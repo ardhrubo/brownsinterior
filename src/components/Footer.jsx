@@ -12,6 +12,7 @@ const quickLinks = [
   { to: '/process', label: 'Our Process' },
   { to: '/testimonials', label: 'Testimonials' },
   { to: '/cost-estimator', label: 'Estimate Cost' },
+  { to: '/careers', label: 'Careers' },
   { to: '/contact', label: 'Contact' },
   { to: '/blog', label: 'Blog' },
 ];
@@ -31,13 +32,13 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Go to top">
-              <img src="/logo.svg" alt="Brown's Interior Logo" width="316" height="48" className="footer-logo-img" />
+              <img src="/logo.svg" alt="Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও Logo" width="316" height="48" className="footer-logo-img" />
             </Link>
             <p className="footer-desc">
-              Brown's Interior is a premier interior design and turnkey execution firm providing professional design solutions for residential, commercial and exhibition spaces all over Bangladesh and worldwide. Led by Engr. Aslam Sheikh.
+              Brown&apos;s Interiors is a premier interior design and execution studio providing professional design solutions for residential, commercial, and exhibition spaces all over Bangladesh and worldwide. Led by Engr. Aslam Sheikh.
             </p>
             <div className="social-links">
-              <a href="https://www.facebook.com/brownsengineeringbd" target="_blank" rel="noreferrer" className="social-icon" aria-label="Facebook"><FaFacebook size={18} /></a>
+              <a href="https://www.facebook.com/brownsinteriorsbd" target="_blank" rel="noreferrer" className="social-icon" aria-label="Facebook"><FaFacebook size={18} /></a>
               <a href={getWhatsAppUrl()} target="_blank" rel="noreferrer" className="social-icon" aria-label="WhatsApp"><FaWhatsapp size={18} /></a>
               <a href="#" className="social-icon" aria-label="Instagram"><FaInstagram size={18} /></a>
               <a href="#" className="social-icon" aria-label="LinkedIn"><FaLinkedin size={18} /></a>
@@ -69,7 +70,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Brown's Interior. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Brown&apos;s Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও. All rights reserved.</p>
           <p>Designing Beautiful Spaces with Quality and Purpose.</p>
         </div>
       </div>

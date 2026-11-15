@@ -10,10 +10,15 @@
   --text-color: #2c2825;
   --text-muted: #6b635e;
   
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Montserrat', sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-massive: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', 'Noto Sans Bengali', sans-serif;
+  --font-serif: 'Montserrat', 'Noto Sans Bengali', sans-serif;
+  --font-display: 'Playfair Display', 'Noto Sans Bengali', Georgia, serif;
+  --font-massive: 'Playfair Display', 'Noto Sans Bengali', Georgia, serif;
+}
+
+:lang(bn) {
+  font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
+  letter-spacing: normal;
 }
 
 * {

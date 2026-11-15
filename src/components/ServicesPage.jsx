@@ -52,8 +52,8 @@ export default function ServicesPage() {
   return (
     <main className="sp-page">
       <SEO
-        title="Our Services - Interior Design, Architecture & Turnkey Execution"
-        description="Explore interior design, architectural planning, structural engineering, renovation, and trade show booth solutions by Brown's Interior in Dhaka."
+        title="Our Services"
+        description="Explore interior design, architectural planning, structural engineering, renovation, and trade show booth solutions by Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Dhaka."
         canonicalPath="/services"
       />
 
@@ -64,6 +64,7 @@ export default function ServicesPage() {
             eyebrow="Disciplines & Solutions"
             title="Our Comprehensive"
             script="Services"
+            as="h1"
             sub="Holistic architecture, interior design, and turnkey engineering solutions crafted for residential, commercial, and exhibition spaces in Dhaka."
           />
 
@@ -124,7 +125,7 @@ export default function ServicesPage() {
                   >
                     {/* Media Header */}
                     <Link to={`/services/${s.slug}`} className="sp-option-media" aria-label={s.title}>
-                      <img src={s.image} alt={s.title} loading="lazy" />
+                      <img src={s.image} alt={s.title} loading="lazy" decoding="async" />
                       <div className="sp-option-shade" />
                       <span className="sp-option-num">{s.number}</span>
                       <div className="sp-option-icon">
@@ -266,7 +267,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="sp-workflow-grid">
-            {processWorkflow.map((item, idx) => (
+            {processWorkflow.map((item) => (
               <div key={item.step} className="sp-workflow-step clay">
                 <span className="sp-workflow-num">{item.step}</span>
                 <h4>{item.title}</h4>

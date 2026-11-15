@@ -5,6 +5,8 @@ const img = (id, w = 640) => `https://images.unsplash.com/${id}?auto=format&fit=
 export const servicesData = [
   {
     slug: 'interior-design',
+    bnTitle: 'ইন্টেরিয়র ডিজাইন ও ডেকোরেশন',
+    bnTagline: 'ফ্ল্যাট, ডুপ্লেক্স, কর্পোরেট অফিস ও শোরুমের আধুনিক ইন্টেরিয়র ডিজাইন ও বাস্তবায়ন।',
     number: '01',
     title: 'Interior Design',
     shortTitle: 'Interior Design',
@@ -178,6 +180,8 @@ export const servicesData = [
   },
   {
     slug: 'architecture',
+    bnTitle: 'স্থাপত্য নকশা ও প্ল্যানিং',
+    bnTagline: 'রাজউক (RAJUK) ও বিএনবিসি (BNBC) নীতিমালা অনুযায়ী আধুনিক বাড়ি ও কমার্শিয়াল ভবনের আর্কিটেকচারাল ডিজাইন।',
     number: '02',
     title: 'Architecture',
     shortTitle: 'Architecture',
@@ -329,6 +333,8 @@ export const servicesData = [
   },
   {
     slug: 'engineering',
+    bnTitle: 'স্ট্রাকচারাল ইঞ্জিনিয়ারিং ও কনসালটেন্সি',
+    bnTagline: 'অভিজ্ঞ আইইবি (IEB) তালিকাভুক্ত সিভিল ইঞ্জিনিয়ারের তত্ত্বাবধানে ভূমিকম্প-সহনীয় আরসিসি ও স্টিল স্ট্রাকচারাল ডিজাইন।',
     number: '03',
     title: 'Engineering',
     shortTitle: 'Engineering',
@@ -427,6 +433,8 @@ export const servicesData = [
   },
   {
     slug: 'renovation-remodeling',
+    bnTitle: 'রেনোভেশন ও রিমডেলিং',
+    bnTagline: 'পুরোনো ফ্ল্যাট, রান্নাঘর, বাথরুম বা অফিসকে আধুনিক ও নতুন রূপে সাজিয়ে তোলার সম্পূর্ণ সমাধান।',
     number: '04',
     title: 'Renovation & Remodeling',
     shortTitle: 'Renovation',
@@ -549,6 +557,8 @@ export const servicesData = [
   },
   {
     slug: 'exhibition-booth-design',
+    bnTitle: 'এক্সিবিশন বুথ ও মেলা স্টল ডিজাইন',
+    bnTagline: 'বাণিজ্য মেলা, BICC ও ICCB প্রদর্শনীর জন্য আকর্ষণীয় থ্রিডি স্টল ডিজাইন ও দ্রুত ফেব্রিকেশন।',
     number: '05',
     title: 'Exhibition & Trade Show Booth Design',
     shortTitle: 'Exhibition & Booths',
@@ -731,6 +741,8 @@ export const servicesData = [
   },
   {
     slug: 'project-management',
+    bnTitle: 'প্রজেক্ট ম্যানেজমেন্ট ও স্বচ্ছ বাজেট (BOQ)',
+    bnTagline: 'আইটেমভিত্তিক স্বচ্ছ বাজেট (BOQ), সাইট ইঞ্জিনিয়ার সুপারভিশন এবং নির্ধারিত সময়ে প্রজেক্ট হস্তান্তর।',
     number: '06',
     title: 'Project Management',
     shortTitle: 'Project Management',
@@ -853,6 +865,8 @@ export const servicesData = [
   },
   {
     slug: 'additional-services',
+    bnTitle: 'কাস্টম ফার্নিচার, ৩ডি ও প্রবাসী (NRB) সেবা',
+    bnTagline: 'নিজস্ব কারখানায় তৈরি কাস্টম ফার্নিচার, ৪কে থ্রিডি ভিজ্যুয়ালাইজেশন এবং প্রবাসীদের জন্য রিমোট টার্নকি সেবা।',
     number: '07',
     title: 'Additional Services',
     shortTitle: 'Specialized Services',

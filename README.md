@@ -199,3 +199,19 @@ To set up the database and run the standalone Admin Dashboard:
    npm install
    npm run dev
    ```
+
+
+## Hosting both domains
+
+Set `VITE_SITE_URL` in each hosting project's build environment:
+
+| Deployment | Value |
+| --- | --- |
+| Previous website | `https://www.brownsinterior.com` |
+| New website | `https://brownsinteriorsbd.com` |
+
+Run `npm run build` separately for each host and deploy that build's `dist/` directory. The value is embedded at build time; changing it requires a rebuild. Do not reuse one build on both domains. Without the variable, the previous domain remains the default. An HTTPS origin is required; paths and query strings are rejected.
+
+The build uses the same origin for initial HTML metadata, React canonical tags, social images and share URLs, structured data, sitemap entries, and robots.txt. Contact email addresses are configured separately and are not rewritten. `npm run sitemap` uses production environment files; `vite build --mode staging` uses the matching mode for the entire build.
+
+Configure each host to permanently redirect HTTP and its alternate www/non-www hostname to its own preferred HTTPS origin, preserving paths and query strings. Verify both domain properties in Google Search Console and submit each domain's own sitemap. Both sites can remain available, but identical content can still be deduplicated by Google despite self-referencing canonicals; distinct useful content is needed if both are intended to rank independently.

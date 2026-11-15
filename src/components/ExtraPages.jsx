@@ -1,13 +1,16 @@
+import { SITE_URL } from '../lib/site-url';
 import React, { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Star, Quote, UserRound, ArrowRight, CheckCircle2, Sparkles, Home, Building2, Layers
+  Star, Quote, UserRound, ArrowRight, CheckCircle2, Sparkles, Home, Building2, Layers,
+  Briefcase, MapPin, Clock, Send, Loader2, ChevronDown, GraduationCap, ShieldCheck, Compass, Mail
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
 import SEO from './SEO';
-import { testimonials, processSteps, blogPreviews } from '../data/siteData';
+import { testimonials, processSteps, blogPreviews, careerPositions } from '../data/siteData';
+import { submitInquiry } from '../lib/supabase';
 import '../styles/site.css';
 import './HomeSections.css';
 import './ExtraPages.css';
@@ -16,7 +19,7 @@ export function ProcessPage() {
   return (
     <main className="page-start-section">
       <SEO
-        title="Our Process - 6-Step Interior Design & Execution Journey"
+        title="Our Process"
         description="Explore our proven 6-step interior and architecture process from consultation and 3D visualization to turnkey handover in Dhaka."
         canonicalPath="/process"
       />
@@ -25,6 +28,7 @@ export function ProcessPage() {
           eyebrow="Proven Methodology"
           title="Our Execution"
           script="Process"
+          as="h1"
           sub="A clear, systematic 6-step journey from your first concept to final turnkey handover."
         />
       </div>
@@ -77,8 +81,8 @@ export function TestimonialsPage() {
   return (
     <main className="page-start-section">
       <SEO
-        title="Client Reviews & Testimonials - Brown's Interior"
-        description="Read genuine testimonials from apartment owners, corporate directors, and commercial clients across Dhaka who transformed their spaces with Brown's Interior."
+        title="Client Reviews & Testimonials"
+        description="Read genuine testimonials from apartment owners, corporate directors, and commercial clients across Dhaka who transformed their spaces with Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
         canonicalPath="/testimonials"
       />
       <section className="section cream" style={{ paddingTop: '1.5rem' }}>
@@ -87,7 +91,8 @@ export function TestimonialsPage() {
             eyebrow="Client Stories"
             title="Words From Our"
             script="Clients"
-            sub="Hear from homeowners, developers, and corporate executives who trusted Brown's Interior with their spaces."
+            as="h1"
+            sub="Hear from homeowners, developers, and corporate executives who trusted Brown's Interiors with their spaces."
           />
           <div className="grid-3" style={{ marginTop: '2.5rem' }}>
             {testimonials.map((t, k) => (
@@ -114,7 +119,7 @@ export function BlogPage() {
     <main className="page-start-section">
       <SEO
         title="Interior Design & Renovation Blog"
-        description="Practical guides, styling tips, budget planning advice, and exhibition stall design ideas from the Brown's Interior design studio."
+        description="Practical guides, styling tips, budget planning advice, and exhibition stall design ideas from Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
         canonicalPath="/blog"
       />
       <section className="section" style={{ paddingTop: '1rem' }}>
@@ -123,7 +128,8 @@ export function BlogPage() {
             eyebrow="Insights & Guides"
             title="Design"
             script="Journal"
-            sub="Design ideas, renovation guides, budget planning tips, and trends from the Brown's Interior team."
+            as="h1"
+            sub="Design ideas, renovation guides, budget planning tips, and trends from the Brown's Interiors team."
           />
           <div className="grid-3" style={{ marginTop: '2.5rem' }}>
             {blogPreviews.map((p) => <BlogCard key={p.slug} post={p} />)}
@@ -210,7 +216,7 @@ export function CostCalculatorPage() {
   return (
     <main className="page-start-section">
       <SEO
-        title="Interior Design Cost Calculator - Dhaka, Bangladesh"
+        title="Interior Design Cost Calculator"
         description="Estimate residential, commercial, and exhibition booth interior design costs instantly with our transparent budget calculator."
         canonicalPath="/cost-estimator"
       />
@@ -219,6 +225,7 @@ export function CostCalculatorPage() {
           eyebrow="Instant Budget Calculator"
           title="Estimate"
           script="Your Space"
+          as="h1"
           sub="Instant, transparent budget calculation calibrated for Dhaka's residential and commercial interior market."
         />
       </div>
@@ -448,6 +455,548 @@ export function CostCalculatorPage() {
             <div className="calc-trust-item">
               <CheckCircle2 size={18} />
               <span>1-Year Craftsmanship Support</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+/* ---------- Careers Page ---------- */
+const careerPerks = [
+  {
+    icon: Compass,
+    title: 'Concept-to-Turnkey',
+    desc: 'Take projects from 3D concept to real-world execution.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Design & Engineering',
+    desc: 'Work alongside IEB-certified engineers and architects.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Pay & Incentives',
+    desc: 'Competitive salary with project handover bonuses.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Mentorship & Growth',
+    desc: 'Hands-on studio and site training in Uttara, Dhaka.',
+  },
+];
+
+export function CareersPage() {
+  const [expandedJob, setExpandedJob] = useState(null);
+  const [activeDept, setActiveDept] = useState('All');
+  const [form, setForm] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    position: careerPositions[0]?.title || 'Senior Interior Designer & 3D Visualizer',
+    experience: '2 – 4 Years',
+    portfolio: '',
+    message: '',
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [submittedResult, setSubmittedResult] = useState(null);
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const departments = ['All', ...new Set(careerPositions.map((p) => p.department))];
+  const filteredJobs = activeDept === 'All'
+    ? careerPositions
+    : careerPositions.filter((p) => p.department === activeDept);
+
+  const careerSchema = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@graph': careerPositions.map((job) => ({
+        '@type': 'JobPosting',
+        title: job.title,
+        description: `${job.summary} Responsibilities: ${job.responsibilities.join(' ')} Requirements: ${job.requirements.join(' ')}`,
+        datePosted: '2026-11-01',
+        employmentType: job.type.includes('Intern') ? 'INTERN' : 'FULL_TIME',
+        hiringOrganization: {
+          '@type': 'Organization',
+          name: "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও",
+          sameAs: SITE_URL,
+          logo: `${SITE_URL}/logo.svg`,
+        },
+        jobLocation: {
+          '@type': 'Place',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Uttara',
+            addressLocality: 'Dhaka',
+            postalCode: '1230',
+            addressCountry: 'BD',
+          },
+        },
+      })),
+    }),
+    []
+  );
+
+  const handleSelectRole = (roleTitle) => {
+    setForm((prev) => ({ ...prev, position: roleTitle }));
+    const el = document.getElementById('career-apply-form');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setErrorMsg('');
+
+    try {
+      const formattedMessage = [
+        `[CAREER APPLICATION]`,
+        `Position: ${form.position}`,
+        `Experience: ${form.experience}`,
+        form.portfolio ? `Portfolio / CV Link: ${form.portfolio}` : 'Portfolio / CV Link: Will share via WhatsApp/Email',
+        form.message ? `Candidate Note: ${form.message}` : '',
+      ]
+        .filter(Boolean)
+        .join('\n');
+
+      const result = await submitInquiry({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        location: 'Uttara / Dhaka (Career Applicant)',
+        service_category: 'Career Application',
+        sub_service: form.position,
+        estimated_budget: form.experience,
+        message: formattedMessage,
+      });
+
+      setSubmittedResult({ ...result, applicant: { ...form } });
+    } catch {
+      setErrorMsg('Could not submit your application right now. Please send your CV directly via WhatsApp or Email below.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <main className="page-start-section career-page">
+      <SEO
+        title="Careers"
+        description="Join Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Uttara, Dhaka. Explore open career opportunities for Interior Designers, 3D Visualizers, Project Architects, Site Engineers, and Interns."
+        keywords="Interior Design Jobs Dhaka, Architect Jobs Bangladesh, Civil Engineer Jobs Dhaka, 3D Visualizer Jobs, Brown's Interiors Careers"
+        canonicalPath="/careers"
+        schema={careerSchema}
+      />
+
+      {/* Hero Header */}
+      <section className="career-hero-section">
+        <div className="container">
+          <SectionHead
+            eyebrow="Join Our Studio"
+            title="Build Your"
+            script="Career With Us"
+            as="h1"
+            sub="Join our architects, interior designers, 3D visualizers, and site engineers in Uttara, Dhaka."
+          />
+
+          <div className="career-hero-pills">
+            <span className="career-pill">
+              <MapPin size={14} /> Uttara, Dhaka-1230 Studio
+            </span>
+            <span className="career-pill">
+              <Briefcase size={14} /> {careerPositions.length} Open Positions
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Join Brown's Interiors */}
+      <section className="section cream career-culture-section">
+        <div className="container">
+          <SectionHead
+            eyebrow="Studio Culture"
+            title="Why Join"
+            script="Brown's Interiors"
+          />
+
+          <div className="career-perks-grid">
+            {careerPerks.map((perk, idx) => {
+              const Icon = perk.icon;
+              return (
+                <motion.div
+                  key={perk.title}
+                  className="career-perk-card clay"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: idx * 0.08 }}
+                >
+                  <div className="career-perk-icon">
+                    <Icon size={22} strokeWidth={1.7} />
+                  </div>
+                  <h3>{perk.title}</h3>
+                  <p>{perk.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Open Positions */}
+      <section className="section career-jobs-section" id="open-positions">
+        <div className="container">
+          <SectionHead
+            eyebrow="Current Openings"
+            title="Open"
+            script="Positions"
+          />
+
+          {/* Department Filter Tabs */}
+          <div className="proj-tabs career-dept-tabs">
+            {departments.map((dept) => (
+              <button
+                key={dept}
+                type="button"
+                className={activeDept === dept ? 'active' : ''}
+                onClick={() => setActiveDept(dept)}
+              >
+                {dept}
+              </button>
+            ))}
+          </div>
+
+          <div className="career-jobs-list">
+            {filteredJobs.map((job, idx) => {
+              const isOpen = expandedJob === job.id;
+              return (
+                <motion.article
+                  key={job.id}
+                  className={`career-job-card clay ${isOpen ? 'expanded' : ''}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.06 }}
+                >
+                  <div
+                    className="career-job-header"
+                    onClick={() => setExpandedJob(isOpen ? null : job.id)}
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={isOpen}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setExpandedJob(isOpen ? null : job.id);
+                      }
+                    }}
+                  >
+                    <div className="career-job-title-block">
+                      <div className="career-job-badges">
+                        <span className="career-badge dept">{job.department}</span>
+                        <span className="career-badge type">{job.type}</span>
+                        <span className="career-badge exp">
+                          <Clock size={12} /> {job.experience}
+                        </span>
+                      </div>
+                      <h2>{job.title}</h2>
+                    </div>
+
+                    <div className="career-job-header-actions">
+                      <button
+                        type="button"
+                        className="pill-btn dark career-quick-apply-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelectRole(job.title);
+                        }}
+                      >
+                        <span>Apply Now</span>
+                        <ArrowRight size={14} />
+                      </button>
+                      <span className={`career-expand-icon ${isOpen ? 'open' : ''}`} aria-hidden="true">
+                        <ChevronDown size={20} />
+                      </span>
+                    </div>
+                  </div>
+
+                  {isOpen && (
+                    <div className="career-job-details">
+                      <div className="career-job-summary-row">
+                        <p>{job.summary}</p>
+                      </div>
+                      <div className="career-job-cols">
+                        <div className="career-job-col">
+                          <h4>Key Responsibilities</h4>
+                          <ul>
+                            {job.responsibilities.map((item) => (
+                              <li key={item}>
+                                <CheckCircle2 size={15} />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="career-job-col">
+                          <h4>Requirements &amp; Qualifications</h4>
+                          <ul>
+                            {job.requirements.map((req) => (
+                              <li key={req}>
+                                <CheckCircle2 size={15} />
+                                <span>{req}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="career-job-footer">
+                        <div className="career-comp-tag">
+                          <strong>Compensation:</strong> <span>{job.compensation}</span>
+                        </div>
+                        <div className="career-job-cta-group">
+                          <button
+                            type="button"
+                            className="pill-btn dark"
+                            onClick={() => handleSelectRole(job.title)}
+                          >
+                            <Send size={14} />
+                            <span>Apply Online for This Role</span>
+                          </button>
+                          <a
+                            href={`https://wa.me/8801768436319?text=${encodeURIComponent(
+                              `Hello Brown's Interiors! I would like to apply for the "${job.title}" position at your Uttara, Dhaka studio.`
+                            )}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="pill-btn outline"
+                          >
+                            <FaWhatsapp size={16} />
+                            <span>Send CV on WhatsApp</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Application Form Section */}
+      <section className="section cream career-apply-section" id="career-apply-form">
+        <div className="container">
+          <div className="career-apply-grid">
+            <div className="career-apply-info">
+              <span className="sec-eyebrow">Submit Your Application</span>
+              <h2>Apply Online</h2>
+              <p className="career-apply-bn-lead">
+                Share your details &amp; portfolio link, or send your CV via WhatsApp or email.
+              </p>
+
+              <div className="career-direct-channels clay">
+                <h4>Direct HR &amp; Studio Contact</h4>
+                <a
+                  href="mailto:info@brownsinterior.com?subject=Job%20Application%20-%20Brown's%20Interiors"
+                  className="career-channel-item"
+                >
+                  <Mail size={18} />
+                  <div>
+                    <strong>Email Your CV &amp; Portfolio</strong>
+                    <span>info@brownsinterior.com</span>
+                  </div>
+                </a>
+                <a
+                  href="https://wa.me/8801768436319?text=Hello%20Brown's%20Interiors%2C%20I%20would%20like%20to%20share%20my%20CV%20and%20Portfolio%20for%20a%20career%20opportunity."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="career-channel-item"
+                >
+                  <FaWhatsapp size={18} />
+                  <div>
+                    <strong>WhatsApp HR Desk</strong>
+                    <span>+880 1768-436319</span>
+                  </div>
+                </a>
+                <div className="career-channel-item">
+                  <MapPin size={18} />
+                  <div>
+                    <strong>Studio Location</strong>
+                    <span>Uttara, Dhaka-1230, Bangladesh</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="career-apply-form-card clay">
+              {submittedResult ? (
+                <div className="career-apply-success">
+                  <div className="career-success-icon">
+                    <CheckCircle2 size={36} />
+                  </div>
+                  <h3>Application Received, {submittedResult.applicant.name}!</h3>
+                  <p>
+                    Thank you for applying for <strong>{submittedResult.applicant.position}</strong>. Our team will review your profile and reach out to you.
+                  </p>
+                  <div className="career-success-actions">
+                    <a
+                      href={`https://wa.me/8801768436319?text=${encodeURIComponent(
+                        `Hello Brown's Interiors! I just submitted my online application for "${submittedResult.applicant.position}". Name: ${submittedResult.applicant.name}, Phone: ${submittedResult.applicant.phone}, Experience: ${submittedResult.applicant.experience}. Here is my CV/Portfolio:`
+                      )}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="pill-btn dark"
+                    >
+                      <FaWhatsapp size={16} />
+                      <span>Send PDF CV on WhatsApp</span>
+                    </a>
+                    <button
+                      type="button"
+                      className="pill-btn outline"
+                      onClick={() => setSubmittedResult(null)}
+                    >
+                      Submit Another Application
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="career-form">
+                  <h3>Candidate Application Form</h3>
+                  <p className="career-form-sub">
+                    Complete the required (*) fields below and include a link to your CV or design portfolio.
+                  </p>
+
+                  {errorMsg && <div className="career-form-error" role="alert">{errorMsg}</div>}
+
+                  <div className="career-form-row">
+                    <div className="career-field">
+                      <label htmlFor="car-name">Full Name *</label>
+                      <input
+                        id="car-name"
+                        type="text"
+                        name="name"
+                        required
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="e.g. Ar. Tanvir Hasan"
+                      />
+                    </div>
+                    <div className="career-field">
+                      <label htmlFor="car-phone">Phone / WhatsApp *</label>
+                      <input
+                        id="car-phone"
+                        type="tel"
+                        name="phone"
+                        required
+                        value={form.phone}
+                        onChange={handleChange}
+                        placeholder="+880 17XX-XXXXXX"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="career-form-row">
+                    <div className="career-field">
+                      <label htmlFor="car-email">Email Address *</label>
+                      <input
+                        id="car-email"
+                        type="email"
+                        name="email"
+                        required
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="you@example.com"
+                      />
+                    </div>
+                    <div className="career-field">
+                      <label htmlFor="car-exp">Experience *</label>
+                      <select
+                        id="car-exp"
+                        name="experience"
+                        value={form.experience}
+                        onChange={handleChange}
+                      >
+                        <option value="Fresh Graduate / Intern">Fresh Graduate / Intern</option>
+                        <option value="1 – 2 Years">1 – 2 Years</option>
+                        <option value="2 – 4 Years">2 – 4 Years</option>
+                        <option value="4 – 7 Years">4 – 7 Years</option>
+                        <option value="7+ Years">7+ Years</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="career-field">
+                    <label htmlFor="car-pos">Position Applying For *</label>
+                    <select
+                      id="car-pos"
+                      name="position"
+                      value={form.position}
+                      onChange={handleChange}
+                    >
+                      {careerPositions.map((p) => (
+                        <option key={p.id} value={p.title}>
+                          {p.title}
+                        </option>
+                      ))}
+                      <option value="General / Open Application (Spontaneous CV)">
+                        General / Open Application
+                      </option>
+                    </select>
+                  </div>
+
+                  <div className="career-field">
+                    <label htmlFor="car-portfolio">
+                      Portfolio / CV Link (Google Drive, Behance, LinkedIn)
+                    </label>
+                    <input
+                      id="car-portfolio"
+                      type="url"
+                      name="portfolio"
+                      value={form.portfolio}
+                      onChange={handleChange}
+                      placeholder="https://drive.google.com/... or https://behance.net/..."
+                    />
+                  </div>
+
+                  <div className="career-field">
+                    <label htmlFor="car-msg">
+                      Key Software Skills &amp; Short Cover Note
+                    </label>
+                    <textarea
+                      id="car-msg"
+                      name="message"
+                      rows={3}
+                      value={form.message}
+                      onChange={handleChange}
+                      placeholder="Mention your proficiency in 3ds Max, V-Ray/Corona, AutoCAD, SketchUp, BOQ, or site supervision experience..."
+                    />
+                  </div>
+
+                  <button type="submit" className="pill-btn dark career-submit-btn" disabled={submitting}>
+                    {submitting ? (
+                      <>
+                        <Loader2 size={16} className="spin-icon" />
+                        <span>Submitting Application...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send size={16} />
+                        <span>Submit Application</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

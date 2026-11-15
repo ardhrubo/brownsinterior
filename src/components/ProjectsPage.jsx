@@ -16,8 +16,8 @@ export default function ProjectsPage() {
   return (
     <main style={{ backgroundColor: '#fafafa', minHeight: '100vh' }}>
       <SEO
-        title="Completed Projects Portfolio - Luxury Interiors & Architecture"
-        description="Browse our portfolio of completed luxury duplexes, corporate offices, restaurants, and villas in Gulshan, Banani, and Dhaka by Brown's Interior."
+        title="Completed Projects Portfolio"
+        description="Browse our portfolio of completed luxury duplexes, corporate offices, restaurants, and villas in Gulshan, Banani, and Dhaka by Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
         canonicalPath="/projects"
       />
       <section className="section page-start-section">
@@ -26,6 +26,7 @@ export default function ProjectsPage() {
             eyebrow="Complete Portfolio"
             title="Selected"
             script="Works"
+            as="h1"
             sub="Explore our portfolio of residential, commercial, architectural, and exhibition excellence across Dhaka."
           />
 

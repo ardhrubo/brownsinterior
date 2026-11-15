@@ -1,22 +1,27 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const DEFAULT_TITLE = "Brown's Interior | Premium Interior Design & Architecture in Bangladesh & Worldwide";
+const BRAND_NAME = "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও";
+const DEFAULT_TITLE = BRAND_NAME;
 const DEFAULT_DESC =
-  "Transforming spaces into breathtaking realities. Brown's Interior offers luxury interior design, visionary architecture, and complete turnkey structural solutions all over Bangladesh and worldwide.";
-const SITE_URL = 'https://www.brownsinterior.com';
+  "বাংলাদেশের অন্যতম নির্ভরযোগ্য ইন্টেরিয়র ডিজাইন স্টুডিও। Complete Interior & Exterior Design and Execution Services Across Bangladesh.";
+const DEFAULT_KEYWORDS =
+  "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, বাংলাদেশের অন্যতম নির্ভরযোগ্য ইন্টেরিয়র ডিজাইন স্টুডিও, বাংলাদেশের বেস্ট ইন্টেরিয়র ডিজাইন কোম্পানি, ইন্টেরিয়র ডিজাইন ঢাকা, ফ্ল্যাট ইন্টেরিয়র ডিজাইন, অফিস ইন্টেরিয়র ডিজাইন, Interior Design Dhaka, Interior Design Bangladesh, Architecture Bangladesh, Structural Engineering, Luxury Home Decor, Commercial Office Interior, Brown's Interiors";
+import { SITE_URL } from '../lib/site-url';
 
 export default function SEO({
   title,
   description,
+  keywords,
   canonicalPath,
   image,
   type = 'website',
   schema,
 }) {
   const location = useLocation();
-  const fullTitle = title ? `${title} | Brown's Interior` : DEFAULT_TITLE;
+  const fullTitle = title ? `${title} | ${BRAND_NAME}` : DEFAULT_TITLE;
   const fullDesc = description || DEFAULT_DESC;
+  const fullKeywords = keywords ? `${keywords}, ${DEFAULT_KEYWORDS}` : DEFAULT_KEYWORDS;
   const rawPath = canonicalPath || location.pathname;
   const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
   const canonicalUrl = `${SITE_URL}${normalizedPath}`;
@@ -38,11 +43,13 @@ export default function SEO({
     };
 
     setMeta('name', 'description', fullDesc);
+    setMeta('name', 'keywords', fullKeywords);
     setMeta('property', 'og:title', fullTitle);
     setMeta('property', 'og:description', fullDesc);
     setMeta('property', 'og:url', canonicalUrl);
     setMeta('property', 'og:image', ogImage);
     setMeta('property', 'og:type', type);
+    setMeta('name', 'twitter:url', canonicalUrl);
     setMeta('name', 'twitter:title', fullTitle);
     setMeta('name', 'twitter:description', fullDesc);
     setMeta('name', 'twitter:image', ogImage);
@@ -74,7 +81,7 @@ export default function SEO({
       const s = document.getElementById('seo-dynamic-schema');
       if (s) s.remove();
     };
-  }, [fullTitle, fullDesc, canonicalUrl, ogImage, type, schema]);
+  }, [fullTitle, fullDesc, fullKeywords, canonicalUrl, ogImage, type, schema]);
 
   return null;
 }

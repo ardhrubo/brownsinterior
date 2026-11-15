@@ -1,17 +1,18 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadEnv } from 'vite';
+import { normalizeSiteUrl } from '../src/lib/site-url.js';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
-async function generateSitemap() {
+export async function generateSitemap(domain) {
   const { servicesData } = await import('../src/data/servicesData.js');
   const { projectsData } = await import('../src/data/projectsData.js');
   const { blogPosts } = await import('../src/data/blogData.js');
 
-  const domain = 'https://www.brownsinterior.com';
   const today = new Date().toISOString().split('T')[0];
 
   const urls = [];
@@ -40,13 +41,14 @@ async function generateSitemap() {
   }
 
   // 1. Core Pages
-  addUrl({ loc: '/', priority: '1.0', changefreq: 'weekly', images: [{ loc: `${domain}/og-image.jpg`, title: "Brown's Interior - Luxury Interior Design" }] });
+  addUrl({ loc: '/', priority: '1.0', changefreq: 'weekly', images: [{ loc: `${domain}/og-image.jpg`, title: "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও - Interior Design in Dhaka" }] });
   addUrl({ loc: '/about', priority: '0.8', changefreq: 'monthly' });
   addUrl({ loc: '/services', priority: '0.9', changefreq: 'weekly' });
   addUrl({ loc: '/projects', priority: '0.9', changefreq: 'weekly' });
   addUrl({ loc: '/process', priority: '0.8', changefreq: 'monthly' });
   addUrl({ loc: '/testimonials', priority: '0.7', changefreq: 'monthly' });
   addUrl({ loc: '/cost-estimator', priority: '0.8', changefreq: 'monthly' });
+  addUrl({ loc: '/careers', priority: '0.8', changefreq: 'monthly' });
   addUrl({ loc: '/blog', priority: '0.8', changefreq: 'weekly' });
   addUrl({ loc: '/contact', priority: '0.8', changefreq: 'monthly' });
 
@@ -144,6 +146,7 @@ ${urls
 `;
 
   const publicSitemapPath = path.resolve(rootDir, 'public', 'sitemap.xml');
+  fs.writeFileSync(path.resolve(rootDir, 'public', 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${domain}/sitemap.xml\n`, 'utf8');
   fs.writeFileSync(publicSitemapPath, xml.trim() + '\n', 'utf8');
 
   // Also write to dist/sitemap.xml if dist exists
@@ -156,7 +159,10 @@ ${urls
   console.log(` - ${publicSitemapPath}`);
 }
 
-generateSitemap().catch((err) => {
-  console.error('Failed to generate sitemap:', err);
-  process.exit(1);
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  const env = loadEnv(process.env.NODE_ENV || 'production', rootDir, 'VITE_');
+  generateSitemap(normalizeSiteUrl(env.VITE_SITE_URL || undefined)).catch((err) => {
+    console.error('Failed to generate sitemap:', err);
+    process.exitCode = 1;
+  });
+}

@@ -1,9 +1,19 @@
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
+import { normalizeSiteUrl } from './src/lib/site-url.js'
+import { generateSitemap } from './scripts/generate-sitemap.mjs'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
+export default defineConfig(async ({ mode, command }) => {
+  const env = loadEnv(mode, process.cwd(), 'VITE_');
+  const siteUrl = normalizeSiteUrl(env.VITE_SITE_URL || undefined);
+  if (command === 'build') await generateSitemap(siteUrl);
+  return {
+  define: { 'import.meta.env.VITE_SITE_URL': JSON.stringify(siteUrl) },
+  plugins: [react(), {
+    name: 'site-origin-html',
+    transformIndexHtml: { order: 'pre', handler: (html) => html.replaceAll('%VITE_SITE_URL%', siteUrl) },
+  }],
   build: {
     chunkSizeWarningLimit: 1200,
     rollupOptions: {
@@ -21,5 +31,6 @@ export default defineConfig({
       },
     },
   },
+  };
 })
 

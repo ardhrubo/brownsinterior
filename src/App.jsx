@@ -22,6 +22,7 @@ const ProcessPage = lazy(() => import('./components/ExtraPages').then((m) => ({ 
 const TestimonialsPage = lazy(() => import('./components/ExtraPages').then((m) => ({ default: m.TestimonialsPage })));
 const BlogPage = lazy(() => import('./components/ExtraPages').then((m) => ({ default: m.BlogPage })));
 const CostCalculatorPage = lazy(() => import('./components/ExtraPages').then((m) => ({ default: m.CostCalculatorPage })));
+const CareersPage = lazy(() => import('./components/ExtraPages').then((m) => ({ default: m.CareersPage })));
 
 const ScrollToTop = () => {
   const { pathname, key } = useLocation();
@@ -55,15 +56,16 @@ const Home = () => (
 const AboutPage = () => (
   <main className="page-start-section">
     <SEO
-      title="About Us - Luxury Interior Designers in Dhaka"
-      description="Learn about Brown's Interior, led by Engr. Aslam Sheikh. Over 10 years of experience delivering premium interior design, architecture, and turnkey construction across Bangladesh."
+      title="About Us"
+      description="Learn about Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, led by Engr. Aslam Sheikh. Over 10 years of experience delivering luxury interior design, architecture, and turnkey construction across Bangladesh."
       canonicalPath="/about"
     />
     <div className="container" style={{ marginBottom: '2rem' }}>
       <SectionHead
         eyebrow="Our Story & Leadership"
         title="About"
-        script="Brown's Interior"
+        script="Brown's Interiors"
+        as="h1"
         sub="Designing and executing beautiful spaces with engineering precision, quality materials, and transparent accountability across Bangladesh."
       />
     </div>
@@ -93,6 +95,8 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/cost-estimator" element={<CostCalculatorPage />} />
           <Route path="/cost-calculator" element={<CostCalculatorPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/career" element={<CareersPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/project/:id" element={<ProjectDetail />} />

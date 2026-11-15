@@ -5,10 +5,16 @@
 .h-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0.72) 100%); }
 .h-hero-content { position: relative; z-index: 2; text-align: center; padding: 0 1.5rem; max-width: 880px; }
 .h-hero-tag { display: inline-block; font-family: 'Outfit', var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 4.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.15rem; padding: 0.4rem 1.1rem; border-radius: 999px; background: rgba(255,255,255,0.08); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.14); }
-.h-hero h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(2.3rem, 5.2vw, 4.3rem); line-height: 1.12; letter-spacing: -0.01em; text-shadow: 0 4px 30px rgba(0,0,0,0.35); }
-.h-hero h1 em { font-family: var(--font-display); font-style: italic; font-weight: 400; color: var(--gold); }
-.h-hero p { font-family: 'Outfit', var(--font-sans); font-weight: 300; max-width: 720px; margin: 1.15rem auto 0; font-size: clamp(0.98rem, 1.25vw, 1.12rem); line-height: 1.65; color: rgba(255,255,255,0.88); }
-.h-hero-sub-location { display: block; margin-top: 0.45rem; font-weight: 400; color: var(--gold); font-size: 0.95em; letter-spacing: 0.3px; }
+.h-hero h1 { max-width: 850px; margin: 0 auto; font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 4.4vw, 4rem); line-height: 1.2; letter-spacing: -0.035em; text-wrap: balance; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+.h-hero h1 > span { display: block; }
+.h-hero h1 .hero-trust { display: block; margin-top: 0.5em; font-size: 0.65em; letter-spacing: 0; }
+.h-hero h1 .hero-headline-first { display: flex; justify-content: center; align-items: baseline; gap: 0.3em; white-space: nowrap; }
+.hero-headline-divider { display: inline-block; align-self: center; width: 1px; height: 0.65em; background: #e2d1b9; opacity: 0.8; flex: 0 0 1px; }
+.h-hero h1 em { font-family: inherit; font-style: italic; font-weight: 400; color: #e2d1b9; }
+.h-hero p { font-family: 'Outfit', var(--font-sans); font-weight: 400; max-width: 100%; margin: 1rem auto 0; font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.75; color: rgba(255,255,255,0.96); text-wrap: balance; }
+.h-hero-bn-sub { display: block; margin-top: 0.45rem; font-family: 'Noto Sans Bengali', var(--font-sans); font-size: clamp(0.95rem, 1.25vw, 1.08rem); font-weight: 500; color: var(--gold); letter-spacing: normal; line-height: 1.6; }
+.h-hero-sub-location { display: block; margin-top: 0.35rem; font-weight: 400; color: var(--gold); font-size: 0.9em; letter-spacing: 0.3px; }
+.sec-bn-sub { font-family: 'Noto Sans Bengali', var(--font-sans); font-size: 0.96rem; font-weight: 500; color: var(--gold-dark); margin: -0.15rem auto 0.55rem; line-height: 1.65; }
 .h-hero-ctas { margin-top: 2.25rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 .h-hero-dots { position: absolute; bottom: 4.2rem; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 0.35rem; }
 .h-hero-dots button { position: relative; width: 28px; height: 28px; padding: 0; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; }
@@ -830,12 +836,17 @@
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
-  .h-hero { flex-direction: column; height: 93svh; min-height: 540px; padding: 5.5rem 0 3.5rem; }
-  .h-hero-tag { font-size: 0.68rem; letter-spacing: 3px; }
-  .h-hero h1 { font-size: clamp(2rem, 8vw, 2.75rem); line-height: 1.18; }
-  .h-hero p { font-size: 0.95rem; }
-  .h-hero-ctas { margin-top: 1.75rem; width: 100%; }
-  .h-hero-ctas .pill-btn { flex: 1 1 140px; justify-content: center; max-width: 220px; white-space: nowrap; padding: 0.8rem 1rem; }
+  .h-hero { flex-direction: column; height: auto; min-height: min(760px, 92svh); padding: 8rem 0 7.5rem; }
+  .h-hero-content { width: 100%; max-width: 540px; padding: 0 1.5rem; }
+  .h-hero-tag { font-size: 0.62rem; letter-spacing: 1.8px; padding: 0.45rem 0.8rem; margin-bottom: 1.35rem; }
+  .h-hero h1 { font-size: clamp(2.15rem, 9.4vw, 3.2rem); line-height: 1.24; letter-spacing: -0.035em; }
+  .h-hero h1 .hero-headline-first { display: block; white-space: normal; }
+  .h-hero h1 .hero-quality { display: block; }
+  .h-hero h1 .hero-trust { margin-top: 0.5em; font-size: 0.7em; }
+  .h-hero h1 .hero-headline-divider { display: none; }
+  .h-hero p { max-width: 32ch; font-size: 0.95rem; line-height: 1.7; margin-top: 1.25rem; }
+  .h-hero-ctas { margin: 1.5rem auto 0; width: 100%; max-width: 290px; gap: 0.7rem; }
+  .h-hero-ctas .pill-btn { flex: 1 1 100%; justify-content: center; max-width: none; min-height: 48px; white-space: nowrap; padding: 0.8rem 1rem; }
   .h-hero-dots { bottom: 3.35rem; }
   .stats-bar { margin-top: -2.5rem; margin-bottom: 0; padding: 0 0.85rem; }
   .stats-inner {
@@ -901,4 +912,5 @@
   .cta-inner { flex-direction: column; }
   .cta-btns { justify-content: center; width: 100%; }
   .cta-btns .pill-btn { flex: 1 1 100%; justify-content: center; max-width: 320px; }
+  .h-hero-bn-sub { font-size: 0.88rem; }
 }

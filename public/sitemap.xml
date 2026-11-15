@@ -8,7 +8,7 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.brownsinterior.com/og-image.jpg</image:loc>
-      <image:title>Brown's Interior - Luxury Interior Design</image:title>
+      <image:title>Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও - Interior Design in Dhaka</image:title>
     </image:image>
   </url>
   <url>
@@ -43,6 +43,12 @@
   </url>
   <url>
     <loc>https://www.brownsinterior.com/cost-estimator</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.brownsinterior.com/careers</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -543,6 +549,100 @@
     <image:image>
       <image:loc>https://www.brownsinterior.com/portfolio/booth/booth-2.webp</image:loc>
       <image:title>XPLOR Trade Expo Pavilion</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.brownsinterior.com/blog/why-browns-interiors-bangladesh</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/residential/living-marble-luxury-hall.webp</image:loc>
+      <image:title>কেন Brown’s Interiors সবার ভরসার জায়গা?</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/residential/bedroom-dark-luxury-suite.webp</image:loc>
+      <image:title>3D ডিজাইন অনুযায়ী বাস্তবায়িত মাস্টার বেডরুম ইন্টেরিয়র</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/interior/modern-kitchen.webp</image:loc>
+      <image:title>লিখিত BOQ অনুযায়ী তৈরি আধুনিক মডিউলার কিচেন</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/residential/living-dining-wine-chandelier.webp</image:loc>
+      <image:title>নিরাপদ পরিকল্পনা ও ইঞ্জিনিয়ারিং তত্ত্বাবধানে তৈরি লিভিং ও ডাইনিং স্পেস</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/booth/booth-1.webp</image:loc>
+      <image:title>উন্নত মালামাল ও মজবুত কার্পেন্ট্রি ফিনিশিংয়ের উদাহরণ</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/residential/living-dining-neoclassical.webp</image:loc>
+      <image:title>নির্ধারিত সময়ে সম্পূর্ণ প্রস্তুত ও পরিচ্ছন্ন আবাসিক প্রজেক্ট</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.brownsinterior.com/blog/browns-interiors-trusted-interior-studio</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/residential/living-panoramic-library.webp</image:loc>
+      <image:title>কীভাবে Brown’s Interiors বাংলাদেশের অন্যতম সেরা ইন্টেরিয়র স্টুডিও হয়ে উঠল?</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/interior/living-marble-luxury.webp</image:loc>
+      <image:title>স্থাপত্য ও প্রকৌশল পরিকল্পনার সমন্বয়ে সাজানো আধুনিক লিভিং রুম</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/cover/cover-2.webp</image:loc>
+      <image:title>প্রশস্ত ও প্রিমিয়াম লুকে তৈরি ইন্টেরিয়র ও আর্কিটেকচারাল স্পেস</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/interior/kitchen-semi-open.webp</image:loc>
+      <image:title>ওয়াটারপ্রুফ Marine Plywood দিয়ে তৈরি আধুনিক মডিউলার কিচেন</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/office/office-conference-showroom.webp</image:loc>
+      <image:title>আধুনিক কর্পোরেট অফিস কনফারেন্স রুম ও ব্র্যান্ড শোরুম</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/booth/booth-1.webp</image:loc>
+      <image:title>Brown’s Interiors-এর তৈরি এক্সিবিশন ও ব্র্যান্ড প্যাভিলিয়ন</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.brownsinterior.com/blog/how-browns-interiors-works-process</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/residential/bedroom-bay-window-suite.webp</image:loc>
+      <image:title>কীভাবে কাজ করে Brown’s Interiors? জেনে নিন আমাদের কাজের ধরন</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/office/office-floor-reception-hub.webp</image:loc>
+      <image:title>সাইটের মাপ অনুযায়ী পরিকল্পিত কর্পোরেট রিসেপশন জোন</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/office/office-workstations-pod.webp</image:loc>
+      <image:title>2D ফার্নিচার লেআউট অনুযায়ী সাজানো অফিস ওয়ার্কস্টেশন</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/interior/master-bedroom-client-fav.webp</image:loc>
+      <image:title>অনুমোদিত 3D ডিজাইন অনুযায়ী তৈরি মাস্টার বেডরুম</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/interior/kitchen-main.webp</image:loc>
+      <image:title>লিখিত BOQ অনুযায়ী তৈরি আধুনিক মডিউলার কিচেন</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/office/office-conference-showroom.webp</image:loc>
+      <image:title>ধাপে ধাপে তদারকির মাধ্যমে তৈরি কনফারেন্স রুম ও শোরুম</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.brownsinterior.com/portfolio/interior/living-room-v2.webp</image:loc>
+      <image:title>কাজ শেষে পরিষ্কার অবস্থায় হস্তান্তর করা আধুনিক লিভিং রুম</image:title>
     </image:image>
   </url>
   <url>
