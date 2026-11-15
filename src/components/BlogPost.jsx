@@ -444,9 +444,6 @@ export default function BlogPost() {
                   className="blog-section-block"
                 >
                   <div className="blog-section-header">
-                    {section.number && (
-                      <span className="blog-section-num">{section.number}</span>
-                    )}
                     <h2 className="blog-section-title">{section.title}</h2>
                     {section.lead && (
                       <p className="blog-section-lead">{section.lead}</p>

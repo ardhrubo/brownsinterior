@@ -40,7 +40,7 @@ export const blogPosts = [
       'A side-by-side look at Bangladesh’s leading interior design studios, engineering standards, and per-sq-ft project costs.',
     metaTitle: 'Top 10 Best Interior Design Companies in Bangladesh (2026 Guide) | Brown’s Interiors',
     metaDescription:
-      'Looking for the best interior design company in Bangladesh? Compare the top 10 interior firms in Dhaka for 2026, ranked by engineering credentials, itemized BOQ pricing, and turnkey execution.',
+      'Looking for the best interior design company in Bangladesh? Compare the leading interior firms in Dhaka for 2026, evaluated on engineering credentials, itemized BOQ pricing, and turnkey execution.',
     keywords: [
       'top 10 best interior design company in bangladesh',
       'best interior design company in bangladesh',
@@ -52,27 +52,27 @@ export const blogPosts = [
     ],
     body: [
       'Finding a reliable interior design company in Bangladesh has become both easier and trickier than ever. Dozens of studios showcase glossy 3D renders on social media, yet apartment owners in Gulshan, Banani, Uttara, Dhanmondi, and Bashundhara still run into the same real-world problems: surprise mid-project cost hikes, sub-standard plywood that swells after one monsoon, unsafe wall modifications, and missed handover dates.',
-      'To help homeowners, developers, corporate directors, and retail founders make a confident decision in 2026, this guide reviews the Top 10 interior design companies operating in Bangladesh, starting with why **Brown’s Interiors** stands out at **#1** for engineering-backed, transparent turnkey delivery.',
+      'To help homeowners, developers, corporate directors, and retail founders make a confident decision in 2026, this guide reviews leading interior design companies operating in Bangladesh, starting with why **Brown’s Interiors** stands out for engineering-backed, transparent turnkey delivery.',
     ],
     tableOfContents: [
-      { id: 'top-1', label: '01. How We Evaluated the Top 10 Firms' },
-      { id: 'top-2', label: '02. Brown’s Interiors (Rank 1: Turnkey Leader)' },
-      { id: 'top-3', label: '03. Notable Interior Firms in Dhaka (Ranks 2–5)' },
-      { id: 'top-4', label: '04. Established Studios in Bangladesh (Ranks 6–10)' },
-      { id: 'top-5', label: '05. Why Brown’s Interiors Stands Out' },
-      { id: 'top-6', label: '06. 2026 Cost Benchmarks & Shortlisting Guide' },
+      { id: 'top-1', label: 'How We Evaluate Interior Design Firms in Bangladesh' },
+      { id: 'top-2', label: 'Brown’s Interiors: Engineering-Led Turnkey Excellence' },
+      { id: 'top-3', label: 'Notable Contemporary Interior Firms in Dhaka' },
+      { id: 'top-4', label: 'Established Interior & Architectural Studios in Bangladesh' },
+      { id: 'top-5', label: 'Side-by-Side Comparison: Why Brown’s Interiors Leads' },
+      { id: 'top-6', label: '2026 Turnkey Interior Cost Benchmarks & How to Shortlist' },
       { id: 'faqs', label: 'Frequently Asked Questions' },
     ],
     intro: [
       'Choosing the right interior design firm in Dhaka or anywhere in Bangladesh is a high-stakes financial and structural decision. Pretty moodboards are easy to generate, but turning a bare concrete flat or commercial floor into a safe, durable, moisture-resistant space requires coordinated architecture, civil engineering, MEP planning, and disciplined site supervision.',
-      'In this 2026 buyer’s guide, we break down the **Top 10 Best Interior Design Companies in Bangladesh**, explain what each firm focuses on, and show why **Brown’s Interiors** leads the market for clients who demand both architectural refinement and zero-surprise execution.',
+      'In this 2026 buyer’s guide, we break down leading interior design companies in Bangladesh, explain what each firm focuses on, and show why **Brown’s Interiors** leads the market for clients who demand both architectural refinement and zero-surprise execution.',
     ],
     sections: [
       {
         id: 'top-1',
         number: '01',
-        title: 'How We Evaluated the Top 10 Interior Design Companies in Bangladesh',
-        lead: 'A trustworthy ranking looks beyond Instagram renders to inspect engineering qualifications, BOQ clarity, material longevity, and real site accountability.',
+        title: 'How We Evaluate Interior Design Companies in Bangladesh',
+        lead: 'A trustworthy evaluation looks beyond Instagram renders to inspect engineering qualifications, BOQ clarity, material longevity, and real site accountability.',
         paragraphs: [
           'Too many comparisons online simply list studios alphabetically without checking whether a firm actually has certified engineers, in-house execution teams, or written Bill of Quantities (BOQ) contracts. When evaluating interior companies across Dhaka and nationwide, five practical standards separate lasting studios from seasonal decorators:',
           '**1. Dual Architecture & Civil Engineering Credentials:** Does the lead practitioner understand both spatial aesthetics and building structure, beams, columns, plumbing stacks, and electrical load safety?',
@@ -99,14 +99,14 @@ export const blogPosts = [
       {
         id: 'top-2',
         number: '02',
-        title: 'Brown’s Interiors (Rank 1): Engineering-Led Turnkey Design & Execution',
+        title: 'Brown’s Interiors: Engineering-Led Turnkey Design & Execution',
         lead: 'Led by Engr. Aslam Sheikh (IEB A29734), Brown’s Interiors combines architectural creativity, certified structural integrity, and itemized BOQ transparency under one roof.',
         paragraphs: [
-          'Ranked **#1 in Bangladesh** for clients seeking zero-compromise turnkey execution, [Brown’s Interiors](/about) (headquartered in Uttara, Dhaka-1230) solves the industry’s biggest gap: the disconnect between 3D concept designers and field contractors. Founded and led by [Engr. Aslam Sheikh](/team), who holds both a **Diploma in Architecture & Interior Design (NPI)** and a **B.Sc. in Civil Engineering (IUBAT)** with **IEB Membership No: A29734**, the studio brings over **10+ years of experience** and **250+ completed projects** across Uttara, Gulshan, Banani, Dhanmondi, Bashundhara R/A, and commercial hubs nationwide.',
+          'Trusted across Bangladesh by clients seeking zero-compromise turnkey execution, [Brown’s Interiors](/about) (headquartered in Uttara, Dhaka-1230) solves the industry’s biggest gap: the disconnect between 3D concept designers and field contractors. Founded and led by [Engr. Aslam Sheikh](/team), who holds both a **Diploma in Architecture & Interior Design (NPI)** and a **B.Sc. in Civil Engineering (IUBAT)** with **IEB Membership No: A29734**, the studio brings over **10+ years of experience** and **250+ completed projects** across Uttara, Gulshan, Banani, Dhanmondi, Bashundhara R/A, and commercial hubs nationwide.',
           'Unlike pure decorating outfits, Brown’s Interiors delivers **7 integrated core capabilities**: [Residential & Commercial Interior Design](/services/interior-design), [Architectural Design & Facade Planning](/services/architecture), [Structural Engineering Consultancy](/services/engineering), [Renovation & Remodeling](/services/renovation-remodeling), [Exhibition Booth & Pavilion Design](/services/exhibition-booth-design), turnkey construction, and [Project Management](/services/project-management). Every contract begins with a measured floor survey, photorealistic 3D views matched to locally available materials, complete 2D MEP/carpentry working drawings, and an itemized BOQ calibrated to transparent Dhaka tiers (**৳750–৳1,083.33/sft** Standard, **৳1,083.33–৳2,083.33/sft** Premium, and **৳1,666.67–৳3,750/sft** Luxury for residential benchmarks), backed by a **1-year workmanship warranty**.',
         ],
         proTip: {
-          title: 'Why Clients Choose Brown’s Interiors #1',
+          title: 'Why Clients Choose Brown’s Interiors',
           text: 'You deal with **one accountable engineering-led studio** from soil-to-ceiling planning or apartment remodeling through custom furniture fabrication and key handover, eliminating contractor finger-pointing and hidden mid-project markups.',
         },
         inlineImage: {
@@ -123,14 +123,14 @@ export const blogPosts = [
       {
         id: 'top-3',
         number: '03',
-        title: 'Notable Interior Design Firms in Dhaka (Ranks 2–5)',
+        title: 'Notable Contemporary Interior Firms in Dhaka',
         lead: 'Several established Dhaka studios serve distinct segments ranging from boutique styling and corporate offices to virtual e-design consultations.',
         paragraphs: [
-          '**#2 Zero Inch Interiors Ltd.:** Well known in Dhaka’s contemporary commercial and residential space for conceptual aesthetics and urban apartment interiors, suitable for clients seeking curated modern styling.',
-          '**#3 Sheraspace:** Recognized for bringing structured e-design consultations and modular apartment packages to younger homeowners looking for remote layout planning or room-by-room refreshes.',
-          '**#4 Imagine Interiors:** Known for its visible footprint across corporate offices, retail spaces, and lifestyle fit-outs in Dhaka.',
-          '**#5 Minimal Limited:** Focuses on clean, minimalist architectural interiors and bespoke furniture styling.',
-          'When comparing any of these #2–#5 firms against **Brown’s Interiors**, prospective clients should evaluate whether full civil/structural engineering review, exhibition booth fabrication, and strictly itemized line-by-line BOQs are included natively or subcontracted.',
+          '**Zero Inch Interiors Ltd.:** Well known in Dhaka’s contemporary commercial and residential space for conceptual aesthetics and urban apartment interiors, suitable for clients seeking curated modern styling.',
+          '**Sheraspace:** Recognized for bringing structured e-design consultations and modular apartment packages to younger homeowners looking for remote layout planning or room-by-room refreshes.',
+          '**Imagine Interiors:** Known for its visible footprint across corporate offices, retail spaces, and lifestyle fit-outs in Dhaka.',
+          '**Minimal Limited:** Focuses on clean, minimalist architectural interiors and bespoke furniture styling.',
+          'When comparing any of these Dhaka studios with **Brown’s Interiors**, prospective clients should evaluate whether full civil/structural engineering review, exhibition booth fabrication, and strictly itemized line-by-line BOQs are included natively or subcontracted.',
         ],
         proTip: {
           title: 'How to Compare Mid-to-Top Tier Studios',
@@ -142,7 +142,7 @@ export const blogPosts = [
           caption: 'Commercial fit-outs require acoustic planning, ergonomic lighting, and disciplined MEP routing alongside visual appeal.',
         },
         keyTakeaways: [
-          '#2–#5 firms offer diverse specializations in styling, online consultation, or corporate interiors.',
+          'Leading Dhaka studios offer diverse specializations in styling, online consultation, or corporate interiors.',
           'Always verify if on-site supervision is handled by permanent engineers or rotating third-party foremen.',
           'Compare exact hardware brands, edge-banding methods, and warranty clauses before awarding work.',
         ],
@@ -150,14 +150,14 @@ export const blogPosts = [
       {
         id: 'top-4',
         number: '04',
-        title: 'Established Interior Studios in Bangladesh (Ranks 6–10)',
-        lead: 'Rounding out the top 10 are long-standing Dhaka interior and architectural practices covering residential makeovers, showrooms, and contractor fit-outs.',
+        title: 'Established Interior & Architectural Studios in Bangladesh',
+        lead: 'Alongside boutique specialists, several long-standing Dhaka interior and architectural practices cover residential makeovers, showrooms, and contractor fit-outs.',
         paragraphs: [
-          '**#6 Dream Touch Architects Ltd.:** A longstanding name in Dhaka covering both architectural consultancy and interior remodeling for residential buildings and offices.',
-          '**#7 Interior Studio Ace:** Focuses on tailored apartment interiors, ceilings, and custom cabinetry for mid-to-upper residential clients.',
-          '**#8 BD Interior:** Known for straightforward residential and showroom interior execution across the city.',
-          '**#9 Rongin Interior:** Serves homeowners looking for decorative wall treatments, lighting accents, and apartment upgrades across Dhaka neighborhoods.',
-          '**#10 Creative Interior:** Provides residential and retail interior execution packages. Across all #6–#10 providers, buyers should double-check drawing completeness, payment milestones, and post-handover snag-rectification commitments before signing.',
+          '**Dream Touch Architects Ltd.:** A longstanding name in Dhaka covering both architectural consultancy and interior remodeling for residential buildings and offices.',
+          '**Interior Studio Ace:** Focuses on tailored apartment interiors, ceilings, and custom cabinetry for mid-to-upper residential clients.',
+          '**BD Interior:** Known for straightforward residential and showroom interior execution across the city.',
+          '**Rongin Interior:** Serves homeowners looking for decorative wall treatments, lighting accents, and apartment upgrades across Dhaka neighborhoods.',
+          '**Creative Interior:** Provides residential and retail interior execution packages. Across all established studios, buyers should double-check drawing completeness, payment milestones, and post-handover snag-rectification commitments before signing.',
         ],
         proTip: {
           title: 'Protecting Yourself During Remodeling',
@@ -234,9 +234,9 @@ export const blogPosts = [
     },
     faqs: [
       {
-        question: 'Which is the #1 best interior design company in Bangladesh for turnkey work?',
+        question: 'Which interior design company in Bangladesh is best for turnkey work?',
         answer:
-          '**Brown’s Interiors** stands out as the #1 choice in Bangladesh for clients seeking engineering-led, turnkey execution. Unlike pure decorating agencies, Brown’s Interiors is led by **Engr. Aslam Sheikh** (Diploma in Architecture & Interior Design, NPI & B.Sc. in Civil Engineering, IUBAT, **IEB Member A29734**), uniting 250+ completed residential, commercial, and exhibition projects with itemized BOQs, structural safety oversight, and a 1-year workmanship warranty.',
+          '**Brown’s Interiors** stands out as a premier choice in Bangladesh for clients seeking engineering-led, turnkey execution. Unlike pure decorating agencies, Brown’s Interiors is led by **Engr. Aslam Sheikh** (Diploma in Architecture & Interior Design, NPI & B.Sc. in Civil Engineering, IUBAT, **IEB Member A29734**), uniting 250+ completed residential, commercial, and exhibition projects with itemized BOQs, structural safety oversight, and a 1-year workmanship warranty.',
       },
       {
         question: 'How much do top interior design companies charge per sq ft in Dhaka in 2026?',
@@ -260,7 +260,7 @@ export const blogPosts = [
       },
     ],
     bottomCta: {
-      eyebrow: 'Work With Bangladesh’s #1 Engineering-Led Studio',
+      eyebrow: 'Work With Bangladesh’s Leading Engineering-Led Studio',
       title: 'Ready to Turn Your Floor Plan Into a Zero-Surprise Turnkey Interior?',
       subtitle:
         'Book a site visit and transparent itemized BOQ review with Engr. Aslam Sheikh and the Brown’s Interiors team across Dhaka and Bangladesh.',
@@ -285,12 +285,12 @@ export const blogPosts = [
       excerpt:
         'বাংলাদেশের শীর্ষ ইন্টেরিয়র ডিজাইন প্রতিষ্ঠানগুলোর কাজের মান, ইঞ্জিনিয়ারিং দক্ষতা ও খরচের তুলনামূলক গাইড।',
       tableOfContents: [
-        { id: 'top-1', label: '০১. সেরা প্রতিষ্ঠান যাচাইয়ের ৫টি মূল মাপকাঠি' },
-        { id: 'top-2', label: '০২. Brown’s Interiors (টার্নকি প্রজেক্টে শীর্ষস্থানীয়)' },
-        { id: 'top-3', label: '০৩. ঢাকার আরও কয়েকটি পরিচিত প্রতিষ্ঠান (২–৫)' },
-        { id: 'top-4', label: '০৪. অন্যান্য প্রতিষ্ঠিত ইন্টেরিয়র স্টুডিও (৬–১০)' },
-        { id: 'top-5', label: '০৫. কেন Brown’s Interiors সবার থেকে আলাদা?' },
-        { id: 'top-6', label: '০৬. ২০২৬ সালের খরচের ধারণা ও সঠিক প্রতিষ্ঠান বাছাই' },
+        { id: 'top-1', label: 'সেরা প্রতিষ্ঠান যাচাইয়ের মূল মাপকাঠি' },
+        { id: 'top-2', label: 'Brown’s Interiors: ইঞ্জিনিয়ারিং ও টার্নকি সেবা' },
+        { id: 'top-3', label: 'ঢাকার সমসাময়িক কয়েকটি পরিচিত প্রতিষ্ঠান' },
+        { id: 'top-4', label: 'বাংলাদেশের অন্যান্য প্রতিষ্ঠিত ইন্টেরিয়র স্টুডিও' },
+        { id: 'top-5', label: 'কেন Brown’s Interiors সবার থেকে আলাদা?' },
+        { id: 'top-6', label: '২০২৬ সালের খরচের ধারণা ও সঠিক প্রতিষ্ঠান বাছাই' },
         { id: 'faqs', label: 'সাধারণ জিজ্ঞাসা' },
       ],
       intro: [
@@ -336,7 +336,7 @@ export const blogPosts = [
             'Brown’s Interiors একসাথে ৭টি সমন্বিত সেবা প্রদান করে: [আবাসিক ও বাণিজ্যিক ইন্টেরিয়র](/services/interior-design), [আর্কিটেকচারাল ডিজাইন](/services/architecture), [স্ট্রাকচারাল ইঞ্জিনিয়ারিং](/services/engineering), [রিনোভেশন ও রিমডেলিং](/services/renovation-remodeling), [এক্সিবিশন বুথ ডিজাইন](/services/exhibition-booth-design), টার্নকি নির্মাণ ও [প্রজেক্ট ম্যানেজমেন্ট](/services/project-management)। ঢাকার বাজার উপযোগী স্ট্যান্ডার্ড (৳৭৫০–১,০৮৩/বর্গফুট), প্রিমিয়াম (৳১,০৮৩–২,০৮৩/বর্গফুট) এবং লাক্সারি (৳১,৬৬৭–৩,৭৫০/বর্গফুট) বাজেটের পাশাপাশি থাকছে ১ বছরের ওয়ার্কম্যানশিপ ওয়ারেন্টি।',
           ],
           proTip: {
-            title: 'কেন ক্লায়েন্টরা আমাদের #১ হিসেবে বেছে নেন',
+            title: 'কেন ক্লায়েন্টরা আমাদের বেছে নেন',
             text: 'নকশা থেকে শুরু করে ফার্নিচার তৈরি ও চাবি হস্তান্তর পর্যন্ত সব দায়িত্ব থাকে **একটি জবাবদিহিমূলক টিমের** হাতে, ফলে মাঝপথে কোনো অপ্রত্যাশিত খরচ বা কন্ট্রাক্টর বদলের ঝামেলা থাকে না।',
           },
           inlineImage: {
@@ -353,13 +353,13 @@ export const blogPosts = [
         {
           id: 'top-3',
           number: '০৩',
-          title: 'ঢাকার আরও কয়েকটি পরিচিত ইন্টেরিয়র প্রতিষ্ঠান (ধাপ ২–৫)',
+          title: 'ঢাকার সমসাময়িক কয়েকটি পরিচিত ইন্টেরিয়র প্রতিষ্ঠান',
           lead: 'আধুনিক ফ্ল্যাট সাজানো, অনলাইন পরামর্শ এবং করপোরেট অফিস ইন্টেরিয়রের জন্য ঢাকায় আরও কিছু সুপরিচিত স্টুডিও কাজ করছে।',
           paragraphs: [
-            '**#২ Zero Inch Interiors Ltd.:** সমসাময়িক শহুরে ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়রের নান্দনিক ডিজাইনের জন্য ঢাকায় বেশ পরিচিত।',
-            '**#৩ Sheraspace:** মূলত অনলাইন ডিজাইন পরামর্শ এবং তরুণ ফ্ল্যাট মালিকদের জন্য মডিউলার রুম মেকওভার প্যাকেজের জন্য জনপ্রিয়।',
-            '**#৪ Imagine Interiors:** ঢাকার বিভিন্ন করপোরেট অফিস ও রিটেইল লাইফস্টাইল ফিট-আউট কাজের জন্য পরিচিত নাম।',
-            '**#৫ Minimal Limited:** পরিচ্ছন্ন মিনিমালিস্ট আর্কিটেকচারাল ডিজাইন এবং কাস্টম ফার্নিচার স্টাইলিংয়ের জন্য পরিচিত।',
+            '**Zero Inch Interiors Ltd.:** সমসাময়িক শহুরে ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়রের নান্দনিক ডিজাইনের জন্য ঢাকায় বেশ পরিচিত।',
+            '**Sheraspace:** মূলত অনলাইন ডিজাইন পরামর্শ এবং তরুণ ফ্ল্যাট মালিকদের জন্য মডিউলার রুম মেকওভার প্যাকেজের জন্য জনপ্রিয়।',
+            '**Imagine Interiors:** ঢাকার বিভিন্ন করপোরেট অফিস ও রিটেইল লাইফস্টাইল ফিট-আউট কাজের জন্য পরিচিত নাম।',
+            '**Minimal Limited:** পরিচ্ছন্ন মিনিমালিস্ট আর্কিটেকচারাল ডিজাইন এবং কাস্টম ফার্নিচার স্টাইলিংয়ের জন্য পরিচিত।',
             'যেকোনো প্রতিষ্ঠান নির্বাচনের সময় সিভিল ইঞ্জিনিয়ারিং পর্যালোচনা, নিজস্ব এক্সিবিশন টিম এবং লিখিত BOQ পুরোপুরি অন্তর্ভুক্ত কি না তা যাচাই করে নেওয়া উচিত।',
           ],
           proTip: {
@@ -380,14 +380,14 @@ export const blogPosts = [
         {
           id: 'top-4',
           number: '০৪',
-          title: 'বাংলাদেশের অন্যান্য প্রতিষ্ঠিত স্টুডিও (ধাপ ৬–১০)',
+          title: 'বাংলাদেশের অন্যান্য প্রতিষ্ঠিত ইন্টেরিয়র স্টুডিও',
           lead: 'আবাসিক রিনোভেশন, শোরুম এবং সাধারণ ফিট-আউট কাজের জন্য দীর্ঘদিন ধরে সেবা দিচ্ছে আরও কয়েকটি স্টুডিও।',
           paragraphs: [
-            '**#৬ Dream Touch Architects Ltd.:** আবাসিক ও বাণিজ্যিক ভবনের আর্কিটেকচারাল পরামর্শ ও ইন্টেরিয়র রিমডেলিংয়ে দীর্ঘ অভিজ্ঞতা রয়েছে।',
-            '**#৭ Interior Studio Ace:** মধ্যম ও উচ্চবিত্ত ফ্ল্যাটের সিলিং, ক্যাবিনেট ও ইন্টেরিয়র কাজে নিয়োজিত।',
-            '**#৮ BD Interior:** ঢাকার বিভিন্ন এলাকায় আবাসিক ও শোরুম ডেকোরেশনের কাজ করে থাকে।',
-            '**#৯ Rongin Interior:** দেয়ালের সাজসজ্জা, লাইটিং ও সাধারণ অ্যাপার্টমেন্ট আপগ্রেডের জন্য পরিচিত।',
-            '**#১০ Creative Interior:** বাসা ও রিটেইল দোকানের ইন্টেরিয়র প্যাকেজ প্রদান করে। এই পর্যায়ের যেকোনো সেবাদাতার সাথে কাজের আগে বিস্তারিত ওয়ার্কিং ড্রয়িং ও পেমেন্ট মাইলফলক নিশ্চিত করে নেওয়া ভালো।',
+            '**Dream Touch Architects Ltd.:** আবাসিক ও বাণিজ্যিক ভবনের আর্কিটেকচারাল পরামর্শ ও ইন্টেরিয়র রিমডেলিংয়ে দীর্ঘ অভিজ্ঞতা রয়েছে।',
+            '**Interior Studio Ace:** মধ্যম ও উচ্চবিত্ত ফ্ল্যাটের সিলিং, ক্যাবিনেট ও ইন্টেরিয়র কাজে নিয়োজিত।',
+            '**BD Interior:** ঢাকার বিভিন্ন এলাকায় আবাসিক ও শোরুম ডেকোরেশনের কাজ করে থাকে।',
+            '**Rongin Interior:** দেয়ালের সাজসজ্জা, লাইটিং ও সাধারণ অ্যাপার্টমেন্ট আপগ্রেডের জন্য পরিচিত।',
+            '**Creative Interior:** বাসা ও রিটেইল দোকানের ইন্টেরিয়র প্যাকেজ প্রদান করে। যেকোনো সেবাদাতার সাথে কাজের আগে বিস্তারিত ওয়ার্কিং ড্রয়িং ও পেমেন্ট মাইলফলক নিশ্চিত করে নেওয়া ভালো।',
           ],
           proTip: {
             title: 'রিনোভেশনের সময় নিরাপত্তা নিশ্চিত করুন',
@@ -540,7 +540,7 @@ export const blogPosts = [
       'Explore modern design trends for Dhaka homes and offices, climate-ready materials, and transparent 2026–2027 budgets.',
     metaTitle: 'Best Interior Design Company in Bangladesh 2026–2027 (BD) | Brown’s Interiors',
     metaDescription:
-      'Looking for the best interior design company in BD for 2026 & 2027? Explore Dhaka sq ft cost benchmarks, 2027 interior trends, and why Brown’s Interiors (IEB A29734) ranks #1.',
+      'Looking for the best interior design company in BD for 2026 & 2027? Explore Dhaka sq ft cost benchmarks, 2027 interior trends, and why Brown’s Interiors (IEB A29734) leads the market.',
     keywords: [
       'best interior design company in bangladesh 2026',
       'best interior design company in bangladesh 2027',
@@ -555,12 +555,12 @@ export const blogPosts = [
       'This **2026–2027 BD Guide** breaks down how to recognize the best interior design company in Bangladesh today, what per-square-foot costs to budget, which 2027 design trends actually hold long-term value, and why **Brown’s Interiors** stands out at the forefront of Bangladesh’s turnkey design and construction sector.',
     ],
     tableOfContents: [
-      { id: 'bd-1', label: '01. What Defines the Best Interior Firm in BD (2026–2027)?' },
-      { id: 'bd-2', label: '02. Why Brown’s Interiors Leads Bangladesh in 2026–2027' },
-      { id: 'bd-3', label: '03. Top 2026–2027 Interior Design Trends in BD' },
-      { id: 'bd-4', label: '04. 2026–2027 Interior Design Cost Benchmarks in BD' },
-      { id: 'bd-5', label: '05. Non-Negotiable Material & Engineering Standards' },
-      { id: 'bd-6', label: '06. Starting Your 2026–2027 Project With Us' },
+      { id: 'bd-1', label: 'What Defines the Best Interior Firm in BD (2026–2027)?' },
+      { id: 'bd-2', label: 'Why Brown’s Interiors Leads Bangladesh in 2026–2027' },
+      { id: 'bd-3', label: 'Top 2026–2027 Interior Design Trends in BD' },
+      { id: 'bd-4', label: '2026–2027 Interior Design Cost Benchmarks in BD' },
+      { id: 'bd-5', label: 'Non-Negotiable Material & Engineering Standards' },
+      { id: 'bd-6', label: 'Starting Your 2026–2027 Project With Us' },
       { id: 'faqs', label: 'Frequently Asked Questions' },
     ],
     intro: [
@@ -595,7 +595,7 @@ export const blogPosts = [
       {
         id: 'bd-2',
         number: '02',
-        title: 'Why Brown’s Interiors Is Ranked #1 in Bangladesh for 2026–2027',
+        title: 'Why Brown’s Interiors Leads Turnkey Design in Bangladesh for 2026–2027',
         lead: 'Led by Engr. Aslam Sheikh (IEB A29734), Brown’s Interiors brings rare dual expertise in Architectural Interior Design and Civil Engineering across 250+ projects.',
         paragraphs: [
           'Headquartered in **Uttara, Dhaka-1230**, [Brown’s Interiors](/about) stands out as Bangladesh’s benchmark for precision turnkey interiors because of how the studio is led and structured. Founder & Principal Designer [Engr. Aslam Sheikh](/team) holds a **Diploma in Architecture & Interior Design (NPI)** alongside a **B.Sc. in Civil Engineering (IUBAT)** and **IEB Membership No: A29734**, bringing over **10+ years of experience** and **250+ successfully delivered projects** across Bangladesh.',
@@ -730,7 +730,7 @@ export const blogPosts = [
       {
         question: 'Which is the best interior design company in Bangladesh (BD) for 2026 and 2027?',
         answer:
-          '**Brown’s Interiors** ranks #1 in Bangladesh for 2026–2027 turnkey interior design and execution. Directed by **Engr. Aslam Sheikh** (Diploma in Architecture & Interior Design, NPI · B.Sc. in Civil Engineering, IUBAT · **IEB Member A29734**), the firm combines architectural elegance, civil structural safety, 250+ completed projects, itemized BOQs, and a 1-year workmanship warranty.',
+          '**Brown’s Interiors** is a leading studio in Bangladesh for 2026–2027 turnkey interior design and execution. Directed by **Engr. Aslam Sheikh** (Diploma in Architecture & Interior Design, NPI · B.Sc. in Civil Engineering, IUBAT · **IEB Member A29734**), the firm combines architectural elegance, civil structural safety, 250+ completed projects, itemized BOQs, and a 1-year workmanship warranty.',
       },
       {
         question: 'What is the average interior design cost per square foot in BD for 2026–2027?',
@@ -755,7 +755,7 @@ export const blogPosts = [
     ],
     bottomCta: {
       eyebrow: '2026–2027 Turnkey Consultation • Dhaka & Nationwide',
-      title: 'Build Your 2026–2027 Space With Bangladesh’s #1 Engineering-Led Interior Studio',
+      title: 'Build Your 2026–2027 Space With Bangladesh’s Premier Engineering-Led Interior Studio',
       subtitle:
         'Share your floor plan or commercial brief with Engr. Aslam Sheikh’s team for an engineering site assessment and transparent itemized BOQ.',
       primaryBtn: {
@@ -779,12 +779,12 @@ export const blogPosts = [
       excerpt:
         'ঢাকার বাসা ও অফিসের জন্য আধুনিক ডিজাইন ট্রেন্ড, আবহাওয়া-উপযোগী ম্যাটেরিয়াল এবং ২০২৬–২০২৭ সালের বাজেট ধারণা।',
       tableOfContents: [
-        { id: 'bd-1', label: '০১. ২০২৬–২০২৭ সালে সেরা প্রতিষ্ঠান চেনার উপায়' },
-        { id: 'bd-2', label: '০২. টার্নকি প্রজেক্টে Brown’s Interiors কেন এগিয়ে' },
-        { id: 'bd-3', label: '০৩. ২০২৬–২০২৭ সালের শীর্ষ ইন্টেরিয়র ট্রেন্ড' },
-        { id: 'bd-4', label: '০৪. বাংলাদেশের বর্গফুট ভিত্তিক খরচের ধারণা' },
-        { id: 'bd-5', label: '০৫. ম্যাটেরিয়াল ও প্রকৌশলগত মানদণ্ড' },
-        { id: 'bd-6', label: '০৬. যেভাবে আপনার প্রজেক্ট শুরু করবেন' },
+        { id: 'bd-1', label: '২০২৬–২০২৭ সালে সেরা প্রতিষ্ঠান চেনার উপায়' },
+        { id: 'bd-2', label: 'টার্নকি প্রজেক্টে Brown’s Interiors কেন এগিয়ে' },
+        { id: 'bd-3', label: '২০২৬–২০২৭ সালের শীর্ষ ইন্টেরিয়র ট্রেন্ড' },
+        { id: 'bd-4', label: 'বাংলাদেশের বর্গফুট ভিত্তিক খরচের ধারণা' },
+        { id: 'bd-5', label: 'ম্যাটেরিয়াল ও প্রকৌশলগত মানদণ্ড' },
+        { id: 'bd-6', label: 'যেভাবে আপনার প্রজেক্ট শুরু করবেন' },
         { id: 'faqs', label: 'সাধারণ জিজ্ঞাসা' },
       ],
       intro: [
@@ -1042,11 +1042,11 @@ export const blogPosts = [
       'That rare intersection, where architectural grace meets certified civil engineering precision, is precisely why **Engr. Aslam Sheikh**, Founder & Principal Designer of **Brown’s Interiors**, has become one of Bangladesh’s most trusted names across 250+ luxury residential, commercial, and exhibition projects.',
     ],
     tableOfContents: [
-      { id: 'designer-1', label: '01. Decorator vs. Architect-Engineer' },
-      { id: 'designer-2', label: '02. Meet Engr. Aslam Sheikh (IEB A29734)' },
-      { id: 'designer-3', label: '03. The 5 Signature Methodology Pillars' },
-      { id: 'designer-4', label: '04. Signature Portfolio Across Bangladesh' },
-      { id: 'designer-5', label: '05. How to Book a Site Visit & Custom BOQ' },
+      { id: 'designer-1', label: 'Decorator vs. Architect-Engineer' },
+      { id: 'designer-2', label: 'Meet Engr. Aslam Sheikh (IEB A29734)' },
+      { id: 'designer-3', label: 'The 5 Signature Methodology Pillars' },
+      { id: 'designer-4', label: 'Signature Portfolio Across Bangladesh' },
+      { id: 'designer-5', label: 'How to Book a Site Visit & Custom BOQ' },
       { id: 'faqs', label: 'Frequently Asked Questions' },
     ],
     intro: [
@@ -1240,11 +1240,11 @@ export const blogPosts = [
       excerpt:
         'সিভিল ইঞ্জিনিয়ারিংয়ের নিখুঁত পরিকল্পনা ও সৃজনশীল নকশার সমন্বয়ে কীভাবে তৈরি হয় দীর্ঘস্থায়ী ও নান্দনিক ইন্টেরিয়র।',
       tableOfContents: [
-        { id: 'designer-1', label: '০১. সাধারণ ডেকোরেটর বনাম আর্কিটেক্ট-ইঞ্জিনিয়ার' },
-        { id: 'designer-2', label: '০২. ইঞ্জিনিয়ার আসলাম শেখের পরিচয় (IEB A29734)' },
-        { id: 'designer-3', label: '০৩. আমাদের ডিজাইন ও বাস্তবায়নের ৫টি মূল স্তম্ভ' },
-        { id: 'designer-4', label: '০৪. দেশজুড়ে আমাদের উল্লেখযোগ্য কাজের ধরণ' },
-        { id: 'designer-5', label: '০৫. কীভাবে সাইট ভিজিট ও BOQ পাবেন' },
+        { id: 'designer-1', label: 'সাধারণ ডেকোরেটর বনাম আর্কিটেক্ট-ইঞ্জিনিয়ার' },
+        { id: 'designer-2', label: 'ইঞ্জিনিয়ার আসলাম শেখের পরিচয় (IEB A29734)' },
+        { id: 'designer-3', label: 'আমাদের ডিজাইন ও বাস্তবায়নের ৫টি মূল স্তম্ভ' },
+        { id: 'designer-4', label: 'দেশজুড়ে আমাদের উল্লেখযোগ্য কাজের ধরণ' },
+        { id: 'designer-5', label: 'কীভাবে সাইট ভিজিট ও BOQ পাবেন' },
         { id: 'faqs', label: 'সাধারণ জিজ্ঞাসা' },
       ],
       intro: [
@@ -1511,7 +1511,7 @@ export const blogPosts = [
         title: 'Q: Can the Budget Suddenly Escalate Halfway Through the Project?',
         lead: 'Answer: Never. Every board, hinge, finish, and square foot is priced line by line in a written BOQ before work starts.',
         paragraphs: [
-          'Ambiguous quotes are the #1 source of stress in interior contracting. Some providers quote a tempting lump-sum teaser rate upfront, then bill extra later for channels, lighting wiring, or edge finishes. We refuse to operate that way.',
+          'Ambiguous quotes are the biggest source of stress in interior contracting. Some providers quote a tempting lump-sum teaser rate upfront, then bill extra later for channels, lighting wiring, or edge finishes. We refuse to operate that way.',
           'Before signing any contract, we prepare a transparent, itemized **Bill of Quantities (BOQ)** detailing board grades, hardware brands, paint systems, and exact dimensions. You can even benchmark realistic Dhaka tiers upfront with our [Interior Cost Calculator](/cost-estimator) before booking a site visit.'
         ],
         proTip: {
@@ -2709,13 +2709,13 @@ export const blogPosts = [
       'Learn how to turn square-footage constraints into an architectural advantage with layered false ceilings, fluted glass partitions, and seamless floor-to-ceiling cabinetry.'
     ],
     tableOfContents: [
-      { id: 'tip-1', label: '1. Light & Climate-Friendly Palette (Dark vs. Bright Balance)' },
-      { id: 'tip-2', label: '2. Strategic Mirror Placement to Double Visual Depth' },
-      { id: 'tip-3', label: '3. Multi-Functional & Custom-Built Furniture' },
-      { id: 'tip-4', label: '4. Floor-to-Ceiling Vertical Storage & Lofts' },
-      { id: 'tip-5', label: '5. Smart Space Zoning with Fluted Glass Partitions' },
-      { id: 'tip-6', label: '6. Layered Architectural & False Ceiling Lighting' },
-      { id: 'tip-7', label: '7. Decluttered Entryways, Hidden Wiring & Kitchen Flow' },
+      { id: 'tip-1', label: 'Light & Climate-Friendly Palette (Dark vs. Bright Balance)' },
+      { id: 'tip-2', label: 'Strategic Mirror Placement to Double Visual Depth' },
+      { id: 'tip-3', label: 'Multi-Functional & Custom-Built Furniture' },
+      { id: 'tip-4', label: 'Floor-to-Ceiling Vertical Storage & Lofts' },
+      { id: 'tip-5', label: 'Smart Space Zoning with Fluted Glass Partitions' },
+      { id: 'tip-6', label: 'Layered Architectural & False Ceiling Lighting' },
+      { id: 'tip-7', label: 'Decluttered Entryways, Hidden Wiring & Kitchen Flow' },
       { id: 'video-showcase', label: 'Featured Walkthrough & 3D Tour' },
       { id: 'faqs', label: 'Frequently Asked Questions (Dhaka Flats)' },
     ],
@@ -2974,13 +2974,13 @@ export const blogPosts = [
       imageCaption: 'Brown’s Interior ডিজাইনকৃত আধুনিক মাস্টার বেডরুম: ফ্লুটেড অ্যাকুস্টিক প্যানেল, ওয়ার্ম এলইডি লাইটিং এবং সিলিং-স্পর্শী ক্যাবিনেট।',
       excerpt: 'সঠিক ফার্নিচার লেআউট, লুকানো স্টোরেজ ও আলোর ব্যবহারে ছোট ফ্ল্যাটকেও বড় এবং খোলামেলা দেখানোর কার্যকর উপায়।',
       tableOfContents: [
-        { id: 'tip-1', label: '১. সঠিক রঙের ব্যবহার (হালকা বনাম গাঢ় ভারসাম্য)' },
-        { id: 'tip-2', label: '২. দেয়ালে আয়নার ব্যবহারে ঘরে গভীরতা ও আলো বাড়ানো' },
-        { id: 'tip-3', label: '৩. মাপমতো কাস্টম ও মাল্টি-ফাংশনাল ফার্নিচার' },
-        { id: 'tip-4', label: '৪. মেঝে থেকে সিলিং পর্যন্ত ভার্টিক্যাল স্টোরেজ' },
-        { id: 'tip-5', label: '৫. ফ্লুটেড গ্লাস পার্টিশন ও স্লাইডিং ডোর' },
-        { id: 'tip-6', label: '৬. লেয়ার্ড লাইটিং ও আধুনিক ফলস সিলিং' },
-        { id: 'tip-7', label: '৭. গুছানো প্রবেশপথ, কনসিলড তার ও স্মার্ট কিচেন' },
+        { id: 'tip-1', label: 'সঠিক রঙের ব্যবহার (হালকা বনাম গাঢ় ভারসাম্য)' },
+        { id: 'tip-2', label: 'দেয়ালে আয়নার ব্যবহারে ঘরে গভীরতা ও আলো বাড়ানো' },
+        { id: 'tip-3', label: 'মাপমতো কাস্টম ও মাল্টি-ফাংশনাল ফার্নিচার' },
+        { id: 'tip-4', label: 'মেঝে থেকে সিলিং পর্যন্ত ভার্টিক্যাল স্টোরেজ' },
+        { id: 'tip-5', label: 'ফ্লুটেড গ্লাস পার্টিশন ও স্লাইডিং ডোর' },
+        { id: 'tip-6', label: 'লেয়ার্ড লাইটিং ও আধুনিক ফলস সিলিং' },
+        { id: 'tip-7', label: 'গুছানো প্রবেশপথ, কনসিলড তার ও স্মার্ট কিচেন' },
         { id: 'video-showcase', label: 'ভিডিও ওয়াকথ্রু ও থ্রিডি ট্যুর' },
         { id: 'faqs', label: 'ছোট ফ্ল্যাট নিয়ে সাধারণ প্রশ্নোত্তর' }
       ],
@@ -3263,12 +3263,12 @@ export const blogPosts = [
       'Discover the engineering requirements, overnight fabrication timelines, and BOQ budgeting secrets behind award-winning exhibition pavilions in Bangladesh.'
     ],
     tableOfContents: [
-      { id: 'booth-1', label: '1. The 3-Second Rule & Elevated Fascia Branding' },
-      { id: 'booth-2', label: '2. Open Visitor Flow: Eliminating Front Desk Barriers' },
-      { id: 'booth-3', label: '3. 3D Booth Visualization & Structural Planning' },
-      { id: 'booth-4', label: '4. Dynamic Lighting: Spotlights, Halo Logos & Edge Glow' },
-      { id: 'booth-5', label: '5. VIP Discussion Pods & Discreet Lockable Storage' },
-      { id: 'booth-6', label: '6. Turnkey Fabrication & On-Time Dismantling at ICCB' },
+      { id: 'booth-1', label: 'The 3-Second Rule & Elevated Fascia Branding' },
+      { id: 'booth-2', label: 'Open Visitor Flow: Eliminating Front Desk Barriers' },
+      { id: 'booth-3', label: '3D Booth Visualization & Structural Planning' },
+      { id: 'booth-4', label: 'Dynamic Lighting: Spotlights, Halo Logos & Edge Glow' },
+      { id: 'booth-5', label: 'VIP Discussion Pods & Discreet Lockable Storage' },
+      { id: 'booth-6', label: 'Turnkey Fabrication & On-Time Dismantling at ICCB' },
       { id: 'video-showcase', label: 'Featured Expo Fabrication Walkthrough' },
       { id: 'faqs', label: 'Frequently Asked Questions (Trade Expos)' },
     ],
@@ -3494,12 +3494,12 @@ export const blogPosts = [
       imageCaption: 'বিআইসিসি ঢাকায় Brown’s Interior নির্মিত ৩৬০-ডিগ্রি ব্র্যান্ডিং ও খোলামেলা দর্শনার্থী প্রবেশপথসহ আধুনিক এক্সিবিশন প্যাভিলিয়ন।',
       excerpt: 'বিআইসিসি ও আইসিসিবি মেলায় দর্শনার্থীদের নজর কাড়তে আধুনিক স্টল লেআউট, লাইটিং এবং দ্রুত ইনস্টলেশনের কৌশল।',
       tableOfContents: [
-        { id: 'booth-1', label: '১. ৩-সেকেন্ড রুল ও উঁচু এলিভেটেড ব্র্যান্ডিং' },
-        { id: 'booth-2', label: '২. খোলামেলা প্রবেশপথ ও দর্শনার্থী প্রবাহ' },
-        { id: 'booth-3', label: '৩. ফ্যাব্রিকেশনের আগে থ্রিডি ও স্ট্রাকচারাল প্ল্যান' },
-        { id: 'booth-4', label: '৪. ডায়নামিক স্পটলাইট ও হ্যালো ব্র্যান্ডিং' },
-        { id: 'booth-5', label: '৫. ভিআইপি মিটিং জোন ও গোপন স্টোরেজ' },
-        { id: 'booth-6', label: '৬. রাতারাতি স্টল সেটআপ ও ডিসম্যান্টলিং' },
+        { id: 'booth-1', label: '৩-সেকেন্ড রুল ও উঁচু এলিভেটেড ব্র্যান্ডিং' },
+        { id: 'booth-2', label: 'খোলামেলা প্রবেশপথ ও দর্শনার্থী প্রবাহ' },
+        { id: 'booth-3', label: 'ফ্যাব্রিকেশনের আগে থ্রিডি ও স্ট্রাকচারাল প্ল্যান' },
+        { id: 'booth-4', label: 'ডায়নামিক স্পটলাইট ও হ্যালো ব্র্যান্ডিং' },
+        { id: 'booth-5', label: 'ভিআইপি মিটিং জোন ও গোপন স্টোরেজ' },
+        { id: 'booth-6', label: 'রাতারাতি স্টল সেটআপ ও ডিসম্যান্টলিং' },
         { id: 'video-showcase', label: 'বাস্তব স্টল নির্মাণের ভিডিও ট্যুর' },
         { id: 'faqs', label: 'এক্সিবিশন বুথ নিয়ে সাধারণ প্রশ্নোত্তর' }
       ],
