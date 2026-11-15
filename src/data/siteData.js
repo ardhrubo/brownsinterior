@@ -53,32 +53,32 @@ export const processSteps = [
 ];
 export const blogPreviews = [
   {
-    slug: 'small-apartment-design-tips',
-    title: '7 Smart Design Tips for Small Apartments in Dhaka (800–1,500 Sq Ft)',
-    category: 'Residential Interior',
-    date: 'Oct 20, 2026',
-    readTime: '9 min read',
-    image: '/portfolio/residential/bedroom-dark-luxury-suite.webp',
-    excerpt: 'Discover expert interior design strategies tailored for Dhaka’s 800 to 1,500 sq ft apartments. Learn how custom furniture, vertical storage, and strategic color balance create breathtaking, spacious sanctuaries.',
+    "slug": "small-apartment-design-tips",
+    "title": "7 Smart Design Tips for Small Apartments in Dhaka (800–1,500 Sq Ft)",
+    "category": "Residential Interior",
+    "date": "Oct 20, 2026",
+    "readTime": "9 min read",
+    "image": "/portfolio/residential/bedroom-dark-luxury-suite.webp",
+    "excerpt": "Discover expert interior design strategies tailored for Dhaka’s 800 to 1,500 sq ft apartments. Learn how custom furniture, vertical storage, and strategic color balance create breathtaking, spacious sanctuaries."
   },
   {
-    slug: 'exhibition-stall-design-guide-bangladesh',
-    title: 'Exhibition Stall & Pavilion Design Guide for Bangladesh Trade Fairs (ICCB & BICC)',
-    category: 'Exhibition Design',
-    date: 'Oct 14, 2026',
-    readTime: '8 min read',
-    image: '/portfolio/booth/booth-1.webp',
-    excerpt: 'Planning a trade show booth at ICCB or BICC in Dhaka? Explore our engineering guide to modular stall fabrication, 360-degree brand visibility, VIP lounge zoning, and 24-hour setup execution.',
+    "slug": "exhibition-booth-that-stands-out",
+    "title": "How to Design an Exhibition Booth That Stands Out at BICC & Trade Expos in Bangladesh",
+    "category": "Exhibition & Commercial",
+    "date": "Sep 18, 2026",
+    "readTime": "8 min read",
+    "image": "/portfolio/booth/booth-1.webp",
+    "excerpt": "Attract high-value B2B buyers at BICC, ICCB, and DITF trade expos. Learn how open layout zoning, 3D visualization, halo lighting, and turnkey fabrication set your brand apart."
   },
   {
-    slug: 'interior-design-cost-in-bangladesh-guide',
-    title: 'Interior Design Cost in Bangladesh (2026 Per Sq Ft BOQ & Material Guide)',
-    category: 'Budget & BOQ Guide',
-    date: 'Oct 05, 2026',
-    readTime: '10 min read',
-    image: '/portfolio/residential/living-marble-luxury-hall.webp',
-    excerpt: 'How much does interior design actually cost in Dhaka? Break down real per-square-foot pricing across Standard, Premium, and Luxury tiers—from HPL board and marine ply to Italian marble and smart lighting.',
-  },
+    "slug": "interior-design-cost-in-bangladesh-guide",
+    "title": "Interior Design Cost in Bangladesh (2026 Per Sq Ft BOQ & Material Guide)",
+    "category": "Budget & BOQ Guide",
+    "date": "Nov 15, 2026",
+    "readTime": "7 min read",
+    "image": "/portfolio/residential/living-marble-luxury-hall.webp",
+    "excerpt": "Plan your Dhaka apartment interior using Brown’s Interior’s budget benchmarks. Understand per-square-foot estimates, material choices, BOQ line items, exclusions, and contingency before approving a quotation."
+  }
 ];
 
 export const stats = [

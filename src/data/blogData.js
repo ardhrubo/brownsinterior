@@ -309,7 +309,7 @@ export const blogPosts = [
 
   {
     slug: 'exhibition-booth-that-stands-out',
-    aliases: ['trade-show-stall-design-dhaka'],
+    aliases: ['trade-show-stall-design-dhaka', 'exhibition-stall-design-guide-bangladesh'],
     title: 'How to Design an Exhibition Booth That Stands Out at BICC & Trade Expos in Bangladesh',
     subtitle: 'Proven stall architecture, 3D visualization, visitor circulation, and turnkey fabrication strategies to dominate the trade show floor in Dhaka.',
     category: 'Exhibition & Commercial',
@@ -574,280 +574,285 @@ export const blogPosts = [
   },
 
   {
-    slug: 'renovation-budget-planning',
-    aliases: ['apartment-renovation-cost-bangladesh'],
-    title: 'Apartment Renovation Cost in Bangladesh: Complete BOQ & Budget Planning Guide (2026)',
-    subtitle: 'Transparent per-square-foot benchmarks (৳750–৳3,750), itemized BOQ breakdowns, civil works, and smart contingency planning for Dhaka flats.',
-    category: 'Renovation & Costing',
-    categorySlug: 'residential-renovation',
-    date: 'Aug 30, 2026',
-    publishDateISO: '2026-08-30T11:00:00+06:00',
-    readTime: '10 min read',
-    image: '/portfolio/residential/living-marble-luxury-hall.webp',
-    imageCaption: 'A luxury flat renovation completed in Gulshan, Dhaka, showcasing book-matched Italian marble, custom acoustic panelling, and integrated cove lighting.',
-    author: {
-      name: 'Engr. Aslam Sheikh',
-      role: 'Founder & Principal Designer',
-      avatar: '/team/engr-aslam-sheikh.webp',
-      qualification: 'Dip. Architecture & Interior Design (NPI) · B.Sc. Civil Engg. (IUBAT) · IEB A29734',
-      degrees: [
-        'Dip. Architecture & Interior Design, School of Architecture (NPI)',
-        'B.Sc. in Civil Engg., IUBAT',
-        'IEB Membership No: A29734',
-      ],
-      experience: '10+ Years Experience · 250+ Turnkey Projects',
-      bio: 'Engr. Aslam Sheikh is the Founder & Principal Designer of Brown’s Interior. Holding a Diploma in Architecture & Interior Design (School of Architecture, NPI), a B.Sc. in Civil Engineering (IUBAT), and IEB Membership No: A29734, he combines architectural creativity with certified civil structural integrity across 250+ turnkey projects in Bangladesh.',
+  "slug": "interior-design-cost-in-bangladesh-guide",
+  "aliases": [
+    "renovation-budget-planning",
+    "apartment-renovation-cost-bangladesh"
+  ],
+  "title": "Interior Design Cost in Bangladesh (2026 Per Sq Ft BOQ & Material Guide)",
+  "subtitle": "Plan a Dhaka apartment interior with clear budget ranges, material specifications, and an itemized Bill of Quantities.",
+  "category": "Budget & BOQ Guide",
+  "categorySlug": "residential-renovation",
+  "date": "Nov 15, 2026",
+  "publishDateISO": "2026-11-15T09:00:00+06:00",
+  "readTime": "7 min read",
+  "image": "/portfolio/residential/living-marble-luxury-hall.webp",
+  "imageCaption": "Living-room design from the Brown’s Interior portfolio, with integrated lighting, wall finishes, and custom furniture.",
+  "author": {
+    "name": "Engr. Aslam Sheikh",
+    "role": "Founder & Principal Designer",
+    "avatar": "/team/engr-aslam-sheikh.webp",
+    "qualification": "Dip. Architecture & Interior Design (NPI) · B.Sc. Civil Engg. (IUBAT) · IEB A29734",
+    "degrees": [
+      "Dip. Architecture & Interior Design, School of Architecture (NPI)",
+      "B.Sc. in Civil Engg., IUBAT",
+      "IEB Membership No: A29734"
+    ],
+    "experience": "10+ Years Experience · 250+ Turnkey Projects",
+    "bio": "Engr. Aslam Sheikh is the Founder & Principal Designer of Brown’s Interior. Holding a Diploma in Architecture & Interior Design (School of Architecture, NPI), a B.Sc. in Civil Engineering (IUBAT), and IEB Membership No: A29734, he combines architectural creativity with certified civil structural integrity across 250+ turnkey projects in Bangladesh."
+  },
+  "excerpt": "Plan your Dhaka apartment interior using Brown’s Interior’s budget benchmarks. Understand per-square-foot estimates, material choices, BOQ line items, exclusions, and contingency before approving a quotation.",
+  "metaTitle": "Interior Design Cost in Bangladesh: BOQ & Material Guide (2026) | Brown’s Interior",
+  "metaDescription": "Plan a Dhaka apartment interior with Brown’s Interior’s budget benchmarks, a 1,200 sq ft example, material guidance, BOQ checklist, and quotation exclusions.",
+  "keywords": [
+    "interior design cost in Bangladesh",
+    "Dhaka apartment interior budget",
+    "interior BOQ Bangladesh",
+    "interior cost per sq ft",
+    "interior material guide"
+  ],
+  "body": [
+    "An interior quotation is useful only when you know what it includes. Two designers can quote for the same apartment and arrive at very different totals because the quantity of furniture, board specifications, hardware, lighting, and site work are different.",
+    "This guide uses Brown’s Interior’s residential planning benchmarks for Dhaka. These are starting estimates for discussing scope, not a nationwide price survey or a fixed offer. Your measured drawings, selected materials, existing site condition, and approved Bill of Quantities determine the final quotation.",
+    "We will work through a 1,200 sq ft example, explain how to read a BOQ, and show what to clarify before you commit to a design. For projects elsewhere in Bangladesh, confirm transport, site access, and local execution costs separately."
+  ],
+  "tableOfContents": [
+    {
+      "id": "cost-1",
+      "label": "1. Interior cost benchmarks: Standard, Premium & Luxury"
     },
-    excerpt: 'Planning an apartment renovation in Dhaka? Discover realistic 2026 per-sq-ft costs (৳750–৳3,750), understand itemized BOQs, and learn how to avoid costly contractor surprises.',
-    metaTitle: 'Apartment Renovation Cost in Bangladesh: Complete BOQ Guide (2026) | Brown’s Interior',
-    metaDescription: 'Detailed apartment renovation cost guide in Dhaka by Engr. Aslam Sheikh. Per sq ft rates (৳750–৳3,750), BOQ breakdowns, civil upgrades, and budget management.',
-    keywords: [
-      'apartment renovation cost in Bangladesh',
-      'flat interior cost Dhaka',
-      'interior design budget planning Bangladesh',
-      'home renovation per sq ft cost Dhaka',
-      'BOQ interior Bangladesh',
-      'kitchen bathroom remodeling Dhaka'
-    ],
-    body: [
-      'Renovating an apartment in Dhaka—whether revamping a 15-year-old flat in Dhanmondi or customizing a brand new developer handover in Bashundhara—is one of the most significant financial investments a family will make.',
-      'Without an itemized Bill of Quantities (BOQ) and engineering oversight, renovation budgets in Bangladesh frequently spiral out of control by 30% to 50% due to hidden plumbing leaks, electrical rewiring, and vague contractor promises.',
-      'Engr. Aslam Sheikh shares real 2026 Dhaka cost benchmarks (৳750 to ৳3,750 per sft), itemized cost breakdowns, and crucial tips to protect your hard-earned money.'
-    ],
-    tableOfContents: [
-      { id: 'reno-1', label: '1. Dhaka Interior Cost Benchmarks (Standard, Premium, Luxury)' },
-      { id: 'reno-2', label: '2. The Anatomy of an Itemized BOQ (Bill of Quantities)' },
-      { id: 'reno-3', label: '3. Kitchen & Bathroom Remodeling: The High-Impact Zones' },
-      { id: 'reno-4', label: '4. Civil Demolition & Hidden Infrastructure Upgrades' },
-      { id: 'reno-5', label: '5. Setting a Mandatory 10–15% Contingency Buffer' },
-      { id: 'reno-6', label: '6. Fixed-Price Turnkey Contracts vs. Daily Labor Risks' },
-      { id: 'video-showcase', label: 'Featured Renovation Transformation Tour' },
-      { id: 'faqs', label: 'Frequently Asked Questions (Renovation & BOQ)' },
-    ],
-    intro: [
-      'Renovating a home in Dhaka is notoriously stressful. Ask any friend who has recently refurbished an apartment in Gulshan, Banani, Dhanmondi, or Mirpur, and you will hear consistent grievances: costs spiraling 40% above original quotes, workers disappearing for days, substandard board warping during the monsoon, and endless contractor arguments.',
-      'Why does this happen so frequently in Bangladesh? Because 90% of homeowners embark on renovations based on a vague "one-page lump-sum quotation" rather than an engineered, itemized Bill of Quantities (BOQ) with defined material specifications.',
-      'At Brown’s Interior, led by Engr. Aslam Sheikh, we believe transparency is the foundation of luxury design. Below is our comprehensive 2026 benchmark guide to apartment renovation costs in Bangladesh, helping you budget with absolute engineering certainty.'
-    ],
-    sections: [
-      {
-        id: 'reno-1',
-        number: '01',
-        title: 'Understanding Interior Cost Benchmarks in Dhaka (Standard, Premium, Luxury)',
-        lead: 'Interior renovation costs in Bangladesh fall into three well-defined engineering categories.',
-        paragraphs: [
-          'To calculate a realistic budget, you must first understand the prevailing per-square-foot market benchmarks in Dhaka for complete turnkey [residential renovation](/services/residential-renovation):',
-          '**1. Standard Turnkey Package (৳ 750 – ৳ 1,080 / sft):** Tailored for rental apartments or budget-conscious homeowners. Covers durable Melamine / HPL board carpentry with 1mm edge banding, clean Gypsum false ceiling borders, commercial-grade electrical wiring with LED fixtures, Berger/Asian Paints plastic emulsion, and functional stainless steel hardware. For a typical 1,200 sq ft flat, this totals **৳ 9 Lakh to ৳ 13 Lakh**.',
-          '**2. Premium Turnkey Package (৳ 1,080 – ৳ 2,080 / sft):** Our most popular choice for modern families. Includes waterproof BWR Gorjan plywood carcasses, high-gloss acrylic or natural Burma Teak / White Oak veneers, custom fluted panelling, quartz or granite kitchen countertops with Blum soft-close tandem runners, full layered 3-tier architectural lighting, and bespoke bedroom headboards. For a 1,200 sq ft flat, this totals **৳ 13 Lakh to 25 Lakh**.',
-          '**3. Luxury Turnkey Package (৳ 1,670 – ৳ 3,750 / sft):** Five-star hotel aesthetic for executive residences and duplexes. Features imported Italian Statuario or Botticino marble feature walls, acoustic fabric wall panelling, smart home automation (lighting and motorized drapery), master walk-in closets with smoked glass and sensor LEDs, and bespoke artisan millwork. For a 1,200 sq ft flat, this totals **৳ 20 Lakh to ৳ 45 Lakh**.'
-        ],
-        proTip: {
-          title: 'Studio Engineering Pro-Tip',
-          text: 'Use our online [interior cost calculator](/cost-estimator) to dynamically toggle between space types (residential, commercial, or booth) and package tiers to see your exact estimated budget instantly.'
-        },
-        inlineImage: {
-          src: '/portfolio/residential/living-marble-luxury-hall.webp',
-          alt: 'Luxury apartment renovation in Gulshan Dhaka with Italian marble feature wall',
-          caption: 'Premium luxury renovation in Gulshan featuring book-matched imported marble, warm cove lighting, and tailored cabinetry.'
-        },
-        keyTakeaways: [
-          'Standard fit-outs in Dhaka range from ৳750 to ৳1,080/sft (৳9–13 Lac for 1,200 sft).',
-          'Premium fit-outs with acrylic and veneers range from ৳1,080 to ৳2,080/sft (৳13–25 Lac).',
-          'Luxury residences with Italian marble and smart automation range from ৳1,670 to ৳3,750/sft.'
-        ]
+    {
+      "id": "cost-2",
+      "label": "2. What an itemized BOQ should tell you"
+    },
+    {
+      "id": "cost-3",
+      "label": "3. Choosing materials without paying for vague labels"
+    },
+    {
+      "id": "cost-4",
+      "label": "4. New flat or renovation: why site condition changes the quote"
+    },
+    {
+      "id": "cost-5",
+      "label": "5. Exclusions, contingency & payment milestones"
+    },
+    {
+      "id": "cost-6",
+      "label": "6. From a planning estimate to an approved quotation"
+    },
+    {
+      "id": "faqs",
+      "label": "Frequently asked questions"
+    }
+  ],
+  "intro": [
+    "An interior quotation is useful only when you know what it includes. Two designers can quote for the same apartment and arrive at very different totals because the quantity of furniture, board specifications, hardware, lighting, and site work are different.",
+    "This guide uses Brown’s Interior’s residential planning benchmarks for Dhaka. These are starting estimates for discussing scope, not a nationwide price survey or a fixed offer. Your measured drawings, selected materials, existing site condition, and approved Bill of Quantities determine the final quotation.",
+    "We will work through a 1,200 sq ft example, explain how to read a BOQ, and show what to clarify before you commit to a design. For projects elsewhere in Bangladesh, confirm transport, site access, and local execution costs separately."
+  ],
+  "sections": [
+    {
+      "id": "cost-1",
+      "number": "01",
+      "title": "Interior cost benchmarks: Standard, Premium & Luxury",
+      "lead": "Start with an overall allowance, then price the actual work.",
+      "paragraphs": [
+        "Brown’s Interior uses the following residential ranges for early planning: **Standard: ৳750–৳1,083.33 per sq ft; Premium: ৳1,083.33–৳2,083.33 per sq ft; Luxury: ৳1,666.67–৳3,750 per sq ft.** These figures describe budget bands. They do not promise a fixed list of materials or a complete renovation at every point in the range.",
+        "For a **1,200 sq ft apartment**, the corresponding rounded allowances are **৳9–13 lakh for Standard**, **৳13–25 lakh for Premium**, and **৳20–45 lakh for Luxury**. One lakh is ৳100,000. The Premium and Luxury bands overlap because scope and finish choices matter more than the package name.",
+        "A simple calculation is apartment area multiplied by the selected planning rate. For example, 1,200 sq ft × ৳1,500 gives **৳18 lakh**. This is an illustrative starting allowance within the Premium band; it is not a quotation or a rate for an individual cabinet, ceiling, or room.",
+        "Confirm which floor area is being used. A developer’s advertised saleable area may include shared space, while an interior designer may measure only the apartment. Using different area definitions makes per-square-foot comparisons misleading."
+      ],
+      "proTip": {
+        "title": "Budget planning tip",
+        "text": "Use the [cost estimator](/cost-estimator) to explore these planning bands, then request a measured BOQ before approving expenditure."
       },
-      {
-        id: 'reno-2',
-        number: '02',
-        title: 'The Anatomy of an Itemized BOQ (Bill of Quantities)',
-        lead: 'Never sign a contract based on a lump-sum figure. Demand an itemized line-by-line breakdown.',
-        paragraphs: [
-          'A lump-sum quote stating *"Complete interior woodwork: ৳ 8,00,000"* is a major red flag. What board core will the contractor use? What is the thickness of the laminate? Are the drawer runners generic Chinese iron slides or German-engineered Blum hardware?',
-          'When you work with Brown’s Interior, your [renovation and remodeling](/services/renovation-remodeling) plan is accompanied by a transparent 10-page itemized BOQ detailing eight distinct work categories:',
-          '1. **Civil & Demolition Works:** Tile hacking, wall removal, plaster repair, and debris disposal.',
-          '2. **Ceiling & Gypsum Work:** Perimeter coves, central false ceiling, and moisture-resistant board for wet areas.',
-          '3. **Electrical Infrastructure:** Chased conduit wiring (BRB or BBS copper cables), switchboards (Schneider or Panasonic), LED drivers, and magnetic tracks.',
-          '4. **Custom Carpentry & Storage:** Wardrobes, kitchen cabinets, TV units, and study consoles specifying exact board grades and hardware.',
-          '5. **Sanitary & Plumbing Fit-out:** Concealed cisterns, hot/cold CPVC piping, diverters, and vanity installations.',
-          '6. **Wall Finishes & Polish:** Putty, primer, luxury emulsion paint, and PU lacquer finish on natural wood veneers.',
-          '7. **Glass, Metal & Mirrors:** 8mm tempered partitions, fluted dividers, and bronze float mirrors.',
-          '8. **Loose Furniture & Upholstery:** Custom sofas, dining tables, and accent chairs.'
-        ],
-        proTip: {
-          title: 'Studio Engineering Pro-Tip',
-          text: 'Ensure the BOQ specifies the exact brand and gauge of electrical cables. At Brown’s Interior, we exclusively specify BRB or BBS Flame-Retardant (FR) grade copper wiring to eliminate short-circuit fire hazards in older Dhaka buildings.'
-        },
-        inlineImage: {
-          src: '/portfolio/residential/living-dining-wine-chandelier.webp',
-          alt: 'Precision executed living and dining interior with custom woodwork in Dhaka',
-          caption: 'Every element—from the wine cabinet to the false ceiling cove—is detailed with exact material specifications in our BOQ.'
-        },
-        keyTakeaways: [
-          'Reject vague lump-sum quotes that leave materials and hardware unspecified.',
-          'Demand an 8-category line-by-line BOQ with unit rates, quantities, and brand names.',
-          'Insist on certified flame-retardant electrical wiring and moisture-proof plumbing specs.'
-        ]
+      "inlineImage": {
+        "src": "/portfolio/residential/living-marble-luxury-hall.webp",
+        "alt": "Living-room interior with a marble-effect feature wall and layered lighting.",
+        "caption": "Living-room interior with a marble-effect feature wall and layered lighting."
       },
-      {
-        id: 'reno-3',
-        number: '03',
-        title: 'Kitchen & Bathroom Remodeling: The High-Impact Investment Zones',
-        lead: 'Kitchens and bathrooms account for 35% to 45% of total renovation spend per square foot.',
-        paragraphs: [
-          'While living rooms and bedrooms are primarily about carpentry and aesthetics, [kitchen and bathroom remodeling](/services/kitchen-bathroom-remodeling) involves intensive civil engineering, waterproofing, high-pressure plumbing, and heavy-duty ventilation.',
-          'In Bangladeshi cooking, heavy use of ground turmeric, mustard oil, and intense boiling creates steam and yellow staining. Budget modular kitchens with cheap particle board countertops will swell and degrade within 18 months.',
-          'We engineer kitchens using non-porous quartz or polished black granite countertops, 100% waterproof Gorjan marine plywood carcasses, anti-fingerprint acrylic facings, and high-suction (1200+ m3/hr) European kitchen hoods vented directly through exterior core-drilled outlets.'
-        ],
-        proTip: {
-          title: 'Studio Engineering Pro-Tip',
-          text: 'In bathrooms, always apply a 2-coat chemical elastomeric waterproofing membrane (such as SikaTop Seal-107 or Fosroc Brushbond) across the entire floor slab and 3 feet up the shower walls before laying new tiles. Water leakage to the neighbor downstairs is the #1 dispute in Dhaka apartments.'
-        },
-        inlineImage: {
-          src: '/portfolio/interior/modern-kitchen.webp',
-          alt: 'Modern luxury kitchen remodel with quartz counters and acrylic cabinets in Dhaka',
-          caption: 'A heavy-duty, luxury modular kitchen equipped with quartz counters, Blum tandem drawers, and exterior-vented chimney.'
-        },
-        keyTakeaways: [
-          'Kitchens and baths represent the highest per-sft expenditure in home renovation.',
-          'Use stain-resistant quartz or granite to withstand Bangladeshi turmeric and oil.',
-          'Apply 2-coat elastomeric waterproofing before tiling to avoid leaks into lower flats.'
-        ]
-      },
-      {
-        id: 'reno-4',
-        number: '04',
-        title: 'Civil Demolition & Hidden Infrastructure Upgrades in Older Flats',
-        lead: 'In 10 to 20-year-old apartments in Dhanmondi or Mirpur, hidden infrastructure must take priority over cosmetic decor.',
-        paragraphs: [
-          'Many homeowners make the tragic mistake of applying expensive wallpapers and teak wood panels directly onto 15-year-old walls, only to see them ruined within 6 months by subterranean dampness, efflorescence (nona), or burst galvanized iron (GI) pipes.',
-          'During our initial site survey, our structural engineer inspects the flat with digital moisture meters. We systematically address hidden infrastructure before touching aesthetics:',
-          '1. **Replacing Corroded GI Pipes:** Older buildings used galvanized iron pipes that corrode internally, contaminating water and leaking into walls. We replace all concealed plumbing with high-density CPVC or PPR heat-fused piping.',
-          '2. **Electrical Load Upgrades:** Modern families run multiple 1.5-ton inverter air conditioners, microwave ovens, induction hobs, and geysers. Older flats wired with 1.5mm cables cannot handle this load. We re-pull 4.0mm and 6.0mm dedicated circuits from the main building meter.',
-          '3. **Anti-Damp Chemical Injection:** Damp walls are chemically treated with crystalline waterproofing primers before skim coating.'
-        ],
-        proTip: {
-          title: 'Studio Engineering Pro-Tip',
-          text: 'Never demolish any internal column or concrete beam! Some unscrupulous local contractors knock down concrete lintels to create open kitchens, compromising the structural earthquake resilience of the building. Always consult a certified civil engineer like Engr. Aslam Sheikh before knocking down any wall.'
-        },
-        inlineImage: {
-          src: '/portfolio/interior/washroom-clean.webp',
-          alt: 'Renovated luxury washroom with modern concealed sanitaryware and clean tiling',
-          caption: 'Complete washroom renovation replacing old corroded plumbing with concealed CPVC fittings and wall-hung sanitaryware.'
-        },
-        keyTakeaways: [
-          'Test walls for moisture before installing wooden panelling or wallpapers.',
-          'Replace aging GI plumbing with heat-fused PPR or CPVC pipes.',
-          'Never demolish concrete beams or columns—always verify structural drawings first.'
-        ]
-      },
-      {
-        id: 'reno-5',
-        number: '05',
-        title: 'Setting a Mandatory 10–15% Contingency Buffer for Realities',
-        lead: 'Even the most thoroughly planned renovation will uncover hidden structural surprises during demolition.',
-        paragraphs: [
-          'Once civil hacking begins in an older apartment, you will invariably discover unforeseen issues: hollow floor screeds beneath old tiles, ancient electrical junction boxes buried under plaster, or uneven floor levels between adjacent rooms.',
-          'A professional interior budget must always allocate an untouched **10% to 15% contingency reserve**. If your base BOQ estimate is ৳ 15,00,000, maintain an additional ৳ 1,50,000 to ৳ 2,25,000 in your financing plan.',
-          'If no structural emergencies arise, this reserve can be joyfully deployed toward luxury final touches—such as smart motorized curtains, custom artwork, or designer dining pendant lights.'
-        ],
-        proTip: {
-          title: 'Studio Engineering Pro-Tip',
-          text: 'Establish a strict Change Order protocol with your interior contractor. Any work not included in the original BOQ must have written price approval from you before execution begins, preventing surprise bills at handover.'
-        },
-        inlineImage: {
-          src: '/portfolio/residential/living-dining-neoclassical.webp',
-          alt: 'Neoclassical living and dining interior after complete renovation in Dhaka flat',
-          caption: 'A breathtaking neoclassical living transformation completed on time and strictly within the client’s approved BOQ budget.'
-        },
-        keyTakeaways: [
-          'Always reserve a 10% to 15% financial cushion for unexpected demolition findings.',
-          'Enforce written Change Orders for any modification outside the initial BOQ.',
-          'Use surplus contingency funds for luxury lighting and loose furnishings.'
-        ]
-      },
-      {
-        id: 'reno-6',
-        number: '06',
-        title: 'Fixed-Price Turnkey Contracts vs. Daily Labor Risks in Bangladesh',
-        lead: 'Hiring separate daily-wage carpenters, painters, and electricians is the fastest way to lose money and sanity.',
-        paragraphs: [
-          'Many homeowners attempt to save money by purchasing materials themselves at Elephant Road or Hatirpool and hiring independent daily-wage labor. In reality, this almost always costs more:',
-          'Daily-wage workers intentionally drag out project timelines to bill more days; local retailers charge non-trade retail markups; material wastage rates skyrocket up to 25%; and when a defect occurs, the painter blames the carpenter, and the carpenter blames the bricklayer.',
-          'By partnering with Brown’s Interior under a **Fixed-Price Turnkey Contract**, you receive a single point of engineering accountability, factory-grade machine finishes, milestone-based payments tied to verified progress, and a 1-year comprehensive post-handover warranty.'
-        ],
-        proTip: {
-          title: 'Studio Engineering Pro-Tip',
-          text: 'Tie your payment schedule to physical milestones: 20% mobilization advance, 30% upon completion of civil/false ceiling/electrical rough-ins, 30% upon delivery of factory woodwork, 15% upon paint & lighting, and a final 5% retention held until final handover inspection.'
-        },
-        inlineImage: {
-          src: '/portfolio/residential/bedroom-dark-luxury-suite.webp',
-          alt: 'Turnkey luxury master bedroom renovation executed by Brown’s Interior',
-          caption: 'Seamless turnkey execution delivered under a single milestone-based contract with 1-year comprehensive warranty.'
-        },
-        keyTakeaways: [
-          'Avoid managing daily-wage labor to prevent costly delays, material wastage, and disputes.',
-          'Choose a turnkey partner with milestone-based payments and single-point accountability.',
-          'Demand a minimum 1-year post-handover warranty on all woodwork and mechanical fittings.'
-        ]
-      }
-    ],
-    videoSection: {
-      title: 'Full Apartment Transformation: From 15-Year-Old Flat to Modern Luxury',
-      subtitle: 'Watch how our civil engineering and interior team stripped down a 1,600 sq ft flat in Dhanmondi, replaced hidden plumbing, and delivered a turnkey luxury residence.',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      previewImage: '/portfolio/residential/living-marble-luxury-hall.webp',
-      duration: '5:10 min',
-      highlights: [
-        'Civil hacking, non-loadbearing wall removal & debris hauling',
-        'Concealed CPVC piping pressure test & bathroom waterproofing',
-        'Factory machine-pressed acrylic carpentry and Blum hardware installation',
-        'Statuario marble feature wall book-matching and final handover'
+      "keyTakeaways": [
+        "Use the same floor-area definition when comparing estimates.",
+        "Treat package prices as planning allowances.",
+        "Confirm the scope behind every quoted total."
       ]
     },
-    midArticleCta: {
-      badge: 'Transparent Estimation',
-      title: 'Want an Itemized Estimate for Your Apartment Renovation?',
-      subtitle: 'Select your apartment size and finishing tier to calculate an instant BDT cost estimate calibrated for Dhaka real estate.',
-      buttonText: 'Open Instant Cost Calculator',
-      buttonLink: '/cost-estimator',
-      secondaryText: 'Instant estimates based on current Dhaka market prices (৳750 – ৳3,750 / sft)'
+    {
+      "id": "cost-2",
+      "number": "02",
+      "title": "What an itemized BOQ should tell you",
+      "lead": "Every significant item needs a specification, quantity, unit, rate, and amount.",
+      "paragraphs": [
+        "A **Bill of Quantities (BOQ)** connects the approved design to the price. It should identify the room and work item, describe the material and finish, state how the quantity was measured, and show the unit rate and total. “Bedroom furniture” is too broad to compare fairly across proposals.",
+        "For a wardrobe, request its dimensions, carcass material and thickness, shutter finish, back-panel specification, internal shelves, drawer count, hinges, handles, and installation. State whether the rate is based on front elevation area, running length, or a complete unit. These methods are not interchangeable.",
+        "An illustrative calculation might read **80 sq ft of measured cabinet elevation × an agreed ৳2,500 unit rate = ৳200,000**. The rate here is an arithmetic example, not a Brown’s Interior product price. The specification must explain what that amount buys.",
+        "Group the BOQ into civil and repair work; ceilings; electrical and lighting; cabinetry; plumbing and sanitary work; wall finishes; glass and metal; and loose furniture. Add separate entries for design, supervision, delivery, and other charges where applicable. Mark omitted categories explicitly rather than leaving them open to interpretation."
+      ],
+      "proTip": {
+        "title": "Budget planning tip",
+        "text": "Ask each bidder to price the same drawings and specification schedule. A cheaper total is meaningful only when quantities and inclusions match."
+      },
+      "inlineImage": {
+        "src": "/portfolio/residential/living-dining-wine-chandelier.webp",
+        "alt": "Living and dining design with coordinated cabinetry, furniture, and lighting.",
+        "caption": "Living and dining design with coordinated cabinetry, furniture, and lighting."
+      },
+      "keyTakeaways": [
+        "Check units as carefully as rates.",
+        "Document material grades and hardware models.",
+        "Separate design and execution charges where applicable."
+      ]
     },
-    faqs: [
-      {
-        question: 'What is the average cost to completely renovate a 3-bedroom apartment in Dhaka?',
-        answer: 'For a standard 3-BHK apartment (approx. 1,400 to 1,600 sq ft) in Dhaka, a complete turnkey renovation covering civil alterations, false ceiling, full modular kitchen, custom wardrobes, new bathroom tiles & fittings, electrical rewiring, and luxury paint typically costs between ৳15 Lakh to ৳22 Lakh for a Premium package, and ৳25 Lakh to ৳45 Lakh+ for a Luxury specification with imported marble and smart home automation.'
+    {
+      "id": "cost-3",
+      "number": "03",
+      "title": "Choosing materials without paying for vague labels",
+      "lead": "Specify the product behind words such as premium, waterproof, or imported.",
+      "paragraphs": [
+        "**Cabinet boards and finishes:** distinguish the core material from its surface finish. A laminate or acrylic face does not tell you whether the underlying board is particleboard, MDF, or plywood. Ask for the manufacturer, grade, thickness, edge treatment, and intended use. Moisture resistance should be supported by the product specification, particularly around sinks.",
+        "**Hardware:** compare hinges, runners, lift mechanisms, and handles by model and quantity. Drawer count and internal accessories can change a kitchen or wardrobe budget substantially. Ask which accessories are essential now and which can be added later.",
+        "**Countertops and wall finishes:** compare the selected stone, tile, laminate, veneer, or paint by sample and product details. Include cutting, exposed-edge finishing, joints, substrate preparation, and installation in the quotation. A material-only price is not the installed cost.",
+        "**Lighting:** count the fixtures, switches, drivers, and control equipment shown on the drawing. Discuss maintenance access and replacement availability. Electrical work should be specified and checked by a qualified professional for the actual installation, rather than copied from a generic package."
+      ],
+      "proTip": {
+        "title": "Budget planning tip",
+        "text": "Approve labelled physical samples and record the selections in the BOQ. Agree in writing before substituting a product during construction."
       },
-      {
-        question: 'Can I remodel just my kitchen and bathrooms without renovating the entire flat?',
-        answer: 'Yes! Brown’s Interior regularly undertakes dedicated kitchen and bathroom remodeling projects. Remodeling an individual modern modular kitchen in Dhaka typically costs between ৳2.5 Lakh to ৳5.5 Lakh, while a luxury bathroom upgrade (including waterproofing, concealed cisterns, tiles, and vanities) ranges from ৳1.2 Lakh to ৳2.8 Lakh per bathroom.'
+      "inlineImage": {
+        "src": "/portfolio/interior/modern-kitchen.webp",
+        "alt": "Kitchen interior showing cabinetry, counters, and coordinated finishes.",
+        "caption": "Kitchen interior showing cabinetry, counters, and coordinated finishes."
       },
-      {
-        question: 'Why do contractor renovation quotes vary so drastically in Bangladesh?',
-        answer: 'Quotes vary because unscrupulous contractors quote low initial figures using cheap materials (e.g. non-waterproof commercial plywood, inferior edge banding, generic wire, and basic hardware) and then hit clients with massive "hidden extra" charges midway through the job. Brown’s Interior provides an all-inclusive, itemized BOQ with verified brands so there are never unpleasant surprises.'
+      "keyTakeaways": [
+        "Separate board core, surface finish, and hardware specifications.",
+        "Compare installed costs rather than material-only prices.",
+        "Record approved samples and substitutions."
+      ]
+    },
+    {
+      "id": "cost-4",
+      "number": "04",
+      "title": "New flat or renovation: why site condition changes the quote",
+      "lead": "Existing services and surfaces affect how much preparation is needed.",
+      "paragraphs": [
+        "A newly handed-over apartment may already have usable flooring, bathrooms, doors, and electrical points. Retaining suitable finishes can leave more of the budget available for storage, furniture, and lighting. Check the condition and compatibility of those items before designing around them.",
+        "An older apartment may require removal, repairs, or service upgrades before decorative work begins. Ask for a site inspection covering visible dampness, plumbing condition, electrical requirements, surface preparation, and access for materials. Concealed conditions may remain uncertain until work opens them up.",
+        "Keep demolition, debris removal, protective coverings, and reinstatement visible in the quote. If you intend to live in the flat during the work, discuss room-by-room phasing and how access to essential facilities will be maintained.",
+        "Changes to walls or building services require appropriate professional assessment and any applicable building permissions. A decorative drawing alone should not be treated as approval for structural alterations."
+      ],
+      "proTip": {
+        "title": "Budget planning tip",
+        "text": "Ask which items are confirmed after inspection and which remain provisional. Agree how provisional quantities will be measured and priced."
       },
-      {
-        question: 'What payment schedule is customary for interior design and renovation in Dhaka?',
-        answer: 'A professional milestone-based schedule is: 20% advance upon contract signing and 3D approval; 30% upon completion of civil, electrical conduit, and false ceiling framing; 30% upon factory delivery of custom woodwork and cabinetry carcasses; 15% upon paint finishing, lighting, and countertop installation; and the final 5% balance upon final snag inspection and turnkey handover.'
+      "inlineImage": {
+        "src": "/portfolio/interior/washroom-clean.webp",
+        "alt": "Bathroom interior illustrating the finishes and services included in renovation planning.",
+        "caption": "Bathroom interior illustrating the finishes and services included in renovation planning."
       },
-      {
-        question: 'Does Brown’s Interior provide a written warranty on renovation and carpentry works?',
-        answer: 'Yes. Every turnkey residential and commercial project executed by Brown’s Interior includes a 1-Year Comprehensive Workmanship Warranty covering door alignments, hardware functionality, and electrical connections, alongside manufacturer warranties on hardware (Blum/Hafele) and appliances.'
-      }
-    ],
-    bottomCta: {
-      eyebrow: 'Start Your Renovation',
-      title: 'Plan Your Renovation with Absolute Budget Certainty',
-      subtitle: 'Schedule a free on-site engineering survey with Engr. Aslam Sheikh. We inspect your flat, identify potential infrastructure issues, and deliver an itemized BOQ tailored to your budget.',
-      primaryBtn: {
-        text: 'Request Free On-Site Survey',
-        link: '/contact'
+      "keyTakeaways": [
+        "Price preparation and removal separately.",
+        "Identify uncertain work before signing.",
+        "Have proposed alterations assessed before execution."
+      ]
+    },
+    {
+      "id": "cost-5",
+      "number": "05",
+      "title": "Exclusions, contingency & payment milestones",
+      "lead": "A workable budget includes more than the main construction total.",
+      "paragraphs": [
+        "Check whether the quotation includes appliances, air conditioning, curtains, loose furniture, decorative accessories, transport, lift or access charges, taxes, and design fees. Do not assume they are included simply because they appear in a rendering. Ask the team to mark each item as included, excluded, or client-supplied.",
+        "Keep a contingency separate from planned spending. For illustration, a **10–15% reserve on an ৳18 lakh base estimate is ৳1.8–2.7 lakh**, giving an overall allowance of **৳19.8–20.7 lakh before any separately excluded purchases**. This percentage is a planning example; the appropriate reserve depends on site uncertainty and the agreed scope.",
+        "Link payments to written milestones that both parties can verify, such as approved drawings, material delivery, installed work, and handover. Record what evidence or inspection is needed for each milestone. The exact schedule should be agreed for your project.",
+        "Use written change approvals. Each change should state the revised work, added or reduced cost, and schedule impact before it proceeds. Keep the reserve available until outstanding work and final accounts are settled."
+      ],
+      "proTip": {
+        "title": "Budget planning tip",
+        "text": "Maintain one budget sheet with the BOQ total, exclusions, approved changes, payments, and remaining reserve. Update it whenever the scope changes."
       },
-      secondaryBtn: {
-        text: 'WhatsApp Engr. Aslam Sheikh',
-        link: 'https://wa.me/8801768436319?text=Hello%20Brown%E2%80%99s%20Interior%2C%20I%20would%20like%20to%20request%20an%20on-site%20renovation%20survey%20and%20BOQ%20estimate%20for%20my%20apartment%20in%20Dhaka.'
-      }
+      "inlineImage": {
+        "src": "/portfolio/residential/living-dining-neoclassical.webp",
+        "alt": "Living and dining interior with coordinated furniture and decorative finishes.",
+        "caption": "Living and dining interior with coordinated furniture and decorative finishes."
+      },
+      "keyTakeaways": [
+        "List client-supplied purchases separately.",
+        "Keep contingency outside the committed BOQ total.",
+        "Approve cost and schedule changes in writing."
+      ]
+    },
+    {
+      "id": "cost-6",
+      "number": "06",
+      "title": "From a planning estimate to an approved quotation",
+      "lead": "Give the design team enough information to price your priorities.",
+      "paragraphs": [
+        "Begin with your floor plan, apartment location, approximate area, handover status, and preferred completion period. Share photographs of existing rooms and services where available. Explain who uses the home and which storage or circulation problems you want to solve.",
+        "Create three lists: essential work, improvements you would like, and items that can wait. For example, practical kitchen storage and bedroom wardrobes may take priority over decorative wall panels. This gives the designer a way to adjust the proposal without weakening the parts you use every day.",
+        "Review the layout before finalizing finishes. Once drawings and specifications are agreed, request the measured BOQ, inclusion and exclusion schedule, expected programme, payment terms, and written warranty terms. Check which warranties cover workmanship and which belong to individual manufacturers.",
+        "At handover, walk through the completed scope with the team and record outstanding adjustments. Collect relevant product information and care instructions. To start a project with Brown’s Interior, [request a consultation](/contact) and share your plan and budget range."
+      ],
+      "proTip": {
+        "title": "Budget planning tip",
+        "text": "Bring your priorities to the consultation along with reference images. A useful design brief explains how you want the home to work, as well as how it should look."
+      },
+      "inlineImage": {
+        "src": "/portfolio/residential/bedroom-dark-luxury-suite.webp",
+        "alt": "Bedroom interior with integrated storage, bedside lighting, and coordinated finishes.",
+        "caption": "Bedroom interior with integrated storage, bedside lighting, and coordinated finishes."
+      },
+      "keyTakeaways": [
+        "Agree the layout before final material pricing.",
+        "Prioritize daily use over decorative extras.",
+        "Review the completed work against the approved scope."
+      ]
+    }
+  ],
+  "midArticleCta": {
+    "badge": "Plan your budget",
+    "title": "Explore a starting budget for your apartment",
+    "subtitle": "Compare the studio’s planning tiers, then discuss the measured scope with our team.",
+    "buttonText": "Open Cost Estimator",
+    "buttonLink": "/cost-estimator",
+    "secondaryText": "Planning estimate only; final prices follow the approved BOQ."
+  },
+  "faqs": [
+    {
+      "question": "How much should I budget for a 1,200 sq ft apartment interior?",
+      "answer": "Brown’s Interior’s residential planning bands are approximately ৳9–13 lakh for Standard, ৳13–25 lakh for Premium, and ৳20–45 lakh for Luxury. The final price depends on quantities, materials, existing conditions, and agreed inclusions."
+    },
+    {
+      "question": "Are these current prices for every project in Bangladesh?",
+      "answer": "No. These are the studio’s Dhaka residential planning benchmarks used in this guide, not a nationwide price survey or binding quotation. Confirm project-specific rates and quotation validity with the team."
+    },
+    {
+      "question": "Why do the Premium and Luxury price bands overlap?",
+      "answer": "Package names do not define an identical scope. A smaller selection of high-end finishes can cost less than extensive cabinetry and furniture in a broader Premium scope. Compare the BOQ, not just the tier name."
+    },
+    {
+      "question": "Does the per-square-foot estimate include appliances and design fees?",
+      "answer": "Do not assume so. Ask for a written list of inclusions, exclusions, and client-supplied items. Appliances, design fees, taxes, and other charges should each be confirmed in the quotation."
+    },
+    {
+      "question": "Can I complete the interior in stages?",
+      "answer": "Discuss phasing with the team before finalizing the design. Plan service routes and fixed work together, then identify furniture or decorative items that can be added later without undoing completed work."
+    }
+  ],
+  "bottomCta": {
+    "eyebrow": "Plan your interior",
+    "title": "Turn your floor plan into a clear scope and budget",
+    "subtitle": "Share your apartment plan, priorities, and preferred budget with Brown’s Interior to discuss a site visit and itemized quotation.",
+    "primaryBtn": {
+      "text": "Request a Consultation",
+      "link": "/contact"
+    },
+    "secondaryBtn": {
+      "text": "Discuss on WhatsApp",
+      "link": "https://wa.me/8801768436319"
     }
   }
+}
 ];
 
 export const getBlogPostBySlug = (slug) => {

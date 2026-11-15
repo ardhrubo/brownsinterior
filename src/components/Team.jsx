@@ -107,10 +107,10 @@ function MemberCard({ member, index }) {
 }
 
 export default function Team({ cream = false, full = false }) {
-  const displayedMembers = full ? teamMembers : teamMembers.slice(0, 3);
+  const displayedMembers = teamMembers.slice(0, 3);
 
   return (
-    <section id="team" className={`section ${cream ? 'cream' : ''} team-section`}>
+    <section id="team" className={`section ${cream ? 'cream' : ''} team-section${full ? ' team-directory' : ''}`}>
       <div className="container">
         <SectionHead
           eyebrow="Brown's Interiors"
@@ -123,7 +123,8 @@ export default function Team({ cream = false, full = false }) {
           }
         />
 
-        <div className="team-pro-grid">
+        {full && <h2 className="team-directory-group-title">Management & leadership</h2>}
+        <div className={`team-pro-grid${full ? ' team-directory-management' : ''}`}>
           {displayedMembers.map((member, index) => (
             <MemberCard
               key={member.id || member.name}
@@ -132,6 +133,17 @@ export default function Team({ cream = false, full = false }) {
             />
           ))}
         </div>
+
+        {full && (
+          <div className="team-directory-rest">
+            <h2 className="team-directory-group-title">Our design & execution team</h2>
+            <div className="team-pro-grid">
+              {teamMembers.slice(3).map((member, index) => (
+                <MemberCard key={member.id || member.name} member={member} index={index} />
+              ))}
+            </div>
+          </div>
+        )}
 
         {!full && (
           <div className="team-more-wrap">
