@@ -124,14 +124,18 @@ export function HomeHero() {
         {isBn ? (
           <>
             <span className="h-hero-tag">
-              ইঞ্জিনিয়ারিং ও ইন্টেরিয়র স্টুডিও · ঢাকা
+              ডিজাইন  |  ইন্টেরিয়র  |  বাস্তবায়ন
             </span>
             <h1>
-              <span className="hero-bn-main">স্বপ্নের বাসা ও অফিস</span>
-              <span className="hero-bn-sub">সঠিক ডিজাইনে, নির্ধারিত বাজেটে</span>
+              <span className="hero-headline-first">
+                আধুনিক নকশা{' '}
+                <span className="hero-headline-divider" aria-hidden="true" />{' '}
+                <span className="hero-quality">নিখুঁত ফিনিশিং</span>
+              </span>
+              <em className="hero-trust">প্রতিটি কোণে যত্নের ছোঁয়া</em>
             </h1>
             <p>
-              ডিজাইন থেকে চাবি হস্তান্তর — লিখিত বাজেট ও নিজস্ব টিমের তত্ত্বাবধানে সারা বাংলাদেশে পূর্ণাঙ্গ কাজ।
+              বাসা, ডুপ্লেক্স, অফিস ও শোরুমের পরিকল্পনা থেকে চাবি হস্তান্তর পর্যন্ত সম্পূর্ণ কাজ সারা বাংলাদেশে।
             </p>
             <div className="h-hero-ctas">
               <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> প্রজেক্ট দেখুন</Link>
@@ -507,7 +511,7 @@ export function TransformationShowcase() {
                     setActiveSpot(idx);
                     if (sliderPos > 55) setSliderPos(18);
                   }}
-                  aria-label={`${spot.num} — Inspect ${spot.title}`}
+                  aria-label={`${spot.num}: Inspect ${spot.title}`}
                 >
                   <span className="trans-hotspot-pulse" />
                   <span className="trans-hotspot-num">{spot.num}</span>
@@ -778,35 +782,30 @@ export function CostCTA() {
 
 /* ---------------- BLOG ---------------- */
 export function BlogCard({ post }) {
+  const { isBn } = useLanguage();
   if (!post) return null;
+
+  const localized = isBn && post.bn ? { ...post, ...post.bn } : post;
+  const title = isBn && localized.bnTitle ? localized.bnTitle : localized.title;
+  const category = isBn && localized.bnCategory ? localized.bnCategory : localized.category;
+  const date = isBn && localized.bnDate ? localized.bnDate : localized.date;
+  const readTime = isBn && localized.bnReadTime ? localized.bnReadTime : localized.readTime;
+  const excerpt = isBn && localized.bnExcerpt ? localized.bnExcerpt : localized.excerpt;
+
   return (
     <Link to={`/blog/${post.slug}`} className="blog-card clay">
       <div className="blog-img">
-        <img src={post.image} alt={post.title} loading="lazy" decoding="async" />
-        <span>{post.category}</span>
+        <img src={post.image} alt={title} loading="lazy" decoding="async" />
+        <span>{category}</span>
       </div>
       <div className="blog-body">
-        <small>{post.date} {post.readTime ? `· ${post.readTime}` : ''}</small>
-        <h3>{post.title}</h3>
-        {post.excerpt && (
-          <p
-            style={{
-              fontSize: '0.88rem',
-              color: 'var(--text-muted)',
-              margin: '0.4rem 0 0.8rem',
-              lineHeight: 1.55,
-              maxHeight: '3.1em',
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-            }}
-          >
-            {post.excerpt}
-          </p>
+        <small>{date} {readTime ? `· ${readTime}` : ''}</small>
+        <h3>{title}</h3>
+        {excerpt && (
+          <p>{excerpt}</p>
         )}
         <span className="svc-more">
-          {post.lang === 'bn' ? 'বিস্তারিত পড়ুন' : 'Read Article'} <ArrowRight size={14} />
+          {isBn ? 'বিস্তারিত পড়ুন' : 'Read Article'} <ArrowRight size={14} />
         </span>
       </div>
     </Link>
@@ -814,8 +813,8 @@ export function BlogCard({ post }) {
 }
 
 export function BlogPreview() {
-  const { lang, isBn } = useLanguage();
-  const filteredPosts = blogPreviews.filter((p) => (p.lang || 'en') === lang).slice(0, 3);
+  const { isBn } = useLanguage();
+  const displayedPosts = blogPreviews.slice(0, 3);
 
   return (
     <section className="section cream">
@@ -826,7 +825,7 @@ export function BlogPreview() {
           script={isBn ? 'আর্টিকেল' : 'Articles'}
         />
         <div className="grid-3">
-          {filteredPosts.map((p, k) => (
+          {displayedPosts.map((p, k) => (
             <motion.div key={p.slug} {...fadeUp} transition={{ duration: 0.5, delay: k * 0.08 }}><BlogCard post={p} /></motion.div>
           ))}
         </div>

@@ -10,6 +10,7 @@ import SEO from './SEO';
 import NotFound from './NotFound';
 import { blogPosts, getBlogPostBySlug } from '../data/blogData';
 import { BlogCard } from './HomeSections';
+import { useLanguage } from '../context/LanguageContext';
 import './BlogPost.css';
 
 import { SITE_URL } from '../lib/site-url';
@@ -122,10 +123,18 @@ function AuthorAvatar({ author, size = 52, isBio = false }) {
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const post = useMemo(() => getBlogPostBySlug(slug), [slug]);
+  const { isBn } = useLanguage();
+  const rawPost = useMemo(() => getBlogPostBySlug(slug), [slug]);
+  const post = useMemo(
+    () => (rawPost && isBn && rawPost.bn ? { ...rawPost, ...rawPost.bn } : rawPost),
+    [rawPost, isBn]
+  );
   const others = useMemo(
-    () => blogPosts.filter((p) => p.slug !== post?.slug),
-    [post]
+    () =>
+      blogPosts
+        .filter((p) => p.slug !== rawPost?.slug)
+        .map((p) => (isBn && p.bn ? { ...p, ...p.bn } : p)),
+    [rawPost, isBn]
   );
 
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -272,9 +281,9 @@ export default function BlogPost() {
       <div className="container">
         {/* Breadcrumb Navigation */}
         <nav className="blog-breadcrumbs" aria-label="Breadcrumb">
-          <Link to="/">Home</Link>
+          <Link to="/">{isBn ? 'হোম' : 'Home'}</Link>
           <span className="blog-breadcrumb-sep">/</span>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog">{isBn ? 'ব্লগ' : 'Blog'}</Link>
           <span className="blog-breadcrumb-sep">/</span>
           {post.categorySlug ? (
             <Link to={`/services/${post.categorySlug}`}>{post.category}</Link>
@@ -290,7 +299,7 @@ export default function BlogPost() {
           <div className="blog-meta-tags">
             <span className="blog-cat-badge">{post.category}</span>
             <span className="blog-read-badge">
-              <Clock size={14} /> {post.readTime || '8 min read'}
+              <Clock size={14} /> {post.readTime || (isBn ? '৮ মিনিট পাঠ' : '8 min read')}
             </span>
             <span className="blog-date-badge">
               <Calendar size={14} /> {post.date}
@@ -306,16 +315,18 @@ export default function BlogPost() {
               <AuthorAvatar author={post.author} size={50} />
               <div className="blog-author-text">
                 <strong>
-                  {post.author?.name || 'Engr. Aslam Sheikh'}
+                  {isBn ? 'ইঞ্জিনিয়ার আসলাম শেখ' : post.author?.name || 'Engr. Aslam Sheikh'}
                   <ShieldCheck size={16} className="blog-author-badge-icon" title="Verified Engineering Lead" />
                 </strong>
-                <span>{post.author?.role || 'Founder & Principal Designer'} · Brown’s Interiors</span>
+                <span>
+                  {isBn ? 'প্রতিষ্ঠাতা ও প্রিন্সিপাল ডিজাইনার' : post.author?.role || 'Founder & Principal Designer'} · Brown’s Interiors
+                </span>
               </div>
             </div>
 
             {/* Social Sharing */}
             <div className="blog-share-actions">
-              <span className="blog-share-label">Share:</span>
+              <span className="blog-share-label">{isBn ? 'শেয়ার:' : 'Share:'}</span>
               <a
                 href={`https://api.whatsapp.com/send?text=${shareTitle}%20${shareUrl}`}
                 target="_blank"
@@ -347,7 +358,7 @@ export default function BlogPost() {
                 type="button"
                 onClick={handleCopyLink}
                 className="blog-share-btn copy"
-                title={copiedLink ? 'Link Copied!' : 'Copy Article Link'}
+                title={copiedLink ? (isBn ? 'লিঙ্ক কপি হয়েছে!' : 'Link Copied!') : (isBn ? 'লিঙ্ক কপি করুন' : 'Copy Article Link')}
               >
                 {copiedLink ? <Check size={15} style={{ color: '#25d366' }} /> : <Copy size={15} />}
               </button>
@@ -384,7 +395,7 @@ export default function BlogPost() {
                 >
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <Bookmark size={16} style={{ color: '#a88a66' }} />
-                    Table of Contents
+                    {isBn ? 'সূচিপত্র' : 'Table of Contents'}
                   </span>
                   <ChevronDown
                     size={18}
@@ -453,7 +464,7 @@ export default function BlogPost() {
                       <div className="blog-protip">
                         <div className="blog-protip-head">
                           <Sparkles size={16} />
-                          <span>{section.proTip.title || 'Studio Engineering Insight'}</span>
+                          <span>{section.proTip.title || (isBn ? 'প্রকৌশল ও ডিজাইন পরামর্শ' : 'Studio Engineering Insight')}</span>
                         </div>
                         <p>{renderRichText(section.proTip.text)}</p>
                       </div>
@@ -479,7 +490,9 @@ export default function BlogPost() {
                     {/* Key Takeaways Checklist */}
                     {Array.isArray(section.keyTakeaways) && section.keyTakeaways.length > 0 && (
                       <div className="blog-takeaways">
-                        <div className="blog-takeaways-title">Key Architectural Takeaways:</div>
+                        <div className="blog-takeaways-title">
+                          {isBn ? 'মূল বিষয়সমূহ:' : 'Key Architectural Takeaways:'}
+                        </div>
                         <ul className="blog-takeaways-list">
                           {section.keyTakeaways.map((point, kIdx) => (
                             <li key={kIdx}>
@@ -497,7 +510,7 @@ export default function BlogPost() {
                     <div className="blog-mid-cta-banner">
                       <div className="blog-mid-cta-badge">
                         <Calculator size={13} />
-                        {post.midArticleCta.badge || 'Instant Planning Tool'}
+                        {post.midArticleCta.badge || (isBn ? 'সহজ বাজেট টুল' : 'Instant Planning Tool')}
                       </div>
                       <h3 className="blog-mid-cta-title">{post.midArticleCta.title}</h3>
                       <p className="blog-mid-cta-sub">{post.midArticleCta.subtitle}</p>
@@ -507,7 +520,7 @@ export default function BlogPost() {
                           className="blog-cta-pill-btn"
                         >
                           <Calculator size={16} />
-                          {post.midArticleCta.buttonText || 'Open Cost Calculator'}
+                          {post.midArticleCta.buttonText || (isBn ? 'খরচ হিসাব করুন' : 'Open Cost Calculator')}
                           <ArrowUpRight size={16} />
                         </Link>
                         {post.midArticleCta.secondaryText && (
@@ -526,7 +539,7 @@ export default function BlogPost() {
               <section id="video-showcase" className="blog-video-showcase">
                 <div className="blog-video-header">
                   <span className="blog-cat-badge" style={{ marginBottom: '0.75rem' }}>
-                    <Play size={12} fill="currentColor" /> Featured Video
+                    <Play size={12} fill="currentColor" /> {isBn ? 'ফিচার্ড ভিডিও' : 'Featured Video'}
                   </span>
                   <h3 className="blog-video-title">{post.videoSection.title}</h3>
                   <p className="blog-video-sub">{post.videoSection.subtitle}</p>
@@ -554,7 +567,9 @@ export default function BlogPost() {
                       <div className="blog-video-play-btn">
                         <Play size={28} fill="currentColor" style={{ marginLeft: '4px' }} />
                       </div>
-                      <span className="blog-video-play-text">Click to Play Walkthrough</span>
+                      <span className="blog-video-play-text">
+                        {isBn ? 'ভিডিও দেখতে ক্লিক করুন' : 'Click to Play Walkthrough'}
+                      </span>
                       {post.videoSection.duration && (
                         <span className="blog-video-duration">
                           {post.videoSection.duration}
@@ -582,11 +597,15 @@ export default function BlogPost() {
               <section id="faqs" className="blog-faqs-section">
                 <div className="blog-faqs-header">
                   <span className="blog-cat-badge" style={{ marginBottom: '0.6rem' }}>
-                    Engineering Insights
+                    {isBn ? 'প্রশ্নোত্তর' : 'Engineering Insights'}
                   </span>
-                  <h3 className="blog-faqs-title">Frequently Asked Questions</h3>
+                  <h3 className="blog-faqs-title">
+                    {isBn ? 'সাধারণ জিজ্ঞাসা' : 'Frequently Asked Questions'}
+                  </h3>
                   <p className="blog-faqs-sub">
-                    Direct answers by Engr. Aslam Sheikh regarding costs, execution timelines, and materials in Bangladesh.
+                    {isBn
+                      ? 'বাংলাদেশের আবহাওয়া, কাজের সময়সীমা, ম্যাটেরিয়াল ও খরচ সম্পর্কে সাধারণ প্রশ্নের উত্তর দিয়েছেন ইঞ্জিনিয়ার আসলাম শেখ।'
+                      : 'Direct answers by Engr. Aslam Sheikh regarding costs, execution timelines, and materials in Bangladesh.'}
                   </p>
                 </div>
 
@@ -623,9 +642,9 @@ export default function BlogPost() {
             <div className="blog-author-bio-card">
               <AuthorAvatar author={post.author} size={84} isBio />
               <div className="blog-author-bio-content">
-                <h4>{post.author?.name || 'Engr. Aslam Sheikh'}</h4>
+                <h4>{isBn ? 'ইঞ্জিনিয়ার আসলাম শেখ' : post.author?.name || 'Engr. Aslam Sheikh'}</h4>
                 <span className="blog-author-bio-role">
-                  {post.author?.role || 'Founder & Principal Designer'} · Brown’s Interiors
+                  {isBn ? 'প্রতিষ্ঠাতা ও প্রিন্সিপাল ডিজাইনার' : post.author?.role || 'Founder & Principal Designer'} · Brown’s Interiors
                 </span>
                 <div className="blog-author-bio-creds">
                   <span className="blog-author-cred-pill">Dip. Architecture & Interior Design (NPI)</span>
@@ -633,11 +652,13 @@ export default function BlogPost() {
                   <span className="blog-author-cred-pill">IEB Member: A29734</span>
                 </div>
                 <p className="blog-author-bio-text">
-                  {post.author?.bio ||
-                    'With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh.'}
+                  {isBn
+                    ? 'আর্কিটেকচারাল ডিজাইন ও সিভিল ইঞ্জিনিয়ারিংয়ে ১০ বছরের বেশি অভিজ্ঞতাসম্পন্ন ইঞ্জিনিয়ার আসলাম শেখের নেতৃত্বে Brown’s Interiors সারা বাংলাদেশে ২৫০টিরও বেশি বাসা, ডুপ্লেক্স, অফিস ও এক্সিবিশন বুথ প্রজেক্ট সফলভাবে সম্পন্ন করেছে।'
+                    : post.author?.bio ||
+                      'With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh.'}
                 </p>
                 <Link to="/about" className="blog-author-bio-link">
-                  Learn more about our studio leadership <ArrowUpRight size={14} />
+                  {isBn ? 'আমাদের স্টুডিও ও টিম সম্পর্কে জানুন' : 'Learn more about our studio leadership'} <ArrowUpRight size={14} />
                 </Link>
               </div>
             </div>
@@ -646,7 +667,7 @@ export default function BlogPost() {
             {post.bottomCta && (
               <div className="blog-bottom-conversion">
                 <span className="blog-bottom-eyebrow">
-                  {post.bottomCta.eyebrow || 'Consultation & Inquiries'}
+                  {post.bottomCta.eyebrow || (isBn ? 'পরামর্শ ও যোগাযোগ' : 'Consultation & Inquiries')}
                 </span>
                 <h3 className="blog-bottom-title">{post.bottomCta.title}</h3>
                 <p className="blog-bottom-sub">{post.bottomCta.subtitle}</p>
@@ -656,7 +677,7 @@ export default function BlogPost() {
                     className="blog-btn-primary"
                   >
                     <MessageSquare size={16} />
-                    {post.bottomCta.primaryBtn?.text || 'Schedule Free Consultation'}
+                    {post.bottomCta.primaryBtn?.text || (isBn ? 'ফ্রি পরামর্শ বুক করুন' : 'Schedule Free Consultation')}
                   </Link>
                   <a
                     href={post.bottomCta.secondaryBtn?.link || 'https://wa.me/8801768436319'}
@@ -665,11 +686,11 @@ export default function BlogPost() {
                     className="blog-btn-whatsapp"
                   >
                     <FaWhatsapp size={19} className="wa-icon" />
-                    <span>{post.bottomCta.secondaryBtn?.text || 'WhatsApp Engr. Aslam'}</span>
+                    <span>{post.bottomCta.secondaryBtn?.text || (isBn ? 'হোয়াটসঅ্যাপে কথা বলুন' : 'WhatsApp Engr. Aslam')}</span>
                   </a>
                 </div>
                 <div className="blog-bottom-phone">
-                  <span>Prefer to speak directly? Call us: </span>
+                  <span>{isBn ? 'সরাসরি কথা বলতে কল করুন: ' : 'Prefer to speak directly? Call us: '}</span>
                   <a href="tel:+8801768436319">+880 1768-436319</a>
                 </div>
               </div>
@@ -682,7 +703,7 @@ export default function BlogPost() {
             {post.tableOfContents && post.tableOfContents.length > 0 && (
               <div className="blog-sidebar-widget blog-sidebar-toc-widget">
                 <div className="blog-sidebar-title">
-                  <Bookmark size={14} /> Table of Contents
+                  <Bookmark size={14} /> {isBn ? 'সূচিপত্র' : 'Table of Contents'}
                 </div>
                 <nav className="blog-toc-nav" aria-label="Table of contents">
                   {post.tableOfContents.map((item) => {
@@ -705,14 +726,16 @@ export default function BlogPost() {
             {/* Quick Cost Estimator Sidebar Widget */}
             <div className="blog-sidebar-widget blog-sidebar-cta">
               <span className="blog-cat-badge" style={{ marginBottom: '0.65rem' }}>
-                <Calculator size={12} /> Instant Estimator
+                <Calculator size={12} /> {isBn ? 'খরচের ধারণা' : 'Instant Estimator'}
               </span>
-              <h4>Planning a Project?</h4>
+              <h4>{isBn ? 'বাজেট পরিকল্পনা করছেন?' : 'Planning a Project?'}</h4>
               <p>
-                Calculate your customized BDT budget estimate in under 30 seconds with our interactive tool.
+                {isBn
+                  ? 'আমাদের কস্ট ক্যালকুলেটর দিয়ে ৩০ সেকেন্ডেই ফ্ল্যাট বা অফিসের সম্ভাব্য খরচ জেনে নিন।'
+                  : 'Calculate your customized BDT budget estimate in under 30 seconds with our interactive tool.'}
               </p>
               <Link to="/cost-estimator" className="blog-sidebar-btn">
-                <Calculator size={15} /> Calculate Project Cost
+                <Calculator size={15} /> {isBn ? 'খরচ হিসাব করুন' : 'Calculate Project Cost'}
               </Link>
             </div>
 
@@ -729,12 +752,18 @@ export default function BlogPost() {
                     <ShieldCheck size={12} strokeWidth={2.4} />
                   </span>
                 </div>
-                <h5 className="blog-sidebar-lead-name">Engr. Aslam Sheikh</h5>
-                <span className="blog-sidebar-lead-role">Founder & Principal Designer</span>
+                <h5 className="blog-sidebar-lead-name">
+                  {isBn ? 'ইঞ্জিনিয়ার আসলাম শেখ' : 'Engr. Aslam Sheikh'}
+                </h5>
+                <span className="blog-sidebar-lead-role">
+                  {isBn ? 'প্রতিষ্ঠাতা ও প্রিন্সিপাল ডিজাইনার' : 'Founder & Principal Designer'}
+                </span>
                 <span className="blog-sidebar-lead-qual">B.Sc. Civil Engg. · IEB A29734</span>
               </div>
               <p style={{ fontSize: '0.86rem', color: '#5a544e', margin: '0.85rem 0 1rem', lineHeight: 1.5 }}>
-                Have questions regarding floor layouts, BOQ rates, or structural renovation?
+                {isBn
+                  ? 'ডিজাইন, বাজেট বা রিনোভেশন নিয়ে কোনো প্রশ্ন আছে?'
+                  : 'Have questions regarding floor layouts, BOQ rates, or structural renovation?'}
               </p>
               <a
                 href="https://wa.me/8801768436319?text=Hello%20Brown%E2%80%99s%20Interior%2C%20I%20am%20reading%20your%20blog%20and%20would%20like%20to%20consult%20regarding%20my%20project."
@@ -743,7 +772,7 @@ export default function BlogPost() {
                 className="blog-sidebar-wa-btn"
               >
                 <FaWhatsapp size={17} className="wa-icon" />
-                <span>WhatsApp Engr. Aslam</span>
+                <span>{isBn ? 'হোয়াটসঅ্যাপে কথা বলুন' : 'WhatsApp Engr. Aslam'}</span>
               </a>
             </div>
 
@@ -751,7 +780,7 @@ export default function BlogPost() {
             {others.length > 0 && (
               <div className="blog-sidebar-widget">
                 <div className="blog-sidebar-title">
-                  <Layers size={14} /> More Articles
+                  <Layers size={14} /> {isBn ? 'আরও আর্টিকেল' : 'More Articles'}
                 </div>
                 <div className="blog-sidebar-related">
                   {others.slice(0, 3).map((otherPost) => (
@@ -783,12 +812,22 @@ export default function BlogPost() {
         <section className="blog-related-section">
           <div className="container">
             <div className="blog-related-head">
-              <span className="sec-eyebrow">Explore More Insights</span>
+              <span className="sec-eyebrow">{isBn ? 'আরও পড়ুন' : 'Explore More Insights'}</span>
               <h2 className="sec-title">
-                Related <em>Articles & Guides</em>
+                {isBn ? (
+                  <>
+                    সম্পর্কিত <em>আর্টিকেল ও গাইড</em>
+                  </>
+                ) : (
+                  <>
+                    Related <em>Articles & Guides</em>
+                  </>
+                )}
               </h2>
               <p className="sec-sub">
-                Engineering-led interior design, commercial stall architecture, and renovation benchmarks in Bangladesh.
+                {isBn
+                  ? 'বাংলাদেশে বাসা, অফিস, এক্সিবিশন বুথ ও রিনোভেশন নিয়ে ইঞ্জিনিয়ারিং-সম্মত ডিজাইন পরামর্শ।'
+                  : 'Engineering-led interior design, commercial stall architecture, and renovation benchmarks in Bangladesh.'}
               </p>
             </div>
             <div className="blog-related-grid">

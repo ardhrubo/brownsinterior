@@ -12,11 +12,13 @@
 .hero-headline-divider { display: inline-block; align-self: center; width: 1px; height: 0.65em; background: #e2d1b9; opacity: 0.8; flex: 0 0 1px; }
 .h-hero h1 em { font-family: inherit; font-style: italic; font-weight: 400; color: #e2d1b9; }
 .h-hero p { font-family: 'Outfit', var(--font-sans); font-weight: 400; max-width: 100%; margin: 1rem auto 0; font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.75; color: rgba(255,255,255,0.96); text-wrap: balance; }
-.h-hero.is-bn .h-hero-tag { font-family: 'Noto Sans Bengali', var(--font-sans); letter-spacing: 0.4px; text-transform: none; font-size: 0.84rem; font-weight: 600; color: rgba(255, 255, 255, 0.94); background: rgba(20, 16, 13, 0.5); border: 1px solid rgba(234, 219, 197, 0.25); }
-.h-hero.is-bn h1 { font-family: 'Noto Sans Bengali', var(--font-serif); font-weight: 700; font-size: clamp(2rem, 4vw, 3.45rem); line-height: 1.32; letter-spacing: 0; text-shadow: 0 4px 24px rgba(0, 0, 0, 0.38); }
-.h-hero.is-bn h1 .hero-bn-main { display: block; color: #ffffff; }
-.h-hero.is-bn h1 .hero-bn-sub { display: block; font-size: 0.7em; font-weight: 600; color: #eadbc5; margin-top: 0.28em; line-height: 1.35; }
-.h-hero.is-bn p { font-family: 'Noto Sans Bengali', var(--font-sans); line-height: 1.8; max-width: 640px; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.38); }
+.h-hero.is-bn .h-hero-content { max-width: 1080px; }
+.h-hero.is-bn .h-hero-tag { font-family: 'Noto Sans Bengali', var(--font-sans); letter-spacing: 0.4px; text-transform: none; font-size: 0.84rem; font-weight: 500; color: rgba(255, 255, 255, 0.94); background: rgba(20, 16, 13, 0.45); border: 1px solid rgba(234, 219, 197, 0.25); margin-bottom: 1.5rem; padding: 0.45rem 1.35rem; }
+.h-hero.is-bn h1 { max-width: 1040px; font-family: 'Noto Sans Bengali', var(--font-serif); font-weight: 600; font-size: clamp(2.1rem, 4.2vw, 3.75rem); line-height: 1.3; letter-spacing: 0; text-shadow: 0 4px 24px rgba(0, 0, 0, 0.38); }
+.h-hero.is-bn h1 .hero-headline-first { gap: 0.45em; align-items: center; }
+.h-hero.is-bn h1 .hero-trust { font-family: 'Noto Sans Bengali', var(--font-serif); font-style: normal; font-weight: 500; font-size: 0.58em; color: #e2d1b9; margin-top: 0.48em; letter-spacing: 0; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4); }
+.h-hero.is-bn p { font-family: 'Noto Sans Bengali', var(--font-sans); line-height: 1.8; max-width: 960px; margin-top: 1.3rem; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.38); }
+.h-hero.is-bn .h-hero-ctas { margin-top: 2.4rem; gap: 1.15rem; }
 .h-hero-bn-sub { display: block; margin-top: 0.45rem; font-family: 'Noto Sans Bengali', var(--font-sans); font-size: clamp(0.95rem, 1.25vw, 1.08rem); font-weight: 500; color: var(--gold); letter-spacing: normal; line-height: 1.6; }
 .h-hero-sub-location { display: block; margin-top: 0.35rem; font-weight: 400; color: var(--gold); font-size: 0.9em; letter-spacing: 0.3px; }
 .sec-bn-sub { font-family: 'Noto Sans Bengali', var(--font-sans); font-size: 0.96rem; font-weight: 500; color: var(--gold-dark); margin: -0.15rem auto 0.55rem; line-height: 1.65; }
@@ -822,8 +824,32 @@
 .blog-img span { position: absolute; top: 1rem; left: 1rem; background: #fff; padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.72rem; font-weight: 700; color: var(--gold-dark); }
 .blog-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
 .blog-body small { color: var(--text-muted); font-size: 0.78rem; }
-.blog-body h3 { font-size: 1.15rem; font-weight: 600; margin: 0.5rem 0; line-height: 1.4; }
-.blog-body p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; flex: 1; }
+.blog-body h3 {
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin: 0.45rem 0 0.55rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8em;
+}
+.blog-body p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0 0 1.15rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-body .svc-more {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-color);
+}
 
 @media (max-width: 1100px) {
   .svc-visual-grid { grid-template-columns: repeat(2, 1fr); }
@@ -843,17 +869,23 @@
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
-  .h-hero { flex-direction: column; height: auto; min-height: min(760px, 92svh); padding: 8rem 0 7.5rem; }
-  .h-hero-content { width: 100%; max-width: 540px; padding: 0 1.5rem; }
-  .h-hero-tag { font-size: 0.62rem; letter-spacing: 1.8px; padding: 0.45rem 0.8rem; margin-bottom: 1.35rem; }
-  .h-hero h1 { font-size: clamp(2.15rem, 9.4vw, 3.2rem); line-height: 1.24; letter-spacing: -0.035em; }
-  .h-hero.is-bn h1 { font-size: clamp(1.85rem, 7.8vw, 2.65rem); line-height: 1.36; letter-spacing: 0; }
-  .h-hero h1 .hero-headline-first { display: block; white-space: normal; }
-  .h-hero h1 .hero-quality { display: block; }
-  .h-hero h1 .hero-trust { margin-top: 0.5em; font-size: 0.7em; }
-  .h-hero h1 .hero-headline-divider { display: none; }
-  .h-hero p { max-width: 32ch; font-size: 0.95rem; line-height: 1.7; margin-top: 1.25rem; }
-  .h-hero-ctas { margin: 1.5rem auto 0; width: 100%; max-width: 290px; gap: 0.7rem; }
+  .h-hero { flex-direction: column; height: auto; min-height: min(740px, 92svh); padding: 7.5rem 0 7rem; }
+  .h-hero-content,
+  .h-hero.is-bn .h-hero-content { width: 100%; max-width: 100%; padding: 0 0.85rem; }
+  .h-hero-tag,
+  .h-hero.is-bn .h-hero-tag { font-size: 0.64rem; letter-spacing: 1.5px; padding: 0.42rem 0.9rem; margin-bottom: 1.25rem; }
+  .h-hero.is-bn .h-hero-tag { letter-spacing: 0.2px; }
+  .h-hero h1 { max-width: 100%; font-size: clamp(1.32rem, 5.5vw, 2.25rem); line-height: 1.26; letter-spacing: -0.025em; }
+  .h-hero.is-bn h1 { max-width: 100%; font-size: clamp(1.32rem, 5.4vw, 2.15rem); line-height: 1.32; letter-spacing: 0; }
+  .h-hero h1 .hero-headline-first { display: flex; justify-content: center; align-items: baseline; gap: 0.28em; white-space: nowrap; }
+  .h-hero h1 .hero-quality { display: inline; }
+  .h-hero h1 .hero-headline-divider { display: inline-block; height: 0.62em; }
+  .h-hero h1 .hero-trust { margin-top: 0.48em; font-size: 0.72em; }
+  .h-hero.is-bn h1 .hero-trust { margin-top: 0.45em; font-size: 0.66em; }
+  .h-hero p,
+  .h-hero.is-bn p { max-width: 96%; font-size: 0.92rem; line-height: 1.65; margin-top: 1.15rem; }
+  .h-hero-ctas,
+  .h-hero.is-bn .h-hero-ctas { margin: 1.75rem auto 0; width: 100%; max-width: 340px; gap: 0.75rem; }
   .h-hero-ctas .pill-btn { flex: 1 1 100%; justify-content: center; max-width: none; min-height: 48px; white-space: nowrap; padding: 0.8rem 1rem; }
   .h-hero-dots { bottom: 3.35rem; }
   .stats-bar { margin-top: -2.5rem; margin-bottom: 0; padding: 0 0.85rem; }
