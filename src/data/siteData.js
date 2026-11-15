@@ -62,22 +62,22 @@ export const blogPreviews = [
     "excerpt": "ফ্ল্যাট বা অফিস সাজাতে গিয়ে বাজেট, কাজের মান ও সময় নিয়ে মনে নানা প্রশ্ন জাগে। প্রশ্নোত্তরে জানুন কেন Brown’s Interiors সবার ভরসার জায়গা।"
   },
   {
+    "slug": "small-apartment-design-tips",
+    "title": "7 Smart Design Tips for Small Apartments in Dhaka",
+    "category": "Residential Interior",
+    "date": "Oct 20, 2026",
+    "readTime": "9 min read",
+    "image": "/portfolio/residential/bedroom-dark-luxury-suite.webp",
+    "excerpt": "Discover expert interior design strategies for Dhaka apartments using custom furniture, vertical storage, and smart color balance."
+  },
+  {
     "slug": "how-browns-interiors-works-process",
-    "title": "কীভাবে কাজ করে Brown’s Interiors? জেনে নিন আমাদের কাজের ধরন",
+    "title": "কীভাবে Brown’s Interiors কাজ করে?",
     "category": "Work Process",
     "date": "Nov 15, 2026",
     "readTime": "6 min read",
     "image": "/portfolio/residential/bedroom-bay-window-suite.webp",
     "excerpt": "প্রথম দিন সাইট পরিদর্শন থেকে শুরু করে 2D, 3D ডিজাইন ও বাজেট হয়ে চাবি হস্তান্তর পর্যন্ত আমরা কীভাবে কাজ করি, জানুন প্রশ্নোত্তরে।"
-  },
-  {
-    "slug": "small-apartment-design-tips",
-    "title": "7 Smart Design Tips for Small Apartments in Dhaka (800–1,500 Sq Ft)",
-    "category": "Residential Interior",
-    "date": "Oct 20, 2026",
-    "readTime": "9 min read",
-    "image": "/portfolio/residential/bedroom-dark-luxury-suite.webp",
-    "excerpt": "Discover expert interior design strategies tailored for Dhaka’s 800 to 1,500 sq ft apartments. Learn how custom furniture, vertical storage, and strategic color balance create breathtaking, spacious sanctuaries."
   },
   {
     "slug": "browns-interiors-trusted-interior-studio",

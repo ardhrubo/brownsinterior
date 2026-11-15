@@ -812,13 +812,29 @@
   margin-bottom: 0.25rem;
 }
 .blog-author-bio-role {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #a88a66;
   display: block;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.5rem;
+}
+.blog-author-bio-creds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+.blog-author-cred-pill {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #5a544e;
+  background: #faf7f3;
+  border: 1px solid rgba(201, 181, 156, 0.38);
+  border-radius: 6px;
+  padding: 0.22rem 0.6rem;
+  line-height: 1.35;
 }
 .blog-author-bio-text {
   font-size: 0.94rem;

@@ -625,11 +625,16 @@ export default function BlogPost() {
               <div className="blog-author-bio-content">
                 <h4>{post.author?.name || 'Engr. Aslam Sheikh'}</h4>
                 <span className="blog-author-bio-role">
-                  {post.author?.role || 'Founder & Principal Designer'} · {post.author?.qualification || 'B.Sc. Civil Engineering'}
+                  {post.author?.role || 'Founder & Principal Designer'} · Brown’s Interiors
                 </span>
+                <div className="blog-author-bio-creds">
+                  <span className="blog-author-cred-pill">Dip. Architecture & Interior Design (NPI)</span>
+                  <span className="blog-author-cred-pill">B.Sc. in Civil Engg. (IUBAT)</span>
+                  <span className="blog-author-cred-pill">IEB Member: A29734</span>
+                </div>
                 <p className="blog-author-bio-text">
                   {post.author?.bio ||
-                    'With over a decade of leadership in structural engineering and luxury interior execution, Engr. Aslam Sheikh has spearheaded 250+ turnkey residential, commercial, and trade fair projects across Dhaka and throughout Bangladesh.'}
+                    'With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh.'}
                 </p>
                 <Link to="/about" className="blog-author-bio-link">
                   Learn more about our studio leadership <ArrowUpRight size={14} />
