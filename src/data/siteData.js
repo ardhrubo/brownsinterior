@@ -54,6 +54,7 @@ export const processSteps = [
 export const blogPreviews = [
   {
     "slug": "why-browns-interiors-bangladesh",
+    "lang": "bn",
     "title": "কেন Brown’s Interiors সবার ভরসার জায়গা?",
     "category": "Q&A Guide",
     "date": "Nov 15, 2026",
@@ -63,6 +64,7 @@ export const blogPreviews = [
   },
   {
     "slug": "small-apartment-design-tips",
+    "lang": "en",
     "title": "7 Smart Design Tips for Small Apartments in Dhaka",
     "category": "Residential Interior",
     "date": "Oct 20, 2026",
@@ -72,6 +74,7 @@ export const blogPreviews = [
   },
   {
     "slug": "how-browns-interiors-works-process",
+    "lang": "bn",
     "title": "কীভাবে Brown’s Interiors কাজ করে?",
     "category": "Work Process",
     "date": "Nov 15, 2026",
@@ -81,6 +84,7 @@ export const blogPreviews = [
   },
   {
     "slug": "browns-interiors-trusted-interior-studio",
+    "lang": "bn",
     "title": "কীভাবে Brown’s Interiors বাংলাদেশের অন্যতম সেরা ইন্টেরিয়র স্টুডিও হয়ে উঠল?",
     "category": "Studio Spotlight",
     "date": "Nov 15, 2026",
@@ -90,6 +94,7 @@ export const blogPreviews = [
   },
   {
     "slug": "exhibition-booth-that-stands-out",
+    "lang": "en",
     "title": "How to Design an Exhibition Booth That Stands Out at BICC & Trade Expos in Bangladesh",
     "category": "Exhibition & Commercial",
     "date": "Sep 18, 2026",
@@ -99,6 +104,7 @@ export const blogPreviews = [
   },
   {
     "slug": "interior-design-cost-in-bangladesh-guide",
+    "lang": "en",
     "title": "Interior Design Cost in Bangladesh (2026 Per Sq Ft BOQ & Material Guide)",
     "category": "Budget & BOQ Guide",
     "date": "Nov 15, 2026",

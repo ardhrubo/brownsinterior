@@ -9,6 +9,7 @@ import {
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
 import { testimonials, blogPreviews, stats, processSteps } from '../data/siteData';
+import { useLanguage, processStepsBn, statsBn } from '../context/LanguageContext';
 import '../styles/site.css';
 import './HomeSections.css';
 
@@ -82,6 +83,7 @@ const slides = [
 export function HomeHero() {
   const [i, setI] = useState(0);
   const [hasTransitioned, setHasTransitioned] = useState(false);
+  const { isBn } = useLanguage();
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -126,11 +128,13 @@ export function HomeHero() {
           <em className="hero-trust">Trusted Service</em>
         </h1>
         <p>
-          Complete Interior &amp; Exterior Design and Execution Services Across Bangladesh.
+          {isBn
+            ? 'সারা বাংলাদেশে ফ্ল্যাট, ডুপ্লেক্স, অফিস ও এক্সিবিশন বুথের কমপ্লিট Interior ও Architectural Design সার্ভিস।'
+            : 'Complete Interior & Exterior Design and Execution Services Across Bangladesh.'}
         </p>
         <div className="h-hero-ctas">
-          <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> Explore Interiors</Link>
-          <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> Book Free Consultation</Link>
+          <Link to="/projects" className="pill-btn glass" id="hero-view-projects"><FolderOpen size={16} /> {isBn ? 'প্রজেক্ট দেখুন' : 'Explore Interiors'}</Link>
+          <Link to="/contact" className="pill-btn" id="hero-consultation"><Phone size={16} /> {isBn ? 'ফ্রি পরামর্শ নিন' : 'Book Free Consultation'}</Link>
         </div>
       </div>
       <div className="h-hero-dots">
@@ -165,13 +169,16 @@ function Counter({ value, suffix }) {
 }
 
 export function StatsBar() {
+  const { isBn } = useLanguage();
   return (
     <section className="stats-bar">
       <div className="container stats-inner clay">
         {stats.map((s) => (
           <div key={s.label} className="stat">
             <strong><Counter value={s.value} suffix={s.suffix} /></strong>
-            <span>{s.label}</span>
+            <span style={isBn ? { letterSpacing: 'normal', fontSize: '0.82rem' } : undefined}>
+              {isBn ? (statsBn[s.label] || s.label) : s.label}
+            </span>
           </div>
         ))}
       </div>
@@ -181,6 +188,7 @@ export function StatsBar() {
 
 /* ---------------- VISUAL SERVICES SHOWCASE ---------------- */
 export function ServicesGrid() {
+  const { isBn } = useLanguage();
   return (
     <section className="section cream">
       <div className="container">
@@ -188,10 +196,16 @@ export function ServicesGrid() {
           eyebrow="What We Do"
           title="Our"
           script="Expertise"
+          sub={
+            isBn
+              ? 'ফ্ল্যাট, ডুপ্লেক্স, অফিস ও এক্সিবিশন বুথের কমপ্লিট ডিজাইন এবং নিখুঁত কাজ।'
+              : undefined
+          }
         />
         <div className="svc-visual-grid">
           {servicesData.map((s, idx) => {
             const Icon = s.icon;
+            const catTitle = s.shortTitle || s.title;
             return (
               <motion.article
                 key={s.slug}
@@ -200,7 +214,7 @@ export function ServicesGrid() {
                 transition={{ duration: 0.5, delay: (idx % 4) * 0.06 }}
               >
                 <Link to={`/services/${s.slug}`} className="svc-vcard-media">
-                  <img src={s.image} alt={s.title} loading="lazy" decoding="async" />
+                  <img src={s.image} alt={catTitle} loading="lazy" decoding="async" />
                   <div className="svc-vcard-shade" />
                   <span className="svc-vcard-num">{s.number}</span>
                   <div className="svc-vcard-badge"><Icon size={18} /></div>
@@ -208,7 +222,7 @@ export function ServicesGrid() {
 
                 <div className="svc-vcard-body">
                   <h3>
-                    <Link to={`/services/${s.slug}`}>{s.shortTitle || s.title}</Link>
+                    <Link to={`/services/${s.slug}`}>{catTitle}</Link>
                   </h3>
 
                   <div className="svc-vcard-pills">
@@ -233,9 +247,9 @@ export function ServicesGrid() {
               <div className="svc-icon"><Calculator size={26} strokeWidth={1.6} /></div>
               <span className="svc-cta-tag">Budget Tool</span>
               <h3>Cost Estimator</h3>
-              <p>Instant ballpark budget for your space.</p>
+              <p>{isBn ? 'আপনার ফ্ল্যাট বা অফিসের আনুমানিক বাজেট হিসাব করুন।' : 'Instant ballpark budget for your space.'}</p>
               <Link to="/cost-estimator" className="pill-btn" style={{ marginTop: 'auto', justifyContent: 'center' }}>
-                Estimate Cost <ArrowRight size={15} />
+                {isBn ? 'খরচ হিসাব করুন' : 'Estimate Cost'} <ArrowRight size={15} />
               </Link>
             </div>
           </motion.article>
@@ -249,6 +263,7 @@ export function ServicesGrid() {
 export function FeaturedProjects({ limit = 5 }) {
   const cats = ['All', ...new Set(projectsData.map((p) => p.category))];
   const [cat, setCat] = useState('All');
+  const { isBn } = useLanguage();
   const list = projectsData.filter((p) => cat === 'All' || p.category === cat).slice(0, limit);
 
   return (
@@ -258,6 +273,11 @@ export function FeaturedProjects({ limit = 5 }) {
           eyebrow="Selected Portfolio"
           title="Curated"
           script="Spaces"
+          sub={
+            isBn
+              ? 'ঢাকা ও সারা বাংলাদেশে আমাদের করা বাসা, অফিস ও কমার্শিয়াল প্রজেক্টের কিছু কাজ।'
+              : undefined
+          }
         />
         <div className="proj-tabs">
           {cats.map((c) => (
@@ -307,7 +327,7 @@ export function FeaturedProjects({ limit = 5 }) {
 
         <div className="proj-cta-wrap">
           <Link to="/projects" className="pill-btn dark" id="home-all-projects">
-            All Projects <ArrowRight size={16} />
+            {isBn ? 'সব প্রজেক্ট দেখুন' : 'All Projects'} <ArrowRight size={16} />
           </Link>
         </div>
       </div>
@@ -348,6 +368,7 @@ export function TransformationShowcase() {
   const [activeSpot, setActiveSpot] = useState(0);
   const isDraggingRef = useRef(false);
   const stageRef = useRef(null);
+  const { isBn } = useLanguage();
 
   const updateFromClientX = (clientX) => {
     if (!stageRef.current) return;
@@ -394,6 +415,11 @@ export function TransformationShowcase() {
           eyebrow="Craftsmanship & Execution"
           title="From Raw Space to"
           script="Living Art"
+          sub={
+            isBn
+              ? '3D ডিজাইন থেকে শুরু করে আমাদের নিজস্ব ইঞ্জিনিয়ার ও দক্ষ মিস্ত্রিদের হাতে নিখুঁত ফিনিশিং।'
+              : undefined
+          }
         />
 
         <div className="trans-grid">
@@ -535,7 +561,7 @@ export function TransformationShowcase() {
             </div>
 
             <Link to="/cost-estimator" className="pill-btn trans-cta-btn">
-              <Calculator size={16} /> Estimate Similar Space <ArrowRight size={15} />
+              <Calculator size={16} /> {isBn ? 'আপনার জায়গার খরচ হিসাব করুন' : 'Estimate Similar Space'} <ArrowRight size={15} />
             </Link>
           </div>
         </div>
@@ -549,6 +575,7 @@ const processIcons = [Compass, LayoutGrid, Layers, ClipboardList, Hammer, Sparkl
 
 export function ProcessTimeline({ showCta = false }) {
   const [activeStep, setActiveStep] = useState(0);
+  const { isBn } = useLanguage();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -570,9 +597,10 @@ export function ProcessTimeline({ showCta = false }) {
           {processSteps.map((s, k) => {
             const StepIcon = processIcons[k] || Compass;
             const isActive = k === activeStep;
+            const localized = isBn ? (processStepsBn[s.step] || s) : s;
             return (
               <motion.div
-                key={s.title}
+                key={s.step}
                 className={`proc-step-item ${isActive ? 'is-active' : ''}`}
                 onMouseEnter={() => setActiveStep(k)}
                 onClick={() => setActiveStep(k)}
@@ -596,7 +624,7 @@ export function ProcessTimeline({ showCta = false }) {
                     <span className="proc-phase-tag">{s.phase}</span>
                   </div>
                   <h3>{s.title}</h3>
-                  <p>{s.text}</p>
+                  <p>{localized.text}</p>
                 </div>
               </motion.div>
             );
@@ -606,7 +634,7 @@ export function ProcessTimeline({ showCta = false }) {
         {showCta && (
           <div className="center mt-3">
             <Link to="/process" className="pill-btn glass" id="home-process-cta">
-              Full Process <ArrowRight size={15} />
+              {isBn ? 'পুরো কাজের ধাপ দেখুন' : 'Full Process'} <ArrowRight size={15} />
             </Link>
           </div>
         )}
@@ -616,8 +644,36 @@ export function ProcessTimeline({ showCta = false }) {
 }
 
 /* ---------------- TESTIMONIALS ---------------- */
+const testimonialBnMap = {
+  'Rafiq Ahmed': {
+    role: 'ফ্ল্যাট মালিক, গুলশান',
+    text: 'গুলশানের ফ্ল্যাটের জন্য নিখুঁত পরিকল্পনা, ভালো ম্যাটেরিয়াল এবং সময়মতো কাজ বুঝিয়ে দিয়েছেন।',
+  },
+  'Nusrat Jahan': {
+    role: 'Café Owner, Dhanmondi',
+    text: 'তারা আমাদের ব্র্যান্ডের আবহ চমৎকারভাবে ফুটিয়ে তুলেছেন, সিটিং লেআউট ও পরিবেশ অতিথিদের দারুণ পছন্দ হয়েছে।',
+  },
+  'Tanvir Hasan': {
+    role: 'Marketing Manager, Expo',
+    text: 'আমাদের Exhibition Booth-টি হুবহু 3D ডিজাইনের মতো করেই নিখুঁতভাবে তৈরি হয়েছে।',
+  },
+  'Shirin Akter': {
+    role: 'বাড়ির মালিক, বসুন্ধরা',
+    text: 'বাজেটের পুরো স্বচ্ছতা ছিল এবং কাজের প্রতিটি ছোট বিষয়েও দারুণ মনোযোগ দিয়েছেন।',
+  },
+  'Mahmud Karim': {
+    role: 'Director, Corporate Office',
+    text: 'ফ্লোর প্ল্যান থেকে শুরু করে কমপ্লিট Turnkey ডেলিভারি পর্যন্ত পুরো অফিসের কাজ বাজেটের মধ্যেই শেষ হয়েছে।',
+  },
+  'Farzana Rahman': {
+    role: 'প্রবাসী ক্লায়েন্ট, UK',
+    text: 'UK থেকে নিয়মিত আপডেট ও পরিষ্কার ড্রয়িংয়ের মাধ্যমে পুরো ঢাকার ফ্ল্যাটের কাজ ঝামেলামুক্তভাবে করিয়েছি।',
+  },
+};
+
 export function TestimonialSlider() {
   const [i, setI] = useState(0);
+  const { isBn } = useLanguage();
   const n = testimonials.length;
   useEffect(() => {
     const t = setInterval(() => setI((p) => (p + 1) % n), 6000);
@@ -627,20 +683,27 @@ export function TestimonialSlider() {
   return (
     <section className="section cream">
       <div className="container">
-        <SectionHead eyebrow="Client Stories" title="Trusted by" script="Clients" />
+        <SectionHead
+          eyebrow="Client Stories"
+          title="Trusted by"
+          script="Clients"
+        />
         <div className="testi-row">
           <AnimatePresence mode="popLayout">
-            {visible.map((t, k) => (
-              <motion.div key={t.name} className={`testi-card clay ${k === 0 ? 'lead' : ''}`} layout initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.45 }}>
-                <Quote className="testi-quote" size={30} />
-                <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={14} fill="currentColor" />)}</div>
-                <p>"{t.text}"</p>
-                <div className="testi-person">
-                  <div className="testi-avatar" aria-hidden="true"><UserRound size={20} strokeWidth={1.8} /></div>
-                  <div><strong>{t.name}</strong><span>{t.role}</span></div>
-                </div>
-              </motion.div>
-            ))}
+            {visible.map((t, k) => {
+              const bnEntry = testimonialBnMap[t.name];
+              return (
+                <motion.div key={t.name} className={`testi-card clay ${k === 0 ? 'lead' : ''}`} layout initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.45 }}>
+                  <Quote className="testi-quote" size={30} />
+                  <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={14} fill="currentColor" />)}</div>
+                  <p>"{isBn && bnEntry ? bnEntry.text : t.text}"</p>
+                  <div className="testi-person">
+                    <div className="testi-avatar" aria-hidden="true"><UserRound size={20} strokeWidth={1.8} /></div>
+                    <div><strong>{t.name}</strong><span>{isBn && bnEntry ? bnEntry.role : t.role}</span></div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
         </div>
         <div className="testi-nav">
@@ -654,16 +717,25 @@ export function TestimonialSlider() {
 
 /* ---------------- CTA ---------------- */
 export function CostCTA() {
+  const { isBn } = useLanguage();
   return (
     <section className="cta-band">
       <div className="container cta-inner">
         <motion.div {...fadeUp}>
           <h2>Ready to Build Your <em>Dream Space?</em></h2>
-          <p>Book a free consultation or get an instant cost estimate.</p>
+          <p>
+            {isBn
+              ? 'ফ্রি পরামর্শের জন্য যোগাযোগ করুন অথবা অনলাইনে আনুমানিক খরচ হিসাব করুন।'
+              : 'Book a free consultation or get an instant cost estimate.'}
+          </p>
         </motion.div>
         <motion.div className="cta-btns" {...fadeUp}>
-          <Link to="/cost-estimator" className="pill-btn glass" id="cta-calculator"><Calculator size={16} /> Estimate Cost</Link>
-          <Link to="/contact" className="pill-btn" id="cta-contact"><Phone size={16} /> Book Consultation</Link>
+          <Link to="/cost-estimator" className="pill-btn glass" id="cta-calculator">
+            <Calculator size={16} /> {isBn ? 'খরচ হিসাব করুন' : 'Estimate Cost'}
+          </Link>
+          <Link to="/contact" className="pill-btn" id="cta-contact">
+            <Phone size={16} /> {isBn ? 'ফ্রি পরামর্শ নিন' : 'Book Consultation'}
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -699,24 +771,35 @@ export function BlogCard({ post }) {
             {post.excerpt}
           </p>
         )}
-        <span className="svc-more">Read Article <ArrowRight size={14} /></span>
+        <span className="svc-more">
+          {post.lang === 'bn' ? 'বিস্তারিত পড়ুন' : 'Read Article'} <ArrowRight size={14} />
+        </span>
       </div>
     </Link>
   );
 }
 
 export function BlogPreview() {
+  const { lang, isBn } = useLanguage();
+  const filteredPosts = blogPreviews.filter((p) => (p.lang || 'en') === lang).slice(0, 3);
+
   return (
     <section className="section cream">
       <div className="container">
-        <SectionHead eyebrow="Insights" title="Latest" script="Articles" />
+        <SectionHead
+          eyebrow="Insights"
+          title="Latest"
+          script="Articles"
+        />
         <div className="grid-3">
-          {blogPreviews.slice(0, 3).map((p, k) => (
+          {filteredPosts.map((p, k) => (
             <motion.div key={p.slug} {...fadeUp} transition={{ duration: 0.5, delay: k * 0.08 }}><BlogCard post={p} /></motion.div>
           ))}
         </div>
         <div className="center mt-3">
-          <Link to="/blog" className="pill-btn dark" id="home-all-blog">All Articles <ArrowRight size={15} /></Link>
+          <Link to="/blog" className="pill-btn dark" id="home-all-blog">
+            {isBn ? 'সব আর্টিকেল দেখুন' : 'All Articles'} <ArrowRight size={15} />
+          </Link>
         </div>
       </div>
     </section>

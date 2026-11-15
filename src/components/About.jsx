@@ -13,16 +13,19 @@ import {
   BadgeCheck,
   MessageCircle,
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import './About.css';
 
 const quickHighlights = [
-  'Led by Engr. Aslam Sheikh',
-  'All Over Bangladesh & Worldwide Design Service',
-  'Architecture · Interior · Structural',
-  'Transparent BOQ & Turnkey Build',
+  { en: 'Led by Engr. Aslam Sheikh', bn: 'ইঞ্জিনিয়ার আসলাম শেখের নেতৃত্বে' },
+  { en: 'All Over Bangladesh & Worldwide Design Service', bn: 'সারা বাংলাদেশ ও বিদেশে অনলাইন ডিজাইন সার্ভিস' },
+  { en: 'Architecture · Interior · Structural', bn: 'Architecture · Interior · Structural' },
+  { en: 'Transparent BOQ & Turnkey Build', bn: 'স্বচ্ছ বাজেট (BOQ) ও কমপ্লিট Turnkey কাজ' },
 ];
 
 export default function About({ full = false }) {
+  const { isBn } = useLanguage();
+
   return (
     <section id="about" className={`about-section ${full ? 'about-full' : 'about-compact'}`}>
       <div className="container">
@@ -44,7 +47,9 @@ export default function About({ full = false }) {
               />
               <div className="experience-badge">
                 <span className="years">10+</span>
-                <span className="text">Years of<br />Excellence</span>
+                <span className="text">
+                  Years of<br />Excellence
+                </span>
               </div>
             </div>
           </motion.div>
@@ -61,15 +66,23 @@ export default function About({ full = false }) {
               Where <em>Design</em> Meets Engineering.
             </h2>
             <p className="about-description">
-              Led by <strong>Engr. Aslam Sheikh</strong>, we design and build bespoke homes, offices, and exhibition spaces all over Bangladesh, alongside worldwide architectural and interior design services.
+              {isBn ? (
+                <>
+                  <strong>Engr. Aslam Sheikh</strong>-এর নেতৃত্বে আমরা সারা বাংলাদেশে ফ্ল্যাট, ডুপ্লেক্স, অফিস ও এক্সিবিশন বুথের Interior Design ও Turnkey বাস্তবায়ন করছি, পাশাপাশি দেশ-বিদেশে অনলাইন Architectural Design সার্ভিসও দিয়ে থাকি।
+                </>
+              ) : (
+                <>
+                  Led by <strong>Engr. Aslam Sheikh</strong>, we design and build bespoke homes, offices, and exhibition spaces all over Bangladesh, alongside worldwide architectural and interior design services.
+                </>
+              )}
             </p>
 
             {!full && (
               <ul className="about-quick-list">
                 {quickHighlights.map((item) => (
-                  <li key={item}>
+                  <li key={item.en}>
                     <CheckCircle2 size={16} />
-                    <span>{item}</span>
+                    <span>{isBn ? item.bn : item.en}</span>
                   </li>
                 ))}
               </ul>
@@ -77,14 +90,16 @@ export default function About({ full = false }) {
 
             {full && (
               <p className="about-description">
-                Our in-house team unites interior architecture, structural consultancy, custom millwork, and turnkey execution—backed by 3D visualization and itemized budgets.
+                {isBn
+                  ? 'আমাদের নিজস্ব টিম 3D ডিজাইন, স্বচ্ছ BOQ বাজেট, Structural পরামর্শ, কাস্টম ফার্নিচার ও কমপ্লিট Turnkey কাজ এক ছাদের নিচে সম্পন্ন করে।'
+                  : 'Our in-house team unites interior architecture, structural consultancy, custom millwork, and turnkey execution—backed by 3D visualization and itemized budgets.'}
               </p>
             )}
 
             {!full && (
               <div className="about-cta-row">
                 <Link to="/about" className="pill-btn outline" id="about-discover-more">
-                  About Us <ArrowRight size={15} />
+                  {isBn ? 'আমাদের সম্পর্কে জানুন' : 'About Us'} <ArrowRight size={15} />
                 </Link>
               </div>
             )}
@@ -135,22 +150,28 @@ export default function About({ full = false }) {
                   <span className="sec-eyebrow">Message From The Founder</span>
                 </div>
                 <h3 className="founder-spotlight-title">Engr. Aslam Sheikh</h3>
-                <p className="founder-spotlight-subtitle">Founder & Principal Designer · Structural Consultant</p>
+                <p className="founder-spotlight-subtitle">
+                  Founder &amp; Principal Designer · Structural Consultant
+                </p>
 
                 <div className="founder-message-box">
                   <Quote className="founder-message-quote-icon" size={28} />
                   <p className="founder-message-p">
-                    “I believe a beautiful interior is not just about looks, but also about comfort, functionality, and quality. My goal is to create spaces that reflect each client’s taste and make everyday living better.”
+                    {isBn
+                      ? '“আমি বিশ্বাস করি একটি সুন্দর Interior শুধু দেখতে ভালো হওয়াতেই সীমাবদ্ধ নয়, বরং তা হতে হবে আরামদায়ক, কার্যকর এবং দীর্ঘস্থায়ী। প্রতিটি ক্লায়েন্টের রুচি ও প্রয়োজন অনুযায়ী দৈনন্দিন জীবনকে সহজ ও সুন্দর করাই আমাদের লক্ষ্য।”'
+                      : '“I believe a beautiful interior is not just about looks, but also about comfort, functionality, and quality. My goal is to create spaces that reflect each client’s taste and make everyday living better.”'}
                   </p>
                   <p className="founder-message-p">
-                    “Along with interior design, I also focus on building design and exterior aesthetics. With proper structural planning and engineering, I aim to create buildings that are safe, functional, and built to last.”
+                    {isBn
+                      ? '“Interior Design-এর পাশাপাশি আমরা বিল্ডিংয়ের আর্কিটেকচারাল নকশা ও বাইরের সৌন্দর্যের ওপরও সমান গুরুত্ব দিই। সঠিক Structural Planning ও Civil Engineering-এর মাধ্যমে নিরাপদ ও টেকসই ভবন গড়ে তোলাই আমাদের অঙ্গীকার।”'
+                      : '“Along with interior design, I also focus on building design and exterior aesthetics. With proper structural planning and engineering, I aim to create buildings that are safe, functional, and built to last.”'}
                   </p>
                 </div>
 
                 <div className="founder-credentials-section">
                   <h4 className="founder-credentials-heading">
                     <Award size={18} />
-                    <span>Credentials & Professional Affiliations</span>
+                    <span>Credentials &amp; Professional Affiliations</span>
                   </h4>
                   <div className="founder-credentials-list">
                     <div className="founder-credential-item">
@@ -158,7 +179,7 @@ export default function About({ full = false }) {
                         <GraduationCap size={18} />
                       </div>
                       <div className="credential-details">
-                        <strong className="credential-title">Dip. Architecture & Interior Design</strong>
+                        <strong className="credential-title">Dip. Architecture &amp; Interior Design</strong>
                         <span className="credential-institution">School of Architecture (NPI)</span>
                       </div>
                     </div>
@@ -214,7 +235,11 @@ export default function About({ full = false }) {
               >
                 <div className="value-icon"><Target size={26} strokeWidth={1.5} /></div>
                 <h3>Our Mission</h3>
-                <p>Crafting enduring spaces through smart spatial planning, honest materials, and civil structural engineering precision.</p>
+                <p>
+                  {isBn
+                    ? 'স্মার্ট স্পেস প্ল্যানিং, আসল ম্যাটেরিয়াল এবং Civil Engineering নিখুঁততায় টেকসই ও নান্দনিক স্পেস তৈরি করা।'
+                    : 'Crafting enduring spaces through smart spatial planning, honest materials, and civil structural engineering precision.'}
+                </p>
               </motion.div>
               <motion.div
                 className="value-card dark"
@@ -225,7 +250,13 @@ export default function About({ full = false }) {
               >
                 <div className="value-icon"><ShieldCheck size={26} strokeWidth={1.5} /></div>
                 <h3>Our Commitment</h3>
-                <p className="commitment">Creative Design. <span>Professional Engineering.</span> Quality You Can Trust.</p>
+                <p className="commitment">
+                  {isBn ? (
+                    <>সৃজনশীল ডিজাইন। <span>পেশাদার প্রকৌশল।</span> নির্ভরযোগ্য মান।</>
+                  ) : (
+                    <>Creative Design. <span>Professional Engineering.</span> Quality You Can Trust.</>
+                  )}
+                </p>
               </motion.div>
             </div>
           </>

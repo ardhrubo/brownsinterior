@@ -16,7 +16,7 @@
   --font-massive: 'Playfair Display', 'Noto Sans Bengali', Georgia, serif;
 }
 
-:lang(bn) {
+[lang="bn"] {
   font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
   letter-spacing: normal;
 }

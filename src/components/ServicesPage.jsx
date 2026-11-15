@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { SectionHead } from './HomeSections';
+import { useLanguage, serviceCategoryBn } from '../context/LanguageContext';
 import SEO from './SEO';
 import './ServicesPage.css';
 
@@ -23,26 +24,31 @@ const processWorkflow = [
     step: '01',
     title: 'Consultation & Site Survey',
     desc: 'Laser measurements, structural assessment, and deep discovery of your lifestyle or business vision.',
+    bnDesc: 'সরাসরি সাইট ভিজিট করে নিখুঁত মাপ নেওয়া, কাঠামোগত অবস্থা যাচাই এবং আপনার চাহিদা ও বাজেট বুঝে নেওয়া।',
   },
   {
     step: '02',
     title: '2D & Photorealistic 3D',
     desc: 'Functional space zoning, CAD blueprints, and photorealistic 3D visualizations before anything is built.',
+    bnDesc: 'কাজ শুরুর আগেই কার্যকর 2D AutoCAD লেআউট ও বাস্তবসম্মত 3D ভিউয়ের মাধ্যমে চূড়ান্ত ডিজাইন দেখানো।',
   },
   {
     step: '03',
     title: 'Itemized BOQ Costing',
     desc: 'Transparent Bill of Quantities with specified material brands, grades, and milestone timelines.',
+    bnDesc: 'প্রতিটি ম্যাটেরিয়ালের ব্র্যান্ড, গ্রেড ও কাজের সময়সীমাসহ স্পষ্ট লিখিত বাজেট (BOQ) প্রদান।',
   },
   {
     step: '04',
     title: 'Turnkey Handover & Warranty',
     desc: 'Daily engineer supervision, master craftsmanship, deep cleaning, and 1-year workmanship warranty.',
+    bnDesc: 'প্রতিদিন ইঞ্জিনিয়ারদের তত্ত্বাবধানে কাজ শেষ করে ক্লিনিং ও ১ বছরের সার্ভিস ওয়ারেন্টিসহ প্রজেক্ট বুঝিয়ে দেওয়া।',
   },
 ];
 
 export default function ServicesPage() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const { isBn } = useLanguage();
 
   const filteredServices = useMemo(() => {
     if (activeFilter === 'all') return servicesData;
@@ -65,7 +71,11 @@ export default function ServicesPage() {
             title="Our Comprehensive"
             script="Services"
             as="h1"
-            sub="Holistic architecture, interior design, and turnkey engineering solutions crafted for residential, commercial, and exhibition spaces in Dhaka."
+            sub={
+              isBn
+                ? 'ঢাকা ও সারা বাংলাদেশে আবাসিক, কমার্শিয়াল ও এক্সিবিশন প্রজেক্টের জন্য সম্পূর্ণ আর্কিটেকচার, ইন্টেরিয়র এবং টার্নকি ইঞ্জিনিয়ারিং সমাধান।'
+                : 'Holistic architecture, interior design, and turnkey engineering solutions crafted for residential, commercial, and exhibition spaces in Dhaka.'
+            }
           />
 
           <div className="sp-metrics-row">
@@ -111,6 +121,8 @@ export default function ServicesPage() {
                 const Icon = s.icon;
                 const timelineSpec = s.specs?.find((sp) => sp.label === 'Timeline')?.value;
                 const scopeSpec = s.specs?.find((sp) => sp.label === 'Scope' || sp.label === 'Compliance')?.value;
+                const catBn = serviceCategoryBn[s.slug];
+                const catDesc = isBn ? (catBn?.shortDesc || s.tagline || s.description) : (s.tagline || s.description);
 
                 return (
                   <motion.article
@@ -146,7 +158,7 @@ export default function ServicesPage() {
                         </h2>
                       </div>
 
-                      <p className="sp-option-tagline">{s.tagline || s.description}</p>
+                      <p className="sp-option-tagline">{catDesc}</p>
 
                       {/* Specs Row */}
                       {scopeSpec && (
@@ -197,10 +209,12 @@ export default function ServicesPage() {
         <div className="container">
           <div className="sp-spotlight-grid">
             <div className="sp-spotlight-content">
-              <span className="sp-spotlight-eyebrow">The Brown's Interior Standard</span>
+              <span className="sp-spotlight-eyebrow">The Brown&apos;s Interior Standard</span>
               <h2>Why Turnkey Delivery Beats Fragmented Contractors</h2>
               <p>
-                Managing separate architects, carpenters, electricians, and painters often leads to budget overruns, blame-shifting, and delayed deadlines. At Brown’s Interior, every phase is engineered and built in-house.
+                {isBn
+                  ? 'আলাদা আর্কিটেক্ট, মিস্ত্রি, ইলেকট্রিশিয়ান ও পেইন্টার দিয়ে কাজ করালে প্রায়ই খরচ বেড়ে যায় এবং কাজের সমন্বয়হীনতা দেখা দেয়। Brown’s Interior-এ ডিজাইন থেকে হ্যান্ডওভার সবকিছু হয় নিজস্ব ইঞ্জিনিয়ারিং টিমের অধীনে।'
+                  : 'Managing separate architects, carpenters, electricians, and painters often leads to budget overruns, blame-shifting, and delayed deadlines. At Brown’s Interior, every phase is engineered and built in-house.'}
               </p>
 
               <div className="sp-spotlight-perks">
@@ -208,31 +222,43 @@ export default function ServicesPage() {
                   <CheckCircle2 size={18} className="sp-perk-icon" />
                   <div>
                     <strong>Single-Source Accountability</strong>
-                    <span>One dedicated project manager and engineer handles the entire lifecycle.</span>
+                    <span>
+                      {isBn
+                        ? 'একজন নির্দিষ্ট প্রজেক্ট ম্যানেজার ও ইঞ্জিনিয়ার পুরো কাজ শুরু থেকে শেষ পর্যন্ত তদারকি করেন।'
+                        : 'One dedicated project manager and engineer handles the entire lifecycle.'}
+                    </span>
                   </div>
                 </div>
                 <div className="sp-perk-item">
                   <CheckCircle2 size={18} className="sp-perk-icon" />
                   <div>
                     <strong>Transparent BOQ &amp; Cost Control</strong>
-                    <span>No mid-project surprises. Every screw, board, and light fixture is itemized upfront.</span>
+                    <span>
+                      {isBn
+                        ? 'কাজের মাঝপথে কোনো লুকানো খরচ নেই। প্রতিটি বোর্ড, হার্ডওয়্যার ও লাইটের দাম আগেই লিখিত থাকে।'
+                        : 'No mid-project surprises. Every screw, board, and light fixture is itemized upfront.'}
+                    </span>
                   </div>
                 </div>
                 <div className="sp-perk-item">
                   <CheckCircle2 size={18} className="sp-perk-icon" />
                   <div>
                     <strong>Permanent In-House Master Artisans</strong>
-                    <span>Dedicated carpentry, glazing, electrical, and polish craftsmen with 10+ years experience.</span>
+                    <span>
+                      {isBn
+                        ? '১০+ বছরের অভিজ্ঞতা সম্পন্ন নিজস্ব কার্পেন্ট্রি, গ্লাস, ইলেকট্রিক্যাল ও পলিশ মিস্ত্রি দল।'
+                        : 'Dedicated carpentry, glazing, electrical, and polish craftsmen with 10+ years experience.'}
+                    </span>
                   </div>
                 </div>
               </div>
 
               <div className="sp-spotlight-btns">
                 <Link to="/contact" className="pill-btn dark">
-                  Book Free Consultation <ArrowRight size={15} />
+                  {isBn ? 'ফ্রি পরামর্শ নিন' : 'Book Free Consultation'} <ArrowRight size={15} />
                 </Link>
                 <Link to="/cost-estimator" className="pill-btn">
-                  <Calculator size={15} /> Calculate Budget
+                  <Calculator size={15} /> {isBn ? 'খরচ হিসাব করুন' : 'Calculate Budget'}
                 </Link>
               </div>
             </div>
@@ -263,7 +289,11 @@ export default function ServicesPage() {
           <div className="sp-section-head">
             <span className="sp-eyebrow">Structured Execution</span>
             <h3>How Your Project Unfolds</h3>
-            <p>From the initial laser site measurement to the final handover inspection.</p>
+            <p>
+              {isBn
+                ? 'প্রথম দিন সাইট সার্ভে থেকে শুরু করে চূড়ান্ত চাবি হস্তান্তর পর্যন্ত প্রতিটি ধাপ।'
+                : 'From the initial laser site measurement to the final handover inspection.'}
+            </p>
           </div>
 
           <div className="sp-workflow-grid">
@@ -271,7 +301,7 @@ export default function ServicesPage() {
               <div key={item.step} className="sp-workflow-step clay">
                 <span className="sp-workflow-num">{item.step}</span>
                 <h4>{item.title}</h4>
-                <p>{item.desc}</p>
+                <p>{isBn ? item.bnDesc : item.desc}</p>
               </div>
             ))}
           </div>
@@ -283,14 +313,18 @@ export default function ServicesPage() {
         <div className="container sp-banner-inner">
           <div>
             <h2>Ready to transform your space?</h2>
-            <p>Speak with Engr. Aslam Sheikh and our architectural team for a tailored proposal.</p>
+            <p>
+              {isBn
+                ? 'ইঞ্জিনিয়ার আসলাম শেখ ও আমাদের আর্কিটেকচারাল টিমের সাথে পরামর্শ করুন।'
+                : 'Speak with Engr. Aslam Sheikh and our architectural team for a tailored proposal.'}
+            </p>
           </div>
           <div className="sp-banner-btns">
             <Link to="/cost-estimator" className="pill-btn glass" id="services-calc-cta">
-              <Calculator size={16} /> Estimate Cost
+              <Calculator size={16} /> {isBn ? 'খরচ হিসাব করুন' : 'Estimate Cost'}
             </Link>
             <Link to="/contact" className="pill-btn" id="services-contact-cta">
-              <Phone size={16} /> Free Consultation <ArrowRight size={15} />
+              <Phone size={16} /> {isBn ? 'ফ্রি পরামর্শ নিন' : 'Free Consultation'} <ArrowRight size={15} />
             </Link>
           </div>
         </div>

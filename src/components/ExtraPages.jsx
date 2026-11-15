@@ -11,11 +11,40 @@ import { SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections'
 import SEO from './SEO';
 import { testimonials, processSteps, blogPreviews, careerPositions } from '../data/siteData';
 import { submitInquiry } from '../lib/supabase';
+import { useLanguage, processStepsBn } from '../context/LanguageContext';
 import '../styles/site.css';
 import './HomeSections.css';
 import './ExtraPages.css';
 
+const testimonialBnMap = {
+  'Rafiq Ahmed': {
+    role: 'ফ্ল্যাট মালিক, গুলশান',
+    text: 'গুলশানের ফ্ল্যাটের জন্য নিখুঁত পরিকল্পনা, ভালো ম্যাটেরিয়াল এবং সময়মতো কাজ বুঝিয়ে দিয়েছেন।',
+  },
+  'Nusrat Jahan': {
+    role: 'Café Owner, Dhanmondi',
+    text: 'তারা আমাদের ব্র্যান্ডের আবহ চমৎকারভাবে ফুটিয়ে তুলেছেন, সিটিং লেআউট ও পরিবেশ অতিথিদের দারুণ পছন্দ হয়েছে।',
+  },
+  'Tanvir Hasan': {
+    role: 'Marketing Manager, Expo',
+    text: 'আমাদের Exhibition Booth-টি হুবহু 3D ডিজাইনের মতো করেই নিখুঁতভাবে তৈরি হয়েছে।',
+  },
+  'Shirin Akter': {
+    role: 'বাড়ির মালিক, বসুন্ধরা',
+    text: 'বাজেটের পুরো স্বচ্ছতা ছিল এবং কাজের প্রতিটি ছোট বিষয়েও দারুণ মনোযোগ দিয়েছেন।',
+  },
+  'Mahmud Karim': {
+    role: 'Director, Corporate Office',
+    text: 'ফ্লোর প্ল্যান থেকে শুরু করে কমপ্লিট Turnkey ডেলিভারি পর্যন্ত পুরো অফিসের কাজ বাজেটের মধ্যেই শেষ হয়েছে।',
+  },
+  'Farzana Rahman': {
+    role: 'প্রবাসী ক্লায়েন্ট, UK',
+    text: 'UK থেকে নিয়মিত আপডেট ও পরিষ্কার ড্রয়িংয়ের মাধ্যমে পুরো ঢাকার ফ্ল্যাটের কাজ ঝামেলামুক্তভাবে করিয়েছি।',
+  },
+};
+
 export function ProcessPage() {
+  const { isBn } = useLanguage();
   return (
     <main className="page-start-section">
       <SEO
@@ -29,7 +58,11 @@ export function ProcessPage() {
           title="Our Execution"
           script="Process"
           as="h1"
-          sub="A clear, systematic 6-step journey from your first concept to final turnkey handover."
+          sub={
+            isBn
+              ? 'প্রথম দিন আলোচনা ও সাইট পরিদর্শন থেকে শুরু করে সম্পূর্ণ চাবি হস্তান্তর পর্যন্ত ৬টি সুশৃঙ্খল ধাপ।'
+              : 'A clear, systematic 6-step journey from your first concept to final turnkey handover.'
+          }
         />
       </div>
       <ProcessTimeline />
@@ -39,36 +72,43 @@ export function ProcessPage() {
             eyebrow="Step-by-Step Journey"
             title="What to"
             script="Expect"
-            sub="Every phase of your project is documented, scheduled, and supervised by our engineering and design team."
+            sub={
+              isBn
+                ? 'আপনার প্রজেক্টের প্রতিটি পর্যায় আমাদের আর্কিটেক্ট ও ইঞ্জিনিয়ারদের সরাসরি তত্ত্বাবধানে সম্পন্ন হয়।'
+                : 'Every phase of your project is documented, scheduled, and supervised by our engineering and design team.'
+            }
           />
           <div className="timeline">
-            {processSteps.map((s, k) => (
-              <motion.div
-                key={s.title}
-                className={`tl-item ${k % 2 ? 'right' : 'left'}`}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: k * 0.08 }}
-              >
-                <span className="tl-dot">{String(k + 1).padStart(2, '0')}</span>
-                <div className="tl-card clay">
-                  <div className="tl-meta-row">
-                    {s.phase && <span className="tl-phase">{s.phase}</span>}
-                    {s.duration && <span className="tl-duration">{s.duration}</span>}
-                  </div>
-                  <h3>{s.title}</h3>
-                  <p>{s.text}</p>
-                  {s.deliverables && (
-                    <div className="tl-tags">
-                      {s.deliverables.map((d) => (
-                        <span key={d} className="tl-tag">{d}</span>
-                      ))}
+            {processSteps.map((s, k) => {
+              const localized = isBn ? (processStepsBn[s.step] || s) : s;
+              return (
+                <motion.div
+                  key={s.step}
+                  className={`tl-item ${k % 2 ? 'right' : 'left'}`}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.5, delay: k * 0.08 }}
+                >
+                  <span className="tl-dot">{String(k + 1).padStart(2, '0')}</span>
+                  <div className="tl-card clay">
+                    <div className="tl-meta-row">
+                      {s.phase && <span className="tl-phase">{s.phase}</span>}
+                      {s.duration && <span className="tl-duration">{s.duration}</span>}
                     </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+                    <h3>{s.title}</h3>
+                    <p>{localized.text}</p>
+                    {s.deliverables && (
+                      <div className="tl-tags">
+                        {s.deliverables.map((d) => (
+                          <span key={d} className="tl-tag">{d}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -78,6 +118,7 @@ export function ProcessPage() {
 }
 
 export function TestimonialsPage() {
+  const { isBn } = useLanguage();
   return (
     <main className="page-start-section">
       <SEO
@@ -92,20 +133,27 @@ export function TestimonialsPage() {
             title="Words From Our"
             script="Clients"
             as="h1"
-            sub="Hear from homeowners, developers, and corporate executives who trusted Brown's Interiors with their spaces."
+            sub={
+              isBn
+                ? 'যাঁরা তাঁদের স্বপ্নের ঘর, অফিস ও ব্যবসা প্রতিষ্ঠানের জন্য Brown’s Interiors-এর ওপর আস্থা রেখেছেন।'
+                : "Hear from homeowners, developers, and corporate executives who trusted Brown's Interiors with their spaces."
+            }
           />
           <div className="grid-3" style={{ marginTop: '2.5rem' }}>
-            {testimonials.map((t, k) => (
-              <motion.div key={t.name} className="testi-card clay" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (k % 3) * 0.1 }}>
-                <Quote className="testi-quote" size={34} />
-                <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={15} fill="currentColor" />)}</div>
-                <p>"{t.text}"</p>
-                <div className="testi-person">
-                  <div className="testi-avatar" aria-hidden="true"><UserRound size={20} strokeWidth={1.8} /></div>
-                  <div><strong>{t.name}</strong><span>{t.role}</span></div>
-                </div>
-              </motion.div>
-            ))}
+            {testimonials.map((t, k) => {
+              const bnEntry = testimonialBnMap[t.name];
+              return (
+                <motion.div key={t.name} className="testi-card clay" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (k % 3) * 0.1 }}>
+                  <Quote className="testi-quote" size={34} />
+                  <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={15} fill="currentColor" />)}</div>
+                  <p>"{isBn && bnEntry ? bnEntry.text : t.text}"</p>
+                  <div className="testi-person">
+                    <div className="testi-avatar" aria-hidden="true"><UserRound size={20} strokeWidth={1.8} /></div>
+                    <div><strong>{t.name}</strong><span>{isBn && bnEntry ? bnEntry.role : t.role}</span></div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -115,6 +163,8 @@ export function TestimonialsPage() {
 }
 
 export function BlogPage() {
+  const { isBn } = useLanguage();
+
   return (
     <main className="page-start-section">
       <SEO
@@ -129,7 +179,11 @@ export function BlogPage() {
             title="Design"
             script="Journal"
             as="h1"
-            sub="Design ideas, renovation guides, budget planning tips, and trends from the Brown's Interiors team."
+            sub={
+              isBn
+                ? 'ফ্ল্যাট বা অফিস সাজানোর পরামর্শ, বাজেট পরিকল্পনা এবং আমাদের কাজের পদ্ধতি নিয়ে প্রশ্নোত্তর ও গাইড।'
+                : "Design ideas, renovation guides, budget planning tips, and trends from the Brown's Interiors team."
+            }
           />
           <div className="grid-3" style={{ marginTop: '2.5rem' }}>
             {blogPreviews.map((p) => <BlogCard key={p.slug} post={p} />)}
@@ -148,9 +202,30 @@ export function BlogPage() {
 // - Luxury:   ৳ 20 Lac to 45 Lac (~৳ 1,666.67 – ৳ 3,750 / sft)
 
 const spaceTypes = [
-  { id: 'residential', label: 'Residential', mult: 1.0, icon: Home, hint: 'Apartments & Duplexes' },
-  { id: 'commercial', label: 'Commercial & Office', mult: 1.2, icon: Building2, hint: 'Offices, Retail & Showrooms' },
-  { id: 'booth', label: 'Exhibition Booth', mult: 1.45, icon: Layers, hint: 'Trade Fair Stalls & Expos' },
+  {
+    id: 'residential',
+    label: 'Residential',
+    mult: 1.0,
+    icon: Home,
+    hint: 'Apartments & Duplexes',
+    bnHint: 'ফ্ল্যাট, বাসা ও ডুপ্লেক্স',
+  },
+  {
+    id: 'commercial',
+    label: 'Commercial & Office',
+    mult: 1.2,
+    icon: Building2,
+    hint: 'Offices, Retail & Showrooms',
+    bnHint: 'অফিস, শোরুম ও রেস্তোরাঁ',
+  },
+  {
+    id: 'booth',
+    label: 'Exhibition Booth',
+    mult: 1.45,
+    icon: Layers,
+    hint: 'Trade Fair Stalls & Expos',
+    bnHint: 'ট্রেড ফেয়ার ও এক্সপো স্টল',
+  },
 ];
 
 const packages = [
@@ -161,6 +236,7 @@ const packages = [
     minRate: 750,
     maxRate: 1083.333,
     desc: 'Quality HPL board, clean electrical fit-out & commercial hardware',
+    bnDesc: 'মানসম্মত HPL বোর্ড, ইলেকট্রিক্যাল কাজ ও টেকসই হার্ডওয়্যার',
   },
   {
     id: 'premium',
@@ -169,6 +245,7 @@ const packages = [
     minRate: 1083.333,
     maxRate: 2083.333,
     desc: 'High-gloss acrylic, natural teak/oak veneer & warm cove lighting',
+    bnDesc: 'হাই-গ্লস অ্যাক্রিলিক, ন্যাচারাল ভিনিয়ার ও ওয়ার্ম কোভ লাইটিং',
   },
   {
     id: 'luxury',
@@ -177,6 +254,7 @@ const packages = [
     minRate: 1666.667,
     maxRate: 3750,
     desc: 'Italian marble, acoustic paneling, smart dimming & bespoke millwork',
+    bnDesc: 'ইতালিয়ান মার্বেল, অ্যাকোস্টিক প্যানেলিং, স্মার্ট লাইটিং ও কাস্টম ডিজাইন',
   },
 ];
 
@@ -191,6 +269,7 @@ export function CostCalculatorPage() {
   const [type, setType] = useState('residential');
   const [pkg, setPkg] = useState('basic');
   const [area, setArea] = useState(1200);
+  const { isBn } = useLanguage();
 
   useEffect(() => {
     document.body.classList.add('has-cost-calc');
@@ -226,7 +305,11 @@ export function CostCalculatorPage() {
           title="Estimate"
           script="Your Space"
           as="h1"
-          sub="Instant, transparent budget calculation calibrated for Dhaka's residential and commercial interior market."
+          sub={
+            isBn
+              ? 'ঢাকার আবাসিক ফ্ল্যাট, অফিস ও এক্সিবিশন বুথের বর্তমান বাজারদর অনুযায়ী তাৎক্ষণিক সম্ভাব্য বাজেট দেখে নিন।'
+              : "Instant, transparent budget calculation calibrated for Dhaka's residential and commercial interior market."
+          }
         />
       </div>
       <section className="section cream calc-section">
@@ -256,7 +339,7 @@ export function CostCalculatorPage() {
                       <IconComponent size={20} />
                     </div>
                     <strong>{s.label}</strong>
-                    <small>{s.hint}</small>
+                    <small>{isBn ? s.bnHint : s.hint}</small>
                   </button>
                 );
               })}
@@ -334,7 +417,7 @@ export function CostCalculatorPage() {
                       <strong>{p.label}</strong>
                       <span className="pkg-rate-badge">{p.rateLabel}</span>
                     </div>
-                    <p className="pkg-desc">{p.desc}</p>
+                    <p className="pkg-desc">{isBn ? p.bnDesc : p.desc}</p>
                   </button>
                 );
               })}
@@ -394,7 +477,7 @@ export function CostCalculatorPage() {
                 id="calc-whatsapp-btn"
               >
                 <FaWhatsapp size={18} />
-                <span>Chat on WhatsApp</span>
+                <span>{isBn ? 'WhatsApp-এ কথা বলুন' : 'Chat on WhatsApp'}</span>
               </a>
 
               <Link
@@ -404,13 +487,15 @@ export function CostCalculatorPage() {
                 className="calc-btn-quote"
                 id="calc-get-quote"
               >
-                <span>Book Site Visit & BOQ</span>
+                <span>{isBn ? 'সাইট ভিজিট ও BOQ বুক করুন' : 'Book Site Visit & BOQ'}</span>
                 <ArrowRight size={15} />
               </Link>
             </div>
 
             <p className="calc-res-note">
-              Turnkey estimate based on Dhaka market standards. Includes layout design, custom woodwork fabrication & complete handover.
+              {isBn
+                ? 'ঢাকার বর্তমান বাজারদর অনুযায়ী আনুমানিক টার্নকি হিসাব। এর মধ্যে লেআউট ডিজাইন, কাস্টম ফার্নিচার ও সম্পূর্ণ ফিনিশিং অন্তর্ভুক্ত।'
+                : 'Turnkey estimate based on Dhaka market standards. Includes layout design, custom woodwork fabrication & complete handover.'}
             </p>
           </aside>
         </div>

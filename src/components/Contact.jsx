@@ -10,6 +10,7 @@ import SEO from './SEO';
 import { servicesData } from '../data/servicesData';
 import { getWhatsAppUrl } from '../data/siteData';
 import { submitInquiry, NOTIFICATION_EMAIL } from '../lib/supabase';
+import { useLanguage } from '../context/LanguageContext';
 import './Contact.css';
 
 const initialForm = {
@@ -30,6 +31,7 @@ export default function Contact({ showHero = true }) {
   const [submitting, setSubmitting] = useState(false);
   const [submittedResult, setSubmittedResult] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
+  const { isBn } = useLanguage();
 
   // Pre-fill form if user came from a Service Page or the Cost Calculator
   useEffect(() => {
@@ -68,7 +70,10 @@ export default function Contact({ showHero = true }) {
       setForm(initialForm);
     } catch (err) {
       setErrorMsg(
-        err.message || 'Unable to send your request right now. Please try again.'
+        err.message ||
+          (isBn
+            ? 'এই মুহূর্তে অনুরোধ পাঠানো যাচ্ছে না। অনুগ্রহ করে আবার চেষ্টা করুন।'
+            : 'Unable to send your request right now. Please try again.')
       );
     } finally {
       setSubmitting(false);
@@ -92,7 +97,11 @@ export default function Contact({ showHero = true }) {
             title="Book a"
             script="Consultation"
             as={showHero ? 'h1' : 'h2'}
-            sub="Let's plan, design, and build your space with transparent costing and turnkey execution."
+            sub={
+              isBn
+                ? 'স্বচ্ছ বাজেট (BOQ) এবং দক্ষ টিমের মাধ্যমে আপনার স্বপ্নের বাসা বা অফিস সাজাতে আমাদের সাথে কথা বলুন।'
+                : "Let's plan, design, and build your space with transparent costing and turnkey execution."
+            }
           />
 
           <div className="contact-wrapper">
@@ -108,7 +117,9 @@ export default function Contact({ showHero = true }) {
                 <span className="contact-panel-tag">Brown's Interior</span>
                 <h3>Let's Talk About Your Space</h3>
                 <p className="info-desc">
-                  Call, WhatsApp, or send a quick note for a free consultation.
+                  {isBn
+                    ? 'ফ্রি পরামর্শ বা সাইট ভিজিটের জন্য কল করুন, হোয়াটসঅ্যাপ করুন অথবা মেসেজ পাঠান।'
+                    : 'Call, WhatsApp, or send a quick note for a free consultation.'}
                 </p>
               </div>
 
@@ -297,7 +308,11 @@ export default function Contact({ showHero = true }) {
                       rows="3"
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="Tell us briefly about your space or preferred time for a call..."
+                      placeholder={
+                        isBn
+                          ? 'আপনার ফ্ল্যাট বা অফিসের আয়তন এবং সুবিধাজনক কথা বলার সময় লিখুন...'
+                          : 'Tell us briefly about your space or preferred time for a call...'
+                      }
                     />
                   </div>
 
@@ -308,7 +323,7 @@ export default function Contact({ showHero = true }) {
                       </>
                     ) : (
                       <>
-                        <Send size={15} /> Book Free Consultation
+                        <Send size={15} /> {isBn ? 'ফ্রি পরামর্শ বুক করুন' : 'Book Free Consultation'}
                       </>
                     )}
                   </button>

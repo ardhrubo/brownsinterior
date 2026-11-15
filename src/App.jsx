@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import Footer from './components/Footer';
 import FloatingContact from './components/FloatingContact';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import {
   HomeHero, StatsBar, ServicesGrid, FeaturedProjects, TransformationShowcase,
   ProcessTimeline, TestimonialSlider, CostCTA, BlogPreview, SectionHead,
@@ -53,59 +54,68 @@ const Home = () => (
   </main>
 );
 
-const AboutPage = () => (
-  <main className="page-start-section">
-    <SEO
-      title="About Us"
-      description="Learn about Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, led by Engr. Aslam Sheikh. Over 10 years of experience delivering luxury interior design, architecture, and turnkey construction across Bangladesh."
-      canonicalPath="/about"
-    />
-    <div className="container" style={{ marginBottom: '2rem' }}>
-      <SectionHead
-        eyebrow="Our Story & Leadership"
-        title="About"
-        script="Brown's Interiors"
-        as="h1"
-        sub="Designing and executing beautiful spaces with engineering precision, quality materials, and transparent accountability across Bangladesh."
+const AboutPage = () => {
+  const { isBn } = useLanguage();
+  return (
+    <main className="page-start-section">
+      <SEO
+        title="About Us"
+        description="Learn about Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, led by Engr. Aslam Sheikh. Over 10 years of experience delivering luxury interior design, architecture, and turnkey construction across Bangladesh."
+        canonicalPath="/about"
       />
-    </div>
-    <StatsBar />
-    <About full />
-    <Team cream full />
-    <ProcessTimeline />
-    <CostCTA />
-  </main>
-);
+      <div className="container" style={{ marginBottom: '2rem' }}>
+        <SectionHead
+          eyebrow="Our Story & Leadership"
+          title="About"
+          script="Brown's Interiors"
+          as="h1"
+          sub={
+            isBn
+              ? 'সঠিক ইঞ্জিনিয়ারিং প্ল্যানিং, ভালো মানের ম্যাটেরিয়াল এবং স্বচ্ছ বাজেটের মাধ্যমে আমরা গড়ে তুলি আপনার স্বপ্নের বাসা ও অফিস।'
+              : 'Designing and executing beautiful spaces with engineering precision, quality materials, and transparent accountability across Bangladesh.'
+          }
+        />
+      </div>
+      <StatsBar />
+      <About full />
+      <Team cream full />
+      <ProcessTimeline />
+      <CostCTA />
+    </main>
+  );
+};
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Navbar />
-      <Suspense fallback={<div style={{ minHeight: '70vh' }} />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/services/:categorySlug/:slug" element={<ServiceDetail />} />
-          <Route path="/process" element={<ProcessPage />} />
-          <Route path="/testimonials" element={<TestimonialsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/cost-estimator" element={<CostCalculatorPage />} />
-          <Route path="/cost-calculator" element={<CostCalculatorPage />} />
-          <Route path="/careers" element={<CareersPage />} />
-          <Route path="/career" element={<CareersPage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-      <Footer />
-      <FloatingContact />
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <Navbar />
+        <Suspense fallback={<div style={{ minHeight: '70vh' }} />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/services/:categorySlug/:slug" element={<ServiceDetail />} />
+            <Route path="/process" element={<ProcessPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/cost-estimator" element={<CostCalculatorPage />} />
+            <Route path="/cost-calculator" element={<CostCalculatorPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/career" element={<CareersPage />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+        <Footer />
+        <FloatingContact />
+      </Router>
+    </LanguageProvider>
   );
 }
 

@@ -4,6 +4,7 @@ import { ArrowUpRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import { SectionHead, CostCTA } from './HomeSections';
+import { useLanguage } from '../context/LanguageContext';
 import SEO from './SEO';
 import './HomeSections.css';
 import './Portfolio.css';
@@ -11,6 +12,7 @@ import './Portfolio.css';
 export default function ProjectsPage() {
   const cats = ['All', ...new Set(projectsData.map((p) => p.category))];
   const [cat, setCat] = useState('All');
+  const { isBn } = useLanguage();
   const list = projectsData.filter((p) => cat === 'All' || p.category === cat);
 
   return (
@@ -27,7 +29,11 @@ export default function ProjectsPage() {
             title="Selected"
             script="Works"
             as="h1"
-            sub="Explore our portfolio of residential, commercial, architectural, and exhibition excellence across Dhaka."
+            sub={
+              isBn
+                ? 'ঢাকা ও সারা বাংলাদেশে আমাদের করা বাসা, ফ্ল্যাট, অফিস, বিল্ডিং ও এক্সিবিশন বুথ প্রজেক্টগুলো দেখুন।'
+                : 'Explore our portfolio of residential, commercial, architectural, and exhibition excellence across Dhaka.'
+            }
           />
 
           <div className="proj-tabs">
