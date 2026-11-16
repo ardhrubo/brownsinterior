@@ -53,6 +53,9 @@
 @media (max-width: 600px) {
   .footer-top { flex-direction: column; text-align: center; padding: 2.5rem 0; }
   .footer-top h3 { font-size: 1.4rem; }
+  .footer-top-btns { width: 100%; justify-content: center; flex-wrap: nowrap; gap: 0.55rem; }
+  .footer-top-btns .pill-btn { flex: 0 1 auto; white-space: nowrap; padding: 0.72rem 0.95rem; font-size: 0.82rem; gap: 0.4rem; }
+  .footer-top.is-bn .footer-top-btns { flex-wrap: wrap; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; padding: 2.5rem 0; }
   .footer-brand, .footer-contact { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; text-align: center; padding-bottom: 4rem; }

@@ -1000,8 +1000,9 @@
   .testi-card { padding: 1.5rem; }
   .cta-band { padding: 3.25rem 0; text-align: center; }
   .cta-inner { flex-direction: column; }
-  .cta-btns { justify-content: center; width: 100%; }
-  .cta-btns .pill-btn { flex: 1 1 100%; justify-content: center; max-width: 320px; }
+  .cta-btns { justify-content: center; width: 100%; flex-wrap: nowrap; gap: 0.55rem; }
+  .cta-btns .pill-btn { flex: 0 1 auto; justify-content: center; white-space: nowrap; padding: 0.74rem 0.95rem; font-size: 0.82rem; gap: 0.4rem; }
+  .cta-band.is-bn .cta-btns { flex-wrap: wrap; }
   .h-hero-bn-sub { font-size: 0.88rem; }
 }
 
