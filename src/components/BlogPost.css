@@ -154,7 +154,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(145deg, #27221e 0%, #141210 100%);
+  background: linear-gradient(145deg, #635347 0%, #4b3f35 100%);
   border: 2px solid var(--gold, #c9b59c);
   display: flex;
   align-items: center;
@@ -512,7 +512,7 @@
 
 /* Mid-Article Cost Calculator CTA Banner */
 .blog-mid-cta-banner {
-  background: linear-gradient(135deg, #24201d 0%, #171513 100%);
+  background: linear-gradient(145deg, #635347 0%, #4b3f35 100%);
   color: #ffffff;
   border-radius: 20px;
   padding: 2.5rem 2rem;
@@ -596,7 +596,7 @@
 
 /* Video Showcase Section */
 .blog-video-showcase {
-  background: #1a1816;
+  background: #4b3f35;
   color: #ffffff;
   border-radius: 20px;
   padding: 2.25rem;
@@ -895,7 +895,7 @@
 
 /* Bottom Conversion Card */
 .blog-bottom-conversion {
-  background: linear-gradient(135deg, #1f1c19 0%, #131110 100%);
+  background: linear-gradient(145deg, #635347 0%, #4b3f35 100%);
   color: #ffffff;
   border-radius: 24px;
   padding: 3rem 2.5rem;
@@ -1083,7 +1083,7 @@
   transition: transform 0.2s ease;
 }
 .blog-sidebar-wa-btn:hover {
-  background: #1a1816;
+  background: #4b3f35;
   border-color: var(--gold, #c9b59c);
   color: var(--gold, #c9b59c);
   transform: translateY(-2px);
@@ -1168,7 +1168,7 @@
 
 /* Sidebar Instant Quote CTA */
 .blog-sidebar-cta {
-  background: linear-gradient(135deg, #2c2825, #1f1c19);
+  background: linear-gradient(145deg, #635347 0%, #4b3f35 100%);
   color: #ffffff;
   border: 1px solid rgba(201, 181, 156, 0.25);
 }

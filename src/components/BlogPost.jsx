@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {
   Clock, Calendar, ShieldCheck, Copy, Check,
-  ChevronDown, ArrowUpRight, Sparkles, CheckCircle2, Play, Calculator,
+  ChevronDown, ArrowUpRight, Award, CheckCircle2, Play, Calculator,
   MessageSquare, ExternalLink, Bookmark, Layers
 } from 'lucide-react';
 import { FaWhatsapp, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
@@ -376,7 +376,7 @@ export default function BlogPost() {
           />
           {post.imageCaption && (
             <div className="blog-hero-caption">
-              <Sparkles size={14} style={{ color: '#a88a66', flexShrink: 0 }} />
+              <Award size={14} style={{ color: '#a88a66', flexShrink: 0 }} />
               <span>{post.imageCaption}</span>
             </div>
           )}
@@ -460,7 +460,7 @@ export default function BlogPost() {
                     {section.proTip && (
                       <div className="blog-protip">
                         <div className="blog-protip-head">
-                          <Sparkles size={16} />
+                          <Award size={16} />
                           <span>{section.proTip.title || (isBn ? 'প্রকৌশল ও ডিজাইন পরামর্শ' : 'Studio Engineering Insight')}</span>
                         </div>
                         <p>{renderRichText(section.proTip.text)}</p>

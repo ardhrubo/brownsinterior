@@ -28,9 +28,7 @@ export default function Navbar() {
   const { pathname } = useLocation();
   const { toggleLang, isBn } = useLanguage();
 
-  const canBeTransparent =
-    transparentPaths.includes(pathname) ||
-    pathname.startsWith('/services/');
+  const canBeTransparent = transparentPaths.includes(pathname);
   const solid = scrolled || !canBeTransparent || mobileMenuOpen;
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  MapPin, Phone, Mail, Clock, CheckCircle2, Send, Loader2, Sparkles, AlertCircle
+  MapPin, Phone, Mail, Clock, CheckCircle2, Send, Loader2, Calculator, AlertCircle
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { SectionHead } from './HomeSections';
@@ -25,7 +25,7 @@ const initialForm = {
   message: '',
 };
 
-export default function Contact({ showHero = true }) {
+export default function Contact({ showHero = true, cream = false }) {
   const [searchParams] = useSearchParams();
   const [form, setForm] = useState(initialForm);
   const [submitting, setSubmitting] = useState(false);
@@ -90,7 +90,7 @@ export default function Contact({ showHero = true }) {
         />
       )}
 
-      <section className={`contact-page-section ${showHero ? 'page-start' : ''}`} id="contact">
+      <section className={`contact-page-section ${showHero ? 'page-start' : ''} ${cream ? 'cream' : ''}`} id="contact">
         <div className="container">
           <SectionHead
             eyebrow={isBn ? 'যোগাযোগ' : 'Get In Touch'}
@@ -139,13 +139,15 @@ export default function Contact({ showHero = true }) {
                   className="info-item highlight-wa"
                 >
                   <div className="contact-lead-avatar-wrap">
-                    <img
-                      src="/team/engr-aslam-sheikh.webp"
-                      alt="Engr. Aslam Sheikh"
-                      className="contact-lead-avatar-img"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    <div className="contact-lead-avatar-crop">
+                      <img
+                        src="/team/engr-aslam-sheikh.webp"
+                        alt="Engr. Aslam Sheikh"
+                        className="contact-lead-avatar-img"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
                     <div className="contact-lead-wa-badge"><FaWhatsapp size={10} /></div>
                   </div>
                   <div>
@@ -228,7 +230,7 @@ export default function Contact({ showHero = true }) {
                 <form onSubmit={handleSubmit} className="quote-form">
                   {form.estimated_budget && (
                     <div className="contact-prefill-banner">
-                      <Sparkles size={15} />
+                      <Calculator size={15} />
                       <span>
                         Estimated Budget: <strong>{form.estimated_budget}</strong>
                         {form.area_sqft ? ` · ${form.area_sqft} sq ft` : ''}

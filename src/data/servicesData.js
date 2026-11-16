@@ -1,4 +1,4 @@
-import { Sofa, Building2, HardHat, Hammer, Presentation, ClipboardList, Sparkles } from 'lucide-react';
+import { Sofa, Building2, HardHat, Hammer, Presentation, ClipboardList, Layers } from 'lucide-react';
 
 const img = (id, w = 640) => `https://images.unsplash.com/${id}?auto=format&fit=crop&fm=webp&q=70&w=${w}`;
 
@@ -871,7 +871,7 @@ export const servicesData = [
     title: 'Additional Services',
     shortTitle: 'Specialized Services',
     tagline: 'Bespoke furniture, 3D visualization, turnkey & remote NRB design.',
-    icon: Sparkles,
+    icon: Layers,
     image: '/portfolio/interior/master-bedroom-client-fav.webp',
     description: 'Specialized design and execution services that complete your space.',
     intro: 'From handcrafted furniture pieces to full remote project delivery for NRB clients abroad.',

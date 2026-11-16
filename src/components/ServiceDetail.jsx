@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowRight, Phone, Calculator, Sparkles, ArrowUpRight, X, ChevronLeft, ChevronRight, Maximize2
+  ArrowRight, Phone, Calculator, Check, ArrowUpRight, X, ChevronLeft, ChevronRight, Maximize2
 } from 'lucide-react';
 import { servicesData, findServiceOrOption } from '../data/servicesData';
-import { SectionHead, ProcessTimeline, CostCTA } from './HomeSections';
+import { SectionHead, ProcessTimeline } from './HomeSections';
 import SEO from './SEO';
 import NotFound from './NotFound';
 import '../styles/site.css';
@@ -108,6 +108,11 @@ export default function ServiceDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <nav className="sd-mobile-crumb" aria-label="Breadcrumb">
+              <Link to={isCategory ? '/services' : `/services/${category.slug}`}>
+                <ChevronLeft size={14} /> {isCategory ? 'All services' : category.shortTitle || category.title}
+              </Link>
+            </nav>
             <div className="sd-crumbs">
               <Link to="/">Home</Link>
               <span>/</span>
@@ -134,26 +139,12 @@ export default function ServiceDetail() {
               <div className="sd-highlight-pills">
                 {highlightsToRender.map((h) => (
                   <span key={h} className="sd-pill-tag">
-                    <Sparkles size={11} /> {h}
+                    <Check size={12} /> {h}
                   </span>
                 ))}
               </div>
             )}
 
-            <div className="sd-hero-actions">
-              <Link
-                to={`/contact?category=${encodeURIComponent(category.title)}${
-                  !isCategory ? `&service=${encodeURIComponent(data.title)}` : ''
-                }`}
-                className="pill-btn"
-                id="option-quote-btn"
-              >
-                <Phone size={15} /> Book Free Consultation
-              </Link>
-              <Link to="/cost-estimator" className="pill-btn glass" id="option-calc-btn">
-                <Calculator size={15} /> Estimate Cost
-              </Link>
-            </div>
           </motion.div>
 
           {/* Interactive Visual Lookbook Frame */}
@@ -163,7 +154,9 @@ export default function ServiceDetail() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <div
+            <button
+              type="button"
+              aria-label={`Open ${data.title} image gallery`}
               className="sd-showcase-main"
               onClick={() => setLightboxIndex(activeImg)}
               style={{ cursor: 'pointer' }}
@@ -174,6 +167,9 @@ export default function ServiceDetail() {
                   key={photos[activeImg]}
                   src={photos[activeImg]}
                   alt={`${data.title} view ${activeImg + 1}`}
+                  width="960"
+                  height="600"
+                  decoding="async"
                   initial={{ opacity: 0, scale: 1.04 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
@@ -183,7 +179,7 @@ export default function ServiceDetail() {
               <span className="sd-showcase-caption">
                 {getGalleryLabel(activeImg)}
               </span>
-            </div>
+            </button>
 
             {photos.length > 1 && (
               <div className="sd-showcase-thumbs">
@@ -202,6 +198,20 @@ export default function ServiceDetail() {
               </div>
             )}
           </motion.div>
+            <div className="sd-hero-actions">
+              <Link
+                to={`/contact?category=${encodeURIComponent(category.title)}${
+                  !isCategory ? `&service=${encodeURIComponent(data.title)}` : ''
+                }`}
+                className="pill-btn"
+                id="option-quote-btn"
+              >
+                <Phone size={15} /> Book Free Consultation
+              </Link>
+              <Link to="/cost-estimator" className="pill-btn outline" id="option-calc-btn">
+                <Calculator size={15} /> Estimate Cost
+              </Link>
+            </div>
         </div>
 
         {/* Minimal Spec Strip */}
@@ -406,7 +416,7 @@ export default function ServiceDetail() {
       )}
 
       {/* Other Main Service Categories */}
-      <section className="section">
+      <section className={`section ${isCategory ? 'cream' : ''}`}>
         <div className="container">
           <SectionHead eyebrow="Full-Service Studio" title="Explore Other" script="Categories" />
           <div className="sd-others">
@@ -429,8 +439,6 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
-
-      <CostCTA />
 
       {/* Elegant Fullscreen Lookbook Lightbox Modal */}
       <AnimatePresence>

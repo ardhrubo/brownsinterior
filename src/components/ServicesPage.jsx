@@ -5,7 +5,6 @@ import {
   ArrowRight,
   Calculator,
   Phone,
-  Sparkles,
   CheckCircle2,
   Clock,
   ShieldCheck,
@@ -70,6 +69,8 @@ export default function ServicesPage() {
       {/* Disciplines Filter Bar */}
       <section className="sp-filter-section page-start-section">
         <div className="container">
+          <div className="sp-intro-grid">
+          <div className="sp-intro-copy">
           <SectionHead
             eyebrow={isBn ? 'সার্ভিস ও সমাধান' : 'Disciplines & Solutions'}
             title={isBn ? 'আমাদের' : 'Our Comprehensive'}
@@ -82,9 +83,16 @@ export default function ServicesPage() {
             }
           />
 
+          </div>
+          <div className="sp-intro-media">
+            <img src={servicesData[0].image} alt={isBn ? "আমাদের ইন্টেরিয়র ডিজাইন প্রজেক্ট" : "Interior design by Brown’s Interiors"} width="960" height="640" loading="eager" decoding="async" />
+            <span>{isBn ? "ডিজাইন থেকে হস্তান্তর" : "From first sketch to final handover"}</span>
+          </div>
+          </div>
+
           <div className="sp-metrics-row">
             <span className="sp-metric-pill">
-              <Sparkles size={14} className="sp-gold-icon" /> 7 Core Disciplines
+              <Layers size={14} className="sp-gold-icon" /> 7 Core Disciplines
             </span>
             <span className="sp-metric-pill">
               <Layers size={14} className="sp-gold-icon" /> 30+ Turnkey Specializations
@@ -94,11 +102,12 @@ export default function ServicesPage() {
             </span>
           </div>
 
-          <div className="sp-filter-bar">
+          <div className="sp-filter-bar" role="group" aria-label={isBn ? "সার্ভিস বাছাই করুন" : "Filter services"}>
             <button
               type="button"
               className={`sp-filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
               onClick={() => setActiveFilter('all')}
+              aria-pressed={activeFilter === 'all'}
             >
               {isBn ? 'সব সার্ভিস' : 'All Disciplines'}
             </button>
@@ -108,6 +117,7 @@ export default function ServicesPage() {
                 type="button"
                 className={`sp-filter-btn ${activeFilter === s.slug ? 'active' : ''}`}
                 onClick={() => setActiveFilter(s.slug)}
+                aria-pressed={activeFilter === s.slug}
               >
                 {isBn ? (serviceCategoryBn[s.slug]?.shortTitle || s.shortTitle || s.title) : (s.shortTitle || s.title)}
               </button>
@@ -117,7 +127,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="section cream sp-grid-section">
+      <section className="section sp-grid-section">
         <div className="container">
           <motion.div layout className="sp-options-grid">
             <AnimatePresence>
@@ -133,7 +143,7 @@ export default function ServicesPage() {
                   <motion.article
                     layout
                     key={s.slug}
-                    className="sp-option-card clay"
+                    className="sp-option-card"
                     id={`service-opt-${s.slug}`}
                     initial={{ opacity: 0, y: 24, scale: 0.98 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -325,7 +335,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="sp-banner-btns">
-            <Link to="/cost-estimator" className="pill-btn glass" id="services-calc-cta">
+            <Link to="/cost-estimator" className="pill-btn outline" id="services-calc-cta">
               <Calculator size={16} /> {isBn ? 'খরচ হিসাব করুন' : 'Estimate Cost'}
             </Link>
             <Link to="/contact" className="pill-btn" id="services-contact-cta">

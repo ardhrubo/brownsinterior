@@ -2,22 +2,22 @@
 
 /* --- Breadcrumbs & Badges --- */
 .sd-crumbs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 1.8px;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
 }
 .sd-crumbs a {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-color);
   transition: color 0.25s;
 }
 .sd-crumbs a:hover {
-  color: var(--gold);
+  color: var(--gold-dark);
 }
 
 .sd-cat-badge {
@@ -28,7 +28,7 @@
   border-radius: 999px;
   background: rgba(201, 181, 156, 0.18);
   border: 1px solid rgba(201, 181, 156, 0.35);
-  color: var(--gold);
+  color: var(--gold-dark);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -39,24 +39,17 @@
 /* --- Sub-Option Split Hero --- */
 .sd-opt-hero {
   position: relative;
-  background: #1b1714;
-  color: #fff;
+  background: #fff;
+  color: var(--text-color);
+  border-bottom: 1px solid #ece6de;
   padding: 8.5rem 0 3.5rem;
   overflow: hidden;
 }
 .sd-opt-hero-backdrop {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: blur(28px) brightness(0.32);
-  transform: scale(1.12);
-  transition: background-image 0.6s ease;
+  display: none;
 }
 .sd-opt-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(44, 40, 37, 0.55), rgba(18, 15, 13, 0.92));
+  display: none;
 }
 
 .sd-opt-hero-grid {
@@ -74,7 +67,7 @@
   font-weight: 500;
   line-height: 1.12;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-color);
 }
 
 .sd-opt-tagline {
@@ -82,7 +75,7 @@
   font-size: clamp(1.02rem, 1.35vw, 1.2rem);
   font-weight: 300;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--text-muted);
   max-width: 520px;
   margin-bottom: 1.5rem;
 }
@@ -99,14 +92,14 @@
   gap: 0.35rem;
   padding: 0.42rem 0.9rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ece6de;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-color);
   backdrop-filter: blur(6px);
 }
 .sd-pill-tag svg {
-  color: var(--gold);
+  color: var(--gold-dark);
 }
 
 .sd-hero-actions {
@@ -126,9 +119,9 @@
   aspect-ratio: 16 / 10;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: #25201c;
+  box-shadow: 0 18px 44px rgba(44, 40, 37, 0.12);
+  border: 1px solid #ece6de;
+  background: #f3efe9;
 }
 .sd-showcase-main img {
   width: 100%;
@@ -161,11 +154,11 @@
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
-  border: 2px solid transparent;
+  border: 2px solid #ece6de;
   padding: 0;
   cursor: pointer;
-  background: #1a1613;
-  opacity: 0.6;
+  background: #f3efe9;
+  opacity: 0.78;
   transition: all 0.3s ease;
 }
 .sd-thumb-btn img {
@@ -196,9 +189,10 @@
   margin-top: 3rem;
   padding: 1.4rem 2rem;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #ece6de;
   backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(34, 28, 24, 0.05);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
@@ -207,7 +201,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid #ece6de;
   padding-right: 1rem;
 }
 .sd-spec-item:last-child {
@@ -218,12 +212,12 @@
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--gold);
+  color: var(--gold-dark);
 }
 .sd-spec-val {
   font-size: 1.02rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--text-color);
 }
 
 /* --- Bento Features (What's Included) --- */
@@ -304,10 +298,10 @@
 }
 
 .sd-lookbook-tab.active {
-  background: #1f1b18;
+  background: var(--brown-900, #54463b);
   color: #ffffff;
-  border-color: #1f1b18;
-  box-shadow: 0 6px 20px rgba(31, 27, 24, 0.25);
+  border-color: var(--brown-900, #54463b);
+  box-shadow: 0 6px 20px rgba(75, 63, 53, 0.22);
 }
 
 .sd-lookbook-cat-badge {
@@ -1038,3 +1032,50 @@
     top: -2.5rem;
   }
 }
+
+/* Keep the photography close to the title and the actions beside it on desktop. */
+.sd-mobile-crumb { display: none; }
+.sd-opt-hero-grid { column-gap: 3rem; row-gap: 1.25rem; }
+.sd-opt-hero-copy { grid-column: 1; grid-row: 1; }
+.sd-opt-showcase { grid-column: 2; grid-row: 1 / span 2; }
+.sd-hero-actions { grid-column: 1; grid-row: 2; align-self: start; }
+.sd-showcase-main { padding: 0; text-align: left; }
+.sd-showcase-main:focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 4px; }
+
+@media (max-width: 1024px) {
+  .sd-opt-hero-copy, .sd-opt-showcase, .sd-hero-actions { grid-column: 1; grid-row: auto; }
+}
+
+@media (max-width: 720px) {
+  .sd-opt-hero { padding: 5.75rem 0 2rem; background: #fff; }
+  .sd-opt-hero-grid { gap: 1.25rem; }
+  .sd-crumbs, .sd-cat-badge { display: none; }
+  .sd-mobile-crumb { display: block; margin-bottom: 1rem; }
+  .sd-mobile-crumb a { display: inline-flex; align-items: center; gap: 0.25rem; color: var(--accent-ink); font-size: 0.8rem; min-height: 28px; }
+  .sd-opt-hero-copy h1 { font-size: clamp(2rem, 8.8vw, 2.65rem); line-height: 1.12; margin-bottom: 0.65rem; }
+  .sd-opt-tagline { font-size: 1rem; line-height: 1.55; margin-bottom: 0.85rem; }
+  .sd-highlight-pills { gap: 0.3rem 0.9rem; margin-bottom: 0; }
+  .sd-pill-tag { padding: 0; border: 0; border-radius: 0; background: none; backdrop-filter: none; font-size: 0.73rem; color: var(--text-muted); }
+  .sd-pill-tag svg { display: none; }
+  .sd-opt-showcase { gap: 0.55rem; }
+  .sd-showcase-main { border-radius: 14px; box-shadow: 0 8px 20px rgba(44, 40, 37, 0.08); }
+  .sd-showcase-caption { left: 0.65rem; bottom: 0.65rem; font-size: 0.62rem; letter-spacing: 0.5px; padding: 0.35rem 0.6rem; }
+  .sd-showcase-thumbs { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.25rem; }
+  .sd-thumb-btn { flex: 0 0 64px; border-radius: 7px; }
+  .sd-hero-actions { gap: 0.65rem; }
+  .sd-hero-actions .pill-btn { min-height: 46px; }
+  .sd-hero-actions .pill-btn.outline { border-color: var(--border-color); color: var(--accent-ink); background: #fff; }
+  .sd-specs-bar { margin-top: 1.5rem; }
+}
+
+/* Service content stays white; brown is reserved for small accents. */
+.sd-page, .sd-page .section.cream { background: #fff; }
+.sd-page .section.cream { border-top: 1px solid var(--border-color); border-bottom: 0; }
+.sd-specs-bar { background: #fff; box-shadow: none; border-radius: 12px; }
+.sd-visual-card { display: flex; flex-direction: column; aspect-ratio: auto; background: #fff; color: var(--text-color); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: none; }
+.sd-visual-card img { height: auto; aspect-ratio: 16 / 11; flex-shrink: 0; }
+.sd-visual-card-overlay { position: relative; inset: auto; flex: 1; padding: 1.4rem; background: #fff; }
+.sd-visual-card-tags span { background: var(--cream); color: var(--accent-ink); backdrop-filter: none; }
+.sd-visual-card h3 { color: var(--text-color); }
+.sd-visual-card p { color: var(--text-muted); }
+.sd-visual-link { color: var(--accent-ink); margin-top: auto; }

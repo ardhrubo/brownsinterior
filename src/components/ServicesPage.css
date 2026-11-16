@@ -4,8 +4,8 @@
 
 /* Metrics & Filter Bar Section */
 .sp-filter-section {
-  padding: 2.25rem 0 1rem;
-  background: #ffffff;
+  padding: 2.25rem 0 2rem;
+  background: #fff;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -62,10 +62,10 @@
 }
 
 .sp-filter-btn.active {
-  background: #1c1815;
+  background: var(--brown-900, #54463b);
   color: #f7f4ef;
-  border-color: #1c1815;
-  box-shadow: 0 4px 14px rgba(28, 24, 21, 0.16);
+  border-color: var(--brown-900, #54463b);
+  box-shadow: 0 4px 14px rgba(75, 63, 53, 0.18);
 }
 
 /* Services Grid Section */
@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
-  background: #ffffff;
+  background: #fff;
   border: 1px solid var(--border-color);
   color: var(--text-color);
   overflow: hidden;
@@ -169,14 +169,14 @@
 }
 
 .sp-option-card:hover .sp-option-icon {
-  background: var(--gold);
+  background: var(--button-bg);
   color: #ffffff;
   transform: rotate(-6deg) scale(1.05);
 }
 
 /* Card Body */
 .sp-option-body {
-  padding: 1.65rem 1.75rem;
+  padding: 1.65rem 1.4rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -232,7 +232,7 @@
   gap: 0.4rem;
   padding: 0.4rem 0.75rem;
   border-radius: 8px;
-  background: var(--cream);
+  background: var(--surface-light);
   border: 1px solid rgba(201, 181, 156, 0.25);
   margin-bottom: 1.25rem;
 }
@@ -279,7 +279,7 @@
   gap: 0.35rem;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: var(--cream);
+  background: #fff;
   border: 1px solid rgba(201, 181, 156, 0.35);
   color: var(--text-color);
   font-size: 0.78rem;
@@ -295,9 +295,9 @@
 }
 
 .sp-sub-chip:hover {
-  background: #1c1815;
+  background: var(--brown-900, #54463b);
   color: #ffffff;
-  border-color: #1c1815;
+  border-color: var(--brown-900, #54463b);
   transform: translateY(-2px);
 }
 
@@ -314,6 +314,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .sp-option-count {
@@ -333,20 +335,26 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--gold-dark);
+  color: #fff;
+  background: var(--button-bg);
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .sp-option-card:hover .sp-option-Action {
-  color: var(--text-color);
+  color: #fff;
+  background: var(--button-hover);
   transform: translateX(3px);
 }
 
 /* Spotlight Section */
 .sp-spotlight-section {
   padding: 5rem 0;
-  background: #ffffff;
+  background: #fff;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
@@ -443,7 +451,7 @@
   left: 1.5rem;
   right: 1.5rem;
   padding: 1.15rem 1.45rem;
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
   background: rgba(28, 24, 21, 0.88);
   backdrop-filter: blur(10px);
   color: #ffffff;
@@ -511,8 +519,9 @@
 
 .sp-workflow-step {
   padding: 2rem 1.65rem;
-  border-radius: var(--radius-sm);
-  background: #ffffff;
+  border-radius: 12px;
+  background: #fff;
+  border-top: 3px solid var(--gold);
   border: 1px solid var(--border-color);
   position: relative;
   transition: transform 0.3s ease;
@@ -527,7 +536,7 @@
   font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--accent-ink);
   line-height: 1;
   display: block;
   margin-bottom: 1rem;
@@ -550,9 +559,9 @@
 /* Bottom CTA Banner */
 .sp-banner {
   padding: 4.5rem 0;
-  background: linear-gradient(135deg, #1c1815 0%, #2a231f 100%);
-  color: #fff;
-  border-top: 1px solid rgba(201, 181, 156, 0.25);
+  background: #fff;
+  color: var(--text-color);
+  border-top: 1px solid #ece6de;
 }
 
 .sp-banner-inner {
@@ -567,11 +576,11 @@
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.35rem);
   margin-bottom: 0.35rem;
-  color: #f7f4ef;
+  color: var(--text-color);
 }
 
 .sp-banner p {
-  color: #c9b59c;
+  color: var(--text-muted);
   font-size: 0.95rem;
   margin: 0;
 }
@@ -580,6 +589,35 @@
   display: flex;
   gap: 0.85rem;
   flex-wrap: wrap;
+}
+
+
+/* White surfaces let the service photography lead. */
+.sp-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3.5rem;
+  margin-bottom: 2.5rem;
+}
+.sp-intro-copy .sec-head { text-align: left; margin: 0; }
+.sp-intro-copy .sec-eyebrow { padding: 0; background: transparent; }
+.sp-intro-copy .sec-title { font-size: clamp(2.25rem, 4vw, 3.4rem); }
+.sp-intro-copy .sec-title em { display: block; }
+.sp-intro-media { position: relative; overflow: hidden; border-radius: 16px; background: var(--gold); }
+.sp-intro-media img { display: block; width: 100%; height: 320px; object-fit: cover; }
+.sp-intro-media span { display: block; padding: 0.85rem 1.2rem; background: #fff; color: var(--text-muted); border-bottom: 1px solid var(--border-color); font-size: 0.85rem; }
+.sp-filter-bar { padding-top: 1.5rem; border-top: 1px solid rgba(84, 70, 59, 0.2); }
+.sp-filter-btn:focus-visible,
+.sp-page a:focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 4px; }
+@media (max-width: 800px) {
+  .sp-intro-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .sp-intro-media img { height: 250px; }
+  .sp-metrics-row { justify-content: flex-start; gap: 0.6rem; }
+  .sp-filter-bar { justify-content: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sp-page *, .sp-page *::before, .sp-page *::after { transition: none !important; }
 }
 
 /* Responsive */
@@ -624,3 +662,12 @@
     justify-content: center;
   }
 }
+
+.sp-option-card { border-radius: 12px; box-shadow: none; }
+.sp-option-media { aspect-ratio: 16 / 11; }
+.sp-option-body { padding: 1.5rem; }
+.sp-filter-btn.active { background: var(--button-bg); border-color: var(--button-bg); color: #fff; box-shadow: none; }
+.sp-spotlight-section { border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.sp-workflow-step { border: 0; border-top: 2px solid var(--accent-color); border-radius: 0; padding-left: 0; }
+.sp-banner { border-top: 1px solid var(--border-color); }
+.sp-intro-media { border-radius: 12px; background: #fff; }

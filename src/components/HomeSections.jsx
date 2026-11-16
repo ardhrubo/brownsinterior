@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useInView, animate } from 'framer-motion';
 import {
   FolderOpen, Phone, ArrowRight, ArrowUpRight, Star, Quote,
   ChevronLeft, ChevronRight, Calculator, MapPin, UserRound,
-  Compass, LayoutGrid, Layers, ClipboardList, Hammer, Sparkles
+  Compass, LayoutGrid, Layers, ClipboardList, Hammer, KeyRound
 } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
@@ -218,7 +218,7 @@ export function StatsBar() {
 export function ServicesGrid() {
   const { isBn } = useLanguage();
   return (
-    <section className="section cream">
+    <section className="section services-white-section">
       <div className="container">
         <SectionHead
           eyebrow={isBn ? 'আমাদের কাজ' : 'What We Do'}
@@ -601,7 +601,7 @@ export function TransformationShowcase() {
 }
 
 /* ---------------- UNIFIED 6-STEP DESIGN PROCESS ---------------- */
-const processIcons = [Compass, LayoutGrid, Layers, ClipboardList, Hammer, Sparkles];
+const processIcons = [Compass, LayoutGrid, Layers, ClipboardList, Hammer, KeyRound];
 
 export function ProcessTimeline({ showCta = false }) {
   const [activeStep, setActiveStep] = useState(0);
@@ -615,7 +615,7 @@ export function ProcessTimeline({ showCta = false }) {
   }, []);
 
   return (
-    <section className="section dark proc-motion-section">
+    <section className="section proc-motion-section">
       <div className="container">
         <SectionHead
           eyebrow={isBn ? 'কাজের পদ্ধতি' : 'How We Work'}
@@ -665,7 +665,7 @@ export function ProcessTimeline({ showCta = false }) {
 
         {showCta && (
           <div className="center mt-3">
-            <Link to="/process" className="pill-btn glass" id="home-process-cta">
+            <Link to="/process" className="pill-btn dark" id="home-process-cta">
               {isBn ? 'পুরো কাজের ধাপ দেখুন' : 'Full Process'} <ArrowRight size={15} />
             </Link>
           </div>
@@ -703,7 +703,7 @@ const testimonialBnMap = {
   },
 };
 
-export function TestimonialSlider() {
+export function TestimonialSlider({ cream = false }) {
   const [i, setI] = useState(0);
   const { isBn } = useLanguage();
   const n = testimonials.length;
@@ -713,7 +713,7 @@ export function TestimonialSlider() {
   }, [n]);
   const visible = [0, 1, 2].map((o) => testimonials[(i + o) % n]);
   return (
-    <section className="section cream">
+    <section className={`section ${cream ? 'cream' : ''}`}>
       <div className="container">
         <SectionHead
           eyebrow={isBn ? 'ক্লায়েন্টদের কথা' : 'Client Stories'}
@@ -812,12 +812,12 @@ export function BlogCard({ post }) {
   );
 }
 
-export function BlogPreview() {
+export function BlogPreview({ cream = false }) {
   const { isBn } = useLanguage();
   const displayedPosts = blogPreviews.slice(0, 3);
 
   return (
-    <section className="section cream">
+    <section className={`section ${cream ? 'cream' : ''}`}>
       <div className="container">
         <SectionHead
           eyebrow={isBn ? 'ব্লগ ও গাইড' : 'Insights'}

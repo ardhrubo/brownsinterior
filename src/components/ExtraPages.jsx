@@ -3,11 +3,11 @@ import React, { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Star, Quote, UserRound, ArrowRight, CheckCircle2, Sparkles, Home, Building2, Layers,
+  Star, Quote, UserRound, ArrowRight, CheckCircle2, Award, Calculator, Home, Building2, Layers,
   Briefcase, MapPin, Clock, Send, Loader2, ChevronDown, GraduationCap, ShieldCheck, Compass, Mail
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { SectionHead, ProcessTimeline, CostCTA, BlogCard } from './HomeSections';
+import { SectionHead, ProcessTimeline, BlogCard } from './HomeSections';
 import SEO from './SEO';
 import { testimonials, processSteps, blogPreviews, careerPositions } from '../data/siteData';
 import { submitInquiry } from '../lib/supabase';
@@ -112,7 +112,6 @@ export function ProcessPage() {
           </div>
         </div>
       </section>
-      <CostCTA />
     </main>
   );
 }
@@ -157,7 +156,6 @@ export function TestimonialsPage() {
           </div>
         </div>
       </section>
-      <CostCTA />
     </main>
   );
 }
@@ -427,7 +425,7 @@ export function CostCalculatorPage() {
           {/* Clean, Decongested Calculation Result Sidebar */}
           <aside className="calc-result" id="calc-result-box">
             <div className="calc-res-header">
-              <Sparkles size={16} />
+              <Calculator size={16} />
               <span>ESTIMATED BUDGET</span>
             </div>
 
@@ -454,11 +452,13 @@ export function CostCalculatorPage() {
 
             {/* Consultant Preview */}
             <div className="calc-consultant-preview">
-              <img
-                src="/team/engr-aslam-sheikh.webp"
-                alt="Engr. Aslam Sheikh"
-                className="calc-consultant-avatar"
-              />
+              <div className="calc-consultant-avatar-wrap">
+                <img
+                  src="/team/engr-aslam-sheikh.webp"
+                  alt="Engr. Aslam Sheikh"
+                  className="calc-consultant-avatar"
+                />
+              </div>
               <div className="calc-consultant-meta">
                 <span className="calc-consultant-lead">Direct Consultation</span>
                 <strong>Engr. Aslam Sheikh</strong>
@@ -561,7 +561,7 @@ const careerPerks = [
     desc: 'Work alongside IEB-certified engineers and architects.',
   },
   {
-    icon: Sparkles,
+    icon: Award,
     title: 'Pay & Incentives',
     desc: 'Competitive salary with project handover bonuses.',
   },

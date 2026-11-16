@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
-import { SectionHead, CostCTA } from './HomeSections';
+import { SectionHead } from './HomeSections';
 import { useLanguage, projectCategoryBn } from '../context/LanguageContext';
 import SEO from './SEO';
 import './HomeSections.css';
@@ -87,7 +87,6 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
-      <CostCTA />
     </main>
   );
 }

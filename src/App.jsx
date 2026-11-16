@@ -7,7 +7,7 @@ import FloatingContact from './components/FloatingContact';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import {
   HomeHero, StatsBar, ServicesGrid, FeaturedProjects, TransformationShowcase,
-  ProcessTimeline, TestimonialSlider, CostCTA, BlogPreview, SectionHead,
+  ProcessTimeline, TestimonialSlider, BlogPreview, SectionHead,
 } from './components/HomeSections';
 import SEO from './components/SEO';
 
@@ -46,9 +46,9 @@ const Home = () => (
     <TransformationShowcase />
     <ProcessTimeline showCta />
     <Suspense fallback={null}>
-      <Team />
+      <Team cream />
       <TestimonialSlider />
-      <Contact showHero={false} />
+      <Contact showHero={false} cream />
       <BlogPreview />
     </Suspense>
   </main>
@@ -80,7 +80,6 @@ const AboutPage = () => {
       <About full />
       <Team cream full />
       <ProcessTimeline />
-      <CostCTA />
     </main>
   );
 };

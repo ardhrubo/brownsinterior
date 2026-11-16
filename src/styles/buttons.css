@@ -1,0 +1,68 @@
+/* Solid tints keep buttons consistent on white, cream and dark surfaces.
+   Preserve the approved translucent treatment over the homepage photograph. */
+.h-hero {
+  --button-bg: rgba(177, 155, 119, 0.78);
+  --button-hover: rgba(177, 155, 119, 0.9);
+  --button-neutral: rgba(99, 96, 89, 0.62);
+}
+
+:root :is(.btn, .pill-btn, .submit-btn, .calc-btn-whatsapp, .calc-btn-quote, .sp-option-Action) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 6px 16px rgba(57, 47, 34, 0.1);
+  text-shadow: none;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+:root :is(.pill-btn.dark, .pill-btn.outline) {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  box-shadow: none;
+}
+
+:root :is(.pill-btn.dark, .pill-btn.outline):hover {
+  background: var(--button-neutral);
+  color: #fff;
+}
+
+/* Glass belongs over photography, with the approved smoky/tan pairing. */
+:root .pill-btn.glass,
+:root .h-hero .pill-btn {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+:root .pill-btn.glass { background: rgba(99, 96, 89, 0.62); color: #fff; }
+
+@media (hover: hover) {
+  :root :is(.btn, .pill-btn, .submit-btn, .calc-btn-whatsapp, .calc-btn-quote, .sp-option-Action):hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(57, 47, 34, 0.14);
+  }
+}
+
+:root :is(.btn, .pill-btn, .submit-btn, .calc-btn-whatsapp, .calc-btn-quote, .sp-option-Action):active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 6px rgba(67, 51, 34, 0.12);
+}
+
+:root :is(.btn, .pill-btn, .submit-btn, .calc-btn-whatsapp, .calc-btn-quote, .sp-option-Action):focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root :is(.btn, .pill-btn, .submit-btn, .calc-btn-whatsapp, .calc-btn-quote, .sp-option-Action) {
+    transition: none;
+  }
+  :root :is(.btn, .pill-btn, .submit-btn, .calc-btn-whatsapp, .calc-btn-quote, .sp-option-Action):is(:hover, :active) {
+    transform: none;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Phone, Calculator } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { servicesData } from '../data/servicesData';
 import { getWhatsAppUrl } from '../data/siteData';
@@ -24,21 +24,35 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-top">
+        <div className={`footer-top ${isBn ? 'is-bn' : ''}`}>
           <div>
-            <h3>{isBn ? 'নতুন প্রজেক্টের কথা ভাবছেন?' : 'Have a project in mind?'}</h3>
+            <h2>
+              {isBn ? (
+                <>আপনার <em>স্বপ্নের ঘর বা অফিস</em> সাজাতে প্রস্তুত?</>
+              ) : (
+                <>Ready to Build Your <em>Dream Space?</em></>
+              )}
+            </h2>
             <p>
               {isBn
-                ? 'সৃজনশীল ডিজাইন। পেশাদার সেবা। নির্ভরযোগ্য মান।'
-                : 'Creative Design. Professional Service. Quality You Can Trust.'}
+                ? 'ফ্রি পরামর্শের জন্য যোগাযোগ করুন অথবা অনলাইনে আনুমানিক খরচ হিসাব করুন।'
+                : 'Book a free consultation or get an instant cost estimate.'}
             </p>
           </div>
-          <Link to="/contact" className="pill-btn" id="footer-consultation">
-            {isBn ? 'ফ্রি পরামর্শ নিন' : 'Get Free Consultation'} <ArrowRight size={16} />
-          </Link>
+          <div className="footer-top-btns">
+            <Link to="/cost-estimator" className="pill-btn glass" id="footer-calculator">
+              <Calculator size={16} /> {isBn ? 'খরচ হিসাব করুন' : 'Estimate Cost'}
+            </Link>
+            <Link to="/contact" className="pill-btn" id="footer-consultation">
+              <Phone size={16} /> {isBn ? 'ফ্রি পরামর্শ নিন' : 'Book Consultation'}
+            </Link>
+          </div>
         </div>
+      </div>
 
-        <div className="footer-grid">
+      <div className="footer-main-mask">
+        <div className="container">
+          <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Go to top">
               <img src="/logo.svg" alt="Brown's Interiors Logo" width="316" height="48" className="footer-logo-img" />
@@ -95,6 +109,7 @@ export default function Footer() {
               ? 'মানসম্মত কাজ ও সুপরিকল্পিত ডিজাইনে গড়ে তুলি আপনার স্বপ্নের ঘর।'
               : 'Designing Beautiful Spaces with Quality and Purpose.'}
           </p>
+        </div>
         </div>
       </div>
     </footer>

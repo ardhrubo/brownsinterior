@@ -104,3 +104,9 @@
     right: 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .floating-contact { bottom: max(0.75rem, env(safe-area-inset-bottom)); right: 0.75rem; }
+  .floating-toggle { width: 44px; height: 44px; box-shadow: 0 3px 12px rgba(0, 0, 0, 0.14); }
+  .floating-toggle svg { width: 22px; height: 22px; }
+}
