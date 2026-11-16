@@ -16,13 +16,13 @@ export default function ProjectsPage() {
   const list = projectsData.filter((p) => cat === 'All' || p.category === cat);
 
   return (
-    <main style={{ backgroundColor: '#fafafa', minHeight: '100vh' }}>
+    <main style={{ minHeight: '100vh' }}>
       <SEO
         title="Completed Projects Portfolio"
         description="Browse our portfolio of completed luxury duplexes, corporate offices, restaurants, and villas in Gulshan, Banani, and Dhaka by Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
         canonicalPath="/projects"
       />
-      <section className="section page-start-section">
+      <section className="section page-head-section">
         <div className="container">
           <SectionHead
             eyebrow={isBn ? 'পোর্টফোলিও' : 'Complete Portfolio'}
@@ -35,7 +35,11 @@ export default function ProjectsPage() {
                 : 'Explore our portfolio of residential, commercial, architectural, and exhibition excellence across Dhaka.'
             }
           />
+        </div>
+      </section>
 
+      <section className="section" style={{ paddingTop: '3.25rem' }}>
+        <div className="container">
           <div className="proj-tabs">
             {cats.map((c) => (
               <button

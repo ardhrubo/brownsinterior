@@ -10,6 +10,30 @@
 .tl-card { padding: 1.75rem; text-align: left; }
 .tl-meta-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.55rem; }
 .tl-phase { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-dark); }
+.testi-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.testi-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #ece6de;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(44, 40, 37, 0.04);
+}
+.testi-trust-pill svg {
+  color: var(--gold-dark);
+}
+
 .tl-duration { font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 999px; background: var(--cream); color: var(--brown-700); }
 .tl-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 .tl-card p { color: var(--text-muted); line-height: 1.7; margin-bottom: 0.9rem; }
@@ -777,16 +801,13 @@
 }
 
 /* ==================== CAREERS PAGE ==================== */
-.career-hero-section {
-  padding: 1rem 0 2.5rem;
-}
 .career-hero-pills {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.35rem;
+  margin-top: 1.5rem;
 }
 .career-pill {
   display: inline-flex;
@@ -795,8 +816,8 @@
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--brown-900, #2c2825);
-  background: #faf7f3;
-  border: 1px solid rgba(201, 181, 156, 0.45);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #ece6de;
   padding: 0.45rem 1rem;
   border-radius: 999px;
 }

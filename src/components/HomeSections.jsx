@@ -603,7 +603,7 @@ export function TransformationShowcase() {
 /* ---------------- UNIFIED 6-STEP DESIGN PROCESS ---------------- */
 const processIcons = [Compass, LayoutGrid, Layers, ClipboardList, Hammer, KeyRound];
 
-export function ProcessTimeline({ showCta = false }) {
+export function ProcessTimeline({ showCta = false, cream = false }) {
   const [activeStep, setActiveStep] = useState(0);
   const { isBn } = useLanguage();
 
@@ -615,7 +615,7 @@ export function ProcessTimeline({ showCta = false }) {
   }, []);
 
   return (
-    <section className="section proc-motion-section">
+    <section className={`section proc-motion-section ${cream ? 'cream' : ''}`}>
       <div className="container">
         <SectionHead
           eyebrow={isBn ? 'কাজের পদ্ধতি' : 'How We Work'}

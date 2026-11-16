@@ -236,7 +236,7 @@ export const servicesData = [
         slug: 'floor-plans-elevations',
         title: 'Floor Plans & Elevations',
         tagline: 'Zero-wastage layouts paired with balanced 4-side elevations.',
-        image: img('photo-1541888086225-ee5315ffabfc', 1400),
+        image: img('photo-1487958449943-2429e8be8625', 1400),
         desc: 'Precision floor plans and multi-angle elevations maximizing every square foot.',
         specs: [
           { label: 'Best For', value: 'Multi-Storied & Duplexes' },
@@ -251,7 +251,7 @@ export const servicesData = [
           'Window schedules for natural cross-ventilation'
         ],
         gallery: [
-          img('photo-1541888086225-ee5315ffabfc', 1200),
+          img('photo-1487958449943-2429e8be8625', 1200),
           img('photo-1503387762-592deb58ef4e', 1000),
           img('photo-1486406146926-c627a92ad1ab', 1000)
         ],
@@ -281,7 +281,7 @@ export const servicesData = [
         ],
         gallery: [
           img('photo-1486406146926-c627a92ad1ab', 1200),
-          img('photo-1541888086225-ee5315ffabfc', 1000),
+          img('photo-1487958449943-2429e8be8625', 1000),
           img('photo-1503387762-592deb58ef4e', 1000)
         ],
         galleryLabels: [
@@ -311,7 +311,7 @@ export const servicesData = [
         gallery: [
           img('photo-1503387762-592deb58ef4e', 1200),
           img('photo-1486406146926-c627a92ad1ab', 1000),
-          img('photo-1541888086225-ee5315ffabfc', 1000)
+          img('photo-1487958449943-2429e8be8625', 1000)
         ],
         galleryLabels: [
           'Architectural Working Drawings & Site Coordination',
@@ -549,7 +549,7 @@ export const servicesData = [
         gallery: [
           img('photo-1616486338812-3dadae4b4ace', 1200),
           img('photo-1493809842364-78817add7ffb', 1000),
-          img('photo-1502672260266-1c1de2d9d000', 1000)
+          img('photo-1554995207-c18c203602cb', 1000)
         ]
       }
     ],

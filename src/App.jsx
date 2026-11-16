@@ -57,25 +57,27 @@ const Home = () => (
 const AboutPage = () => {
   const { isBn } = useLanguage();
   return (
-    <main className="page-start-section">
+    <main>
       <SEO
         title="About Us"
         description="Learn about Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, led by Engr. Aslam Sheikh. Over 10 years of experience delivering luxury interior design, architecture, and turnkey construction across Bangladesh."
         canonicalPath="/about"
       />
-      <div className="container" style={{ marginBottom: '2rem' }}>
-        <SectionHead
-          eyebrow={isBn ? 'আমাদের পরিচয় ও নেতৃত্ব' : 'Our Story & Leadership'}
-          title={isBn ? 'পরিচিতি —' : 'About'}
-          script="Brown's Interiors"
-          as="h1"
-          sub={
-            isBn
-              ? 'সঠিক ইঞ্জিনিয়ারিং প্ল্যানিং, ভালো মানের ম্যাটেরিয়াল এবং স্বচ্ছ বাজেটের মাধ্যমে আমরা গড়ে তুলি আপনার স্বপ্নের বাসা ও অফিস।'
-              : 'Designing and executing beautiful spaces with engineering precision, quality materials, and transparent accountability across Bangladesh.'
-          }
-        />
-      </div>
+      <section className="section page-head-section">
+        <div className="container">
+          <SectionHead
+            eyebrow={isBn ? 'আমাদের পরিচয় ও নেতৃত্ব' : 'Our Story & Leadership'}
+            title={isBn ? 'পরিচিতি —' : 'About'}
+            script="Brown's Interiors"
+            as="h1"
+            sub={
+              isBn
+                ? 'সঠিক ইঞ্জিনিয়ারিং প্ল্যানিং, ভালো মানের ম্যাটেরিয়াল এবং স্বচ্ছ বাজেটের মাধ্যমে আমরা গড়ে তুলি আপনার স্বপ্নের বাসা ও অফিস।'
+                : 'Designing and executing beautiful spaces with engineering precision, quality materials, and transparent accountability across Bangladesh.'
+            }
+          />
+        </div>
+      </section>
       <StatsBar />
       <About full />
       <Team cream full />

@@ -66,14 +66,14 @@ export default function ServicesPage() {
         canonicalPath="/services"
       />
 
-      {/* Disciplines Filter Bar */}
-      <section className="sp-filter-section page-start-section">
+      {/* Services Intro Headline Section */}
+      <section className="sp-intro-section page-start-section">
         <div className="container">
           <div className="sp-intro-grid">
           <div className="sp-intro-copy">
           <SectionHead
             eyebrow={isBn ? 'সার্ভিস ও সমাধান' : 'Disciplines & Solutions'}
-            title={isBn ? 'আমাদের' : 'Our Comprehensive'}
+            title={isBn ? 'আমাদের' : 'Our'}
             script={isBn ? 'সার্ভিসসমূহ' : 'Services'}
             as="h1"
             sub={
@@ -82,14 +82,20 @@ export default function ServicesPage() {
                 : 'Holistic architecture, interior design, and turnkey engineering solutions crafted for residential, commercial, and exhibition spaces in Dhaka.'
             }
           />
-
+          <a href="#service-disciplines" className="sp-intro-link">
+            {isBn ? 'সার্ভিসগুলো দেখুন' : 'Explore our services'} <ArrowRight size={16} />
+          </a>
           </div>
           <div className="sp-intro-media">
             <img src={servicesData[0].image} alt={isBn ? "আমাদের ইন্টেরিয়র ডিজাইন প্রজেক্ট" : "Interior design by Brown’s Interiors"} width="960" height="640" loading="eager" decoding="async" />
-            <span>{isBn ? "ডিজাইন থেকে হস্তান্তর" : "From first sketch to final handover"}</span>
           </div>
           </div>
+        </div>
+      </section>
 
+      {/* Disciplines Filter Bar */}
+      <section className="sp-filter-section">
+        <div className="container">
           <div className="sp-metrics-row">
             <span className="sp-metric-pill">
               <Layers size={14} className="sp-gold-icon" /> 7 Core Disciplines
@@ -102,7 +108,7 @@ export default function ServicesPage() {
             </span>
           </div>
 
-          <div className="sp-filter-bar" role="group" aria-label={isBn ? "সার্ভিস বাছাই করুন" : "Filter services"}>
+          <div id="service-disciplines" className="sp-filter-bar" role="group" aria-label={isBn ? "সার্ভিস বাছাই করুন" : "Filter services"}>
             <button
               type="button"
               className={`sp-filter-btn ${activeFilter === 'all' ? 'active' : ''}`}

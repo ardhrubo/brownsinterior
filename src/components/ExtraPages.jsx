@@ -3,7 +3,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Star, Quote, UserRound, ArrowRight, CheckCircle2, Award, Calculator, Home, Building2, Layers,
+  Star, Quote, ArrowRight, CheckCircle2, Award, Calculator, Home, Building2, Layers,
   Briefcase, MapPin, Clock, Send, Loader2, ChevronDown, GraduationCap, ShieldCheck, Compass, Mail
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -46,25 +46,27 @@ const testimonialBnMap = {
 export function ProcessPage() {
   const { isBn } = useLanguage();
   return (
-    <main className="page-start-section">
+    <main>
       <SEO
         title="Our Process"
         description="Explore our proven 6-step interior and architecture process from consultation and 3D visualization to turnkey handover in Dhaka."
         canonicalPath="/process"
       />
-      <div className="container" style={{ marginBottom: '1.5rem' }}>
-        <SectionHead
-          eyebrow={isBn ? 'আমাদের কাজের নিয়ম' : 'Proven Methodology'}
-          title={isBn ? 'কাজের' : 'Our Execution'}
-          script={isBn ? 'ধাপসমূহ' : 'Process'}
-          as="h1"
-          sub={
-            isBn
-              ? 'প্রথম দিন আলোচনা ও সাইট পরিদর্শন থেকে শুরু করে সম্পূর্ণ চাবি হস্তান্তর পর্যন্ত ৬টি সুশৃঙ্খল ধাপ।'
-              : 'A clear, systematic 6-step journey from your first concept to final turnkey handover.'
-          }
-        />
-      </div>
+      <section className="section page-head-section">
+        <div className="container">
+          <SectionHead
+            eyebrow={isBn ? 'আমাদের কাজের নিয়ম' : 'Proven Methodology'}
+            title={isBn ? 'কাজের' : 'Our Execution'}
+            script={isBn ? 'ধাপসমূহ' : 'Process'}
+            as="h1"
+            sub={
+              isBn
+                ? 'প্রথম দিন আলোচনা ও সাইট পরিদর্শন থেকে শুরু করে সম্পূর্ণ চাবি হস্তান্তর পর্যন্ত ৬টি সুশৃঙ্খল ধাপ।'
+                : 'A clear, systematic 6-step journey from your first concept to final turnkey handover.'
+            }
+          />
+        </div>
+      </section>
       <ProcessTimeline />
       <section className="section cream">
         <div className="container">
@@ -119,13 +121,13 @@ export function ProcessPage() {
 export function TestimonialsPage() {
   const { isBn } = useLanguage();
   return (
-    <main className="page-start-section">
+    <main>
       <SEO
         title="Client Reviews & Testimonials"
         description="Read genuine testimonials from apartment owners, corporate directors, and commercial clients across Dhaka who transformed their spaces with Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
         canonicalPath="/testimonials"
       />
-      <section className="section cream" style={{ paddingTop: '1.5rem' }}>
+      <section className="section page-head-section">
         <div className="container">
           <SectionHead
             eyebrow={isBn ? 'ক্লায়েন্টদের অভিজ্ঞতা' : 'Client Stories'}
@@ -138,16 +140,26 @@ export function TestimonialsPage() {
                 : "Hear from homeowners, developers, and corporate executives who trusted Brown's Interiors with their spaces."
             }
           />
-          <div className="grid-3" style={{ marginTop: '2.5rem' }}>
+          <div className="testi-trust-strip">
+            <span className="testi-trust-pill"><Star size={14} fill="currentColor" /> {isBn ? '৪.৯/৫ গড় ক্লায়েন্ট রেটিং' : '4.9 / 5 Average Client Rating'}</span>
+            <span className="testi-trust-pill"><CheckCircle2 size={14} /> {isBn ? '২৫০+ সম্পন্ন প্রজেক্ট' : '250+ Handed-Over Spaces'}</span>
+            <span className="testi-trust-pill"><ShieldCheck size={14} /> {isBn ? 'বাসা, অফিস ও এক্সপো' : 'Residential, Commercial & Expo'}</span>
+          </div>
+        </div>
+      </section>
+      <section className="section" style={{ paddingTop: '3.75rem' }}>
+        <div className="container">
+          <div className="grid-3">
             {testimonials.map((t, k) => {
               const bnEntry = testimonialBnMap[t.name];
+              const initials = t.name.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase();
               return (
-                <motion.div key={t.name} className="testi-card clay" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (k % 3) * 0.1 }}>
-                  <Quote className="testi-quote" size={34} />
-                  <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={15} fill="currentColor" />)}</div>
+                <motion.div key={t.name} className="testi-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (k % 3) * 0.1 }}>
+                  <Quote className="testi-quote" size={32} />
+                  <div className="testi-stars">{Array.from({ length: t.rating }).map((_, s) => <Star key={s} size={14} fill="currentColor" />)}</div>
                   <p>"{isBn && bnEntry ? bnEntry.text : t.text}"</p>
                   <div className="testi-person">
-                    <div className="testi-avatar" aria-hidden="true"><UserRound size={20} strokeWidth={1.8} /></div>
+                    <div className="testi-avatar" aria-hidden="true">{initials}</div>
                     <div><strong>{t.name}</strong><span>{isBn && bnEntry ? bnEntry.role : t.role}</span></div>
                   </div>
                 </motion.div>
@@ -164,13 +176,13 @@ export function BlogPage() {
   const { isBn } = useLanguage();
 
   return (
-    <main className="page-start-section">
+    <main>
       <SEO
         title="Interior Design & Renovation Blog"
         description="Practical guides, styling tips, budget planning advice, and exhibition stall design ideas from Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
         canonicalPath="/blog"
       />
-      <section className="section" style={{ paddingTop: '1rem' }}>
+      <section className="section page-head-section">
         <div className="container">
           <SectionHead
             eyebrow={isBn ? 'পরামর্শ ও গাইড' : 'Insights & Guides'}
@@ -183,7 +195,11 @@ export function BlogPage() {
                 : "Design ideas, renovation guides, budget planning tips, and trends from the Brown's Interiors team."
             }
           />
-          <div className="grid-3" style={{ marginTop: '2.5rem' }}>
+        </div>
+      </section>
+      <section className="section" style={{ paddingTop: '3.5rem' }}>
+        <div className="container">
+          <div className="grid-3">
             {blogPreviews.map((p) => <BlogCard key={p.slug} post={p} />)}
           </div>
         </div>
@@ -291,26 +307,28 @@ export function CostCalculatorPage() {
   const summaryBDT = `${fmtBDT(minBudget)} – ${fmtBDT(maxBudget)}`;
 
   return (
-    <main className="page-start-section">
+    <main>
       <SEO
         title="Interior Design Cost Calculator"
         description="Estimate residential, commercial, and exhibition booth interior design costs instantly with our transparent budget calculator."
         canonicalPath="/cost-estimator"
       />
-      <div className="container" style={{ marginBottom: '1.5rem' }}>
-        <SectionHead
-          eyebrow={isBn ? 'বাজেট ক্যালকুলেটর' : 'Instant Budget Calculator'}
-          title={isBn ? 'সম্ভাব্য খরচ' : 'Estimate'}
-          script={isBn ? 'হিসাব করুন' : 'Your Space'}
-          as="h1"
-          sub={
-            isBn
-              ? 'ঢাকার আবাসিক ফ্ল্যাট, অফিস ও এক্সিবিশন বুথের বর্তমান বাজারদর অনুযায়ী তাৎক্ষণিক সম্ভাব্য বাজেট দেখে নিন।'
-              : "Instant, transparent budget calculation calibrated for Dhaka's residential and commercial interior market."
-          }
-        />
-      </div>
-      <section className="section cream calc-section">
+      <section className="section page-head-section">
+        <div className="container">
+          <SectionHead
+            eyebrow={isBn ? 'বাজেট ক্যালকুলেটর' : 'Instant Budget Calculator'}
+            title={isBn ? 'সম্ভাব্য খরচ' : 'Estimate'}
+            script={isBn ? 'হিসাব করুন' : 'Your Space'}
+            as="h1"
+            sub={
+              isBn
+                ? 'ঢাকার আবাসিক ফ্ল্যাট, অফিস ও এক্সিবিশন বুথের বর্তমান বাজারদর অনুযায়ী তাৎক্ষণিক সম্ভাব্য বাজেট দেখে নিন।'
+                : "Instant, transparent budget calculation calibrated for Dhaka's residential and commercial interior market."
+            }
+          />
+        </div>
+      </section>
+      <section className="section calc-section">
         <div className="calc-container calc">
           <div className="calc-form clay">
             {/* Step 1: Type of Space */}
@@ -672,7 +690,7 @@ export function CareersPage() {
   };
 
   return (
-    <main className="page-start-section career-page">
+    <main className="career-page">
       <SEO
         title="Careers"
         description="Join Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Uttara, Dhaka. Explore open career opportunities for Interior Designers, 3D Visualizers, Project Architects, Site Engineers, and Interns."
@@ -682,7 +700,7 @@ export function CareersPage() {
       />
 
       {/* Hero Header */}
-      <section className="career-hero-section">
+      <section className="section page-head-section career-hero-section">
         <div className="container">
           <SectionHead
             eyebrow="Join Our Studio"
@@ -704,7 +722,7 @@ export function CareersPage() {
       </section>
 
       {/* Why Join Brown's Interiors */}
-      <section className="section cream career-culture-section">
+      <section className="section career-culture-section">
         <div className="container">
           <SectionHead
             eyebrow="Studio Culture"
@@ -737,7 +755,7 @@ export function CareersPage() {
       </section>
 
       {/* Open Positions */}
-      <section className="section career-jobs-section" id="open-positions">
+      <section className="section cream career-jobs-section" id="open-positions">
         <div className="container">
           <SectionHead
             eyebrow="Current Openings"
@@ -879,7 +897,7 @@ export function CareersPage() {
       </section>
 
       {/* Application Form Section */}
-      <section className="section cream career-apply-section" id="career-apply-form">
+      <section className="section career-apply-section" id="career-apply-form">
         <div className="container">
           <div className="career-apply-grid">
             <div className="career-apply-info">

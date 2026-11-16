@@ -93,20 +93,14 @@ export default function ServiceDetail() {
         canonicalPath={`/services/${targetSlug}`}
         image={data.image || (data.gallery && data.gallery[0])}
       />
-      {/* Bespoke Dark Split Showcase Hero (for every service & sub-service page) */}
-      <section className="sd-opt-hero">
-        <div
-          className="sd-opt-hero-backdrop"
-          style={{ backgroundImage: `url("${photos[activeImg] || data.image}")` }}
-        />
-        <div className="sd-opt-hero-overlay" />
-
-        <div className="container sd-opt-hero-grid">
+      {/* Service Headline Section (separable from showcase hero) */}
+      <section className="sd-head-section">
+        <div className="container">
           <motion.div
-            className="sd-opt-hero-copy"
-            initial={{ opacity: 0, y: 25 }}
+            className="sd-hero-head"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.55 }}
           >
             <nav className="sd-mobile-crumb" aria-label="Breadcrumb">
               <Link to={isCategory ? '/services' : `/services/${category.slug}`}>
@@ -133,6 +127,19 @@ export default function ServiceDetail() {
             </div>
 
             <h1>{data.title}</h1>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Split Showcase Hero (for every service & sub-service page) */}
+      <section className="sd-opt-hero">
+        <div className="container sd-opt-hero-grid">
+          <motion.div
+            className="sd-opt-hero-copy"
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+          >
             <p className="sd-opt-tagline">{data.tagline || data.description || data.desc}</p>
 
             {highlightsToRender.length > 0 && (
@@ -279,7 +286,7 @@ export default function ServiceDetail() {
       )}
 
       {/* Visual Deliverables Bento (What's Included) */}
-      <section className="section">
+      <section className={`section ${!isCategory ? 'cream' : ''}`}>
         <div className="container">
           <SectionHead
             eyebrow="Scope of Work"
@@ -309,7 +316,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Visual Lookbook Section */}
-      <section className="section cream" id="design-lookbook">
+      <section className={`section ${isCategory ? 'cream' : ''}`} id="design-lookbook">
         <div className="container">
           <SectionHead
             eyebrow="Visual Inspiration"
@@ -381,11 +388,11 @@ export default function ServiceDetail() {
       </section>
 
       {/* Unified Process Section matching Home & Process Page */}
-      <ProcessTimeline />
+      <ProcessTimeline cream={!isCategory} />
 
       {/* Sibling Sub-Services (when on an individual sub-service page) */}
       {!isCategory && siblingOptions.length > 0 && (
-        <section className="section cream">
+        <section className="section">
           <div className="container">
             <SectionHead
               eyebrow={category.title}
@@ -416,7 +423,7 @@ export default function ServiceDetail() {
       )}
 
       {/* Other Main Service Categories */}
-      <section className={`section ${isCategory ? 'cream' : ''}`}>
+      <section className={`section ${isCategory || siblingOptions.length > 0 ? 'cream' : ''}`}>
         <div className="container">
           <SectionHead eyebrow="Full-Service Studio" title="Explore Other" script="Categories" />
           <div className="sd-others">

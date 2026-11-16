@@ -16,60 +16,72 @@ export default function ProjectDetail() {
   }
 
   return (
-    <main style={{ paddingTop: '110px', backgroundColor: '#fafafa', minHeight: '100vh', paddingBottom: '80px' }}>
+    <main style={{ minHeight: '100vh' }}>
       <SEO
         title={`${project.title} - Interior Project`}
         description={project.description}
         canonicalPath={`/project/${project.id}`}
         image={project.coverImage || project.image}
       />
-      <div className="container">
-        <Link
-          to="/projects"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            marginBottom: '1.75rem',
-            color: 'var(--text-muted)',
-            textTransform: 'uppercase',
-            fontSize: '0.82rem',
-            letterSpacing: '1.5px',
-            fontWeight: '600',
-          }}
-        >
-          <ArrowLeft size={16} /> Back to All Projects
-        </Link>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div style={{ marginBottom: '0.5rem' }}>
-            <span
-              style={{
-                color: 'var(--gold-dark)',
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-                fontSize: '0.8rem',
-                fontWeight: '700',
-              }}
-            >
-              {project.category}
-            </span>
-          </div>
-          <h1
+      <section className="section page-head-section">
+        <div className="container">
+          <Link
+            to="/projects"
             style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.85rem, 4.5vw, 3.2rem)',
-              color: '#1a1a1a',
-              marginBottom: '1.5rem',
-              lineHeight: '1.18',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              marginBottom: '1.25rem',
+              color: 'var(--text-muted)',
+              textTransform: 'uppercase',
+              fontSize: '0.82rem',
+              letterSpacing: '1.5px',
+              fontWeight: '600',
             }}
           >
-            {project.title}
-          </h1>
+            <ArrowLeft size={16} /> Back to All Projects
+          </Link>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div style={{ marginBottom: '0.5rem' }}>
+              <span
+                style={{
+                  color: 'var(--gold-dark)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '2px',
+                  fontSize: '0.8rem',
+                  fontWeight: '700',
+                }}
+              >
+                {project.category}
+              </span>
+            </div>
+            <h1
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(1.85rem, 4.5vw, 3.2rem)',
+                color: '#1a1a1a',
+                marginBottom: 0,
+                lineHeight: '1.18',
+              }}
+            >
+              {project.title}
+            </h1>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: '3.25rem' }}>
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
 
           <div
             style={{
@@ -162,7 +174,8 @@ export default function ProjectDetail() {
             </Link>
           </div>
         </motion.div>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

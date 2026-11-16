@@ -90,19 +90,39 @@ export default function Contact({ showHero = true, cream = false }) {
         />
       )}
 
-      <section className={`contact-page-section ${showHero ? 'page-start' : ''} ${cream ? 'cream' : ''}`} id="contact">
+      {showHero && (
+        <section className="section page-head-section">
+          <div className="container">
+            <SectionHead
+              eyebrow={isBn ? 'যোগাযোগ' : 'Get In Touch'}
+              title={isBn ? 'ফ্রি পরামর্শ' : 'Book a'}
+              script={isBn ? 'বুক করুন' : 'Consultation'}
+              as="h1"
+              sub={
+                isBn
+                  ? 'স্বচ্ছ বাজেট (BOQ) এবং দক্ষ টিমের মাধ্যমে আপনার স্বপ্নের বাসা বা অফিস সাজাতে আমাদের সাথে কথা বলুন।'
+                  : "Let's plan, design, and build your space with transparent costing and turnkey execution."
+              }
+            />
+          </div>
+        </section>
+      )}
+
+      <section className={`contact-page-section ${!showHero && cream ? 'cream' : ''}`} id="contact">
         <div className="container">
-          <SectionHead
-            eyebrow={isBn ? 'যোগাযোগ' : 'Get In Touch'}
-            title={isBn ? 'ফ্রি পরামর্শ' : 'Book a'}
-            script={isBn ? 'বুক করুন' : 'Consultation'}
-            as={showHero ? 'h1' : 'h2'}
-            sub={
-              isBn
-                ? 'স্বচ্ছ বাজেট (BOQ) এবং দক্ষ টিমের মাধ্যমে আপনার স্বপ্নের বাসা বা অফিস সাজাতে আমাদের সাথে কথা বলুন।'
-                : "Let's plan, design, and build your space with transparent costing and turnkey execution."
-            }
-          />
+          {!showHero && (
+            <SectionHead
+              eyebrow={isBn ? 'যোগাযোগ' : 'Get In Touch'}
+              title={isBn ? 'ফ্রি পরামর্শ' : 'Book a'}
+              script={isBn ? 'বুক করুন' : 'Consultation'}
+              as="h2"
+              sub={
+                isBn
+                  ? 'স্বচ্ছ বাজেট (BOQ) এবং দক্ষ টিমের মাধ্যমে আপনার স্বপ্নের বাসা বা অফিস সাজাতে আমাদের সাথে কথা বলুন।'
+                  : "Let's plan, design, and build your space with transparent costing and turnkey execution."
+              }
+            />
+          )}
 
           <div className="contact-wrapper">
             {/* Left / Top: Compact Studio Info */}
