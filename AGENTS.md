@@ -10,7 +10,7 @@
 * **Brand:** Brown's Interior (`https://www.brownsinterior.com`)
 * **Founder & Principal Designer:** Engr. Aslam Sheikh (`Dip. Architecture & Interior Design, NPI` · `B.Sc. in Civil Engg., IUBAT` · `IEB Membership No: A29734`)
 * **Core Business:** Residential & Commercial Interior Design, Architectural Design, Structural Consultancy, Renovation, and Exhibition Booth Design & Turnkey Execution across Dhaka, Bangladesh (`Uttara, Dhaka-1230`) and worldwide.
-* **Direct Contact / WhatsApp:** `+880 1768-436319` (`8801768436319`), `info@brownsinterior.com`
+* **Direct Contact / WhatsApp:** `+880 1768-436319` (`8801768436319`), `info@brownsinteriorsbd.com` (Careers: `career@brownsinteriorsbd.com`)
 
 ---
 

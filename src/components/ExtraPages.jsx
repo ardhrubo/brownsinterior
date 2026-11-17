@@ -910,13 +910,13 @@ export function CareersPage() {
               <div className="career-direct-channels clay">
                 <h4>Direct HR &amp; Studio Contact</h4>
                 <a
-                  href="mailto:info@brownsinterior.com?subject=Job%20Application%20-%20Brown's%20Interiors"
+                  href="mailto:career@brownsinteriorsbd.com?subject=Job%20Application%20-%20Brown's%20Interiors"
                   className="career-channel-item"
                 >
                   <Mail size={18} />
                   <div>
                     <strong>Email Your CV &amp; Portfolio</strong>
-                    <span>info@brownsinterior.com</span>
+                    <span>career@brownsinteriorsbd.com</span>
                   </div>
                 </a>
                 <a

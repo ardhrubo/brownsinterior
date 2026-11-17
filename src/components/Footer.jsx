@@ -98,7 +98,7 @@ export default function Footer() {
             <h4 className="footer-title">{isBn ? 'যোগাযোগের ঠিকানা' : 'Contact Us'}</h4>
             <a href="https://maps.google.com/?q=Uttara,Dhaka,Bangladesh" target="_blank" rel="noreferrer" className="contact-item"><MapPin size={18} /><span>Uttara, Dhaka, Bangladesh</span></a>
             <a href="tel:+8801768436319" className="contact-item"><Phone size={18} /><span>+880 1768-436319</span></a>
-            <a href="mailto:info@brownsinterior.com" className="contact-item"><Mail size={18} /><span>info@brownsinterior.com</span></a>
+            <a href="mailto:info@brownsinteriorsbd.com" className="contact-item"><Mail size={18} /><span>info@brownsinteriorsbd.com</span></a>
           </div>
         </div>
 

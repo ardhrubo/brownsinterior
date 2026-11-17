@@ -49,7 +49,7 @@ flowchart LR
 | **Bundler & Compiler** | **Vite 8.3 (Rolldown)** + **Oxc** | Ultra-fast ESM bundling, deterministic vendor chunk splitting, and `oxlint` static analysis |
 | **Motion & Interactions** | **Framer Motion 13** | Hardware-accelerated page transitions, interactive before/after scrubber, and scroll reveals |
 | **Database & Realtime** | **Supabase (`@supabase/supabase-js`)** | PostgreSQL persistence (`public.inquiries`), Row-Level Security (RLS), and Realtime admin sync |
-| **Notification Pipeline** | **Web3Forms REST API** | Zero-latency email notifications delivered to `info@brownsinterior.com` on every lead submission |
+| **Notification Pipeline** | **Web3Forms REST API** | Zero-latency email notifications delivered to `info@brownsinteriorsbd.com` on every lead submission |
 | **Media & Asset Pipeline** | **Python Pillow (`scripts/optimize-hero.py`)** | Automated multi-resolution WebP generation (`960w`, `1600w`, `2200w`) with Lanczos resampling |
 | **SEO & Indexing** | **Custom `<SEO />` Engine + `generate-sitemap.mjs`** | Dynamic Open Graph / Twitter cards, Schema.org JSON-LD graph, and 55-route Google Image Sitemap |
 
@@ -157,7 +157,7 @@ cp .env.example .env
 ```env
 VITE_SUPABASE_URL=https://your-project-id.supabase.co
 VITE_SUPABASE_ANON_KEY=your-supabase-anon-public-key
-VITE_NOTIFICATION_EMAIL=info@brownsinterior.com
+VITE_NOTIFICATION_EMAIL=info@brownsinteriorsbd.com
 VITE_WEB3FORMS_KEY=your-web3forms-access-key
 ```
 *(Note: If Supabase credentials are omitted during local development, `src/lib/supabase.js` gracefully falls back to `localStorage` + Web3Forms so inquiry flows remain 100% testable offline.)*

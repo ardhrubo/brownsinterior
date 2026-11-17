@@ -207,7 +207,7 @@ export async function prerenderRoutes(domain) {
       "Join Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Uttara, Dhaka. Explore open career opportunities for Interior Designers, 3D Visualizers, Project Architects, Site Engineers, and Interns.",
     keywords: "Interior Design Jobs Dhaka, Architect Jobs Bangladesh, Civil Engineer Jobs Dhaka, 3D Visualizer Jobs, Brown's Interiors Careers",
     bodyHtml: `<h1>Careers at Brown's Interiors</h1>
-      <p>Open roles in Uttara, Dhaka for Interior Designers, 3D Visualizers, Project Architects, and Site Engineers.</p>
+      <p>Open roles in Uttara, Dhaka for Interior Designers, 3D Visualizers, Project Architects, and Site Engineers. Email CV &amp; portfolio to career@brownsinteriorsbd.com.</p>
       ${navFooter}`,
   });
 
@@ -217,7 +217,7 @@ export async function prerenderRoutes(domain) {
     description:
       "Contact Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Uttara, Dhaka. Book a free consultation, site visit, or request an itemized BOQ estimate for your residential or commercial project.",
     bodyHtml: `<h1>Contact Brown's Interiors</h1>
-      <p>Headquartered in Uttara, Dhaka-1230, Bangladesh. Phone / WhatsApp: +880 1768-436319 · Email: info@brownsinterior.com</p>
+      <p>Headquartered in Uttara, Dhaka-1230, Bangladesh. Phone / WhatsApp: +880 1768-436319 · Email: info@brownsinteriorsbd.com</p>
       ${navFooter}`,
   });
 
