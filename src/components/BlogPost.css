@@ -1289,6 +1289,109 @@
 }
 
 /* ==========================================================================
+   Editorial Studio Profiles & Inline Logos
+   ========================================================================== */
+.blog-ranking-section {
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 100px;
+}
+
+.blog-ranking-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.blog-firm-entry {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(44, 40, 37, 0.09);
+}
+
+.blog-firm-entry:first-child {
+  padding-top: 0.75rem;
+}
+
+.blog-firm-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.blog-firm-entry.is-featured {
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 0.5rem;
+  border-bottom: none;
+  border-left: 3px solid #a88a66;
+  background: rgba(201, 181, 156, 0.09);
+  border-radius: 0 12px 12px 0;
+}
+
+.blog-firm-entry-head {
+  margin-bottom: 0.85rem;
+}
+
+.blog-firm-entry-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.blog-firm-name {
+  font-family: var(--font-display, serif);
+  font-size: 1.38rem;
+  font-weight: 700;
+  color: #1a1816;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.blog-firm-inline-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.blog-firm-inline-logo.is-dark {
+  background: #1a1816;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.blog-firm-inline-logo img {
+  max-height: 28px;
+  max-width: 118px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.blog-firm-meta-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: #7a736c;
+  line-height: 1.45;
+}
+
+.blog-firm-text-link {
+  color: #7d5f3c;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(168, 138, 102, 0.45);
+  text-underline-offset: 2px;
+}
+
+.blog-firm-text-link:hover {
+  color: #1a1816;
+  text-decoration-color: #1a1816;
+}
+
+/* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
 @media (max-width: 1080px) {
@@ -1344,5 +1447,12 @@
     align-items: center;
     text-align: center;
     padding: 1.5rem 1.25rem;
+  }
+  .blog-firm-entry.is-featured {
+    padding: 1.25rem 1.15rem;
+  }
+  .blog-firm-inline-logo img {
+    max-height: 24px;
+    max-width: 100px;
   }
 }

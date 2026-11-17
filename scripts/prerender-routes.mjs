@@ -408,9 +408,29 @@ export async function prerenderRoutes(domain) {
       .map((p) => `<p>${formatRichTextHtml(p)}</p>`)
       .join('');
 
+    const rankedHtml =
+      post.rankedFirmsSection && Array.isArray(post.rankedFirmsSection.firms)
+        ? `<section id="${escapeHtml(post.rankedFirmsSection.id || 'top-ranking')}">
+            <h2>${escapeHtml(post.rankedFirmsSection.title || '')}</h2>
+            ${post.rankedFirmsSection.lead ? `<p>${escapeHtml(post.rankedFirmsSection.lead)}</p>` : ''}
+            <ul>${post.rankedFirmsSection.firms
+              .map(
+                (f) => `<li>
+                  <h3>${escapeHtml(f.name)}</h3>
+                  <img src="${escapeHtml(f.logo)}" alt="${escapeHtml(f.logoAlt || f.name)}" width="110" height="26" loading="lazy" />
+                  <p>${escapeHtml(f.location || '')}${f.websiteLabel ? ` · ${escapeHtml(f.websiteLabel)}` : ''}</p>
+                  ${(Array.isArray(f.paragraphs) && f.paragraphs.length ? f.paragraphs : [f.summary || ''])
+                    .map((p) => `<p>${formatRichTextHtml(p)}</p>`)
+                    .join('')}
+                </li>`
+              )
+              .join('')}</ul>
+          </section>`
+        : '';
+
     const sectionsHtml = (post.sections || [])
       .map(
-        (sec) => `<section id="${escapeHtml(sec.id || '')}">
+        (sec, idx) => `<section id="${escapeHtml(sec.id || '')}">
           <h2>${escapeHtml(sec.title || '')}</h2>
           ${sec.lead ? `<p><em>${escapeHtml(sec.lead)}</em></p>` : ''}
           ${(sec.paragraphs || []).map((p) => `<p>${formatRichTextHtml(p)}</p>`).join('')}
@@ -419,7 +439,7 @@ export async function prerenderRoutes(domain) {
               ? `<ul>${sec.keyTakeaways.map((k) => `<li>${formatRichTextHtml(k)}</li>`).join('')}</ul>`
               : ''
           }
-        </section>`
+        </section>${idx === 0 ? rankedHtml : ''}`
       )
       .join('');
 

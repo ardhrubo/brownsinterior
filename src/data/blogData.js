@@ -22,7 +22,7 @@ export const blogPosts = [
     readTime: '11 min read',
     image: '/portfolio/residential/living-marble-luxury-hall.webp',
     imageCaption:
-      'Luxury residential interior in Dhaka designed and executed turnkey by Brown’s Interiors under the supervision of Engr. Aslam Sheikh (IEB A29734).',
+      'Luxury residential interior in Dhaka designed and executed turnkey by the Brown’s Interiors team.',
     author: {
       name: 'Engr. Aslam Sheikh',
       role: 'Founder & Principal Designer',
@@ -80,138 +80,220 @@ export const blogPosts = [
       'To help homeowners, developers, corporate directors, and retail founders make a confident decision in 2026, this guide reviews leading interior design companies operating in Bangladesh, starting with why **Brown’s Interiors** stands out for engineering-backed, transparent turnkey delivery.',
     ],
     tableOfContents: [
-      { id: 'top-1', label: 'How We Evaluate Interior Design Firms in Bangladesh' },
-      { id: 'top-2', label: 'Brown’s Interiors: Engineering-Led Turnkey Excellence' },
-      { id: 'top-3', label: 'Notable Contemporary Interior Firms in Dhaka' },
-      { id: 'top-4', label: 'Established Interior & Architectural Studios in Bangladesh' },
-      { id: 'top-5', label: 'Side-by-Side Comparison: Why Brown’s Interiors Leads' },
-      { id: 'top-6', label: '2026 Turnkey Interior Cost Benchmarks & How to Shortlist' },
+      { id: 'top-1', label: 'What Separates Reliable Studios from Seasonal Decorators' },
+      { id: 'top-ranking', label: '10 Notable Interior Design Firms in Bangladesh' },
+      { id: 'top-2', label: 'Why Brown’s Interiors Leads in Engineering-Backed Turnkey Delivery' },
+      { id: 'top-3', label: 'How to Read Two Quotations Side by Side' },
+      { id: 'top-4', label: 'Realistic 2026 Dhaka Interior Costs & Shortlisting' },
       { id: 'faqs', label: 'Frequently Asked Questions' },
     ],
+    rankedFirmsSection: {
+      id: 'top-ranking',
+      title: '10 Notable Interior Design Firms in Bangladesh',
+      lead: 'From engineering-led turnkey contractors to showroom-backed modular providers, here is how these ten Dhaka studios actually differ in approach and project focus.',
+      firms: [
+        {
+          featured: true,
+          name: 'Brown’s Interiors',
+          logo: '/logo.svg',
+          logoBg: 'light',
+          logoAlt: "Brown's Interiors official logo",
+          location: 'Uttara, Dhaka-1230 (Serving Nationwide)',
+          website: '/',
+          websiteLabel: 'brownsinterior.com',
+          isInternal: true,
+          paragraphs: [
+            'Most interior friction in Dhaka happens when the designer who renders a 3D living room is not the person responsible for structural walls, wiring, or carpentry tolerances on site. [Brown’s Interiors](/about) was built to close that gap. Led by [Engr. Aslam Sheikh](/team), who holds both a Diploma in Architecture & Interior Design (NPI) and a B.Sc. in Civil Engineering (IUBAT), the Uttara-based team has completed over 250 residential, commercial, and exhibition projects across Bangladesh.',
+            'Instead of giving vague lump-sum quotes, every project starts with laser measurements, 2D MEP and joinery drawings, physical board and hardware samples, and an itemized BOQ calibrated to clear Dhaka tiers (৳750–৳1,083.33/sft Standard, ৳1,083.33–৳2,083.33/sft Premium, and ৳1,666.67–৳3,750/sft Luxury). Because carpentry, gypsum ceilings, electricals, and site engineering run in-house, clients get consistent finishing backed by a one-year workmanship warranty.',
+          ],
+        },
+        {
+          name: 'Interior Studio',
+          logo: '/firms/interior-studio.webp',
+          logoBg: 'light',
+          logoAlt: 'Interior Studio Bangladesh logo',
+          location: 'Gulshan-2 Circle, Dhaka-1212',
+          website: 'https://interiorstudiobd.com',
+          websiteLabel: 'interiorstudiobd.com',
+          paragraphs: [
+            'Operating out of Land View Commercial Center right at Gulshan-2 Circle, Interior Studio works heavily on modern city apartments and corporate workspaces around central Dhaka. Their style leans toward clean, uncluttered layouts with custom built-in storage, feature ceilings, and layered warm lighting.',
+            'Because they handle both residential spaces and corporate offices, they are a practical option if your flat or office sits around Gulshan, Banani, or Baridhara and you want contemporary finishes without overly ornate detailing.',
+          ],
+        },
+        {
+          name: 'Zero Inch Interior',
+          logo: '/firms/zero-inch.webp',
+          logoBg: 'dark',
+          logoAlt: 'Zero Inch Interiors Ltd. logo',
+          location: 'Sector 5, Uttara, Dhaka-1230',
+          website: 'https://zeroinchinteriorsltd.com',
+          websiteLabel: 'zeroinchinteriorsltd.com',
+          paragraphs: [
+            'Zero Inch Interiors Ltd. has been active in Dhaka since 2009 under Principal Interior Architect Muhammad Ariful Islam. Over the years, the Uttara Sector 5 firm has built a steady reputation across corporate offices, hospitality venues, retail outlets, and contemporary homes.',
+            'Their work is best recognized for crisp architectural lines, thoughtful workspace zoning, and greener biophilic accents in commercial projects. Companies planning an office headquarters or brand-forward retail space often look closely at their portfolio.',
+          ],
+        },
+        {
+          name: 'Chitron Interior',
+          logo: '/firms/chitron-interior.svg',
+          logoBg: 'light',
+          logoAlt: 'Chitron Interior logo',
+          location: 'Road 9/A, Dhanmondi, Dhaka-1209',
+          website: 'https://www.chitroninterior.com',
+          websiteLabel: 'chitroninterior.com',
+          paragraphs: [
+            'Based in Dhanmondi on Road 9/A, Chitron Interior covers space planning, 3D visualization, custom furniture, and turnkey execution for apartments, duplexes, and commercial interiors. Unlike firms that restrict work to Dhaka alone, Chitron also takes on projects outside the capital.',
+            'Homeowners in Dhanmondi, Lalmatia, and nearby neighborhoods often appreciate having a consultation studio close by for material discussions and residential makeovers.',
+          ],
+        },
+        {
+          name: 'Dew Interior Design',
+          logo: '/firms/dew-interior.webp',
+          logoBg: 'light',
+          logoAlt: 'Dew Interior Design logo',
+          location: 'Amtoli, Mohakhali, Dhaka-1206',
+          website: 'https://www.dewinteriordesignbd.com',
+          websiteLabel: 'dewinteriordesignbd.com',
+          paragraphs: [
+            'Active since around 2010 from A.T.C Tower in Mohakhali Amtoli, Dew Interior Design handles everyday residential interiors—living and dining spaces, bedrooms, modular kitchen setups—as well as offices, cafes, restaurants, and retail showrooms.',
+            'Their scope spans decorative false ceilings, wall paneling, lighting, and custom furniture under site supervision, making them a familiar name for mid-to-upper residential upgrades and hospitality decor in central Dhaka.',
+          ],
+        },
+        {
+          name: 'DIT Studio',
+          logo: '/firms/dit-studio.webp',
+          logoBg: 'dark',
+          logoAlt: 'DIT Studio logo',
+          location: 'Mohakhali New DOHS & Badda, Dhaka',
+          website: 'https://ditstudio.com.bd',
+          websiteLabel: 'ditstudio.com.bd',
+          paragraphs: [
+            'Formally Design Ideas & Technology, DIT Studio keeps its corporate office in Mohakhali New DOHS while running its own woodworking factory in Badda. Having a dedicated workshop allows cabinets and woodwork to be fabricated off-site rather than turning an entire flat into a carpentry yard.',
+            'Alongside turnkey residential and commercial interiors in Dhaka and Chattogram, DIT Studio also offers architectural planning and building consultancy services.',
+          ],
+        },
+        {
+          name: 'DesignAge',
+          logo: '/firms/designage.webp',
+          logoBg: 'light',
+          logoAlt: 'DesignAge Limited logo',
+          location: 'Banani, Uttara, Panthapath & Baridhara, Dhaka',
+          website: 'https://designage.com.bd',
+          websiteLabel: 'designage.com.bd',
+          paragraphs: [
+            'DesignAge Limited combines turnkey interior remodeling with an extensive retail and material footprint across Dhaka. Alongside their corporate office on New Airport Road in Banani, they run showrooms in Uttara, Panthapath, and Baridhara.',
+            'Because they also supply HPL sheets, decorative wall panels, modular fittings, and ready-made furniture like sofas and beds, homeowners can walk into a physical showroom to see finishes and loose furniture pieces together before locking in a plan.',
+          ],
+        },
+        {
+          name: 'Interior Squad',
+          logo: '/firms/interior-squad.webp',
+          logoBg: 'light',
+          logoAlt: 'Interior Squad Bangladesh logo',
+          location: 'Nikunja 02, Khilkhet, Dhaka',
+          website: 'https://interiorsquadbd.com',
+          websiteLabel: 'interiorsquadbd.com',
+          paragraphs: [
+            'Situated in Nikunja 02 near Airport Road and Bashundhara, Interior Squad focuses on turnkey apartments, duplexes, acoustic office spaces, and modular kitchens. A distinct part of their consultation process is letting clients preview layouts in 3D VR alongside physical mood boards.',
+            'For homeowners living around Uttara, Nikunja, or Bashundhara R/A who want to walk through virtual room proportions and review BOQ details in person, their studio setup makes early-stage visualization straightforward.',
+          ],
+        },
+        {
+          name: 'Aesthetic Interior',
+          logo: '/firms/aesthetic-interior.webp',
+          logoBg: 'light',
+          logoAlt: 'Aesthetic Interior Bangladesh logo',
+          location: 'Dhaka (Serving Chattogram, Sylhet, Gazipur & Narayanganj)',
+          website: 'https://aestheticinteriorbd.com',
+          websiteLabel: 'aestheticinteriorbd.com',
+          paragraphs: [
+            'Aesthetic Interior designs and executes modern residential flats and commercial offices, with project coverage extending beyond Dhaka into Chattogram, Sylhet, Gazipur, and Narayanganj. Much of their residential work centers on clean modern living rooms, fluted wall panels, wallpaper accents, and custom-built sofas.',
+            'For families building or renovating apartments in industrial hubs and regional cities outside Dhaka, having an interior team willing to travel and manage site work on location is a useful advantage.',
+          ],
+        },
+        {
+          name: 'BD Interior',
+          logo: '/firms/bd-interior.webp',
+          logoBg: 'light',
+          logoAlt: 'BD Interior Bangladesh logo',
+          location: 'Mohakhali DOHS, Dhaka-1206',
+          website: 'https://bdinterior.com',
+          websiteLabel: 'bdinterior.com',
+          paragraphs: [
+            'Based on Lane 4 in Mohakhali DOHS, BD Interior takes on residential apartments, corporate offices, restaurants, and retail showrooms across Dhaka. In addition to indoor fit-outs, they also handle building exterior facade and landscape 3D visualization.',
+            'That dual capability is handy for standalone homeowners or showroom owners looking to refresh both the street-facing exterior and the interior rooms under one brief.',
+          ],
+        },
+      ],
+    },
     intro: [
-      'Choosing the right interior design firm in Dhaka or anywhere in Bangladesh is a high-stakes financial and structural decision. Pretty moodboards are easy to generate, but turning a bare concrete flat or commercial floor into a safe, durable, moisture-resistant space requires coordinated architecture, civil engineering, MEP planning, and disciplined site supervision.',
-      'In this 2026 buyer’s guide, we break down **10 leading interior design firms in Bangladesh**—covering **Brown’s Interiors**, **Interior Studio**, **Zero Inch Interior**, **Chitron Interior**, **Dew Interior Design**, **DIT Studio**, **DesignAge**, **Interior Squad**, **Aesthetic Interior**, and **BD Interior**—explain what each firm focuses on, and show why **Brown’s Interiors** leads the market for clients who demand both architectural refinement and zero-surprise execution.',
+      'Finding a dependable interior design company in Dhaka is harder than it looks. Scroll through social media for five minutes and every studio appears to have flawless 3D renders. Once site work actually starts, though, homeowners and business owners quickly learn that glossy visuals mean very little if cabinetry swells after one monsoon, electrical loads are guessed on site, or the final bill climbs 30% halfway through carpentry.',
+      'To help you compare real options in 2026, we put together a grounded look at ten active interior firms in Bangladesh—starting with **Brown’s Interiors**, alongside **Interior Studio**, **Zero Inch Interior**, **Chitron Interior**, **Dew Interior Design**, **DIT Studio**, **DesignAge**, **Interior Squad**, **Aesthetic Interior**, and **BD Interior**—based on their actual studios, service strengths, and what matters most before signing a contract.',
     ],
     sections: [
       {
         id: 'top-1',
         number: '01',
-        title: 'How We Evaluate Interior Design Companies in Bangladesh',
-        lead: 'A trustworthy evaluation looks beyond Instagram renders to inspect engineering qualifications, BOQ clarity, material longevity, and real site accountability.',
+        title: 'What Separates Reliable Studios from Seasonal Decorators',
+        lead: 'Before comparing portfolios, look closely at how a firm plans structure, budgets, materials, and daily site supervision.',
         paragraphs: [
-          'Too many comparisons online simply list studios alphabetically without checking whether a firm actually has certified engineers, in-house execution teams, or written Bill of Quantities (BOQ) contracts. When evaluating interior companies across Dhaka and nationwide, five practical standards separate lasting studios from seasonal decorators:',
-          '**1. Dual Architecture & Civil Engineering Credentials:** Does the lead practitioner understand both spatial aesthetics and building structure, beams, columns, plumbing stacks, and electrical load safety?',
-          '**2. Itemized BOQ vs. Lump-Sum Guesses:** Top companies specify board brands, laminate thickness, hardware grades, and electrical wire sizes line by line before collecting booking advances.',
-          '**3. Climate-Resilient Material Standards:** In Bangladesh’s humid monsoon climate, 18mm BWR/marine-grade plywood, HDHMR boards in kitchens/baths, and proper waterproofing are non-negotiable.',
-          '**4. Dedicated In-House Craftsmanship:** Studios with permanent carpenters, gypsum teams, and site engineers achieve far tighter tolerances than agencies outsourcing every package to random subcontractors.',
-          '**5. Milestone Handover & Warranty:** Clear timelines paired with post-handover workmanship warranties protect the client long after moving in.',
+          'Most interior headaches in Bangladesh happen not because of bad taste, but because of missing technical groundwork. Whether you are finishing a 1,400 sq ft apartment in Uttara or fitting out a corporate floor in Banani, four practical checks tell you almost everything about a firm:',
+          'First is whether anyone on the team genuinely understands building structure and MEP services. Moving a brick partition, hanging heavy acoustic ceilings, or adding high-load AC circuits touches beams, plumbing lines, and electrical safety—areas where civil engineering knowledge matters just as much as color palettes.',
+          'Second is how the quotation is written. A serious studio prices your project line by line in a Bill of Quantities (BOQ), naming exact board brands, thicknesses, laminate finishes, hardware hinges, and wire gauges instead of giving one blurry lump-sum figure.',
+          'Third is moisture protection. In Dhaka’s humidity, particle board inside a kitchen sink cabinet or washroom vanity rarely survives two monsoons. Look for 18mm BWR marine-grade plywood or HDHMR boards in wet zones, machine-applied PVC edge-banding, and proper anti-termite treatment.',
+          'Fourth is execution accountability. Permanent in-house carpenters, gypsum crews, and dedicated site engineers deliver cleaner joinery and stay closer to schedule than agencies that hand your keys to rotating outside subcontractors—especially when backed by a clear handover timeline and written warranty.',
         ],
         proTip: {
-          title: 'Buyer’s Rule of Thumb',
-          text: 'Before shortlisting any interior company, always ask to see a sample itemized **BOQ**, verify who supervises site execution weekly, and check whether structural or MEP changes are reviewed by a qualified civil engineer.',
+          title: 'Quick Test During Your First Meeting',
+          text: 'Ask any firm you visit to show you a sample itemized **BOQ** from a recent project and tell you who will physically inspect your site each week. Their answer usually reveals how organized their execution really is.',
         },
         inlineImage: {
           src: '/portfolio/residential/living-panoramic-library.webp',
           alt: 'Architectural millwork, lighting, and custom joinery built to engineered tolerances in Dhaka',
-          caption: 'Precision millwork and balanced daylight zoning require verified 2D construction drawings alongside 3D concepts.',
+          caption: 'Clean cabinetry lines and balanced lighting come from accurate 2D construction drawings backing up the 3D visuals.',
         },
         keyTakeaways: [
-          'Always compare firms on itemized BOQs, not vague per-square-foot verbal promises.',
-          'Check material specs (BWR plywood, HDHMR, soft-close hardware, fire-rated cabling).',
-          'Prefer studios that unite 3D visualization, civil engineering oversight, and turnkey execution.',
+          'Compare line-by-line BOQs rather than rough per-sq-ft verbal estimates.',
+          'Insist on moisture-resistant cores (18mm BWR plywood or HDHMR) in kitchens and wet areas.',
+          'Confirm who supervises site carpentry, electrical routing, and plumbing on a weekly basis.',
         ],
       },
       {
         id: 'top-2',
         number: '02',
-        title: 'Brown’s Interiors: Engineering-Led Turnkey Design & Execution',
-        lead: 'Led by Engr. Aslam Sheikh (IEB A29734), Brown’s Interiors combines architectural creativity, certified structural integrity, and itemized BOQ transparency under one roof.',
+        title: 'Why Brown’s Interiors Leads in Engineering-Backed Turnkey Delivery',
+        lead: 'Combining dual architecture and civil engineering credentials with itemized BOQs keeps projects safe, predictable, and faithful to the approved 3D design.',
         paragraphs: [
-          'Trusted across Bangladesh by clients seeking zero-compromise turnkey execution, [Brown’s Interiors](/about) (headquartered in Uttara, Dhaka-1230) solves the industry’s biggest gap: the disconnect between 3D concept designers and field contractors. Founded and led by [Engr. Aslam Sheikh](/team), who holds both a **Diploma in Architecture & Interior Design (NPI)** and a **B.Sc. in Civil Engineering (IUBAT)** with **IEB Membership No: A29734**, the studio brings over **10+ years of experience** and **250+ completed projects** across Uttara, Gulshan, Banani, Dhanmondi, Bashundhara R/A, and commercial hubs nationwide.',
-          'Unlike pure decorating outfits, Brown’s Interiors delivers **7 integrated core capabilities**: [Residential & Commercial Interior Design](/services/interior-design), [Architectural Design & Facade Planning](/services/architecture), [Structural Engineering Consultancy](/services/engineering), [Renovation & Remodeling](/services/renovation-remodeling), [Exhibition Booth & Pavilion Design](/services/exhibition-booth-design), turnkey construction, and [Project Management](/services/project-management). Every contract begins with a measured floor survey, photorealistic 3D views matched to locally available materials, complete 2D MEP/carpentry working drawings, and an itemized BOQ calibrated to transparent Dhaka tiers (**৳750–৳1,083.33/sft** Standard, **৳1,083.33–৳2,083.33/sft** Premium, and **৳1,666.67–৳3,750/sft** Luxury for residential benchmarks), backed by a **1-year workmanship warranty**.',
+          'Many clients come to [Brown’s Interiors](/projects) after talking to three or four agencies and realizing none of them bridge design and engineering cleanly. Because [Engr. Aslam Sheikh](/team) is both an architectural interior designer and an civil engineer, every partition change, ceiling load, plumbing relocation, and electrical distribution plan is checked with real structural discipline before a hammer touches the wall.',
+          'On the commercial and finishing side, nothing starts until you inspect and sign off on physical material sample boards alongside a clear itemized BOQ through [our 6-step process](/process). From [residential apartments](/services/interior-design) and [architectural planning](/services/architecture) to [structural consultancy](/services/engineering), [renovation](/services/renovation-remodeling), and overnight [exhibition booths at ICCB and BICC](/services/exhibition-booth-design), one permanent team sees the project from laser survey to key handover.',
         ],
         proTip: {
-          title: 'Why Clients Choose Brown’s Interiors',
-          text: 'You deal with **one accountable engineering-led studio** from soil-to-ceiling planning or apartment remodeling through custom furniture fabrication and key handover, eliminating contractor finger-pointing and hidden mid-project markups.',
+          title: 'Bring Your Floor Plan for an Honest Review',
+          text: 'If you already have a developer floor plan and want a realistic sense of storage, daylight, and budget before committing, visit our Uttara studio or [book a consultation](/contact).',
         },
         inlineImage: {
           src: '/portfolio/office/office-floor-reception-hub.webp',
           alt: 'Turnkey commercial corporate reception designed and executed by Brown’s Interiors in Dhaka',
-          caption: 'From luxury residences to corporate headquarters and international trade fair booths, Brown’s Interiors executes every detail in-house.',
+          caption: 'Residential flats, corporate offices, and trade-fair pavilions executed by one permanent in-house team.',
         },
         keyTakeaways: [
-          'Led by dual-qualified Principal Designer Engr. Aslam Sheikh (Arch. + B.Sc. Civil Engg., IEB A29734).',
-          '250+ delivered projects across luxury apartments, duplexes, corporate offices, retail, and expos.',
-          'Full 3D-to-reality accuracy with written itemized BOQ, milestone billing, and 1-year warranty.',
+          'Led by dual-qualified Principal Designer Engr. Aslam Sheikh (Arch. + Civil Engg.).',
+          'Signed physical material sample boards and zero-hidden-cost BOQs before work begins.',
+          'Single-contract turnkey delivery covering homes, corporate offices, structural work, and expos.',
         ],
       },
       {
         id: 'top-3',
         number: '03',
-        title: 'Notable Contemporary Interior Firms in Dhaka',
-        lead: 'Several established Dhaka studios serve distinct segments ranging from boutique styling and corporate offices to virtual e-design consultations.',
+        title: 'How to Read Two Quotations Side by Side Without Getting Surprised',
+        lead: 'A quote that looks 25% cheaper upfront often leaves out essential site items until work is already halfway done.',
         paragraphs: [
-          '**Interior Studio:** Focuses on tailored apartment interiors, custom cabinetry, ceiling detailing, and practical residential fit-outs for homeowners across Dhaka.',
-          '**Zero Inch Interior:** Well known in Dhaka’s contemporary commercial and residential space for conceptual aesthetics and urban apartment interiors, suitable for clients seeking curated modern styling.',
-          '**Chitron Interior:** An established Dhaka interior design and project execution firm handling residential apartments, corporate spaces, and commercial fit-outs.',
-          '**Dew Interior Design:** A full-service Dhaka consultancy operating since 2010, covering residential apartments, corporate offices, retail showrooms, false ceilings, and custom furniture.',
-          'When comparing any of these Dhaka studios with **Brown’s Interiors**, prospective clients should evaluate whether full civil/structural engineering review, exhibition booth fabrication, and strictly itemized line-by-line BOQs are included natively or subcontracted.',
+          'When homeowners collect proposals for the same 1,500 sq ft apartment in Dhaka, it is common to see two numbers that look wildly different on the surface. That gap rarely comes from one firm being magically cheaper on materials—it almost always comes from what was quietly left out of the initial sheet.',
+          'Before signing anything, put both proposals side by side against your measured floor plan and check the exact board thickness (18mm vs. 16mm), kitchen core material (waterproof HDHMR/PVC vs. ordinary board), edge-banding method, hardware brands like Hettich or Hafele, fire-retardant electrical cable specs, and whether sanitary fittings, AC piping, or loose furniture are included or billed later.',
         ],
         proTip: {
-          title: 'How to Compare Mid-to-Top Tier Studios',
-          text: 'Request two proposals for the same measured floor plan: compare board thicknesses (18mm vs. 16mm), kitchen core specifications (waterproof HDHMR/PVC vs. standard particle board), and electrical conduit fire-safety standards rather than just the headline total.',
-        },
-        inlineImage: {
-          src: '/portfolio/office/office-conference-showroom.webp',
-          alt: 'Executive conference suite and glass acoustic partitioning in Dhaka',
-          caption: 'Commercial fit-outs require acoustic planning, ergonomic lighting, and disciplined MEP routing alongside visual appeal.',
-        },
-        keyTakeaways: [
-          'Leading Dhaka studios offer diverse specializations in styling, online consultation, or corporate interiors.',
-          'Always verify if on-site supervision is handled by permanent engineers or rotating third-party foremen.',
-          'Compare exact hardware brands, edge-banding methods, and warranty clauses before awarding work.',
-        ],
-      },
-      {
-        id: 'top-4',
-        number: '04',
-        title: 'Established Interior & Architectural Studios in Bangladesh',
-        lead: 'Alongside boutique specialists, several long-standing Dhaka interior and architectural practices cover residential makeovers, showrooms, and contractor fit-outs.',
-        paragraphs: [
-          '**DIT Studio:** An architecture, engineering, and interior studio recognized for turnkey residential and commercial interior execution alongside building design and consultancy across Dhaka.',
-          '**DesignAge:** Known in Dhaka’s interior and furniture market for turnkey interior solutions alongside decorative boards, HPL, cabinetry, and multiple showroom hubs across the city.',
-          '**Interior Squad:** A Dhaka architecture and interior design studio handling turnkey residential apartments, duplexes, and corporate workspaces from 3D visualization to site handover.',
-          '**Aesthetic Interior:** Known for modern residential styling, sleek modular layouts, and turnkey apartment and commercial interior finishes.',
-          '**BD Interior:** Known for straightforward residential, office, and showroom interior execution across the city.',
-          'Across all established studios, buyers should double-check drawing completeness, payment milestones, and post-handover snag-rectification commitments before signing.',
-        ],
-        proTip: {
-          title: 'Protecting Yourself During Remodeling',
-          text: 'If your project involves breaking brick walls, relocating washrooms, upgrading AC circuits, or building a duplex staircase, confirm an IEB-registered civil engineer inspects the existing structure first, a standard built into every [Brown’s Interiors engineering & renovation](/services/renovation-remodeling) scope.',
-        },
-        inlineImage: {
-          src: '/portfolio/booth/booth-1.webp',
-          alt: 'Custom architectural exhibition pavilion designed and built by Brown’s Interiors',
-          caption: 'Very few general interior studios in Bangladesh match Brown’s Interiors’ specialized capability in high-impact exhibition booths and turnkey pavilions.',
-        },
-        keyTakeaways: [
-          'Always clarify whether structural changes, false ceilings, and plumbing reroutes include technical drawings.',
-          'Tie every installment payment to measurable physical milestones on site.',
-          'Verify whether exhibition, architectural exterior, or structural consultancy requires a separate vendor.',
-        ],
-      },
-      {
-        id: 'top-5',
-        number: '05',
-        title: 'Why Brown’s Interiors Stands Out Against Competitors',
-        lead: 'Design artistry gets attention, but civil engineering discipline, honest material sourcing, and predictable budgets earn lifelong trust.',
-        paragraphs: [
-          'When clients switch to [Brown’s Interiors](/projects) after speaking with multiple Dhaka agencies, they consistently highlight four measurable differences. First is **Engineering-Backed Safety**: under Engr. Aslam Sheikh (IEB A29734), every structural alteration, ceiling suspension load, and concealed electrical circuit is engineered safely rather than guessed on site. Second is **Moisture & Termite Defence**: we standardize high-density moisture-resistant cores, factory PVC edge-banding, proper anti-termite treatments, and verified branded hardware suited to Bangladesh’s humidity.',
-          'Third is **100% Budget Clarity**: instead of bait-and-switch lump sums, our transparent process ([view how we work](/process)) breaks out carpentry, false ceiling, lighting, painting, glass, stone, and optional decor item by item. Fourth is **Cross-Sector Mastery**: whether you need a serene neoclassical Gulshan duplex, an ergonomic Banani corporate floor, or an overnight turnkey trade-fair booth at ICCB or BICC, our [exhibition and interior teams](/services/exhibition-booth-design) deliver under a single contract and schedule.',
-        ],
-        proTip: {
-          title: 'Free Engineering & Design Walkthrough',
-          text: 'Not sure whether your developer layout maximizes natural light or storage? Bring your floor plan to our Uttara studio or [schedule a consultation](/contact) for an honest architectural and budget review.',
+          title: 'Tie Payments to Real Progress',
+          text: 'Avoid paying steep upfront percentages against a single lump sum. Match every milestone installment to signed 2D working drawings and verified site progress—something built into every [Brown’s Interiors turnkey contract](/services/renovation-remodeling).',
         },
         inlineImage: {
           src: '/portfolio/interior/modern-kitchen.webp',
@@ -219,33 +301,33 @@ export const blogPosts = [
           caption: 'Moisture-resistant cabinetry, stone countertops, and concealed task lighting built for daily durability in Dhaka homes.',
         },
         keyTakeaways: [
-          'Zero-hidden-cost BOQs with approved physical material sample boards signed before work begins.',
-          'In-house supervision bridging 3D renders, 2D working drawings, and finished handover.',
-          'Unified expertise across residential, commercial offices, structural engineering, and exhibition booths.',
+          'Check board core grades, edge-banding, and hinge brands line by line before comparing totals.',
+          'Get a written list of exclusions (ACs, appliances, sanitaryware, loose sofas) upfront.',
+          'Make sure snag-list fixes and warranty terms are written into the agreement.',
         ],
       },
       {
-        id: 'top-6',
-        number: '06',
-        title: '2026 Interior Design Cost Benchmarks & How to Shortlist Your Firm',
-        lead: 'Use Dhaka’s realistic turnkey benchmarks to test whether a quotation is genuinely complete, or hiding exclusions.',
+        id: 'top-4',
+        number: '04',
+        title: 'Realistic 2026 Dhaka Interior Costs & Shortlisting Your Firm',
+        lead: 'Knowing real local sq-ft benchmarks helps you tell an honest quotation from an unrealistic teaser rate.',
         paragraphs: [
-          'In 2026, realistic turnkey residential interior costs in Dhaka (referenced for a standard 1,200 sq ft apartment) fall into three clear tiers: **Standard Tier (৳750 – ৳1,083.33 / sq ft, ~৳9–13 Lac total)** for clean HPL cabinetry, reliable electricals, and functional false ceilings; **Premium Tier (৳1,083.33 – ৳2,083.33 / sq ft, ~৳13–25 Lac total)** for high-gloss acrylic, natural oak/teak veneer, warm cove lighting, and upgraded hardware; and **Luxury Tier (৳1,666.67 – ৳3,750 / sq ft, ~৳20–45 Lac+ total)** featuring Italian marble, acoustic wall paneling, smart dimming, and bespoke millwork. Commercial offices typically carry a ~1.2x multiplier, while complex exhibition booths average ~1.45x.',
-          'If a company quotes dramatically below market rates without explaining material thicknesses or exclusions (such as sanitaryware, AC units, loose sofas, or smart locks), expect painful add-on bills mid-way. You can test your exact apartment or office dimensions instantly using Brown’s Interiors’ [Interior Cost Calculator](/cost-estimator), explore our [250+ completed project portfolio](/projects), or [contact our team directly](/contact) for a site visit and tailored BOQ.',
+          'For a standard 1,200 sq ft apartment in Dhaka in 2026, complete turnkey interior work typically falls into three honest ranges: Standard finishes run around ৳750 to ৳1,083.33 per sq ft (~৳9–13 Lac) for durable HPL cabinetry, reliable electricals, and clean ceilings; Premium finishes sit around ৳1,083.33 to ৳2,083.33 per sq ft (~৳13–25 Lac) for high-gloss acrylic, natural veneer, warm cove lighting, and soft-close fittings; and Luxury builds range from ৳1,666.67 to ৳3,750 per sq ft (~৳20–45 Lac+) when Italian marble, acoustic paneling, and bespoke millwork come in. Commercial offices usually run about 1.2x higher due to heavier MEP and glass partitions.',
+          'Once you shortlist two or three studios that fit your location and style, test your own square footage in our [Interior Cost Calculator](/cost-estimator), browse real handover photos in our [completed portfolio](/projects), or [reach out to our team](/contact) to walk through your floor plan.',
         ],
         proTip: {
-          title: 'Instant Budget Check Before Calling Firms',
-          text: 'Run your flat size (e.g., 1,200 sft or 2,200 sft) in our [Cost Estimator](/cost-estimator) first, it auto-generates a realistic BDT range you can pre-attach directly to your site-visit request.',
+          title: 'Check Your Budget in 30 Seconds',
+          text: 'Enter your flat or office size in our [Cost Estimator](/cost-estimator) first—it calculates a realistic BDT range you can attach directly to your site-visit request.',
         },
         inlineImage: {
           src: '/portfolio/residential/bedroom-dark-luxury-suite.webp',
           alt: 'Bespoke master bedroom suite delivered on budget by Brown’s Interiors in Dhaka',
-          caption: 'Tailored storage, warm ambient lighting, and luxury finishes achieved through disciplined BOQ planning.',
+          caption: 'Warm ambient lighting, tailored storage, and predictable execution achieved through disciplined BOQ planning.',
         },
         keyTakeaways: [
-          'Use realistic Dhaka per-sq-ft tiers (Standard ৳750+, Premium ৳1,083+, Luxury ৳1,667+) to spot unrealistically low quotes.',
-          'Verify inclusions/exclusions (appliances, sanitary fixtures, loose furniture) before signing.',
-          'Book a measured site visit with Brown’s Interiors to turn your floor plan into an itemized BOQ.',
+          'Benchmark quotes against realistic 2026 Dhaka ranges (৳750+ Standard, ৳1,083+ Premium, ৳1,667+ Luxury).',
+          'Shortlist 2–3 studios, inspect physical material samples, and compare full BOQs.',
+          'Book a measured site visit with Brown’s Interiors to turn your plan into an itemized BOQ.',
         ],
       },
     ],
@@ -262,7 +344,7 @@ export const blogPosts = [
       {
         question: 'Which interior design company in Bangladesh is best for turnkey work?',
         answer:
-          '**Brown’s Interiors** stands out as a premier choice in Bangladesh for clients seeking engineering-led, turnkey execution. Unlike pure decorating agencies, Brown’s Interiors is led by **Engr. Aslam Sheikh** (Diploma in Architecture & Interior Design, NPI & B.Sc. in Civil Engineering, IUBAT, **IEB Member A29734**), uniting 250+ completed residential, commercial, and exhibition projects with itemized BOQs, structural safety oversight, and a 1-year workmanship warranty.',
+          '**Brown’s Interiors** stands out as a premier choice in Bangladesh for clients seeking engineering-led, turnkey execution. Unlike pure decorating agencies, Brown’s Interiors is led by **Engr. Aslam Sheikh** (Diploma in Architecture & Interior Design, NPI & B.Sc. in Civil Engineering, IUBAT), uniting 250+ completed residential, commercial, and exhibition projects with itemized BOQs, structural safety oversight, and a 1-year workmanship warranty.',
       },
       {
         question: 'How much do top interior design companies charge per sq ft in Dhaka in 2026?',
@@ -277,25 +359,25 @@ export const blogPosts = [
       {
         question: 'Can Brown’s Interiors handle both architectural structural work and interiors?',
         answer:
-          'Yes. Because Engr. Aslam Sheikh is both an architectural interior designer and an IEB-certified Civil Engineer, Brown’s Interiors uniquely handles [Architectural Design](/services/architecture), [Structural Engineering Consultancy](/services/engineering), full [Interior Design](/services/interior-design), [Renovation & Remodeling](/services/renovation-remodeling), and [Exhibition Booths](/services/exhibition-booth-design) under one accountable contract.',
+          'Yes. Because Engr. Aslam Sheikh is both an architectural interior designer and an civil engineer, Brown’s Interiors uniquely handles [Architectural Design](/services/architecture), [Structural Engineering Consultancy](/services/engineering), full [Interior Design](/services/interior-design), [Renovation & Remodeling](/services/renovation-remodeling), and [Exhibition Booths](/services/exhibition-booth-design) under one accountable contract.',
       },
       {
         question: 'How do I start a consultation or get a BOQ from Brown’s Interiors?',
         answer:
-          'You can calculate a quick planning estimate on our [Cost Estimator](/cost-estimator), then click to pre-fill your [Consultation Request](/contact) or message Engr. Aslam Sheikh directly on [WhatsApp (+880 1768-436319)](https://wa.me/8801768436319) with your floor plan.',
+          'You can calculate a quick planning estimate on our [Cost Estimator](/cost-estimator), then click to pre-fill your [Consultation Request](/contact) or message our team on [WhatsApp (+880 1768-436319)](https://wa.me/8801768436319) with your floor plan.',
       },
     ],
     bottomCta: {
       eyebrow: 'Work With Bangladesh’s Leading Engineering-Led Studio',
       title: 'Ready to Turn Your Floor Plan Into a Zero-Surprise Turnkey Interior?',
       subtitle:
-        'Book a site visit and transparent itemized BOQ review with Engr. Aslam Sheikh and the Brown’s Interiors team across Dhaka and Bangladesh.',
+        'Book a site visit and transparent itemized BOQ review with the Brown’s Interiors team across Dhaka and Bangladesh.',
       primaryBtn: {
         text: 'Book Free Consultation',
         link: '/contact',
       },
       secondaryBtn: {
-        text: 'WhatsApp Engr. Aslam',
+        text: 'Chat on WhatsApp',
         link: 'https://wa.me/8801768436319',
       },
     },
@@ -307,166 +389,248 @@ export const blogPosts = [
       date: '১৫ নভেম্বর, ২০২৬',
       readTime: '১১ মিনিট পাঠ',
       imageCaption:
-        'ইঞ্জিনিয়ার আসলাম শেখের (IEB A29734) তত্ত্বাবধানে ঢাকায় Brown’s Interiors কর্তৃক সম্পন্ন একটি আধুনিক রেসিডেনশিয়াল প্রজেক্ট।',
+        'ইঞ্জিনিয়ার আসলাম শেখের তত্ত্বাবধানে ঢাকায় Brown’s Interiors কর্তৃক সম্পন্ন একটি আধুনিক রেসিডেনশিয়াল প্রজেক্ট।',
       excerpt:
         'বাংলাদেশের শীর্ষ ইন্টেরিয়র ডিজাইন প্রতিষ্ঠানগুলোর কাজের মান, ইঞ্জিনিয়ারিং দক্ষতা ও খরচের তুলনামূলক গাইড।',
       tableOfContents: [
-        { id: 'top-1', label: 'সেরা প্রতিষ্ঠান যাচাইয়ের মূল মাপকাঠি' },
-        { id: 'top-2', label: 'Brown’s Interiors: ইঞ্জিনিয়ারিং ও টার্নকি সেবা' },
-        { id: 'top-3', label: 'ঢাকার সমসাময়িক কয়েকটি পরিচিত প্রতিষ্ঠান' },
-        { id: 'top-4', label: 'বাংলাদেশের অন্যান্য প্রতিষ্ঠিত ইন্টেরিয়র স্টুডিও' },
-        { id: 'top-5', label: 'কেন Brown’s Interiors সবার থেকে আলাদা?' },
-        { id: 'top-6', label: '২০২৬ সালের খরচের ধারণা ও সঠিক প্রতিষ্ঠান বাছাই' },
+        { id: 'top-1', label: 'ভালো ইন্টেরিয়র স্টুডিও চেনার বাস্তব মাপকাঠি' },
+        { id: 'top-ranking', label: 'বাংলাদেশের ১০টি উল্লেখযোগ্য ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান' },
+        { id: 'top-2', label: 'কেন ক্লায়েন্টরা Brown’s Interiors-কে বেছে নেন' },
+        { id: 'top-3', label: 'দুটো কোটেশন পাশাপাশি রেখে যাচাইয়ের উপায়' },
+        { id: 'top-4', label: '২০২৬ সালের ঢাকা বাজারদর ও বাজেট পরিকল্পনা' },
         { id: 'faqs', label: 'সাধারণ জিজ্ঞাসা' },
       ],
+      rankedFirmsSection: {
+        id: 'top-ranking',
+        title: 'বাংলাদেশের ১০টি উল্লেখযোগ্য ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান',
+        lead: 'ইঞ্জিনিয়ারিং-ভিত্তিক টার্নকি কাজ থেকে শুরু করে নিজস্ব কারখানা ও শোরুমসমৃদ্ধ স্টুডিও—ঢাকার এই দশটি প্রতিষ্ঠানের কাজের ধরন ও অবস্থান সহজভাবে তুলে ধরা হলো।',
+        firms: [
+          {
+            featured: true,
+            name: 'Brown’s Interiors',
+            logo: '/logo.svg',
+            logoBg: 'light',
+            logoAlt: 'Brown’s Interiors লোগো',
+            location: 'উত্তরা, ঢাকা-১২৩০ (সারা বাংলাদেশে সেবা)',
+            website: '/',
+            websiteLabel: 'brownsinterior.com',
+            isInternal: true,
+            paragraphs: [
+              'ঢাকায় ইন্টেরিয়র কাজে বেশির ভাগ ঝামেলা শুরু হয় তখন, যখন থ্রিডি ডিজাইনার আর সাইটের কাজের দায়িত্বপ্রাপ্ত কন্ট্রাক্টর আলাদা থাকেন। এই ব্যবধান ঘোচাতেই গড়ে উঠেছে [Brown’s Interiors](/about)। প্রতিষ্ঠাতা ও প্রিন্সিপাল ডিজাইনার [ইঞ্জিনিয়ার আসলাম শেখ](/team) আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা (NPI) এবং সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি (IUBAT) উভয়ই সম্পন্ন করেছেন। উত্তরা থেকে পরিচালিত এই টিম এরই মধ্যে সারা দেশে ২৫০টির বেশি বাসা, অফিস ও এক্সিবিশন প্রজেক্ট শেষ করেছে।',
+              'অস্পষ্ট প্যাকেজের বদলে এখানে প্রতিটি কাজ শুরু হয় লেজার পরিমাপ, টুডি ওয়ার্কিং ড্রয়িং, বাস্তব ম্যাটেরিয়ালের স্যাম্পল বোর্ড এবং স্পষ্ট BOQ বাজেটের মাধ্যমে (স্ট্যান্ডার্ড ৳৭৫০–৳১,০৮৩.৩৩/বর্গফুট, প্রিমিয়াম ৳১,০৮৩.৩৩–৳২,০৮৩.৩৩/বর্গফুট ও লাক্সারি ৳১,৬৬৬.৬৭–৳৩,৭৫০/বর্গফুট)। কার্পেন্ট্রি, সিলিং, ইলেকট্রিক্যাল ও সাইট সুপারভিশন নিজস্ব টিমে হওয়ায় ১ বছরের ওয়ারেন্টিসহ নির্ধারিত সময়েই কাজ হস্তান্তর করা হয়।',
+            ],
+          },
+          {
+            name: 'Interior Studio',
+            logo: '/firms/interior-studio.webp',
+            logoBg: 'light',
+            logoAlt: 'Interior Studio লোগো',
+            location: 'গুলশান-২ সার্কেল, ঢাকা-১২১২',
+            website: 'https://interiorstudiobd.com',
+            websiteLabel: 'interiorstudiobd.com',
+            paragraphs: [
+              'গুলশান-২ সার্কেলের ল্যান্ড ভিউ কমার্শিয়াল সেন্টারে অবস্থিত Interior Studio মূলত শহরের আধুনিক অ্যাপার্টমেন্ট এবং করপোরেট অফিসের ইন্টেরিয়র নিয়ে কাজ করে। তাদের কাজে গোছানো লেআউট, কাস্টম ক্যাবিনেট, সিলিং ডিটেইলিং এবং উষ্ণ লাইটিংয়ের ব্যবহার বেশি দেখা যায়।',
+              'গুলশান, বনানী বা বারিধারা এলাকায় যাঁরা বাসা বা অফিসের জন্য ঝামেলাহীন আধুনিক ফিনিশিং চান, তাঁদের কাছে এটি একটি পরিচিত নাম।',
+            ],
+          },
+          {
+            name: 'Zero Inch Interior',
+            logo: '/firms/zero-inch.webp',
+            logoBg: 'dark',
+            logoAlt: 'Zero Inch Interiors Ltd. লোগো',
+            location: 'সেক্টর ৫, উত্তরা, ঢাকা-১২৩০',
+            website: 'https://zeroinchinteriorsltd.com',
+            websiteLabel: 'zeroinchinteriorsltd.com',
+            paragraphs: [
+              '২০০৯ সালে প্রিন্সিপাল ইন্টেরিয়র আর্কিটেক্ট মুহাম্মদ আরিফুল ইসলামের নেতৃত্বে উত্তরা সেক্টর ৫-এ যাত্রা শুরু করে Zero Inch Interiors Ltd.। দীর্ঘ সময়ে তারা করপোরেট অফিস, হসপিটালিটি, রিটেইল শোরুম এবং আধুনিক বাসাবাড়ির কাজে বেশ পরিচিতি পেয়েছে।',
+              'তাদের কাজের ধরনে পরিচ্ছন্ন আর্কিটেকচারাল লাইন এবং অফিস স্পেসে সবুজ বা বায়োফিলিক অনুষঙ্গের ব্যবহার চোখে পড়ে। করপোরেট হেডকোয়ার্টার বা ব্র্যান্ড-কেন্দ্রিক রিটেইল স্পেসের ক্ষেত্রে অনেকেই তাদের কাজ দেখে থাকেন।',
+            ],
+          },
+          {
+            name: 'Chitron Interior',
+            logo: '/firms/chitron-interior.svg',
+            logoBg: 'light',
+            logoAlt: 'Chitron Interior লোগো',
+            location: 'রোড ৯/এ, ধানমন্ডি, ঢাকা-১২০৯',
+            website: 'https://www.chitroninterior.com',
+            websiteLabel: 'chitroninterior.com',
+            paragraphs: [
+              'ধানমন্ডি রোড ৯/এ-তে অফিস থাকা Chitron Interior অ্যাপার্টমেন্ট, ডুপ্লেক্স এবং কমার্শিয়াল প্রজেক্টের জন্য স্পেস প্ল্যানিং, থ্রিডি ডিজাইন, কাস্টম ফার্নিচার ও টার্নকি বাস্তবায়নের কাজ করে। শুধু ঢাকাতেই নয়, ঢাকার বাইরের বিভিন্ন জেলাতেও তারা প্রজেক্ট নেয়।',
+              'ধানমন্ডি ও আশপাশের এলাকার বাসা মালিকদের জন্য সরাসরি অফিসে বসে নকশা ও ম্যাটেরিয়াল নিয়ে কথা বলার সুবিধা থাকায় তারা বেশ পরিচিত।',
+            ],
+          },
+          {
+            name: 'Dew Interior Design',
+            logo: '/firms/dew-interior.webp',
+            logoBg: 'light',
+            logoAlt: 'Dew Interior Design লোগো',
+            location: 'আমতলী, মহাখালী, ঢাকা-১২০৬',
+            website: 'https://www.dewinteriordesignbd.com',
+            websiteLabel: 'dewinteriordesignbd.com',
+            paragraphs: [
+              'প্রায় ২০১০ সাল থেকে মহাখালী আমতলীর এ.টি.সি টাওয়ার থেকে কাজ করছে Dew Interior Design। লিভিং রুম, বেডরুম ও মডিউলার কিচেন থেকে শুরু করে করপোরেট অফিস, ক্যাফে, রেস্টুরেন্ট ও শোরুম ডেকোরেশনে তাদের কাজ রয়েছে।',
+              'ফলস সিলিং, ওয়াল প্যানেলিং, লাইটিং ও কাস্টম ফার্নিচারসহ সাইট সুপারভিশন তারা একসাথেই পরিচালনা করে।',
+            ],
+          },
+          {
+            name: 'DIT Studio',
+            logo: '/firms/dit-studio.webp',
+            logoBg: 'dark',
+            logoAlt: 'DIT Studio লোগো',
+            location: 'মহাখালী নিউ ডিওএইচএস ও বাড্ডা, ঢাকা',
+            website: 'https://ditstudio.com.bd',
+            websiteLabel: 'ditstudio.com.bd',
+            paragraphs: [
+              'মহাখালী নিউ ডিওএইচএস-এ অফিস এবং বাড্ডায় নিজস্ব কারখানা পরিচালনা করে DIT Studio (Design Ideas & Technology)। নিজস্ব ওয়ার্কশপ থাকার সুবিধা হলো বাসার ভেতর অতিরিক্ত কাঠ কাটার ঝামেলা ছাড়াই অনেক ক্যাবিনেট বাইরে থেকে তৈরি করে আনা যায়।',
+              'ঢাকা ও চট্টগ্রামে আবাসিক ও বাণিজ্যিক ইন্টেরিয়রের পাশাপাশি তারা আর্কিটেকচারাল প্ল্যানিং ও বিল্ডিং কনসালটেন্সিও দিয়ে থাকে।',
+            ],
+          },
+          {
+            name: 'DesignAge',
+            logo: '/firms/designage.webp',
+            logoBg: 'light',
+            logoAlt: 'DesignAge Limited লোগো',
+            location: 'বনানী, উত্তরা, পান্থপথ ও বারিধারা, ঢাকা',
+            website: 'https://designage.com.bd',
+            websiteLabel: 'designage.com.bd',
+            paragraphs: [
+              'DesignAge Limited-এর মূল পরিচিতি তাদের ইন্টেরিয়র কাজের পাশাপাশি বড় শোরুম নেটওয়ার্কের কারণে। বনানী করপোরেট অফিস ছাড়াও উত্তরা, পান্থপথ ও বারিধারায় তাদের শোরুম রয়েছে।',
+              'টার্নকি রিনোভেশনের সাথে সাথে তারা HPL বোর্ড, ওয়াল প্যানেল, মডিউলার ফিটিংস ও রেডিমেড ফার্নিচার সরবরাহ করে, ফলে ক্লায়েন্টরা শোরুমে গিয়ে সরাসরি ফিনিশিং ও ফার্নিচার দেখে সিদ্ধান্ত নিতে পারেন।',
+            ],
+          },
+          {
+            name: 'Interior Squad',
+            logo: '/firms/interior-squad.webp',
+            logoBg: 'light',
+            logoAlt: 'Interior Squad লোগো',
+            location: 'নিকুঞ্জ ০২, খিলক্ষেত, ঢাকা',
+            website: 'https://interiorsquadbd.com',
+            websiteLabel: 'interiorsquadbd.com',
+            paragraphs: [
+              'এয়ারপোর্ট ও বসুন্ধরার কাছাকাছি নিকুঞ্জ ০২-এ অবস্থিত Interior Squad ফ্ল্যাট, ডুপ্লেক্স, অ্যাকুস্টিক অফিস ও মডিউলার কিচেনের টার্নকি কাজ করে। প্রজেক্ট শুরুর আগে তারা থ্রিডি VR প্রিভিউ ও ম্যাটেরিয়াল মুড-বোর্ডের মাধ্যমে রুমের মাপ ও অনুপাত দেখানোর ওপর গুরুত্ব দেয়।',
+              'উত্তরা, নিকুঞ্জ বা বসুন্ধরা এলাকার ক্লায়েন্টরা সরাসরি স্টুডিওতে গিয়ে ভার্চুয়াল লেআউট দেখে BOQ নিয়ে কথা বলতে পারেন।',
+            ],
+          },
+          {
+            name: 'Aesthetic Interior',
+            logo: '/firms/aesthetic-interior.webp',
+            logoBg: 'light',
+            logoAlt: 'Aesthetic Interior লোগো',
+            location: 'ঢাকা (চট্টগ্রাম, সিলেট, গাজীপুর ও নারায়ণগঞ্জেও সেবা)',
+            website: 'https://aestheticinteriorbd.com',
+            websiteLabel: 'aestheticinteriorbd.com',
+            paragraphs: [
+              'Aesthetic Interior ঢাকা ছাড়াও চট্টগ্রাম, সিলেট, গাজীপুর ও নারায়ণগঞ্জে আধুনিক বাসা ও অফিসের কাজ করে। তাদের কাজে আধুনিক লিভিং রুম, ফ্লুটেড ওয়াল প্যানেল, ওয়ালপেপার এবং কাস্টম সোফা তৈরির বিষয়টি বেশি দেখা যায়।',
+              'ঢাকার বাইরের শিল্পাঞ্চল বা বিভাগীয় শহরে যাঁরা সমন্বিত ডিজাইন ও সাইট বাস্তবায়ন চান, তাঁদের জন্য এই মাল্টি-সিটি কভারেজ বেশ কাজে আসে।',
+            ],
+          },
+          {
+            name: 'BD Interior',
+            logo: '/firms/bd-interior.webp',
+            logoBg: 'light',
+            logoAlt: 'BD Interior লোগো',
+            location: 'মহাখালী ডিওএইচএস, ঢাকা-১২০৬',
+            website: 'https://bdinterior.com',
+            websiteLabel: 'bdinterior.com',
+            paragraphs: [
+              'মহাখালী ডিওএইচএস-এর লেন ৪ থেকে পরিচালিত BD Interior আবাসিক ফ্ল্যাট, করপোরেট অফিস, রেস্টুরেন্ট ও শোরুম ডেকোরেশনের পাশাপাশি ভবনের এক্সটেরিয়র ফ্যাসাড ও ল্যান্ডস্কেপ থ্রিডি ডিজাইনের কাজ করে।',
+              'যাঁরা স্বতন্ত্র বাড়ি বা কমার্শিয়াল ভবনের ভেতরের কাজের সাথে বাইরের চেহারাও একসাথে সাজাতে চান, তাঁদের জন্য এই অভিজ্ঞতা সহায়ক হয়।',
+            ],
+          },
+        ],
+      },
       intro: [
-        'ঢাকা বা বাংলাদেশের যেকোনো প্রান্তে ফ্ল্যাট কিংবা অফিস সাজানোর জন্য সঠিক ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান বেছে নেওয়া একটি বড় আর্থিক ও কাঠামোগত সিদ্ধান্ত। সামাজিক মাধ্যমে সুন্দর থ্রিডি ছবি দেখে সিদ্ধান্ত নেওয়া সহজ, কিন্তু বাস্তবে কংক্রিটের একটি ফ্ল্যাটকে আরামদায়ক, আর্দ্রতা-সহনশীল ও টেকসই রূপ দিতে প্রয়োজন আর্কিটেকচারাল নকশা, সিভিল ইঞ্জিনিয়ারিং, ইলেকট্রিক্যাল-প্লাম্বিং (MEP) পরিকল্পনা এবং সাইটে সার্বক্ষণিক তদারকি।',
-        'এই ২০২৬ সালের গাইডে আমরা বাংলাদেশের শীর্ষ ১০টি ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান—**Brown’s Interiors**, **Interior Studio**, **Zero Inch Interior**, **Chitron Interior**, **Dew Interior Design**, **DIT Studio**, **DesignAge**, **Interior Squad**, **Aesthetic Interior** এবং **BD Interior**—এর পরিচিতি, কাজের ধরন এবং কেন নিখুঁত টার্নকি কাজের জন্য **Brown’s Interiors** ক্লায়েন্টদের প্রথম পছন্দ হিসেবে এগিয়ে রয়েছে, তা সহজভাবে তুলে ধরেছি।',
+        'ঢাকায় একটি নির্ভরযোগ্য ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান খুঁজে পাওয়া বাইরে থেকে যতটা সহজ মনে হয়, বাস্তবে ঠিক ততটা নয়। ফেসবুক বা ইনস্টাগ্রামে প্রায় সবারই ঝকঝকে থ্রিডি ডিজাইন আছে। কিন্তু সাইটে কাজ নামার পর বোঝা যায়, এক বর্ষায় ক্যাবিনেট ফুলে যাওয়া, ভুল ইলেকট্রিক্যাল লোড কিংবা কাজ অর্ধেক হওয়ার পর বাজেট ৩০% বেড়ে যাওয়ার মতো সমস্যাগুলো কতটা বাস্তব।',
+        'সঠিক সিদ্ধান্ত নিতে সাহায্য করার জন্য এখানে বাংলাদেশের ১০টি সক্রিয় ইন্টেরিয়র প্রতিষ্ঠান—**Brown’s Interiors**, **Interior Studio**, **Zero Inch Interior**, **Chitron Interior**, **Dew Interior Design**, **DIT Studio**, **DesignAge**, **Interior Squad**, **Aesthetic Interior** এবং **BD Interior**—এর প্রকৃত কাজের ধরন, অবস্থান এবং চুক্তির আগে কী কী দেখা জরুরি তা সহজভাবে তুলে ধরা হলো।',
       ],
       sections: [
         {
           id: 'top-1',
           number: '০১',
-          title: 'বাংলাদেশের শীর্ষ ইন্টেরিয়র প্রতিষ্ঠানগুলো কীভাবে মূল্যায়ন করা হয়েছে',
-          lead: 'চকচকে থ্রিডি ছবির বাইরে প্রকৌশলগত যোগ্যতা, লিখিত বাজেট ও ম্যাটেরিয়ালের মান যাচাই করাই সঠিক মূল্যায়নের ভিত্তি।',
+          title: 'ভালো ইন্টেরিয়র স্টুডিও চেনার বাস্তব মাপকাঠি',
+          lead: 'পোর্টফোলিও দেখার আগে প্রতিষ্ঠানের ইঞ্জিনিয়ারিং বোঝাপড়া, লিখিত বাজেট পদ্ধতি, ম্যাটেরিয়াল ও সাইট তদারকি যাচাই করুন।',
           paragraphs: [
-            'অনলাইনে অনেক তালিকাতেই প্রতিষ্ঠানের প্রকৃত ইঞ্জিনিয়ারিং দক্ষতা বা নিজস্ব টিম আছে কি না তা যাচাই না করে নাম দেওয়া থাকে। ঢাকা ও সারা দেশে মানসম্মত কাজের ক্ষেত্রে নিচের পাঁচটি বিষয় একটি নির্ভরযোগ্য প্রতিষ্ঠানকে সাধারণ ডেকোরেটর থেকে আলাদা করে:',
-            '**১. আর্কিটেকচার ও সিভিল ইঞ্জিনিয়ারিং সমন্বয়:** যিনি কাজ করছেন তিনি কি শুধু সৌন্দর্য দেখেন, নাকি বিম, কলাম, প্লাম্বিং ও ইলেকট্রিক্যাল লোডের নিরাপত্তাও বোঝেন?',
-            '**২. বিস্তারিত লিখিত বাজেট (BOQ):** কাজ শুরুর আগেই কোন ব্র্যান্ডের বোর্ড, কী ধরনের ল্যামিনেট, কোন হার্ডওয়্যার এবং কী মানের কেবল ব্যবহার হবে তার লাইন-বাই-লাইন হিসাব দেওয়া।',
-            '**৩. আবহাওয়া-উপযোগী ম্যাটেরিয়াল:** বাংলাদেশের আর্দ্র বর্ষাকাল মাথায় রেখে কিচেন ও বাথরুম জোনে ১৮ মিমি BWR মেরিন প্লাইউড বা HDHMR বোর্ড এবং যথাযথ ওয়াটারপ্রুফিং নিশ্চিত করা।',
-            '**৪. নিজস্ব স্থায়ী কারিগর ও ইঞ্জিনিয়ার টিম:** বাইরের অস্থায়ী সাব-কন্ট্রাক্টরের ওপর নির্ভর না করে নিজস্ব দক্ষ টিম থাকলে ফিনিশিংয়ের মান অনেক বেশি নিখুঁত হয়।',
-            '**৫. সময়মতো হস্তান্তর ও ওয়ারেন্টি:** নির্দিষ্ট সময়ের মধ্যে কাজ শেষ করে লিখিত সার্ভিস ওয়ারেন্টি দেওয়া।',
+            'ঢাকায় বেশির ভাগ ইন্টেরিয়র সমস্যা ডিজাইনের রুচির জন্য নয়, বরং কারিগরি প্রস্তুতির অভাবে হয়। উত্তরায় ১৪০০ বর্গফুটের ফ্ল্যাট হোক বা বনানীতে অফিস ফ্লোর, চারটি সহজ বিষয় দেখলেই একটি প্রতিষ্ঠানের আসল মান বোঝা যায়।',
+            'প্রথমত দেখতে হবে টিমে কেউ ভবনের স্ট্রাকচার ও MEP (ইলেকট্রিক্যাল ও প্লাম্বিং) বোঝেন কি না। দেয়াল ভাঙা, ভারী সিলিং ঝোলানো বা নতুন এসি সার্কিট বসানো সরাসরি বিম, পাইপ ও নিরাপত্তার সাথে জড়িত।',
+            'দ্বিতীয়ত কোটেশন লেখার ধরন। পেশাদার প্রতিষ্ঠান কখনোই এক কথায় মোট দাম ধরে না; বরং কোন ব্র্যান্ডের বোর্ড, কত মিমি পুরুত্ব, কোন হার্ডওয়্যার এবং কোন তার ব্যবহার হবে তা BOQ-তে লাইন ধরে লিখে দেয়।',
+            'তৃতীয়ত আর্দ্রতা সুরক্ষা। বাংলাদেশের আবহাওয়ায় কিচেন সিঙ্ক বা বাথরুমের নিচে সাধারণ পার্টিকেল বোর্ড দুই বর্ষাও টেকে না। সেখানে ১৮ মিমি BWR মেরিন প্লাইউড বা HDHMR বোর্ড, মেশিনে করা PVC এজ-ব্যান্ডিং ও অ্যান্টি-টারমাইট ট্রিটমেন্ট থাকা জরুরি।',
+            'চতুর্থত নিজস্ব স্থায়ী কারিগর ও সাইট ইঞ্জিনিয়ার। বাইরের দৈনিক চুক্তির লোকের বদলে নিজস্ব টিম থাকলে ফিনিশিং নিখুঁত হয়, কাজ সময়মতো শেষ হয় এবং লিখিত ওয়ারেন্টি পাওয়া যায়।',
           ],
           proTip: {
-            title: 'ক্লায়েন্টদের জন্য জরুরি পরামর্শ',
-            text: 'যেকোনো প্রতিষ্ঠান চূড়ান্ত করার আগে একটি নমুনা **লিখিত BOQ** দেখতে চান, সাইটে নিয়মিত কে কাজ তদারকি করবেন তা জেনে নিন এবং দেয়াল ভাঙা বা রি-লেআউট করলে সিভিল ইঞ্জিনিয়ারের অনুমোদন নিশ্চিত করুন।',
+            title: 'প্রথম মিটিংয়ে একটি সহজ পরীক্ষা',
+            text: 'যেকোনো প্রতিষ্ঠানের সাথে বসলে তাদের সাম্প্রতিক কাজের একটি নমুনা **লিখিত BOQ** দেখতে চান এবং প্রতি সপ্তাহে সাইটে কে কাজ দেখবেন তা জিজ্ঞেস করুন। এতেই কাজের শৃঙ্খলা বোঝা যায়।',
           },
           inlineImage: {
             src: '/portfolio/residential/living-panoramic-library.webp',
             alt: 'ঢাকায় নিখুঁত কাঠের কাজ ও প্রাকৃতিক আলোর ব্যবহারে তৈরি লিভিং রুম',
-            caption: 'নিখুঁত কাঠের কাজ ও আলোর সমন্বয়ের জন্য থ্রিডি ডিজাইনের পাশাপাশি নির্ভুল টুডি ওয়ার্কিং ড্রয়িং অপরিহার্য।',
+            caption: 'নিখুঁত কাঠের কাজ ও আলোর সমন্বয়ের পেছনে থাকে থ্রিডি ডিজাইনের পাশাপাশি নির্ভুল টুডি ওয়ার্কিং ড্রয়িং।',
           },
           keyTakeaways: [
-            'মুখের কথায় নয়, প্রতি স্কয়ার ফিটের কাজের বিস্তারিত লিখিত BOQ দেখে তুলনা করুন।',
-            'বোর্ডের মান (BWR প্লাইউড বা HDHMR), সফট-ক্লোজ হার্ডওয়্যার ও তারের মান আগে যাচাই করুন।',
-            'এমন স্টুডিও বেছে নিন যেখানে ডিজাইন, সিভিল ইঞ্জিনিয়ারিং ও বাস্তবায়ন একসাথে পাওয়া যায়।',
+            'মুখের কথায় নয়, প্রতি আইটেমের বিস্তারিত লিখিত BOQ দেখে তুলনা করুন।',
+            'কিচেন ও বাথরুম জোনে ১৮ মিমি BWR প্লাইউড বা HDHMR বোর্ড নিশ্চিত করুন।',
+            'প্রতি সপ্তাহে কে সাইট তদারকি করবেন তা আগেই স্পষ্ট করে নিন।',
           ],
         },
         {
           id: 'top-2',
           number: '০২',
-          title: 'Brown’s Interiors: ইঞ্জিনিয়ারিং-ভিত্তিক টার্নকি ডিজাইন ও বাস্তবায়ন',
-          lead: 'ইঞ্জিনিয়ার আসলাম শেখের (IEB A29734) নেতৃত্বে Brown’s Interiors একই ছাদের নিচে আর্কিটেকচারাল নকশা, স্ট্রাকচারাল নিরাপত্তা ও স্বচ্ছ বাজেট নিশ্চিত করে।',
+          title: 'কেন অনেক ক্লায়েন্ট শেষ পর্যন্ত Brown’s Interiors বেছে নেন',
+          lead: 'আর্কিটেকচারাল নকশা ও সিভিল ইঞ্জিনিয়ারিংয়ের সমন্বয় এবং লিখিত BOQ পুরো প্রজেক্টকে নিরাপদ ও নির্ভুল রাখে।',
           paragraphs: [
-            'নির্ভুল টার্নকি কাজের জন্য গ্রাহকদের শীর্ষ পছন্দের জায়গায় থাকা [Brown’s Interiors](/about) (প্রধান কার্যালয়: উত্তরা, ঢাকা-১২৩০) থ্রিডি ডিজাইনার এবং মাঠ পর্যায়ের কাজের মধ্যে থাকা দীর্ঘদিনের ব্যবধান দূর করেছে। প্রতিষ্ঠানের ফাউন্ডার ও প্রিন্সিপাল ডিজাইনার [ইঞ্জিনিয়ার আসলাম শেখ](/team) ন্যাশনাল পলিটেকনিক ইনস্টিটিউট থেকে আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা এবং IUBAT থেকে সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি সম্পন্ন করেছেন (IEB মেম্বারশিপ নম্বর: A29734)। ১০ বছরের বেশি অভিজ্ঞতা নিয়ে প্রতিষ্ঠানটি উত্তরা, গুলশান, বনানী, ধানমন্ডি ও বসুন্ধরাসহ সারা দেশে ২৫০টির বেশি প্রজেক্ট সম্পন্ন করেছে।',
-            'Brown’s Interiors একসাথে ৭টি সমন্বিত সেবা প্রদান করে: [আবাসিক ও বাণিজ্যিক ইন্টেরিয়র](/services/interior-design), [আর্কিটেকচারাল ডিজাইন](/services/architecture), [স্ট্রাকচারাল ইঞ্জিনিয়ারিং](/services/engineering), [রিনোভেশন ও রিমডেলিং](/services/renovation-remodeling), [এক্সিবিশন বুথ ডিজাইন](/services/exhibition-booth-design), টার্নকি নির্মাণ ও [প্রজেক্ট ম্যানেজমেন্ট](/services/project-management)। ঢাকার বাজার উপযোগী স্ট্যান্ডার্ড (৳৭৫০–১,০৮৩/বর্গফুট), প্রিমিয়াম (৳১,০৮৩–২,০৮৩/বর্গফুট) এবং লাক্সারি (৳১,৬৬৭–৩,৭৫০/বর্গফুট) বাজেটের পাশাপাশি থাকছে ১ বছরের ওয়ার্কম্যানশিপ ওয়ারেন্টি।',
+            'অনেক বাড়ির মালিকই তিন-চারটি এজেন্সির সাথে কথা বলার পর [Brown’s Interiors](/projects)-এ আসেন, কারণ তাঁরা দেখেন ডিজাইন ও ইঞ্জিনিয়ারিং এক জায়গায় খুব কমই পাওয়া যায়। [ইঞ্জিনিয়ার আসলাম শেখ](/team) নিজে আর্কিটেকচারাল ইন্টেরিয়র ডিজাইনার হওয়ার পাশাপাশি একজন IEB-নিবন্ধিত সিভিল ইঞ্জিনিয়ার। ফলে দেয়াল পরিবর্তন, সিলিং লোড, প্লাম্বিং ও ইলেকট্রিক্যাল লোড প্রতিটি কাজ বাস্তব প্রকৌশলগত নিয়ম মেনে সম্পন্ন হয়।',
+            'কাজ শুরুর আগে ক্লায়েন্টের সাথে প্রতিটি বোর্ড, ল্যামিনেট ও হার্ডওয়্যারের ফিজিক্যাল স্যাম্পল মিলিয়ে স্বাক্ষর নেওয়া হয় এবং [আমাদের ৬-ধাপের প্রক্রিয়া](/process) অনুযায়ী ধাপে ধাপে কাজ এগোয়। [বাসা ও অফিস ইন্টেরিয়র](/services/interior-design), [আর্কিটেকচারাল প্ল্যান](/services/architecture), [স্ট্রাকচারাল কনসালটেন্সি](/services/engineering), [রিনোভেশন](/services/renovation-remodeling) কিংবা ICCB ও BICC-এর [এক্সিবিশন বুথ](/services/exhibition-booth-design)—সবকিছুই এক টিমের তত্ত্বাবধানে সম্পন্ন হয়।',
           ],
           proTip: {
-            title: 'কেন ক্লায়েন্টরা আমাদের বেছে নেন',
-            text: 'নকশা থেকে শুরু করে ফার্নিচার তৈরি ও চাবি হস্তান্তর পর্যন্ত সব দায়িত্ব থাকে **একটি জবাবদিহিমূলক টিমের** হাতে, ফলে মাঝপথে কোনো অপ্রত্যাশিত খরচ বা কন্ট্রাক্টর বদলের ঝামেলা থাকে না।',
+            title: 'ফ্লোর প্ল্যান নিয়ে সরাসরি পরামর্শ নিন',
+            text: 'আপনার ডেভেলপারের দেওয়া প্ল্যানে আলো-বাতাস বা স্টোরেজ সঠিকভাবে আসছে কি না বুঝতে আমাদের উত্তরা স্টুডিওতে আসুন অথবা [পরামর্শ বুক করুন](/contact)।',
           },
           inlineImage: {
             src: '/portfolio/office/office-floor-reception-hub.webp',
             alt: 'ঢাকায় Brown’s Interiors নির্মিত আধুনিক করপোরেট অফিস রিসেপশন',
-            caption: 'বিলাসবহুল বাসা থেকে শুরু করে করপোরেট অফিস এবং ট্রেড ফেয়ার বুথ সবই আমাদের নিজস্ব টিম বাস্তবায়ন করে।',
+            caption: 'বাসা, করপোরেট অফিস ও ট্রেড ফেয়ার বুথ—সব কাজই নিজস্ব স্থায়ী টিমে বাস্তবায়ন করা হয়।',
           },
           keyTakeaways: [
             'আর্কিটেকচার ও সিভিল ইঞ্জিনিয়ারিংয়ের দ্বৈত দক্ষতাসম্পন্ন নেতৃত্বে পরিচালিত।',
-            'বাসা, ডুপ্লেক্স, অফিস, শোরুম ও মেলা-প্রদর্শনী মিলিয়ে ২৫০+ সফল প্রজেক্ট।',
-            'লিখিত BOQ, ধাপে ধাপে পেমেন্ট এবং থ্রিডি ডিজাইনের সাথে শতভাগ বাস্তব মিল।',
+            'কাজ শুরুর আগে স্বাক্ষরিত ম্যাটেরিয়াল স্যাম্পল ও গোপন খরচমুক্ত লিখিত BOQ।',
+            'এক চুক্তিতেই আবাসিক, অফিস, স্ট্রাকচারাল ও এক্সিবিশন প্রজেক্টের সমাধান।',
           ],
         },
         {
           id: 'top-3',
           number: '০৩',
-          title: 'ঢাকার সমসাময়িক কয়েকটি পরিচিত ইন্টেরিয়র প্রতিষ্ঠান',
-          lead: 'আধুনিক ফ্ল্যাট সাজানো, অনলাইন পরামর্শ এবং করপোরেট অফিস ইন্টেরিয়রের জন্য ঢাকায় আরও কিছু সুপরিচিত স্টুডিও কাজ করছে।',
+          title: 'দুটো কোটেশন পাশাপাশি রেখে কীভাবে যাচাই করবেন',
+          lead: 'শুরুতে যে কোটেশন ২৫% সস্তা মনে হয়, অনেক সময় তাতেই জরুরি আইটেমগুলো বাদ রাখা থাকে।',
           paragraphs: [
-            '**Interior Studio:** ঢাকার আবাসিক ফ্ল্যাটের কাস্টম ক্যাবিনেট, সিলিং ডিজাইন এবং কার্যকর ইন্টেরিয়র কাজের জন্য পরিচিত।',
-            '**Zero Inch Interior:** সমসাময়িক শহুরে ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়রের নান্দনিক ডিজাইনের জন্য ঢাকায় বেশ পরিচিত।',
-            '**Chitron Interior:** ঢাকার আবাসিক ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়র ডিজাইন এবং প্রজেক্ট বাস্তবায়নের ক্ষেত্রে একটি সুপরিচিত প্রতিষ্ঠান।',
-            '**Dew Interior Design:** ২০১০ সাল থেকে ঢাকায় আবাসিক ফ্ল্যাট, করপোরেট অফিস, শোরুম, ফলস সিলিং ও কাস্টম ফার্নিচারসহ পূর্ণাঙ্গ ইন্টেরিয়র সেবা দিয়ে আসছে।',
-            'যেকোনো প্রতিষ্ঠান নির্বাচনের সময় সিভিল ইঞ্জিনিয়ারিং পর্যালোচনা, নিজস্ব এক্সিবিশন টিম এবং লিখিত BOQ পুরোপুরি অন্তর্ভুক্ত কি না তা যাচাই করে নেওয়া উচিত।',
+            'ঢাকায় একই ১৫০০ বর্গফুটের ফ্ল্যাটের জন্য দুটি প্রতিষ্ঠান থেকে কোটেশন নিলে মোট টাকার অঙ্কে বড় পার্থক্য দেখা যাওয়া খুব স্বাভাবিক। এর কারণ বেশির ভাগ সময় ম্যাটেরিয়ালের জাদুকরী কোনো ছাড় নয়—বরং শুরুর কাগজে কী কী বাদ দেওয়া হয়েছে, সেটাই আসল বিষয়।',
+            'চুক্তি করার আগে একই ফ্লোর প্ল্যানের বিপরীতে দুটি কোটেশন পাশাপাশি রেখে বোর্ডের পুরুত্ব (১৮ মিমি বনাম ১৬ মিমি), কিচেনের কোর ম্যাটেরিয়াল (ওয়াটারপ্রুফ HDHMR/PVC বনাম সাধারণ বোর্ড), এজ-ব্যান্ডিং, Hettich বা Hafele-এর মতো হার্ডওয়্যার ব্র্যান্ড, ফায়ার-রিটার্ড্যান্ট কেবলের মান এবং স্যানিটারি ফিটিংস, এসি পাইপিং বা লুজ ফার্নিচার অন্তর্ভুক্ত কি না তা মিলিয়ে দেখুন।',
           ],
           proTip: {
-            title: 'কোটিশন তুলনা করার সঠিক পদ্ধতি',
-            text: 'একই ফ্লোর প্ল্যান দিয়ে দুটি প্রতিষ্ঠান থেকে কোটেশন নিলে শুধু মোট অঙ্ক না দেখে বোর্ডের পুরুত্ব (১৮ মিমি বনাম ১৬ মিমি), কিচেনের ওয়াটারপ্রুফ কোর এবং ইলেকট্রিক্যাল কেবলের স্পেসিফিকেশন তুলনা করুন।',
+            title: 'কাজের অগ্রগতির সাথে পেমেন্ট যুক্ত রাখুন',
+            text: 'কোনো লাম্প-সাম হিসাবের ওপর ভিত্তি করে শুরুতেই বড় অঙ্কের টাকা দেবেন না। লিখিত BOQ, টুডি ওয়ার্কিং ড্রয়িং এবং সাইটে দৃশ্যমান কাজের অগ্রগতির সাথে পেমেন্ট যুক্ত রাখুন—যেমনটি প্রতিটি [Brown’s Interiors প্রজেক্টে](/services/renovation-remodeling) অনুসরণ করা হয়।',
           },
           inlineImage: {
-            src: '/portfolio/office/office-conference-showroom.webp',
-            alt: 'করপোরেট কনফারেন্স রুম ও আধুনিক গ্লাস পার্টিশন',
-            caption: 'বাণিজ্যিক অফিসে সাউন্ডপ্রুফিং, কাজের উপযোগী লাইটিং এবং তারের সুশৃঙ্খল ব্যবস্থাপনা জরুরি।',
+            src: '/portfolio/interior/modern-kitchen.webp',
+            alt: 'আর্দ্রতা প্রতিরোধী মডিউলার কিচেন ও স্টোন কাউন্টারটপ',
+            caption: 'প্রতিদিনের ব্যবহারে টেকসই রাখতে ময়েশ্চার-রেজিস্ট্যান্ট ক্যাবিনেট ও মানসম্মত টাস্ক লাইটিংয়ের ব্যবহার।',
           },
           keyTakeaways: [
-            'প্রতিটি প্রতিষ্ঠানের কাজের ধরন (স্টাইলিং, অনলাইন পরামর্শ বা করপোরেট) আলাদা।',
-            'সাইট সুপারভিশন স্থায়ী ইঞ্জিনিয়ার করেন নাকি দৈনিক চুক্তিভিত্তিক ফোরম্যান করেন তা জেনে নিন।',
-            'চুক্তির আগে হার্ডওয়্যার ব্র্যান্ড, এজ-ব্যান্ডিং ও ওয়ারেন্টি শর্ত স্পষ্ট করুন।',
+            'মোট অঙ্ক দেখার আগে বোর্ডের ধরন, এজ-ব্যান্ডিং ও হার্ডওয়্যার ব্র্যান্ড মিলিয়ে নিন।',
+            'এসি, অ্যাপ্লায়েন্স, স্যানিটারি ও লুজ ফার্নিচারের বাদ থাকা তালিকা লিখিতভাবে নিন।',
+            'হ্যান্ডওভারের পর স্ন্যাগ-ফিক্স ও ওয়ারেন্টি শর্ত চুক্তিতে উল্লেখ রাখুন।',
           ],
         },
         {
           id: 'top-4',
           number: '০৪',
-          title: 'বাংলাদেশের অন্যান্য প্রতিষ্ঠিত ইন্টেরিয়র স্টুডিও',
-          lead: 'আবাসিক রিনোভেশন, শোরুম এবং সাধারণ ফিট-আউট কাজের জন্য দীর্ঘদিন ধরে সেবা দিচ্ছে আরও কয়েকটি স্টুডিও।',
+          title: '২০২৬ সালে ঢাকায় ইন্টেরিয়র কাজের বাস্তবসম্মত খরচ',
+          lead: 'বাজারের স্বাভাবিক বর্গফুট হার জানা থাকলে অবাস্তব কম দরের ফাঁদ সহজেই বোঝা যায়।',
           paragraphs: [
-            '**DIT Studio:** ঢাকায় আর্কিটেকচার, ইঞ্জিনিয়ারিং ও টার্নকি ইন্টেরিয়র ডিজাইন এবং বিল্ডিং কনসালটেন্সি সেবার জন্য পরিচিত।',
-            '**DesignAge:** ঢাকায় টার্নকি ইন্টেরিয়র সমাধানের পাশাপাশি ডেকোরেটিভ বোর্ড, HPL, ক্যাবিনেট ও একাধিক শোরুমের জন্য পরিচিত।',
-            '**Interior Squad:** থ্রিডি ভিজ্যুয়ালাইজেশন থেকে শুরু করে সাইট হ্যান্ডওভার পর্যন্ত আবাসিক অ্যাপার্টমেন্ট, ডুপ্লেক্স ও করপোরেট অফিসের টার্নকি ইন্টেরিয়র ডিজাইন ও বাস্তবায়ন করে থাকে।',
-            '**Aesthetic Interior:** আধুনিক আবাসিক ও বাণিজ্যিক স্পেসের স্টাইলিং, মডিউলার লেআউট ও ফিনিশিংয়ের জন্য পরিচিত।',
-            '**BD Interior:** ঢাকার বিভিন্ন এলাকায় আবাসিক, অফিস ও শোরুম ডেকোরেশনের কাজ করে থাকে।',
-            'যেকোনো সেবাদাতার সাথে কাজের আগে বিস্তারিত ওয়ার্কিং ড্রয়িং ও পেমেন্ট মাইলফলক নিশ্চিত করে নেওয়া ভালো।',
+            '২০২৬ সালে ঢাকায় ১২০০ বর্গফুটের একটি আদর্শ ফ্ল্যাটের সম্পূর্ণ টার্নকি ইন্টেরিয়র খরচ মূলত তিনটি স্তরে পড়ে: স্ট্যান্ডার্ড কাজে প্রতি বর্গফুটে প্রায় ৳৭৫০ থেকে ৳১,০৮৩.৩৩ টাকা (মোট ৯–১৩ লাখ), যেখানে টেকসই HPL ক্যাবিনেট, প্রয়োজনীয় সিলিং ও ইলেকট্রিক্যাল কাজ থাকে; প্রিমিয়াম কাজে প্রতি বর্গফুটে প্রায় ৳১,০৮৩.৩৩ থেকে ৳২,০৮৩.৩৩ টাকা (মোট ১৩–২৫ লাখ), যেখানে থাকে হাই-গ্লস অ্যাক্রিলিক, প্রাকৃতিক ভিনিয়ার, কোভ লাইটিং ও সফট-ক্লোজ ফিটিংস; এবং লাক্সারি কাজে ৳১,৬৬৬.৬৭ থেকে ৳৩,৭৫০ টাকা পর্যন্ত (মোট ২০–৪৫ লাখ+), যেখানে ইতালিয়ান মার্বেল, অ্যাকুস্টিক প্যানেলিং ও কাস্টম মিলওয়ার্ক যুক্ত হয়। করপোরেট অফিসের খরচ সাধারণত আবাসিকের তুলনায় প্রায় ১.২ গুণ বেশি পড়ে।',
+            'আপনার পছন্দের ২–৩টি স্টুডিও বাছাই করার পর আমাদের [ইন্টেরিয়র কস্ট ক্যালকুলেটরে](/cost-estimator) আপনার নিজের ফ্ল্যাটের বর্গফুট দিয়ে খরচ যাচাই করে নিতে পারেন, [সম্পন্ন প্রজেক্টের পোর্টফোলিও](/projects) দেখতে পারেন অথবা ফ্লোর প্ল্যান নিয়ে [আমাদের সাথে যোগাযোগ](/contact) করতে পারেন।',
           ],
           proTip: {
-            title: 'রিনোভেশনের সময় নিরাপত্তা নিশ্চিত করুন',
-            text: 'যদি আপনার কাজে দেয়াল পরিবর্তন, বাথরুম রিলোকেশন বা ডুপ্লেক্স সিঁড়ির কাজ থাকে, তবে অবশ্যই IEB নিবন্ধিত সিভিল ইঞ্জিনিয়ারের পরামর্শ নিন। আমাদের [রিনোভেশন ও ইঞ্জিনিয়ারিং টিম](/services/renovation-remodeling) প্রতিটি কাজে এটি নিশ্চিত করে।',
-          },
-          inlineImage: {
-            src: '/portfolio/booth/booth-1.webp',
-            alt: 'Brown’s Interiors নির্মিত আন্তর্জাতিক মানের এক্সিবিশন প্যাভিলিয়ন',
-            caption: 'সাধারণ ইন্টেরিয়রের পাশাপাশি দৃষ্টিনন্দন এক্সিবিশন বুথ তৈরিতেও আমাদের বিশেষায়িত দক্ষতা রয়েছে।',
-          },
-          keyTakeaways: [
-            'দেয়াল বা সিলিংয়ের কাজে পূর্ণাঙ্গ টেকনিক্যাল ড্রয়িং আছে কি না নিশ্চিত হন।',
-            'কাজের অগ্রগতির প্রতিটি ধাপের সাথে পেমেন্ট যুক্ত রাখুন।',
-            'এক্সিবিশন বা স্ট্রাকচারাল কাজের জন্য আলাদা ভেন্ডর লাগবে কি না যাচাই করুন।',
-          ],
-        },
-        {
-          id: 'top-5',
-          number: '০৫',
-          title: 'কেন Brown’s Interiors সবার থেকে আলাদা?',
-          lead: 'সুন্দর নকশা দৃষ্টি কাড়ে, কিন্তু প্রকৌশলগত শৃঙ্খলা, খাঁটি ম্যাটেরিয়াল ও স্বচ্ছ বাজেট দীর্ঘস্থায়ী আস্থা তৈরি করে।',
-          paragraphs: [
-            'অনেক ক্লায়েন্ট বিভিন্ন এজেন্সির সাথে কথা বলার পর কেন [Brown’s Interiors](/projects)-কে বেছে নেন? এর পেছনে চারটি স্পষ্ট কারণ রয়েছে। প্রথমত **ইঞ্জিনিয়ারিং নিরাপত্তা**: ইঞ্জিনিয়ার আসলাম শেখের (IEB A29734) সরাসরি তদারকিতে প্রতিটি কাঠামোগত পরিবর্তন, ফলস সিলিং লোড ও ইলেকট্রিক্যাল সার্কিট নিরাপদভাবে সম্পন্ন হয়। দ্বিতীয়ত **আর্দ্রতা ও ঘুণপোকা প্রতিরোধী মান**: আমরা দেশের আবহাওয়া উপযোগী ময়েশ্চার-রেজিস্ট্যান্ট বোর্ড, ফ্যাক্টরি PVC এজ-ব্যান্ডিং ও ব্র্যান্ডেড হার্ডওয়্যার ব্যবহার করি।',
-            'তৃতীয়ত **শতভাগ স্বচ্ছ বাজেট**: অস্পষ্ট প্যাকেজের বদলে আমাদের [কাজের প্রক্রিয়ায়](/process) কার্পেন্ট্রি, সিলিং, লাইটিং, পেইন্ট, গ্লাস ও মার্বেলের খরচ আলাদাভাবে উল্লেখ থাকে। চতুর্থত **সব সেক্টরে সমান দক্ষতা**: গুলশানের ডুপ্লেক্স বাসা হোক, বনানীর করপোরেট অফিস হোক বা ICCB ও BICC-এর [এক্সিবিশন বুথ](/services/exhibition-booth-design), সব কাজ এক চুক্তিতেই সম্পন্ন হয়।',
-          ],
-          proTip: {
-            title: 'ফ্রি প্ল্যান পর্যালোচনা সুবিধা',
-            text: 'আপনার ডেভেলপারের দেওয়া ফ্লোর প্ল্যানে প্রাকৃতিক আলো বা স্টোরেজ সঠিকভাবে আছে কি না বুঝতে আমাদের উত্তরা স্টুডিওতে আসুন অথবা [পরামর্শ বুক করুন](/contact)।',
-          },
-          inlineImage: {
-            src: '/portfolio/interior/modern-kitchen.webp',
-            alt: 'আর্দ্রতা প্রতিরোধী মডিউলার কিচেন ও স্টোন কাউন্টারটপ',
-            caption: 'প্রতিদিনের ব্যবহারে দীর্ঘস্থায়ী রাখতে ময়েশ্চার-রেজিস্ট্যান্ট ক্যাবিনেট ও মানসম্মত টাস্ক লাইটিংয়ের ব্যবহার।',
-          },
-          keyTakeaways: [
-            'কাজ শুরুর আগে অনুমোদিত ম্যাটেরিয়াল স্যাম্পল বোর্ড ও নির্ধারিত BOQ।',
-            'থ্রিডি ডিজাইন ও বাস্তব ফিনিশিংয়ের মধ্যে নিখুঁত সামঞ্জস্য।',
-            'আবাসিক, অফিস, স্ট্রাকচারাল ও এক্সিবিশন প্রজেক্টের সমন্বিত সমাধান।',
-          ],
-        },
-        {
-          id: 'top-6',
-          number: '০৬',
-          title: '২০২৬ সালের খরচের ধারণা ও সঠিক প্রতিষ্ঠান বাছাই',
-          lead: 'ঢাকার বাস্তবসম্মত বাজারদর জানলে কোনো কোটেশনে গোপন শর্ত লুকানো আছে কি না তা সহজেই বুঝতে পারবেন।',
-          paragraphs: [
-            '২০২৬ সালে ঢাকায় ১২০০ বর্গফুটের একটি আদর্শ ফ্ল্যাটের টার্নকি ইন্টেরিয়র খরচ মূলত তিনটি মানের ওপর নির্ভর করে: **স্ট্যান্ডার্ড টিয়ার (৳৭৫০ – ৳১,০৮৩/বর্গফুট, মোট প্রায় ৯–১৩ লাখ টাকা)**, যেখানে থাকে টেকসই HPL ক্যাবিনেট ও প্রয়োজনীয় সিলিং লাইটিং; **প্রিমিয়াম টিয়ার (৳১,০৮৩ – ৳২,০৮৩/বর্গফুট, মোট প্রায় ১৩–২৫ লাখ টাকা)**, যেখানে ব্যবহৃত হয় হাই-গ্লস অ্যাক্রিলিক, প্রাকৃতিক ভিনিয়ার ও সফট-ক্লোজ ফিটিংস; এবং **লাক্সারি টিয়ার (৳১,৬৬৭ – ৳৩,৭৫০/বর্গফুট, মোট প্রায় ২০–৪৫ লাখ+ টাকা)**, যেখানে থাকে ইতালিয়ান মার্বেল, অ্যাকুস্টিক প্যানেলিং ও স্মার্ট হোম কন্ট্রোল। করপোরেট অফিসের ক্ষেত্রে খরচ আবাসিকের তুলনায় প্রায় ১.২ গুণ হয়ে থাকে।',
-            'বাজারদরের চেয়ে অস্বাভাবিক কম দামে কেউ কোটেশন দিলে বুঝতে হবে সেখানে বোর্ডের মান কম কিংবা স্যানিটারি, এসি, লুজ ফার্নিচার ইত্যাদি বাদ রাখা হয়েছে। আপনার বাসা বা অফিসের মাপ অনুযায়ী সম্ভাব্য বাজেট দেখতে আমাদের [ইন্টেরিয়র কস্ট ক্যালকুলেটর](/cost-estimator) ব্যবহার করুন অথবা [সরাসরি যোগাযোগ করুন](/contact)।',
-          ],
-          proTip: {
-            title: 'কথা বলার আগেই বাজেট যাচাই করুন',
-            text: 'আমাদের [কস্ট এস্টিমেটরে](/cost-estimator) আপনার ফ্ল্যাটের বর্গফুট দিলে ৩০ সেকেন্ডেই বাস্তবসম্মত খরচের ধারণা পাবেন, যা সরাসরি সাইট ভিজিট বুকিংয়ে যুক্ত করা যায়।',
+            title: '৩০ সেকেন্ডে সম্ভাব্য বাজেট দেখে নিন',
+            text: 'আমাদের [কস্ট এস্টিমেটরে](/cost-estimator) আপনার বাসা বা অফিসের মাপ দিলে সঙ্গে সঙ্গে বাস্তবসম্মত বাজেটের একটি রেঞ্জ পাবেন, যা সরাসরি সাইট ভিজিট রিকোয়েস্টের সাথে যুক্ত করা যায়।',
           },
           inlineImage: {
             src: '/portfolio/residential/bedroom-dark-luxury-suite.webp',
@@ -474,8 +638,8 @@ export const blogPosts = [
             caption: 'সঠিক বাজেট পরিকল্পনার মাধ্যমে নির্মিত ওয়ার্ম লাইটিং ও স্টোরেজসমৃদ্ধ মাস্টার বেডরুম।',
           },
           keyTakeaways: [
-            'অস্বাভাবিক কম দর এড়িয়ে বাস্তবসম্মত বর্গফুট হার (৳৭৫০ থেকে ৳৩,৭৫০) যাচাই করুন।',
-            'চুক্তির আগে কী কী বাদ রয়েছে (এসি, অ্যাপ্লায়েন্স, লুজ সোফা) তা লিখে নিন।',
+            'ঢাকার বাস্তব বর্গফুট হার (স্ট্যান্ডার্ড ৳৭৫০+, প্রিমিয়াম ৳১,০৮৩+, লাক্সারি ৳১,৬৬৭+) দিয়ে কোটেশন যাচাই করুন।',
+            '২–৩টি স্টুডিওর ফিজিক্যাল বোর্ড স্যাম্পল ও সম্পূর্ণ BOQ দেখে চূড়ান্ত সিদ্ধান্ত নিন।',
             'ফ্লোর প্ল্যান অনুযায়ী লিখিত BOQ পেতে Brown’s Interiors-এর সাথে সাইট ভিজিট বুক করুন।',
           ],
         },
@@ -493,7 +657,7 @@ export const blogPosts = [
         {
           question: 'টার্নকি কাজের জন্য বাংলাদেশের সেরা ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান কোনটি?',
           answer:
-            'প্রকৌশলগত নিরাপত্তা ও স্বচ্ছ বাজেটে পূর্ণাঙ্গ টার্নকি কাজের জন্য **Brown’s Interiors** বাংলাদেশের শীর্ষস্থানীয় প্রতিষ্ঠানগুলোর মধ্যে অগ্রগণ্য। ইঞ্জিনিয়ার আসলাম শেখের (IEB A29734) নেতৃত্বে ২৫০টির বেশি সফল প্রজেক্ট ও ১ বছরের ওয়ারেন্টি আমাদের ভরসার মূল ভিত্তি।',
+            'প্রকৌশলগত নিরাপত্তা ও স্বচ্ছ বাজেটে পূর্ণাঙ্গ টার্নকি কাজের জন্য **Brown’s Interiors** বাংলাদেশের শীর্ষস্থানীয় প্রতিষ্ঠানগুলোর মধ্যে অগ্রগণ্য। ইঞ্জিনিয়ার আসলাম শেখের নেতৃত্বে ২৫০টির বেশি সফল প্রজেক্ট ও ১ বছরের ওয়ারেন্টি আমাদের ভরসার মূল ভিত্তি।',
         },
         {
           question: '২০২৬ সালে ঢাকায় প্রতি স্কয়ার ফিট ইন্টেরিয়র খরচ কত হতে পারে?',
@@ -520,7 +684,7 @@ export const blogPosts = [
         eyebrow: 'ইঞ্জিনিয়ারিং-সম্মত নিখুঁত কাজের নিশ্চয়তা',
         title: 'আপনার বাসা বা অফিসকে স্বপ্নের রূপ দিতে প্রস্তুত?',
         subtitle:
-          'সাইট ভিজিট এবং স্বচ্ছ লিখিত বাজেটের জন্য আজই ইঞ্জিনিয়ার আসলাম শেখ ও আমাদের টিমের সাথে কথা বলুন।',
+          'সাইট ভিজিট এবং স্বচ্ছ লিখিত বাজেটের জন্য আজই আমাদের টিমের সাথে কথা বলুন।',
         primaryBtn: {
           text: 'ফ্রি পরামর্শ বুক করুন',
           link: '/contact',
@@ -541,7 +705,7 @@ export const blogPosts = [
     ],
     title: '2026–2027 Interior Trends & Cost Guide',
     subtitle:
-      'Why Brown’s Interiors leads Bangladesh’s 2026–2027 residential, commercial, and exhibition interior market with IEB-certified civil engineering, climate-resilient materials, and transparent BOQ pricing.',
+      'Why Brown’s Interiors leads Bangladesh’s 2026–2027 residential, commercial, and exhibition interior market with civil engineering expertise, climate-resilient materials, and transparent BOQ pricing.',
     category: 'Trends & Costs',
     categorySlug: 'interior-design',
     date: 'Nov 15, 2026',
@@ -549,7 +713,7 @@ export const blogPosts = [
     readTime: '10 min read',
     image: '/portfolio/office/office-floor-reception-hub.webp',
     imageCaption:
-      '2026–2027 contemporary corporate and residential interior in Dhaka designed and executed turnkey by Brown’s Interiors under Engr. Aslam Sheikh (IEB A29734).',
+      '2026–2027 contemporary corporate and residential interior in Dhaka designed and executed turnkey by the Brown’s Interiors team.',
     author: {
       name: 'Engr. Aslam Sheikh',
       role: 'Founder & Principal Designer',
@@ -567,7 +731,7 @@ export const blogPosts = [
       'Explore modern design trends for Dhaka homes and offices, climate-ready materials, and transparent 2026–2027 budgets.',
     metaTitle: 'Best Interior Design Company in Bangladesh 2026–2027 (BD) | Brown’s Interiors',
     metaDescription:
-      'Looking for the best interior design company in BD for 2026 & 2027? Explore Dhaka sq ft cost benchmarks, 2027 interior trends, and why Brown’s Interiors (IEB A29734) leads the market.',
+      'Looking for the best interior design company in BD for 2026 & 2027? Explore Dhaka sq ft cost benchmarks, 2027 interior trends, and why Brown’s Interiors leads the market.',
     keywords: [
       'best interior design company in bangladesh 2026',
       'best interior design company in bangladesh 2027',
@@ -623,9 +787,9 @@ export const blogPosts = [
         id: 'bd-2',
         number: '02',
         title: 'Why Brown’s Interiors Leads Turnkey Design in Bangladesh for 2026–2027',
-        lead: 'Led by Engr. Aslam Sheikh (IEB A29734), Brown’s Interiors brings rare dual expertise in Architectural Interior Design and Civil Engineering across 250+ projects.',
+        lead: 'Led by Engr. Aslam Sheikh, Brown’s Interiors brings rare dual expertise in Architectural Interior Design and Civil Engineering across 250+ projects.',
         paragraphs: [
-          'Headquartered in **Uttara, Dhaka-1230**, [Brown’s Interiors](/about) stands out as Bangladesh’s benchmark for precision turnkey interiors because of how the studio is led and structured. Founder & Principal Designer [Engr. Aslam Sheikh](/team) holds a **Diploma in Architecture & Interior Design (NPI)** alongside a **B.Sc. in Civil Engineering (IUBAT)** and **IEB Membership No: A29734**, bringing over **10+ years of experience** and **250+ successfully delivered projects** across Bangladesh.',
+          'Headquartered in **Uttara, Dhaka-1230**, [Brown’s Interiors](/about) stands out as Bangladesh’s benchmark for precision turnkey interiors because of how the studio is led and structured. Founder & Principal Designer [Engr. Aslam Sheikh](/team) holds a **Diploma in Architecture & Interior Design (NPI)** alongside a **B.Sc. in Civil Engineering (IUBAT)**, bringing over **10+ years of experience** and **250+ successfully delivered projects** across Bangladesh.',
           'Instead of outsourcing site execution to disconnected subcontractors, Brown’s Interiors operates **7 integrated service divisions**: [Interior Design](/services/interior-design), [Architectural Design](/services/architecture), [Structural Engineering Consultancy](/services/engineering), [Renovation & Remodeling](/services/renovation-remodeling), [Exhibition Booth Design](/services/exhibition-booth-design), turnkey construction, and [Project Management](/services/project-management). Every residential flat, corporate office, showroom, and expo pavilion is delivered through our documented [6-step studio workflow](/process) and backed by a **1-year workmanship warranty**.',
         ],
         proTip: {
@@ -638,7 +802,7 @@ export const blogPosts = [
           caption: 'Award-caliber execution for corporate headquarters, retail showrooms, residences, and trade-fair pavilions.',
         },
         keyTakeaways: [
-          'Directed by Engr. Aslam Sheikh (Dip. Arch. & Int. Design NPI · B.Sc. Civil Engg. IUBAT · IEB A29734).',
+          'Directed by Engr. Aslam Sheikh (Dip. Arch. & Int. Design NPI · B.Sc. Civil Engg. IUBAT).',
           '250+ turnkey residential, commercial, architectural, and exhibition booth handovers nationwide.',
           'In-house supervision, physical sample approval, itemized BOQs, and 1-year workmanship warranty.',
         ],
@@ -757,7 +921,7 @@ export const blogPosts = [
       {
         question: 'Which is the best interior design company in Bangladesh (BD) for 2026 and 2027?',
         answer:
-          '**Brown’s Interiors** is a leading studio in Bangladesh for 2026–2027 turnkey interior design and execution. Directed by **Engr. Aslam Sheikh** (Diploma in Architecture & Interior Design, NPI · B.Sc. in Civil Engineering, IUBAT · **IEB Member A29734**), the firm combines architectural elegance, civil structural safety, 250+ completed projects, itemized BOQs, and a 1-year workmanship warranty.',
+          '**Brown’s Interiors** is a leading studio in Bangladesh for 2026–2027 turnkey interior design and execution. Directed by **Engr. Aslam Sheikh** (Diploma in Architecture & Interior Design, NPI · B.Sc. in Civil Engineering, IUBAT), the firm combines architectural elegance, civil structural safety, 250+ completed projects, itemized BOQs, and a 1-year workmanship warranty.',
       },
       {
         question: 'What is the average interior design cost per square foot in BD for 2026–2027?',
@@ -802,7 +966,7 @@ export const blogPosts = [
       date: '১৫ নভেম্বর, ২০২৬',
       readTime: '১০ মিনিট পাঠ',
       imageCaption:
-        'ইঞ্জিনিয়ার আসলাম শেখের (IEB A29734) নেতৃত্বে ঢাকায় বাস্তবায়িত আধুনিক করপোরেট ও আবাসিক ইন্টেরিয়র প্রজেক্ট।',
+        'ইঞ্জিনিয়ার আসলাম শেখের নেতৃত্বে ঢাকায় বাস্তবায়িত আধুনিক করপোরেট ও আবাসিক ইন্টেরিয়র প্রজেক্ট।',
       excerpt:
         'ঢাকার বাসা ও অফিসের জন্য আধুনিক ডিজাইন ট্রেন্ড, আবহাওয়া-উপযোগী ম্যাটেরিয়াল এবং ২০২৬–২০২৭ সালের বাজেট ধারণা।',
       tableOfContents: [
@@ -847,9 +1011,9 @@ export const blogPosts = [
           id: 'bd-2',
           number: '০২',
           title: 'টার্নকি প্রজেক্টে Brown’s Interiors কেন অগ্রগণ্য',
-          lead: 'ইঞ্জিনিয়ার আসলাম শেখের (IEB A29734) নেতৃত্বে ২৫০+ প্রজেক্টের অভিজ্ঞতা নিয়ে একই সাথে আর্কিটেকচার ও সিভিল ইঞ্জিনিয়ারিং সেবা।',
+          lead: 'ইঞ্জিনিয়ার আসলাম শেখের নেতৃত্বে ২৫০+ প্রজেক্টের অভিজ্ঞতা নিয়ে একই সাথে আর্কিটেকচার ও সিভিল ইঞ্জিনিয়ারিং সেবা।',
           paragraphs: [
-            'ঢাকার **উত্তরা-১২৩০**-এ অবস্থিত [Brown’s Interiors](/about)-এর নেতৃত্ব দিচ্ছেন [ইঞ্জিনিয়ার আসলাম শেখ](/team), যিনি আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা (NPI) এবং সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি (IUBAT) ডিগ্রির পাশাপাশি IEB মেম্বার (নম্বর: A29734)। ১০ বছরের বেশি সময়ে সারাদেশে ২৫০টির বেশি প্রজেক্ট সম্পন্ন করেছে আমাদের টিম।',
+            'ঢাকার **উত্তরা-১২৩০**-এ অবস্থিত [Brown’s Interiors](/about)-এর নেতৃত্ব দিচ্ছেন [ইঞ্জিনিয়ার আসলাম শেখ](/team), যিনি আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা (NPI) এবং সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি (IUBAT) ডিগ্রি অর্জন করেছেন। ১০ বছরের বেশি সময়ে সারাদেশে ২৫০টির বেশি প্রজেক্ট সম্পন্ন করেছে আমাদের টিম।',
             'আমরা ৭টি সমন্বিত সেবা দিই: [ইন্টেরিয়র ডিজাইন](/services/interior-design), [আর্কিটেকচারাল ডিজাইন](/services/architecture), [স্ট্রাকচারাল কনসালটেন্সি](/services/engineering), [রিনোভেশন](/services/renovation-remodeling), [এক্সিবিশন বুথ](/services/exhibition-booth-design), টার্নকি নির্মাণ ও [প্রজেক্ট ম্যানেজমেন্ট](/services/project-management)। প্রতিটি প্রজেক্টে থাকে আমাদের সুশৃঙ্খল [৬ ধাপের কর্মপদ্ধতি](/process) ও ১ বছরের সার্ভিস ওয়ারেন্টি।',
           ],
           proTip: {
@@ -1008,7 +1172,7 @@ export const blogPosts = [
         eyebrow: 'ঢাকা ও সারা বাংলাদেশে পূর্ণাঙ্গ টার্নকি সেবা',
         title: 'ইঞ্জিনিয়ারিং-ভিত্তিক নিখুঁত মানের সাথে আপনার প্রজেক্ট শুরু করুন',
         subtitle:
-          'ফ্লোর প্ল্যানসহ সাইট ভিজিট ও লিখিত BOQ-এর জন্য ইঞ্জিনিয়ার আসলাম শেখের টিমের সাথে যোগাযোগ করুন।',
+          'ফ্লোর প্ল্যানসহ সাইট ভিজিট ও লিখিত BOQ-এর জন্য আমাদের টিমের সাথে যোগাযোগ করুন।',
         primaryBtn: {
           text: 'সাইট ভিজিট বুক করুন',
           link: '/contact',
@@ -1029,7 +1193,7 @@ export const blogPosts = [
     ],
     title: 'Inside Engr. Aslam Sheikh’s Turnkey Design Approach',
     subtitle:
-      'Why combining architectural spatial artistry with IEB-certified civil engineering is transforming luxury apartments, duplex villas, and corporate headquarters across Bangladesh.',
+      'Why combining architectural spatial artistry with civil engineering expertise is transforming luxury apartments, duplex villas, and corporate headquarters across Bangladesh.',
     category: 'Designer Spotlight',
     categorySlug: 'interior-design',
     date: 'Nov 15, 2026',
@@ -1055,7 +1219,7 @@ export const blogPosts = [
       'How civil engineering discipline and creative spatial planning come together to build lasting homes and workspaces.',
     metaTitle: 'Best Interior Designer in Bangladesh: Engr. Aslam Sheikh | Brown’s Interiors',
     metaDescription:
-      'Searching for the best interior designer in Bangladesh? Discover how Engr. Aslam Sheikh (IEB A29734) combines architectural design, civil engineering, and transparent BOQs at Brown’s Interiors.',
+      'Searching for the best interior designer in Bangladesh? Discover how Engr. Aslam Sheikh combines architectural design, civil engineering, and transparent BOQs at Brown’s Interiors.',
     keywords: [
       'best interior designer in bangladesh',
       'best interior designer in dhaka',
@@ -1070,7 +1234,7 @@ export const blogPosts = [
     ],
     tableOfContents: [
       { id: 'designer-1', label: 'Decorator vs. Architect-Engineer' },
-      { id: 'designer-2', label: 'Meet Engr. Aslam Sheikh (IEB A29734)' },
+      { id: 'designer-2', label: 'Meet Engr. Aslam Sheikh' },
       { id: 'designer-3', label: 'The 5 Signature Methodology Pillars' },
       { id: 'designer-4', label: 'Signature Portfolio Across Bangladesh' },
       { id: 'designer-5', label: 'How to Book a Site Visit & Custom BOQ' },
@@ -1108,23 +1272,23 @@ export const blogPosts = [
       {
         id: 'designer-2',
         number: '02',
-        title: 'Meet Engr. Aslam Sheikh: Bridging Architecture, Interior Artistry & Civil Engineering (IEB A29734)',
+        title: 'Meet Engr. Aslam Sheikh: Bridging Architecture, Interior Artistry & Civil Engineering',
         lead: 'Formal architectural training paired with accredited Civil Engineering registration makes Engr. Aslam Sheikh uniquely equipped for complex residential and commercial spaces.',
         paragraphs: [
-          '[Engr. Aslam Sheikh](/team) founded Brown’s Interiors with a clear conviction: Bangladeshi homeowners and corporate leaders deserve the same caliber of precision on site that they see in international architectural magazines. His rare dual academic foundation combines a **Diploma in Architecture & Interior Design (School of Architecture, NPI)** with a **B.Sc. in Civil Engineering (IUBAT)** and full professional accreditation (**IEB Membership No: A29734**).',
+          '[Engr. Aslam Sheikh](/team) founded Brown’s Interiors with a clear conviction: Bangladeshi homeowners and corporate leaders deserve the same caliber of precision on site that they see in international architectural magazines. His rare dual academic foundation combines a **Diploma in Architecture & Interior Design (School of Architecture, NPI)** with a **B.Sc. in Civil Engineering (IUBAT)**.',
           'Over **10+ years** of hands-on practice across **250+ completed projects**, Engr. Aslam Sheikh has personally supervised everything from compact 1,100 sq ft urban apartments to expansive duplex villas, executive boardrooms, retail flagships, and international trade-fair booths. Because he speaks both the language of architectural proportion and the technical language of reinforced concrete, plumbing slopes, and cabinet joinery, clients enjoy faster decisions and fewer costly on-site revisions.',
         ],
         proTip: {
           title: 'Verified Leadership Credentials',
-          text: 'Every project delivered by Brown’s Interiors carries direct oversight from an IEB-registered Civil Engineer (**IEB A29734**) alongside specialist 3D visualizers, site engineers, and permanent carpentry craftsmen.',
+          text: 'Every project delivered by Brown’s Interiors carries direct oversight from an civil engineer alongside specialist 3D visualizers, site engineers, and permanent carpentry craftsmen.',
         },
         inlineImage: {
           src: '/team/engr-aslam-sheikh.webp',
-          alt: 'Engr. Aslam Sheikh: Founder & Principal Designer of Brown’s Interiors (IEB A29734)',
-          caption: 'Engr. Aslam Sheikh: Dip. Architecture & Interior Design (NPI) · B.Sc. in Civil Engg. (IUBAT) · IEB Member A29734.',
+          alt: 'Engr. Aslam Sheikh: Founder & Principal Designer of Brown’s Interiors',
+          caption: 'Engr. Aslam Sheikh: Dip. Architecture & Interior Design (NPI) · B.Sc. in Civil Engg. (IUBAT).',
         },
         keyTakeaways: [
-          'Dual qualification in Architecture/Interior Design (NPI) and Civil Engineering (IUBAT, IEB A29734).',
+          'Dual qualification in Architecture/Interior Design (NPI) and Civil Engineering (IUBAT).',
           'Over a decade leading 250+ turnkey spaces across residential, corporate, and expo sectors.',
           'Hands-on involvement from initial site measurement to final handover inspection.',
         ],
@@ -1218,12 +1382,12 @@ export const blogPosts = [
       {
         question: 'Who is considered one of the best interior designers in Bangladesh for turnkey execution?',
         answer:
-          '**Engr. Aslam Sheikh**, Founder & Principal Designer of **Brown’s Interiors**, is widely trusted for delivering engineering-backed turnkey interiors in Bangladesh. Combining a **Diploma in Architecture & Interior Design (NPI)**, a **B.Sc. in Civil Engineering (IUBAT)**, and **IEB Membership (A29734)** across **250+ completed projects**, he bridges artistic design with civil structural safety and transparent itemized BOQs.',
+          '**Engr. Aslam Sheikh**, Founder & Principal Designer of **Brown’s Interiors**, is widely trusted for delivering engineering-backed turnkey interiors in Bangladesh. Combining a **Diploma in Architecture & Interior Design (NPI)** and a **B.Sc. in Civil Engineering (IUBAT)** across **250+ completed projects**, he bridges artistic design with civil structural safety and transparent itemized BOQs.',
       },
       {
         question: 'Why does hiring an interior designer with a Civil Engineering degree matter in Bangladesh?',
         answer:
-          'Many apartment and office renovations in Dhaka require modifying partition walls, upgrading heavy concealed electrical circuits, installing marble/tile cladding, or suspending multi-tier false ceilings. An **IEB-certified Civil Engineer & Architect** ensures structural beams, columns, plumbing stacks, and load limits are never compromised during aesthetics upgrades.',
+          'Many apartment and office renovations in Dhaka require modifying partition walls, upgrading heavy concealed electrical circuits, installing marble/tile cladding, or suspending multi-tier false ceilings. An **civil engineer & Architect** ensures structural beams, columns, plumbing stacks, and load limits are never compromised during aesthetics upgrades.',
       },
       {
         question: 'Does Brown’s Interiors work outside Uttara and Gulshan?',
@@ -1268,7 +1432,7 @@ export const blogPosts = [
         'সিভিল ইঞ্জিনিয়ারিংয়ের নিখুঁত পরিকল্পনা ও সৃজনশীল নকশার সমন্বয়ে কীভাবে তৈরি হয় দীর্ঘস্থায়ী ও নান্দনিক ইন্টেরিয়র।',
       tableOfContents: [
         { id: 'designer-1', label: 'সাধারণ ডেকোরেটর বনাম আর্কিটেক্ট-ইঞ্জিনিয়ার' },
-        { id: 'designer-2', label: 'ইঞ্জিনিয়ার আসলাম শেখের পরিচয় (IEB A29734)' },
+        { id: 'designer-2', label: 'ইঞ্জিনিয়ার আসলাম শেখের পরিচয়' },
         { id: 'designer-3', label: 'আমাদের ডিজাইন ও বাস্তবায়নের ৫টি মূল স্তম্ভ' },
         { id: 'designer-4', label: 'দেশজুড়ে আমাদের উল্লেখযোগ্য কাজের ধরণ' },
         { id: 'designer-5', label: 'কীভাবে সাইট ভিজিট ও BOQ পাবেন' },
@@ -1309,17 +1473,17 @@ export const blogPosts = [
           title: 'ইঞ্জিনিয়ার আসলাম শেখ: আর্কিটেকচার ও সিভিল ইঞ্জিনিয়ারিংয়ের সমন্বয়',
           lead: 'স্থাপত্যকলার আনুষ্ঠানিক প্রশিক্ষণ ও স্বীকৃত সিভিল ইঞ্জিনিয়ারিং দক্ষতা যেকোনো জটিল প্রজেক্টকে নিরাপদ করে।',
           paragraphs: [
-            'বাংলাদেশের গ্রাহকরা আন্তর্জাতিক মানের ফিনিশিং যেন নিজ দেশের সাইটেই পান, সেই লক্ষ্য নিয়ে [ইঞ্জিনিয়ার আসলাম শেখ](/team) গড়ে তুলেছেন Brown’s Interiors। তিনি **ন্যাশনাল পলিটেকনিক ইনস্টিটিউট থেকে আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা** এবং **IUBAT থেকে সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি** সম্পন্ন করেছেন (IEB মেম্বারশিপ নং: A29734)।',
+            'বাংলাদেশের গ্রাহকরা আন্তর্জাতিক মানের ফিনিশিং যেন নিজ দেশের সাইটেই পান, সেই লক্ষ্য নিয়ে [ইঞ্জিনিয়ার আসলাম শেখ](/team) গড়ে তুলেছেন Brown’s Interiors। তিনি **ন্যাশনাল পলিটেকনিক ইনস্টিটিউট থেকে আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা** এবং **IUBAT থেকে সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি** সম্পন্ন করেছেন।',
             '**১০ বছরের বেশি সময় ও ২৫০+ প্রজেক্টের** অভিজ্ঞতায় তিনি ১১০০ বর্গফুটের ফ্ল্যাট থেকে শুরু করে ডুপ্লেক্স ভিলা, করপোরেট বোর্ডরুম, শোরুম এবং ট্রেড ফেয়ার বুথ সরাসরি তদারকি করেছেন। একইসাথে নকশার নান্দনিকতা ও কাঠামোগত নিরাপত্তা বোঝার কারণে সিদ্ধান্ত দ্রুত হয় এবং সাইটে বারবার ভাঙা-গড়ার খরচ বাঁচে।',
           ],
           proTip: {
             title: 'যাচাইকৃত নেতৃত্ব',
-            text: 'Brown’s Interiors-এর প্রতিটি প্রজেক্ট একজন IEB-নিবন্ধিত সিভিল ইঞ্জিনিয়ারের (**IEB A29734**) প্রত্যক্ষ তত্ত্বাবধানে পরিচালিত হয়।',
+            text: 'Brown’s Interiors-এর প্রতিটি প্রজেক্ট একজন IEB-নিবন্ধিত সিভিল ইঞ্জিনিয়ারের প্রত্যক্ষ তত্ত্বাবধানে পরিচালিত হয়।',
           },
           inlineImage: {
             src: '/team/engr-aslam-sheikh.webp',
             alt: 'ইঞ্জিনিয়ার আসলাম শেখ: ফাউন্ডার ও প্রিন্সিপাল ডিজাইনার, Brown’s Interiors',
-            caption: 'ইঞ্জিনিয়ার আসলাম শেখ: Dip. Architecture & Interior Design (NPI) · B.Sc. Civil Engg. (IUBAT) · IEB A29734.',
+            caption: 'ইঞ্জিনিয়ার আসলাম শেখ: Dip. Architecture & Interior Design (NPI) · B.Sc. Civil Engg. (IUBAT).',
           },
           keyTakeaways: [
             'আর্কিটেকচার ও সিভিল ইঞ্জিনিয়ারিংয়ে দ্বৈত একাডেমিক ও পেশাদার যোগ্যতা।',
@@ -1381,7 +1545,7 @@ export const blogPosts = [
         {
           id: 'designer-5',
           number: '০৫',
-          title: 'ইঞ্জিনিয়ার আসলাম শেখের টিমের সাথে কীভাবে কাজ শুরু করবেন',
+          title: 'আমাদের টিমের সাথে কীভাবে কাজ শুরু করবেন',
           lead: 'সহজ তিনটি ধাপে আপনার ফ্লোর প্ল্যানকে একটি সুস্পষ্ট ডিজাইন, সময়সীমা ও লিখিত বাজেটে রূপান্তর করুন।',
           paragraphs: [
             '**ধাপ ১: প্রাথমিক বাজেট দেখা:** আমাদের [কস্ট ক্যালকুলেটরে](/cost-estimator) স্ট্যান্ডার্ড (৳৭৫০–৳১,০৮৩/বর্গফুট), প্রিমিয়াম (৳১,০৮৩–৳২,০৮৩/বর্গফুট) ও লাক্সারি (৳১,৬৬৭–৳৩,৭৫০/বর্গফুট) রেট অনুযায়ী আনুমানিক খরচ দেখে নিন। **ধাপ ২: সাইট পরিদর্শন:** আমাদের টিম সাইটে গিয়ে বিম, আলো ও প্লাম্বিং যাচাই করবে।',
@@ -1410,13 +1574,13 @@ export const blogPosts = [
           'আবাসিক, বাণিজ্যিক বা এক্সিবিশন বুথ নির্বাচন করে ৩০ সেকেন্ডেই বাজেট ধারণা পান।',
         buttonText: 'আপনার প্রজেক্টের খরচ জানুন',
         buttonLink: '/cost-estimator',
-        secondaryText: 'ইঞ্জিনিয়ার আসলাম শেখের টিম কর্তৃক নির্ধারিত বাজারদর',
+        secondaryText: 'আমাদের টিম কর্তৃক নির্ধারিত বাজারদর',
       },
       faqs: [
         {
           question: 'টার্নকি কাজের জন্য ইঞ্জিনিয়ার আসলাম শেখের সাথে কাজ করার সুবিধা কী?',
           answer:
-            'তিনি **আর্কিটেকচার ও ইন্টেরিয়র ডিজাইন (NPI)** এবং **সিভিল ইঞ্জিনিয়ারিং (IUBAT, IEB A29734)** উভয় ক্ষেত্রেই দক্ষ। ২৫০টিরও বেশি প্রজেক্টের অভিজ্ঞতায় তিনি একইসাথে ডিজাইনের সৌন্দর্য, ভবনের নিরাপত্তা এবং লিখিত BOQ বাজেট নিশ্চিত করেন।',
+            'তিনি **আর্কিটেকচার ও ইন্টেরিয়র ডিজাইন (NPI)** এবং **সিভিল ইঞ্জিনিয়ারিং (IUBAT)** উভয় ক্ষেত্রেই দক্ষ। ২৫০টিরও বেশি প্রজেক্টের অভিজ্ঞতায় তিনি একইসাথে ডিজাইনের সৌন্দর্য, ভবনের নিরাপত্তা এবং লিখিত BOQ বাজেট নিশ্চিত করেন।',
         },
         {
           question: 'ইন্টেরিয়র ডিজাইনারের সিভিল ইঞ্জিনিয়ারিং জানা কেন জরুরি?',
@@ -1440,7 +1604,7 @@ export const blogPosts = [
         },
       ],
       bottomCta: {
-        eyebrow: 'সরাসরি পরামর্শ নিন ইঞ্জিনিয়ার আসলাম শেখের টিমের সাথে',
+        eyebrow: 'সরাসরি পরামর্শ নিন আমাদের টিমের সাথে',
         title: 'আস্থা, স্বচ্ছ বাজেট ও প্রকৌশলগত মানের সাথে আপনার প্রজেক্ট শুরু করুন',
         subtitle:
           'আপনার ফ্লোর প্ল্যান বা অফিসের তথ্য শেয়ার করে সাইট ভিজিট ও লিখিত BOQ-এর জন্য সময় নির্ধারণ করুন।',
@@ -1560,9 +1724,9 @@ export const blogPosts = [
         id: 'qa-3',
         number: '03',
         title: 'Q: How Do You Protect Building Safety During Remodeling or Wall Changes?',
-        lead: 'Answer: Every project is supervised directly by an IEB-certified Civil Engineer and Architectural Interior Designer.',
+        lead: 'Answer: Every project is supervised directly by an civil engineer and Architectural Interior Designer.',
         paragraphs: [
-          'Untrained decorators sometimes cut brick walls, channel load-bearing beams, or add heavy stone cladding without structural review. At **Brown’s Interiors**, Founder & Principal Designer **Engr. Aslam Sheikh** holds both architectural interior design credentials and accredited Civil Engineering licensure (IEB A29734).',
+          'Untrained decorators sometimes cut brick walls, channel load-bearing beams, or add heavy stone cladding without structural review. At **Brown’s Interiors**, Founder & Principal Designer **Engr. Aslam Sheikh** holds both architectural interior design credentials and a degree in Civil Engineering.',
           'Whenever a project includes wall reconfiguration, duplex staircases, AC rewiring, or kitchen/bath plumbing shifts, our [engineering and studio team](/team) inspects columns, beams, electrical load limits, and waterproofing first.'
         ],
         proTip: {
@@ -1743,7 +1907,7 @@ export const blogPosts = [
           title: 'প্রশ্ন: ফ্ল্যাট রেনোভেশন বা দেয়াল পরিবর্তনের সময় ভবনের নিরাপত্তা কীভাবে ঠিক রাখা হয়?',
           lead: 'উত্তর: আমাদের প্রতিটি প্রজেক্ট একজন অভিজ্ঞ সিভিল ইঞ্জিনিয়ার ও আর্কিটেকচারাল ডিজাইনারের সরাসরি তত্ত্বাবধানে পরিচালিত হয়।',
           paragraphs: [
-            'অভিজ্ঞতা ছাড়া কাজ করলে অনেকেই ভবনের মূল কাঠামো না বুঝেই দেয়াল কেটে ফেলেন বা ভারী কাজ করে ফ্ল্যাটের ক্ষতি করেন। কিন্তু **Brown’s Interiors**-এর প্রতিষ্ঠাতা ও প্রধান ডিজাইনার **ইঞ্জিনিয়ার আসলাম শেখ** স্থাপত্য ও ইন্টেরিয়র ডিজাইনের পাশাপাশি সিভিল ইঞ্জিনিয়ারিংয়ের একজন নিবন্ধিত প্রকৌশলী (IEB A29734)।',
+            'অভিজ্ঞতা ছাড়া কাজ করলে অনেকেই ভবনের মূল কাঠামো না বুঝেই দেয়াল কেটে ফেলেন বা ভারী কাজ করে ফ্ল্যাটের ক্ষতি করেন। কিন্তু **Brown’s Interiors**-এর প্রতিষ্ঠাতা ও প্রধান ডিজাইনার **ইঞ্জিনিয়ার আসলাম শেখ** স্থাপত্য ও ইন্টেরিয়র ডিজাইনের পাশাপাশি সিভিল ইঞ্জিনিয়ারিংয়ের একজন নিবন্ধিত প্রকৌশলী।',
             'তাই ফ্ল্যাট রেনোভেশন, দেয়াল পরিবর্তন, ডুপ্লেক্স সিঁড়ি কিংবা ভারী সিলিং করার সময় আমাদের [ইঞ্জিনিয়ারিং ও স্টুডিও টিম](/team) ভবনের বিম, কলাম, বৈদ্যুতিক লোড আর পানির লাইনের নিরাপত্তাকে সবার আগে গুরুত্ব দেয়।'
           ],
           proTip: {
@@ -1910,7 +2074,7 @@ export const blogPosts = [
         title: 'Q: How Does Brown’s Interiors Differ From Ordinary Contractors or Decorators?',
         lead: 'Answer: Every space is engineered from structure outward, unifying architecture, civil engineering, and fine joinery.',
         paragraphs: [
-          'Most contractors look only at cosmetics while overlooking load-bearing beams, waterproofing slopes, or electrical wire capacities. At Brown’s Interiors, **Engr. Aslam Sheikh** (IEB A29734) combines formal architectural interior training with certified civil engineering.',
+          'Most contractors look only at cosmetics while overlooking load-bearing beams, waterproofing slopes, or electrical wire capacities. At Brown’s Interiors, **Engr. Aslam Sheikh** combines formal architectural interior training with certified civil engineering.',
           'Whether transforming [residential flats](/services/residential-interior), managing a full [apartment renovation](/services/renovation), or designing new [duplex architecture](/services/architecture), we safeguard building structure first and execute everything through our permanent team so 3D concepts match final reality.'
         ],
         proTip: {
@@ -2091,7 +2255,7 @@ export const blogPosts = [
           title: 'প্রশ্ন: সাধারণ ডেকোরেটর বা ঠিকাদারের চেয়ে Brown’s Interiors কোথায় আলাদা?',
           lead: 'উত্তর: আমাদের কাজে কেবল বাহ্যিক সাজসজ্জা নয়, স্থাপত্য নকশা এবং সিভিল ইঞ্জিনিয়ারিংয়ের নিয়ম মেনে দীর্ঘস্থায়ী সমাধান দেওয়া হয়।',
           paragraphs: [
-            'অনেক ডেকোরেটর কেবল ওপরের সাজসজ্জা দেখে কাজ করেন, কিন্তু ভবনের কাঠামো, বিম-কলাম বা বৈদ্যুতিক লোডের হিসাব রাখেন না। আমাদের স্টুডিওর নেতৃত্বে থাকা **ইঞ্জিনিয়ার আসলাম শেখ** (IEB A29734) স্থাপত্য ও ইন্টেরিয়র ডিজাইনের পাশাপাশি একজন সিভিল ইঞ্জিনিয়ার।',
+            'অনেক ডেকোরেটর কেবল ওপরের সাজসজ্জা দেখে কাজ করেন, কিন্তু ভবনের কাঠামো, বিম-কলাম বা বৈদ্যুতিক লোডের হিসাব রাখেন না। আমাদের স্টুডিওর নেতৃত্বে থাকা **ইঞ্জিনিয়ার আসলাম শেখ** স্থাপত্য ও ইন্টেরিয়র ডিজাইনের পাশাপাশি একজন সিভিল ইঞ্জিনিয়ার।',
             'ফলে [আবাসিক ইন্টেরিয়র](/services/residential-interior) হোক বা [পুরোনো ফ্ল্যাট রেনোভেশন](/services/renovation) কিংবা নতুন [ডুপ্লেক্স স্থাপত্য নকশা](/services/architecture), আমাদের টিম সৌন্দর্যের সাথে ভবনের নিরাপত্তাকে সমান গুরুত্ব দেয়। আর ডিজাইনের পর নিজেরাই সাইটে কাজ করায় নকশার সাথে বাস্তব কাজের কোনো অমিল হয় না।'
           ],
           proTip: {
@@ -2250,7 +2414,7 @@ export const blogPosts = [
   {
     slug: 'how-browns-interiors-works-process',
     aliases: ['our-work-process-bangladesh', 'amader-kajer-dhoron'],
-    title: 'How Our 6-Step Turnkey Process Works',
+    title: 'What Happens After the First Site Visit?',
     subtitle: 'From the first site survey and AutoCAD 2D planning to 3D visualization, itemized BOQs, and final key handover, see how each stage runs.',
     category: 'Our Process',
     categorySlug: 'interior-design',
@@ -2272,7 +2436,7 @@ export const blogPosts = [
       experience: '10+ Years Experience · 250+ Turnkey Projects',
       bio: 'With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh.',
     },
-    excerpt: 'From the first site measurement and 3D visuals to factory build and final handover, see how each stage runs smoothly.',
+    excerpt: 'A walkthrough of the steps between measuring your home and handing it back: drawings, estimates, workshop work, and installation.',
     metaTitle: 'How Our 6-Step Turnkey Interior Process Works | Brown’s Interiors',
     metaDescription: 'Follow our clear 6-step interior workflow from initial site survey and AutoCAD 2D zoning to 3D previews, itemized BOQs, and clean turnkey handover with a 1-year warranty.',
     keywords: [
@@ -2485,13 +2649,13 @@ export const blogPosts = [
       }
     },
     bn: {
-      title: 'কীভাবে ধাপে ধাপে আমাদের ইন্টেরিয়র কাজ সম্পন্ন হয়?',
+      title: 'মাপ নেওয়া থেকে কাজ শেষ: ধাপে ধাপে কী হয়?',
       subtitle: 'প্রথম দিন কথা বলা থেকে শুরু করে ডিজাইন, বাজেট আর ফ্ল্যাটের চাবি বুঝিয়ে দেওয়া পর্যন্ত পুরো কাজটি কীভাবে ধাপে ধাপে এগোয়, দেখে নিন সহজ প্রশ্নোত্তরে।',
       category: 'কাজের ধাপ',
       date: '০৫ অক্টোবর, ২০২৬',
       readTime: '৬ মিনিট পাঠ',
       imageCaption: 'ধাপে ধাপে পরিকল্পনা ও সাইট তদারকির মাধ্যমে প্রস্তুত করা আধুনিক বেডরুম ইন্টেরিয়র।',
-      excerpt: 'প্রথম দিন সাইট পরিদর্শন ও থ্রিডি ডিজাইন থেকে শুরু করে চূড়ান্ত চাবি হস্তান্তর পর্যন্ত আমাদের ৬টি সুশৃঙ্খল ধাপ।',
+      excerpt: 'বাসার মাপ নেওয়ার পর নকশা, খরচের হিসাব, আসবাব তৈরি আর বসানোর কাজ কীভাবে এগোয়, কাজ শুরুর আগে জেনে নিন।',
       tableOfContents: [
         { id: 'step-1', label: 'প্রশ্ন ১: কাজ শুরু করতে চাইলে প্রথম ধাপে কী করা হয়?' },
         { id: 'step-2', label: 'প্রশ্ন ২: ঘরের কোথায় কোন ফার্নিচার বসবে, তা কীভাবে ঠিক হয়?' },
@@ -2695,7 +2859,7 @@ export const blogPosts = [
   {
     slug: 'small-apartment-design-tips',
     aliases: ['dark-vs-bright-interior-colors'],
-    title: '7 Smart Design Ideas for Compact Dhaka Flats',
+    title: 'Small Flat? Start With Layout and Storage',
     subtitle: 'Engineering & interior strategies by Engr. Aslam Sheikh to maximize usable space, amplify natural light, and craft five-star luxury in compact urban flats.',
     category: 'Residential Tips',
     categorySlug: 'residential-interior',
@@ -2717,7 +2881,7 @@ export const blogPosts = [
       experience: '10+ Years Experience · 250+ Turnkey Projects',
       bio: 'With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh.',
     },
-    excerpt: 'Practical layout, storage, and lighting tricks to make 950 to 1,350 sq ft apartments feel bright and spacious.',
+    excerpt: 'Where to put the sofa, what to store out of sight, and how to bring more light into the rooms you use every day.',
     metaTitle: '7 Smart Design Tips for Small Apartments in Dhaka (800–1500 Sq Ft) | Brown’s Interior',
     metaDescription: 'Complete guide to small apartment interior design in Dhaka by Engr. Aslam Sheikh. Space-saving furniture, vertical storage, lighting, and realistic renovation costs.',
     keywords: [
@@ -2982,7 +3146,7 @@ export const blogPosts = [
     bottomCta: {
       eyebrow: 'Book Your Consultation',
       title: 'Ready to Turn Your Dhaka Apartment into an Architectural Masterpiece?',
-      subtitle: 'Schedule a free design and structural consultation with Engr. Aslam Sheikh and our senior architecture team. We inspect your flat, understand your lifestyle, and deliver transparent itemized BOQ estimates.',
+      subtitle: 'Schedule a free design and structural consultation with our senior architecture team. We inspect your flat, understand your lifestyle, and deliver transparent itemized BOQ estimates.',
       primaryBtn: {
         text: 'Book Free Studio Consultation',
         link: '/contact'
@@ -2993,13 +3157,13 @@ export const blogPosts = [
       }
     },
     bn: {
-      title: 'ছোট ফ্ল্যাট সুন্দর ও খোলামেলা রাখার ৭টি উপায়',
+      title: 'ছোট ফ্ল্যাটে জায়গা বাড়াবেন কীভাবে?',
       subtitle: 'ঢাকার ৮০০ থেকে ১,৫০০ বর্গফুট ফ্ল্যাটে জায়গা বাড়ানো, পর্যাপ্ত আলো-বাতাস ধরে রাখা এবং অভিজাত পরিবেশ তৈরির কার্যকর ইঞ্জিনিয়ারিং ও ডিজাইন কৌশল।',
       category: 'হোম টিপস',
       date: '২০ অক্টোবর, ২০২৬',
       readTime: '৯ মিনিট পাঠ',
       imageCaption: 'Brown’s Interior ডিজাইনকৃত আধুনিক মাস্টার বেডরুম: ফ্লুটেড অ্যাকুস্টিক প্যানেল, ওয়ার্ম এলইডি লাইটিং এবং সিলিং-স্পর্শী ক্যাবিনেট।',
-      excerpt: 'সঠিক ফার্নিচার লেআউট, লুকানো স্টোরেজ ও আলোর ব্যবহারে ছোট ফ্ল্যাটকেও বড় এবং খোলামেলা দেখানোর কার্যকর উপায়।',
+      excerpt: 'সোফা কোথায় রাখবেন, জিনিসপত্রের জন্য জায়গা বের করবেন কীভাবে, আর ঘরে আলো আসবে কোন দিক থেকে—এসব নিয়েই কিছু সহজ পরামর্শ।',
       tableOfContents: [
         { id: 'tip-1', label: 'সঠিক রঙের ব্যবহার (হালকা বনাম গাঢ় ভারসাম্য)' },
         { id: 'tip-2', label: 'দেয়ালে আয়নার ব্যবহারে ঘরে গভীরতা ও আলো বাড়ানো' },
@@ -3235,7 +3399,7 @@ export const blogPosts = [
       bottomCta: {
         eyebrow: 'পরামর্শ বুকিং',
         title: 'আপনার ফ্ল্যাটটিকে আরামদায়ক ও নান্দনিক রূপ দিতে প্রস্তুত?',
-        subtitle: 'ফ্লোর প্ল্যান নিয়ে ইঞ্জিনিয়ার আসলাম শেখের টিমের সাথে ফ্রি সাইট ভিজিট ও লিখিত বাজেটের জন্য আজই যোগাযোগ করুন।',
+        subtitle: 'ফ্লোর প্ল্যান নিয়ে আমাদের টিমের সাথে ফ্রি সাইট ভিজিট ও লিখিত বাজেটের জন্য আজই যোগাযোগ করুন।',
         primaryBtn: {
           text: 'ফ্রি পরামর্শ বুক করুন',
           link: '/contact'
@@ -3502,13 +3666,13 @@ export const blogPosts = [
     bottomCta: {
       eyebrow: 'Exhibition Stall Consultancy',
       title: 'Make Your Brand the Undisputed Star of the Trade Expo',
-      subtitle: 'Discuss your booth requirements, booth layout, and fabrication schedule directly with Engr. Aslam Sheikh and our commercial design team.',
+      subtitle: 'Discuss your booth requirements, booth layout, and fabrication schedule directly with our commercial design team.',
       primaryBtn: {
         text: 'Request Free 3D Stall Proposal',
         link: '/contact'
       },
       secondaryBtn: {
-        text: 'WhatsApp Engr. Aslam Sheikh',
+        text: 'Chat on WhatsApp',
         link: 'https://wa.me/8801768436319?text=Hello%20Brown%E2%80%99s%20Interior%2C%20we%20have%20an%20upcoming%20trade%20expo%20booth%20requirement%20and%20would%20like%20to%20discuss%203D%20design%20and%20fabrication.'
       }
     },
@@ -3726,7 +3890,7 @@ export const blogPosts = [
       bottomCta: {
         eyebrow: 'এক্সিবিশন স্টল পরামর্শ',
         title: 'আগামী মেলায় আপনার ব্র্যান্ডকে সবার চোখে সেরা করে তুলুন',
-        subtitle: 'আসন্ন ট্রেড এক্সপোর স্টল লেআউট, থ্রিডি ডিজাইন ও ফ্যাব্রিকেশন শিডিউল নিয়ে কথা বলুন ইঞ্জিনিয়ার আসলাম শেখের টিমের সাথে।',
+        subtitle: 'আসন্ন ট্রেড এক্সপোর স্টল লেআউট, থ্রিডি ডিজাইন ও ফ্যাব্রিকেশন শিডিউল নিয়ে কথা বলুন আমাদের টিমের সাথে।',
         primaryBtn: {
           text: 'ফ্রি ৩ডি স্টল প্রস্তাব নিন',
           link: '/contact'
@@ -3745,7 +3909,7 @@ export const blogPosts = [
     "renovation-budget-planning",
     "apartment-renovation-cost-bangladesh"
   ],
-  "title": "Dhaka Apartment Interior Cost & BOQ Guide",
+  "title": 'Planning Your Interior Budget, Room by Room',
   "subtitle": "Plan a Dhaka apartment interior with clear budget ranges, material specifications, and an itemized Bill of Quantities.",
   "category": "Cost Guide",
   "categorySlug": "residential-renovation",
@@ -3767,7 +3931,7 @@ export const blogPosts = [
     "experience": "10+ Years Experience · 250+ Turnkey Projects",
     "bio": "With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh."
   },
-  "excerpt": "Room-by-room budgets, board and hardware pricing, and per-sq-ft package breakdowns for 1,200 to 2,500 sq ft homes.",
+  "excerpt": 'Before asking for a quote, list what each room needs. Here is how to think through furniture, materials, and the costs that are easy to miss.',
   "metaTitle": "Interior Design Cost in Bangladesh: BOQ & Material Guide (2026) | Brown’s Interior",
   "metaDescription": "Plan a Dhaka apartment interior with Brown’s Interior’s budget benchmarks, a 1,200 sq ft example, material guidance, BOQ checklist, and quotation exclusions.",
   "keywords": [
@@ -4019,13 +4183,13 @@ export const blogPosts = [
     }
   },
   "bn": {
-    "title": "ঢাকায় ফ্ল্যাট ইন্টেরিয়রের খরচ ও বাজেট পরিকল্পনা",
+    "title": 'বাসা সাজানোর বাজেট কোথা থেকে শুরু করবেন?',
     "subtitle": "বর্গফুট ভিত্তিক সম্ভাব্য খরচ, বোর্ড ও হার্ডওয়্যার নির্বাচনের নিয়ম এবং লিখিত BOQ বুঝে আপনার অ্যাপার্টমেন্ট ইন্টেরিয়রের বাজেট তৈরি করুন।",
     "category": "খরচের গাইড",
     "date": "৩০ আগস্ট, ২০২৬",
     "readTime": "৭ মিনিট পাঠ",
     "imageCaption": "Brown’s Interior পোর্টফোলিও থেকে নেওয়া আধুনিক লিভিং রুম: সমন্বিত লাইটিং, ওয়াল ফিনিশ ও কাস্টম ফার্নিচার।",
-    "excerpt": "১২০০ থেকে ২৫০০ বর্গফুট ফ্ল্যাটের রুমভিত্তিক খরচ, বোর্ড ও হার্ডওয়্যারের দাম এবং স্কয়ার ফিট হিসেবে বাজেটের বিস্তারিত হিসাব।",
+    "excerpt": 'কোন ঘরে কী কাজ দরকার, আসবাব আর উপকরণে কতটা রাখবেন, কোন খরচগুলো সহজে চোখ এড়ায়—বাজেট করার আগে এগুলো গুছিয়ে নিন।',
     "tableOfContents": [
       {
         "id": "cost-1",

@@ -110,8 +110,8 @@ export const blogPreviews = [
   },
   {
     "slug": "small-apartment-design-tips",
-    "title": "7 Smart Design Ideas for Compact Dhaka Flats",
-    "bnTitle": "ছোট ফ্ল্যাট সুন্দর ও খোলামেলা রাখার ৭টি উপায়",
+    "title": "Small Flat? Start With Layout and Storage",
+    "bnTitle": "ছোট ফ্ল্যাটে জায়গা বাড়াবেন কীভাবে?",
     "category": "Residential Tips",
     "bnCategory": "হোম টিপস",
     "date": "Oct 20, 2026",
@@ -119,13 +119,13 @@ export const blogPreviews = [
     "readTime": "9 min read",
     "bnReadTime": "৯ মিনিট পাঠ",
     "image": "/portfolio/residential/bedroom-dark-luxury-suite.webp",
-    "excerpt": "Practical layout, storage, and lighting tricks to make 950 to 1,350 sq ft apartments feel bright and spacious.",
-    "bnExcerpt": "সঠিক ফার্নিচার লেআউট, লুকানো স্টোরেজ ও আলোর ব্যবহারে ছোট ফ্ল্যাটকেও বড় এবং খোলামেলা দেখানোর কার্যকর উপায়।"
+    "excerpt": "Where to put the sofa, what to store out of sight, and how to bring more light into the rooms you use every day.",
+    "bnExcerpt": "সোফা কোথায় রাখবেন, জিনিসপত্রের জন্য জায়গা বের করবেন কীভাবে, আর ঘরে আলো আসবে কোন দিক থেকে—এসব নিয়েই কিছু সহজ পরামর্শ।"
   },
   {
     "slug": "how-browns-interiors-works-process",
-    "title": "How Our 6-Step Turnkey Process Works",
-    "bnTitle": "কীভাবে ধাপে ধাপে আমাদের ইন্টেরিয়র কাজ সম্পন্ন হয়?",
+    "title": "What Happens After the First Site Visit?",
+    "bnTitle": "মাপ নেওয়া থেকে কাজ শেষ: ধাপে ধাপে কী হয়?",
     "category": "Our Process",
     "bnCategory": "কাজের ধাপ",
     "date": "Oct 05, 2026",
@@ -133,8 +133,8 @@ export const blogPreviews = [
     "readTime": "6 min read",
     "bnReadTime": "৬ মিনিট পাঠ",
     "image": "/portfolio/residential/bedroom-bay-window-suite.webp",
-    "excerpt": "From the first site measurement and 3D visuals to factory build and final handover, see how each stage runs smoothly.",
-    "bnExcerpt": "প্রথম দিন সাইট পরিদর্শন ও থ্রিডি ডিজাইন থেকে শুরু করে চূড়ান্ত চাবি হস্তান্তর পর্যন্ত আমাদের ৬টি সুশৃঙ্খল ধাপ।"
+    "excerpt": "A walkthrough of the steps between measuring your home and handing it back: drawings, estimates, workshop work, and installation.",
+    "bnExcerpt": "বাসার মাপ নেওয়ার পর নকশা, খরচের হিসাব, আসবাব তৈরি আর বসানোর কাজ কীভাবে এগোয়, কাজ শুরুর আগে জেনে নিন।"
   },
   {
     "slug": "browns-interiors-trusted-interior-studio",
@@ -166,8 +166,8 @@ export const blogPreviews = [
   },
   {
     "slug": "interior-design-cost-in-bangladesh-guide",
-    "title": "Dhaka Apartment Interior Cost & BOQ Guide",
-    "bnTitle": "ঢাকায় ফ্ল্যাট ইন্টেরিয়রের খরচ ও বাজেট পরিকল্পনা",
+    "title": "Planning Your Interior Budget, Room by Room",
+    "bnTitle": "বাসা সাজানোর বাজেট কোথা থেকে শুরু করবেন?",
     "category": "Cost Guide",
     "bnCategory": "খরচের গাইড",
     "date": "Aug 30, 2026",
@@ -175,10 +175,17 @@ export const blogPreviews = [
     "readTime": "7 min read",
     "bnReadTime": "৭ মিনিট পাঠ",
     "image": "/portfolio/residential/living-marble-luxury-hall.webp",
-    "excerpt": "Room-by-room budgets, board and hardware pricing, and per-sq-ft package breakdowns for 1,200 to 2,500 sq ft homes.",
-    "bnExcerpt": "১২০০ থেকে ২৫০০ বর্গফুট ফ্ল্যাটের রুমভিত্তিক খরচ, বোর্ড ও হার্ডওয়্যারের দাম এবং স্কয়ার ফিট হিসেবে বাজেটের বিস্তারিত হিসাব।"
+    "excerpt": "Before asking for a quote, list what each room needs. Here is how to think through furniture, materials, and the costs that are easy to miss.",
+    "bnExcerpt": "কোন ঘরে কী কাজ দরকার, আসবাব আর উপকরণে কতটা রাখবেন, কোন খরচগুলো সহজে চোখ এড়ায়—বাজেট করার আগে এগুলো গুছিয়ে নিন।"
   }
 ];
+
+// Keep the selected homepage articles independent of publication order.
+export const homeBlogPreviews = [
+  "top-10-best-interior-design-company-in-bangladesh",
+  "best-interior-design-company-in-bangladesh-2026-2027",
+  "why-browns-interiors-bangladesh"
+].map(slug => blogPreviews.find(post => post.slug === slug)).filter(Boolean);
 
 export const stats = [
   { value: 250, suffix: '+', label: 'Projects Completed' },

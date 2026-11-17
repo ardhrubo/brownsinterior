@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
-import { testimonials, blogPreviews, stats, processSteps } from '../data/siteData';
+import { testimonials, homeBlogPreviews, stats, processSteps } from '../data/siteData';
 import { useLanguage, processStepsBn, statsBn, serviceCategoryBn, serviceOptionBn, projectCategoryBn } from '../context/LanguageContext';
 import '../styles/site.css';
 import './HomeSections.css';
@@ -814,14 +814,14 @@ export function BlogCard({ post }) {
 
 export function BlogPreview({ cream = false }) {
   const { isBn } = useLanguage();
-  const displayedPosts = blogPreviews.slice(0, 3);
+  const displayedPosts = homeBlogPreviews;
 
   return (
     <section className={`section ${cream ? 'cream' : ''}`}>
       <div className="container">
         <SectionHead
           eyebrow={isBn ? 'ব্লগ ও গাইড' : 'Insights'}
-          title={isBn ? 'সাম্প্রতিক' : 'Latest'}
+          title={isBn ? 'নির্বাচিত' : 'Featured'}
           script={isBn ? 'আর্টিকেল' : 'Articles'}
         />
         <div className="grid-3">

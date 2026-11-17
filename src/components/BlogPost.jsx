@@ -474,11 +474,11 @@ export default function BlogPost() {
             {/* Detailed Content Sections */}
             {Array.isArray(post.sections) &&
               post.sections.map((section, idx) => (
-                <section
-                  key={section.id || idx}
-                  id={section.id}
-                  className="blog-section-block"
-                >
+                <React.Fragment key={section.id || idx}>
+                  <section
+                    id={section.id}
+                    className="blog-section-block"
+                  >
                   <div className="blog-section-header">
                     <h2 className="blog-section-title">{section.title}</h2>
                     {section.lead && (
@@ -565,6 +565,82 @@ export default function BlogPost() {
                     </div>
                   )}
                 </section>
+
+                {/* Top 10 Ranked Firm Directory with Official Logos (inserted after Section 01) */}
+                {idx === 0 && post.rankedFirmsSection && Array.isArray(post.rankedFirmsSection.firms) && (
+                  <section
+                    id={post.rankedFirmsSection.id || 'top-ranking'}
+                    className="blog-ranking-section"
+                  >
+                    <div className="blog-section-header">
+                      <h2 className="blog-section-title">{post.rankedFirmsSection.title}</h2>
+                      {post.rankedFirmsSection.lead && (
+                        <p className="blog-section-lead">{post.rankedFirmsSection.lead}</p>
+                      )}
+                    </div>
+
+                    <div className="blog-ranking-list">
+                      {post.rankedFirmsSection.firms.map((firm, fIdx) => (
+                        <article
+                          key={firm.name || fIdx}
+                          className={`blog-firm-entry${firm.featured ? ' is-featured' : ''}`}
+                        >
+                          <div className="blog-firm-entry-head">
+                            <div className="blog-firm-entry-title-row">
+                              <h3 className="blog-firm-name">{firm.name}</h3>
+                              {firm.logo && (
+                                <span className={`blog-firm-inline-logo${firm.logoBg === 'dark' ? ' is-dark' : ''}`}>
+                                  <img
+                                    src={firm.logo}
+                                    alt={firm.logoAlt || `${firm.name} logo`}
+                                    width="110"
+                                    height="26"
+                                    loading="lazy"
+                                    decoding="async"
+                                  />
+                                </span>
+                              )}
+                            </div>
+
+                            <div className="blog-firm-meta-line">
+                              <span>{firm.location}</span>
+                              {firm.website && (
+                                <>
+                                  <span aria-hidden="true">·</span>
+                                  {firm.isInternal ? (
+                                    <Link to={firm.website} className="blog-firm-text-link">
+                                      {firm.websiteLabel || 'brownsinterior.com'}
+                                    </Link>
+                                  ) : (
+                                    <a
+                                      href={firm.website}
+                                      target="_blank"
+                                      rel="noopener noreferrer nofollow"
+                                      className="blog-firm-text-link"
+                                    >
+                                      {firm.websiteLabel}
+                                    </a>
+                                  )}
+                                </>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="blog-section-body">
+                            {Array.isArray(firm.paragraphs) && firm.paragraphs.length > 0 ? (
+                              firm.paragraphs.map((para, pIdx) => (
+                                <p key={pIdx}>{renderRichText(para)}</p>
+                              ))
+                            ) : (
+                              <p>{renderRichText(firm.summary)}</p>
+                            )}
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </React.Fragment>
               ))}
 
             {/* Video Showcase Section */}
@@ -637,8 +713,8 @@ export default function BlogPost() {
                   </h3>
                   <p className="blog-faqs-sub">
                     {isBn
-                      ? 'বাংলাদেশের আবহাওয়া, কাজের সময়সীমা, ম্যাটেরিয়াল ও খরচ সম্পর্কে সাধারণ প্রশ্নের উত্তর দিয়েছেন ইঞ্জিনিয়ার আসলাম শেখ।'
-                      : 'Direct answers by Engr. Aslam Sheikh regarding costs, execution timelines, and materials in Bangladesh.'}
+                      ? 'কাজের সময়সীমা, উপকরণ ও খরচ নিয়ে কিছু সাধারণ প্রশ্নের উত্তর।'
+                      : 'Answers to common questions about costs, timelines, and materials.'}
                   </p>
                 </div>
 
@@ -719,7 +795,7 @@ export default function BlogPost() {
                     className="blog-btn-whatsapp"
                   >
                     <FaWhatsapp size={19} className="wa-icon" />
-                    <span>{post.bottomCta.secondaryBtn?.text || (isBn ? 'হোয়াটসঅ্যাপে কথা বলুন' : 'WhatsApp Engr. Aslam')}</span>
+                    <span>{post.bottomCta.secondaryBtn?.text || (isBn ? 'হোয়াটসঅ্যাপে কথা বলুন' : 'Chat on WhatsApp')}</span>
                   </a>
                 </div>
                 <div className="blog-bottom-phone">
@@ -781,7 +857,7 @@ export default function BlogPost() {
                     alt="Engr. Aslam Sheikh - Founder & Principal Designer"
                     className="blog-sidebar-lead-img"
                   />
-                  <span className="blog-sidebar-lead-badge" title="Certified IEB Engineer">
+                  <span className="blog-sidebar-lead-badge" title="Principal Designer">
                     <ShieldCheck size={12} strokeWidth={2.4} />
                   </span>
                 </div>
@@ -791,7 +867,6 @@ export default function BlogPost() {
                 <span className="blog-sidebar-lead-role">
                   {isBn ? 'প্রতিষ্ঠাতা ও প্রিন্সিপাল ডিজাইনার' : 'Founder & Principal Designer'}
                 </span>
-                <span className="blog-sidebar-lead-qual">B.Sc. Civil Engg. · IEB A29734</span>
               </div>
               <p style={{ fontSize: '0.86rem', color: '#5a544e', margin: '0.85rem 0 1rem', lineHeight: 1.5 }}>
                 {isBn
@@ -805,7 +880,7 @@ export default function BlogPost() {
                 className="blog-sidebar-wa-btn"
               >
                 <FaWhatsapp size={17} className="wa-icon" />
-                <span>{isBn ? 'হোয়াটসঅ্যাপে কথা বলুন' : 'WhatsApp Engr. Aslam'}</span>
+                <span>{isBn ? 'হোয়াটসঅ্যাপে কথা বলুন' : 'Chat on WhatsApp'}</span>
               </a>
             </div>
 
