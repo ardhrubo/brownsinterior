@@ -8,6 +8,7 @@ import { servicesData, findServiceOrOption } from '../data/servicesData';
 import { SectionHead, ProcessTimeline } from './HomeSections';
 import SEO from './SEO';
 import NotFound from './NotFound';
+import { SITE_URL } from '../lib/site-url';
 import '../styles/site.css';
 import './ServiceDetail.css';
 
@@ -85,13 +86,44 @@ export default function ServiceDetail() {
     : [];
   const otherCategories = servicesData.filter((s) => s.slug !== category.slug);
 
+  const serviceDesc = data.intro || data.tagline || data.desc || data.description;
+  const serviceImg = data.image || (data.gallery && data.gallery[0]) || '/og-image.jpg';
+  const serviceSchemas = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: data.title,
+      description: serviceDesc,
+      serviceType: category?.title || data.title,
+      image: serviceImg.startsWith('http') ? serviceImg : `${SITE_URL}${serviceImg}`,
+      url: `${SITE_URL}/services/${targetSlug}`,
+      provider: { '@id': `${SITE_URL}/#organization` },
+      areaServed: { '@type': 'Country', name: 'Bangladesh' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
+        ...(isCategory
+          ? [{ '@type': 'ListItem', position: 3, name: data.title, item: `${SITE_URL}/services/${targetSlug}` }]
+          : [
+              { '@type': 'ListItem', position: 3, name: category.title, item: `${SITE_URL}/services/${category.slug}` },
+              { '@type': 'ListItem', position: 4, name: data.title, item: `${SITE_URL}/services/${targetSlug}` },
+            ]),
+      ],
+    },
+  ];
+
   return (
     <main className="sd-page">
       <SEO
         title={`${data.title} - Interior & Architectural Service`}
-        description={data.intro || data.tagline || data.desc || data.description}
+        description={serviceDesc}
         canonicalPath={`/services/${targetSlug}`}
-        image={data.image || (data.gallery && data.gallery[0])}
+        image={serviceImg}
+        schema={serviceSchemas}
       />
       {/* Service Headline Section (separable from showcase hero) */}
       <section className="sd-head-section">

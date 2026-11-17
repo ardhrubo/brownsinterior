@@ -19,7 +19,8 @@ export default function SEO({
   schema,
 }) {
   const location = useLocation();
-  const fullTitle = title ? `${title} | ${BRAND_NAME}` : DEFAULT_TITLE;
+  const hasBrandInTitle = title && /brown['’]?s\s+interior/i.test(title);
+  const fullTitle = title ? (hasBrandInTitle ? title : `${title} | ${BRAND_NAME}`) : DEFAULT_TITLE;
   const fullDesc = description || DEFAULT_DESC;
   const fullKeywords = keywords ? `${keywords}, ${DEFAULT_KEYWORDS}` : DEFAULT_KEYWORDS;
   const rawPath = canonicalPath || location.pathname;

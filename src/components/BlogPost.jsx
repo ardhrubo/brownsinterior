@@ -229,15 +229,34 @@ export default function BlogPost() {
     },
     publisher: {
       '@type': 'Organization',
-      name: "Brown's Interior",
+      name: "Brown's Interiors",
+      alternateName: ["Brown's Interior", "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও"],
       url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/og-image.jpg`,
+        url: `${SITE_URL}/favicon-512x512.png`,
+        width: 512,
+        height: 512,
       },
     },
     keywords: Array.isArray(post.keywords) ? post.keywords.join(', ') : undefined,
   };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
+    ],
+  };
+
+  const stripMarkdown = (text = '') =>
+    String(text)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/\*([^*]+)\*/g, '$1');
 
   const faqSchema =
     Array.isArray(post.faqs) && post.faqs.length > 0
@@ -249,13 +268,29 @@ export default function BlogPost() {
             name: faq.question,
             acceptedAnswer: {
               '@type': 'Answer',
-              text: faq.answer,
+              text: stripMarkdown(faq.answer),
             },
           })),
         }
       : null;
 
-  const dynamicSchemas = faqSchema ? [blogPostingSchema, faqSchema] : [blogPostingSchema];
+  const itemListSchema =
+    Array.isArray(post.featuredFirms) && post.featuredFirms.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: post.title,
+          numberOfItems: post.featuredFirms.length,
+          itemListElement: post.featuredFirms.map((firm, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: firm.name,
+            ...(firm.url ? { url: firm.url } : {}),
+          })),
+        }
+      : null;
+
+  const dynamicSchemas = [blogPostingSchema, breadcrumbSchema, itemListSchema, faqSchema].filter(Boolean);
 
   const shareUrl = encodeURIComponent(`${SITE_URL}/blog/${post.slug}`);
   const shareTitle = encodeURIComponent(post.title);
@@ -272,6 +307,7 @@ export default function BlogPost() {
       <SEO
         title={post.metaTitle || post.title}
         description={post.metaDescription || post.excerpt}
+        keywords={Array.isArray(post.keywords) ? post.keywords.join(', ') : post.keywords}
         canonicalPath={`/blog/${post.slug}`}
         image={post.image}
         type="article"

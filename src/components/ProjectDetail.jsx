@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Calculator, Phone } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 import SEO from './SEO';
+import { SITE_URL } from '../lib/site-url';
 
 import NotFound from './NotFound';
 
@@ -15,13 +16,38 @@ export default function ProjectDetail() {
     return <NotFound message="We could not find the interior project you requested." />;
   }
 
+  const projectImg = project.coverImage || project.image || '/og-image.jpg';
+  const projectSchemas = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: project.title,
+      description: project.description,
+      image: projectImg.startsWith('http') ? projectImg : `${SITE_URL}${projectImg}`,
+      url: `${SITE_URL}/project/${project.id}`,
+      creator: { '@id': `${SITE_URL}/#organization` },
+      locationCreated: project.location ? { '@type': 'Place', name: project.location } : undefined,
+      dateCreated: project.year,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Projects', item: `${SITE_URL}/projects` },
+        { '@type': 'ListItem', position: 3, name: project.title, item: `${SITE_URL}/project/${project.id}` },
+      ],
+    },
+  ];
+
   return (
     <main style={{ minHeight: '100vh' }}>
       <SEO
         title={`${project.title} - Interior Project`}
         description={project.description}
         canonicalPath={`/project/${project.id}`}
-        image={project.coverImage || project.image}
+        image={projectImg}
+        schema={projectSchemas}
       />
       <section className="section page-head-section">
         <div className="container">

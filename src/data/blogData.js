@@ -42,13 +42,38 @@ export const blogPosts = [
     metaDescription:
       'Looking for the best interior design company in Bangladesh? Compare the leading interior firms in Dhaka for 2026, evaluated on engineering credentials, itemized BOQ pricing, and turnkey execution.',
     keywords: [
+      'top 10 interior design firms in bangladesh',
       'top 10 best interior design company in bangladesh',
       'best interior design company in bangladesh',
       'best interior design company in dhaka',
       'interior design firm bangladesh',
       'turnkey interior company dhaka',
       'Browns Interiors',
+      "Brown's Interior",
       'Engr Aslam Sheikh',
+      'Interior Studio Dhaka',
+      'Zero Inch Interior',
+      'Chitron Interior',
+      'Dew Interior Design',
+      'DIT Studio Dhaka',
+      'DesignAge Bangladesh',
+      'Interior Squad Dhaka',
+      'Aesthetic Interior Bangladesh',
+      'BD Interior Dhaka',
+      'বাংলাদেশের শীর্ষ ১০টি ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান',
+      'ঢাকার সেরা ইন্টেরিয়র ডিজাইন কোম্পানি',
+    ],
+    featuredFirms: [
+      { name: "Brown's Interiors", url: 'https://www.brownsinterior.com/' },
+      { name: 'Interior Studio' },
+      { name: 'Zero Inch Interior' },
+      { name: 'Chitron Interior' },
+      { name: 'Dew Interior Design' },
+      { name: 'DIT Studio' },
+      { name: 'DesignAge' },
+      { name: 'Interior Squad' },
+      { name: 'Aesthetic Interior' },
+      { name: 'BD Interior' },
     ],
     body: [
       'Finding a reliable interior design company in Bangladesh has become both easier and trickier than ever. Dozens of studios showcase glossy 3D renders on social media, yet apartment owners in Gulshan, Banani, Uttara, Dhanmondi, and Bashundhara still run into the same real-world problems: surprise mid-project cost hikes, sub-standard plywood that swells after one monsoon, unsafe wall modifications, and missed handover dates.',
@@ -65,7 +90,7 @@ export const blogPosts = [
     ],
     intro: [
       'Choosing the right interior design firm in Dhaka or anywhere in Bangladesh is a high-stakes financial and structural decision. Pretty moodboards are easy to generate, but turning a bare concrete flat or commercial floor into a safe, durable, moisture-resistant space requires coordinated architecture, civil engineering, MEP planning, and disciplined site supervision.',
-      'In this 2026 buyer’s guide, we break down leading interior design companies in Bangladesh, explain what each firm focuses on, and show why **Brown’s Interiors** leads the market for clients who demand both architectural refinement and zero-surprise execution.',
+      'In this 2026 buyer’s guide, we break down **10 leading interior design firms in Bangladesh**—covering **Brown’s Interiors**, **Interior Studio**, **Zero Inch Interior**, **Chitron Interior**, **Dew Interior Design**, **DIT Studio**, **DesignAge**, **Interior Squad**, **Aesthetic Interior**, and **BD Interior**—explain what each firm focuses on, and show why **Brown’s Interiors** leads the market for clients who demand both architectural refinement and zero-surprise execution.',
     ],
     sections: [
       {
@@ -126,10 +151,10 @@ export const blogPosts = [
         title: 'Notable Contemporary Interior Firms in Dhaka',
         lead: 'Several established Dhaka studios serve distinct segments ranging from boutique styling and corporate offices to virtual e-design consultations.',
         paragraphs: [
-          '**Zero Inch Interiors Ltd.:** Well known in Dhaka’s contemporary commercial and residential space for conceptual aesthetics and urban apartment interiors, suitable for clients seeking curated modern styling.',
           '**Interior Studio:** Focuses on tailored apartment interiors, custom cabinetry, ceiling detailing, and practical residential fit-outs for homeowners across Dhaka.',
-          '**Aesthetic Interior:** Known for modern residential styling, sleek modular layouts, and turnkey apartment and commercial interior finishes.',
-          '**Shadow Interior:** Handles residential, corporate, and restaurant interior design and execution projects with custom furniture and site fit-out services across Dhaka.',
+          '**Zero Inch Interior:** Well known in Dhaka’s contemporary commercial and residential space for conceptual aesthetics and urban apartment interiors, suitable for clients seeking curated modern styling.',
+          '**Chitron Interior:** An established Dhaka interior design and project execution firm handling residential apartments, corporate spaces, and commercial fit-outs.',
+          '**Dew Interior Design:** A full-service Dhaka consultancy operating since 2010, covering residential apartments, corporate offices, retail showrooms, false ceilings, and custom furniture.',
           'When comparing any of these Dhaka studios with **Brown’s Interiors**, prospective clients should evaluate whether full civil/structural engineering review, exhibition booth fabrication, and strictly itemized line-by-line BOQs are included natively or subcontracted.',
         ],
         proTip: {
@@ -153,11 +178,12 @@ export const blogPosts = [
         title: 'Established Interior & Architectural Studios in Bangladesh',
         lead: 'Alongside boutique specialists, several long-standing Dhaka interior and architectural practices cover residential makeovers, showrooms, and contractor fit-outs.',
         paragraphs: [
-          '**Chitron Interior:** An established Dhaka interior design and project execution firm handling residential apartments, corporate spaces, and commercial fit-outs.',
-          '**Design & Ideas Technology (DIT):** An architecture, engineering, and interior firm recognized for turnkey residential and commercial interior execution alongside building consultancy across Dhaka.',
+          '**DIT Studio:** An architecture, engineering, and interior studio recognized for turnkey residential and commercial interior execution alongside building design and consultancy across Dhaka.',
+          '**DesignAge:** Known in Dhaka’s interior and furniture market for turnkey interior solutions alongside decorative boards, HPL, cabinetry, and multiple showroom hubs across the city.',
+          '**Interior Squad:** A Dhaka architecture and interior design studio handling turnkey residential apartments, duplexes, and corporate workspaces from 3D visualization to site handover.',
+          '**Aesthetic Interior:** Known for modern residential styling, sleek modular layouts, and turnkey apartment and commercial interior finishes.',
           '**BD Interior:** Known for straightforward residential, office, and showroom interior execution across the city.',
-          '**Sheraspace:** Recognized for bringing structured e-design consultations and modular apartment packages to younger homeowners looking for remote layout planning or room-by-room refreshes.',
-          '**Dream Touch Architects Ltd.:** A longstanding name in Dhaka covering both architectural consultancy and interior remodeling for residential buildings and offices. Across all established studios, buyers should double-check drawing completeness, payment milestones, and post-handover snag-rectification commitments before signing.',
+          'Across all established studios, buyers should double-check drawing completeness, payment milestones, and post-handover snag-rectification commitments before signing.',
         ],
         proTip: {
           title: 'Protecting Yourself During Remodeling',
@@ -295,7 +321,7 @@ export const blogPosts = [
       ],
       intro: [
         'ঢাকা বা বাংলাদেশের যেকোনো প্রান্তে ফ্ল্যাট কিংবা অফিস সাজানোর জন্য সঠিক ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান বেছে নেওয়া একটি বড় আর্থিক ও কাঠামোগত সিদ্ধান্ত। সামাজিক মাধ্যমে সুন্দর থ্রিডি ছবি দেখে সিদ্ধান্ত নেওয়া সহজ, কিন্তু বাস্তবে কংক্রিটের একটি ফ্ল্যাটকে আরামদায়ক, আর্দ্রতা-সহনশীল ও টেকসই রূপ দিতে প্রয়োজন আর্কিটেকচারাল নকশা, সিভিল ইঞ্জিনিয়ারিং, ইলেকট্রিক্যাল-প্লাম্বিং (MEP) পরিকল্পনা এবং সাইটে সার্বক্ষণিক তদারকি।',
-        'এই ২০২৬ সালের গাইডে আমরা **বাংলাদেশের শীর্ষ ১০টি ইন্টেরিয়র ডিজাইন প্রতিষ্ঠানের** পরিচিতি, কাজের ধরন এবং কেন নিখুঁত টার্নকি কাজের জন্য **Brown’s Interiors** ক্লায়েন্টদের প্রথম পছন্দ হিসেবে এগিয়ে রয়েছে, তা সহজভাবে তুলে ধরেছি।',
+        'এই ২০২৬ সালের গাইডে আমরা বাংলাদেশের শীর্ষ ১০টি ইন্টেরিয়র ডিজাইন প্রতিষ্ঠান—**Brown’s Interiors**, **Interior Studio**, **Zero Inch Interior**, **Chitron Interior**, **Dew Interior Design**, **DIT Studio**, **DesignAge**, **Interior Squad**, **Aesthetic Interior** এবং **BD Interior**—এর পরিচিতি, কাজের ধরন এবং কেন নিখুঁত টার্নকি কাজের জন্য **Brown’s Interiors** ক্লায়েন্টদের প্রথম পছন্দ হিসেবে এগিয়ে রয়েছে, তা সহজভাবে তুলে ধরেছি।',
       ],
       sections: [
         {
@@ -356,10 +382,10 @@ export const blogPosts = [
           title: 'ঢাকার সমসাময়িক কয়েকটি পরিচিত ইন্টেরিয়র প্রতিষ্ঠান',
           lead: 'আধুনিক ফ্ল্যাট সাজানো, অনলাইন পরামর্শ এবং করপোরেট অফিস ইন্টেরিয়রের জন্য ঢাকায় আরও কিছু সুপরিচিত স্টুডিও কাজ করছে।',
           paragraphs: [
-            '**Zero Inch Interiors Ltd.:** সমসাময়িক শহুরে ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়রের নান্দনিক ডিজাইনের জন্য ঢাকায় বেশ পরিচিত।',
             '**Interior Studio:** ঢাকার আবাসিক ফ্ল্যাটের কাস্টম ক্যাবিনেট, সিলিং ডিজাইন এবং কার্যকর ইন্টেরিয়র কাজের জন্য পরিচিত।',
-            '**Aesthetic Interior:** আধুনিক আবাসিক ও বাণিজ্যিক স্পেসের স্টাইলিং, মডিউলার লেআউট ও ফিনিশিংয়ের জন্য পরিচিত।',
-            '**Shadow Interior:** ঢাকার বাসা, করপোরেট অফিস ও রেস্টুরেন্ট ইন্টেরিয়র ডিজাইন এবং কাস্টম ফার্নিচারসহ ফিট-আউট সেবা প্রদান করে।',
+            '**Zero Inch Interior:** সমসাময়িক শহুরে ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়রের নান্দনিক ডিজাইনের জন্য ঢাকায় বেশ পরিচিত।',
+            '**Chitron Interior:** ঢাকার আবাসিক ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়র ডিজাইন এবং প্রজেক্ট বাস্তবায়নের ক্ষেত্রে একটি সুপরিচিত প্রতিষ্ঠান।',
+            '**Dew Interior Design:** ২০১০ সাল থেকে ঢাকায় আবাসিক ফ্ল্যাট, করপোরেট অফিস, শোরুম, ফলস সিলিং ও কাস্টম ফার্নিচারসহ পূর্ণাঙ্গ ইন্টেরিয়র সেবা দিয়ে আসছে।',
             'যেকোনো প্রতিষ্ঠান নির্বাচনের সময় সিভিল ইঞ্জিনিয়ারিং পর্যালোচনা, নিজস্ব এক্সিবিশন টিম এবং লিখিত BOQ পুরোপুরি অন্তর্ভুক্ত কি না তা যাচাই করে নেওয়া উচিত।',
           ],
           proTip: {
@@ -383,11 +409,12 @@ export const blogPosts = [
           title: 'বাংলাদেশের অন্যান্য প্রতিষ্ঠিত ইন্টেরিয়র স্টুডিও',
           lead: 'আবাসিক রিনোভেশন, শোরুম এবং সাধারণ ফিট-আউট কাজের জন্য দীর্ঘদিন ধরে সেবা দিচ্ছে আরও কয়েকটি স্টুডিও।',
           paragraphs: [
-            '**Chitron Interior:** ঢাকার আবাসিক ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়র ডিজাইন এবং প্রজেক্ট বাস্তবায়নের ক্ষেত্রে একটি সুপরিচিত প্রতিষ্ঠান।',
-            '**Design & Ideas Technology (DIT):** ঢাকায় আর্কিটেকচার, ইঞ্জিনিয়ারিং ও টার্নকি ইন্টেরিয়র ডিজাইন এবং বিল্ডিং কনসালটেন্সি সেবার জন্য পরিচিত।',
+            '**DIT Studio:** ঢাকায় আর্কিটেকচার, ইঞ্জিনিয়ারিং ও টার্নকি ইন্টেরিয়র ডিজাইন এবং বিল্ডিং কনসালটেন্সি সেবার জন্য পরিচিত।',
+            '**DesignAge:** ঢাকায় টার্নকি ইন্টেরিয়র সমাধানের পাশাপাশি ডেকোরেটিভ বোর্ড, HPL, ক্যাবিনেট ও একাধিক শোরুমের জন্য পরিচিত।',
+            '**Interior Squad:** থ্রিডি ভিজ্যুয়ালাইজেশন থেকে শুরু করে সাইট হ্যান্ডওভার পর্যন্ত আবাসিক অ্যাপার্টমেন্ট, ডুপ্লেক্স ও করপোরেট অফিসের টার্নকি ইন্টেরিয়র ডিজাইন ও বাস্তবায়ন করে থাকে।',
+            '**Aesthetic Interior:** আধুনিক আবাসিক ও বাণিজ্যিক স্পেসের স্টাইলিং, মডিউলার লেআউট ও ফিনিশিংয়ের জন্য পরিচিত।',
             '**BD Interior:** ঢাকার বিভিন্ন এলাকায় আবাসিক, অফিস ও শোরুম ডেকোরেশনের কাজ করে থাকে।',
-            '**Sheraspace:** মূলত অনলাইন ডিজাইন পরামর্শ এবং তরুণ ফ্ল্যাট মালিকদের জন্য মডিউলার রুম মেকওভার প্যাকেজের জন্য জনপ্রিয়।',
-            '**Dream Touch Architects Ltd.:** আবাসিক ও বাণিজ্যিক ভবনের আর্কিটেকচারাল পরামর্শ ও ইন্টেরিয়র রিমডেলিংয়ে দীর্ঘ অভিজ্ঞতা রয়েছে। যেকোনো সেবাদাতার সাথে কাজের আগে বিস্তারিত ওয়ার্কিং ড্রয়িং ও পেমেন্ট মাইলফলক নিশ্চিত করে নেওয়া ভালো।',
+            'যেকোনো সেবাদাতার সাথে কাজের আগে বিস্তারিত ওয়ার্কিং ড্রয়িং ও পেমেন্ট মাইলফলক নিশ্চিত করে নেওয়া ভালো।',
           ],
           proTip: {
             title: 'রিনোভেশনের সময় নিরাপত্তা নিশ্চিত করুন',
