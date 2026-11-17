@@ -127,9 +127,9 @@ export const blogPosts = [
         lead: 'Several established Dhaka studios serve distinct segments ranging from boutique styling and corporate offices to virtual e-design consultations.',
         paragraphs: [
           '**Zero Inch Interiors Ltd.:** Well known in Dhaka’s contemporary commercial and residential space for conceptual aesthetics and urban apartment interiors, suitable for clients seeking curated modern styling.',
-          '**Sheraspace:** Recognized for bringing structured e-design consultations and modular apartment packages to younger homeowners looking for remote layout planning or room-by-room refreshes.',
-          '**Imagine Interiors:** Known for its visible footprint across corporate offices, retail spaces, and lifestyle fit-outs in Dhaka.',
-          '**Minimal Limited:** Focuses on clean, minimalist architectural interiors and bespoke furniture styling.',
+          '**Interior Studio:** Focuses on tailored apartment interiors, custom cabinetry, ceiling detailing, and practical residential fit-outs for homeowners across Dhaka.',
+          '**Aesthetic Interior:** Known for modern residential styling, sleek modular layouts, and turnkey apartment and commercial interior finishes.',
+          '**Shadow Interior:** Handles residential, corporate, and restaurant interior design and execution projects with custom furniture and site fit-out services across Dhaka.',
           'When comparing any of these Dhaka studios with **Brown’s Interiors**, prospective clients should evaluate whether full civil/structural engineering review, exhibition booth fabrication, and strictly itemized line-by-line BOQs are included natively or subcontracted.',
         ],
         proTip: {
@@ -153,11 +153,11 @@ export const blogPosts = [
         title: 'Established Interior & Architectural Studios in Bangladesh',
         lead: 'Alongside boutique specialists, several long-standing Dhaka interior and architectural practices cover residential makeovers, showrooms, and contractor fit-outs.',
         paragraphs: [
-          '**Dream Touch Architects Ltd.:** A longstanding name in Dhaka covering both architectural consultancy and interior remodeling for residential buildings and offices.',
-          '**Interior Studio Ace:** Focuses on tailored apartment interiors, ceilings, and custom cabinetry for mid-to-upper residential clients.',
-          '**BD Interior:** Known for straightforward residential and showroom interior execution across the city.',
-          '**Rongin Interior:** Serves homeowners looking for decorative wall treatments, lighting accents, and apartment upgrades across Dhaka neighborhoods.',
-          '**Creative Interior:** Provides residential and retail interior execution packages. Across all established studios, buyers should double-check drawing completeness, payment milestones, and post-handover snag-rectification commitments before signing.',
+          '**Chitron Interior:** An established Dhaka interior design and project execution firm handling residential apartments, corporate spaces, and commercial fit-outs.',
+          '**Design & Ideas Technology (DIT):** An architecture, engineering, and interior firm recognized for turnkey residential and commercial interior execution alongside building consultancy across Dhaka.',
+          '**BD Interior:** Known for straightforward residential, office, and showroom interior execution across the city.',
+          '**Sheraspace:** Recognized for bringing structured e-design consultations and modular apartment packages to younger homeowners looking for remote layout planning or room-by-room refreshes.',
+          '**Dream Touch Architects Ltd.:** A longstanding name in Dhaka covering both architectural consultancy and interior remodeling for residential buildings and offices. Across all established studios, buyers should double-check drawing completeness, payment milestones, and post-handover snag-rectification commitments before signing.',
         ],
         proTip: {
           title: 'Protecting Yourself During Remodeling',
@@ -357,9 +357,9 @@ export const blogPosts = [
           lead: 'আধুনিক ফ্ল্যাট সাজানো, অনলাইন পরামর্শ এবং করপোরেট অফিস ইন্টেরিয়রের জন্য ঢাকায় আরও কিছু সুপরিচিত স্টুডিও কাজ করছে।',
           paragraphs: [
             '**Zero Inch Interiors Ltd.:** সমসাময়িক শহুরে ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়রের নান্দনিক ডিজাইনের জন্য ঢাকায় বেশ পরিচিত।',
-            '**Sheraspace:** মূলত অনলাইন ডিজাইন পরামর্শ এবং তরুণ ফ্ল্যাট মালিকদের জন্য মডিউলার রুম মেকওভার প্যাকেজের জন্য জনপ্রিয়।',
-            '**Imagine Interiors:** ঢাকার বিভিন্ন করপোরেট অফিস ও রিটেইল লাইফস্টাইল ফিট-আউট কাজের জন্য পরিচিত নাম।',
-            '**Minimal Limited:** পরিচ্ছন্ন মিনিমালিস্ট আর্কিটেকচারাল ডিজাইন এবং কাস্টম ফার্নিচার স্টাইলিংয়ের জন্য পরিচিত।',
+            '**Interior Studio:** ঢাকার আবাসিক ফ্ল্যাটের কাস্টম ক্যাবিনেট, সিলিং ডিজাইন এবং কার্যকর ইন্টেরিয়র কাজের জন্য পরিচিত।',
+            '**Aesthetic Interior:** আধুনিক আবাসিক ও বাণিজ্যিক স্পেসের স্টাইলিং, মডিউলার লেআউট ও ফিনিশিংয়ের জন্য পরিচিত।',
+            '**Shadow Interior:** ঢাকার বাসা, করপোরেট অফিস ও রেস্টুরেন্ট ইন্টেরিয়র ডিজাইন এবং কাস্টম ফার্নিচারসহ ফিট-আউট সেবা প্রদান করে।',
             'যেকোনো প্রতিষ্ঠান নির্বাচনের সময় সিভিল ইঞ্জিনিয়ারিং পর্যালোচনা, নিজস্ব এক্সিবিশন টিম এবং লিখিত BOQ পুরোপুরি অন্তর্ভুক্ত কি না তা যাচাই করে নেওয়া উচিত।',
           ],
           proTip: {
@@ -383,11 +383,11 @@ export const blogPosts = [
           title: 'বাংলাদেশের অন্যান্য প্রতিষ্ঠিত ইন্টেরিয়র স্টুডিও',
           lead: 'আবাসিক রিনোভেশন, শোরুম এবং সাধারণ ফিট-আউট কাজের জন্য দীর্ঘদিন ধরে সেবা দিচ্ছে আরও কয়েকটি স্টুডিও।',
           paragraphs: [
-            '**Dream Touch Architects Ltd.:** আবাসিক ও বাণিজ্যিক ভবনের আর্কিটেকচারাল পরামর্শ ও ইন্টেরিয়র রিমডেলিংয়ে দীর্ঘ অভিজ্ঞতা রয়েছে।',
-            '**Interior Studio Ace:** মধ্যম ও উচ্চবিত্ত ফ্ল্যাটের সিলিং, ক্যাবিনেট ও ইন্টেরিয়র কাজে নিয়োজিত।',
-            '**BD Interior:** ঢাকার বিভিন্ন এলাকায় আবাসিক ও শোরুম ডেকোরেশনের কাজ করে থাকে।',
-            '**Rongin Interior:** দেয়ালের সাজসজ্জা, লাইটিং ও সাধারণ অ্যাপার্টমেন্ট আপগ্রেডের জন্য পরিচিত।',
-            '**Creative Interior:** বাসা ও রিটেইল দোকানের ইন্টেরিয়র প্যাকেজ প্রদান করে। যেকোনো সেবাদাতার সাথে কাজের আগে বিস্তারিত ওয়ার্কিং ড্রয়িং ও পেমেন্ট মাইলফলক নিশ্চিত করে নেওয়া ভালো।',
+            '**Chitron Interior:** ঢাকার আবাসিক ফ্ল্যাট ও বাণিজ্যিক ইন্টেরিয়র ডিজাইন এবং প্রজেক্ট বাস্তবায়নের ক্ষেত্রে একটি সুপরিচিত প্রতিষ্ঠান।',
+            '**Design & Ideas Technology (DIT):** ঢাকায় আর্কিটেকচার, ইঞ্জিনিয়ারিং ও টার্নকি ইন্টেরিয়র ডিজাইন এবং বিল্ডিং কনসালটেন্সি সেবার জন্য পরিচিত।',
+            '**BD Interior:** ঢাকার বিভিন্ন এলাকায় আবাসিক, অফিস ও শোরুম ডেকোরেশনের কাজ করে থাকে।',
+            '**Sheraspace:** মূলত অনলাইন ডিজাইন পরামর্শ এবং তরুণ ফ্ল্যাট মালিকদের জন্য মডিউলার রুম মেকওভার প্যাকেজের জন্য জনপ্রিয়।',
+            '**Dream Touch Architects Ltd.:** আবাসিক ও বাণিজ্যিক ভবনের আর্কিটেকচারাল পরামর্শ ও ইন্টেরিয়র রিমডেলিংয়ে দীর্ঘ অভিজ্ঞতা রয়েছে। যেকোনো সেবাদাতার সাথে কাজের আগে বিস্তারিত ওয়ার্কিং ড্রয়িং ও পেমেন্ট মাইলফলক নিশ্চিত করে নেওয়া ভালো।',
           ],
           proTip: {
             title: 'রিনোভেশনের সময় নিরাপত্তা নিশ্চিত করুন',
