@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -96,7 +96,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/team" element={<Navigate to="/about" replace />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/renovation" element={<Navigate to="/services/renovation-remodeling" replace />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/services/:categorySlug/:slug" element={<ServiceDetail />} />
             <Route path="/process" element={<ProcessPage />} />
@@ -104,9 +106,9 @@ function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/cost-estimator" element={<CostCalculatorPage />} />
-            <Route path="/cost-calculator" element={<CostCalculatorPage />} />
+            <Route path="/cost-calculator" element={<Navigate to="/cost-estimator" replace />} />
             <Route path="/careers" element={<CareersPage />} />
-            <Route path="/career" element={<CareersPage />} />
+            <Route path="/career" element={<Navigate to="/careers" replace />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/project/:id" element={<ProjectDetail />} />

@@ -609,7 +609,7 @@ export default function BlogPost() {
                                   <span aria-hidden="true">·</span>
                                   {firm.isInternal ? (
                                     <Link to={firm.website} className="blog-firm-text-link">
-                                      {firm.websiteLabel || 'brownsinterior.com'}
+                                      {firm.websiteLabel || 'brownsinteriorsbd.com'}
                                     </Link>
                                   ) : (
                                     <a

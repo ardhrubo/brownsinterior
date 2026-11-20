@@ -4,6 +4,8 @@
  * internal link equity, and high lead conversion.
  */
 
+import { SITE_URL } from '../lib/site-url.js';
+
 export const blogPosts = [
   {
     slug: 'top-10-best-interior-design-company-in-bangladesh',
@@ -64,7 +66,7 @@ export const blogPosts = [
       'ঢাকার সেরা ইন্টেরিয়র ডিজাইন কোম্পানি',
     ],
     featuredFirms: [
-      { name: "Brown's Interiors", url: 'https://www.brownsinterior.com/' },
+      { name: "Brown's Interiors", url: `${SITE_URL}/` },
       { name: 'Interior Studio' },
       { name: 'Zero Inch Interior' },
       { name: 'Chitron Interior' },
@@ -100,10 +102,10 @@ export const blogPosts = [
           logoAlt: "Brown's Interiors official logo",
           location: 'Uttara, Dhaka-1230 (Serving Nationwide)',
           website: '/',
-          websiteLabel: 'brownsinterior.com',
+          websiteLabel: 'brownsinteriorsbd.com',
           isInternal: true,
           paragraphs: [
-            'Most interior friction in Dhaka happens when the designer who renders a 3D living room is not the person responsible for structural walls, wiring, or carpentry tolerances on site. [Brown’s Interiors](/about) was built to close that gap. Led by [Engr. Aslam Sheikh](/team), who holds both a Diploma in Architecture & Interior Design (NPI) and a B.Sc. in Civil Engineering (IUBAT), the Uttara-based team has completed over 250 residential, commercial, and exhibition projects across Bangladesh.',
+            'Most interior friction in Dhaka happens when the designer who renders a 3D living room is not the person responsible for structural walls, wiring, or carpentry tolerances on site. [Brown’s Interiors](/about) was built to close that gap. Led by [Engr. Aslam Sheikh](/about), who holds both a Diploma in Architecture & Interior Design (NPI) and a B.Sc. in Civil Engineering (IUBAT), the Uttara-based team has completed over 250 residential, commercial, and exhibition projects across Bangladesh.',
             'Instead of giving vague lump-sum quotes, every project starts with laser measurements, 2D MEP and joinery drawings, physical board and hardware samples, and an itemized BOQ calibrated to clear Dhaka tiers (৳750–৳1,083.33/sft Standard, ৳1,083.33–৳2,083.33/sft Premium, and ৳1,666.67–৳3,750/sft Luxury). Because carpentry, gypsum ceilings, electricals, and site engineering run in-house, clients get consistent finishing backed by a one-year workmanship warranty.',
           ],
         },
@@ -264,7 +266,7 @@ export const blogPosts = [
         title: 'Why Brown’s Interiors Leads in Engineering-Backed Turnkey Delivery',
         lead: 'Combining dual architecture and civil engineering credentials with itemized BOQs keeps projects safe, predictable, and faithful to the approved 3D design.',
         paragraphs: [
-          'Many clients come to [Brown’s Interiors](/projects) after talking to three or four agencies and realizing none of them bridge design and engineering cleanly. Because [Engr. Aslam Sheikh](/team) is both an architectural interior designer and an civil engineer, every partition change, ceiling load, plumbing relocation, and electrical distribution plan is checked with real structural discipline before a hammer touches the wall.',
+          'Many clients come to [Brown’s Interiors](/projects) after talking to three or four agencies and realizing none of them bridge design and engineering cleanly. Because [Engr. Aslam Sheikh](/about) is both an architectural interior designer and an civil engineer, every partition change, ceiling load, plumbing relocation, and electrical distribution plan is checked with real structural discipline before a hammer touches the wall.',
           'On the commercial and finishing side, nothing starts until you inspect and sign off on physical material sample boards alongside a clear itemized BOQ through [our 6-step process](/process). From [residential apartments](/services/interior-design) and [architectural planning](/services/architecture) to [structural consultancy](/services/engineering), [renovation](/services/renovation-remodeling), and overnight [exhibition booths at ICCB and BICC](/services/exhibition-booth-design), one permanent team sees the project from laser survey to key handover.',
         ],
         proTip: {
@@ -413,10 +415,10 @@ export const blogPosts = [
             logoAlt: 'Brown’s Interiors লোগো',
             location: 'উত্তরা, ঢাকা-১২৩০ (সারা বাংলাদেশে সেবা)',
             website: '/',
-            websiteLabel: 'brownsinterior.com',
+            websiteLabel: 'brownsinteriorsbd.com',
             isInternal: true,
             paragraphs: [
-              'ঢাকায় ইন্টেরিয়র কাজে বেশির ভাগ ঝামেলা শুরু হয় তখন, যখন থ্রিডি ডিজাইনার আর সাইটের কাজের দায়িত্বপ্রাপ্ত কন্ট্রাক্টর আলাদা থাকেন। এই ব্যবধান ঘোচাতেই গড়ে উঠেছে [Brown’s Interiors](/about)। প্রতিষ্ঠাতা ও প্রিন্সিপাল ডিজাইনার [ইঞ্জিনিয়ার আসলাম শেখ](/team) আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা (NPI) এবং সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি (IUBAT) উভয়ই সম্পন্ন করেছেন। উত্তরা থেকে পরিচালিত এই টিম এরই মধ্যে সারা দেশে ২৫০টির বেশি বাসা, অফিস ও এক্সিবিশন প্রজেক্ট শেষ করেছে।',
+              'ঢাকায় ইন্টেরিয়র কাজে বেশির ভাগ ঝামেলা শুরু হয় তখন, যখন থ্রিডি ডিজাইনার আর সাইটের কাজের দায়িত্বপ্রাপ্ত কন্ট্রাক্টর আলাদা থাকেন। এই ব্যবধান ঘোচাতেই গড়ে উঠেছে [Brown’s Interiors](/about)। প্রতিষ্ঠাতা ও প্রিন্সিপাল ডিজাইনার [ইঞ্জিনিয়ার আসলাম শেখ](/about) আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা (NPI) এবং সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি (IUBAT) উভয়ই সম্পন্ন করেছেন। উত্তরা থেকে পরিচালিত এই টিম এরই মধ্যে সারা দেশে ২৫০টির বেশি বাসা, অফিস ও এক্সিবিশন প্রজেক্ট শেষ করেছে।',
               'অস্পষ্ট প্যাকেজের বদলে এখানে প্রতিটি কাজ শুরু হয় লেজার পরিমাপ, টুডি ওয়ার্কিং ড্রয়িং, বাস্তব ম্যাটেরিয়ালের স্যাম্পল বোর্ড এবং স্পষ্ট BOQ বাজেটের মাধ্যমে (স্ট্যান্ডার্ড ৳৭৫০–৳১,০৮৩.৩৩/বর্গফুট, প্রিমিয়াম ৳১,০৮৩.৩৩–৳২,০৮৩.৩৩/বর্গফুট ও লাক্সারি ৳১,৬৬৬.৬৭–৳৩,৭৫০/বর্গফুট)। কার্পেন্ট্রি, সিলিং, ইলেকট্রিক্যাল ও সাইট সুপারভিশন নিজস্ব টিমে হওয়ায় ১ বছরের ওয়ারেন্টিসহ নির্ধারিত সময়েই কাজ হস্তান্তর করা হয়।',
             ],
           },
@@ -577,7 +579,7 @@ export const blogPosts = [
           title: 'কেন অনেক ক্লায়েন্ট শেষ পর্যন্ত Brown’s Interiors বেছে নেন',
           lead: 'আর্কিটেকচারাল নকশা ও সিভিল ইঞ্জিনিয়ারিংয়ের সমন্বয় এবং লিখিত BOQ পুরো প্রজেক্টকে নিরাপদ ও নির্ভুল রাখে।',
           paragraphs: [
-            'অনেক বাড়ির মালিকই তিন-চারটি এজেন্সির সাথে কথা বলার পর [Brown’s Interiors](/projects)-এ আসেন, কারণ তাঁরা দেখেন ডিজাইন ও ইঞ্জিনিয়ারিং এক জায়গায় খুব কমই পাওয়া যায়। [ইঞ্জিনিয়ার আসলাম শেখ](/team) নিজে আর্কিটেকচারাল ইন্টেরিয়র ডিজাইনার হওয়ার পাশাপাশি একজন IEB-নিবন্ধিত সিভিল ইঞ্জিনিয়ার। ফলে দেয়াল পরিবর্তন, সিলিং লোড, প্লাম্বিং ও ইলেকট্রিক্যাল লোড প্রতিটি কাজ বাস্তব প্রকৌশলগত নিয়ম মেনে সম্পন্ন হয়।',
+            'অনেক বাড়ির মালিকই তিন-চারটি এজেন্সির সাথে কথা বলার পর [Brown’s Interiors](/projects)-এ আসেন, কারণ তাঁরা দেখেন ডিজাইন ও ইঞ্জিনিয়ারিং এক জায়গায় খুব কমই পাওয়া যায়। [ইঞ্জিনিয়ার আসলাম শেখ](/about) নিজে আর্কিটেকচারাল ইন্টেরিয়র ডিজাইনার হওয়ার পাশাপাশি একজন IEB-নিবন্ধিত সিভিল ইঞ্জিনিয়ার। ফলে দেয়াল পরিবর্তন, সিলিং লোড, প্লাম্বিং ও ইলেকট্রিক্যাল লোড প্রতিটি কাজ বাস্তব প্রকৌশলগত নিয়ম মেনে সম্পন্ন হয়।',
             'কাজ শুরুর আগে ক্লায়েন্টের সাথে প্রতিটি বোর্ড, ল্যামিনেট ও হার্ডওয়্যারের ফিজিক্যাল স্যাম্পল মিলিয়ে স্বাক্ষর নেওয়া হয় এবং [আমাদের ৬-ধাপের প্রক্রিয়া](/process) অনুযায়ী ধাপে ধাপে কাজ এগোয়। [বাসা ও অফিস ইন্টেরিয়র](/services/interior-design), [আর্কিটেকচারাল প্ল্যান](/services/architecture), [স্ট্রাকচারাল কনসালটেন্সি](/services/engineering), [রিনোভেশন](/services/renovation-remodeling) কিংবা ICCB ও BICC-এর [এক্সিবিশন বুথ](/services/exhibition-booth-design)—সবকিছুই এক টিমের তত্ত্বাবধানে সম্পন্ন হয়।',
           ],
           proTip: {
@@ -789,7 +791,7 @@ export const blogPosts = [
         title: 'Why Brown’s Interiors Leads Turnkey Design in Bangladesh for 2026–2027',
         lead: 'Led by Engr. Aslam Sheikh, Brown’s Interiors brings rare dual expertise in Architectural Interior Design and Civil Engineering across 250+ projects.',
         paragraphs: [
-          'Headquartered in **Uttara, Dhaka-1230**, [Brown’s Interiors](/about) stands out as Bangladesh’s benchmark for precision turnkey interiors because of how the studio is led and structured. Founder & Principal Designer [Engr. Aslam Sheikh](/team) holds a **Diploma in Architecture & Interior Design (NPI)** alongside a **B.Sc. in Civil Engineering (IUBAT)**, bringing over **10+ years of experience** and **250+ successfully delivered projects** across Bangladesh.',
+          'Headquartered in **Uttara, Dhaka-1230**, [Brown’s Interiors](/about) stands out as Bangladesh’s benchmark for precision turnkey interiors because of how the studio is led and structured. Founder & Principal Designer [Engr. Aslam Sheikh](/about) holds a **Diploma in Architecture & Interior Design (NPI)** alongside a **B.Sc. in Civil Engineering (IUBAT)**, bringing over **10+ years of experience** and **250+ successfully delivered projects** across Bangladesh.',
           'Instead of outsourcing site execution to disconnected subcontractors, Brown’s Interiors operates **7 integrated service divisions**: [Interior Design](/services/interior-design), [Architectural Design](/services/architecture), [Structural Engineering Consultancy](/services/engineering), [Renovation & Remodeling](/services/renovation-remodeling), [Exhibition Booth Design](/services/exhibition-booth-design), turnkey construction, and [Project Management](/services/project-management). Every residential flat, corporate office, showroom, and expo pavilion is delivered through our documented [6-step studio workflow](/process) and backed by a **1-year workmanship warranty**.',
         ],
         proTip: {
@@ -1013,7 +1015,7 @@ export const blogPosts = [
           title: 'টার্নকি প্রজেক্টে Brown’s Interiors কেন অগ্রগণ্য',
           lead: 'ইঞ্জিনিয়ার আসলাম শেখের নেতৃত্বে ২৫০+ প্রজেক্টের অভিজ্ঞতা নিয়ে একই সাথে আর্কিটেকচার ও সিভিল ইঞ্জিনিয়ারিং সেবা।',
           paragraphs: [
-            'ঢাকার **উত্তরা-১২৩০**-এ অবস্থিত [Brown’s Interiors](/about)-এর নেতৃত্ব দিচ্ছেন [ইঞ্জিনিয়ার আসলাম শেখ](/team), যিনি আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা (NPI) এবং সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি (IUBAT) ডিগ্রি অর্জন করেছেন। ১০ বছরের বেশি সময়ে সারাদেশে ২৫০টির বেশি প্রজেক্ট সম্পন্ন করেছে আমাদের টিম।',
+            'ঢাকার **উত্তরা-১২৩০**-এ অবস্থিত [Brown’s Interiors](/about)-এর নেতৃত্ব দিচ্ছেন [ইঞ্জিনিয়ার আসলাম শেখ](/about), যিনি আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা (NPI) এবং সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি (IUBAT) ডিগ্রি অর্জন করেছেন। ১০ বছরের বেশি সময়ে সারাদেশে ২৫০টির বেশি প্রজেক্ট সম্পন্ন করেছে আমাদের টিম।',
             'আমরা ৭টি সমন্বিত সেবা দিই: [ইন্টেরিয়র ডিজাইন](/services/interior-design), [আর্কিটেকচারাল ডিজাইন](/services/architecture), [স্ট্রাকচারাল কনসালটেন্সি](/services/engineering), [রিনোভেশন](/services/renovation-remodeling), [এক্সিবিশন বুথ](/services/exhibition-booth-design), টার্নকি নির্মাণ ও [প্রজেক্ট ম্যানেজমেন্ট](/services/project-management)। প্রতিটি প্রজেক্টে থাকে আমাদের সুশৃঙ্খল [৬ ধাপের কর্মপদ্ধতি](/process) ও ১ বছরের সার্ভিস ওয়ারেন্টি।',
           ],
           proTip: {
@@ -1275,7 +1277,7 @@ export const blogPosts = [
         title: 'Meet Engr. Aslam Sheikh: Bridging Architecture, Interior Artistry & Civil Engineering',
         lead: 'Formal architectural training paired with accredited Civil Engineering registration makes Engr. Aslam Sheikh uniquely equipped for complex residential and commercial spaces.',
         paragraphs: [
-          '[Engr. Aslam Sheikh](/team) founded Brown’s Interiors with a clear conviction: Bangladeshi homeowners and corporate leaders deserve the same caliber of precision on site that they see in international architectural magazines. His rare dual academic foundation combines a **Diploma in Architecture & Interior Design (School of Architecture, NPI)** with a **B.Sc. in Civil Engineering (IUBAT)**.',
+          '[Engr. Aslam Sheikh](/about) founded Brown’s Interiors with a clear conviction: Bangladeshi homeowners and corporate leaders deserve the same caliber of precision on site that they see in international architectural magazines. His rare dual academic foundation combines a **Diploma in Architecture & Interior Design (School of Architecture, NPI)** with a **B.Sc. in Civil Engineering (IUBAT)**.',
           'Over **10+ years** of hands-on practice across **250+ completed projects**, Engr. Aslam Sheikh has personally supervised everything from compact 1,100 sq ft urban apartments to expansive duplex villas, executive boardrooms, retail flagships, and international trade-fair booths. Because he speaks both the language of architectural proportion and the technical language of reinforced concrete, plumbing slopes, and cabinet joinery, clients enjoy faster decisions and fewer costly on-site revisions.',
         ],
         proTip: {
@@ -1473,7 +1475,7 @@ export const blogPosts = [
           title: 'ইঞ্জিনিয়ার আসলাম শেখ: আর্কিটেকচার ও সিভিল ইঞ্জিনিয়ারিংয়ের সমন্বয়',
           lead: 'স্থাপত্যকলার আনুষ্ঠানিক প্রশিক্ষণ ও স্বীকৃত সিভিল ইঞ্জিনিয়ারিং দক্ষতা যেকোনো জটিল প্রজেক্টকে নিরাপদ করে।',
           paragraphs: [
-            'বাংলাদেশের গ্রাহকরা আন্তর্জাতিক মানের ফিনিশিং যেন নিজ দেশের সাইটেই পান, সেই লক্ষ্য নিয়ে [ইঞ্জিনিয়ার আসলাম শেখ](/team) গড়ে তুলেছেন Brown’s Interiors। তিনি **ন্যাশনাল পলিটেকনিক ইনস্টিটিউট থেকে আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা** এবং **IUBAT থেকে সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি** সম্পন্ন করেছেন।',
+            'বাংলাদেশের গ্রাহকরা আন্তর্জাতিক মানের ফিনিশিং যেন নিজ দেশের সাইটেই পান, সেই লক্ষ্য নিয়ে [ইঞ্জিনিয়ার আসলাম শেখ](/about) গড়ে তুলেছেন Brown’s Interiors। তিনি **ন্যাশনাল পলিটেকনিক ইনস্টিটিউট থেকে আর্কিটেকচার ও ইন্টেরিয়র ডিজাইনে ডিপ্লোমা** এবং **IUBAT থেকে সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি** সম্পন্ন করেছেন।',
             '**১০ বছরের বেশি সময় ও ২৫০+ প্রজেক্টের** অভিজ্ঞতায় তিনি ১১০০ বর্গফুটের ফ্ল্যাট থেকে শুরু করে ডুপ্লেক্স ভিলা, করপোরেট বোর্ডরুম, শোরুম এবং ট্রেড ফেয়ার বুথ সরাসরি তদারকি করেছেন। একইসাথে নকশার নান্দনিকতা ও কাঠামোগত নিরাপত্তা বোঝার কারণে সিদ্ধান্ত দ্রুত হয় এবং সাইটে বারবার ভাঙা-গড়ার খরচ বাঁচে।',
           ],
           proTip: {
@@ -1727,7 +1729,7 @@ export const blogPosts = [
         lead: 'Answer: Every project is supervised directly by an civil engineer and Architectural Interior Designer.',
         paragraphs: [
           'Untrained decorators sometimes cut brick walls, channel load-bearing beams, or add heavy stone cladding without structural review. At **Brown’s Interiors**, Founder & Principal Designer **Engr. Aslam Sheikh** holds both architectural interior design credentials and a degree in Civil Engineering.',
-          'Whenever a project includes wall reconfiguration, duplex staircases, AC rewiring, or kitchen/bath plumbing shifts, our [engineering and studio team](/team) inspects columns, beams, electrical load limits, and waterproofing first.'
+          'Whenever a project includes wall reconfiguration, duplex staircases, AC rewiring, or kitchen/bath plumbing shifts, our [engineering and studio team](/about) inspects columns, beams, electrical load limits, and waterproofing first.'
         ],
         proTip: {
           title: 'Structural Safety First',
@@ -1908,7 +1910,7 @@ export const blogPosts = [
           lead: 'উত্তর: আমাদের প্রতিটি প্রজেক্ট একজন অভিজ্ঞ সিভিল ইঞ্জিনিয়ার ও আর্কিটেকচারাল ডিজাইনারের সরাসরি তত্ত্বাবধানে পরিচালিত হয়।',
           paragraphs: [
             'অভিজ্ঞতা ছাড়া কাজ করলে অনেকেই ভবনের মূল কাঠামো না বুঝেই দেয়াল কেটে ফেলেন বা ভারী কাজ করে ফ্ল্যাটের ক্ষতি করেন। কিন্তু **Brown’s Interiors**-এর প্রতিষ্ঠাতা ও প্রধান ডিজাইনার **ইঞ্জিনিয়ার আসলাম শেখ** স্থাপত্য ও ইন্টেরিয়র ডিজাইনের পাশাপাশি সিভিল ইঞ্জিনিয়ারিংয়ের একজন নিবন্ধিত প্রকৌশলী।',
-            'তাই ফ্ল্যাট রেনোভেশন, দেয়াল পরিবর্তন, ডুপ্লেক্স সিঁড়ি কিংবা ভারী সিলিং করার সময় আমাদের [ইঞ্জিনিয়ারিং ও স্টুডিও টিম](/team) ভবনের বিম, কলাম, বৈদ্যুতিক লোড আর পানির লাইনের নিরাপত্তাকে সবার আগে গুরুত্ব দেয়।'
+            'তাই ফ্ল্যাট রেনোভেশন, দেয়াল পরিবর্তন, ডুপ্লেক্স সিঁড়ি কিংবা ভারী সিলিং করার সময় আমাদের [ইঞ্জিনিয়ারিং ও স্টুডিও টিম](/about) ভবনের বিম, কলাম, বৈদ্যুতিক লোড আর পানির লাইনের নিরাপত্তাকে সবার আগে গুরুত্ব দেয়।'
           ],
           proTip: {
             title: 'নিরাপত্তা পরামর্শ',
@@ -2075,7 +2077,7 @@ export const blogPosts = [
         lead: 'Answer: Every space is engineered from structure outward, unifying architecture, civil engineering, and fine joinery.',
         paragraphs: [
           'Most contractors look only at cosmetics while overlooking load-bearing beams, waterproofing slopes, or electrical wire capacities. At Brown’s Interiors, **Engr. Aslam Sheikh** combines formal architectural interior training with certified civil engineering.',
-          'Whether transforming [residential flats](/services/residential-interior), managing a full [apartment renovation](/services/renovation), or designing new [duplex architecture](/services/architecture), we safeguard building structure first and execute everything through our permanent team so 3D concepts match final reality.'
+          'Whether transforming [residential flats](/services/residential-interior), managing a full [apartment renovation](/services/renovation-remodeling), or designing new [duplex architecture](/services/architecture), we safeguard building structure first and execute everything through our permanent team so 3D concepts match final reality.'
         ],
         proTip: {
           title: 'Why Engineering Oversight Counts',
@@ -2089,7 +2091,7 @@ export const blogPosts = [
         keyTakeaways: [
           'Architectural taste united with certified civil engineering rigor.',
           'Seamless execution across new duplexes, renovations, and apartments.',
-          'Dedicated supervision by our permanent [engineering and design team](/team).'
+          'Dedicated supervision by our permanent [engineering and design team](/about).'
         ]
       },
       {
@@ -2256,7 +2258,7 @@ export const blogPosts = [
           lead: 'উত্তর: আমাদের কাজে কেবল বাহ্যিক সাজসজ্জা নয়, স্থাপত্য নকশা এবং সিভিল ইঞ্জিনিয়ারিংয়ের নিয়ম মেনে দীর্ঘস্থায়ী সমাধান দেওয়া হয়।',
           paragraphs: [
             'অনেক ডেকোরেটর কেবল ওপরের সাজসজ্জা দেখে কাজ করেন, কিন্তু ভবনের কাঠামো, বিম-কলাম বা বৈদ্যুতিক লোডের হিসাব রাখেন না। আমাদের স্টুডিওর নেতৃত্বে থাকা **ইঞ্জিনিয়ার আসলাম শেখ** স্থাপত্য ও ইন্টেরিয়র ডিজাইনের পাশাপাশি একজন সিভিল ইঞ্জিনিয়ার।',
-            'ফলে [আবাসিক ইন্টেরিয়র](/services/residential-interior) হোক বা [পুরোনো ফ্ল্যাট রেনোভেশন](/services/renovation) কিংবা নতুন [ডুপ্লেক্স স্থাপত্য নকশা](/services/architecture), আমাদের টিম সৌন্দর্যের সাথে ভবনের নিরাপত্তাকে সমান গুরুত্ব দেয়। আর ডিজাইনের পর নিজেরাই সাইটে কাজ করায় নকশার সাথে বাস্তব কাজের কোনো অমিল হয় না।'
+            'ফলে [আবাসিক ইন্টেরিয়র](/services/residential-interior) হোক বা [পুরোনো ফ্ল্যাট রেনোভেশন](/services/renovation-remodeling) কিংবা নতুন [ডুপ্লেক্স স্থাপত্য নকশা](/services/architecture), আমাদের টিম সৌন্দর্যের সাথে ভবনের নিরাপত্তাকে সমান গুরুত্ব দেয়। আর ডিজাইনের পর নিজেরাই সাইটে কাজ করায় নকশার সাথে বাস্তব কাজের কোনো অমিল হয় না।'
           ],
           proTip: {
             title: 'কেন ইঞ্জিনিয়ারিং পরিকল্পনা জরুরি',
@@ -2270,7 +2272,7 @@ export const blogPosts = [
           keyTakeaways: [
             'স্থাপত্য রুচি ও সিভিল ইঞ্জিনিয়ারিং অভিজ্ঞতার সমন্বয়ে প্রতিটি প্রজেক্ট।',
             'নতুন ডুপ্লেক্স ডিজাইন থেকে শুরু করে পুরোনো বাড়ি আধুনিক করার পূর্ণ সমাধান।',
-            'অনভিজ্ঞ মিস্ত্রির বদলে দক্ষ [ইঞ্জিনিয়ার ও স্টুডিও টিমের](/team) সরাসরি তদারকি।'
+            'অনভিজ্ঞ মিস্ত্রির বদলে দক্ষ [ইঞ্জিনিয়ার ও স্টুডিও টিমের](/about) সরাসরি তদারকি।'
           ]
         },
         {

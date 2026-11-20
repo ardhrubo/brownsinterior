@@ -1,28 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, ArrowLeft, Search } from 'lucide-react';
+import { Home } from 'lucide-react';
 import SEO from './SEO';
 
 export default function NotFound({ message = "The page you're looking for doesn't exist or has been moved." }) {
-  useEffect(() => {
-    // Explicitly tell Googlebot and search crawlers not to index 404 / soft-404 pages
-    let robotsMeta = document.querySelector('meta[name="robots"]');
-    if (!robotsMeta) {
-      robotsMeta = document.createElement('meta');
-      robotsMeta.setAttribute('name', 'robots');
-      document.head.appendChild(robotsMeta);
-    }
-    const previousContent = robotsMeta.getAttribute('content');
-    robotsMeta.setAttribute('content', 'noindex, follow');
-
-    return () => {
-      // Restore on unmount
-      if (robotsMeta && previousContent) {
-        robotsMeta.setAttribute('content', previousContent);
-      }
-    };
-  }, []);
-
   return (
     <main style={{
       minHeight: '75vh',
@@ -35,7 +16,8 @@ export default function NotFound({ message = "The page you're looking for doesn'
     }}>
       <SEO
         title="404 - Page Not Found"
-        description="The requested page could not be found on Brown's Interior."
+        description="The requested page could not be found on Brown's Interiors."
+        noindex
       />
       <div style={{ maxWidth: '540px', margin: '0 auto' }}>
         <span style={{

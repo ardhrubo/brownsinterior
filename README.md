@@ -1,6 +1,6 @@
 # Brown's Interior — Web Platform & Architecture
 
-Official web platform, interactive BOQ cost estimator, design lookbook, and lead-management system for **Brown's Interior** ([www.brownsinterior.com](https://www.brownsinterior.com/)), a premier interior design, architectural planning, structural consultancy, and turnkey execution firm based in Dhaka, Bangladesh and serving clients worldwide.
+Official web platform, interactive BOQ cost estimator, design lookbook, and lead-management system for **Brown's Interior** ([brownsinteriorsbd.com](https://brownsinteriorsbd.com/)), a premier interior design, architectural planning, structural consultancy, and turnkey execution firm based in Dhaka, Bangladesh and serving clients worldwide.
 
 ---
 
@@ -201,17 +201,8 @@ To set up the database and run the standalone Admin Dashboard:
    ```
 
 
-## Hosting both domains
+## Primary Domain & Legacy Redirects
 
-Set `VITE_SITE_URL` in each hosting project's build environment:
+`https://brownsinteriorsbd.com` is the default and canonical `VITE_SITE_URL`. All alternate hostnames (`www.brownsinteriorsbd.com`, `www.brownsinterior.com`, and `brownsinterior.com`) permanently `308` redirect to `https://brownsinteriorsbd.com` via `vercel.json` so search engines consolidate all indexing and link equity onto the primary domain.
 
-| Deployment | Value |
-| --- | --- |
-| Previous website | `https://www.brownsinterior.com` |
-| New website | `https://brownsinteriorsbd.com` |
-
-Run `npm run build` separately for each host and deploy that build's `dist/` directory. The value is embedded at build time; changing it requires a rebuild. Do not reuse one build on both domains. Without the variable, the previous domain remains the default. An HTTPS origin is required; paths and query strings are rejected.
-
-The build uses the same origin for initial HTML metadata, React canonical tags, social images and share URLs, structured data, sitemap entries, and robots.txt. Contact email addresses are configured separately and are not rewritten. `npm run sitemap` uses production environment files; `vite build --mode staging` uses the matching mode for the entire build.
-
-Configure each host to permanently redirect HTTP and its alternate www/non-www hostname to its own preferred HTTPS origin, preserving paths and query strings. Verify both domain properties in Google Search Console and submit each domain's own sitemap. Both sites can remain available, but identical content can still be deduplicated by Google despite self-referencing canonicals; distinct useful content is needed if both are intended to rank independently.
+The build uses `VITE_SITE_URL` for initial HTML metadata, React canonical tags, social images and share URLs, structured data, sitemap entries (`public/sitemap.xml`), and `public/robots.txt`. Ensure Cloudflare DNS records for `brownsinteriorsbd.com` (`@` and `www`) remain set to **DNS Only (Grey Cloud)** in front of Vercel.

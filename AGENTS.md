@@ -1,13 +1,13 @@
 # AGENTS.md — AI Agent & Developer Context Reference
 
-> **Purpose:** This file provides authoritative architectural context, performance guardrails, SEO contracts, and domain rules for AI coding agents (Antigravity, Gemini, Claude, Cursor, Copilot) and human engineers working on the **Brown's Interior** codebase (`www.brownsinterior.com`).
+> **Purpose:** This file provides authoritative architectural context, performance guardrails, SEO contracts, and domain rules for AI coding agents (Antigravity, Gemini, Claude, Cursor, Copilot) and human engineers working on the **Brown's Interior** codebase (`brownsinteriorsbd.com`).
 > **Read this file before modifying routes, images, data files, styles, or deployment configs.**
 
 ---
 
 ## 1. Project Identity & Domain Context
 
-* **Brand:** Brown's Interior (`https://www.brownsinterior.com`)
+* **Brand:** Brown's Interior (`https://brownsinteriorsbd.com`)
 * **Founder & Principal Designer:** Engr. Aslam Sheikh (`Dip. Architecture & Interior Design, NPI` · `B.Sc. in Civil Engg., IUBAT` · `IEB Membership No: A29734`)
 * **Core Business:** Residential & Commercial Interior Design, Architectural Design, Structural Consultancy, Renovation, and Exhibition Booth Design & Turnkey Execution across Dhaka, Bangladesh (`Uttara, Dhaka-1230`) and worldwide.
 * **Direct Contact / WhatsApp:** `+880 1768-436319` (`8801768436319`), `info@brownsinteriorsbd.com` (Careers: `career@brownsinteriorsbd.com`)
@@ -35,7 +35,7 @@ This site is tuned to achieve **98–100 Performance, 100 Accessibility, 96–10
      python3 scripts/optimize-hero.py
      ```
      and reference the generated `.webp` paths in `src/data/*.js` and components.
-   * Keep `https://www.brownsinterior.com/og-image.jpg` as `.jpg` in `index.html` and `src/components/SEO.jsx` for universal social-scraper compatibility (WhatsApp, Facebook, LinkedIn, X).
+   * Keep `https://brownsinteriorsbd.com/og-image.jpg` as `.jpg` in `index.html` and `src/components/SEO.jsx` for universal social-scraper compatibility (WhatsApp, Facebook, LinkedIn, X).
 5. **Font Loading Contract (`index.html` & `src/index.css`):**
    * Never add `@import url('https://fonts.googleapis.com/...')` inside `.css` files (`src/index.css`, etc.) — CSS `@import` blocks rendering and creates sequential network waterfalls.
    * All Google Fonts (`Playfair Display`, `Inter`, `Montserrat`, `Outfit`, `Italianno`) are loaded via a single non-render-blocking `<link rel="preload" as="style" onload="..." />` tag in `index.html`.
@@ -73,7 +73,7 @@ This site is tuned to achieve **98–100 Performance, 100 Accessibility, 96–10
 
 ## 4. Infrastructure, DNS & Security (`vercel.json`)
 
-* **Hosting:** Vercel Production (`www.brownsinterior.com` primary domain; `brownsinterior.com` 308 redirects to `www.brownsinterior.com`).
+* **Hosting:** Vercel Production (`brownsinteriorsbd.com` primary domain; `www.brownsinteriorsbd.com`, `www.brownsinterior.com`, and `brownsinterior.com` permanently `308` redirect to `https://brownsinteriorsbd.com` in `vercel.json`).
 * **Cloudflare DNS Rule (CRITICAL):**
   * DNS records in Cloudflare for `@` (`A -> 76.76.21.21`) and `www` (`CNAME -> cname.vercel-dns.com`) **MUST remain set to `DNS Only` (Grey Cloud ☁️)**.
   * Do **NOT** enable Cloudflare Proxy (Orange Cloud) in front of Vercel or leave old hosting `A`/`AAAA` records active — double-proxying causes 20-second origin TCP timeouts on cold connections from Google Search.

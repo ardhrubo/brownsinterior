@@ -1,4 +1,4 @@
-export const DEFAULT_SITE_URL = 'https://www.brownsinterior.com';
+export const DEFAULT_SITE_URL = 'https://brownsinteriorsbd.com';
 
 export function normalizeSiteUrl(value = DEFAULT_SITE_URL) {
   const url = new URL(value);

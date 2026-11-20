@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone, Calculator } from 'lucide-react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaWhatsapp } from 'react-icons/fa';
 import { servicesData } from '../data/servicesData';
 import { getWhatsAppUrl } from '../data/siteData';
 import { useLanguage, serviceCategoryBn } from '../context/LanguageContext';
@@ -65,8 +65,6 @@ export default function Footer() {
             <div className="social-links">
               <a href="https://www.facebook.com/brownsinteriorsbd" target="_blank" rel="noreferrer" className="social-icon" aria-label="Facebook"><FaFacebook size={18} /></a>
               <a href={getWhatsAppUrl()} target="_blank" rel="noreferrer" className="social-icon" aria-label="WhatsApp"><FaWhatsapp size={18} /></a>
-              <a href="#" className="social-icon" aria-label="Instagram"><FaInstagram size={18} /></a>
-              <a href="#" className="social-icon" aria-label="LinkedIn"><FaLinkedin size={18} /></a>
             </div>
           </div>
 

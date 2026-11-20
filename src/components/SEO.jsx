@@ -9,6 +9,8 @@ const DEFAULT_KEYWORDS =
   "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, বাংলাদেশের অন্যতম নির্ভরযোগ্য ইন্টেরিয়র ডিজাইন স্টুডিও, বাংলাদেশের বেস্ট ইন্টেরিয়র ডিজাইন কোম্পানি, ইন্টেরিয়র ডিজাইন ঢাকা, ফ্ল্যাট ইন্টেরিয়র ডিজাইন, অফিস ইন্টেরিয়র ডিজাইন, Interior Design Dhaka, Interior Design Bangladesh, Architecture Bangladesh, Structural Engineering, Luxury Home Decor, Commercial Office Interior, Brown's Interiors";
 import { SITE_URL } from '../lib/site-url';
 
+const DEFAULT_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
 export default function SEO({
   title,
   description,
@@ -17,6 +19,7 @@ export default function SEO({
   image,
   type = 'website',
   schema,
+  noindex = false,
 }) {
   const location = useLocation();
   const hasBrandInTitle = title && /brown['’]?s\s+interior/i.test(title);
@@ -43,6 +46,9 @@ export default function SEO({
       meta.setAttribute('content', content);
     };
 
+    const robotsValue = noindex ? 'noindex, nofollow' : DEFAULT_ROBOTS;
+    setMeta('name', 'robots', robotsValue);
+    setMeta('name', 'googlebot', robotsValue);
     setMeta('name', 'description', fullDesc);
     setMeta('name', 'keywords', fullKeywords);
     setMeta('property', 'og:title', fullTitle);
@@ -55,14 +61,18 @@ export default function SEO({
     setMeta('name', 'twitter:description', fullDesc);
     setMeta('name', 'twitter:image', ogImage);
 
-    // 3. Update Canonical link
+    // 3. Update or remove Canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
+    if (noindex) {
+      if (canonical) canonical.remove();
+    } else {
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute('href', canonicalUrl);
     }
-    canonical.setAttribute('href', canonicalUrl);
 
     // 4. Inject Dynamic Schema (JSON-LD) if provided
     let schemaScript = document.getElementById('seo-dynamic-schema');
@@ -82,7 +92,7 @@ export default function SEO({
       const s = document.getElementById('seo-dynamic-schema');
       if (s) s.remove();
     };
-  }, [fullTitle, fullDesc, fullKeywords, canonicalUrl, ogImage, type, schema]);
+  }, [fullTitle, fullDesc, fullKeywords, canonicalUrl, ogImage, type, schema, noindex]);
 
   return null;
 }
