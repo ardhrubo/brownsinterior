@@ -43,14 +43,53 @@ const testimonialBnMap = {
   },
 };
 
+const processPageFaqs = [
+  {
+    q: 'What happens during the initial site visit and consultation?',
+    a: 'Our design engineer visits your flat, office, or plot in Dhaka with laser measurement tools to record exact room dimensions, column and beam positions, plumbing stacks, and electrical DB capacity while discussing your functional goals and target budget.',
+  },
+  {
+    q: 'Do I see 3D designs and approve materials before site work begins?',
+    a: 'Yes. We never cut a single board or order finishes until you review photorealistic 3D views, inspect physical material sample boards (plywood, HPL, veneer, marble, hardware), and sign off on your room-by-room itemized BOQ.',
+  },
+  {
+    q: 'How does Brown’s Interiors guarantee on-time handover in Dhaka?',
+    a: 'We run off-site workshop fabrication in parallel with on-site civil and MEP rough-in under a milestone Gantt schedule supervised daily by our civil and interior engineers, ending with a 50-point snag inspection and 1-year workmanship warranty.',
+  },
+];
+
+const costCalcFaqs = [
+  {
+    q: 'How accurate is the Dhaka interior design cost estimator?',
+    a: 'Our estimator is calibrated directly from real Dhaka turnkey BOQ benchmarks maintained by Engr. Aslam Sheikh across 250+ residential, commercial, and exhibition projects. It gives a realistic planning range before an on-site laser survey produces your exact line-by-line BOQ.',
+  },
+  {
+    q: 'What factors change per-sq-ft interior pricing the most?',
+    a: 'Total square footage of custom cabinetry (wardrobes, modular kitchen, wall paneling), core board grade (commercial ply vs. waterproof marine plywood/HDHMR), surface finish (HPL vs. acrylic/veneer/PU lacquer), marble or quartz stone volume, and imported German hardware.',
+  },
+  {
+    q: 'Are electrical appliances, ACs, and loose decor included in the estimate?',
+    a: 'Turnkey interior estimates cover civil updates, ceilings, concealed electrical/lighting, paint, paneling, modular kitchen, and fixed cabinetry. Loose electronics (ACs, TVs, ovens, refrigerators) are itemized separately upon request so you never pay hidden markups.',
+  },
+];
+
 export function ProcessPage() {
   const { isBn } = useLanguage();
   return (
     <main>
       <SEO
-        title="Our Process"
-        description="Explore our proven 6-step interior and architecture process from consultation and 3D visualization to turnkey handover in Dhaka."
+        title="Our 6-Step Turnkey Design & Build Process"
+        description="Explore our proven 6-step interior and architectural process in Dhaka from laser site survey and 4K 3D renders to itemized BOQ and turnkey handover."
         canonicalPath="/process"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: processPageFaqs.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+          })),
+        }}
       />
       <section className="section page-head-section">
         <div className="container">
@@ -114,6 +153,31 @@ export function ProcessPage() {
           </div>
         </div>
       </section>
+      <section className="section">
+        <div className="container" style={{ maxWidth: '860px' }}>
+          <SectionHead
+            eyebrow={isBn ? 'প্রশ্নোত্তর' : 'Process FAQs'}
+            title={isBn ? 'সাধারণ' : 'Common'}
+            script={isBn ? 'প্রশ্নাবলি' : 'Questions'}
+          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {processPageFaqs.map((faq) => (
+              <div key={faq.q} className="clay" style={{ padding: '1.35rem 1.5rem', borderRadius: '14px', background: '#fff', border: '1px solid #e5dfd8' }}>
+                <h3 style={{ fontSize: '1.02rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>{faq.q}</h3>
+                <p style={{ margin: 0, fontSize: '0.94rem', lineHeight: '1.7', color: '#4a433d' }}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.85rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <Link to="/cost-estimator" className="pill-btn dark">
+              <Calculator size={15} /> Estimate Your Cost
+            </Link>
+            <Link to="/blog/how-browns-interiors-works-process" className="pill-btn">
+              Read Detailed Process Guide <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
@@ -123,8 +187,8 @@ export function TestimonialsPage() {
   return (
     <main>
       <SEO
-        title="Client Reviews & Testimonials"
-        description="Read genuine testimonials from apartment owners, corporate directors, and commercial clients across Dhaka who transformed their spaces with Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
+        title="Client Reviews & Testimonials in Dhaka"
+        description="Read verified reviews from Gulshan, Banani, Dhanmondi, Bashundhara, and UK NRB clients who transformed their homes and offices with Brown's Interiors."
         canonicalPath="/testimonials"
       />
       <section className="section page-head-section">
@@ -178,8 +242,8 @@ export function BlogPage() {
   return (
     <main>
       <SEO
-        title="Interior Design & Renovation Blog"
-        description="Practical guides, styling tips, budget planning advice, and exhibition stall design ideas from Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
+        title="Interior Design & Renovation Blog Bangladesh"
+        description="Practical interior design guides, Dhaka sq ft cost breakdowns, small apartment tips, and exhibition booth insights by Engr. Aslam Sheikh."
         canonicalPath="/blog"
       />
       <section className="section page-head-section">
@@ -309,9 +373,18 @@ export function CostCalculatorPage() {
   return (
     <main>
       <SEO
-        title="Interior Design Cost Calculator"
-        description="Estimate residential, commercial, and exhibition booth interior design costs instantly with our transparent budget calculator."
+        title="Dhaka Interior Design Cost Calculator (2026)"
+        description="Calculate residential flat, corporate office, and exhibition booth interior costs in Dhaka per sq ft across Standard, Premium, and Luxury tiers."
         canonicalPath="/cost-estimator"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: costCalcFaqs.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+          })),
+        }}
       />
       <section className="section page-head-section">
         <div className="container">
@@ -562,6 +635,29 @@ export function CostCalculatorPage() {
           </div>
         </div>
       </section>
+
+      <section className="section cream">
+        <div className="container" style={{ maxWidth: '860px' }}>
+          <SectionHead
+            eyebrow={isBn ? 'বাজেট ও BOQ গাইড' : 'Budgeting & BOQ FAQs'}
+            title={isBn ? 'খরচ সম্পর্কে' : 'Pricing'}
+            script={isBn ? 'প্রশ্নোত্তর' : 'Questions'}
+          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {costCalcFaqs.map((faq) => (
+              <div key={faq.q} className="clay" style={{ padding: '1.35rem 1.5rem', borderRadius: '14px', background: '#fff', border: '1px solid #e5dfd8' }}>
+                <h3 style={{ fontSize: '1.02rem', marginBottom: '0.5rem', color: 'var(--text-color)' }}>{faq.q}</h3>
+                <p style={{ margin: 0, fontSize: '0.94rem', lineHeight: '1.7', color: '#4a433d' }}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <Link to="/blog/interior-design-cost-in-bangladesh-guide" className="pill-btn dark">
+              Read Complete 2026 Dhaka BOQ &amp; Cost Guide <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
@@ -692,8 +788,8 @@ export function CareersPage() {
   return (
     <main className="career-page">
       <SEO
-        title="Careers"
-        description="Join Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Uttara, Dhaka. Explore open career opportunities for Interior Designers, 3D Visualizers, Project Architects, Site Engineers, and Interns."
+        title="Careers at Brown's Interiors — Uttara, Dhaka"
+        description="Join Brown's Interiors in Uttara, Dhaka. Explore open roles for Interior Designers, 3D Visualizers, Project Architects, Site Engineers, and Interns."
         keywords="Interior Design Jobs Dhaka, Architect Jobs Bangladesh, Civil Engineer Jobs Dhaka, 3D Visualizer Jobs, Brown's Interiors Careers"
         canonicalPath="/careers"
         schema={careerSchema}

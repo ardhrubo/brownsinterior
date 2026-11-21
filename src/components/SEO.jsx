@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const BRAND_NAME = "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও";
+const SHORT_BRAND_NAME = "Brown's Interiors";
 const DEFAULT_TITLE = BRAND_NAME;
 const DEFAULT_DESC =
   "বাংলাদেশের অন্যতম নির্ভরযোগ্য ইন্টেরিয়র ডিজাইন স্টুডিও। Complete Interior & Exterior Design and Execution Services Across Bangladesh.";
@@ -23,7 +24,7 @@ export default function SEO({
 }) {
   const location = useLocation();
   const hasBrandInTitle = title && /brown['’]?s\s+interior/i.test(title);
-  const fullTitle = title ? (hasBrandInTitle ? title : `${title} | ${BRAND_NAME}`) : DEFAULT_TITLE;
+  const fullTitle = title ? (hasBrandInTitle ? title : `${title} | ${SHORT_BRAND_NAME}`) : DEFAULT_TITLE;
   const fullDesc = description || DEFAULT_DESC;
   const fullKeywords = keywords ? `${keywords}, ${DEFAULT_KEYWORDS}` : DEFAULT_KEYWORDS;
   const rawPath = canonicalPath || location.pathname;

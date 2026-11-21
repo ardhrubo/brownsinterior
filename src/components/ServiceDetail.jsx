@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowRight, Phone, Calculator, Check, ArrowUpRight, X, ChevronLeft, ChevronRight, Maximize2
+  ArrowRight, Phone, Calculator, Check, ArrowUpRight, X, ChevronLeft, ChevronRight, Maximize2, ChevronDown, BookOpen, FolderKanban
 } from 'lucide-react';
 import { servicesData, findServiceOrOption } from '../data/servicesData';
+import { serviceDetailsContent } from '../data/serviceDetailsContent';
+import { projectsData } from '../data/projectsData';
+import { blogPreviews } from '../data/siteData';
 import { SectionHead, ProcessTimeline } from './HomeSections';
 import SEO from './SEO';
 import NotFound from './NotFound';
@@ -31,11 +34,13 @@ export default function ServiceDetail() {
   const [activeImg, setActiveImg] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [galleryFilter, setGalleryFilter] = useState('ALL');
+  const [openFaq, setOpenFaq] = useState(0);
 
   useEffect(() => {
     setActiveImg(0);
     setLightboxIndex(null);
     setGalleryFilter('ALL');
+    setOpenFaq(0);
   }, [targetSlug]);
 
   const { type, data, category } = result || {};
@@ -86,7 +91,16 @@ export default function ServiceDetail() {
     : [];
   const otherCategories = servicesData.filter((s) => s.slug !== category.slug);
 
-  const serviceDesc = data.intro || data.tagline || data.desc || data.description;
+  const richContent = serviceDetailsContent[data.slug] || null;
+  const relatedProjects = (richContent?.relatedProjectIds || [])
+    .map((pid) => projectsData.find((p) => p.id === pid))
+    .filter(Boolean);
+  const relatedBlogs = (richContent?.relatedBlogSlugs || [])
+    .map((bslug) => blogPreviews.find((b) => b.slug === bslug))
+    .filter(Boolean);
+
+  const serviceTitle = richContent?.seoTitle || `${data.title} in Dhaka`;
+  const serviceDesc = richContent?.seoDescription || data.intro || data.tagline || data.desc || data.description;
   const serviceImg = data.image || (data.gallery && data.gallery[0]) || '/og-image.jpg';
   const serviceSchemas = [
     {
@@ -96,7 +110,7 @@ export default function ServiceDetail() {
       description: serviceDesc,
       serviceType: category?.title || data.title,
       image: serviceImg.startsWith('http') ? serviceImg : `${SITE_URL}${serviceImg}`,
-      url: `${SITE_URL}/services/${targetSlug}`,
+      url: `${SITE_URL}/services/${data.slug}`,
       provider: { '@id': `${SITE_URL}/#organization` },
       areaServed: { '@type': 'Country', name: 'Bangladesh' },
     },
@@ -107,21 +121,37 @@ export default function ServiceDetail() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
         { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}/services` },
         ...(isCategory
-          ? [{ '@type': 'ListItem', position: 3, name: data.title, item: `${SITE_URL}/services/${targetSlug}` }]
+          ? [{ '@type': 'ListItem', position: 3, name: data.title, item: `${SITE_URL}/services/${data.slug}` }]
           : [
               { '@type': 'ListItem', position: 3, name: category.title, item: `${SITE_URL}/services/${category.slug}` },
-              { '@type': 'ListItem', position: 4, name: data.title, item: `${SITE_URL}/services/${targetSlug}` },
+              { '@type': 'ListItem', position: 4, name: data.title, item: `${SITE_URL}/services/${data.slug}` },
             ]),
       ],
     },
+    ...(richContent?.faqs?.length
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: richContent.faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          },
+        ]
+      : []),
   ];
 
   return (
     <main className="sd-page">
       <SEO
-        title={`${data.title} - Interior & Architectural Service`}
+        title={serviceTitle}
         description={serviceDesc}
-        canonicalPath={`/services/${targetSlug}`}
+        canonicalPath={`/services/${data.slug}`}
         image={serviceImg}
         schema={serviceSchemas}
       />
@@ -421,6 +451,129 @@ export default function ServiceDetail() {
 
       {/* Unified Process Section matching Home & Process Page */}
       <ProcessTimeline cream={!isCategory} />
+
+      {/* Detailed Approach, Engineering Standards & FAQs */}
+      {richContent && (
+        <section className={`section ${isCategory ? 'cream' : ''}`} id="service-guide">
+          <div className="container">
+            <div className="sd-editorial-grid">
+              <div className="sd-editorial-copy">
+                <span className="sec-eyebrow">Engineering &amp; Design Approach</span>
+                <h2>How We Deliver {data.title} in Dhaka</h2>
+                {richContent.overview.map((para, idx) => (
+                  <p key={idx}>{para}</p>
+                ))}
+              </div>
+
+              <div className="sd-standards-box clay">
+                <h3>Technical Standards &amp; Deliverables</h3>
+                <ul>
+                  {richContent.technicalStandards.map((item) => (
+                    <li key={item}>
+                      <Check size={16} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="sd-standards-cta">
+                  <Link
+                    to={`/contact?category=${encodeURIComponent(category.title)}${
+                      !isCategory ? `&service=${encodeURIComponent(data.title)}` : ''
+                    }`}
+                    className="pill-btn dark"
+                  >
+                    <Phone size={14} /> Request Itemized BOQ
+                  </Link>
+                  <Link to="/cost-estimator" className="pill-btn outline">
+                    <Calculator size={14} /> Cost Calculator
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {richContent.faqs?.length > 0 && (
+              <div className="sd-faq-wrap">
+                <SectionHead
+                  eyebrow="Common Questions"
+                  title={data.shortTitle || data.title}
+                  script="FAQs"
+                />
+                <div className="sd-faq-list">
+                  {richContent.faqs.map((faq, idx) => {
+                    const isOpen = openFaq === idx;
+                    return (
+                      <div key={faq.question} className={`sd-faq-item clay ${isOpen ? 'open' : ''}`}>
+                        <button
+                          type="button"
+                          className="sd-faq-q"
+                          aria-expanded={isOpen}
+                          onClick={() => setOpenFaq(isOpen ? -1 : idx)}
+                        >
+                          <h3>{faq.question}</h3>
+                          <ChevronDown size={18} className="sd-faq-chev" />
+                        </button>
+                        {isOpen && (
+                          <div className="sd-faq-a">
+                            <p>{faq.answer}</p>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {(relatedProjects.length > 0 || relatedBlogs.length > 0) && (
+              <div className="sd-crosslinks">
+                {relatedProjects.length > 0 && (
+                  <div className="sd-crosslink-col clay">
+                    <div className="sd-crosslink-head">
+                      <FolderKanban size={18} />
+                      <h3>Related Completed Projects</h3>
+                    </div>
+                    <ul>
+                      {relatedProjects.map((proj) => (
+                        <li key={proj.id}>
+                          <Link to={`/project/${proj.id}`}>
+                            <span>
+                              <strong>{proj.title}</strong>
+                              <small>{proj.location} · {proj.area}</small>
+                            </span>
+                            <ArrowUpRight size={15} />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {relatedBlogs.length > 0 && (
+                  <div className="sd-crosslink-col clay">
+                    <div className="sd-crosslink-head">
+                      <BookOpen size={18} />
+                      <h3>Helpful Planning Guides</h3>
+                    </div>
+                    <ul>
+                      {relatedBlogs.map((blog) => (
+                        <li key={blog.slug}>
+                          <Link to={`/blog/${blog.slug}`}>
+                            <span>
+                              <strong>{blog.title}</strong>
+                              <small>{blog.category} · {blog.readTime}</small>
+                            </span>
+                            <ArrowUpRight size={15} />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Sibling Sub-Services (when on an individual sub-service page) */}
       {!isCategory && siblingOptions.length > 0 && (

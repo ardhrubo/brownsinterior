@@ -1,0 +1,13 @@
+# Canonical host redirects (Cloudflare Pages)
+https://www.brownsinteriorsbd.com/* https://brownsinteriorsbd.com/:splat 301!
+https://brownsinterior.com/* https://brownsinteriorsbd.com/:splat 301!
+https://www.brownsinterior.com/* https://brownsinteriorsbd.com/:splat 301!
+
+# Legacy & alias route permanent redirects
+/team /about 301
+/cost-calculator /cost-estimator 301
+/career /careers 301
+/services/renovation /services/renovation-remodeling 301
+/services/commercial-office-interior /services/commercial-interior 301
+/services/restaurant-salon-retail-interior /services/office-retail-interior 301
+/services/:categorySlug/:slug /services/:slug 301

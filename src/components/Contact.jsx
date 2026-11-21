@@ -84,8 +84,8 @@ export default function Contact({ showHero = true, cream = false }) {
     <>
       {showHero && (
         <SEO
-          title="Contact Us & Book Free Consultation"
-          description="Contact Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Uttara, Dhaka. Book a free consultation, site visit, or request an itemized BOQ estimate for your residential or commercial project."
+          title="Contact Us & Book Free Consultation in Dhaka"
+          description="Contact Brown's Interiors in Uttara, Dhaka (+880 1768-436319). Book a free site visit, design consultation, or itemized BOQ for your project."
           canonicalPath="/contact"
         />
       )}

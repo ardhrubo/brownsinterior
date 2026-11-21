@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://brownsinteriorsbd.com/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,61 +13,61 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/about</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/projects</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/process</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/testimonials</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/cost-estimator</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/careers</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/contact</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/interior-design</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -77,7 +77,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/residential-interior</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -87,7 +87,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/commercial-interior</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -97,7 +97,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/office-retail-interior</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -107,147 +107,91 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/architecture</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=640</image:loc>
-      <image:title>Architecture</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/building-design-planning</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Building Design &amp; Planning</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/floor-plans-elevations</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Floor Plans &amp; Elevations</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/exterior-facade-design</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Exterior &amp; Facade Design</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/architectural-drawings</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Architectural Drawings</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/engineering</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=640</image:loc>
-      <image:title>Engineering</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/structural-design-consultancy</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Structural Design &amp; Consultancy</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/structural-analysis</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Structural Analysis</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/technical-drawings</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Technical Drawings</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/renovation-remodeling</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=640</image:loc>
-      <image:title>Renovation &amp; Remodeling</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/residential-renovation</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Residential Renovation</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/commercial-renovation</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Commercial Renovation</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/kitchen-bathroom-remodeling</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Kitchen &amp; Bathroom Remodeling</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/space-optimization</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Space Optimization</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/exhibition-booth-design</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -257,7 +201,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/exhibition-booth-design-service</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -267,7 +211,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/trade-show-stand-design</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -277,7 +221,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/custom-booth-design</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -287,77 +231,49 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/3d-booth-visualization</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>3D Booth Visualization</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/booth-layout-technical-drawings</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Booth Layout &amp; Technical Drawings</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/project-management</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=640</image:loc>
-      <image:title>Project Management</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/site-supervision</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Site Supervision</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/project-planning-coordination</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Project Planning &amp; Coordination</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/material-selection</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Material Selection</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/cost-estimation-budget-planning</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Cost Estimation &amp; Budget Planning</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/additional-services</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -367,7 +283,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/custom-furniture-design</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -377,7 +293,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/2d-drawings-3d-visualization</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -387,7 +303,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/lighting-ceiling-design</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -397,17 +313,13 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/electrical-plumbing-coordination</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;fm=webp&amp;q=70&amp;w=1400</image:loc>
-      <image:title>Electrical &amp; Plumbing Coordination</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/turnkey-interior-solutions</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -417,7 +329,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/services/remote-international-design-services</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -427,13 +339,9 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/project/1</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-marble-luxury-hall.webp</image:loc>
-      <image:title>Gulshan Duplex Penthouse</image:title>
-    </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-marble-luxury-hall.webp</image:loc>
       <image:title>Gulshan Duplex Penthouse</image:title>
@@ -442,16 +350,20 @@
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/bedroom-dark-luxury-suite.webp</image:loc>
       <image:title>Gulshan Duplex Penthouse</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-dining-wine-chandelier.webp</image:loc>
+      <image:title>Gulshan Duplex Penthouse</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/residential/bedroom-bay-window-suite.webp</image:loc>
+      <image:title>Gulshan Duplex Penthouse</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/project/2</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-conference-smartboard.webp</image:loc>
-      <image:title>Banani Executive HQ</image:title>
-    </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-conference-smartboard.webp</image:loc>
       <image:title>Banani Executive HQ</image:title>
@@ -460,16 +372,20 @@
       <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-workstations-pod.webp</image:loc>
       <image:title>Banani Executive HQ</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-floor-reception-hub.webp</image:loc>
+      <image:title>Banani Executive HQ</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-conference-showroom.webp</image:loc>
+      <image:title>Banani Executive HQ</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/project/3</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-dining-neoclassical.webp</image:loc>
-      <image:title>Bashundhara Signature Villa</image:title>
-    </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-dining-neoclassical.webp</image:loc>
       <image:title>Bashundhara Signature Villa</image:title>
@@ -478,16 +394,16 @@
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-panoramic-library.webp</image:loc>
       <image:title>Bashundhara Signature Villa</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/interior/living-room-v2.webp</image:loc>
+      <image:title>Bashundhara Signature Villa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/project/4</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-dining-wine-chandelier.webp</image:loc>
-      <image:title>Heritage Rattan &amp; Lounge Suite</image:title>
-    </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-dining-wine-chandelier.webp</image:loc>
       <image:title>Heritage Rattan &amp; Lounge Suite</image:title>
@@ -496,16 +412,16 @@
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/bedroom-bay-window-suite.webp</image:loc>
       <image:title>Heritage Rattan &amp; Lounge Suite</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/residential/bedroom-dark-luxury-suite.webp</image:loc>
+      <image:title>Heritage Rattan &amp; Lounge Suite</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/project/5</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/interior/master-bedroom-client-fav.webp</image:loc>
-      <image:title>Dhanmondi Minimalist Residence</image:title>
-    </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/interior/master-bedroom-client-fav.webp</image:loc>
       <image:title>Dhanmondi Minimalist Residence</image:title>
@@ -514,16 +430,20 @@
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/bedroom-dark-luxury-suite.webp</image:loc>
       <image:title>Dhanmondi Minimalist Residence</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/residential/bedroom-bay-window-suite.webp</image:loc>
+      <image:title>Dhanmondi Minimalist Residence</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/interior/bedroom-chandelier-master.webp</image:loc>
+      <image:title>Dhanmondi Minimalist Residence</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/project/6</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-floor-reception-hub.webp</image:loc>
-      <image:title>Apex Garments Corporate Office</image:title>
-    </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-floor-reception-hub.webp</image:loc>
       <image:title>Apex Garments Corporate Office</image:title>
@@ -532,16 +452,20 @@
       <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-conference-showroom.webp</image:loc>
       <image:title>Apex Garments Corporate Office</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-workstations-pod.webp</image:loc>
+      <image:title>Apex Garments Corporate Office</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-meeting-suite.webp</image:loc>
+      <image:title>Apex Garments Corporate Office</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/project/7</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-1.webp</image:loc>
-      <image:title>XPLOR Trade Expo Pavilion</image:title>
-    </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-1.webp</image:loc>
       <image:title>XPLOR Trade Expo Pavilion</image:title>
@@ -550,10 +474,18 @@
       <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-2.webp</image:loc>
       <image:title>XPLOR Trade Expo Pavilion</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-3.webp</image:loc>
+      <image:title>XPLOR Trade Expo Pavilion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-4.webp</image:loc>
+      <image:title>XPLOR Trade Expo Pavilion</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/top-10-best-interior-design-company-in-bangladesh</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -579,7 +511,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/best-interior-design-company-in-bangladesh-2026-2027</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -589,10 +521,6 @@
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-dining-neoclassical.webp</image:loc>
       <image:title>Refined neoclassical living and dining interior delivered turnkey in Dhaka</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-floor-reception-hub.webp</image:loc>
-      <image:title>Corporate executive reception designed and executed by Brown’s Interiors in Bangladesh</image:title>
     </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/bedroom-bay-window-suite.webp</image:loc>
@@ -613,7 +541,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/best-interior-designer-in-bangladesh</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -643,7 +571,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/why-browns-interiors-bangladesh</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -673,7 +601,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/browns-interiors-trusted-interior-studio</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -703,7 +631,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/how-browns-interiors-works-process</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -737,7 +665,7 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/small-apartment-design-tips</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -775,16 +703,12 @@
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/exhibition-booth-that-stands-out</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-1.webp</image:loc>
       <image:title>Designing High-Impact Exhibition Booths in Dhaka</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-1.webp</image:loc>
-      <image:title>Custom exhibition stall at BICC Dhaka with elevated illuminated branding</image:title>
     </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-2.webp</image:loc>
@@ -795,30 +719,18 @@
       <image:title>3D structural planning and corporate interior design meeting suite</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-1.webp</image:loc>
-      <image:title>Dynamic lighting and halo branding on luxury exhibition booth in Dhaka</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/office/office-floor-reception-hub.webp</image:loc>
       <image:title>Semi private discussion lounge and meeting area in exhibition booth</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/booth/booth-2.webp</image:loc>
-      <image:title>Turnkey exhibition fabrication and modular assembly by Brown’s Interior</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://brownsinteriorsbd.com/blog/interior-design-cost-in-bangladesh-guide</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-marble-luxury-hall.webp</image:loc>
       <image:title>Planning Your Interior Budget, Room by Room</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-marble-luxury-hall.webp</image:loc>
-      <image:title>Living-room interior with a marble-effect feature wall and layered lighting.</image:title>
     </image:image>
     <image:image>
       <image:loc>https://brownsinteriorsbd.com/portfolio/residential/living-dining-wine-chandelier.webp</image:loc>

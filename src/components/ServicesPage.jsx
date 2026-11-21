@@ -61,8 +61,8 @@ export default function ServicesPage() {
   return (
     <main className="sp-page">
       <SEO
-        title="Our Services"
-        description="Explore interior design, architectural planning, structural engineering, renovation, and trade show booth solutions by Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Dhaka."
+        title="Interior Design & Architecture Services in Dhaka"
+        description="Explore residential & office interior design, RAJUK architecture, structural engineering, renovation, and exhibition booth solutions across Bangladesh."
         canonicalPath="/services"
       />
 

@@ -17,26 +17,36 @@ export async function generateSitemap(domain) {
 
   const urls = [];
 
-  // Helper to ensure all image URLs are strictly absolute (Google Image Sitemap requirement)
-  function toAbsoluteUrl(url) {
+  // Helper to ensure all image URLs are strictly absolute and first-party (Google Image Sitemap best practice)
+  function toAbsoluteFirstPartyUrl(url) {
     if (!url) return '';
-    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url.startsWith(domain) ? url : '';
+    }
     return `${domain}${url.startsWith('/') ? '' : '/'}${url}`;
   }
 
-  // Helper to add URL
+  // Helper to add URL with deduplicated, first-party image entries
   function addUrl({ loc, lastmod = today, changefreq = 'monthly', priority = '0.8', images = [] }) {
+    const seenImages = new Set();
+    const cleanImages = [];
+    for (const img of images) {
+      if (!img || !img.loc) continue;
+      const abs = toAbsoluteFirstPartyUrl(img.loc);
+      if (!abs || seenImages.has(abs)) continue;
+      seenImages.add(abs);
+      cleanImages.push({
+        loc: abs,
+        title: img.title || '',
+      });
+    }
+
     urls.push({
       loc: `${domain}${loc}`,
       lastmod,
       changefreq,
       priority,
-      images: images
-        .filter((img) => img && img.loc)
-        .map((img) => ({
-          loc: toAbsoluteUrl(img.loc),
-          title: img.title || '',
-        })),
+      images: cleanImages,
     });
   }
 
@@ -93,7 +103,7 @@ export async function generateSitemap(domain) {
       loc: `/project/${p.id}`,
       priority: '0.75',
       changefreq: 'monthly',
-      images: pImages.slice(0, 3),
+      images: pImages.slice(0, 5),
     });
   });
 
@@ -108,8 +118,10 @@ export async function generateSitemap(domain) {
         }
       });
     }
+    const postLastmod = b.publishDateISO ? b.publishDateISO.slice(0, 10) : today;
     addUrl({
       loc: `/blog/${b.slug}`,
+      lastmod: postLastmod,
       priority: '0.8',
       changefreq: 'monthly',
       images: bImages,

@@ -18,8 +18,8 @@ export default function ProjectsPage() {
   return (
     <main style={{ minHeight: '100vh' }}>
       <SEO
-        title="Completed Projects Portfolio"
-        description="Browse our portfolio of completed luxury duplexes, corporate offices, restaurants, and villas in Gulshan, Banani, and Dhaka by Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও."
+        title="Completed Interior Projects Portfolio in Dhaka"
+        description="Browse completed luxury apartments, duplexes, corporate offices, villas, and exhibition booths in Gulshan, Banani, Dhanmondi, and Uttara, Dhaka."
         canonicalPath="/projects"
       />
       <section className="section page-head-section">

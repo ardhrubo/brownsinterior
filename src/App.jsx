@@ -59,8 +59,8 @@ const AboutPage = () => {
   return (
     <main>
       <SEO
-        title="About Us"
-        description="Learn about Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, led by Engr. Aslam Sheikh. Over 10 years of experience delivering luxury interior design, architecture, and turnkey construction across Bangladesh."
+        title="About Us & Leadership Team"
+        description="Meet Engr. Aslam Sheikh and the Brown's Interiors team in Uttara, Dhaka. 10+ years delivering turnkey interiors, architecture, and civil engineering."
         canonicalPath="/about"
       />
       <section className="section page-head-section">

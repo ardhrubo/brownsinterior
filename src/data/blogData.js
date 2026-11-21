@@ -40,9 +40,9 @@ export const blogPosts = [
     },
     excerpt:
       'A side-by-side look at Bangladesh’s leading interior design studios, engineering standards, and per-sq-ft project costs.',
-    metaTitle: 'Top 10 Best Interior Design Companies in Bangladesh (2026 Guide) | Brown’s Interiors',
+    metaTitle: 'Top 10 Interior Design Companies in Bangladesh (2026)',
     metaDescription:
-      'Looking for the best interior design company in Bangladesh? Compare the leading interior firms in Dhaka for 2026, evaluated on engineering credentials, itemized BOQ pricing, and turnkey execution.',
+      'Compare Bangladesh’s top 10 interior design firms in Dhaka for 2026 based on engineering credentials, itemized BOQ transparency, and turnkey quality.',
     keywords: [
       'top 10 interior design firms in bangladesh',
       'top 10 best interior design company in bangladesh',
@@ -731,9 +731,9 @@ export const blogPosts = [
     },
     excerpt:
       'Explore modern design trends for Dhaka homes and offices, climate-ready materials, and transparent 2026–2027 budgets.',
-    metaTitle: 'Best Interior Design Company in Bangladesh 2026–2027 (BD) | Brown’s Interiors',
+    metaTitle: 'Best Interior Design Company in Bangladesh (2026–2027)',
     metaDescription:
-      'Looking for the best interior design company in BD for 2026 & 2027? Explore Dhaka sq ft cost benchmarks, 2027 interior trends, and why Brown’s Interiors leads the market.',
+      'Explore 2026–2027 interior trends in Dhaka, moisture-ready materials, and transparent per sq ft turnkey costs from Brown’s Interiors.',
     keywords: [
       'best interior design company in bangladesh 2026',
       'best interior design company in bangladesh 2027',
@@ -1219,9 +1219,9 @@ export const blogPosts = [
     },
     excerpt:
       'How civil engineering discipline and creative spatial planning come together to build lasting homes and workspaces.',
-    metaTitle: 'Best Interior Designer in Bangladesh: Engr. Aslam Sheikh | Brown’s Interiors',
+    metaTitle: 'Best Interior Designer in BD: Engr. Aslam Sheikh',
     metaDescription:
-      'Searching for the best interior designer in Bangladesh? Discover how Engr. Aslam Sheikh combines architectural design, civil engineering, and transparent BOQs at Brown’s Interiors.',
+      'Discover how Engr. Aslam Sheikh combines civil engineering discipline, architectural design, and transparent BOQs at Brown’s Interiors in Dhaka.',
     keywords: [
       'best interior designer in bangladesh',
       'best interior designer in dhaka',
@@ -2884,8 +2884,8 @@ export const blogPosts = [
       bio: 'With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh.',
     },
     excerpt: 'Where to put the sofa, what to store out of sight, and how to bring more light into the rooms you use every day.',
-    metaTitle: '7 Smart Design Tips for Small Apartments in Dhaka (800–1500 Sq Ft) | Brown’s Interior',
-    metaDescription: 'Complete guide to small apartment interior design in Dhaka by Engr. Aslam Sheikh. Space-saving furniture, vertical storage, lighting, and realistic renovation costs.',
+    metaTitle: '7 Smart Small Apartment Design Tips in Dhaka',
+    metaDescription: 'Practical small apartment interior design tips in Dhaka (800–1,500 sq ft): space-saving storage, lighting, layout zoning, and realistic budgets.',
     keywords: [
       'flat interior design in Dhaka',
       'small apartment interior design',
@@ -3420,7 +3420,7 @@ export const blogPosts = [
     title: 'Designing High-Impact Exhibition Booths in Dhaka',
     subtitle: 'Proven stall architecture, 3D visualization, visitor circulation, and turnkey fabrication strategies to dominate the trade show floor in Dhaka.',
     category: 'Exhibition',
-    categorySlug: 'commercial-interior',
+    categorySlug: 'exhibition-booth-design',
     date: 'Sep 18, 2026',
     publishDateISO: '2026-09-18T10:00:00+06:00',
     readTime: '8 min read',
@@ -3440,8 +3440,8 @@ export const blogPosts = [
       bio: 'With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh.',
     },
     excerpt: 'How to plan visitor flow, focal lighting, and pre-fabricated modular stalls for BICC and ICCB trade expos.',
-    metaTitle: 'How to Design an Exhibition Booth That Stands Out at BICC Dhaka | Brown’s Interior',
-    metaDescription: 'Exhibition stall design and fabrication guide for BICC, ICCB & trade expos in Bangladesh by Engr. Aslam Sheikh. 3D visualization, lighting, and costing.',
+    metaTitle: 'Exhibition Booth Design Guide: BICC & ICCB Dhaka',
+    metaDescription: 'Exhibition stall design and fabrication guide for BICC, ICCB & trade expos in Bangladesh by Engr. Aslam Sheikh: 3D renders, lighting, and costing.',
     keywords: [
       'exhibition stall design in Bangladesh',
       'booth design Dhaka',
@@ -3934,8 +3934,8 @@ export const blogPosts = [
     "bio": "With over 10 years of experience in architectural design and civil engineering execution, Engr. Aslam Sheikh has led 250+ turnkey residential, commercial, and exhibition projects across Bangladesh."
   },
   "excerpt": 'Before asking for a quote, list what each room needs. Here is how to think through furniture, materials, and the costs that are easy to miss.',
-  "metaTitle": "Interior Design Cost in Bangladesh: BOQ & Material Guide (2026) | Brown’s Interior",
-  "metaDescription": "Plan a Dhaka apartment interior with Brown’s Interior’s budget benchmarks, a 1,200 sq ft example, material guidance, BOQ checklist, and quotation exclusions.",
+  "metaTitle": "Interior Design Cost in Bangladesh: 2026 BOQ Guide",
+  "metaDescription": "Plan your Dhaka apartment interior budget with 2026 per sq ft benchmarks, a 1,200 sq ft example, moisture-safe materials, and a complete BOQ checklist.",
   "keywords": [
     "interior design cost in Bangladesh",
     "Dhaka apartment interior budget",

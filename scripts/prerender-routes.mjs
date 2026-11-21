@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
 const BRAND_NAME = "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও";
+const SHORT_BRAND_NAME = "Brown's Interiors";
 const DEFAULT_KEYWORDS =
   "Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, বাংলাদেশের অন্যতম নির্ভরযোগ্য ইন্টেরিয়র ডিজাইন স্টুডিও, বাংলাদেশের বেস্ট ইন্টেরিয়র ডিজাইন কোম্পানি, ইন্টেরিয়র ডিজাইন ঢাকা, ফ্ল্যাট ইন্টেরিয়র ডিজাইন, অফিস ইন্টেরিয়র ডিজাইন, Interior Design Dhaka, Interior Design Bangladesh, Architecture Bangladesh, Structural Engineering, Luxury Home Decor, Commercial Office Interior, Brown's Interiors";
 
@@ -45,7 +46,7 @@ function toAbsoluteUrl(domain, assetPath) {
 
 function formatTitle(title) {
   if (!title) return BRAND_NAME;
-  return /brown['’]?s\s+interior/i.test(title) ? title : `${title} | ${BRAND_NAME}`;
+  return /brown['’]?s\s+interior/i.test(title) ? title : `${title} | ${SHORT_BRAND_NAME}`;
 }
 
 function replaceMetaTag(html, attrName, attrValue, content) {
@@ -58,6 +59,14 @@ function replaceMetaTag(html, attrName, attrValue, content) {
     return html.replace(regex, `$1"${safeContent}"$2`);
   }
   return html.replace('</head>', `  <meta ${attrName}="${attrValue}" content="${safeContent}" />\n  </head>`);
+}
+
+function renderFigureHtml(src, alt, caption) {
+  if (!src) return '';
+  return `<figure style="margin:20px 0">
+    <img src="${escapeHtml(src)}" alt="${escapeHtml(alt || '')}" width="960" height="600" loading="lazy" style="max-width:100%;height:auto;border-radius:12px" />
+    ${caption ? `<figcaption style="font-size:14px;color:#5a524a;margin-top:6px">${escapeHtml(caption)}</figcaption>` : ''}
+  </figure>`;
 }
 
 function renderStaticRouteHtml(template, domain, route) {
@@ -135,8 +144,10 @@ export async function prerenderRoutes(domain) {
   }
 
   const template = fs.readFileSync(templatePath, 'utf8');
-  const { servicesData } = await import('../src/data/servicesData.js');
+  const { servicesData, findServiceOrOption } = await import('../src/data/servicesData.js');
+  const { serviceDetailsContent } = await import('../src/data/serviceDetailsContent.js');
   const { projectsData } = await import('../src/data/projectsData.js');
+  const { projectCaseStudies } = await import('../src/data/projectCaseStudies.js');
   const { blogPosts } = await import('../src/data/blogData.js');
   const {
     stats,
@@ -150,7 +161,7 @@ export async function prerenderRoutes(domain) {
   const routes = [];
   const navFooter = buildNavFooterHtml();
 
-  // 0. Homepage (/) — prerendered directly into dist/index.html so Googlebot sees full H1, services, projects, blog & nav without waiting on JS
+  // 0. Homepage (/)
   const homeServicesHtml = servicesData
     .map(
       (s) => `<li>
@@ -189,6 +200,7 @@ export async function prerenderRoutes(domain) {
       "বাংলাদেশের অন্যতম নির্ভরযোগ্য ইন্টেরিয়র ডিজাইন স্টুডিও। Complete Interior & Exterior Design and Execution Services Across Bangladesh.",
     bodyHtml: `<h1>Beautiful Design, Quality Work — Trusted Service | Brown's Interiors</h1>
       <p>Complete Interior &amp; Exterior Design and Execution Services Across Bangladesh and worldwide, led by <strong>Engr. Aslam Sheikh</strong> (Dip. Architecture &amp; Interior Design, NPI · B.Sc. in Civil Engg., IUBAT · IEB Membership No: A29734).</p>
+      ${renderFigureHtml('/optimized/hero/slide-1-1600.webp', "Luxury residential interior design in Dhaka by Brown's Interiors")}
       <p>${stats.map((s) => `${s.value}${s.suffix} ${escapeHtml(s.label)}`).join(' · ')}</p>
       <section>
         <h2>Our Core Services</h2>
@@ -224,11 +236,12 @@ export async function prerenderRoutes(domain) {
   // 1. Core static routes
   routes.push({
     path: '/about',
-    title: 'About Us',
+    title: 'About Us & Leadership Team',
     description:
-      "Learn about Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও, led by Engr. Aslam Sheikh. Over 10 years of experience delivering luxury interior design, architecture, and turnkey construction across Bangladesh.",
+      "Meet Engr. Aslam Sheikh and the Brown's Interiors team in Uttara, Dhaka. 10+ years delivering turnkey interiors, architecture, and civil engineering.",
     bodyHtml: `<h1>About Brown's Interiors</h1>
       <p>Led by Founder &amp; Principal Designer <strong>Engr. Aslam Sheikh</strong> (Dip. Architecture &amp; Interior Design, NPI · B.Sc. in Civil Engg., IUBAT · IEB Membership No: A29734), Brown's Interiors delivers residential, commercial, architectural, structural, and exhibition booth turnkey execution across Dhaka and Bangladesh, alongside worldwide online architectural and interior design services.</p>
+      ${renderFigureHtml('/team/engr-aslam-sheikh.webp', "Engr. Aslam Sheikh — Founder & Principal Designer of Brown's Interiors")}
       <p>${stats.map((s) => `${s.value}${s.suffix} ${escapeHtml(s.label)}`).join(' · ')}</p>
       <h2>Leadership &amp; Execution Team</h2>
       <ul>${teamMembers
@@ -245,11 +258,19 @@ export async function prerenderRoutes(domain) {
 
   routes.push({
     path: '/services',
-    title: 'Our Services',
+    title: 'Interior Design & Architecture Services in Dhaka',
     description:
-      "Explore interior design, architectural planning, structural engineering, renovation, and trade show booth solutions by Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Dhaka.",
+      'Explore residential & office interior design, RAJUK architecture, structural engineering, renovation, and exhibition booth solutions across Bangladesh.',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: "Interior Design & Architecture Services | Brown's Interiors",
+      url: `${domain}/services`,
+      description: 'Complete interior design, architectural planning, structural engineering, renovation, and exhibition booth services across Bangladesh.',
+    },
     bodyHtml: `<h1>Interior Design, Architecture &amp; Turnkey Services</h1>
       <p>Holistic architecture, interior design, structural engineering, renovation, and turnkey execution solutions crafted for residential, commercial, and exhibition spaces in Dhaka and across Bangladesh.</p>
+      ${renderFigureHtml('/portfolio/interior/living-room.webp', "Turnkey residential interior design in Dhaka by Brown's Interiors")}
       <ul>${servicesData
         .map(
           (c) => `<li>
@@ -270,15 +291,22 @@ export async function prerenderRoutes(domain) {
 
   routes.push({
     path: '/projects',
-    title: 'Completed Projects Portfolio',
+    title: 'Completed Interior Projects Portfolio in Dhaka',
     description:
-      "Browse our portfolio of completed luxury duplexes, corporate offices, restaurants, and villas in Gulshan, Banani, and Dhaka by Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও.",
+      'Browse completed luxury apartments, duplexes, corporate offices, villas, and exhibition booths in Gulshan, Banani, Dhanmondi, and Uttara, Dhaka.',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: "Completed Interior & Architectural Projects | Brown's Interiors",
+      url: `${domain}/projects`,
+    },
     bodyHtml: `<h1>Completed Interior &amp; Architectural Projects</h1>
       <p>Explore our completed residential, commercial, architectural, and exhibition booth projects across Gulshan, Banani, Dhanmondi, Uttara, and Bashundhara R/A in Dhaka.</p>
       <ul>${projectsData
         .map(
           (p) => `<li>
             <h2><a href="/project/${p.id}">${escapeHtml(p.title)}</a></h2>
+            ${renderFigureHtml(p.image, `${p.title} in ${p.location}`)}
             <p>${escapeHtml(p.category)} · ${escapeHtml(p.location || 'Dhaka')} · ${escapeHtml(p.area || '')} · ${escapeHtml(p.year || '')}</p>
             <p>${escapeHtml(p.description || '')}</p>
           </li>`
@@ -287,32 +315,68 @@ export async function prerenderRoutes(domain) {
       ${navFooter}`,
   });
 
+  const processFaqs = [
+    {
+      question: 'What happens during the initial site visit and consultation?',
+      answer:
+        'Our design engineer visits your flat, office, or plot in Dhaka with laser measurement tools to record exact room dimensions, column and beam positions, plumbing stacks, and electrical DB capacity while discussing your functional goals and target budget.',
+    },
+    {
+      question: 'Do I see 3D designs and approve materials before site work begins?',
+      answer:
+        'Yes. We never cut a single board or order finishes until you review photorealistic 3D views, inspect physical material sample boards (plywood, HPL, veneer, marble, hardware), and sign off on your room-by-room itemized BOQ.',
+    },
+    {
+      question: 'How does Brown’s Interiors guarantee on-time handover in Dhaka?',
+      answer:
+        'We run off-site workshop fabrication in parallel with on-site civil and MEP rough-in under a milestone Gantt schedule supervised daily by our civil and interior engineers, ending with a 50-point snag inspection and 1-year workmanship warranty.',
+    },
+  ];
+
   routes.push({
     path: '/process',
-    title: 'Our Process',
+    title: 'Our 6-Step Turnkey Design & Build Process',
     description:
-      'Explore our proven 6-step interior and architecture process from consultation and 3D visualization to turnkey handover in Dhaka.',
+      'Explore our proven 6-step interior and architectural process in Dhaka from laser site survey and 4K 3D renders to itemized BOQ and turnkey handover.',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: processFaqs.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
     bodyHtml: `<h1>Our 6-Step Turnkey Design &amp; Build Process</h1>
-      <p>A clear, systematic 6-step journey from your first concept and laser site survey to final turnkey handover with a 1-year workmanship warranty.</p>
+      <p>A clear, systematic 6-step interior and architectural workflow engineered by Engr. Aslam Sheikh to take Dhaka residential flats, corporate offices, villas, and ICCB/BICC exhibition booths from first concept and laser site survey to final turnkey handover with a written 1-year workmanship warranty.</p>
+      ${renderFigureHtml('/portfolio/residential/bedroom-bay-window-suite.webp', "Turnkey residential execution workflow by Brown's Interiors in Dhaka")}
+      <h2>Step-by-Step Project Delivery</h2>
       <ol>${processSteps
         .map(
           (st) => `<li>
-            <h2>${escapeHtml(st.step)} — ${escapeHtml(st.title)} (${escapeHtml(st.phase)} · ${escapeHtml(st.duration)})</h2>
+            <h3>${escapeHtml(st.step)} — ${escapeHtml(st.title)} (${escapeHtml(st.phase)} · ${escapeHtml(st.duration)})</h3>
             <p>${escapeHtml(st.text)}</p>
           </li>`
         )
         .join('')}</ol>
-      <p><a href="/cost-estimator">Estimate Your Project Cost</a> · <a href="/contact">Schedule a Site Visit</a></p>
+      <h2>Why Structured Engineering Matters</h2>
+      <p>Most interior delays and cost overruns in Bangladesh stem from starting site carpentry before electrical, AC, plumbing, and material specifications are resolved. By separating discovery, 2D AutoCAD zoning, 4K 3D visualization, physical sample approval, and itemized BOQ lock-in ahead of mobilization, every trade works from one unified drawing set with zero guesswork.</p>
+      <h2>Process Frequently Asked Questions</h2>
+      ${processFaqs.map((f) => `<h3>${escapeHtml(f.question)}</h3><p>${escapeHtml(f.answer)}</p>`).join('')}
+      <p><a href="/cost-estimator">Estimate Your Project Cost</a> · <a href="/blog/how-browns-interiors-works-process">Read Full Process Walkthrough</a> · <a href="/contact">Schedule a Site Visit</a></p>
       ${navFooter}`,
   });
 
   routes.push({
     path: '/testimonials',
-    title: 'Client Reviews & Testimonials',
+    title: 'Client Reviews & Testimonials in Dhaka',
     description:
-      "Read genuine testimonials from apartment owners, corporate directors, and commercial clients across Dhaka who transformed their spaces with Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও.",
+      "Read verified reviews from Gulshan, Banani, Dhanmondi, Bashundhara, and UK NRB clients who transformed their homes and offices with Brown's Interiors.",
     bodyHtml: `<h1>Client Reviews &amp; Testimonials</h1>
-      <p>4.9 / 5 Average Client Rating · 250+ Handed-Over Spaces · Residential, Commercial &amp; Expo clients across Gulshan, Banani, Dhanmondi, Uttara, Bashundhara R/A, and overseas.</p>
+      <p>Rated 4.9 out of 5 across 250+ handed-over residential apartments, duplex villas, corporate offices, restaurants, and trade exhibition booths across Gulshan, Banani, Dhanmondi, Uttara, Bashundhara R/A, and overseas NRB communities in the UK, USA, Canada, and Middle East.</p>
+      ${renderFigureHtml('/portfolio/residential/living-marble-luxury-hall.webp', "Completed Gulshan residence handed over by Brown's Interiors")}
+      <h2>Verified Client Stories Across Dhaka &amp; Abroad</h2>
+      <p>From 1,200 sq ft family flats in Uttara and Dhanmondi to 7,800 sq ft corporate headquarters in Banani and overnight ICCB trade show pavilions, our clients judge our work on three promises: exact 3D-to-reality finishing, transparent itemized BOQ pricing with zero hidden extras, and punctual handover backed by a 1-year workmanship warranty.</p>
       <ul>${testimonials
         .map(
           (t) => `<li>
@@ -321,38 +385,75 @@ export async function prerenderRoutes(domain) {
           </li>`
         )
         .join('')}</ul>
-      <p><a href="/projects">Explore Completed Projects</a> · <a href="/contact">Book Your Free Consultation</a></p>
+      <h2>What Homeowners &amp; Corporate Clients Highlight Most</h2>
+      <ul>
+        <li><strong>Itemized BOQ Transparency:</strong> Clear unit rates and locked material brands agreed before mobilization so budgets stay predictable.</li>
+        <li><strong>3D-to-Reality Fidelity:</strong> Permanent in-house carpentry, electrical, glazing, and polishing teams building strictly to approved drawings.</li>
+        <li><strong>Reliable Remote NRB Updates:</strong> Weekly WhatsApp and cloud walkthrough videos allowing overseas families to complete Dhaka flats stress-free.</li>
+        <li><strong>Post-Handover Support:</strong> Dedicated 1-year workmanship warranty and responsive maintenance checks after move-in.</li>
+      </ul>
+      <p><a href="/projects">Explore Completed Projects</a> · <a href="/services/remote-international-design-services">NRB Remote Services</a> · <a href="/contact">Book Your Free Consultation</a></p>
       ${navFooter}`,
   });
 
+  const calcFaqs = [
+    {
+      question: 'How accurate is the Dhaka interior design cost estimator?',
+      answer:
+        'Our estimator is calibrated directly from real Dhaka turnkey BOQ benchmarks maintained by Engr. Aslam Sheikh across 250+ residential, commercial, and exhibition projects. It gives a realistic planning range before an on-site laser survey produces your exact line-by-line BOQ.',
+    },
+    {
+      question: 'What factors change per-sq-ft interior pricing the most?',
+      answer:
+        'Total square footage of custom cabinetry (wardrobes, modular kitchen, wall paneling), core board grade (commercial ply vs. waterproof marine plywood/HDHMR), surface finish (HPL vs. acrylic/veneer/PU lacquer), marble or quartz stone volume, and imported German hardware.',
+    },
+    {
+      question: 'Are electrical appliances, ACs, and loose decor included in the estimate?',
+      answer:
+        'Turnkey interior estimates cover civil updates, ceilings, concealed electrical/lighting, paint, paneling, modular kitchen, and fixed cabinetry. Loose electronics (ACs, TVs, ovens, refrigerators) are itemized separately upon request so you never pay hidden markups.',
+    },
+  ];
+
   routes.push({
     path: '/cost-estimator',
-    title: 'Interior Design Cost Calculator',
+    title: 'Dhaka Interior Design Cost Calculator (2026)',
     description:
-      'Estimate residential, commercial, and exhibition booth interior design costs instantly with our transparent budget calculator.',
+      'Calculate residential flat, corporate office, and exhibition booth interior costs in Dhaka per sq ft across Standard, Premium, and Luxury tiers.',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: calcFaqs.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    },
     bodyHtml: `<h1>Dhaka Interior Design Cost Calculator (2026)</h1>
-      <p>Instant, transparent budget calculation calibrated for Dhaka's residential, commercial office, and exhibition booth turnkey interior market by Engr. Aslam Sheikh.</p>
+      <p>Instant, transparent budget calculation calibrated specifically for Dhaka's residential apartment, corporate office, and trade exhibition booth turnkey interior market by Engr. Aslam Sheikh.</p>
+      ${renderFigureHtml('/portfolio/interior/modern-kitchen.webp', "Modular kitchen and residential turnkey interior costing in Dhaka by Brown's Interiors")}
       <h2>Calibrated Turnkey Packages (per sq ft)</h2>
       <ul>
-        <li><strong>Standard Tier (৳750 – ৳1,083.33 / sq ft · ~৳9 – 13 Lac for 1,200 sft Residential):</strong> Quality HPL board, clean electrical fit-out, and commercial hardware.</li>
-        <li><strong>Premium Tier (৳1,083.33 – ৳2,083.33 / sq ft · ~৳13 – 25 Lac for 1,200 sft Residential):</strong> High-gloss acrylic, natural teak/oak veneer, and warm cove lighting.</li>
-        <li><strong>Luxury Tier (৳1,666.67 – ৳3,750 / sq ft · ~৳20 – 45 Lac for 1,200 sft Residential):</strong> Italian marble, acoustic paneling, smart dimming, and bespoke millwork.</li>
+        <li><strong>Standard Tier (৳750 – ৳1,083.33 / sq ft · ~৳9 – 13 Lac for 1,200 sft Residential):</strong> Quality HPL laminated cabinetry, clean electrical and LED fit-out, false ceiling margins, damp-proof paint, and dependable commercial hardware.</li>
+        <li><strong>Premium Tier (৳1,083.33 – ৳2,083.33 / sq ft · ~৳13 – 25 Lac for 1,200 sft Residential):</strong> High-gloss acrylic and natural teak/oak veneer finishes, waterproof marine plywood kitchen base units, quartz counters, soft-close hardware, and warm architectural cove lighting.</li>
+        <li><strong>Luxury Tier (৳1,666.67 – ৳3,750 / sq ft · ~৳20 – 45 Lac for 1,200 sft Residential):</strong> Book-matched Italian marble accents, acoustic fluted paneling, PU lacquer bespoke millwork, smart scene dimmers, and custom handcrafted furniture.</li>
       </ul>
-      <h2>Space Multipliers</h2>
+      <h2>Space Type Multipliers</h2>
       <ul>
-        <li><strong>Residential (1.0x):</strong> Apartments, homes, and duplexes.</li>
-        <li><strong>Commercial &amp; Office (1.2x):</strong> Corporate offices, retail stores, restaurants, and showrooms.</li>
-        <li><strong>Exhibition Booth (1.45x):</strong> Trade fair stalls and custom pavilions at BICC / ICCB.</li>
+        <li><strong>Residential (1.0x):</strong> Apartments, duplexes, triplex villas, and family homes across Uttara, Bashundhara R/A, Dhanmondi, Banani, and Gulshan.</li>
+        <li><strong>Commercial &amp; Office (1.2x):</strong> Corporate offices, buying houses, retail showrooms, cafés, and clinics requiring acoustic glass partitions and heavy-duty MEP.</li>
+        <li><strong>Exhibition Booth (1.45x):</strong> Custom trade fair stalls and flagship pavilions engineered for rapid overnight setup at BICC and ICCB.</li>
       </ul>
-      <p>Need an itemized line-by-line BOQ for your floor plan? <a href="/contact">Book a Free Site Visit &amp; BOQ Consultation</a> or read our <a href="/blog/interior-design-cost-in-bangladesh-guide">Interior Design Cost Guide</a>.</p>
+      <h2>Interior Costing Frequently Asked Questions</h2>
+      ${calcFaqs.map((f) => `<h3>${escapeHtml(f.question)}</h3><p>${escapeHtml(f.answer)}</p>`).join('')}
+      <p>Need an exact itemized BOQ for your floor plan? <a href="/contact">Book a Free Site Visit &amp; BOQ Consultation</a> or read our complete <a href="/blog/interior-design-cost-in-bangladesh-guide">2026 Interior Design Cost Guide for Bangladesh</a>.</p>
       ${navFooter}`,
   });
 
   routes.push({
     path: '/careers',
-    title: 'Careers',
+    title: "Careers at Brown's Interiors — Uttara, Dhaka",
     description:
-      "Join Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Uttara, Dhaka. Explore open career opportunities for Interior Designers, 3D Visualizers, Project Architects, Site Engineers, and Interns.",
+      "Join Brown's Interiors in Uttara, Dhaka. Explore open roles for Interior Designers, 3D Visualizers, Project Architects, Site Engineers, and Interns.",
     keywords: "Interior Design Jobs Dhaka, Architect Jobs Bangladesh, Civil Engineer Jobs Dhaka, 3D Visualizer Jobs, Brown's Interiors Careers",
     bodyHtml: `<h1>Careers at Brown's Interiors</h1>
       <p>Join our architects, interior designers, 3D visualizers, and site engineers at our Uttara, Dhaka-1230 studio. Send your CV and portfolio to <a href="mailto:career@brownsinteriorsbd.com">career@brownsinteriorsbd.com</a>.</p>
@@ -373,31 +474,53 @@ export async function prerenderRoutes(domain) {
 
   routes.push({
     path: '/contact',
-    title: 'Contact Us & Book Free Consultation',
+    title: 'Contact Us & Book Free Consultation in Dhaka',
     description:
-      "Contact Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও in Uttara, Dhaka. Book a free consultation, site visit, or request an itemized BOQ estimate for your residential or commercial project.",
+      "Contact Brown's Interiors in Uttara, Dhaka (+880 1768-436319). Book a free site visit, design consultation, or itemized BOQ for your project.",
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: "Contact Brown's Interiors",
+      url: `${domain}/contact`,
+      mainEntity: { '@id': `${domain}/#organization` },
+    },
     bodyHtml: `<h1>Contact Brown's Interiors &amp; Book a Free Consultation</h1>
-      <p>Let's plan, design, and build your space with transparent itemized BOQ costing and engineering-led turnkey execution across Dhaka, Bangladesh, and worldwide.</p>
+      <p>Let's plan, design, and build your residential apartment, duplex villa, corporate office, retail showroom, or trade exhibition booth with transparent itemized BOQ costing and civil-engineer-led turnkey execution across Dhaka, Bangladesh, and worldwide.</p>
       <h2>Studio Contact Details</h2>
       <ul>
         <li><strong>Studio Location:</strong> Uttara, Dhaka-1230, Bangladesh</li>
-        <li><strong>Phone &amp; WhatsApp:</strong> +880 1768-436319</li>
-        <li><strong>Email:</strong> info@brownsinteriorsbd.com (Careers: career@brownsinteriorsbd.com)</li>
-        <li><strong>Office Hours:</strong> Saturday – Thursday, 9:00 AM – 7:00 PM</li>
+        <li><strong>Direct Phone &amp; WhatsApp:</strong> +880 1768-436319</li>
+        <li><strong>General &amp; Project Inquiries:</strong> info@brownsinteriorsbd.com</li>
+        <li><strong>Careers &amp; Recruitment:</strong> career@brownsinteriorsbd.com</li>
+        <li><strong>Office Hours:</strong> Saturday – Thursday, 9:00 AM – 7:00 PM (BST)</li>
+      </ul>
+      <h2>Service Coverage Across Dhaka &amp; Worldwide</h2>
+      <p>Our engineering and execution teams conduct on-site surveys and full turnkey builds across Uttara, Gulshan, Banani, Baridhara, Bashundhara R/A, Dhanmondi, Mirpur DOHS, Mohakhali, Motijheel, and major Bangladeshi cities—plus dedicated Zoom consultations and turnkey Dhaka handover for Non-Resident Bangladeshi (NRB) clients in the UK, USA, Canada, Europe, Australia, and the Middle East.</p>
+      <h2>What to Share for a Faster Proposal</h2>
+      <ul>
+        <li>Approximate floor area (sq ft or katha) and property neighborhood</li>
+        <li>Project type (new flat handover, renovation, corporate office, building architecture, or ICCB/BICC expo stall)</li>
+        <li>Target move-in or launch date and comfortable budget tier (Standard, Premium, or Luxury)</li>
       </ul>
       <h2>Available Consultation Categories</h2>
       <ul>${servicesData
         .map((s) => `<li><a href="/services/${escapeHtml(s.slug)}">${escapeHtml(s.title)}</a> — ${escapeHtml(s.tagline || '')}</li>`)
         .join('')}</ul>
-      <p>Want a quick budget range first? Try our <a href="/cost-estimator">Dhaka Interior Cost Estimator</a>.</p>
+      <p>Want a quick budget range first? Try our <a href="/cost-estimator">Dhaka Interior Cost Estimator</a> or browse our <a href="/projects">Completed Projects</a>.</p>
       ${navFooter}`,
   });
 
   routes.push({
     path: '/blog',
-    title: 'Interior Design & Renovation Blog',
+    title: 'Interior Design & Renovation Blog Bangladesh',
     description:
-      "Practical guides, styling tips, budget planning advice, and exhibition stall design ideas from Brown's Interiors - ইন্টেরিয়র ডিজাইন স্টুডিও.",
+      'Practical interior design guides, Dhaka sq ft cost breakdowns, small apartment tips, and exhibition booth insights by Engr. Aslam Sheikh.',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: "Interior Design & Renovation Blog | Brown's Interiors",
+      url: `${domain}/blog`,
+    },
     bodyHtml: `<h1>Interior Design &amp; Renovation Guides</h1>
       <p>In-depth interior design guides, Dhaka cost breakdowns, renovation checklists, and studio insights by Engr. Aslam Sheikh and the Brown's Interiors team.</p>
       <ul>${blogPosts
@@ -406,15 +529,19 @@ export async function prerenderRoutes(domain) {
       ${navFooter}`,
   });
 
-  // 2. Service category & sub-service routes
+  // 2. Service category & sub-service routes (all 36 enriched with unique editorial, standards, FAQs, images & cross-links)
   const seenServices = new Set();
   for (const category of servicesData) {
     const pushServiceRoute = (item, isCategory) => {
       if (seenServices.has(item.slug)) return;
       seenServices.add(item.slug);
-      const desc = item.intro || item.tagline || item.desc || item.description || '';
+      const rich = serviceDetailsContent[item.slug] || null;
+      const seoTitle = rich?.seoTitle || `${item.title} in Dhaka`;
+      const desc = rich?.seoDescription || item.intro || item.tagline || item.desc || item.description || '';
+      const leadCopy = item.intro || item.tagline || item.desc || item.description || '';
       const img = item.image || (item.gallery && item.gallery[0]) || '/og-image.jpg';
       const urlPath = `/services/${item.slug}`;
+
       const schema = [
         {
           '@context': 'https://schema.org',
@@ -441,22 +568,51 @@ export async function prerenderRoutes(domain) {
                 ]),
           ],
         },
+        ...(rich?.faqs?.length
+          ? [
+              {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: rich.faqs.map((faq) => ({
+                  '@type': 'Question',
+                  name: faq.question,
+                  acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+                })),
+              },
+            ]
+          : []),
       ];
+
       const specsHtml = Array.isArray(item.specs) && item.specs.length
         ? `<ul>${item.specs.map((sp) => `<li><strong>${escapeHtml(sp.label)}:</strong> ${escapeHtml(sp.value)}</li>`).join('')}</ul>`
         : '';
       const highlightsHtml = Array.isArray(item.highlights) && item.highlights.length
         ? `<p><strong>Key Areas:</strong> ${item.highlights.map((h) => escapeHtml(h)).join(' · ')}</p>`
         : '';
-      const optionsHtml =
-        isCategory && Array.isArray(category.options)
-          ? `<h2>Specialized Services</h2><ul>${category.options
-              .map((o) => `<li><a href="/services/${escapeHtml(o.slug)}">${escapeHtml(o.title)}</a> — ${escapeHtml(o.tagline || o.desc || '')}</li>`)
-              .join('')}</ul>`
-          : '';
       const featuresHtml = Array.isArray(item.features)
         ? `<h2>What Is Included</h2><ul>${item.features.map((f) => `<li>${escapeHtml(f)}</li>`).join('')}</ul>`
         : '';
+      const overviewHtml = rich?.overview?.length
+        ? `<section><h2>How We Deliver ${escapeHtml(item.title)} in Dhaka</h2>${rich.overview
+            .map((p) => `<p>${escapeHtml(p)}</p>`)
+            .join('')}</section>`
+        : '';
+      const standardsHtml = rich?.technicalStandards?.length
+        ? `<section><h2>Technical Standards &amp; Deliverables</h2><ul>${rich.technicalStandards
+            .map((st) => `<li>${escapeHtml(st)}</li>`)
+            .join('')}</ul></section>`
+        : '';
+      const faqsHtml = rich?.faqs?.length
+        ? `<section><h2>Frequently Asked Questions</h2>${rich.faqs
+            .map((f) => `<h3>${escapeHtml(f.question)}</h3><p>${escapeHtml(f.answer)}</p>`)
+            .join('')}</section>`
+        : '';
+      const optionsHtml =
+        isCategory && Array.isArray(category.options)
+          ? `<h2>Specialized ${escapeHtml(category.shortTitle || category.title)} Services</h2><ul>${category.options
+              .map((o) => `<li><a href="/services/${escapeHtml(o.slug)}">${escapeHtml(o.title)}</a> — ${escapeHtml(o.tagline || o.desc || '')}</li>`)
+              .join('')}</ul>`
+          : '';
       const siblingHtml =
         !isCategory && Array.isArray(category.options)
           ? `<h2>Related ${escapeHtml(category.shortTitle || category.title)} Services</h2><ul>${category.options
@@ -465,22 +621,56 @@ export async function prerenderRoutes(domain) {
               .join('')}</ul>`
           : '';
 
+      const relatedProjects = (rich?.relatedProjectIds || [])
+        .map((pid) => projectsData.find((p) => p.id === pid))
+        .filter(Boolean);
+      const relatedBlogs = (rich?.relatedBlogSlugs || [])
+        .map((bslug) => blogPreviews.find((b) => b.slug === bslug))
+        .filter(Boolean);
+
+      const crossLinksHtml =
+        relatedProjects.length || relatedBlogs.length
+          ? `<section>
+              ${
+                relatedProjects.length
+                  ? `<h2>Related Completed Projects</h2><ul>${relatedProjects
+                      .map((p) => `<li><a href="/project/${p.id}">${escapeHtml(p.title)}</a> (${escapeHtml(p.location)} · ${escapeHtml(p.area)})</li>`)
+                      .join('')}</ul>`
+                  : ''
+              }
+              ${
+                relatedBlogs.length
+                  ? `<h2>Helpful Planning Guides</h2><ul>${relatedBlogs
+                      .map((b) => `<li><a href="/blog/${escapeHtml(b.slug)}">${escapeHtml(b.title)}</a></li>`)
+                      .join('')}</ul>`
+                  : ''
+              }
+            </section>`
+          : '';
+
+      const heroFigureHtml = img.startsWith('/') ? renderFigureHtml(img, `${item.title} by Brown's Interiors in Dhaka`) : '';
+
       routes.push({
         path: urlPath,
-        title: `${item.title} - Interior & Architectural Service`,
+        title: seoTitle,
         description: desc,
         image: img,
         schema,
         bodyHtml: `<article>
           <h1>${escapeHtml(item.title)}</h1>
-          <p>${escapeHtml(desc)}</p>
-          ${item.description && item.description !== desc ? `<p>${escapeHtml(item.description)}</p>` : ''}
+          <p>${escapeHtml(leadCopy)}</p>
+          ${item.description && item.description !== leadCopy ? `<p>${escapeHtml(item.description)}</p>` : ''}
+          ${heroFigureHtml}
           ${specsHtml}
           ${highlightsHtml}
           ${featuresHtml}
+          ${overviewHtml}
+          ${standardsHtml}
+          ${faqsHtml}
           ${optionsHtml}
           ${siblingHtml}
-          <p><a href="/cost-estimator">Estimate Cost</a> · <a href="/contact">Book Consultation</a></p>
+          ${crossLinksHtml}
+          <p><a href="/cost-estimator">Estimate Cost</a> · <a href="/contact">Book Free Consultation</a></p>
         </article>${navFooter}`,
       });
     };
@@ -493,21 +683,39 @@ export async function prerenderRoutes(domain) {
     }
   }
 
-  // 3. Project detail routes
+  // 3. Project detail routes (all 7 enriched with full architectural case studies, images & cross-links)
   for (const project of projectsData) {
+    const study = projectCaseStudies[project.id] || null;
     const img = project.coverImage || project.image || '/og-image.jpg';
     const urlPath = `/project/${project.id}`;
+    const seoTitle = study?.seoTitle || `${project.title} — ${project.location}`;
+    const seoDesc = study?.seoDescription || project.description;
+
+    const relatedServices = (study?.relatedServiceSlugs || [])
+      .map((slug) => findServiceOrOption(slug)?.data)
+      .filter(Boolean);
+    const otherProjects = projectsData.filter((p) => p.id !== project.id).slice(0, 3);
+
+    const galleryHtml = Array.isArray(project.gallery)
+      ? `<section><h2>Project Gallery</h2>${project.gallery
+          .map((gImg, idx) => {
+            const cap = study?.galleryCaptions?.[idx] || `${project.title} — View ${idx + 1}`;
+            return renderFigureHtml(gImg, cap, cap);
+          })
+          .join('')}</section>`
+      : '';
+
     routes.push({
       path: urlPath,
-      title: `${project.title} - Interior Project`,
-      description: project.description,
+      title: seoTitle,
+      description: seoDesc,
       image: img,
       schema: [
         {
           '@context': 'https://schema.org',
           '@type': 'CreativeWork',
           name: project.title,
-          description: project.description,
+          description: seoDesc,
           image: toAbsoluteUrl(domain, img),
           url: `${domain}${urlPath}`,
           creator: { '@id': `${domain}/#organization` },
@@ -532,14 +740,47 @@ export async function prerenderRoutes(domain) {
           <li><strong>Location:</strong> ${escapeHtml(project.location || 'Dhaka')}</li>
           <li><strong>Area:</strong> ${escapeHtml(project.area || '')}</li>
           <li><strong>Year:</strong> ${escapeHtml(project.year || '')}</li>
+          ${study?.timeline ? `<li><strong>Timeline:</strong> ${escapeHtml(study.timeline)}</li>` : ''}
+          ${study?.scope ? `<li><strong>Scope:</strong> ${escapeHtml(study.scope)}</li>` : ''}
         </ul>
-        <p>${escapeHtml(project.description || '')}</p>
+        <section>
+          <h2>Project Overview</h2>
+          <p>${escapeHtml(project.description || '')}</p>
+        </section>
+        ${
+          study
+            ? `<section>
+                <h2>Design Brief &amp; Site Context</h2>
+                <p>${escapeHtml(study.brief)}</p>
+                <h2>Architectural &amp; Engineering Execution</h2>
+                <p>${escapeHtml(study.solution)}</p>
+                <h2>Materials &amp; Finishes Specified</h2>
+                <ul>${study.materials.map((m) => `<li>${escapeHtml(m)}</li>`).join('')}</ul>
+                <h2>Key Delivery Highlights</h2>
+                <ul>${study.highlights.map((h) => `<li>${escapeHtml(h)}</li>`).join('')}</ul>
+              </section>`
+            : ''
+        }
+        ${galleryHtml}
+        ${
+          relatedServices.length
+            ? `<section><h2>Services Behind This Project</h2><ul>${relatedServices
+                .map((s) => `<li><a href="/services/${escapeHtml(s.slug)}">${escapeHtml(s.title)}</a></li>`)
+                .join('')}</ul></section>`
+            : ''
+        }
+        <section>
+          <h2>More Completed Projects</h2>
+          <ul>${otherProjects
+            .map((op) => `<li><a href="/project/${op.id}">${escapeHtml(op.title)}</a> (${escapeHtml(op.location)} · ${escapeHtml(op.area)})</li>`)
+            .join('')}</ul>
+        </section>
         <p><a href="/projects">View All Completed Projects</a> · <a href="/cost-estimator">Estimate Similar Project Cost</a> · <a href="/contact">Book Free Consultation</a></p>
       </article>${navFooter}`,
     });
   }
 
-  // 4. Blog post routes (full English + Bengali text rendered for maximum crawlability)
+  // 4. Blog post routes (full English + Bengali text + inline images rendered for maximum crawlability)
   for (const post of blogPosts) {
     const urlPath = `/blog/${post.slug}`;
     const blogPostingSchema = {
@@ -642,6 +883,7 @@ export async function prerenderRoutes(domain) {
         (sec, idx) => `<section id="${escapeHtml(sec.id || '')}">
           <h2>${escapeHtml(sec.title || '')}</h2>
           ${sec.lead ? `<p><em>${escapeHtml(sec.lead)}</em></p>` : ''}
+          ${sec.inlineImage?.src ? renderFigureHtml(sec.inlineImage.src, sec.inlineImage.alt || sec.title, sec.inlineImage.caption || '') : ''}
           ${(sec.paragraphs || []).map((p) => `<p>${formatRichTextHtml(p)}</p>`).join('')}
           ${
             Array.isArray(sec.keyTakeaways) && sec.keyTakeaways.length
@@ -674,6 +916,7 @@ export async function prerenderRoutes(domain) {
       bodyHtml: `<article>
         <h1>${escapeHtml(post.title)}</h1>
         ${post.subtitle ? `<p>${escapeHtml(post.subtitle)}</p>` : ''}
+        ${post.image ? renderFigureHtml(post.image, post.title) : ''}
         ${introHtml}
         ${sectionsHtml}
         ${faqsHtml}
@@ -682,7 +925,7 @@ export async function prerenderRoutes(domain) {
     });
   }
 
-  // 5. True HTTP 404 fallback page (served automatically by Vercel when no file matches)
+  // 5. True HTTP 404 fallback page
   routes.push({
     path: '/404',
     outFile: '404.html',

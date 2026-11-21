@@ -47,6 +47,16 @@
       "permanent": true
     },
     {
+      "source": "/services/commercial-office-interior",
+      "destination": "/services/commercial-interior",
+      "permanent": true
+    },
+    {
+      "source": "/services/restaurant-salon-retail-interior",
+      "destination": "/services/office-retail-interior",
+      "permanent": true
+    },
+    {
       "source": "/cost-calculator",
       "destination": "/cost-estimator",
       "permanent": true
