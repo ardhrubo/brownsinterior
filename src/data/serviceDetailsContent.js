@@ -71,7 +71,7 @@ export const serviceDetailsContent = {
       },
     ],
     relatedProjectIds: [1, 3, 5],
-    relatedBlogSlugs: ['small-apartment-design-tips', 'interior-design-cost-in-bangladesh-guide'],
+    relatedBlogSlugs: ['modular-kitchen-design-cabinet-price-bangladesh', 'small-apartment-design-tips', 'interior-design-cost-in-bangladesh-guide'],
   },
 
   'commercial-interior': {
@@ -106,7 +106,7 @@ export const serviceDetailsContent = {
       },
     ],
     relatedProjectIds: [2, 6],
-    relatedBlogSlugs: ['best-interior-design-company-in-bangladesh-2026-2027', 'how-browns-interiors-works-process'],
+    relatedBlogSlugs: ['office-interior-design-cost-dhaka-bangladesh', 'best-interior-design-company-in-bangladesh-2026-2027'],
   },
 
   'office-retail-interior': {
@@ -141,7 +141,7 @@ export const serviceDetailsContent = {
       },
     ],
     relatedProjectIds: [6, 2],
-    relatedBlogSlugs: ['best-interior-design-company-in-bangladesh-2026-2027', 'why-browns-interiors-bangladesh'],
+    relatedBlogSlugs: ['office-interior-design-cost-dhaka-bangladesh', 'why-browns-interiors-bangladesh'],
   },
 
   // ─── 02. ARCHITECTURE ──────────────────────────────────────────────────
@@ -177,7 +177,7 @@ export const serviceDetailsContent = {
       },
     ],
     relatedProjectIds: [3, 1],
-    relatedBlogSlugs: ['browns-interiors-trusted-interior-studio', 'best-interior-designer-in-bangladesh'],
+    relatedBlogSlugs: ['duplex-house-design-interior-cost-bangladesh', 'browns-interiors-trusted-interior-studio'],
   },
 
   'building-design-planning': {
@@ -494,7 +494,7 @@ export const serviceDetailsContent = {
       },
     ],
     relatedProjectIds: [5, 4, 1],
-    relatedBlogSlugs: ['interior-design-cost-in-bangladesh-guide', 'small-apartment-design-tips'],
+    relatedBlogSlugs: ['gypsum-false-ceiling-price-flat-renovation-dhaka', 'interior-design-cost-in-bangladesh-guide'],
   },
 
   'residential-renovation': {
@@ -599,7 +599,7 @@ export const serviceDetailsContent = {
       },
     ],
     relatedProjectIds: [1, 5],
-    relatedBlogSlugs: ['interior-design-cost-in-bangladesh-guide', 'small-apartment-design-tips'],
+    relatedBlogSlugs: ['modular-kitchen-design-cabinet-price-bangladesh', 'interior-design-cost-in-bangladesh-guide'],
   },
 
   'space-optimization': {
@@ -1162,7 +1162,7 @@ export const serviceDetailsContent = {
       },
     ],
     relatedProjectIds: [1, 5, 4],
-    relatedBlogSlugs: ['best-interior-design-company-in-bangladesh-2026-2027', 'small-apartment-design-tips'],
+    relatedBlogSlugs: ['gypsum-false-ceiling-price-flat-renovation-dhaka', 'best-interior-design-company-in-bangladesh-2026-2027'],
   },
 
   'electrical-plumbing-coordination': {
@@ -1267,6 +1267,6 @@ export const serviceDetailsContent = {
       },
     ],
     relatedProjectIds: [1, 5, 6],
-    relatedBlogSlugs: ['why-browns-interiors-bangladesh', 'how-browns-interiors-works-process'],
+    relatedBlogSlugs: ['nrb-remote-interior-design-dhaka-apartment-guide', 'why-browns-interiors-bangladesh'],
   },
 };

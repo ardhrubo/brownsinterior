@@ -5,6 +5,7 @@
  */
 
 import { SITE_URL } from '../lib/site-url.js';
+import { keywordBlogPosts } from './keywordBlogPosts.js';
 
 export const blogPosts = [
   {
@@ -4429,7 +4430,8 @@ export const blogPosts = [
       }
     }
   }
-}
+},
+...keywordBlogPosts,
 ];
 
 export const getBlogPostBySlug = (slug) => {
